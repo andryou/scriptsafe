@@ -1,0 +1,29 @@
+{
+   "background": {"page": "html/background.html"},
+   "browser_action": {
+      "default_icon": "img/IconForbidden.png",
+      "default_popup": "html/popup.html",
+      "default_title": "ScriptSafe"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "js/jquery.js", "js/common.js", "js/yoyo.js", "js/ns.js" ],
+      "matches": [ "http://*/*", "https://*/*" ],
+      "run_at": "document_start"
+   } ],
+   "description": "Regain control of the web and surf more securely.",
+   "icons": {
+      "128": "img/icon128.png",
+      "16": "img/icon16.png",
+      "24": "img/icon24.png",
+      "32": "img/icon32.png",
+      "48": "img/icon48.png"
+   },
+   "minimum_chrome_version": "6",
+   "name": "ScriptSafe",
+   "options_page": "html/options.html",
+   "permissions": [ "http://*/*", "https://*/*", "tabs", "unlimitedStorage", "webRequest", "webRequestBlocking", "contentSettings", "storage", "notifications" ],
+   "update_url": "http://clients2.google.com/service/update2/crx",
+   "version": "1.0.6.16",
+   "manifest_version": 2
+}

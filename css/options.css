@@ -1,0 +1,31 @@
+body { color: #000; margin: 20px; font-family: Arial, Sans-Serif; background-color: #fff; }
+#header { margin: 0 auto; width: 100%; text-align: center; }
+#main { border: 1px solid #ccc; background-color: #fafafa; width: 700px; padding: 10px; margin: 0 auto; font-size: 12px; text-align: center; }
+h1 { margin: 0; }
+#title, .i18_support { color: green; font-size: 30px; font-weight: bold; }
+.i18_support { color: #000; font-size: 18px; }
+#title:hover { color: blue; }
+table { width: 100%; } 
+td { vertical-align: top; color: #000; font-size: 12px; border-top: 1px solid #eee; padding: 3px; }
+tr.first td, td#t_table, td.first { border-top: none; }
+tr.bottom td { border-bottom: 1px solid #eee; }
+td.bottom { border-bottom: none !important; }
+td.rowtitle { width: 180px; }
+label { vertical-align: top; }
+i { font-size: 11px; color: #000; }
+a { color: blue; }
+.list, textarea { width: 300px; max-height: 300px; overflow-y: auto; border: 1px solid #ccc; background-color: #eee; padding: 5px; }
+textarea { min-height: 100px; font-family: Arial, Sans-Serif; }
+.listentry { clear: both; }
+.listentry:hover { background-color: #fff; }
+.clear { clear: both; }
+.right { float: right; }
+.entryoptions { float: right; font-size: 10px; }
+a { text-decoration: underline }
+a:hover { text-decoration: none }
+#message { display: none; color: #000; margin-top: 5px; position: fixed; top: 0; border: 1px solid black; padding: 5px; background-color: #fff; font-weight: bold; }
+#listMsg { display: none; color: #000; margin-left: 5px; font-weight: bold; }
+.section { font-weight: bold; color: #fff; background-color: black; }
+.hide { display: none; }
+#bulk textarea { width: 250px; height: 150px; }
+#bulk { text-align: left; padding-left: 15px; }
