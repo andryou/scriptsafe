@@ -140,6 +140,7 @@ function loadOptions() {
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
+	loadElement("webrtc");
 	loadCheckbox("preservesamedomain");
 	loadCheckbox("classicoptions");
 	loadCheckbox("referrer");
@@ -179,6 +180,7 @@ function saveOptions() {
 	saveElement("annoyancesmode");
 	saveCheckbox("antisocial");
 	saveCheckbox("webbugs");
+	saveElement("webrtc");
 	saveCheckbox("preservesamedomain");
 	saveCheckbox("classicoptions");
 	saveCheckbox("referrer");
@@ -204,6 +206,7 @@ function saveOptions() {
 	else $("#useragentspoof_os").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
+	bkg.initWebRTC();
 	syncstatus = bkg.freshSync(1);
 	if (syncstatus) {
 		notification('Settings saved and syncing in 30 seconds');
@@ -255,7 +258,7 @@ function settingsImport() {
 }
 function updateExport() {
 	$("#settingsexport").val("");
-	for (i in localStorage) {
+	for (var i in localStorage) {
 		if (i != "version" && i != "whiteListCount" && i != "blackListCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw") {
 			settingnames.push(i);
 			$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
@@ -385,7 +388,7 @@ function listUpdate() {
 	else {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
-		for (i in whiteList) {
+		for (var i in whiteList) {
 			if ((whiteList[i][0] == '*' && whiteList[i][1] == '.') || whiteList[i].match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+whiteList[i]+'\' rel="0">Trust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 		}
@@ -395,7 +398,7 @@ function listUpdate() {
 	else {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
-		for (i in blackList) {
+		for (var i in blackList) {
 			if ((blackList[i][0] == '*' && blackList[i][1] == '.') || blackList[i].match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+blackList[i]+'\' rel="1">Distrust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 		}
@@ -411,8 +414,7 @@ function listclear(type) {
 	if (confirm(['Clear whitelist?','Clear blacklist?'][type])) {
 		localStorage[['whiteList','blackList'][type]] = JSON.stringify([]);
 		listUpdate();
-		syncstatus = bkg.freshSync(2);
-		if (syncstatus) {
+		if (bkg.freshSync(2)) {
 			notification('Settings saved and syncing in 30 seconds');
 		} else {
 			notification('Settings saved');

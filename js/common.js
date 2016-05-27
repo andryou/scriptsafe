@@ -2,11 +2,12 @@
 function baddies(src, amode, antisocial) {
 	// Confucius say: you go to JAIL, BAD BOY!
 	src = src.toLowerCase();
-	dmn = extractDomainFromURL(relativeToAbsoluteUrl(src));
+	var dmn = extractDomainFromURL(relativeToAbsoluteUrl(src));
+	var topDomain = getDomain(dmn);
 	if (dmn.indexOf(".") == -1 && src.indexOf(".") != -1) dmn = src;
-	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(getDomain(dmn)) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1))
+	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1))
 		return '2';
-	if (((amode == 'relaxed' && domainCheck(dmn, 1) != '0') || amode == 'strict') && (yoyo2.indexOf(dmn) != -1 || yoyo1.indexOf(getDomain(dmn)) != -1))
+	if (((amode == 'relaxed' && domainCheck(dmn, 1) != '0') || amode == 'strict') && (yoyo2.indexOf(dmn) != -1 || yoyo1.indexOf(topDomain) != -1))
 		return '1';
 	return false;
 }
@@ -14,7 +15,10 @@ function elementStatus(src, mode, taburl) {
 	src = relativeToAbsoluteUrl(src).toLowerCase();
 	if (taburl === undefined) taburl = window.location.hostname.toLowerCase();
 	else taburl = extractDomainFromURL(taburl.toLowerCase());
-	if (src.substr(0,11) != 'javascript:' && domainCheck(src) != '0' && (domainCheck(src) == '1' || (domainCheck(src) == '-1' && mode == 'block' && (thirdParty(src, taburl) || !thirdParty(src, taburl) || (thirdParty(src, taburl) && src.indexOf("?") != -1 && (src.indexOf(taburl) != -1 || (taburl.substr(0,4)=='www.' && src.indexOf(taburl.substr(4)) != -1) || src.indexOf(extractDomainFromURL(src), extractDomainFromURL(src).length) != -1 || (extractDomainFromURL(src).substr(0,4)=='www.' && src.indexOf(extractDomainFromURL(src).substr(4), extractDomainFromURL(src).length) != -1) || src.indexOf(getDomain(taburl, 1)) != -1)))))) return true;
+	var domainCheckStatus = domainCheck(src);
+	var thirdPartyStatus = thirdParty(src, taburl);
+	var extractedDomain = extractDomainFromURL(src);
+	if (src.substr(0,11) != 'javascript:' && taburl != 'newtab' && domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && mode == 'block' && (thirdPartyStatus || !thirdPartyStatus || (thirdPartyStatus && src.indexOf("?") != -1 && (src.indexOf(taburl) != -1 || (taburl.substr(0,4)=='www.' && src.indexOf(taburl.substr(4)) != -1) || src.indexOf(extractedDomain, extractedDomain.length) != -1 || (extractedDomain.substr(0,4)=='www.' && src.indexOf(extractedDomain.substr(4), extractedDomain.length) != -1) || src.indexOf(getDomain(taburl, 1)) != -1)))))) return true;
 	return false;
 }
 function thirdParty(url, taburl) {
@@ -30,12 +34,12 @@ function thirdParty(url, taburl) {
 		// handle IP addresses (if we're still here, then it means the ip addresses don't match)
 		if (requestHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) return true;
 		// now that IP addresses have been processed, carry on.
-		elConst = requestHost.split('.').reverse(); // work backwards :)
-		pageConst = documentHost.split('.').reverse();
-		max = elConst.length;
+		var elConst = requestHost.split('.').reverse(); // work backwards :)
+		var pageConst = documentHost.split('.').reverse();
+		var max = elConst.length;
 		if (max < pageConst.length)
 			max = pageConst.length;
-		matchCount = 0;
+		var matchCount = 0;
 		for (i=0;i<max;i++) {
 			if (elConst[i] && pageConst[i] && elConst[i] == pageConst[i]) matchCount++;
 			else break; // exit loop as soon as something doesn't exist/match
@@ -73,6 +77,7 @@ function getDomain(url, type) {
 		if (url[0] == '*' && url[1] == '.') return url.substr(2);
 		url = url.toLowerCase().split(".").reverse();
 		len = url.length;
+		var domain;
 		if (len > 1) {
 			if (type === undefined) domain = url[1]+'.'+url[0];
 			else domain = url[1];
