@@ -1,5 +1,5 @@
 # ScriptSafe
-A Chrome extension with over 107,000 users that brings some of NoScript's functionality to Chrome while emphasizing simplicity and intuitiveness (no affiliation to NoScript).
+A Chrome extension that brings some of NoScript's functionality to Chrome while emphasizing simplicity and intuitiveness (no affiliation to NoScript).
 
 Note: due to the nature of this extension, this will break most sites! It is designed to learn over time with sites that you allow.
 
@@ -7,7 +7,7 @@ Note: due to the nature of this extension, this will break most sites! It is des
 * whitelisting/blacklisting functionality and granular control
 * automatic auto-syncing of settings AND whitelist/blacklists across your devices (via Google Sync)
 * actually speeds up browsing because it removes a lot of unwanted content
-* remove <SCRIPT>, <OBJECT>, <EMBED>, <IFRAME>, <FRAME>, <APPLET>, <AUDIO>, <VIDEO>, <NOSCRIPT>, and <IMG> elements, as well as webbugs
+* remove &lt;SCRIPT&gt;, &lt;OBJECT&gt;, &lt;EMBED&gt;, &lt;IFRAME&gt;, &lt;FRAME&gt;, &lt;APPLET&gt;, &lt;AUDIO&gt;, &lt;VIDEO&gt;, &lt;NOSCRIPT&gt;, and &lt;IMG&gt; elements, as well as webbugs
 * block unwanted content (MVPS HOSTS, hpHOSTS (ad / tracking servers only), Peter Lowe's HOSTS Project, MalwareDomainList.com, and DNS-BH – Malware Domain Blocklist are integrated!)
 * block click-through referrer data
 * spoof referrer/user-agent data
@@ -20,6 +20,7 @@ Note: due to the nature of this extension, this will break most sites! It is des
 * choose the default mode (Block All or Allow All)
 * option to preserve same-domain elements
 * option to disable automatic refresh of pages after whitelisting/blacklisting/temp. bypassing a page
+* protect against WebRTC leaks
 
 ## Sites
 https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf?hl=en
