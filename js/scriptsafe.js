@@ -832,4 +832,7 @@ if (storageapi) {
 	});
 	importSyncHandle(0);
 }
+chrome.runtime.onUpdateAvailable.addListener(function (details) {
+	chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}); 
+});
 init();
