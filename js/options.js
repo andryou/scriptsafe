@@ -1,5 +1,4 @@
-// (c) Andrew Y. <andryou@gmail.com>
-// Supporting functions by AdThwart - T. Joseph
+// (c) Andrew Y.
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	loadOptions();
@@ -18,15 +17,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	$(".close").click(closeOptions);
 	$("#syncimport").click(forceSyncImport);
 	$("#syncexport").click(forceSyncExport);
-	$("#restoretool").click(restoretool);
 	syncstatus = localStorage['syncenable'];
 });
-function restoretool() {
-	status = bkg.listsSync(3);
-	if (status == 'false') {
-		alert('ScriptSafe could not find a backup of your previous whitelist/blacklist.');
-	}
-}
 function forceSyncExport() {
 	if(confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
 		status = bkg.freshSync(0, true);
@@ -135,12 +127,13 @@ function loadOptions() {
 	loadCheckbox("audio");
 	loadCheckbox("video");
 	loadCheckbox("image");
-	loadCheckbox("xml");
+	loadElement("xml");
 	loadCheckbox("annoyances");
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
 	loadElement("webrtc");
+	if (!bkg.checkWebRTC()) $("#webrtccell").html('<strong style="color: red;">This version of Chrome does not support WebRTC protection</strong>');
 	loadCheckbox("preservesamedomain");
 	loadCheckbox("classicoptions");
 	loadCheckbox("referrer");
@@ -175,7 +168,7 @@ function saveOptions() {
 	saveCheckbox("audio");
 	saveCheckbox("video");
 	saveCheckbox("image");
-	saveCheckbox("xml");
+	saveElement("xml");
 	saveCheckbox("annoyances");
 	saveElement("annoyancesmode");
 	saveCheckbox("antisocial");
@@ -250,6 +243,8 @@ function settingsImport() {
 		} else {
 			notification('Settings imported successfully');
 		}
+		bkg.refreshRequestTypes();
+		bkg.initWebRTC();
 		$("#settingsimport").val("");
 	} else {
 		bkg.freshSync(0);
@@ -273,14 +268,12 @@ function is_int(value){
 function notification(msg) {
 	$('#message').html(msg).stop().fadeIn("slow").delay(2000).fadeOut("slow")
 }
-// <!-- modified from KB SSL Enforcer: https://code.google.com/p/kbsslenforcer/
 function addList(type) {
 	var domain = $('#url').val().toLowerCase().replace("http://", "").replace("https://", "");
-	var domainValidator = new RegExp('^(\\*\\.)?([a-z0-9]([a-z0-9-]*[a-z0-9])?\\.?)+[a-z0-9-]+$');
-	if (!(domainValidator.test(domain.toLowerCase()))) {
+	if (!domain.match(/^(?:[\-\w\*\?]+(\.[\-\w\*\?]+)*|((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})|\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])?$/g)) {
 		notification('Invalid domain');
 	} else {
-		if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && bkg.domainCheck(domain.toLowerCase(), 1) != '0')) && bkg.baddies(bkg.getDomain(domain.toLowerCase()), localStorage['annoyancesmode'], localStorage['antisocial']) == 1) || (localStorage['antisocial'] == 'true' && bkg.baddies(bkg.getDomain(domain.toLowerCase()), localStorage['annoyancesmode'], localStorage['antisocial']) == '2')) {
+		if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && bkg.domainCheck(domain, 1) != '0')) && bkg.baddies(bkg.getDomain(domain), localStorage['annoyancesmode'], localStorage['antisocial']) == 1) || (localStorage['antisocial'] == 'true' && bkg.baddies(bkg.getDomain(domain), localStorage['annoyancesmode'], localStorage['antisocial']) == '2')) {
 			notification('Domain cannot be added as it is a provider of unwanted content (see "Block Unwanted Content" and/or "Antisocial Mode")');
 		} else {
 			responseflag = bkg.domainHandler(domain, type);
@@ -302,7 +295,7 @@ function addList(type) {
 	return false;
 }
 function domainRemover(domain) {
-	if(confirm("Are you sure you want to remove "+domain+" from this list?")) {
+	if (confirm("Are you sure you want to remove "+domain+" from this list?")) {
 		bkg.domainHandler(domain,2);
 		listUpdate();
 		syncstatus = bkg.freshSync(2);
@@ -317,7 +310,7 @@ function domainRemover(domain) {
 function topDomainAdd(domain, mode) {
 	if (mode == '0') lingo = 'trust';
 	else if (mode == '1') lingo = 'distrust';
-	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && domain[0] != '*' && domain[1] != '.' && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
+	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])$/g) && domain[0] != '*' && domain[1] != '*' && domain[2] != '.' && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
 		result = bkg.topHandler(domain, mode);
 		listUpdate();
 		bkg.freshSync(2);
@@ -343,7 +336,6 @@ function bulk(type) {
 function importbulk(type) {
 	var error = '';
 	var domains = $("#bulk textarea").val().split("\n");
-	var domainValidator = new RegExp('^(\\*\\.)?([a-z0-9]([a-z0-9-]*[a-z0-9])?\\.?)+[a-z0-9-]+$');
 	if ($.trim($("#bulk textarea").val()) == "") {
 		hidebulk();
 		return false;
@@ -351,13 +343,14 @@ function importbulk(type) {
 	if (domains.length > 0) {
 		$.each(domains, function(i, v) {
 			if ($.trim(v) != "") {
-				if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && bkg.domainCheck($.trim(v).toLowerCase().replace("http://", "").replace("https://", ""), 1) != '0')) && bkg.baddies(bkg.getDomain($.trim(v).toLowerCase().replace("http://", "").replace("https://", "")), localStorage['annoyancesmode'], localStorage['antisocial']) == 1) || (localStorage['antisocial'] == 'true' && bkg.baddies(bkg.getDomain($.trim(v).toLowerCase().replace("http://", "").replace("https://", "")), localStorage['annoyancesmode'], localStorage['antisocial']) == '2')) {
-					error += '<li>'+$.trim(v).toLowerCase().replace("http://", "").replace("https://", "")+' <b>(provider of unwanted content (see "Block Unwanted Content" and/or "Antisocial Mode")</b></li>';
+				var domain = $.trim(v).toLowerCase().replace("http://", "").replace("https://", "");
+				if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && bkg.domainCheck(domain.replace("http://", "").replace("https://", ""), 1) != '0')) && bkg.baddies(bkg.getDomain(domain.replace("http://", "").replace("https://", "")), localStorage['annoyancesmode'], localStorage['antisocial']) == 1) || (localStorage['antisocial'] == 'true' && bkg.baddies(bkg.getDomain(domain.replace("http://", "").replace("https://", "")), localStorage['annoyancesmode'], localStorage['antisocial']) == '2')) {
+					error += '<li>'+domain.replace("http://", "").replace("https://", "")+' <b>(provider of unwanted content (see "Block Unwanted Content" and/or "Antisocial Mode")</b></li>';
 				} else {
-					if (domainValidator.test($.trim(v).toLowerCase().replace("http://", "").replace("https://", ""))) {
-						bkg.domainHandler($.trim(v).toLowerCase().replace("http://", "").replace("https://", ""), type);
+					if (domain.match(/^(?:[\-\w\*\?]+(\.[\-\w\*\?]+)*|((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})|\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])?$/g)) {
+						bkg.domainHandler(domain, type);
 					} else {
-						error += '<li>'+$.trim(v).toLowerCase().replace("http://", "").replace("https://", "")+'</li>';
+						error += '<li>'+domain+'</li>';
 					}
 				}
 			}
@@ -389,7 +382,7 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
 		for (var i in whiteList) {
-			if ((whiteList[i][0] == '*' && whiteList[i][1] == '.') || whiteList[i].match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			if ((whiteList[i][0] == '*' && whiteList[i][1] == '*' && whiteList[i][2] == '.') || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+whiteList[i]+'\' rel="0">Trust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 		}
 	}
@@ -399,7 +392,7 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
 		for (var i in blackList) {
-			if ((blackList[i][0] == '*' && blackList[i][1] == '.') || blackList[i].match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			if ((blackList[i][0] == '*' && blackList[i][1] == '*' && blackList[i][2] == '.') || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+blackList[i]+'\' rel="1">Distrust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 		}
 	}
@@ -408,6 +401,7 @@ function listUpdate() {
 	$(".domainRemover, .topDomainAdd").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
+	bkg.cacheLists();
 	updateExport();
 }
 function listclear(type) {
@@ -422,4 +416,3 @@ function listclear(type) {
 	}
 	return false;
 }
-// from KB SSL Enforcer: https://code.google.com/p/kbsslenforcer/ -->

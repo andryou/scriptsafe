@@ -1,20 +1,18 @@
-// (c) Andrew Y. <andryou@gmail.com>
+// (c) Andrew Y.
 function baddies(src, amode, antisocial) {
-	// Confucius say: you go to JAIL, BAD BOY!
-	src = src.toLowerCase();
 	var dmn = extractDomainFromURL(relativeToAbsoluteUrl(src));
 	var topDomain = getDomain(dmn);
 	if (dmn.indexOf(".") == -1 && src.indexOf(".") != -1) dmn = src;
-	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1))
+	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1 || src.indexOf("apis.google.com/js/platform.js") != -1 || src.indexOf("plus.google.com/js/client:plusone.js") != -1 || src.indexOf("linkedin.com/countserv/count/share") != -1))
 		return '2';
 	if (((amode == 'relaxed' && domainCheck(dmn, 1) != '0') || amode == 'strict') && (yoyo2.indexOf(dmn) != -1 || yoyo1.indexOf(topDomain) != -1))
 		return '1';
 	return false;
 }
 function elementStatus(src, mode, taburl) {
-	src = relativeToAbsoluteUrl(src).toLowerCase();
-	if (taburl === undefined) taburl = window.location.hostname.toLowerCase();
-	else taburl = extractDomainFromURL(taburl.toLowerCase());
+	src = relativeToAbsoluteUrl(src);
+	if (taburl === undefined) taburl = window.location.hostname;
+	else taburl = extractDomainFromURL(taburl);
 	var domainCheckStatus = domainCheck(src);
 	var thirdPartyStatus = thirdParty(src, taburl);
 	var extractedDomain = extractDomainFromURL(src);
@@ -23,16 +21,16 @@ function elementStatus(src, mode, taburl) {
 }
 function thirdParty(url, taburl) {
 	if (url) {
-		var requestHost = relativeToAbsoluteUrl(url.toLowerCase());
+		var requestHost = relativeToAbsoluteUrl(url);
 		if (domainCheck(requestHost) == '0') return false;
 		var requestHost = extractDomainFromURL(requestHost);
-		if (taburl === undefined) documentHost = window.location.hostname.toLowerCase();
+		if (taburl === undefined) documentHost = window.location.hostname;
 		else documentHost = taburl;
 		requestHost = requestHost.replace(/\.+$/, "");
 		documentHost = documentHost.replace(/\.+$/, "");
 		if (requestHost == documentHost) return false; // if they match exactly (same domain), our job here is done
 		// handle IP addresses (if we're still here, then it means the ip addresses don't match)
-		if (requestHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) return true;
+		if (requestHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || requestHost.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) || documentHost.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) return true;
 		// now that IP addresses have been processed, carry on.
 		var elConst = requestHost.split('.').reverse(); // work backwards :)
 		var pageConst = documentHost.split('.').reverse();
@@ -64,20 +62,23 @@ function relativeToAbsoluteUrl(url) { // credit: NotScripts
 }
 function extractDomainFromURL(url) { // credit: NotScripts
 	if (!url) return "";
-	var x = url.toLowerCase();
+	var x = url;
 	if (x.indexOf("://") != -1) x = x.substr(url.indexOf("://") + 3);
 	if (x.indexOf("/") != -1) x = x.substr(0, x.indexOf("/"));
 	if (x.indexOf("@") != -1) x = x.substr(x.indexOf("@") + 1);
+	if (x.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) {
+		if (x.indexOf("]:") != -1) return x.substr(0, x.indexOf("]:")+1);
+		return x;
+	}
 	if (x.indexOf(":") > 0) x = x.substr(0, x.indexOf(":"));
 	return x;
 }
 function getDomain(url, type) {
-	if (url && !url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && url.indexOf(".") != -1) {
-		// below line may be edited/removed in the future to support granular trust-ing
-		if (url[0] == '*' && url[1] == '.') return url.substr(2);
-		url = url.toLowerCase().split(".").reverse();
-		len = url.length;
+	if (url && !url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) && url.indexOf(".") != -1) {
+		if (url[0] == '*' && url[1] == '*' && url[2] == '.') return url.substr(3);
+		url = url.split(".").reverse();
 		var domain;
+		var len = url.length;
 		if (len > 1) {
 			if (type === undefined) domain = url[1]+'.'+url[0];
 			else domain = url[1];
@@ -90,15 +91,7 @@ function getDomain(url, type) {
 	}
 	return url;
 }
-function in_array(needle, haystack) { // credit: NotScripts
-	for (key in haystack) {
-		if (haystack[key]==needle) {
-			return '1';
-			break;
-		} else if (haystack[key][0] == '*' && haystack[key][1] == '.' && needle.indexOf(haystack[key].substr(2)) != -1 && getDomain(needle) == getDomain(haystack[key])) {
-			return '2';
-			break;
-		}
-	}
+function in_array(needle, haystack) {
+	if (haystack && new RegExp(haystack).test(needle)) return '1';
 	return false;
 }
