@@ -49,7 +49,7 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
-	init();
+	setTimeout(init, 0);
 	$("#pop_quick").click(function() { openTab('https://www.andryou.com/2011/08/21/scriptsafe-a-quick-guide/'); });
 	$("#pop_overview").click(function() { openTab('https://www.andryou.com/2011/08/14/scriptsafe/'); });
 	$("#pop_project").click(function() { openTab('https://github.com/andryou/scriptsafe'); });
