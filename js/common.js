@@ -62,16 +62,15 @@ function relativeToAbsoluteUrl(url) { // credit: NotScripts
 }
 function extractDomainFromURL(url) { // credit: NotScripts
 	if (!url) return "";
-	var x = url;
-	if (x.indexOf("://") != -1) x = x.substr(url.indexOf("://") + 3);
-	if (x.indexOf("/") != -1) x = x.substr(0, x.indexOf("/"));
-	if (x.indexOf("@") != -1) x = x.substr(x.indexOf("@") + 1);
-	if (x.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) {
-		if (x.indexOf("]:") != -1) return x.substr(0, x.indexOf("]:")+1);
-		return x;
+	if (url.indexOf("://") != -1) url = url.substr(url.indexOf("://") + 3);
+	if (url.indexOf("/") != -1) url = url.substr(0, url.indexOf("/"));
+	if (url.indexOf("@") != -1) url = url.substr(url.indexOf("@") + 1);
+	if (url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) {
+		if (url.indexOf("]:") != -1) return url.substr(0, url.indexOf("]:")+1);
+		return url;
 	}
-	if (x.indexOf(":") > 0) x = x.substr(0, x.indexOf(":"));
-	return x;
+	if (url.indexOf(":") > 0) url = url.substr(0, url.indexOf(":"));
+	return url;
 }
 function getDomain(url, type) {
 	if (url && !url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) && url.indexOf(".") != -1) {

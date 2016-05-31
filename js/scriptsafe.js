@@ -182,11 +182,14 @@ function ScriptSafe(req) {
 		else if (reqtype == "main_frame") reqtype = 'page';
 		else if (reqtype == "image") reqtype = 'webbug';
 		var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial']);
-		var thirdPartyCheck = thirdParty(req.url, extractDomainFromURL(ITEMS[req.tabId]['url']));
+		var extractedDomain;
+		if (typeof ITEMS[req.tabId] !== 'undefined') extractedDomain = extractDomainFromURL(ITEMS[req.tabId]['url']);
+		var thirdPartyCheck = thirdParty(req.url, extractedDomain);
+		var domainCheckStatus = domainCheck(req.url, 1);
 		if (elementStatus(req.url, localStorage['mode'], ITEMS[req.tabId]['url'])
 		&& (
 			(
-				(((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(req.url, 1) != '0'))) || (localStorage['webbugs'] == 'true' && reqtype == "image")) && baddiesCheck == '1')
+				(((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) || (localStorage['webbugs'] == 'true' && reqtype == "image")) && baddiesCheck == '1')
 				|| (localStorage['antisocial'] == 'true' && baddiesCheck == '2')
 			)
 		|| (
@@ -195,7 +198,7 @@ function ScriptSafe(req) {
 		)) {
 			if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
 			if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
-				ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase()]);
+				ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase(), extractDomainFromURL(req.url), domainCheckStatus, baddiesCheck]);
 				updateCount(req.tabId);
 			}
 			if (reqtype == 'frame') {
@@ -208,7 +211,7 @@ function ScriptSafe(req) {
 			if (reqtype != 'webbug' && reqtype != 'page') {
 				if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
 				if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
-					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase()]);
+					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractDomainFromURL(req.url), domainCheckStatus]);
 				}
 			}
 			return { cancel: false };
@@ -239,23 +242,21 @@ function domainCheck(domain, req) {
 function domainSort(hosts) {
 	var sorted_hosts = new Array();
 	var split_hosts = new Array();
-	var multi = 0;
 	if (hosts.length > 0) {
-		multi = hosts[0].length;
-		if (multi == 2) {
-			for (h in hosts) {
-				split_hosts.push([getDomain(extractDomainFromURL(hosts[h][0])), hosts[h][0], hosts[h][1]]);
+		if (typeof hosts[0] === 'object') {
+			for (var h in hosts) {
+				split_hosts.push([getDomain(hosts[h][2]), hosts[h][0], hosts[h][1], hosts[h][2], hosts[h][3], hosts[h][4]]);
 			}
 			split_hosts.sort();
-			for (h in split_hosts) {
-				sorted_hosts.push([split_hosts[h][1], split_hosts[h][2]]);
+			for (var h in split_hosts) {
+				sorted_hosts.push([split_hosts[h][1], split_hosts[h][2], split_hosts[h][3], split_hosts[h][4], split_hosts[h][5]]);
 			}
 		} else {
-			for (h in hosts) {
-				split_hosts.push([getDomain(extractDomainFromURL(hosts[h])), hosts[h]]);
+			for (var h in hosts) {
+				split_hosts.push([getDomain(hosts[h]), hosts[h]]);
 			}
 			split_hosts.sort();
-			for (h in split_hosts) {
+			for (var h in split_hosts) {
 				sorted_hosts.push(split_hosts[h][1]);
 			}
 		}
@@ -263,12 +264,9 @@ function domainSort(hosts) {
 	}
 	return hosts;
 }
-function trustCheck(domain, mode) {
-	if (mode == 0) {
-		if (in_array(domain, trustList)) return true;
-	} else if (mode == 1) {
-		if (in_array(domain, distrustList)) return true;
-	}
+function trustCheck(domain) {
+	if (in_array(domain, trustList)) return '1';
+	if (in_array(domain, distrustList)) return '2';
 	return false;
 }
 function topHandler(domain, mode) {
@@ -516,8 +514,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else if (request.reqtype == 'get-list') {
 		var enableval = domainCheck(request.url);
 		var extractedDomain = extractDomainFromURL(request.url);
-		if (trustCheck(extractedDomain, 0)) enableval = 3;
-		else if (trustCheck(extractedDomain, 1)) enableval = 4;
+		var trustType = trustCheck(extractedDomain);
+		if (trustType == '1') enableval = 3;
+		else if (trustType == '2') enableval = 4;
 		if (localStorage['mode'] == 'block') sessionlist = sessionWhiteList;
 		else if (localStorage['mode'] == 'allow') sessionlist = sessionBlackList;
 		sendResponse({status: localStorage['enable'], enable: enableval, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], annoyances: localStorage['annoyances'], closepage: localStorage['classicoptions'], rating: localStorage['rating'], temp: sessionlist, blockeditems: ITEMS[request.tid]['blocked'], alloweditems: ITEMS[request.tid]['allowed'], domainsort: localStorage['domainsort']});
@@ -526,7 +525,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		if (request.src) {
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
 			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked'])) {
-				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node]);
+				var baddiesCheck = baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial']);
+				var extractedDomain = extractDomainFromURL(request.src);
+				var domainCheckStatus = domainCheck(request.src, 1);
+				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheckStatus, baddiesCheck]);
 				updateCount(sender.tab.id);
 			}
 		}
@@ -534,7 +536,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		if (request.src) {
 			if (typeof ITEMS[sender.tab.id]['allowed'] === 'undefined') ITEMS[sender.tab.id]['allowed'] = [];
 			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['allowed'])) {
-				ITEMS[sender.tab.id]['allowed'].push([removeParams(request.src), request.node]);
+				var extractedDomain = extractDomainFromURL(request.src);
+				var domainCheckStatus = domainCheck(request.src, 1);
+				ITEMS[sender.tab.id]['allowed'].push([removeParams(request.src), request.node, extractedDomain, domainCheckStatus]);
 			}
 		}
 	} else if (request.reqtype == 'save') {
@@ -546,7 +550,8 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		if (typeof request.url == 'object') {
 			for (var i=0;i<request.url.length;i++) {
 				if (request.url[i][0] != 'no.script' && request.url[i][0] != 'web.bug') {
-					var requesturl = request.url[i][0];
+					var requesturl = request.url[i];
+					var requesttype = domainCheck(requesturl);
 					var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
 					if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(requesturl, 1) != '0')) && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
 						// do nothing
@@ -580,8 +585,8 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else if (request.reqtype == 'remove-temp') {
 		if (typeof request.url == 'object') {
 			for (var i=0;i<request.url.length;i++) {
-				var requesturl = request.url[i][0];
-				var requesttype = request.url[i][1];
+				var requesturl = request.url[i];
+				var requesttype = domainCheck(requesturl);
 				if (requesttype == '3') {
 					requesttype = 0;
 					if (!requesturl.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !requesturl.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) requesturl = '**.'+getDomain(requesturl);
@@ -792,7 +797,7 @@ function regexify(arr) {
 function updated() {
 	if (!optionExists("version") || localStorage["version"] != version) {
 		// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0
-		if (localStorage["tempregexflag"] != "false") {
+		if (localStorage["tempregexflag"] == "false") {
 			var tempList = JSON.parse(localStorage['blackList']);
 			var tempNewList = [];
 			if (tempList.length) {

@@ -236,6 +236,7 @@ function settingsImport() {
 	}
 	loadOptions();
 	listUpdate();
+	bkg.cacheLists();
 	if (!error) {
 		syncstatus = bkg.freshSync(0);
 		if (syncstatus) {
@@ -401,7 +402,6 @@ function listUpdate() {
 	$(".domainRemover, .topDomainAdd").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
-	bkg.cacheLists();
 	updateExport();
 }
 function listclear(type) {
