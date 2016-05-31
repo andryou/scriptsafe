@@ -1,6 +1,6 @@
 // (c) Andrew Y.
 function baddies(src, amode, antisocial) {
-	var dmn = extractDomainFromURL(relativeToAbsoluteUrl(src));
+	var dmn = extractDomainFromURL(src);
 	var topDomain = getDomain(dmn);
 	if (dmn.indexOf(".") == -1 && src.indexOf(".") != -1) dmn = src;
 	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1 || src.indexOf("apis.google.com/js/platform.js") != -1 || src.indexOf("plus.google.com/js/client:plusone.js") != -1 || src.indexOf("linkedin.com/countserv/count/share") != -1))
@@ -10,7 +10,6 @@ function baddies(src, amode, antisocial) {
 	return false;
 }
 function elementStatus(src, mode, taburl) {
-	src = relativeToAbsoluteUrl(src);
 	if (taburl === undefined) taburl = window.location.hostname;
 	else taburl = extractDomainFromURL(taburl);
 	var domainCheckStatus = domainCheck(src);
@@ -21,18 +20,17 @@ function elementStatus(src, mode, taburl) {
 }
 function thirdParty(url, taburl) {
 	if (url) {
-		var requestHost = relativeToAbsoluteUrl(url);
-		if (domainCheck(requestHost) == '0') return false;
-		var requestHost = extractDomainFromURL(requestHost);
+		if (domainCheck(url) == '0') return false;
+		var url = extractDomainFromURL(url);
 		if (taburl === undefined) documentHost = window.location.hostname;
 		else documentHost = taburl;
-		requestHost = requestHost.replace(/\.+$/, "");
+		url = url.replace(/\.+$/, "");
 		documentHost = documentHost.replace(/\.+$/, "");
-		if (requestHost == documentHost) return false; // if they match exactly (same domain), our job here is done
+		if (url == documentHost) return false; // if they match exactly (same domain), our job here is done
 		// handle IP addresses (if we're still here, then it means the ip addresses don't match)
-		if (requestHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || requestHost.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) || documentHost.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) return true;
+		if (url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) || documentHost.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) return true;
 		// now that IP addresses have been processed, carry on.
-		var elConst = requestHost.split('.').reverse(); // work backwards :)
+		var elConst = url.split('.').reverse(); // work backwards :)
 		var pageConst = documentHost.split('.').reverse();
 		var max = elConst.length;
 		if (max < pageConst.length)
@@ -46,7 +44,8 @@ function thirdParty(url, taburl) {
 		else if (matchCount == 2 && ((pageConst[1] == 'co' || pageConst[1] == 'com' || pageConst[1] == 'net') && pageConst[0] != 'com')) return true;
 		if (matchCount == 2) return false;
 		return true;
-	} else return false; // doesn't have a URL
+	}
+	return false; // doesn't have a URL
 }
 function relativeToAbsoluteUrl(url) { // credit: NotScripts
 	if (!url || url.match(/^http/i))

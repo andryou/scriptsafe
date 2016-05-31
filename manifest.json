@@ -27,5 +27,5 @@
    "options_page": "html/options.html",
    "permissions": [ "http://*/*", "https://*/*", "tabs", "unlimitedStorage", "webRequest", "webRequestBlocking", "storage", "notifications", "privacy" ],
    "update_url": "http://clients2.google.com/service/update2/crx",
-   "version": "1.0.7.1"
+   "version": "1.0.7.2"
 }

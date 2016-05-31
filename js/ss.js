@@ -5,11 +5,12 @@ var iframe = 0;
 // initialize settings object with default settings (that are overwritten by the actual user-set values later on)
 var SETTINGS = {
 	"MODE": "block",
-	"LISTSTATUS": true,
-	"WHITELIST": [""],
-	"BLACKLIST": [""],
-	"WHITELISTSESSION": [""],
-	"BLACKLISTSESSION": [""],
+	"LISTSTATUS": '-1',
+	"DOMAINSTATUS": '-1',
+	"WHITELIST": '',
+	"BLACKLIST": '',
+	"WHITELISTSESSION": '',
+	"BLACKLISTSESSION": '',
 	"SCRIPT": true,
 	"NOSCRIPT": true,
 	"OBJECT": true,
@@ -32,15 +33,19 @@ var SETTINGS = {
 const reStartWProtocol = /^[^\.\/:]+:\/\//i; // credit: NotScripts
 function block(event) {
 	var el = event.target;
-	var elType = el.nodeName.toUpperCase();
 	var elSrc = getElSrc(el);
-	if (elSrc) elSrc = elSrc.toLowerCase();
-	var domainCheckStatus = domainCheck(relativeToAbsoluteUrl(elSrc), 1);
-	var thirdPartyStatus = thirdParty(elSrc);
+	if (!elSrc) return;
+	var elType = el.nodeName.toUpperCase();
+	elSrc = elSrc.toLowerCase();
+	var domainCheckStatus;
+	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+	var thirdPartyStatus = thirdParty(absoluteUrl);
 	var elWidth = $(el).attr('width');
 	var elHeight = $(el).attr('height');
 	var elStyle = $(el).attr('style');
-	if (elSrc && elSrc.substr(0,17) != 'chrome-extension:' && elementStatus(elSrc, SETTINGS['MODE'])
+	if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
+	else domainCheckStatus = domainCheck(absoluteUrl, 1);
+	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatus(absoluteUrl, SETTINGS['MODE'])
 		&& (elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG")
 		&& (
 			(
@@ -65,9 +70,9 @@ function block(event) {
 					(
 						SETTINGS['ANNOYANCES'] == 'true'
 						&& (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))
-						&& baddies(elSrc, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1'
+						&& baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1'
 					)
-					|| (SETTINGS['ANTISOCIAL'] == 'true' && baddies(elSrc, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2')
+					|| (SETTINGS['ANTISOCIAL'] == 'true' && baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2')
 				)
 			)
 			|| (
@@ -89,19 +94,21 @@ function block(event) {
 			if (SETTINGS['WEBBUGS'] == 'true' && (thirdPartyStatus || domainCheckStatus == '1') && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && ((typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5) || (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i)))) {
 				elType = "WEBBUG";
 			}
-			chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: elType});
+			chrome.extension.sendRequest({reqtype: "update-blocked", src: absoluteUrl, node: elType});
 			$(el).remove();
 		}
 	} else {
-		if (SETTINGS['EXPERIMENTAL'] == '0' && elSrc && elSrc.toLowerCase().substr(0,11) != 'javascript:' && elSrc.toLowerCase().substr(0,17) != 'chrome-extension:' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
-			chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: elType});
+		if (SETTINGS['EXPERIMENTAL'] == '0' && elSrc.substr(0,11) != 'javascript:' && elSrc.substr(0,17) != 'chrome-extension:' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
+			chrome.extension.sendRequest({reqtype: "update-allowed", src: absoluteUrl, node: elType});
 		}
 	}
 }
 function postLoadCheck(el) {
 	var elSrc = getElSrc(el);
 	if (!elSrc) return false;
-	if (elSrc.toLowerCase().substr(0,17) != 'chrome-extension:' && elementStatus(elSrc, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdParty(elSrc) || domainCheck(relativeToAbsoluteUrl(elSrc).toLowerCase(), 1) == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false'))
+	elSrc = elSrc.toLowerCase();
+	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatus(absoluteUrl, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdParty(absoluteUrl) || domainCheck(absoluteUrl, 1) == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false'))
 		return true;
 	return false;
 }
@@ -109,12 +116,19 @@ function fallbackRemover(tag) {
 	var elements = document.getElementsByTagName(tag);
 	for (var i = 0; i < elements.length; i++) {
 		var elSrc = getElSrc(elements[i]);
-		if (elSrc && elementStatus(elSrc, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdParty(elSrc) || domainCheck(relativeToAbsoluteUrl(elSrc).toLowerCase(), 1) == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
-			if (elements[i].src) elements[i].src = "";
-			if (elements[i].parentNode) elements[i].parentNode.removeChild(elements[i]);
-			chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: tag});
-		} else {
-			if (elSrc) chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: tag});
+		if (elSrc) {
+			elSrc = elSrc.toLowerCase();
+			var domainCheckStatus;
+			var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+			if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
+			else domainCheckStatus = domainCheck(absoluteUrl, 1);
+			if (elementStatus(absoluteUrl, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdParty(absoluteUrl) || domainCheckStatus == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
+				if (elements[i].src) elements[i].src = "";
+				if (elements[i].parentNode) elements[i].parentNode.removeChild(elements[i]);
+				chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: tag});
+			} else {
+				chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: tag});
+			}
 		}
 	}
 }
@@ -124,7 +138,7 @@ function domainCheck(domain, req) {
 		var baddiesCheck = baddies(domain, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']);
 		if ((SETTINGS['ANNOYANCES'] == 'true' && SETTINGS['ANNOYANCESMODE'] == 'strict' && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2')) return '1';
 	}
-	var domainname = extractDomainFromURL(domain).toLowerCase();
+	var domainname = extractDomainFromURL(domain);
 	if (SETTINGS['MODE'] == 'block' && in_array(domainname, SETTINGS['WHITELISTSESSION'])) return '0';
 	if (SETTINGS['MODE'] == 'allow' && in_array(domainname, SETTINGS['BLACKLISTSESSION'])) return '1';
 	if (in_array(domainname, SETTINGS['WHITELIST'])) return '0';
@@ -135,7 +149,19 @@ function domainCheck(domain, req) {
 	return '-1';
 }
 function blockreferrer() {
-	$("a[rel!='noreferrer']").each(function() { var elSrc = getElSrc(this); if (elSrc) { if (thirdParty(elSrc) && domainCheck(relativeToAbsoluteUrl(elSrc).toLowerCase()) != '0') { $(this).attr("rel","noreferrer"); } } });
+	$("a[rel!='noreferrer']").each(function() {
+		var elSrc = getElSrc(this);
+		if (elSrc) {
+			elSrc = elSrc.toLowerCase();
+			var domainCheckStatus;
+			var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+			if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
+			else domainCheckStatus = domainCheck(absoluteUrl);
+			if (thirdParty(absoluteUrl) && domainCheckStatus != '0') {
+				$(this).attr("rel","noreferrer");
+			}
+		}
+	});
 }
 function ScriptSafe() {
 	if (SETTINGS['LINKTARGET'] != 'off') {
@@ -153,7 +179,10 @@ function ScriptSafe() {
 	if (SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0') {
 		clearUnloads();
 		$("script").each(function() { var elSrc = getElSrc(this); if (postLoadCheck(this)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc && elSrc.toLowerCase().substr(0,11) != 'javascript:' && elSrc.toLowerCase().substr(0,17) != 'chrome-extension:') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); } } });
-		if ((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && domainCheck(window.location.href, 1) == '1'))) {
+		var domainCheckStatus;
+		if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
+		else domainCheckStatus = domainCheck(window.location.href, 1);
+		if ((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && domainCheckStatus == '1'))) {
 			$("a[href^='javascript']").attr("href","javascript:;");
 			$("[onClick]").removeAttr("onClick");
 			$("[onAbort]").removeAttr("onAbort");
@@ -326,8 +355,8 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['SCRIPT'] = response.script;
 		SETTINGS['PRESERVESAMEDOMAIN'] = response.preservesamedomain;
 		SETTINGS['EXPERIMENTAL'] = response.experimental;
-		var domainCheckStatus = domainCheck(window.location.href, 1);
-		if (SETTINGS['EXPERIMENTAL'] == '0' && (((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && domainCheckStatus == '1')) && response.enable == 'true' && SETTINGS['SCRIPT'] == 'true' && domainCheckStatus != '0') || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0')) && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2'))))
+		SETTINGS['DOMAINSTATUS'] = domainCheck(window.location.href, 1);
+		if (SETTINGS['EXPERIMENTAL'] == '0' && (((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && SETTINGS['DOMAINSTATUS'] == '1')) && response.enable == 'true' && SETTINGS['SCRIPT'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0') || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && SETTINGS['DOMAINSTATUS'] != '0')) && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2'))))
 			mitigate();
 		SETTINGS['LISTSTATUS'] = domainCheck(window.location.href);
 		SETTINGS['NOSCRIPT'] = response.noscript;

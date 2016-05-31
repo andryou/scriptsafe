@@ -186,8 +186,11 @@ function ScriptSafe(req) {
 		if (typeof ITEMS[req.tabId] !== 'undefined') extractedDomain = extractDomainFromURL(ITEMS[req.tabId]['url']);
 		var thirdPartyCheck = thirdParty(req.url, extractedDomain);
 		var domainCheckStatus = domainCheck(req.url, 1);
-		if (elementStatus(req.url, localStorage['mode'], ITEMS[req.tabId]['url'])
-		&& (
+		var tabDomainCheckStatus = domainCheck(extractedDomain, 1);
+		var elementStatusCheck;
+		if (tabDomainCheckStatus == '1' && reqtype != 'page') elementStatusCheck = true;
+		else elementStatusCheck = elementStatus(req.url, localStorage['mode'], ITEMS[req.tabId]['url']);
+		if (elementStatusCheck && (
 			(
 				(((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) || (localStorage['webbugs'] == 'true' && reqtype == "image")) && baddiesCheck == '1')
 				|| (localStorage['antisocial'] == 'true' && baddiesCheck == '2')
@@ -198,7 +201,9 @@ function ScriptSafe(req) {
 		)) {
 			if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
 			if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
-				ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase(), extractDomainFromURL(req.url), domainCheckStatus, baddiesCheck]);
+				var extractedReqDomain = extractDomainFromURL(req.url);
+				if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
+				ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, tabDomainCheckStatus, baddiesCheck]);
 				updateCount(req.tabId);
 			}
 			if (reqtype == 'frame') {
@@ -211,7 +216,9 @@ function ScriptSafe(req) {
 			if (reqtype != 'webbug' && reqtype != 'page') {
 				if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
 				if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
-					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractDomainFromURL(req.url), domainCheckStatus]);
+					var extractedReqDomain = extractDomainFromURL(req.url);
+					if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
+					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus]);
 				}
 			}
 			return { cancel: false };
@@ -245,11 +252,11 @@ function domainSort(hosts) {
 	if (hosts.length > 0) {
 		if (typeof hosts[0] === 'object') {
 			for (var h in hosts) {
-				split_hosts.push([getDomain(hosts[h][2]), hosts[h][0], hosts[h][1], hosts[h][2], hosts[h][3], hosts[h][4]]);
+				split_hosts.push([getDomain(hosts[h][2]), hosts[h][0], hosts[h][1], hosts[h][2], hosts[h][3], hosts[h][4], hosts[h][5]]);
 			}
 			split_hosts.sort();
 			for (var h in split_hosts) {
-				sorted_hosts.push([split_hosts[h][1], split_hosts[h][2], split_hosts[h][3], split_hosts[h][4], split_hosts[h][5]]);
+				sorted_hosts.push([split_hosts[h][1], split_hosts[h][2], split_hosts[h][3], split_hosts[h][4], split_hosts[h][5], split_hosts[h][6]]);
 			}
 		} else {
 			for (var h in hosts) {
@@ -271,7 +278,6 @@ function trustCheck(domain) {
 }
 function topHandler(domain, mode) {
 	if (domain) {
-		domainHandler(domain, 2);
 		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
 		domainHandler(domain, mode);
 		return true;
@@ -317,20 +323,16 @@ function domainHandler(domain,action,listtype) {
 			pos = tempBlacklist.indexOf(domain);
 			if (pos != -1) tempBlacklist.splice(pos,1);
 		}
-		if (domain.substr(0,3)=='**.') {
-			if (action != '2') {
-				// Remove exact matches
-				var pos = tempWhitelist.indexOf(domain.substr(3));
-				if (pos != -1) tempWhitelist.splice(pos,1);
-				pos = tempBlacklist.indexOf(domain.substr(3));
-				if (pos != -1) tempBlacklist.splice(pos,1);
-				// Check to see if there are other rules for the domain
-				var whiteInstances = haystackSearch(domain, tempWhitelist);
-				var blackInstances = haystackSearch(domain, tempBlacklist);
+		if (action != 2) {
+			var tempDomain;
+			if (domain.substr(0,3)=='**.') {
+				tempDomain = domain.substr(3);
+				var whiteInstances = haystackSearch(tempDomain, tempWhitelist);
+				var blackInstances = haystackSearch(tempDomain, tempBlacklist);
 				var whiteInstancesCount = whiteInstances.length;
 				var blackInstancesCount = blackInstances.length;
 				if (whiteInstancesCount || blackInstancesCount) {
-					if (confirm('Previous entries detected that refer to specific sub-domains on '+domain.substr(3)+'.\r\nDo you want to delete the previous entries to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, especially if they use regex (e.g. d?main.com).')) {
+					if (confirm('ScriptSafe detected existing entries that refer to specific sub-domains on '+tempDomain+'.\r\nDo you want to delete them in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
 						if (whiteInstancesCount) {
 							for (var x=0; x<whiteInstancesCount; x++) {
 								tempWhitelist.splice(tempWhitelist.indexOf(whiteInstances[x]),1);
@@ -341,9 +343,19 @@ function domainHandler(domain,action,listtype) {
 								tempBlacklist.splice(tempBlacklist.indexOf(blackInstances[x]),1);
 							}
 						}
+					} else {
+						var lingo = '';
+						if (action == 1) lingo = 'dis';
+						if (confirm('Do you still want to proceed '+lingo+'trusting '+domain+'?')) return false;
 					}
 				}
+			} else {
+				tempDomain = '**.'+getDomain(domain);
 			}
+			var pos = tempWhitelist.indexOf(tempDomain);
+			if (pos != -1) tempWhitelist.splice(pos,1);
+			pos = tempBlacklist.indexOf(tempDomain);
+			if (pos != -1) tempBlacklist.splice(pos,1);
 		}
 		switch(action) {
 			case 0:	// Whitelist
@@ -527,8 +539,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked'])) {
 				var baddiesCheck = baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial']);
 				var extractedDomain = extractDomainFromURL(request.src);
-				var domainCheckStatus = domainCheck(request.src, 1);
-				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheckStatus, baddiesCheck]);
+				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
+				var extractedTabDomain = extractDomainFromURL(ITEMS[req.tabId]['url']);
+				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddiesCheck]);
 				updateCount(sender.tab.id);
 			}
 		}
@@ -537,12 +550,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 			if (typeof ITEMS[sender.tab.id]['allowed'] === 'undefined') ITEMS[sender.tab.id]['allowed'] = [];
 			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['allowed'])) {
 				var extractedDomain = extractDomainFromURL(request.src);
-				var domainCheckStatus = domainCheck(request.src, 1);
-				ITEMS[sender.tab.id]['allowed'].push([removeParams(request.src), request.node, extractedDomain, domainCheckStatus]);
+				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
+				ITEMS[sender.tab.id]['allowed'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1)]);
 			}
 		}
 	} else if (request.reqtype == 'save') {
-		domainHandler(request.url, 2, 1);
 		domainHandler(request.url, request.list);
 		freshSync(2);
 		changed = true;
