@@ -218,10 +218,10 @@ function init() {
 											$("#allowed [rel='"+itemdomain+"'] .x_bypass").hide();
 										}
 									}
-									$("#allowed [rel='x_"+tabdomain+"']").children().first().css("font-weight", "bold");
-									$("#allowed").prepend($("#allowed [rel='x_"+tabdomain+"']"));
 								}
 							}
+							$("#allowed [rel='x_"+tabdomain+"']").children().first().css("font-weight", "bold");
+							$("#allowed").prepend($("#allowed [rel='x_"+tabdomain+"']"));
 						}
 						var blockedCount = blocked.length;
 						var allowedCount = allowed.length;
