@@ -512,9 +512,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 			}
 		}
 	} else if (request.reqtype == 'get-list') {
+		var sessionlist;
 		var enableval = domainCheck(request.url);
-		var extractedDomain = extractDomainFromURL(request.url);
-		var trustType = trustCheck(extractedDomain);
+		var trustType = trustCheck(extractDomainFromURL(request.url));
 		if (trustType == '1') enableval = 3;
 		else if (trustType == '2') enableval = 4;
 		if (localStorage['mode'] == 'block') sessionlist = sessionWhiteList;
@@ -551,12 +551,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 			for (var i=0;i<request.url.length;i++) {
 				if (request.url[i][0] != 'no.script' && request.url[i][0] != 'web.bug') {
 					var requesturl = request.url[i];
-					var requesttype = domainCheck(requesturl);
 					var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
 					if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(requesturl, 1) != '0')) && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
 						// do nothing
 					} else {
-						requesttype = request.url[i][1];
+						var requesttype = request.url[i][1];
 						if (requesttype == '3') {
 							requesttype = 0;
 							if (!requesturl.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !requesturl.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) requesturl = '**.'+getDomain(requesturl);
