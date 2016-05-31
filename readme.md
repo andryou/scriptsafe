@@ -28,9 +28,9 @@ https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbd
 Due to the nature of this extension, this will break most sites! It is designed to learn over time with sites that you allow.
 
 ## Info on Permissions Requested by ScriptSafe
-* Read and change all your data on the websites you visit - this sounds scary, but ScriptSafe needs access to pages in order to block things (e.g. scripts, spoof headers, killing webbugs).
-* Display notifications - this is required for sync notifications (if syncing is enabled)
-* Change your privacy-related settings - this is required for the WebRTC Protection feature
+* **"Read and change all your data on the websites you visit"** - this sounds scary, but ScriptSafe needs access to pages in order to block things (e.g. scripts, spoof headers, killing webbugs).
+* **"Display notifications"** - this is required for update and sync notifications (if syncing is enabled)
+* **"Change your privacy-related settings"** - this is required for the WebRTC Protection feature
 
 You can view all the latest ScriptSafe code changes, line-by-line, here: https://github.com/andryou/scriptsafe/commits/master
 
