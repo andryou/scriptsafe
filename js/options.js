@@ -408,6 +408,7 @@ function listclear(type) {
 	if (confirm(['Clear whitelist?','Clear blacklist?'][type])) {
 		localStorage[['whiteList','blackList'][type]] = JSON.stringify([]);
 		listUpdate();
+		bkg.cacheLists();
 		if (bkg.freshSync(2)) {
 			notification('Settings saved and syncing in 30 seconds');
 		} else {
