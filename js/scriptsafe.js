@@ -176,20 +176,20 @@ function ScriptSafe(req) {
 			ITEMS[req.tabId]['url'] = req.url;
 		}
 	}
+	if (typeof ITEMS[req.tabId] === 'undefined') return;
 	if (req.url.substr(0,17) != 'chrome-extension:' && req.url.substr(0,4) == 'http') {
 		var reqtype = req.type;
 		if (reqtype == "sub_frame") reqtype = 'frame';
 		else if (reqtype == "main_frame") reqtype = 'page';
 		else if (reqtype == "image") reqtype = 'webbug';
 		var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial']);
-		var extractedDomain;
-		if (typeof ITEMS[req.tabId] !== 'undefined') extractedDomain = extractDomainFromURL(ITEMS[req.tabId]['url']);
+		var extractedDomain = extractDomainFromURL(ITEMS[req.tabId]['url']);
 		var thirdPartyCheck = thirdParty(req.url, extractedDomain);
 		var domainCheckStatus = domainCheck(req.url, 1);
 		var tabDomainCheckStatus = domainCheck(extractedDomain, 1);
 		var elementStatusCheck;
 		if (tabDomainCheckStatus == '1' && reqtype != 'page') elementStatusCheck = true;
-		else elementStatusCheck = elementStatus(req.url, localStorage['mode'], ITEMS[req.tabId]['url']);
+		else elementStatusCheck = elementStatus(req.url, localStorage['mode'], extractedDomain);
 		if (elementStatusCheck && (
 			(
 				(((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) || (localStorage['webbugs'] == 'true' && reqtype == "image")) && baddiesCheck == '1')
@@ -524,6 +524,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 			}
 		}
 	} else if (request.reqtype == 'get-list') {
+		if (typeof ITEMS[request.tid] === 'undefined') {
+			sendResponse('reload');
+			return;
+		}
 		var sessionlist;
 		var enableval = domainCheck(request.url);
 		var trustType = trustCheck(extractDomainFromURL(request.url));

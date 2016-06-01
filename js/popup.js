@@ -70,7 +70,7 @@ function init() {
 				$(".thirds").html('<i>This tab has loaded no external resources</i>');
 			} else {
 				chrome.extension.sendRequest({reqtype: "get-list", url: taburl, tid: tabid}, function(response) {
-					if (typeof response === 'undefined') {
+					if (response == 'reload') {
 						alert('ScriptSafe was recently updated/reloaded. You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.');
 						window.close();
 						return;
@@ -279,8 +279,7 @@ function init() {
 							} else {
 								$(".pdeny").addClass("selected").attr("title","Blocked (provider of unwanted content)").text("Blocked");
 							}
-							$(".pbypass, .ptrust[rel='3'], .ptrust[rel='4'], .pclear").hide();
-							$(".pallow").hide();
+							$(".pbypass, .ptrust[rel='3'], .ptrust[rel='4'], .pclear, .pallow").hide();
 						} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesStatus == 1) {
 							$(".pdeny").addClass("selected").attr("title","Blocked (provider of unwanted content)").text("Blocked");
 						}
