@@ -323,7 +323,7 @@ function domainHandler(domain,action,listtype) {
 			pos = tempBlacklist.indexOf(domain);
 			if (pos != -1) tempBlacklist.splice(pos,1);
 		}
-		if (action != 2) {
+		if (listtype == 0 && action != 2) {
 			var tempDomain;
 			if (domain.substr(0,3)=='**.') {
 				tempDomain = domain.substr(3);
@@ -346,7 +346,10 @@ function domainHandler(domain,action,listtype) {
 					} else {
 						var lingo = '';
 						if (action == 1) lingo = 'dis';
-						if (confirm('Do you still want to proceed '+lingo+'trusting '+domain+'?')) return false;
+						if (!confirm('Do you still want to proceed '+lingo+'trusting the entire '+tempDomain+' domain?')) {
+							alert('Your change has been cancelled and has not been applied. Please refresh the page.');
+							return false;
+						}
 					}
 				}
 			} else {

@@ -364,8 +364,10 @@ function save(url, el, type) {
 	var selected = el.hasClass("selected");
 	if (val != 2 && selected) return;
 	var trustType = bkg.trustCheck(url);
-	if (val < 2) chrome.extension.sendRequest({reqtype: "save", url: url, list: val});
-	else if (val == 2) {
+	if (val < 2) {
+		bkg.domainHandler(url, '2', '1');
+		chrome.extension.sendRequest({reqtype: "save", url: url, list: val});
+	} else if (val == 2) {
 		if (trustType) url = '**.'+bkg.getDomain(url);
 		if (selected) chrome.extension.sendRequest({reqtype: "remove-temp", url: url, mode: mode, oldlist: el.parent().attr("sn_list")});
 		else chrome.extension.sendRequest({reqtype: "temp", url: url, mode: mode, oldlist: el.parent().attr("sn_list")});
@@ -376,59 +378,59 @@ function save(url, el, type) {
 		bkg.topHandler(url, 1);
 		val = 1;
 	}
-	var specifier;
-	if (val == 1) specifier = '#blocked';
-	else specifier = '#allowed';
 	if (url == tabdomain) chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: val});
 	if (closepage == 'true') window.close();
 	else {
 		if (type == '0') {
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			$(specifier+" [rel='"+url+"']").children().removeClass("selected");
-			$(specifier+" .x_"+url.replace(/\./g,"_")).hide();
-			if (val == 0) $(specifier+" [rel='"+url+"'] .x_whitelist").addClass('selected');
-			else if (val == 1) $(specifier+" [rel='"+url+"'] .x_blacklist").addClass('selected');
-			else if (val == 2) $(specifier+" [rel='"+url+"'] .x_bypass").addClass('selected');
+			$("[rel='"+url+"']").children().removeClass("selected");
+			$(".x_"+url.replace(/\./g,"_")).hide();
+			if (val == 0) $("[rel='"+url+"'] .x_whitelist").addClass('selected');
+			else if (val == 1) $("[rel='"+url+"'] .x_blacklist").addClass('selected');
+			else if (val == 2) $("[rel='"+url+"'] .x_bypass").addClass('selected');
 			$(".pclear").hide();
 			if (el.attr("rel") == '3') {
-				$(".pallow, "+specifier+" [rel='"+url+"'] .x_trust[rel='3']").addClass('selected');
+				$(".pallow, [rel='"+url+"'] .x_trust[rel='3']").addClass('selected');
 			} else if (el.attr("rel") == '4') {
-				$(".pdeny, "+specifier+" [rel='"+url+"'] .x_trust[rel='4']").addClass('selected');
+				$(".pdeny, [rel='"+url+"'] .x_trust[rel='4']").addClass('selected');
 			}
 			if (val < 2) {
-				$(".pbypass, "+specifier+" [rel='"+url+"'] .x_bypass").hide();
-				$(specifier+" .x_"+url.replace(/\./g,"_")+", .pclear").show();
+				$(".pbypass, [rel='"+url+"'] .x_bypass").hide();
+				$(".x_"+url.replace(/\./g,"_")+", .pclear").show();
 				el.addClass('selected');
 			} else {
 				if (!selected) {
 					el.addClass('selected');
-					$(specifier+" [rel='"+url+"'] .x_bypass").addClass('selected');
+					$("[rel='"+url+"'] .x_bypass").addClass('selected');
 				} else {
-					$(specifier+" [rel='"+url+"'] .x_bypass").removeClass('selected');
+					$("[rel='"+url+"'] .x_bypass").removeClass('selected');
 				}
 			}
 		} else if (type == '1') {
 			el.parent().children().removeClass("selected");
-			$(specifier+" .x_"+url.replace(/\./g,"_")).hide();
+			$(".x_"+url.replace(/\./g,"_")).hide();
 			if (url == tabdomain) {
 				$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
 				$(".pclear").hide();
 				if (val == 0) $(".pallow").addClass('selected');
 				else if (val == 1) $(".pdeny").addClass('selected');
 				if (el.attr("rel") == '3') {
-					$(".ptrust[rel='3'], "+specifier+" [rel='"+url+"'] .x_whitelist").addClass('selected');
+					$(".ptrust[rel='3'], [rel='"+url+"'] .x_whitelist").addClass('selected');
 				} else if (el.attr("rel") == '4') {
-					$(".ptrust[rel='4'], "+specifier+" [rel='"+url+"'] .x_blacklist").addClass('selected');
+					$(".ptrust[rel='4'], [rel='"+url+"'] .x_blacklist").addClass('selected');
 				}
 			}
 			if (val < 2) {
 				if (url == tabdomain) {
 					$(".pclear").show();
 					$(".pbypass").hide();
+				} else {
+					if (el.attr("rel") == '3') $("[rel='"+url+"'] .x_whitelist").addClass('selected');
+					else if (el.attr("rel") == '4') $("[rel='"+url+"'] .x_blacklist").addClass('selected');
 				}
 				el.addClass('selected');
-				$(specifier+" .x_"+url.replace(/\./g,"_")).show();
-				$(specifier+" [rel='"+url+"'] .x_bypass").hide();
+				$(".x_"+url.replace(/\./g,"_")).show();
+				$("[rel='"+url+"'] .x_bypass").hide();
 			} else {
 				if (!selected) {
 					el.addClass('selected');
@@ -436,7 +438,7 @@ function save(url, el, type) {
 				} else {
 					if (url == tabdomain) $(".pbypass").removeClass('selected').show();
 				}
-				$(specifier+" [rel='"+url+"'] .x_bypass").show();
+				$("[rel='"+url+"'] .x_bypass").show();
 			}
 		}
 	}
