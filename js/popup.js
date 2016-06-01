@@ -70,6 +70,11 @@ function init() {
 				$(".thirds").html('<i>This tab has loaded no external resources</i>');
 			} else {
 				chrome.extension.sendRequest({reqtype: "get-list", url: taburl, tid: tabid}, function(response) {
+					if (typeof response === 'undefined') {
+						alert('ScriptSafe has recently updated. You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.');
+						window.close();
+						return;
+					}
 					mode = response.mode;
 					var responseBlockedCount = response.blockeditems.length;
 					var responseAllowedCount = response.alloweditems.length;
