@@ -71,7 +71,7 @@ function init() {
 			} else {
 				chrome.extension.sendRequest({reqtype: "get-list", url: taburl, tid: tabid}, function(response) {
 					if (typeof response === 'undefined') {
-						alert('ScriptSafe has recently updated. You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.');
+						alert('ScriptSafe was recently updated/reloaded. You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.');
 						window.close();
 						return;
 					}
