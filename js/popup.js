@@ -274,7 +274,7 @@ function init() {
 							} else {
 								$(".pdeny").addClass("selected").attr("title","Blocked (provider of unwanted content)").text("Blocked");
 							}
-							$(".pbypass, .ptrust[rel='3'], .ptrust[rel='4']").hide();
+							$(".pbypass, .ptrust[rel='3'], .ptrust[rel='4'], .ptrust[rel='4'], .pclear").hide();
 							$(".pallow").hide();
 						} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesStatus == 1) {
 							$(".pdeny").addClass("selected").attr("title","Blocked (provider of unwanted content)").text("Blocked");
