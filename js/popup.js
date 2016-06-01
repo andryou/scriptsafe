@@ -50,8 +50,8 @@ function truncate(str, len) {
 }
 document.addEventListener('DOMContentLoaded', function () {
 	setTimeout(init, 0);
-	$("#pop_quick").click(function() { openTab('https://www.andryou.com/2011/08/21/scriptsafe-a-quick-guide/'); });
-	$("#pop_overview").click(function() { openTab('https://www.andryou.com/2011/08/14/scriptsafe/'); });
+	$("#pop_ay").click(function() { openTab('https://twitter.com/andryou'); });
+	$("#pop_docs").click(function() { openTab('https://github.com/andryou/scriptsafe/wiki'); });
 	$("#pop_project").click(function() { openTab('https://github.com/andryou/scriptsafe'); });
 	$("#pop_options").click(function() { openTab(chrome.extension.getURL('html/options.html')); });
 	$("#pop_webstore").click(function() { openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });

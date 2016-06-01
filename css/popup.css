@@ -1,5 +1,6 @@
 body { font-family: arial, sans-serif; font-size: 12px; margin: 5px 20px 5px 5px; padding: 0px; width: 575px; }
-td, th { vertical-align: top; font-family: arial, sans-serif; font-size: 12px; text-align: left; }
+td, th { font-family: arial, sans-serif; font-size: 12px; text-align: left; }
+td {  vertical-align: top; }
 th { padding-bottom: 5px; }
 #closebtn { width: 5px; text-align: right; }
 #container { position: relative; padding-bottom: 25px; }
@@ -11,7 +12,7 @@ table { width: 100%; }
 
 #footer a, #credit a { text-decoration: underline; }
 #footer a:hover, #credit a:hover { text-decoration: none; }
-#parent, #currentdomain { width: 72px; padding-left: 5px; border-left: 1px solid #ccc; }
+#parent, #currentdomain { max-width: 200px; padding-left: 5px; border-left: 1px solid #ccc; word-wrap: break-word; }
 #parent div { margin: 2px auto; }
 .allowed, .blocked { padding: 0 5px; }
 .bolded { font-weight: bold; }
@@ -135,7 +136,7 @@ span.box {
 	border: 1px solid transparent;
 }
 .box2:hover {
-	border: 1px solid #2F5BB7;
+	border: 1px solid #7a0000;
 	text-shadow: 0 1px rgba(0, 0, 0, 0.3);
 	background-color: #940000;
 	background-image: -webkit-linear-gradient(top,#a60000,#940000);

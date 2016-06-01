@@ -1,9 +1,4 @@
-// The below is the following free HOSTS projects with a few custom entries of my own (first two blocks separated by "//"):
-// 		Peter Lowe's HOSTS Project: http://pgl.yoyo.org/adservers/serverlist.php?hostformat=plain&showintro=0 (~2,762)
-// 		MalwareDomainList.com Hosts List: http://www.malwaredomainlist.com/hostslist/hosts.txt (~2,198)
-// 		MVPS: http://winhelp2002.mvps.org/hosts.txt (~14,728)
-//		hpHOSTS (ad/tracking servers): http://hosts-file.net/ad_servers.txt (~10,629)
-// Duplicates removed, list optimized to reduce file size and false positives :)
+// Custom antisocial list below.
 
 var antisocial1 = [
 'addthis.com',
@@ -54,6 +49,13 @@ var antisocial2 = [
 'widget.pushbullet.com',
 'widgets.twimg.com'
 ];
+
+// The below is the following free HOSTS projects:
+// 		Peter Lowe's HOSTS Project: http://pgl.yoyo.org/adservers/serverlist.php?hostformat=plain&showintro=0
+// 		MalwareDomainList.com Hosts List: http://www.malwaredomainlist.com/hostslist/hosts.txt
+// 		MVPS: http://winhelp2002.mvps.org/hosts.txt
+//		hpHOSTS (ad/tracking servers): http://hosts-file.net/ad_servers.txt
+// Duplicates removed, list optimized to reduce file size and false positives :)
 
 var yoyo1 = [
 '00fun.com',
@@ -1896,6 +1898,7 @@ var yoyo1 = [
 'builder.com',
 'buildtraffic.com',
 'buildtrafficx.com',
+'buildviet.info',
 'builfico.de',
 'buldog-stats.com',
 'bulgariabg.com',
@@ -3079,8 +3082,6 @@ var yoyo1 = [
 'errornuker.com',
 'ertya.com',
 'escalatenetwork.com',
-'esd-coach.de',
-'esdcoach.de',
 'esellerate.net',
 'esomniture.com',
 'espdesign.com.au',
@@ -4298,6 +4299,7 @@ var yoyo1 = [
 'justad.mobi',
 'justcounter.com',
 'justgetitfaster.com',
+'justkeeprunning.nl',
 'justns.com',
 'justrelevant.com',
 'justsaywow.com',
@@ -8088,7 +8090,6 @@ var yoyo1 = [
 'zenkreka.com',
 'zenzuu.com',
 'zerezas.com',
-'zergnet.com ',
 'zeroredirect.com',
 'zeroredirect1.com',
 'zetatrk.com',
@@ -13295,6 +13296,7 @@ var yoyo2 = [
 'arlequin02.levillage.org',
 'armstrongcreekgeleedpotig.imber.me.uk',
 'arnmp.voluumtrk.com',
+'arrange.telcos.cl',
 'ars.couphole.com',
 'arsconsole.global-intermedia.com',
 'art-of-forex.justclick.ru',
@@ -13953,6 +13955,7 @@ var yoyo2 = [
 'barbregister.2cnt.net',
 'barbvm.2cnt.net',
 'barium.cheezdev.com',
+'bark.synricha.org',
 'barnesandnoble.bfast.com',
 'bass.312sellnow.com',
 'bat.adforum.com',
@@ -14089,6 +14092,7 @@ var yoyo2 = [
 'bimg.abv.bg',
 'binglee-com-au.b.appier.net',
 'bintiye.helpthevets.org',
+'biplane.yodyiam.com',
 'bist.ailsg.com',
 'bit.ehow.com',
 'bitburg.adtech.fr',
@@ -14201,6 +14205,7 @@ var yoyo2 = [
 'brattest4.2cnt.net',
 'bravo.israelweather.co.il',
 'brcache.madthumbs.com',
+'breeches.urra-servicios.cl',
 'brew-u-ex.tekblue.net',
 'bridgetrack.speedera.r3h.net',
 'bright.bncnt.com',
@@ -15230,6 +15235,7 @@ var yoyo2 = [
 'collector.stats.webs.com',
 'collector.tescocompare.com',
 'collector.viki.io',
+'colonization.salyani.tk',
 'colorfoto.digidip.net',
 'com.adv.vz.ru',
 'com.djinnworks.sdm.s3.amazonaws.com',
@@ -16149,6 +16155,7 @@ var yoyo2 = [
 'direct.reporo.net',
 'direct.tekblue.net',
 'direct.travelocity.com',
+'direct.tuvalet.tk',
 'directads.epom.com',
 'directads.mcafee.com',
 'directory.snapshot.toolbar.conduit-services.com',
@@ -16674,6 +16681,7 @@ var yoyo2 = [
 'excelpractic.justclick.ru',
 'exchange.xbiz.com',
 'excitable.charmedmultimedia.eu',
+'exhaust.tissmorgan.cl',
 'exit.macandbumble.com',
 'exit.oxcash2.com',
 'exit.silvercash.com',
@@ -16801,6 +16809,7 @@ var yoyo2 = [
 'fastly.bench.cedexis.com',
 'fatads.toldya.com',
 'fate.p2ptree.org',
+'fatigue.top-yoo.com',
 'faz.ivwbox.de',
 'faz.met.vgwort.de',
 'fb.cashtraffic.com',
@@ -17078,6 +17087,7 @@ var yoyo2 = [
 'galleries1.justcreampie.com',
 'gallup.2cnt.net',
 'galtthemes.ezthemes.com',
+'gambler.schranz-racing.ch',
 'game4mobile.hayday.mobi',
 'gameads.digyourowngrave.com',
 'gan.wavecdn.net',
@@ -17332,6 +17342,7 @@ var yoyo2 = [
 'graphics.streamray.com',
 'graphics7.nytimes.com',
 'graphics8.nytimes.m7z.net',
+'grease.yodyiam.com',
 'green.erne.co',
 'green.virtual-nights.com',
 'greentooth.xtgem.com',
@@ -17357,6 +17368,7 @@ var yoyo2 = [
 'gu-pix.appspot.com',
 'guannan.3322.net',
 'guard.majormodels.com.br',
+'guardian.skidiot.com',
 'gui.secure.mobile.contentabc.com',
 'gumlz.voluumtrk.com',
 'gun.vrfitnesscoach.com',
@@ -18361,6 +18373,7 @@ var yoyo2 = [
 'kea98.voluumtrk.com',
 'kedz.ansonslimited.com',
 'keemy.butlerelectricsupply.com',
+'keeper.seikukan.cl',
 'keisu.eproof.com',
 'keisu02.eproof.com',
 'kek2s.voluumtrk.com',
@@ -18559,6 +18572,7 @@ var yoyo2 = [
 'license20121011.getjar.com',
 'life-in-travels.justclick.ru',
 'life.imagepix.org',
+'lifeless.sanfran.com.ar',
 'lifemediahouse1.onlinewelten.com',
 'lifescience.sysu.edu.cn',
 'lifetoyou.justclick.ru',
@@ -18878,6 +18892,7 @@ var yoyo2 = [
 'lunafetch.about.com',
 'lunametrics.wpengine.netdna-cdn.com',
 'lunatic.freeshinfo.tk',
+'lunge.yodyiam.com',
 'lup5z.voluumtrk.com',
 'luu.lightquartrate.com',
 'lvler.voluumtrk.com',
@@ -19452,6 +19467,7 @@ var yoyo2 = [
 'middle.porn8een.com',
 'mig.nexac.com',
 'milira.justclick.ru',
+'militiaman.sewapompabeton.com',
 'million.francite.com',
 'mimage.opentext.com',
 'minerva.healthcentral.com',
@@ -19610,6 +19626,7 @@ var yoyo2 = [
 'mtvn.demdex.net',
 'muas4.voluumtrk.com',
 'muesq.voluumtrk.com',
+'mules.teamveno.eu',
 'multi.xnxx.com',
 'munaluchibridal.munaluchibridema.netdna-cdn.com',
 'murbil.hostei.com',
@@ -20639,6 +20656,7 @@ var yoyo2 = [
 'pantserdek.steelblast.co.uk',
 'pap-partner.flirtfair.de',
 'pap.zalando.de',
+'paper.tandilhack.ml',
 'papi.mynativeads.com',
 'papi.slideme.org',
 'paris.typepad.com',
@@ -20953,6 +20971,7 @@ var yoyo2 = [
 'playboy.ivwbox.de',
 'player-services.goviral-content.com',
 'player.piksel.com',
+'player.rlovebon.com',
 'playersclub.reefclubcasino.com',
 'plb27.voluumtrk.com',
 'plengeh.wen.ru',
@@ -21042,6 +21061,7 @@ var yoyo2 = [
 'postmedia.demdex.net',
 'postpixel.vindicosuite.com',
 'potd.onlytease.com',
+'poverty.tutoner.tk',
 'power-affliate.blogspot.com',
 'powercount.jswelt.de',
 'pp-serve.newsinc.com',
@@ -22273,6 +22293,7 @@ var yoyo2 = [
 'share.loginradius.com',
 'share.pluso.ru',
 'shared.9msn.com.au',
+'sharp.septembriecandva.ro',
 'shat.bronzevillechicagohomes.com',
 'sher.index.hu',
 'shield.sitelock.com',
@@ -22296,6 +22317,7 @@ var yoyo2 = [
 'show.yeabble.com',
 'show2.textads.lv',
 'showcount.honest.com',
+'shrink.sungjoo.tk',
 'shz.ivwbox.de',
 'si1.default-homepage-network.com',
 'siads.sv.publicus.com',
@@ -22599,6 +22621,7 @@ var yoyo2 = [
 'sqm.telemetry.microsoft.com',
 'sqm.telemetry.microsoft.com.nsatc.net',
 'squarespace.evyy.net',
+'squeak.veterinariasfasis.com.ar',
 'squid.diepresse.com',
 'src.kitcode.net',
 'srch.startnow.com',
@@ -23636,6 +23659,8 @@ var yoyo2 = [
 'thirdpartycdn.lumovies.com',
 'thirdworld.magnify.net',
 'threepillarsattorneys.vtgbackstage.com',
+'thriftless.tinhocxd.com',
+'thrust.tinhocxd.com',
 'thumbs.sunporno.com',
 'ti.tradetracker.nl',
 'tiads.essence.com',
@@ -24731,6 +24756,7 @@ var yoyo2 = [
 'vortex-win.data.microsoft.com',
 'vortex.data.microsoft.com',
 'vote.sparklit.com',
+'votes.tissmorgan.cl',
 'vox.ivwbox.de',
 'vpc.altitude-arena.com',
 'vpos.bnex.com',
