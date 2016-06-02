@@ -65,7 +65,7 @@ function init() {
 			tabdomain = bkg.extractDomainFromURL(taburl);
 			if (tabdomain.substr(0,4) == 'www.') tabdomain = tabdomain.substr(4);
 			tabid = tab.id;
-			if (taburl.substr(0, 4) != 'http') {
+			if (taburl.substr(0, 4) != 'http' || tabdomain == 'chrome.google.com') {
 				$("#currentdomain").html("Not filtered");
 				$(".thirds").html('<i>This tab has loaded no external resources</i>');
 			} else {
