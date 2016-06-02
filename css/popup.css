@@ -1,22 +1,21 @@
-body { font-family: arial, sans-serif; font-size: 12px; margin: 5px 20px 5px 5px; padding: 0px; width: 575px; }
+body { font-family: arial, sans-serif; font-size: 12px; margin: 5px; padding: 0px; width: 575px; }
+#container { padding-bottom: 25px; width: 100%; }
+table { width: 100%; }
 td, th { font-family: arial, sans-serif; font-size: 12px; text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
 #closebtn { width: 5px; text-align: right; }
-#container { position: relative; padding-bottom: 25px; }
-table { width: 100%; }
-#credit { position: absolute; bottom: 0; left: 0; font-weight: bold; font-size: 11px; color: #555; }
-#footer { position: absolute; bottom: 0; right: 0; font-weight: bold; font-size: 11px; color: #555; }
+#credit { position: absolute; bottom: 5px; left: 5px; font-weight: bold; font-size: 11px; color: #555; }
+#footer { position: absolute; bottom: 5px; right: 5px; font-weight: bold; font-size: 11px; color: #555; }
 .thirditem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover { text-decoration: underline; }
-
 #footer a, #credit a { text-decoration: underline; }
 #footer a:hover, #credit a:hover { text-decoration: none; }
-#parent, #currentdomain { width: 154px; padding-left: 5px; border-left: 1px solid #ccc; word-break: break-all; }
+#parent, #currentdomain { max-width: 210px; padding-left: 5px; border-left: 1px solid #ccc; word-wrap: break-word; }
 #parent div { margin: 2px auto; }
 .allowed, .blocked { padding: 0 5px; }
 .bolded { font-weight: bold; }
-.thirds { width: 410px; padding-top: 5px; padding-right: 5px; }
+.thirds { min-width: 316px; padding-top: 5px; padding-right: 5px; }
 .thirditem {
 	clear: both;
 	border-bottom: 1px solid #eee;
@@ -236,9 +235,6 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.prevoke {
-	clear: both;
-}
 .box5 {
 	clear: both;
 	width: auto;
@@ -284,4 +280,9 @@ span.box {
 	-o-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.allowsession, .prevoke { margin-left: 0px; margin-right: 0px; }
+.prevoke {
+	clear: both;
+	margin-bottom: 0px;
 }

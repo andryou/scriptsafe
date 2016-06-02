@@ -545,11 +545,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		if (request.src) {
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
 			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked'])) {
-				var baddiesCheck = baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial']);
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
-				var extractedTabDomain = extractDomainFromURL(ITEMS[req.tabId]['url']);
-				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddiesCheck]);
+				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
+				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'])]);
 				updateCount(sender.tab.id);
 			}
 		}

@@ -49,7 +49,7 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
-	setTimeout(init, 0);
+	setTimeout(init, 25);
 	$("#pop_ay").click(function() { openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").click(function() { openTab('https://github.com/andryou/scriptsafe/wiki'); });
 	$("#pop_project").click(function() { openTab('https://github.com/andryou/scriptsafe'); });
@@ -337,6 +337,7 @@ function remove(url, el, type) {
 			$(".x_"+urlfriendly).parent().children().removeClass("selected");
 			$(".x_"+urlfriendly).hide();
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
+			if ($("[rel='"+url+"'] .x_blacklist").text() == 'Unwanted') $("[rel='"+url+"'] .x_blacklist").addClass("selected");
 			$(".pbypass, [rel='"+url+"'] .x_bypass").show();
 		} else if (type == '1') {
 			if (url == tabdomain) {
@@ -346,6 +347,7 @@ function remove(url, el, type) {
 			}
 			$("[rel='"+url+"'] .x_bypass").show();
 			el.parent().children().removeClass("selected");
+			if ($("[rel='"+url+"'] .x_blacklist").text() == 'Unwanted') $("[rel='"+url+"'] .x_blacklist").addClass("selected");
 		}
 	}
 }
@@ -427,6 +429,7 @@ function save(url, el, type) {
 					if (url == tabdomain) $(".pbypass").addClass('selected').show();
 				} else {
 					if (url == tabdomain) $(".pbypass").removeClass('selected').show();
+					if ($("[rel='"+url+"'] .x_blacklist").text() == 'Unwanted') $("[rel='"+url+"'] .x_blacklist").addClass("selected");
 				}
 				$("[rel='"+url+"'] .x_bypass").show();
 			}
