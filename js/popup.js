@@ -119,13 +119,6 @@ function init() {
 												allowedtype = 4;
 											} else allowedtype = 1;
 											$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainanchor+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist selected" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
-											if ((response.annoyances == 'true' && response.annoyancesmode == 'strict' && domainCheckStatus == '-1' && baddiesstatus == 1) || (response.antisocial == 'true' && baddiesstatus == '2')) {
-												// empty
-											} else {
-												if (mode == 'allow') {
-													$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).show();
-												}
-											}
 										} else {
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainanchor+'"><span><span>&lt;'+response.blockeditems[i][1]+'&gt;</span> (<span rel="count_'+itemdomain+'">1</span>)</span></div>');
@@ -202,9 +195,6 @@ function init() {
 											} else allowedtype = 0;
 											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomain+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear">Clear</span><span class="box box1 x_whitelist selected" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
 											$("#allowed .x_"+itemdomainfriendly).bind("click", x_removehandle);
-											if (mode == 'block') {
-												$("#allowed .x_"+itemdomainfriendly).show();
-											}
 										} else {
 											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomain+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
 											$("#allowed [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).hide();
