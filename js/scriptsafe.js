@@ -440,7 +440,8 @@ function updateCount(tabId) {
 	chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
 }
 function removeHash(str) {
-	if (str.indexOf("#") != -1) return str.substr(0, str.indexOf("#"));
+	var hashindex = str.indexOf("#");
+	if (hashindex != -1) return str.substr(0, hashindex);
 	return str;
 }
 function resetTabData(id, url) {
