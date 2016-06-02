@@ -272,7 +272,7 @@ function topHandler(domain, mode) {
 function haystackSearch(needle, haystack) {
 	var keys = [];
 	var rootdomain = getDomain(needle);
-	for (key in haystack) {
+	for (var key in haystack) {
 		if (rootdomain == getDomain(haystack[key])) {
 			keys.push(haystack[key]);
 		}
