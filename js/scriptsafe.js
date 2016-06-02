@@ -1,11 +1,12 @@
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
+'use strict';
 var version = (function () {
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', chrome.extension.getURL('../manifest.json'), false);
 	xhr.send(null);
 	return JSON.parse(xhr.responseText).version;
 }());
-var synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
+var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
 var popup = [];
 var changed = false;
 const ITEMS = {};
@@ -426,7 +427,6 @@ function setDefaultOptions() {
 	defaultOptionValue("useragentspoof_os", "off");
 	defaultOptionValue("referrerspoof", "off");
 	defaultOptionValue("cookies", "true");
-	defaultOptionValue("tempregexflag", "false"); // will delete this localStorage item in the future; just needed for 1-time whitelist/blacklist updates.
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
@@ -629,6 +629,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else
 		sendResponse({});
 });
+chrome.runtime.onUpdateAvailable.addListener(function (details) {
+	chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}); 
+});
 // Debug Synced Items
 /*
 chrome.storage.sync.get(null, function(changes) {
@@ -786,7 +789,6 @@ function listsSync(mode) {
 function init() {
 	setDefaultOptions();
 	initWebRTC();
-	updated();
 	cacheLists();
 }
 function cacheLists() {
@@ -813,10 +815,10 @@ function regexify(arr) {
 	if (arr.length == 0) return '';
 	return '(?:www\\.|^)(?:'+arr.join('|').replace(/\./g, '\\.').replace(/(\||^)\[/g, '$1\\[').replace(/\](?:\\||$)/g, '\\]').replace(/\?/g, '.').replace(/\*\*\\./g, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')';
 }
-function updated() {
-	if (!optionExists("version") || localStorage["version"] != version) {
-		// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0
-		if (localStorage["tempregexflag"] == "false") {
+if (!optionExists("version") || localStorage["version"] != version) {
+	// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0
+	if (!optionExists("tempregexflag")) {
+		if (optionExists("version")) {
 			var tempList = JSON.parse(localStorage['blackList']);
 			var tempNewList = [];
 			if (tempList.length) {
@@ -835,12 +837,12 @@ function updated() {
 				});
 				localStorage['whiteList'] = JSON.stringify(tempNewList);
 			}
-			localStorage['tempregexflag'] = "true"; // note: delete this in the future - only temporary for required list updates re:regex support and existing trusted domains
 		}
-		localStorage["version"] = version;
-		if (localStorage["updatenotify"] == "true") {
-			chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html'), selected: true });
-		}
+		localStorage['tempregexflag'] = "true";
+	}
+	localStorage["version"] = version;
+	if (localStorage["updatenotify"] == "true") {
+		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html'), selected: true });
 	}
 }
 if (storageapi) {
@@ -856,7 +858,4 @@ if (storageapi) {
 	});
 	importSyncHandle(0);
 }
-chrome.runtime.onUpdateAvailable.addListener(function (details) {
-	chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}); 
-});
 init();

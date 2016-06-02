@@ -1,12 +1,15 @@
 // (c) Andrew Y.
+'use strict';
 function baddies(src, amode, antisocial) {
 	var dmn = extractDomainFromURL(src);
 	var topDomain = getDomain(dmn);
 	if (dmn.indexOf(".") == -1 && src.indexOf(".") != -1) dmn = src;
 	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1 || src.indexOf("apis.google.com/js/platform.js") != -1 || src.indexOf("plus.google.com/js/client:plusone.js") != -1 || src.indexOf("linkedin.com/countserv/count/share") != -1))
 		return '2';
-	if (((amode == 'relaxed' && domainCheck(dmn, 1) != '0') || amode == 'strict') && (yoyo2.indexOf(dmn) != -1 || yoyo1.indexOf(topDomain) != -1))
-		return '1';
+	if ((amode == 'relaxed' && domainCheck(dmn, 1) != '0') || amode == 'strict') {
+		if (new BS(yoyo1).search(topDomain)) return '1';
+		if (new BS(yoyo2).search(dmn)) return '1';
+	}
 	return false;
 }
 function elementStatus(src, mode, taburl) {
@@ -22,6 +25,7 @@ function thirdParty(url, taburl) {
 	if (url) {
 		if (domainCheck(url) == '0') return false;
 		var url = extractDomainFromURL(url);
+		var documentHost;
 		if (taburl === undefined) documentHost = window.location.hostname;
 		else documentHost = taburl;
 		url = url.replace(/\.+$/, "");
@@ -36,7 +40,7 @@ function thirdParty(url, taburl) {
 		if (max < pageConst.length)
 			max = pageConst.length;
 		var matchCount = 0;
-		for (i=0;i<max;i++) {
+		for (var i=0;i<max;i++) {
 			if (elConst[i] && pageConst[i] && elConst[i] == pageConst[i]) matchCount++;
 			else break; // exit loop as soon as something doesn't exist/match
 		}
@@ -93,3 +97,109 @@ function in_array(needle, haystack) {
 	if (haystack && new RegExp(haystack).test(needle)) return '1';
 	return false;
 }
+// Js-BinarySearch by amgadfahmi
+// https://amgadfahmi.github.io/js-binarysearch/
+var BS = function(array) {
+    if (array) {
+        this.internalArray = array;
+    } else {
+        throw new error('Object is not defined');
+    }
+    return this;
+};
+
+BS.prototype.search = function(target, key) {
+    if (key && typeof key === 'string') {
+        return this.searchObj(target, key);
+    } else if (typeof target === 'number') {
+        return this.searchNum(target);
+    } else if (typeof target === 'string') {
+        return this.searchStr(target);
+    }
+};
+
+BS.prototype.searchNum = function(target) {
+    var min = 0,
+        max = this.internalArray.length - 1,
+        mid;
+    while (min <= max) {
+        mid = Math.round(min + (max - min) / 2);
+        if (this.internalArray[mid] === target) {
+            return this.internalArray[mid];
+        } else if (this.internalArray[mid] < target) {
+            min = mid + 1;
+        } else {
+            max = mid - 1;
+        }
+    }
+};
+
+BS.prototype.searchStr = function(target) {
+    var min = 0,
+        max = this.internalArray.length - 1,
+        mid;
+    while (min <= max) {
+        mid = Math.round(min + (max - min) / 2);
+        if (this.internalArray[mid] === target) {
+            return this.internalArray[mid];
+        } else if (this.internalArray[mid] < target) {
+            min = mid + 1;
+        } else {
+            max = mid - 1;
+        }
+    }
+};
+
+BS.prototype.searchObj = function(target, key) {
+    var min = 0,
+        max = this.internalArray.length - 1,
+        temp, mid;
+    while (min <= max) {
+        mid = Math.round(min + (max - min) / 2);
+        temp = this.internalArray[mid] ? this.internalArray[mid][key] : undefined;
+        if (temp === target) {
+            return this.internalArray[mid];
+        } else if (temp < target) {
+            min = mid + 1;
+        } else {
+            max = mid - 1;
+        }
+    }
+};
+
+BS.prototype.sort = function(key) {
+    if (this.internalArray.length <= 1) {
+        return;
+    }
+    var isObject = key && typeof key === 'string';
+    var isNumber = typeof this.internalArray[0] === 'number';
+    if (isObject) {
+        this.sortObj(key);
+        return this;
+    } else if (isNumber) {
+        this.sortNum();
+        return this;
+    } else {
+        this.internalArray.sort();
+        return this;
+    }
+};
+
+BS.prototype.sortObj = function(key) {
+    var isString = typeof this.internalArray[0][key] === 'string';
+    if (isString) {
+        this.internalArray.sort(function(a, b) {
+            return a[key].localeCompare(b[key]);
+        });
+    } else {
+        this.internalArray.sort(function(a, b) {
+            return a[key] - b[key];
+        });
+    }
+};
+
+BS.prototype.sortNum = function() {
+    this.internalArray.sort(function(a, b) {
+        return a - b;
+    });
+};
