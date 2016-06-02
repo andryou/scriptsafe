@@ -132,8 +132,6 @@ function loadOptions() {
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
-	loadElement("webrtc");
-	if (!bkg.checkWebRTC()) $("#webrtccell").html('<strong style="color: red;">This version of Chrome does not support WebRTC protection</strong>');
 	loadCheckbox("preservesamedomain");
 	loadCheckbox("classicoptions");
 	loadCheckbox("referrer");
@@ -173,7 +171,6 @@ function saveOptions() {
 	saveElement("annoyancesmode");
 	saveCheckbox("antisocial");
 	saveCheckbox("webbugs");
-	saveElement("webrtc");
 	saveCheckbox("preservesamedomain");
 	saveCheckbox("classicoptions");
 	saveCheckbox("referrer");
@@ -199,7 +196,6 @@ function saveOptions() {
 	else $("#useragentspoof_os").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
-	bkg.initWebRTC();
 	syncstatus = bkg.freshSync(1);
 	if (syncstatus) {
 		notification('Settings saved and syncing in 30 seconds');
@@ -245,7 +241,6 @@ function settingsImport() {
 			notification('Settings imported successfully');
 		}
 		bkg.refreshRequestTypes();
-		bkg.initWebRTC();
 		$("#settingsimport").val("");
 	} else {
 		bkg.freshSync(0);

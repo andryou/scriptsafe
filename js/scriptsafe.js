@@ -25,22 +25,6 @@ function refreshRequestTypes() {
 	if (localStorage['xml'] == 'true' || localStorage['xml'] == 'all')
 		requestTypes.push('xmlhttprequest');
 }
-function initWebRTC() {
-	if (!checkWebRTC()) return;
-	if (localStorage['webrtc'] != 'off') {
-		chrome.privacy.network.webRTCIPHandlingPolicy.set({
-			value: localStorage['webrtc'],
-		});
-	} else {
-		chrome.privacy.network.webRTCIPHandlingPolicy.set({
-			value: 'default',
-		});		
-	}
-}
-function checkWebRTC() {
-	if (typeof chrome.privacy.network.webRTCIPHandlingPolicy === 'undefined') return false;
-	return true;
-}
 if (typeof chrome.storage !== 'undefined') {
 	storageapi = true;
 }
@@ -417,7 +401,6 @@ function setDefaultOptions() {
 	defaultOptionValue("antisocial", "false");
 	defaultOptionValue("preservesamedomain", "false");
 	defaultOptionValue("webbugs", "true");
-	defaultOptionValue("webrtc", "default_public_interface_only");
 	defaultOptionValue("classicoptions", "false");
 	defaultOptionValue("rating", "true");
 	defaultOptionValue("referrer", "true");
@@ -788,7 +771,6 @@ function listsSync(mode) {
 //////////////////////////////////////////////////////
 function init() {
 	setDefaultOptions();
-	initWebRTC();
 	cacheLists();
 }
 function cacheLists() {
