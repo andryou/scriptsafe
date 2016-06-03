@@ -1,4 +1,5 @@
 // (c) Andrew Y.
+'use strict';
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	loadOptions();
@@ -21,16 +22,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function forceSyncExport() {
 	if(confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
-		status = bkg.freshSync(0, true);
-		if (status == 'true') {
+		if (bkg.freshSync(0, true) == 'true') {
 			notification('Settings successfully synced to your Google Account');
 		}
 	}
 }
 function forceSyncImport() {
 	if(confirm('Do you want to import the synced settings from your Google Account to this device?')) {
-		status = bkg.importSyncHandle(1);
-		if (status == 'true') {
+		if (bkg.importSyncHandle(1) == 'true') {
 			notification('Settings successfully synced from your Google Account to this device');
 			location.reload();
 		}
@@ -106,14 +105,12 @@ function saveElement(id) {
 }
 function loadOptions() {
 	$("#title").html("ScriptSafe v"+version);
-	if (localStorage['annoyances'] == 'true') $("#annoyancesmoderow").show();
-	else $("#annoyancesmoderow").hide();
-	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os").show();
-	else $("#useragentspoof_os").hide();
 	loadCheckbox("enable");
 	loadCheckbox("syncenable");
+	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	loadCheckbox("syncfromnotify");
 	loadCheckbox("updatenotify");
+	loadCheckbox("updatemessagenotify");
 	loadCheckbox("syncnotify");
 	loadElement("mode");
 	loadCheckbox("refresh");
@@ -129,6 +126,7 @@ function loadOptions() {
 	loadCheckbox("image");
 	loadElement("xml");
 	loadCheckbox("annoyances");
+	if (!$("#annoyances").prop('checked')) $("#annoyancesmoderow").hide();
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
@@ -142,6 +140,7 @@ function loadOptions() {
 	loadElement("linktarget");
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
+	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os").hide();
 	loadElement("useragentspoof_os");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
@@ -153,9 +152,12 @@ function loadOptions() {
 function saveOptions() {
 	saveCheckbox("enable");
 	saveCheckbox("syncenable");
+	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
+	else $("#syncbuttons").show();
 	saveCheckbox("syncnotify");
 	saveCheckbox("syncfromnotify");
 	saveCheckbox("updatenotify");
+	saveCheckbox("updatemessagenotify");
 	saveElement("mode");
 	saveCheckbox("refresh");
 	saveCheckbox("script");
@@ -220,10 +222,10 @@ function settingsImport() {
 	if (settings.length > 0) {
 		$.each(settings, function(i, v) {
 			if ($.trim(v) != "") {
-				settingentry = $.trim(v).split("|");
+				var settingentry = $.trim(v).split("|");
 				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && $.trim(settingentry[1]) != '') {
 					if ($.trim(settingentry[0]) == 'whiteList' || $.trim(settingentry[0]) == 'blackList') {
-						listarray = $.trim(settingentry[1]).replace(/(\[|\]|")/g,"").split(",");
+						var listarray = $.trim(settingentry[1]).replace(/(\[|\]|")/g,"").split(",");
 						if ($.trim(settingentry[0]) == 'whiteList' && listarray.toString() != '') localStorage['whiteList'] = JSON.stringify(listarray);
 						else if ($.trim(settingentry[0]) == 'blackList' && listarray.toString() != '') localStorage['blackList'] = JSON.stringify(listarray);
 					} else 
@@ -277,7 +279,7 @@ function addList(type) {
 		if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && bkg.domainCheck(domain, 1) != '0')) && bkg.baddies(bkg.getDomain(domain), localStorage['annoyancesmode'], localStorage['antisocial']) == 1) || (localStorage['antisocial'] == 'true' && bkg.baddies(bkg.getDomain(domain), localStorage['annoyancesmode'], localStorage['antisocial']) == '2')) {
 			notification('Domain cannot be added as it is a provider of unwanted content (see "Block Unwanted Content" and/or "Antisocial Mode")');
 		} else {
-			responseflag = bkg.domainHandler(domain, type);
+			var responseflag = bkg.domainHandler(domain, type);
 			if (responseflag) {
 				$('#url').val('');
 				syncstatus = bkg.freshSync(2);
@@ -309,10 +311,11 @@ function domainRemover(domain) {
 	return false;
 }
 function topDomainAdd(domain, mode) {
+	var lingo;
 	if (mode == '0') lingo = 'trust';
 	else if (mode == '1') lingo = 'distrust';
 	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])$/g) && domain[0] != '*' && domain[1] != '*' && domain[2] != '.' && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
-		result = bkg.topHandler(domain, mode);
+		var result = bkg.topHandler(domain, mode);
 		listUpdate();
 		bkg.freshSync(2);
 		notification('Successfully '+lingo+'ed: '+domain);

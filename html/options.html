@@ -22,7 +22,7 @@
 			<table border="0" cellspacing="0" cellpadding="0">
 				<tr><td colspan="2" class="section">General Settings</td></tr>
 				<tr><td class="rowtitle"><label for="enable">Enable</label>:</td><td><input type="checkbox" id="enable" class="save" /> <i>(Default: enabled)</i></td></tr>
-				<tr><td class="rowtitle"><label for="syncenable">Enable Syncing</label>:</td><td><input type="checkbox" id="syncenable" class="save" /> <i>(Default: disabled)</i><br /><br /><input type="button" id="syncimport" value="Sync Settings FROM Google Account" /> <input type="button" id="syncexport" value="Sync Settings TO Google Account" /></td></tr>
+				<tr><td class="rowtitle"><label for="syncenable">Enable Syncing</label>:</td><td><input type="checkbox" id="syncenable" class="save" /> <i>(Default: disabled)</i><div id="syncbuttons"><br /><input type="button" id="syncimport" value="Sync Settings FROM Google Account" /> <input type="button" id="syncexport" value="Sync Settings TO Google Account" /></div></td></tr>
 				<tr><td class="rowtitle"><label for="mode">Default Mode</label>:</td><td><select id="mode" class="savechange">
 					<option value="block">Block (recommended)</option>
 					<option value="allow">Allow</option>
@@ -46,7 +46,8 @@
 				</select><br /><i>(Default: Control Cross-Domain Requests (allow Same-Domain); control XML HTTP Requests)</i></td></tr>
 				<tr><td class="rowtitle"><label for="syncnotify">Show Sync Notification</label>:</td><td><input type="checkbox" id="syncnotify" class="save" /> <i>(Default: enabled; show popup when settings synced <b>to</b> your Google Account)</i></td></tr>
 				<tr><td class="rowtitle"><label for="syncfromnotify">Show Import Sync Notification</label>:</td><td><input type="checkbox" id="syncfromnotify" class="save" /> <i>(Default: enabled; show popup when settings synced <b>from</b> your Google Account)</i></td></tr>
-				<tr><td class="rowtitle"><label for="updatenotify">Show Update Popup</label>:</td><td><input type="checkbox" id="updatenotify" class="save" /> <i>(Default: enabled; show popup page when ScriptSafe is updated)</i></td></tr>
+				<tr><td class="rowtitle"><label for="updatemessagenotify">Show Update Notification</label>:</td><td><input type="checkbox" id="updatemessagenotify" class="save" /> <i>(Default: enabled; show update notification when an update for ScriptSafe is available)</i></td></tr>
+				<tr><td class="rowtitle"><label for="updatenotify">Show Changelog on Update</label>:</td><td><input type="checkbox" id="updatenotify" class="save" /> <i>(Default: enabled; show changelog page when ScriptSafe is updated)</i></td></tr>
 				<tr><td colspan="2" class="section">Privacy Settings</td></tr>
 				<tr><td class="rowtitle"><label for="annoyances">Block Unwanted Content</label>:</td><td><input type="checkbox" id="annoyances" class="save" /><br /><i>(Default: enabled; remove unwanted content from known ad / malware domains; domains gathered from <a href="http://winhelp2002.mvps.org/hosts.htm" target="_blank">MVPS HOSTS</a>, <a href="http://hosts-file.net" target="_blank">hpHOSTS (ad / tracking servers)</a>, <a href="http://pgl.yoyo.org/as/policy.php" target="_blank">Peter Lowe's HOSTS Project</a>, <a href="http://www.malwaredomainlist.com/" target="_blank">MalwareDomainList.com</a>)</i></td></tr>
 				<tr><td class="rowtitle"><label for="cookies">Block Unwanted Cookies</label>:</td><td><input type="checkbox" id="cookies" class="save" /><br /><i>(Default: enabled; blocks cookies from known ad / malware domains; below mode applies to this as well)</i></td></tr>

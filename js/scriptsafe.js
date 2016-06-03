@@ -178,7 +178,7 @@ function ScriptSafe(req) {
 		}
 	}
 	if (typeof ITEMS[req.tabId] === 'undefined') return;
-	if (req.url.substr(0,17) != 'chrome-extension:' && req.url.substr(0,4) == 'http') {
+	if (req.url.substr(0,4) == 'http') {
 		var reqtype = req.type;
 		if (reqtype == "sub_frame") reqtype = 'frame';
 		else if (reqtype == "main_frame") reqtype = 'page';
@@ -333,7 +333,7 @@ function domainHandler(domain,action,listtype) {
 				var whiteInstancesCount = whiteInstances.length;
 				var blackInstancesCount = blackInstances.length;
 				if (whiteInstancesCount || blackInstancesCount) {
-					if (confirm('ScriptSafe detected existing entries that refer to specific sub-domains on '+tempDomain+'.\r\nDo you want to delete them in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
+					if (confirm('ScriptSafe detected '+(whiteInstancesCount+blackInstancesCount)+' existing rule(s) for '+tempDomain+' ('+whiteInstancesCount+' whitelist and '+blackInstancesCount+' blacklist).\r\nDo you want to delete them in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
 						if (whiteInstancesCount) {
 							for (var x=0; x<whiteInstancesCount; x++) {
 								tempWhitelist.splice(tempWhitelist.indexOf(whiteInstances[x]),1);
@@ -398,6 +398,7 @@ function setDefaultOptions() {
 	defaultOptionValue("syncnotify", "true");
 	defaultOptionValue("syncfromnotify", "true");
 	defaultOptionValue("updatenotify", "true");
+	defaultOptionValue("updatemessagenotify", "true");
 	defaultOptionValue("enable", "true");
 	defaultOptionValue("mode", "block");
 	defaultOptionValue("refresh", "true");
@@ -629,7 +630,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		sendResponse({});
 });
 chrome.runtime.onUpdateAvailable.addListener(function (details) {
-	chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}); 
+	if (localStorage["updatemessagenotify"] == "true") chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}); 
 });
 // Debug Synced Items
 /*
@@ -647,7 +648,7 @@ function freshSync(mode, force) {
 		if (force) {
 		// mode == 0 = all; 1 = settings only; 2 = whitelist/blacklist
 		//if (mode == 0 || mode == 1) {
-			for (k in localStorage) {
+			for (var k in localStorage) {
 				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw") {
 					simplesettings += k+"|"+localStorage[k]+"~";
 				}
@@ -660,7 +661,7 @@ function freshSync(mode, force) {
 			var jsonstrlen = jsonstr.length;
 			var limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstrlen/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			var i = 0;
-			while(jsonstr.length > 0) {
+			while (jsonstr.length > 0) {
 				var segment = jsonstr.substr(0, limit);
 				settingssync["zw" + i] = segment;
 				localStorage["zw" + i] = segment;
@@ -673,7 +674,7 @@ function freshSync(mode, force) {
 			jsonstrlen = jsonstr.length;
 			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstrlen/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			i = 0;
-			while(jsonstr.length > 0) {
+			while (jsonstr.length > 0) {
 				var segment = jsonstr.substr(0, limit);
 				settingssync["zb" + i] = segment;
 				localStorage["zb" + i] = segment;
@@ -744,7 +745,7 @@ function importSyncHandle(mode) {
 	}
 }
 function importSync(changes, mode) {
-	for (key in changes) {
+	for (var key in changes) {
 		if (key != 'scriptsafe_settings') {
 			if (mode == '1') localStorage[key] = changes[key].newValue;
 			else if (mode == '2') localStorage[key] = changes[key];
@@ -754,7 +755,7 @@ function importSync(changes, mode) {
 			if (settings.length > 0) {
 				$.each(settings, function(i, v) {
 					if ($.trim(v) != "") {
-						settingentry = $.trim(v).split("|");
+						var settingentry = $.trim(v).split("|");
 						if ($.trim(settingentry[1]) != '') {
 							localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
 						}

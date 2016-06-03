@@ -173,12 +173,12 @@ function ScriptSafe() {
 	if (SETTINGS['NOSCRIPT'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).hide(); }); // hiding instead of removing as removing seems to periodically crash tabs. Not a huge loss as the listener script should filter any inserted content (e.g. iframes, webbugs).
 	}
-	if (SETTINGS['APPLET'] == 'true') $("applet").each(function() { var elSrc = getElSrc(this); if (postLoadCheck(this)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'APPLET'}); $(this).remove(); } else { if (elSrc) { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'APPLET'}); } } });
+	if (SETTINGS['APPLET'] == 'true') $("applet").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = elSrc.toLowerCase(); if (postLoadCheck(this)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'APPLET'}); $(this).remove(); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'APPLET'}); } } });
 	if (SETTINGS['VIDEO'] == 'true') fallbackRemover("VIDEO"); // jquery can't select and beforeload doesn't catch video/audio tags :(
 	if (SETTINGS['AUDIO'] == 'true') fallbackRemover("AUDIO"); // ^
 	if (SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0') {
 		clearUnloads();
-		$("script").each(function() { var elSrc = getElSrc(this); if (postLoadCheck(this)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc && elSrc.toLowerCase().substr(0,11) != 'javascript:' && elSrc.toLowerCase().substr(0,17) != 'chrome-extension:') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); } } });
+		$("script").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = elSrc.toLowerCase(); if (postLoadCheck(this)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc.substr(0,11) != 'javascript:' && elSrc.substr(0,17) != 'chrome-extension:') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); } } } });
 		var domainCheckStatus;
 		if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
 		else domainCheckStatus = domainCheck(window.location.href, 1);
