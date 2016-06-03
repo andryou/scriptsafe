@@ -1,5 +1,13 @@
 // (c) Andrew Y.
 'use strict';
+var version = (function () {
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', chrome.extension.getURL('../manifest.json'), false);
+	xhr.send(null);
+	return JSON.parse(xhr.responseText).version;
+}());
+var bkg = chrome.extension.getBackgroundPage();
+var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	loadOptions();
@@ -21,18 +29,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	syncstatus = localStorage['syncenable'];
 });
 function forceSyncExport() {
-	if(confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
+	if (confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
 		if (bkg.freshSync(0, true) == 'true') {
 			notification('Settings successfully synced to your Google Account');
 		}
 	}
 }
 function forceSyncImport() {
-	if(confirm('Do you want to import the synced settings from your Google Account to this device?')) {
-		if (bkg.importSyncHandle(1) == 'true') {
-			notification('Settings successfully synced from your Google Account to this device');
-			location.reload();
-		}
+	if (confirm('Do you want to import the synced settings from your Google Account to this device?')) {
+		bkg.importSyncHandle(1);
+		setTimeout(function(){ window.location.reload(1); }, 10000);
 	}
 }
 function importbulkwhite() {
@@ -68,17 +74,6 @@ function blacklistlisten() {
 function domainsort() {
 	saveOptions();listUpdate();
 }
-var version = (function () {
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', chrome.extension.getURL('../manifest.json'), false);
-	xhr.send(null);
-	return JSON.parse(xhr.responseText).version;
-}());
-
-var bkg = chrome.extension.getBackgroundPage();
-
-var settingnames = [];
-
 function loadCheckbox(id) {
 	document.getElementById(id).checked = typeof localStorage[id] == "undefined" ? false : localStorage[id] == "true";
 }
