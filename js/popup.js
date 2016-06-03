@@ -79,6 +79,7 @@ function init() {
 					mode = response.mode;
 					var responseBlockedCount = response.blockeditems.length;
 					var responseAllowedCount = response.alloweditems.length;
+					var tabInTemp = bkg.in_array(tabdomain, response.temp);
 					$("#currentdomain").html('<span title="'+tabdomain+'">'+tabdomain+'</span>');
 					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false') {
 						if (response.status == 'false') {
@@ -243,7 +244,7 @@ function init() {
 							$(tempSel).append('<br /><div class="box box3 allowsession" title="Block all allowed resources for the session">Block All Allowed For Session</div>');
 						}
 						$(".allowsession").bind("click", bulkhandle);
-						if (intemp) {
+						if (intemp || tabInTemp) {
 							$(tempSel).append('<div class="box box5 prevoke" title="Revoke temporary permissions given to the current page">Revoke Page Temp. Permissions</div>');
 							$(".prevoke").bind("click", bulkhandle);
 						}
@@ -255,7 +256,6 @@ function init() {
 					$("#parent").prepend('<div class="box box1 pallow" rel="0" title="Allow Current Domain">Allow</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">Trust</div><div class="box box2 pdeny" rel="1" title="Deny">Deny</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">Distrust</div><div class="box box3 pbypass" rel="2" title="Temp.">Temp.</div><div class="box box4 pclear" title="Clear Domain from List">Clear</div>').attr("sn_list",response.enable);
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
 					$(".pclear").bind("click", removehandle).hide();
-					var tabInTemp = bkg.in_array(tabdomain, response.temp);
 					if (response.enable == '1' || response.enable == '4') {
 						if (tabInTemp) {
 							$(".pbypass, #blocked [rel='"+tabdomain+"'] .x_bypass").addClass('selected');

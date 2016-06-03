@@ -238,8 +238,10 @@ function domainCheck(domain, req) {
 		if (((localStorage['annoyances'] == 'true' && localStorage['annoyancesmode'] == 'strict' && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2') || (localStorage['annoyances'] == 'true' && localStorage['annoyancesmode'] == 'relaxed' && baddiesCheck))) return '1';
 	}
 	var domainname = extractDomainFromURL(domain);
-	if (localStorage['mode'] == 'block' && in_array(domainname, sessionWhiteList)) return '0';
-	if (localStorage['mode'] == 'allow' && in_array(domainname, sessionBlackList)) return '1';
+	if (req != '2') {
+		if (localStorage['mode'] == 'block' && in_array(domainname, sessionWhiteList)) return '0';
+		if (localStorage['mode'] == 'allow' && in_array(domainname, sessionBlackList)) return '1';
+	}
 	if (in_array(domainname, whiteList)) return '0';
 	if (in_array(domainname, blackList)) return '1';
 	if (req === undefined) {
@@ -497,12 +499,10 @@ function tempHandler(request) {
 function removeTempHandler(request) {
 	if (typeof request.url == 'object') {
 		for (var i=0;i<request.url.length;i++) {
-			var requesturl = request.url[i];
-			domainHandler(requesturl, 2, 1);
+			domainHandler(request.url[i], 2, 1);
 		}
 	} else {
-		var requesturl = request.url;
-		domainHandler(requesturl, 2, 1);
+		domainHandler(request.url, 2, 1);
 	}
 	changed = true;
 }
@@ -624,6 +624,10 @@ chrome.commands.onCommand.addListener(function (command) {
 			var tempMode = localStorage['mode'];
 			if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
 			var tempDomainList = [];
+			if (domainCheck(tabs[0].url, 2) == '-1') {
+				if ((tempMode == 'block' && enabled(tabs[0].url) == 'true') || (tempMode == 'allow' && enabled(tabs[0].url) == 'false'))
+					tempDomainList.push(extractDomainFromURL(tabs[0].url));
+			}
 			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
 				tempDomainList.push(items[2]);
 			});
@@ -637,6 +641,10 @@ chrome.commands.onCommand.addListener(function (command) {
 			else tempMode = 'block';
 			if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
 			var tempDomainList = [];
+			if (domainCheck(tabs[0].url, 2) == '-1') {
+				if ((tempMode == 'block' && enabled(tabs[0].url) == 'true') || (tempMode == 'allow' && enabled(tabs[0].url) == 'false'))
+					tempDomainList.push(extractDomainFromURL(tabs[0].url));
+			}
 			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
 				tempDomainList.push(items[2]);
 			});
