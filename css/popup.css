@@ -1,5 +1,5 @@
 /* Global */
-body { font-family: arial, sans-serif; font-size: 12px; margin: 5px; padding: 0px; width: 575px; }
+body { font-family: arial, sans-serif; font-size: 12px; margin: 5px 5px 0px; padding: 0px; width: 575px; }
 #container { width: 100%; }
 table { width: 100%; }
 td, th { font-family: arial, sans-serif; font-size: 12px; text-align: left; }
@@ -11,6 +11,7 @@ th { padding-bottom: 5px; }
 #parent div { margin: 2px auto; }
 
 /* Resource List */
+.thirds { vertical-align: top; }
 .thirditem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover { text-decoration: underline; }
 .allowed, .blocked { padding: 0 5px; }
@@ -30,7 +31,7 @@ th { padding-bottom: 5px; }
 /* Footer */
 #bottom { padding-top: 10px; }
 #credit { float: left; }
-#footer { text-align: right; }
+#footer { text-align: right; margin-top: -2px; }
 #credit, #footer { font-weight: bold; font-size: 11px; color: #555; }
 #footer a, #credit a { text-decoration: underline; }
 #footer a:hover, #credit a:hover { text-decoration: none; }

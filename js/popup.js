@@ -93,7 +93,7 @@ function init() {
 						if (responseBlockedCount != 0) {
 							if (response.domainsort == 'true') response.blockeditems = bkg.domainSort(response.blockeditems);
 							else response.blockeditems.sort();
-							$(".thirds").parent().after("<tr><td class='bolded' style='padding-top: 5px;'><span class='blocked'>Blocked Resources</span></td><td id='parent'></td></tr><tr><td class='thirds' id='blocked'></td><td></td></tr>");
+							$(".thirds").parent().after("<tr><td class='bolded' style='height: 14px; padding-top: 5px;'><span class='blocked'>Blocked Resources</span></td><td id='parent'></td></tr><tr><td class='thirds' id='blocked'></td><td></td></tr>");
 							$(".thirds:first").parent().remove();
 							$("#parent").attr("rowspan","2");
 							for (var i=0;i<responseBlockedCount;i++) {
@@ -175,7 +175,7 @@ function init() {
 							if (response.domainsort == 'true') response.alloweditems = bkg.domainSort(response.alloweditems);
 							else response.alloweditems.sort();
 							$("#parent").attr("rowspan","3");
-							$(".thirds").parent().parent().append("<tr><td class='bolded' style='padding-top: 15px;'><span class='allowed'>Allowed Resources</span></td><td class='bolded'></td></tr><tr><td class='thirds' id='allowed'></td><td></td></tr>");
+							$(".thirds").parent().parent().append("<tr><td class='bolded' style='height: 14px; padding-top: 15px;'><span class='allowed'>Allowed Resources</span></td><td class='bolded'></td></tr><tr><td class='thirds' id='allowed'></td><td></td></tr>");
 							if (blocked.length != 0) $("#parent").attr("rowspan","4");
 							else $("td.bolded").css('padding-top', '0px');
 							for (var i=0;i<responseAllowedCount;i++) {
