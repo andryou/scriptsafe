@@ -27,6 +27,7 @@ th { padding-bottom: 5px; }
 .wot { float: left; }
 .wot a { color: #fff; }
 .choices { float: right; }
+hr { border: 0; border-top: 1px solid #eeeeee; }
 .box:hover {
 	cursor: hand;
 	cursor: pointer;
@@ -281,8 +282,8 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.allowsession, .prevoke { margin-left: 0px; margin-right: 0px; }
-.prevoke {
-	clear: both;
+.allowsession, .prevoke, .clearglobaltemp { 
+	margin-left: 0px;
+	margin-right: 0px;
 	margin-bottom: 0px;
 }

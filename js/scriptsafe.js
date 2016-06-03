@@ -468,6 +468,44 @@ function statuschanger() {
 		chrome.browserAction.setIcon({path: "../img/Forbidden.png"});
 	}
 }
+function tempHandler(request) {
+	if (typeof request.url == 'object') {
+		for (var i=0;i<request.url.length;i++) {
+			if (request.url[i][0] != 'no.script' && request.url[i][0] != 'web.bug') {
+				var requesturl = request.url[i];
+				var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
+				if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(requesturl, 1) != '0')) && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
+					// do nothing
+				} else {
+					if (request.mode == 'block') domainHandler(requesturl, 0, 1);
+					else domainHandler(requesturl, 1, 1);
+				}
+			}
+		}
+	} else {
+		var requesturl = request.url;
+		var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
+		if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(requesturl, 1) != '0')) && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
+			// do nothing
+		} else {
+			if (request.mode == 'block') domainHandler(requesturl, 0, 1);
+			else domainHandler(requesturl, 1, 1);
+		}
+	}
+	changed = true;
+}
+function removeTempHandler(request) {
+	if (typeof request.url == 'object') {
+		for (var i=0;i<request.url.length;i++) {
+			var requesturl = request.url[i];
+			domainHandler(requesturl, 2, 1);
+		}
+	} else {
+		var requesturl = request.url;
+		domainHandler(requesturl, 2, 1);
+	}
+	changed = true;
+}
 chrome.tabs.onRemoved.addListener(function(tabid) {
 	if (typeof ITEMS[tabid] !== 'undefined') delete ITEMS[tabid];
 });
@@ -567,61 +605,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		freshSync(2);
 		changed = true;
 	} else if (request.reqtype == 'temp') {
-		if (typeof request.url == 'object') {
-			for (var i=0;i<request.url.length;i++) {
-				if (request.url[i][0] != 'no.script' && request.url[i][0] != 'web.bug') {
-					var requesturl = request.url[i];
-					var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
-					if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(requesturl, 1) != '0')) && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
-						// do nothing
-					} else {
-						var requesttype = request.url[i][1];
-						if (requesttype == '3') {
-							requesttype = 0;
-							if (!requesturl.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !requesturl.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) requesturl = '**.'+getDomain(requesturl);
-						}
-						if (request.mode == 'block') domainHandler(requesturl, 0, 1);
-						else domainHandler(requesturl, 1, 1);
-					}
-				}
-			}
-		} else {
-			var requesturl = request.url;
-			var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
-			if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheck(requesturl, 1) != '0')) && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
-				// do nothing
-			} else {
-				var requesttype = request.oldlist;
-				if (requesttype == '3') {
-					requesttype = 0;
-					if (!requesturl.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !requesturl.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) requesturl = '**.'+getDomain(requesturl);
-				}
-				if (request.mode == 'block') domainHandler(requesturl, 0, 1);
-				else domainHandler(requesturl, 1, 1);
-			}
-		}
-		changed = true;
+		tempHandler(request);
 	} else if (request.reqtype == 'remove-temp') {
-		if (typeof request.url == 'object') {
-			for (var i=0;i<request.url.length;i++) {
-				var requesturl = request.url[i];
-				var requesttype = domainCheck(requesturl);
-				if (requesttype == '3') {
-					requesttype = 0;
-					if (!requesturl.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !requesturl.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) requesturl = '**.'+getDomain(requesturl);
-				}
-				domainHandler(requesturl, 2, 1);
-			}
-		} else {
-			var requesturl = request.url;
-			var requesttype = request.oldlist;
-			if (requesttype == '3') {
-				requesttype = 0;
-				if (!requesturl.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !requesturl.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) requesturl = '**.'+getDomain(requesturl);
-			}
-			domainHandler(requesturl, 2, 1);
-		}
-		changed = true;
+		removeTempHandler(request);
 	} else if (request.reqtype == 'refresh-page-icon') {
 		if (request.type == '0') chrome.browserAction.setIcon({path: "../img/IconAllowed.png", tabId: request.tid});
 		else if (request.type == '1') chrome.browserAction.setIcon({path: "../img/IconForbidden.png", tabId: request.tid});
@@ -631,6 +617,38 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 });
 chrome.runtime.onUpdateAvailable.addListener(function (details) {
 	if (localStorage["updatemessagenotify"] == "true") chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}, function(callback) { return true; }); 
+});
+chrome.commands.onCommand.addListener(function (command) {
+    if (command === "temppage") {
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			var tempMode = localStorage['mode'];
+			if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
+			var tempDomainList = [];
+			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
+				tempDomainList.push(items[2]);
+			});
+			tempHandler({reqtype: "temp", url: tempDomainList, mode: tempMode});
+			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+		});
+    } else if (command === "removetemppage") {
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			var tempMode;
+			if (localStorage['mode'] == 'block') tempMode = 'allow';
+			else tempMode = 'block';
+			if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
+			var tempDomainList = [];
+			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
+				tempDomainList.push(items[2]);
+			});
+			removeTempHandler({reqtype: "remove-temp", url: tempDomainList});
+			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+		});
+    } else if (command === "removetempall") {
+		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+			revokeTemp();
+			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+		});
+    }
 });
 // Debug Synced Items
 /*

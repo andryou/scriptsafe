@@ -7,6 +7,26 @@
       "default_popup": "html/popup.html",
       "default_title": "ScriptSafe"
    },
+   "commands": {
+      "temppage" : {
+        "suggested_key": {
+             "default": "Ctrl+Shift+S" 
+        },
+        "description": "Temporarily allow/block all resources for a current tab"
+      },
+      "removetemppage": {
+        "suggested_key": {
+            "default": "Ctrl+Shift+R"
+        },
+        "description": "Remove temporary permissions for a current tab"
+      },
+      "removetempall": {
+        "suggested_key": {
+            "default": "Ctrl+Shift+Q"
+        },
+        "description": "Remove all temporary permissions"
+      }
+   },
    "content_scripts": [ {
       "all_frames": true,
       "js": [ "js/jquery.js", "js/common.js", "js/yoyo.js", "js/ss.js" ],
