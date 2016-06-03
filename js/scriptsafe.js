@@ -613,7 +613,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		sendResponse({});
 });
 chrome.runtime.onUpdateAvailable.addListener(function (details) {
-	if (localStorage["updatemessagenotify"] == "true") chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}); 
+	if (localStorage["updatemessagenotify"] == "true") chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}, function(callback) { return true; }); 
 });
 // Debug Synced Items
 /*
@@ -674,7 +674,7 @@ function freshSync(mode, force) {
 				if (chrome.extension.lastError){
 					alert(chrome.extension.lastError.message);
 				} else {
-					if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Settings Synced!', 'message': 'Your settings have been successfully synced!'});
+					if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Settings Synced!', 'message': 'Your settings have been successfully synced!'}, function(callback) { return true; } );
 				}
 			});
 		} else {
@@ -698,7 +698,7 @@ function importSyncHandle(mode) {
 							localStorage['syncenable'] = 'true';
 							localStorage['sync'] = 'true';
 							importSync(changes, 2);
-							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Settings Downloaded!', 'message': 'The latest settings have been successfully downloaded!'});
+							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Settings Downloaded!', 'message': 'The latest settings have been successfully downloaded!'}, function(callback) { return true; });
 							return true;
 						} else {
 							localStorage['syncenable'] = 'false';
@@ -833,7 +833,7 @@ if (storageapi) {
 			if (typeof changes['lastSync'] !== 'undefined') {
 				if (changes['lastSync'].newValue != localStorage['lastSync']) {
 					importSync(changes, 1);
-					if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Settings Downloaded!', 'message': 'The latest settings have been successfully downloaded!'});
+					if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Settings Downloaded!', 'message': 'The latest settings have been successfully downloaded!'}, function(callback) { return true; });
 				}
 			}
 		}
