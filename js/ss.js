@@ -37,16 +37,25 @@ function block(event) {
 	if (!elSrc) return;
 	var elType = el.nodeName.toUpperCase();
 	elSrc = elSrc.toLowerCase();
-	var domainCheckStatus;
+	var elementStatusCheck;
 	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
-	var thirdPartyStatus = thirdParty(absoluteUrl);
+	var thirdPartyCheck;
 	var elWidth = $(el).attr('width');
 	var elHeight = $(el).attr('height');
 	var elStyle = $(el).attr('style');
-	if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
-	else domainCheckStatus = domainCheck(absoluteUrl, 1);
-	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatus(absoluteUrl, SETTINGS['MODE'])
-		&& (elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG")
+	var baddiesCheck = baddies(absoluteUrl, localStorage['annoyancesmode'], localStorage['antisocial']);
+	if (SETTINGS['DOMAINSTATUS'] == '1') {
+		elementStatusCheck = true;
+		thirdPartyCheck = true;
+	} else {
+		var domainCheckStatus = domainCheck(absoluteUrl, 1);
+		if (domainCheckStatus == '0') thirdPartyCheck = false;
+		else thirdPartyCheck = thirdParty(absoluteUrl);
+		if ((domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
+			elementStatusCheck = true;
+		else elementStatusCheck = false;
+	}
+	if (elSrc.substr(0,17) != 'chrome-extension:' && (elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && elementStatusCheck
 		&& (
 			(
 				(
@@ -58,40 +67,32 @@ function block(event) {
 						|| (elType == "SCRIPT" && SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0')
 						|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
 						|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
-						|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
+						|| (elType == "IMG" && (SETTINGS['IMAGE'] == 'true')
 						|| (elType == "A" && SETTINGS['REFERRER'] == 'true')
 					)
 					&& (
-						(SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdPartyStatus || domainCheckStatus == '1'))
+						(SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdPartyCheck || elementStatusCheck))
 						|| SETTINGS['PRESERVESAMEDOMAIN'] == 'false'
 					)
-				)
-				|| (
-					(
-						SETTINGS['ANNOYANCES'] == 'true'
-						&& (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))
-						&& baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1'
-					)
-					|| (SETTINGS['ANTISOCIAL'] == 'true' && baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2')
 				)
 			)
 			|| (
 				SETTINGS['WEBBUGS'] == 'true'
 				&& (elType == "IMG" || elType == "IFRAME" ||  elType == "FRAME" || elType == "EMBED" || elType == "OBJECT")
-				&& (thirdPartyStatus || domainCheckStatus == '1')
+				&& (thirdPartyCheck || elementStatusCheck)
 				&& (
 					(typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5)
 					|| (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i))
 					)
 			)
 			|| (
-				SETTINGS['REFERRER'] == 'true' && elType == "A" && (thirdPartyStatus || domainCheckStatus == '1')
-			))) {
-		if (SETTINGS['REFERRER'] == 'true' && elType == "A" && (thirdPartyStatus || domainCheckStatus == '1')) {
+				SETTINGS['REFERRER'] == 'true' && elType == "A" && (thirdPartyCheck || elementStatusCheck)
+			)))) {
+		if (SETTINGS['REFERRER'] == 'true' && elType == "A" && (thirdPartyCheck || elementStatusCheck)) {
 			$(el).attr("rel","noreferrer");
 		} else {
 			event.preventDefault();
-			if (SETTINGS['WEBBUGS'] == 'true' && (thirdPartyStatus || domainCheckStatus == '1') && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && ((typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5) || (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i)))) {
+			if (SETTINGS['WEBBUGS'] == 'true' && (thirdPartyCheck || elementStatusCheck) && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && ((typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5) || (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i)))) {
 				elType = "WEBBUG";
 			}
 			chrome.extension.sendRequest({reqtype: "update-blocked", src: absoluteUrl, node: elType});
@@ -107,8 +108,18 @@ function postLoadCheck(el) {
 	var elSrc = getElSrc(el);
 	if (!elSrc) return false;
 	elSrc = elSrc.toLowerCase();
+	var thirdPartyCheck;
+	var domainCheckStatus;
 	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
-	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatus(absoluteUrl, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdParty(absoluteUrl) || domainCheck(absoluteUrl, 1) == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false'))
+	if (SETTINGS['DOMAINSTATUS'] == '1') {
+		domainCheckStatus = '1';
+		thirdPartyCheck = true;
+	} else {
+		domainCheckStatus = domainCheck(absoluteUrl, 1);
+		if (domainCheckStatus == '0') thirdPartyCheck = false;
+		else thirdPartyCheck = thirdParty(absoluteUrl);
+	}
+	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatus(absoluteUrl, SETTINGS['MODE']) && (((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false')))
 		return true;
 	return false;
 }
@@ -119,10 +130,17 @@ function fallbackRemover(tag) {
 		if (elSrc) {
 			elSrc = elSrc.toLowerCase();
 			var domainCheckStatus;
+			var thirdPartyCheck;
 			var absoluteUrl = relativeToAbsoluteUrl(elSrc);
-			if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
-			else domainCheckStatus = domainCheck(absoluteUrl, 1);
-			if (elementStatus(absoluteUrl, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdParty(absoluteUrl) || domainCheckStatus == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
+			if (SETTINGS['DOMAINSTATUS'] == '1') {
+				domainCheckStatus = '1';
+				thirdPartyCheck = true;
+			} else {
+				domainCheckStatus = domainCheck(absoluteUrl, 1);
+				if (domainCheckStatus == '0') thirdPartyCheck = false;
+				else thirdPartyCheck = thirdParty(absoluteUrl);
+			}
+			if (elementStatus(absoluteUrl, SETTINGS['MODE']) && ((SETTINGS['PRESERVESAMEDOMAIN'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1')) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
 				if (elements[i].src) elements[i].src = "";
 				if (elements[i].parentNode) elements[i].parentNode.removeChild(elements[i]);
 				chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: tag});
@@ -139,8 +157,10 @@ function domainCheck(domain, req) {
 		if ((SETTINGS['ANNOYANCES'] == 'true' && SETTINGS['ANNOYANCESMODE'] == 'strict' && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2')) return '1';
 	}
 	var domainname = extractDomainFromURL(domain);
-	if (SETTINGS['MODE'] == 'block' && in_array(domainname, SETTINGS['WHITELISTSESSION'])) return '0';
-	if (SETTINGS['MODE'] == 'allow' && in_array(domainname, SETTINGS['BLACKLISTSESSION'])) return '1';
+	if (req != '2') {
+		if (SETTINGS['MODE'] == 'block' && in_array(domainname, SETTINGS['WHITELISTSESSION'])) return '0';
+		if (SETTINGS['MODE'] == 'allow' && in_array(domainname, SETTINGS['BLACKLISTSESSION'])) return '1';
+	}
 	if (in_array(domainname, SETTINGS['WHITELIST'])) return '0';
 	if (in_array(domainname, SETTINGS['BLACKLIST'])) return '1';
 	if (req === undefined) {
@@ -154,10 +174,17 @@ function blockreferrer() {
 		if (elSrc) {
 			elSrc = elSrc.toLowerCase();
 			var domainCheckStatus;
+			var thirdPartyCheck;
 			var absoluteUrl = relativeToAbsoluteUrl(elSrc);
-			if (SETTINGS['DOMAINSTATUS'] == '1') domainCheckStatus = '1';
-			else domainCheckStatus = domainCheck(absoluteUrl);
-			if (thirdParty(absoluteUrl) && domainCheckStatus != '0') {
+			if (SETTINGS['DOMAINSTATUS'] == '1') {
+				domainCheckStatus = '1';
+				thirdPartyCheck = true;
+			} else {
+				domainCheckStatus = domainCheck(absoluteUrl, 1);
+				if (domainCheckStatus == '0') thirdPartyCheck = false;
+				else thirdPartyCheck = thirdParty(absoluteUrl);
+			}
+			if (thirdPartyCheck && domainCheckStatus != '0') {
 				$(this).attr("rel","noreferrer");
 			}
 		}

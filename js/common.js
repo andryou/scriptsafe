@@ -6,7 +6,7 @@ function baddies(src, amode, antisocial) {
 	if (dmn.indexOf(".") == -1 && src.indexOf(".") != -1) dmn = src;
 	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1 || src.indexOf("apis.google.com/js/platform.js") != -1 || src.indexOf("plus.google.com/js/client:plusone.js") != -1 || src.indexOf("linkedin.com/countserv/count/share") != -1))
 		return '2';
-	if ((amode == 'relaxed' && domainCheck(dmn, 1) != '0') || amode == 'strict') {
+	if ((amode == 'relaxed' && domainCheck(dmn, 2) != '0') || amode == 'strict') {
 		if (new BS(yoyo1).search(topDomain)) return '1';
 		if (new BS(yoyo2).search(dmn)) return '1';
 	}
@@ -16,14 +16,11 @@ function elementStatus(src, mode, taburl) {
 	if (taburl === undefined) taburl = window.location.hostname;
 	else taburl = extractDomainFromURL(taburl);
 	var domainCheckStatus = domainCheck(src);
-	var thirdPartyStatus = thirdParty(src, taburl);
-	var extractedDomain = extractDomainFromURL(src);
-	if (src.substr(0,11) != 'javascript:' && taburl != 'newtab' && domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && mode == 'block' && (thirdPartyStatus || !thirdPartyStatus || (thirdPartyStatus && src.indexOf("?") != -1 && (src.indexOf(taburl) != -1 || (taburl.substr(0,4)=='www.' && src.indexOf(taburl.substr(4)) != -1) || src.indexOf(extractedDomain, extractedDomain.length) != -1 || (extractedDomain.substr(0,4)=='www.' && src.indexOf(extractedDomain.substr(4), extractedDomain.length) != -1) || src.indexOf(getDomain(taburl, 1)) != -1)))))) return true;
+	if (src.substr(0,11) != 'javascript:' && taburl != 'newtab' && domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && mode == 'block'))) return true;
 	return false;
 }
 function thirdParty(url, taburl) {
 	if (url) {
-		if (domainCheck(url) == '0') return false;
 		var url = extractDomainFromURL(url);
 		var documentHost;
 		if (taburl === undefined) documentHost = window.location.hostname;
