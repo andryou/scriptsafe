@@ -71,7 +71,7 @@ function init() {
 				$(".thirds").html('<i>This tab has loaded no external resources</i>');
 			} else {
 				chrome.extension.sendRequest({reqtype: "get-list", url: taburl, tid: tabid}, function(response) {
-					if (response == 'reload' || typeof response === 'undefined') {
+					if (typeof response === 'undefined' || response == 'reload') {
 						$("table").html('<tr><td><strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.</td></tr>');
 						return;
 					}
@@ -187,6 +187,7 @@ function init() {
 											var trustval0 = '';
 											var trustval1 = '';
 											var allowedtype;
+											var baddiesstatus = response.alloweditems[i][4];
 											var trustType = bkg.trustCheck(itemdomain);
 											if (trustType == '1') {
 												trustval0 = ' selected';
@@ -206,6 +207,9 @@ function init() {
 										$("#allowed [rel='count_"+itemdomain+"']").html((parseInt($("#allowed [rel='count_"+itemdomain+"']").html())+1));
 									}
 									if (response.rating == 'true') $("[rel='r_"+itemdomain+"']").html('<span class="wot"><span class="box box4" title="See Rating for '+itemdomain+'"><a href="http://www.mywot.com/en/scorecard/'+itemdomain+'" target="_blank">Rating</a></span></span>');
+									if (response.annoyances == 'true' && baddiesstatus == '1') {
+										$("#allowed [rel='"+itemdomain+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted");
+									}
 									if (mode == 'block') {
 										if (bkg.in_array(itemdomain, response.temp)) {
 											if (!intemp) intemp = true;
@@ -247,10 +251,10 @@ function init() {
 							$(tempSel).append('<div class="box box5 prevoke" title="Revoke temporary permissions given to the current page">Revoke Page Temp. Permissions</div>');
 							$(".prevoke").bind("click", bulkhandle);
 						}
-						if (response.temp) {
-							$("#parent").append('<hr><div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">Revoke All Temp.</div>');
-							$(".clearglobaltemp").bind("click", revokealltemp);
-						}
+					}
+					if (response.temp) {
+						$("#parent").append('<hr><div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">Revoke All Temp.</div>');
+						$(".clearglobaltemp").bind("click", revokealltemp);
 					}
 					$("#parent").prepend('<div class="box box1 pallow" rel="0" title="Allow Current Domain">Allow</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">Trust</div><div class="box box2 pdeny" rel="1" title="Deny">Deny</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">Distrust</div><div class="box box3 pbypass" rel="2" title="Temp.">Temp.</div><div class="box box4 pclear" title="Clear Domain from List">Clear</div>').attr("sn_list",response.enable);
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
@@ -277,6 +281,8 @@ function init() {
 							$(".pbypass, .ptrust[rel='3'], .ptrust[rel='4'], .pclear, .pallow").hide();
 						} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesStatus == 1) {
 							$(".pdeny").addClass("selected").attr("title","Blocked (provider of unwanted content)").text("Blocked");
+							$(".pbypass").show();
+							$(".pclear").hide();
 						}
 					} else if (response.enable == '0' || response.enable == '3') {
 						if (tabInTemp) {
