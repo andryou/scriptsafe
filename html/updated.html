@@ -12,28 +12,32 @@
 	<br />
 	<hr>
 	<div style="text-align: left; line-height: 18px; font-size: 13px;"><br />
+	In this version you will find the following updates:
 	<ul>
-		<li><b>v1.0.7.6:</b><ul>
-			<li><b>v1.0.7.4-6</b> - noticeable performance increase, greatly reduced unwanted content providers false positives, improved ScriptSafe panel display, updated links to point to new documentation on Github (.5 = minor fixes for panel and trusting a domain; .6 = polished panel display)</li>
-			<li><b>v1.0.7.3</b> - tweaked panel behaviour and handling of scenarios (e.g. whitelisting a temp. allowed domain), added check in ScriptSafe panel if ScriptSafe auto-updated to alert user to refresh the tab</li>
-			<li><b>v1.0.7.2</b> - better blocking (whitelisted domain resources loaded on a blacklisted domain will be blocked), more overall performance improvements, reduced ScriptSafe panel code by almost 20% while further tweaking its performance, and addressed a sporadic bug where the panel occasionally wouldn't completely display</li>
-			<li><b>v1.0.7.1</b> - optimized ScriptSafe panel performance, fixed one-time whitelist/blacklist update (for trusted/distrusted domains), and also from this version onwards ScriptSafe will notify you it will wait for a browser restart in order to auto-update</li>
-			<li>significant performance improvements from a major overhaul of the core domain matching logic and other tweaks throughout ScriptSafe</li>
-			<li>domain whitelisting/blacklisting now supports basic regex: entire domain, wildcard, and single character matching (more info in Options page - you may want to revisit your whitelist/blacklist and revise accordingly)</li>
-			<li>added IPv6 address whitelist/blacklist support (e.g. [2001:4860:0:2001::68] - must contain square brackets)</li>
-			<li>added a check and notification in the Options page if WebRTC Protection isn't supported by the current Chrome version</li>
-			<li>allowed XMLHTTPREQUEST items are now listed in the ScriptSafe dialog to allow for blacklisting</li>
-			<li>added option to control all XMLHTTPREQUEST items</li>
-			<li>reduced pre-specified whitelist to just "*.googlevideo.com" (for basic YouTube support). Rationale: it should not be up to anyone to predefine what is "acceptable" to load. With the update to the domain matching logic, matching is now more reliable.</li>
-			<li>updated sync notifications to use the new chrome.notifications API</li>
-			<li>updated unwanted content providers and antisocial lists</li>
-			<li>updated core logic so that if there are any whitelist/blacklist conflicts, the whitelist is applied first</li>
-			<li><strong>FYI - <a href="https://github.com/andryou/scriptsafe/issues/6" target="_blank">info</a> on new "Privacy" permission required starting from v1.0.6.19 (tl;dr - it's harmless and ScriptSafe is safe)</strong></a></li>
-			<li>if you run into any issues, please <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">create an issue in Github</a>. This release is completely synced up to Github so the latest source code is available for review.</li>
+		<li><b>v1.0.7.7:</b><ul>
+			<li>Added hotkey support (I have to admit, I'm in love with this feature):<ul>
+				<li><b>Temporarily allow/block all resources for a current tab <i>(default: CTRL+SHIFT+S)</i></b></li>
+				<li><b>Remove temporary permissions for a current tab <i>(default: CTRL+SHIFT+R)</i></b></li>
+				<li><b>Remove all temporary permissions <i>(default: CTRL+SHIFT+Q)</i></b></li>
+				<li>To set-up/configure the hotkeys: go to Chrome Settings, Extensions, and click on Keyboard Shortcuts at the bottom of the page</li></ul>
+			</li>
+			<li>Added option to hide update notifications (on this note, I will push updates less frequently due to feedback, my apologies)</li>
+			<li>Made revoking temporary permissions more granular (for current page OR entire session; previously it would clear the entire session's temporary permissions)</li>
+			<li>Improved panel appearance and behaviour</li>
+			<li>Reduced redundancies in the core logic (which should boost performance)</li>
+			<li>Improved whitelisting of unwanted domains when in "Relaxed" mode</li>
+			<li>Made "Respect Same-Domain" behaviour more secure; now requires you to allow/temporarily allow a blocked page in order for it to load same-domain elements</li>
+			<li>Fixed syncing</li>
+			<li>Updated unwanted content providers list</li>
+			<li><b><abbr title="Too long; didn't read">TL;DR</abbr>: added hotkeys, option to hide update messages, more secure, better looking and faster (with fixed syncing)</b></li>
 		</ul></li>
 	</ul>
-	I am quite active on Twitter, so if you don't mind the occasional cat tweet, you are free to follow me: <a href="https://twitter.com/andryou" target="_blank">@andryou</a>.<br /><br />If you like ScriptSafe, check out one of my other extensions: <a href="https://chrome.google.com/webstore/detail/decreased-productivity/nlbpiflhmdcklcbihngeffpmoklbiooj" target="_blank">Decreased Productivity</a><br /><br />
-	Thank you,<br /><br />
+	I have put together <a href="https://github.com/andryou/scriptsafe/wiki" target="_blank">some documentation for ScriptSafe</a>, including "Getting Started" instructions.<br />
+	If you run into any issues, please <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">create an issue in Github</a>
+	<br /><br />
+	I am quite active on Twitter, so if you don't mind the occasional cat tweet, you are free to follow me: <a href="https://twitter.com/andryou" target="_blank">@andryou</a>.<br />
+	If you like ScriptSafe, check out one of my other extensions: <a href="https://chrome.google.com/webstore/detail/decreased-productivity/nlbpiflhmdcklcbihngeffpmoklbiooj" target="_blank">Decreased Productivity</a>.<br /><br />
+	Thank you,<br />
 	-Andrew<br /><br /></div>
 	<hr>
 	<br />
@@ -50,8 +54,11 @@
 	<input type="hidden" name="cmd" value="_s-xclick">
 	<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
 	<input type="image" src="../img/heartbig.png" border="0" name="submit" alt="Support Andrew!" title="Support Andrew!">
-	</form><br />
-	<i><a href="https://github.com/andryou/scriptsafe" target="_blank">ScriptSafe on Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">ScriptSafe on the Chrome Web Store</a></i>
+	</form><br /><br />
+	<i>
+	<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://github.com/andryou/scriptsafe/wiki" target="_blank">Documentation</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+	<a href="updated.html" target="_blank">Changelog</a> (<a href="https://github.com/andryou/scriptsafe/wiki/Changelog" target="_blank">Version History</a>)
+	</i>
 	</div>
 	<script type="text/javascript" src="../js/updated.js"></script>
 </body>
