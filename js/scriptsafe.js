@@ -141,7 +141,7 @@ function inlineblock(req) {
 	}
     var headers = req.responseHeaders;
 	if (req.type == 'main_frame') {
-		if (experimental == '1' && localStorage['script'] == 'true' && enabled(req.url) == 'true') {
+		if (experimental == '1' && localStorage['preservesamedomain'] == 'false' && localStorage['script'] == 'true' && enabled(req.url) == 'true') {
 			headers.push({
 				'name': 'Content-Security-Policy',
 				'value': "script-src 'none'"

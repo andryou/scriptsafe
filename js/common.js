@@ -94,7 +94,7 @@ function getDomain(url, type) {
 function in_array(needle, haystack) {
 	if (!haystack || !needle) return false;
 	for (var i in haystack) {
-		if (new RegExp('(?:www\\.|^)(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/g, '$1\\[').replace(/\]$/g, '\\]').replace(/\?/g, '.').replace(/\*\*\\./g, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) {
+		if (new RegExp('(?:www\\.|^)(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/, '\\[').replace(/\]$/, '\\]').replace(/\?/g, '.').replace(/^\*\*\\./, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) {
 			return '1';
 			break;
 		}
@@ -113,32 +113,17 @@ var BS = function(array) {
 };
 
 BS.prototype.search = function(target, key) {
-    if (key && typeof key === 'string') {
-        return this.searchObj(target, key);
-    } else if (typeof target === 'number') {
-        return this.searchNum(target);
-    } else if (typeof target === 'string') {
+    //if (key && typeof key === 'string') {
+    //    return this.searchObj(target, key);
+    //} else if (typeof target === 'number') {
+    //    return this.searchNum(target);
+    //} else if (typeof target === 'string') {
         return this.searchStr(target);
-    }
+    //}
 };
 
+/*
 BS.prototype.searchNum = function(target) {
-    var min = 0,
-        max = this.internalArray.length - 1,
-        mid;
-    while (min <= max) {
-        mid = Math.round(min + (max - min) / 2);
-        if (this.internalArray[mid] === target) {
-            return this.internalArray[mid];
-        } else if (this.internalArray[mid] < target) {
-            min = mid + 1;
-        } else {
-            max = mid - 1;
-        }
-    }
-};
-
-BS.prototype.searchStr = function(target) {
     var min = 0,
         max = this.internalArray.length - 1,
         mid;
@@ -164,6 +149,23 @@ BS.prototype.searchObj = function(target, key) {
         if (temp === target) {
             return this.internalArray[mid];
         } else if (temp < target) {
+            min = mid + 1;
+        } else {
+            max = mid - 1;
+        }
+    }
+};
+*/
+
+BS.prototype.searchStr = function(target) {
+    var min = 0,
+        max = this.internalArray.length - 1,
+        mid;
+    while (min <= max) {
+        mid = Math.round(min + (max - min) / 2);
+        if (this.internalArray[mid] === target) {
+            return this.internalArray[mid];
+        } else if (this.internalArray[mid] < target) {
             min = mid + 1;
         } else {
             max = mid - 1;
