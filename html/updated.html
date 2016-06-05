@@ -8,28 +8,17 @@
 <body>
 	<div id="message"></div> 
 	<div id="main">
-	<h1>Updated to v<span id="versionno"></span>! (Saturday, June 4, 2016)</h1>
+	<h1>Updated to v<span id="versionno"></span>! (Sunday, June 5, 2016)</h1>
 	<br />
 	<hr>
 	<div style="text-align: left; line-height: 18px; font-size: 13px;"><br />
 	In this version you will find the following updates:
 	<ul>
-		<li><b>v1.0.7.7:</b><ul>
-			<li>Added hotkey support (I have to admit, I'm in love with this feature):<ul>
-				<li><b>Temporarily allow/block all resources for a current tab <i>(default: CTRL+SHIFT+S)</i></b></li>
-				<li><b>Remove temporary permissions for a current tab <i>(default: CTRL+SHIFT+R)</i></b></li>
-				<li><b>Remove all temporary permissions <i>(default: CTRL+SHIFT+Q)</i></b></li>
-				<li>To set-up/configure the hotkeys: go to Chrome Settings, Extensions, and click on Keyboard Shortcuts at the bottom of the page</li></ul>
-			</li>
-			<li>Added option to hide update notifications (on this note, I will push updates less frequently due to feedback, my apologies)</li>
-			<li>Made revoking temporary permissions more granular (for current page OR entire session; previously it would clear the entire session's temporary permissions)</li>
-			<li>Improved panel appearance and behaviour</li>
-			<li>Reduced redundancies in the core logic (which should boost performance)</li>
-			<li>Improved whitelisting of unwanted domains when in "Relaxed" mode</li>
-			<li>Made "Respect Same-Domain" behaviour more secure; now requires you to allow/temporarily allow a blocked page in order for it to load same-domain elements</li>
-			<li>Fixed syncing</li>
+		<li><b>v1.0.7.8:</b><ul>
+			<li>Updated list searching to eliminate noticeable lag when browsing if you have a large whitelist/blacklist</li>
+			<li>Reverted update change to "Respect Same-Domain" behaviour; while I had good intentions, it required you to allow a page to load which would allow it globally</li>
+			<li>Panel should open more consistently and entirely</li>
 			<li>Updated unwanted content providers list</li>
-			<li><b><abbr title="Too long; didn't read">TL;DR</abbr>: added hotkeys, option to hide update messages, more secure, better looking and faster (with fixed syncing)</b></li>
 		</ul></li>
 	</ul>
 	I have put together <a href="https://github.com/andryou/scriptsafe/wiki" target="_blank">some documentation for ScriptSafe</a>, including "Getting Started" instructions.<br />
