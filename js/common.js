@@ -92,7 +92,13 @@ function getDomain(url, type) {
 	return url;
 }
 function in_array(needle, haystack) {
-	if (haystack && new RegExp(haystack).test(needle)) return '1';
+	if (!haystack || !needle) return false;
+	for (var i in haystack) {
+		if (new RegExp('(?:www\\.|^)(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/g, '$1\\[').replace(/\]$/g, '\\]').replace(/\?/g, '.').replace(/\*\*\\./g, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) {
+			return '1';
+			break;
+		}
+	}
 	return false;
 }
 // Js-BinarySearch by amgadfahmi
