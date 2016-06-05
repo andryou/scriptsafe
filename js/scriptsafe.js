@@ -383,8 +383,8 @@ function domainHandler(domain,action,listtype) {
 		} else if (listtype == 1) {
 			sessionStorage['whiteList'] = JSON.stringify(tempWhitelist);
 			sessionStorage['blackList'] = JSON.stringify(tempBlacklist);
-			sessionWhiteList = regexify(tempWhitelist);
-			sessionBlackList = regexify(tempBlacklist);
+			sessionWhiteList = tempWhitelist;
+			sessionBlackList = tempBlacklist;
 		}
 		return true;
 	}
@@ -828,8 +828,8 @@ function cacheLists() {
 		if (domain.substr(0,3) == '**.') tempWildDomain.push(domain);
 		tempDomain.push(domain);
 	});
-	whiteList = regexify(tempDomain);
-	trustList = regexify(tempWildDomain);
+	whiteList = tempDomain;
+	trustList = tempWildDomain;
 	tempList = JSON.parse(localStorage['blackList']);
 	tempDomain = [];
 	tempWildDomain = [];
@@ -837,12 +837,8 @@ function cacheLists() {
 		if (domain.substr(0,3) == '**.') tempWildDomain.push(domain);
 		tempDomain.push(domain);
 	});
-	blackList = regexify(tempDomain);
-	distrustList = regexify(tempWildDomain);
-}
-function regexify(arr) {
-	if (arr.length == 0) return '';
-	return '(?:www\\.|^)(?:'+arr.join('|').replace(/\./g, '\\.').replace(/(\||^)\[/g, '$1\\[').replace(/\](?:\\||$)/g, '\\]').replace(/\?/g, '.').replace(/\*\*\\./g, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')';
+	blackList = tempDomain;
+	distrustList = tempWildDomain;
 }
 if (!optionExists("version") || localStorage["version"] != version) {
 	// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0

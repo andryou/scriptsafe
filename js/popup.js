@@ -50,7 +50,7 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
-	setTimeout(init, 25);
+	setTimeout(init, 0);
 	$("#pop_ay").click(function() { openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").click(function() { openTab('https://github.com/andryou/scriptsafe/wiki'); });
 	$("#pop_project").click(function() { openTab('https://github.com/andryou/scriptsafe'); });
