@@ -30,7 +30,7 @@ function thirdParty(url, taburl) {
 		documentHost = documentHost.replace(/\.+$/, "");
 		if (url == documentHost) return false; // if they match exactly (same domain), our job here is done
 		// handle IP addresses (if we're still here, then it means the ip addresses don't match)
-		if (url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) || documentHost.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) return true;
+		if (url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || documentHost.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || url.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g) || documentHost.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) return true;
 		// now that IP addresses have been processed, carry on.
 		var elConst = url.split('.').reverse(); // work backwards :)
 		var pageConst = documentHost.split('.').reverse();
@@ -66,7 +66,7 @@ function extractDomainFromURL(url) { // credit: NotScripts
 	if (url.indexOf("://") != -1) url = url.substr(url.indexOf("://") + 3);
 	if (url.indexOf("/") != -1) url = url.substr(0, url.indexOf("/"));
 	if (url.indexOf("@") != -1) url = url.substr(url.indexOf("@") + 1);
-	if (url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) {
+	if (url.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) {
 		if (url.indexOf("]:") != -1) return url.substr(0, url.indexOf("]:")+1);
 		return url;
 	}
@@ -74,7 +74,7 @@ function extractDomainFromURL(url) { // credit: NotScripts
 	return url;
 }
 function getDomain(url, type) {
-	if (url && !url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !url.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g) && url.indexOf(".") != -1) {
+	if (url && !url.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !url.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g) && url.indexOf(".") != -1) {
 		if (url[0] == '*' && url[1] == '*' && url[2] == '.') return url.substr(3);
 		url = url.split(".").reverse();
 		var domain;

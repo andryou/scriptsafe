@@ -269,7 +269,7 @@ function trustCheck(domain) {
 }
 function topHandler(domain, mode) {
 	if (domain) {
-		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[(?:[A-Fa-f0-9]{1,4}::?){1,7}[A-Fa-f0-9]{1,4}\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
+		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
 		domainHandler(domain, mode);
 		return true;
 	}
