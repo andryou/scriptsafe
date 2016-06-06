@@ -79,6 +79,7 @@ function init() {
 					var responseBlockedCount = response.blockeditems.length;
 					var responseAllowedCount = response.alloweditems.length;
 					var tabInTemp = bkg.in_array(tabdomain, response.temp);
+					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					$("#currentdomain").html('<span title="'+tabdomain+'">'+tabdomain+'</span>');
 					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false') {
 						if (response.status == 'false') {
@@ -170,8 +171,8 @@ function init() {
 							$("#blocked").append($('.thirditem:not(*>:has(.choices))'));
 							$("#blocked").append($("#blocked [rel='x_web_bug']"));
 							$("#blocked").append($("#blocked [rel='x_no_script']"));
-							$("#blocked [rel='x_"+tabdomain+"']").children().first().css("font-weight", "bold");
-							$("#blocked").prepend($("#blocked [rel='x_"+tabdomain+"']"));
+							$("#blocked [rel='x_"+tabdomainfriendly+"']").children().first().css("font-weight", "bold");
+							$("#blocked").prepend($("#blocked [rel='x_"+tabdomainfriendly+"']"));
 						}
 						if (responseAllowedCount != 0) {
 							if (response.domainsort == 'true') response.alloweditems = bkg.domainSort(response.alloweditems);
@@ -227,8 +228,8 @@ function init() {
 									}
 								}
 							}
-							$("#allowed [rel='x_"+itemdomainfriendly+"']").children().first().css("font-weight", "bold");
-							$("#allowed").prepend($("#allowed [rel='x_"+itemdomainfriendly+"']"));
+							$("#allowed [rel='x_"+tabdomainfriendly+"']").children().first().css("font-weight", "bold");
+							$("#allowed").prepend($("#allowed [rel='x_"+tabdomainfriendly+"']"));
 						}
 						var blockedCount = blocked.length;
 						var allowedCount = allowed.length;
@@ -257,7 +258,7 @@ function init() {
 							$(".prevoke").bind("click", bulkhandle);
 						}
 					}
-					if (typeof response.temp === 'undefined' || response.temp.length) {
+					if (typeof response.temp !== 'undefined' && response.temp.length) {
 						$("#parent").append('<hr><div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">Revoke All Temp.</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
 					}
@@ -265,11 +266,10 @@ function init() {
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
 					$(".pclear").bind("click", removehandle).hide();
 					if (tabdomain[0] == '[') $(".ptrust").hide();
-					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					if (response.enable == '1' || response.enable == '4') {
 						if (tabInTemp) {
-							$(".pbypass, #blocked [rel=x_'"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
-							$("#blocked [rel=x_'"+tabdomainfriendly+"'] .x_blacklist").removeClass('selected').bind("click", x_savehandle);
+							$(".pbypass, #blocked [rel='x_"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
+							$("#blocked [rel='x_"+tabdomainfriendly+"'] .x_blacklist").removeClass('selected').bind("click", x_savehandle);
 							$("#blocked .x_"+tabdomainfriendly).hide();
 						} else {
 							$(".pbypass").hide();
@@ -293,8 +293,8 @@ function init() {
 						}
 					} else if (response.enable == '0' || response.enable == '3') {
 						if (tabInTemp) {
-							$(".pbypass, #allowed [rel=x_'"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
-							$("#allowed [rel=x_'"+tabdomainfriendly+"'] .x_whitelist").removeClass('selected').bind("click", x_savehandle);
+							$(".pbypass, #allowed [rel='x_"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
+							$("#allowed [rel='x_"+tabdomainfriendly+"'] .x_whitelist").removeClass('selected').bind("click", x_savehandle);
 							$("#allowed .x_"+tabdomainfriendly).hide();
 						} else {
 							$(".pbypass").hide();
@@ -343,7 +343,6 @@ function remove(url, el, type) {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (el.parent().attr("sn_list") == '0') {
 			$("[rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
-			$("[rel='x_"+urlfriendly+"'] .x_bypass").show();
 		}
 		el.hide();
 		if (type == '0') {
