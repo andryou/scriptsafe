@@ -102,11 +102,10 @@ function init() {
 								if (itemdomain) {
 									var baddiesstatus = response.blockeditems[i][5];
 									var parentstatus = response.blockeditems[i][4];
-									var itemdomainanchor = itemdomain + baddiesstatus;
+									var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
 									var domainCheckStatus = response.blockeditems[i][3];
-									var itemdomainfriendly = itemdomain.replace(/\./g,"_");
 									blocked.push(itemdomain);
-									if ($('#blocked .thirditem[rel="x_'+itemdomainanchor+'"]').length == 0) {
+									if ($('#blocked .thirditem[rel="x_'+itemdomainfriendly+'"]').length == 0) {
 										if (domainCheckStatus == '1') {
 											var trustval0 = '';
 											var trustval1 = '';
@@ -121,45 +120,47 @@ function init() {
 											} else allowedtype = 1;
 											var outputdomain = itemdomain;
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') outputdomain = '&lt;'+response.blockeditems[i][1]+'&gt;';
-											$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainanchor+'"><span><span>'+outputdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist selected" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
+											$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'"><span><span>'+outputdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span rel="r_'+itemdomainfriendly+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist selected" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
 										} else {
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') {
-												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainanchor+'"><span><span>&lt;'+response.blockeditems[i][1]+'&gt;</span> (<span rel="count_'+itemdomain+'">1</span>)</span></div>');
+												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'"><span><span>&lt;'+response.blockeditems[i][1]+'&gt;</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span></div>');
 											} else {
-												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainanchor+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
-												$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).hide();
+												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span rel="r_'+itemdomainfriendly+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
+												$("[rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 											}
 										}
-										$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).bind("click", x_removehandle);
+										$("[rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).bind("click", x_removehandle);
 									} else {
-										$("#blocked [rel='x_"+itemdomainanchor+"']").attr("title",$("#blocked [rel='x_"+itemdomainanchor+"']").attr("title")+"\r\n["+response.blockeditems[i][1]+"] "+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&")));
-										$("#blocked [rel='count_"+itemdomain+"']").html((parseInt($("#blocked [rel='count_"+itemdomain+"']").html())+1));
+										$("#blocked [rel='x_"+itemdomainfriendly+"']").attr("title",$("#blocked [rel='x_"+itemdomainfriendly+"']").attr("title")+"\r\n["+response.blockeditems[i][1]+"] "+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&")));
+										$("#blocked [rel='count_"+itemdomainfriendly+"']").html((parseInt($("#blocked [rel='count_"+itemdomainfriendly+"']").html())+1));
 									}
-									if (response.rating == 'true') $("[rel='r_"+itemdomain+"']").html('<span class="wot"><span class="box box4" title="See Rating for '+itemdomain+'"><a href="http://www.mywot.com/en/scorecard/'+itemdomain+'" target="_blank">Rating</a></span></span>');
+									if (response.rating == 'true') $("[rel='r_"+itemdomainfriendly+"']").html('<span class="wot"><span class="box box4" title="See Rating for '+itemdomain+'"><a href="http://www.mywot.com/en/scorecard/'+itemdomain.replace(/[\[\]]/g,"")+'" target="_blank">Rating</a></span></span>');
 									if ((response.annoyances == 'true' && response.annoyancesmode == 'strict' && domainCheckStatus == '-1' && baddiesstatus == 1) || (response.antisocial == 'true' && baddiesstatus == '2')) {
-										$("#blocked").append($("#blocked [rel='x_"+itemdomainanchor+"']"));
-										$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .box1, [rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_trust, [rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .box3, [rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .box4").hide();
+										$("#blocked").append($("#blocked [rel='x_"+itemdomainfriendly+"']"));
+										$("[rel='x_"+itemdomainfriendly+"'] .box1, [rel='x_"+itemdomainfriendly+"'] .x_trust, [rel='x_"+itemdomainfriendly+"'] .box3, [rel='x_"+itemdomainfriendly+"'] .box4").hide();
 										if (response.antisocial == 'true' && baddiesstatus == '2') {
-											$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_blacklist").attr("title","Antisocial").html("Antisocial").addClass("selected");
+											$("[rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Antisocial").html("Antisocial").addClass("selected");
 										} else {
-											$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
+											$("[rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
 										}
 										undesirablecount++;
 									} else if (parentstatus == '1' && domainCheckStatus == '0') {
-										$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .box1, [rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_trust, [rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .box3, [rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .box4").hide();
-										$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_blacklist").attr("title","Ignored whitelisted domain due to blacklisted tab domain").html("Ignored Whitelist").addClass("selected");
+										$("[rel='x_"+itemdomainfriendly+"'] .box1, [rel='x_"+itemdomainfriendly+"'] .x_trust, [rel='x_"+itemdomainfriendly+"'] .box3, [rel='x_"+itemdomainfriendly+"'] .box4").hide();
+										$("[rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Ignored whitelisted domain due to blacklisted tab domain").html("Ignored Whitelist").addClass("selected");
 									} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesstatus == '1') {
-										$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).hide();
-										$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
+										$("[rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
+										$("[rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
+									} else if (itemdomain[0] == '[') {
+										$("[rel='x_"+itemdomainfriendly+"'] .x_trust").hide();
 									}
 									if (mode == 'allow') {
 										if (bkg.in_array(itemdomain, response.temp)) {
 											if (!intemp) intemp = true;
-											$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_blacklist").removeClass("selected");
-											$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_bypass").addClass("selected");
-											$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).hide();
+											$("[rel='x_"+itemdomainfriendly+"'] .x_blacklist").removeClass("selected");
+											$("[rel='x_"+itemdomainfriendly+"'] .x_bypass").addClass("selected");
+											$("[rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										} else {
-											$("[rel='x_"+itemdomainanchor+"'] [rel='"+itemdomain+"'] .x_bypass").hide();
+											$("[rel='x_"+itemdomainfriendly+"'] .x_bypass").hide();
 										}
 									}
 								}
@@ -167,8 +168,8 @@ function init() {
 							$("#blocked").append($('.thirditem:has([title="Unwanted Content Provider"])'));
 							$("#blocked").append($('.thirditem:has([title="Antisocial"])'));
 							$("#blocked").append($('.thirditem:not(*>:has(.choices))'));
-							$("#blocked").append($("#blocked [rel='x_web.bug']"));
-							$("#blocked").append($("#blocked [rel='x_no.script']"));
+							$("#blocked").append($("#blocked [rel='x_web_bug']"));
+							$("#blocked").append($("#blocked [rel='x_no_script']"));
 							$("#blocked [rel='x_"+tabdomain+"']").children().first().css("font-weight", "bold");
 							$("#blocked").prepend($("#blocked [rel='x_"+tabdomain+"']"));
 						}
@@ -183,7 +184,7 @@ function init() {
 								var itemdomain = response.alloweditems[i][2];
 								if (itemdomain) {
 									allowed.push(itemdomain);
-									var itemdomainfriendly = itemdomain.replace(/\./g,"_");
+									var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
 									if ($('#allowed .choices[rel="'+itemdomain+'"]').length == 0) {
 										if (response.alloweditems[i][3] == '0') {
 											var trustval0 = '';
@@ -198,34 +199,36 @@ function init() {
 												trustval1 = ' selected';
 												allowedtype = 4;
 											} else allowedtype = 0;
-											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomain+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist selected" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
-											$("#allowed .x_"+itemdomainfriendly).bind("click", x_removehandle);
+											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span rel="r_'+itemdomainfriendly+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist selected" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
+											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).bind("click", x_removehandle);
 										} else {
-											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomain+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomain+'">1</span>)</span><br /><span rel="r_'+itemdomain+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
-											$("#allowed [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).hide();
+											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span rel="r_'+itemdomainfriendly+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
+											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										}
 									} else {
-										$("#allowed [rel='x_"+itemdomain+"']").attr("title",$("#allowed [rel='x_"+itemdomain+"']").attr("title")+"\r\n["+response.alloweditems[i][1]+"] "+response.alloweditems[i][0]);
-										$("#allowed [rel='count_"+itemdomain+"']").html((parseInt($("#allowed [rel='count_"+itemdomain+"']").html())+1));
+										$("#allowed [rel='x_"+itemdomainfriendly+"']").attr("title",$("#allowed [rel='x_"+itemdomainfriendly+"']").attr("title")+"\r\n["+response.alloweditems[i][1]+"] "+response.alloweditems[i][0]);
+										$("#allowed [rel='count_"+itemdomainfriendly+"']").html((parseInt($("#allowed [rel='count_"+itemdomainfriendly+"']").html())+1));
 									}
-									if (response.rating == 'true') $("[rel='r_"+itemdomain+"']").html('<span class="wot"><span class="box box4" title="See Rating for '+itemdomain+'"><a href="http://www.mywot.com/en/scorecard/'+itemdomain+'" target="_blank">Rating</a></span></span>');
+									if (response.rating == 'true') $("[rel='r_"+itemdomainfriendly+"']").html('<span class="wot"><span class="box box4" title="See Rating for '+itemdomain+'"><a href="http://www.mywot.com/en/scorecard/'+itemdomain.replace(/[\[\]]/g,"")+'" target="_blank">Rating</a></span></span>');
 									if (response.annoyances == 'true' && baddiesstatus == '1') {
-										$("#allowed [rel='"+itemdomain+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted");
+										$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted");
+									} else if (itemdomain[0] == '[') {
+										$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_trust").hide();
 									}
 									if (mode == 'block') {
 										if (bkg.in_array(itemdomain, response.temp)) {
 											if (!intemp) intemp = true;
-											$("#allowed [rel='"+itemdomain+"'] .x_whitelist").removeClass("selected");
-											$("#allowed [rel='"+itemdomain+"'] .x_bypass").addClass("selected");
-											$("#allowed [rel='"+itemdomain+"'] .x_"+itemdomainfriendly).hide();
+											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_whitelist").removeClass("selected");
+											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_bypass").addClass("selected");
+											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										} else {
-											$("#allowed [rel='"+itemdomain+"'] .x_bypass").hide();
+											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_bypass").hide();
 										}
 									}
 								}
 							}
-							$("#allowed [rel='x_"+tabdomain+"']").children().first().css("font-weight", "bold");
-							$("#allowed").prepend($("#allowed [rel='x_"+tabdomain+"']"));
+							$("#allowed [rel='x_"+itemdomainfriendly+"']").children().first().css("font-weight", "bold");
+							$("#allowed").prepend($("#allowed [rel='x_"+itemdomainfriendly+"']"));
 						}
 						var blockedCount = blocked.length;
 						var allowedCount = allowed.length;
@@ -236,7 +239,7 @@ function init() {
 						if (responseAllowedCount == 0) tempSel = '.thirds';
 						else tempSel = '#allowed';
 						if (mode == 'block') {
-							if (($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_no.script"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_web.bug"]').length == 1)) {
+							if (($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_no_script"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_web_bug"]').length == 1)) {
 								// empty space
 							} else {
 								if (blockedCount != 0 && undesirablecount != blockedCount) {
@@ -254,18 +257,20 @@ function init() {
 							$(".prevoke").bind("click", bulkhandle);
 						}
 					}
-					if (response.temp) {
+					if (typeof response.temp === 'undefined' || response.temp.length) {
 						$("#parent").append('<hr><div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">Revoke All Temp.</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
 					}
 					$("#parent").prepend('<div class="box box1 pallow" rel="0" title="Allow Current Domain">Allow</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">Trust</div><div class="box box2 pdeny" rel="1" title="Deny">Deny</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">Distrust</div><div class="box box3 pbypass" rel="2" title="Temp.">Temp.</div><div class="box box4 pclear" title="Clear Domain from List">Clear</div>').attr("sn_list",response.enable);
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
 					$(".pclear").bind("click", removehandle).hide();
+					if (tabdomain[0] == '[') $(".ptrust").hide();
+					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					if (response.enable == '1' || response.enable == '4') {
 						if (tabInTemp) {
-							$(".pbypass, #blocked [rel='"+tabdomain+"'] .x_bypass").addClass('selected');
-							$("#blocked [rel='"+tabdomain+"'] .x_blacklist").removeClass('selected').bind("click", x_savehandle);
-							$("#blocked .x_"+tabdomain.replace(/\./g,"_")).hide();
+							$(".pbypass, #blocked [rel=x_'"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
+							$("#blocked [rel=x_'"+tabdomainfriendly+"'] .x_blacklist").removeClass('selected').bind("click", x_savehandle);
+							$("#blocked .x_"+tabdomainfriendly).hide();
 						} else {
 							$(".pbypass").hide();
 							$(".pclear").show();
@@ -288,9 +293,9 @@ function init() {
 						}
 					} else if (response.enable == '0' || response.enable == '3') {
 						if (tabInTemp) {
-							$(".pbypass, #allowed [rel='"+tabdomain+"'] .x_bypass").addClass('selected');
-							$("#allowed [rel='"+tabdomain+"'] .x_whitelist").removeClass('selected').bind("click", x_savehandle);
-							$("#allowed .x_"+tabdomain.replace(/\./g,"_")).hide();
+							$(".pbypass, #allowed [rel=x_'"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
+							$("#allowed [rel=x_'"+tabdomainfriendly+"'] .x_whitelist").removeClass('selected').bind("click", x_savehandle);
+							$("#allowed .x_"+tabdomainfriendly).hide();
 						} else {
 							$(".pbypass").hide();
 							$(".pclear").show();
@@ -335,27 +340,28 @@ function remove(url, el, type) {
 	chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: 1});
 	if (closepage == 'true') window.close();
 	else {
+		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (el.parent().attr("sn_list") == '0') {
-			$("[rel='"+url+"'], #parent").attr("sn_list", "-1");
-			$("[rel='"+url+"'] .x_bypass").show();
+			$("[rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
+			$("[rel='x_"+urlfriendly+"'] .x_bypass").show();
 		}
 		el.hide();
 		if (type == '0') {
-			var urlfriendly = url.replace(/\./g,"_");
 			$(".x_"+urlfriendly).parent().children().removeClass("selected");
 			$(".x_"+urlfriendly).hide();
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			if ($("[rel='"+url+"'] .x_blacklist").text() == 'Unwanted') $("[rel='"+url+"'] .x_blacklist").addClass("selected");
-			$(".pbypass, [rel='"+url+"'] .x_bypass").show();
+			if ($("[rel='x_"+urlfriendly+"'] .x_blacklist").text() == 'Unwanted') $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass("selected");
+			$(".pbypass").show();
+			$("[rel='x_"+urlfriendly+"'] .x_bypass").show();
 		} else if (type == '1') {
 			if (url == tabdomain) {
 				$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
 				$(".pbypass").show();
 				$('.pclear').hide();
 			}
-			$("[rel='"+url+"'] .x_bypass").show();
+			$(".x_bypass", el.parent()).show();
 			el.parent().children().removeClass("selected");
-			if ($("[rel='"+url+"'] .x_blacklist").text() == 'Unwanted') $("[rel='"+url+"'] .x_blacklist").addClass("selected");
+			if ($(".x_blacklist", el.parent()).text() == 'Unwanted') $(".x_blacklist", el.parent()).addClass("selected");
 		}
 	}
 }
@@ -379,43 +385,46 @@ function save(url, el, type) {
 	if (url == tabdomain) chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: val});
 	if (closepage == 'true') window.close();
 	else {
+		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (type == '0') {
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			$("[rel='"+url+"']").children().removeClass("selected");
-			$(".x_"+url.replace(/\./g,"_")).hide();
-			if (val == 0) $("[rel='"+url+"'] .x_whitelist").addClass('selected');
-			else if (val == 1) $("[rel='"+url+"'] .x_blacklist").addClass('selected');
-			else if (val == 2) $("[rel='"+url+"'] .x_bypass").addClass('selected');
+			$("[rel='x_"+urlfriendly+"']").children().removeClass("selected");
+			$(".x_"+urlfriendly).hide();
+			if (val == 0) $("[rel='x_"+urlfriendly+"'] .x_whitelist").addClass('selected');
+			else if (val == 1) $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass('selected');
+			else if (val == 2) $("[rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
 			$(".pclear").hide();
 			if (el.attr("rel") == '3') {
-				$(".pallow, [rel='"+url+"'] .x_trust[rel='3']").addClass('selected');
+				$(".pallow, [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
 			} else if (el.attr("rel") == '4') {
-				$(".pdeny, [rel='"+url+"'] .x_trust[rel='4']").addClass('selected');
+				$("[rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
 			}
 			if (val < 2) {
-				$(".pbypass, [rel='"+url+"'] .x_bypass").hide();
-				$(".x_"+url.replace(/\./g,"_")+", .pclear").show();
+				$(".pbypass, [rel='x_"+urlfriendly+"'] .x_bypass").hide();
+				$(".x_"+urlfriendly+", .pclear").show();
 				el.addClass('selected');
 			} else {
 				if (!selected) {
 					el.addClass('selected');
-					$("[rel='"+url+"'] .x_bypass").addClass('selected');
+					$("[rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
 				} else {
-					$("[rel='"+url+"'] .x_bypass").removeClass('selected');
+					$("[rel='x_"+urlfriendly+"'] .x_bypass").removeClass('selected');
 				}
 			}
 		} else if (type == '1') {
 			el.parent().children().removeClass("selected");
-			$(".x_"+url.replace(/\./g,"_")).hide();
+			$(".x_"+urlfriendly).hide();
 			if (url == tabdomain) {
 				$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
 				$(".pclear").hide();
 				if (val == 0) $(".pallow").addClass('selected');
 				else if (val == 1) $(".pdeny").addClass('selected');
 				if (el.attr("rel") == '3') {
-					$(".ptrust[rel='3'], [rel='"+url+"'] .x_whitelist").addClass('selected');
+					$(".ptrust[rel='3']").addClass('selected');
+					$(".x_whitelist", el.parent()).addClass('selected');
 				} else if (el.attr("rel") == '4') {
-					$(".ptrust[rel='4'], [rel='"+url+"'] .x_blacklist").addClass('selected');
+					$(".ptrust[rel='4']").addClass('selected');
+					$(".x_blacklist", el.parent()).addClass('selected');
 				}
 			}
 			if (val < 2) {
@@ -423,21 +432,21 @@ function save(url, el, type) {
 					$(".pclear").show();
 					$(".pbypass").hide();
 				} else {
-					if (el.attr("rel") == '3') $("[rel='"+url+"'] .x_whitelist").addClass('selected');
-					else if (el.attr("rel") == '4') $("[rel='"+url+"'] .x_blacklist").addClass('selected');
+					if (el.attr("rel") == '3') $(".x_whitelist", el.parent()).addClass('selected');
+					else if (el.attr("rel") == '4') $(".x_blacklist", el.parent()).addClass('selected');
 				}
 				el.addClass('selected');
-				$(".x_"+url.replace(/\./g,"_")).show();
-				$("[rel='"+url+"'] .x_bypass").hide();
+				$(".x_"+urlfriendly).show();
+				$(".x_bypass", el.parent()).hide();
 			} else {
 				if (!selected) {
 					el.addClass('selected');
 					if (url == tabdomain) $(".pbypass").addClass('selected').show();
 				} else {
 					if (url == tabdomain) $(".pbypass").removeClass('selected').show();
-					if ($("[rel='"+url+"'] .x_blacklist").text() == 'Unwanted') $("[rel='"+url+"'] .x_blacklist").addClass("selected");
+					if ($(".x_blacklist", el.parent()).text() == 'Unwanted') $(".x_blacklist", el.parent()).addClass("selected");
 				}
-				$("[rel='"+url+"'] .x_bypass").show();
+				$(".x_bypass", el.parent()).show();
 			}
 		}
 	}
