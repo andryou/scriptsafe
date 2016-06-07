@@ -170,6 +170,13 @@ function domainCheck(domain, req) {
 	}
 	return '-1';
 }
+function elementStatus(src, mode, taburl) {
+	if (taburl === undefined) taburl = window.location.hostname;
+	else taburl = extractDomainFromURL(taburl);
+	var domainCheckStatus = domainCheck(src);
+	if (src.substring(0,4) == 'javascript:' && domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && mode == 'block'))) return true;
+	return false;
+}
 function blockreferrer() {
 	$("a[rel!='noreferrer']").each(function() {
 		var elSrc = getElSrc(this);

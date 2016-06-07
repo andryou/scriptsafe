@@ -1,8 +1,9 @@
 /* Global */
 html { width: 575px; }
-body { font-family: arial, sans-serif; font-size: 12px; margin: 5px 5px 0px; padding: 0px; width: 568px; }
+body { margin: 5px 5px 0px; padding: 0px; width: 568px; }
+html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
 #container, table { width: 100%; }
-td, th { font-family: arial, sans-serif; font-size: 12px; text-align: left; }
+td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
 

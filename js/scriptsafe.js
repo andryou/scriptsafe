@@ -152,7 +152,7 @@ function inlineblock(req) {
 }
 function ScriptSafe(req) {
 	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false") {
-		return;
+		return { cancel: false };
 	}
 	if (req.type == 'main_frame') {
 		if (typeof ITEMS[req.tabId] === 'undefined') {
@@ -160,13 +160,12 @@ function ScriptSafe(req) {
 		} else {
 			ITEMS[req.tabId]['url'] = req.url;
 		}
+		return { cancel: false };
 	}
-	if (typeof ITEMS[req.tabId] === 'undefined') return;
-	if (req.url.substr(0,4) == 'http') {
+	if (typeof ITEMS[req.tabId] === 'undefined') return { cancel: false };
+	if (ITEMS[req.tabId]['url'].substr(0,4) == 'http') {
 		var reqtype = req.type;
 		if (reqtype == "sub_frame") reqtype = 'frame';
-		else if (reqtype == "main_frame") reqtype = 'page';
-		else if (reqtype == "image") reqtype = 'webbug';
 		var thirdPartyCheck;
 		var elementStatusCheck;
 		var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial'], 2);
@@ -174,7 +173,7 @@ function ScriptSafe(req) {
 		var extractedReqDomain = extractDomainFromURL(req.url);
 		var domainCheckStatus = domainCheck(req.url, 1);
 		var tabDomainCheckStatus = domainCheck(extractedDomain, 1);
-		if (tabDomainCheckStatus == '1' && reqtype != 'page') {
+		if (tabDomainCheckStatus == '1') {
 			elementStatusCheck = true;
 			thirdPartyCheck = true;
 		} else {
@@ -184,11 +183,13 @@ function ScriptSafe(req) {
 				elementStatusCheck = true;
 			else elementStatusCheck = false;
 		}
-		if (elementStatusCheck && 
-			(((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "webbug" && (localStorage['image'] == 'true' || (localStorage['webbugs'] == 'true' && baddiesCheck))) || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all')))) &&
-			((localStorage['preservesamedomain'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')
-		) {
-			if (reqtype == 'page') return;
+		if (elementStatusCheck && baddiesCheck && reqtype == "image") reqtype = 'webbug';
+		if ((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
+			// request qualified for filtering, so continue.
+		} else {
+			return { cancel: false };
+		}
+		if (elementStatusCheck && ((localStorage['preservesamedomain'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')) {
 			if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
 			if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
 				if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
@@ -202,21 +203,18 @@ function ScriptSafe(req) {
 			}
 			return { cancel: true };
 		} else {
-			if (reqtype != 'webbug' && reqtype != 'page') {
-				if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
-				if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
-					if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
-					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
-				}
+			if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
+			if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
+				if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
+				ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
 			}
-			return { cancel: false };
 		}
 	}
 	return { cancel: false };
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1) 
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.substring(0,4) == 'http' && url.indexOf('https://chrome.google.com/webstore') == -1) 
 		return 'true';
 	return 'false';
 }
@@ -367,7 +365,9 @@ function domainHandler(domain,action,listtype) {
 		} else if (listtype == 1) {
 			sessionStorage['whiteList'] = JSON.stringify(tempWhitelist);
 			sessionStorage['blackList'] = JSON.stringify(tempBlacklist);
+			tempWhitelist = tempWhitelist.sort();
 			sessionWhiteList = tempWhitelist;
+			tempBlacklist = tempBlacklist.sort();
 			sessionBlackList = tempBlacklist;
 		}
 		return true;
@@ -810,7 +810,9 @@ function cacheLists() {
 		if (domain.substr(0,3) == '**.') tempWildDomain.push(domain);
 		tempDomain.push(domain);
 	});
+	tempDomain = tempDomain.sort();
 	whiteList = tempDomain;
+	tempWildDomain = tempWildDomain.sort();
 	trustList = tempWildDomain;
 	tempList = JSON.parse(localStorage['blackList']);
 	tempDomain = [];
@@ -819,7 +821,9 @@ function cacheLists() {
 		if (domain.substr(0,3) == '**.') tempWildDomain.push(domain);
 		tempDomain.push(domain);
 	});
+	tempDomain = tempDomain.sort();
 	blackList = tempDomain;
+	tempWildDomain = tempWildDomain.sort();
 	distrustList = tempWildDomain;
 }
 if (!optionExists("version") || localStorage["version"] != version) {
