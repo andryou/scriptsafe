@@ -178,11 +178,10 @@ function ScriptSafe(req) {
 		}
 	}
 	if (typeof ITEMS[req.tabId] === 'undefined') return;
-	if (req.url.substr(0,4) == 'http') {
+	if (ITEMS[req.tabId]['url'].substr(0,4) == 'http') {
 		var reqtype = req.type;
 		if (reqtype == "sub_frame") reqtype = 'frame';
 		else if (reqtype == "main_frame") reqtype = 'page';
-		else if (reqtype == "image") reqtype = 'webbug';
 		var thirdPartyCheck;
 		var elementStatusCheck;
 		var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial'], 2);
@@ -200,6 +199,7 @@ function ScriptSafe(req) {
 				elementStatusCheck = true;
 			else elementStatusCheck = false;
 		}
+		if (baddiesCheck && reqtype == "image") reqtype = 'webbug';
 		if (elementStatusCheck && 
 			(((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "webbug" && (localStorage['image'] == 'true' || (localStorage['webbugs'] == 'true' && baddiesCheck))) || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all')))) &&
 			((localStorage['preservesamedomain'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')
@@ -225,14 +225,13 @@ function ScriptSafe(req) {
 					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
 				}
 			}
-			return { cancel: false };
 		}
 	}
 	return { cancel: false };
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1) 
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.substring(0,4) == 'http' && url.indexOf('https://chrome.google.com/webstore') == -1) 
 		return 'true';
 	return 'false';
 }
