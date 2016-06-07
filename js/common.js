@@ -94,10 +94,9 @@ function getDomain(url, type) {
 function in_array(needle, haystack) {
 	if (!haystack || !needle) return false;
 	for (var i in haystack) {
-		if (new RegExp('(?:www\\.|^)(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/, '\\[').replace(/\]$/, '\\]').replace(/\?/g, '.').replace(/^\*\*\\./, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) {
-			return '1';
-			break;
-		}
+		if (needle == haystack[i]) return '1';
+		if (needle == 'www.'+haystack[i]) return '1';
+		if (new RegExp('(?:www\\.|^)(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/, '\\[').replace(/\]$/, '\\]').replace(/\?/g, '.').replace(/^\*\*\\./, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) return '1';
 	}
 	return false;
 }
