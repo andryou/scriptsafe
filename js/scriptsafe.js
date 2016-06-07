@@ -168,7 +168,7 @@ function inlineblock(req) {
 }
 function ScriptSafe(req) {
 	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false") {
-		return;
+		return { cancel: false };
 	}
 	if (req.type == 'main_frame') {
 		if (typeof ITEMS[req.tabId] === 'undefined') {
@@ -177,11 +177,12 @@ function ScriptSafe(req) {
 			ITEMS[req.tabId]['url'] = req.url;
 		}
 	}
-	if (typeof ITEMS[req.tabId] === 'undefined') return;
+	if (typeof ITEMS[req.tabId] === 'undefined') return { cancel: false };
 	if (ITEMS[req.tabId]['url'].substr(0,4) == 'http') {
 		var reqtype = req.type;
 		if (reqtype == "sub_frame") reqtype = 'frame';
 		else if (reqtype == "main_frame") reqtype = 'page';
+		if (reqtype == 'page') return { cancel: false };
 		var thirdPartyCheck;
 		var elementStatusCheck;
 		var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial'], 2);
@@ -189,7 +190,7 @@ function ScriptSafe(req) {
 		var extractedReqDomain = extractDomainFromURL(req.url);
 		var domainCheckStatus = domainCheck(req.url, 1);
 		var tabDomainCheckStatus = domainCheck(extractedDomain, 1);
-		if (tabDomainCheckStatus == '1' && reqtype != 'page') {
+		if (tabDomainCheckStatus == '1') {
 			elementStatusCheck = true;
 			thirdPartyCheck = true;
 		} else {
@@ -200,11 +201,12 @@ function ScriptSafe(req) {
 			else elementStatusCheck = false;
 		}
 		if (baddiesCheck && reqtype == "image") reqtype = 'webbug';
-		if (elementStatusCheck && 
-			(((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "webbug" && (localStorage['image'] == 'true' || (localStorage['webbugs'] == 'true' && baddiesCheck))) || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all')))) &&
-			((localStorage['preservesamedomain'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')
-		) {
-			if (reqtype == 'page') return;
+		if (((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all')))) {
+			// request qualified for filtering, so continue.
+		} else {
+			return { cancel: false };
+		}
+		if (elementStatusCheck && ((localStorage['preservesamedomain'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')) {
 			if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
 			if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
 				if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
@@ -218,12 +220,10 @@ function ScriptSafe(req) {
 			}
 			return { cancel: true };
 		} else {
-			if (reqtype != 'webbug' && reqtype != 'page') {
-				if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
-				if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
-					if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
-					ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
-				}
+			if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
+			if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
+				if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
+				ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
 			}
 		}
 	}
