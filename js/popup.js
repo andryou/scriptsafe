@@ -151,7 +151,7 @@ function init() {
 									} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesstatus == '1') {
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
-									} else if (itemdomain[0] == '[') {
+									} else if (itemdomain[0] == '[' || itemdomain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) {
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_trust").hide();
 									}
 									if (mode == 'allow') {
@@ -213,7 +213,7 @@ function init() {
 									if (response.rating == 'true') $("#allowed [rel='r_"+itemdomainfriendly+"']").html('<span class="wot"><span class="box box4" title="See Rating for '+itemdomain+'"><a href="http://www.mywot.com/en/scorecard/'+itemdomain.replace(/[\[\]]/g,"")+'" target="_blank">Rating</a></span></span>');
 									if (response.annoyances == 'true' && baddiesstatus == '1') {
 										$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted");
-									} else if (itemdomain[0] == '[') {
+									} else if (itemdomain[0] == '[' || itemdomain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) {
 										$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_trust").hide();
 									}
 									if (mode == 'block') {
@@ -265,7 +265,7 @@ function init() {
 					$("#parent").prepend('<div class="box box1 pallow" rel="0" title="Allow Current Domain">Allow</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">Trust</div><div class="box box2 pdeny" rel="1" title="Deny">Deny</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">Distrust</div><div class="box box3 pbypass" rel="2" title="Temp.">Temp.</div><div class="box box4 pclear" title="Clear Domain from List">Clear</div>').attr("sn_list",response.enable);
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
 					$(".pclear").bind("click", removehandle).hide();
-					if (tabdomain[0] == '[') $(".ptrust").hide();
+					if (tabdomain[0] == '[' || tabdomain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) $(".ptrust").hide();
 					if (response.enable == '1' || response.enable == '4') {
 						if (tabInTemp) {
 							$(".pbypass, #blocked [rel='x_"+tabdomainfriendly+"'] .x_bypass").addClass('selected');
@@ -387,7 +387,7 @@ function save(url, el, type) {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (type == '0') {
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			$("[rel='x_"+urlfriendly+"']").children().removeClass("selected");
+			$("[rel='x_"+urlfriendly+"'] .choices").children().removeClass("selected");
 			$(".x_"+urlfriendly).hide();
 			if (val == 0) $("[rel='x_"+urlfriendly+"'] .x_whitelist").addClass('selected');
 			else if (val == 1) $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass('selected');
