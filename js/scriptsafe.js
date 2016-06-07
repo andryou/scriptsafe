@@ -383,7 +383,9 @@ function domainHandler(domain,action,listtype) {
 		} else if (listtype == 1) {
 			sessionStorage['whiteList'] = JSON.stringify(tempWhitelist);
 			sessionStorage['blackList'] = JSON.stringify(tempBlacklist);
+			tempWhitelist = tempWhitelist.sort();
 			sessionWhiteList = tempWhitelist;
+			tempBlacklist = tempBlacklist.sort();
 			sessionBlackList = tempBlacklist;
 		}
 		return true;
@@ -828,7 +830,9 @@ function cacheLists() {
 		if (domain.substr(0,3) == '**.') tempWildDomain.push(domain);
 		tempDomain.push(domain);
 	});
+	tempDomain = tempDomain.sort();
 	whiteList = tempDomain;
+	tempWildDomain = tempWildDomain.sort();
 	trustList = tempWildDomain;
 	tempList = JSON.parse(localStorage['blackList']);
 	tempDomain = [];
@@ -837,7 +841,9 @@ function cacheLists() {
 		if (domain.substr(0,3) == '**.') tempWildDomain.push(domain);
 		tempDomain.push(domain);
 	});
+	tempDomain = tempDomain.sort();
 	blackList = tempDomain;
+	tempWildDomain = tempWildDomain.sort();
 	distrustList = tempWildDomain;
 }
 if (!optionExists("version") || localStorage["version"] != version) {

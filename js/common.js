@@ -8,16 +8,9 @@ function baddies(src, amode, antisocial, lookupmode) {
 	if (antisocial == 'true' && (antisocial2.indexOf(dmn) != -1 || antisocial1.indexOf(topDomain) != -1 || src.indexOf("digg.com/tools/diggthis.js") != -1 || src.indexOf("/googleapis.client__plusone.js") != -1 || src.indexOf("apis.google.com/js/plusone.js") != -1 || src.indexOf(".facebook.com/connect") != -1 || src.indexOf(".facebook.com/plugins") != -1 || src.indexOf(".facebook.com/widgets") != -1 || src.indexOf(".fbcdn.net/connect.php/js") != -1 || src.indexOf(".stumbleupon.com/hostedbadge") != -1 || src.indexOf(".youtube.com/subscribe_widget") != -1 || src.indexOf(".ytimg.com/yt/jsbin/www-subscribe-widget") != -1 || src.indexOf("apis.google.com/js/platform.js") != -1 || src.indexOf("plus.google.com/js/client:plusone.js") != -1 || src.indexOf("linkedin.com/countserv/count/share") != -1))
 		return '2';
 	if ((amode == 'relaxed' && domainCheck(dmn, lookupmode) != '0') || amode == 'strict') {
-		if (new BS(yoyo1).search(topDomain)) return '1';
-		if (new BS(yoyo2).search(dmn)) return '1';
+		if (binarySearch(yoyo1, topDomain) != -1) return '1';
+		if (binarySearch(yoyo2, dmn) != -1) return '1';
 	}
-	return false;
-}
-function elementStatus(src, mode, taburl) {
-	if (taburl === undefined) taburl = window.location.hostname;
-	else taburl = extractDomainFromURL(taburl);
-	var domainCheckStatus = domainCheck(src);
-	if (src.substr(0,11) != 'javascript:' && taburl != 'newtab' && domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && mode == 'block'))) return true;
 	return false;
 }
 function thirdParty(url, taburl) {
@@ -93,118 +86,38 @@ function getDomain(url, type) {
 }
 function in_array(needle, haystack) {
 	if (!haystack || !needle) return false;
+	if (needle.indexOf('www.') == 0) needle = needle.substring(4);
+	if (binarySearch(haystack, needle) != -1) return '1';
 	for (var i in haystack) {
-		if (needle == haystack[i]) return '1';
-		if (needle == 'www.'+haystack[i]) return '1';
+		if (haystack[i].indexOf("*") == -1 && haystack[i].indexOf("?") == -1) continue;
 		if (new RegExp('(?:www\\.|^)(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/, '\\[').replace(/\]$/, '\\]').replace(/\?/g, '.').replace(/^\*\*\\./, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) return '1';
 	}
 	return false;
 }
-// Js-BinarySearch by amgadfahmi
-// https://amgadfahmi.github.io/js-binarysearch/
-var BS = function(array) {
-    if (array) {
-        this.internalArray = array;
-    } else {
-        throw new error('Object is not defined');
-    }
-    return this;
-};
-
-BS.prototype.search = function(target, key) {
-    //if (key && typeof key === 'string') {
-    //    return this.searchObj(target, key);
-    //} else if (typeof target === 'number') {
-    //    return this.searchNum(target);
-    //} else if (typeof target === 'string') {
-        return this.searchStr(target);
-    //}
-};
-
-/*
-BS.prototype.searchNum = function(target) {
-    var min = 0,
-        max = this.internalArray.length - 1,
-        mid;
-    while (min <= max) {
-        mid = Math.round(min + (max - min) / 2);
-        if (this.internalArray[mid] === target) {
-            return this.internalArray[mid];
-        } else if (this.internalArray[mid] < target) {
-            min = mid + 1;
-        } else {
-            max = mid - 1;
-        }
-    }
-};
-
-BS.prototype.searchObj = function(target, key) {
-    var min = 0,
-        max = this.internalArray.length - 1,
-        temp, mid;
-    while (min <= max) {
-        mid = Math.round(min + (max - min) / 2);
-        temp = this.internalArray[mid] ? this.internalArray[mid][key] : undefined;
-        if (temp === target) {
-            return this.internalArray[mid];
-        } else if (temp < target) {
-            min = mid + 1;
-        } else {
-            max = mid - 1;
-        }
-    }
-};
-*/
-
-BS.prototype.searchStr = function(target) {
-    var min = 0,
-        max = this.internalArray.length - 1,
-        mid;
-    while (min <= max) {
-        mid = Math.round(min + (max - min) / 2);
-        if (this.internalArray[mid] === target) {
-            return this.internalArray[mid];
-        } else if (this.internalArray[mid] < target) {
-            min = mid + 1;
-        } else {
-            max = mid - 1;
-        }
-    }
-};
-
-BS.prototype.sort = function(key) {
-    if (this.internalArray.length <= 1) {
-        return;
-    }
-    var isObject = key && typeof key === 'string';
-    var isNumber = typeof this.internalArray[0] === 'number';
-    if (isObject) {
-        this.sortObj(key);
-        return this;
-    } else if (isNumber) {
-        this.sortNum();
-        return this;
-    } else {
-        this.internalArray.sort();
-        return this;
-    }
-};
-
-BS.prototype.sortObj = function(key) {
-    var isString = typeof this.internalArray[0][key] === 'string';
-    if (isString) {
-        this.internalArray.sort(function(a, b) {
-            return a[key].localeCompare(b[key]);
-        });
-    } else {
-        this.internalArray.sort(function(a, b) {
-            return a[key] - b[key];
-        });
-    }
-};
-
-BS.prototype.sortNum = function() {
-    this.internalArray.sort(function(a, b) {
-        return a - b;
-    });
-};
+// https://github.com/Olical/binary-search/blob/master/src/binarySearch.js
+function binarySearch(list, item) {
+    var min = 0;
+    var max = list.length - 1;
+    var guess;
+	var bitwise = (max <= 2147483647) ? true : false;
+	if (bitwise) {
+		while (min <= max) {
+			guess = (min + max) >> 1;
+			if (list[guess] === item) { return guess; }
+			else {
+				if (list[guess] < item) { min = guess + 1; }
+				else { max = guess - 1; }
+			}
+		}
+	} else {
+		while (min <= max) {
+			guess = Math.floor((min + max) / 2);
+			if (list[guess] === item) { return guess; }
+			else {
+				if (list[guess] < item) { min = guess + 1; }
+				else { max = guess - 1; }
+			}
+		}
+	}
+    return -1;
+}
