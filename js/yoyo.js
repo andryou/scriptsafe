@@ -25,6 +25,7 @@ var antisocial1 = [
 ];
 
 var antisocial2 = [
+'api.facebook.com',
 'api.pinterest.com',
 'api.solidopinion.com',
 'api.twitter.com',
