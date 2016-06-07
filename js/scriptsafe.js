@@ -176,13 +176,12 @@ function ScriptSafe(req) {
 		} else {
 			ITEMS[req.tabId]['url'] = req.url;
 		}
+		return { cancel: false };
 	}
 	if (typeof ITEMS[req.tabId] === 'undefined') return { cancel: false };
 	if (ITEMS[req.tabId]['url'].substr(0,4) == 'http') {
 		var reqtype = req.type;
 		if (reqtype == "sub_frame") reqtype = 'frame';
-		else if (reqtype == "main_frame") reqtype = 'page';
-		if (reqtype == 'page') return { cancel: false };
 		var thirdPartyCheck;
 		var elementStatusCheck;
 		var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial'], 2);
@@ -200,8 +199,8 @@ function ScriptSafe(req) {
 				elementStatusCheck = true;
 			else elementStatusCheck = false;
 		}
-		if (baddiesCheck && reqtype == "image") reqtype = 'webbug';
-		if (((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all')))) {
+		if (elementStatusCheck && baddiesCheck && reqtype == "image") reqtype = 'webbug';
+		if ((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
 			// request qualified for filtering, so continue.
 		} else {
 			return { cancel: false };
