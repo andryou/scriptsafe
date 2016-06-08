@@ -177,6 +177,18 @@ function elementStatus(src, mode, taburl) {
 	if (src.substring(0,4) == 'javascript:' && domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && mode == 'block'))) return true;
 	return false;
 }
+function relativeToAbsoluteUrl(url) { // credit: NotScripts
+	if (!url)
+		return url;
+	if (url[0] == '/' && url[1] == '/')
+		return document.location.protocol + url;
+	if (url[0] == '/')
+		return document.location.protocol + "//" + window.location.hostname + url;
+	var base = document.baseURI.match(/.+\//);
+	if (!base)
+		return document.baseURI + "/" + url;
+	return base[0] + url;
+}
 function blockreferrer() {
 	$("a[rel!='noreferrer']").each(function() {
 		var elSrc = getElSrc(this);

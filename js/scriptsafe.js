@@ -74,7 +74,7 @@ function mitigate(req) {
 						req.requestHeaders[i].value = localStorage['referrerspoof'];
 					break;
 				case 'User-Agent':
-					if (localStorage['useragentspoof'] != 'off' && enabled(req.url) == 'true' && req.url.indexOf('https://chrome.google.com/webstore') == -1) {
+					if (localStorage['useragentspoof'] != 'off' && enabled(req.url) == 'true') {
 						var os;
 						if (localStorage['useragentspoof_os'] == 'w7') os = 'Windows; U; Windows NT 6.1';
 						else if (localStorage['useragentspoof_os'] == 'w10') os = 'Windows NT 10.0';

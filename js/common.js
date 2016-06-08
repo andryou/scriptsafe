@@ -42,18 +42,6 @@ function thirdParty(url, taburl) {
 	}
 	return false; // doesn't have a URL
 }
-function relativeToAbsoluteUrl(url) { // credit: NotScripts
-	if (!url || url.match(/^http/i))
-		return url;
-	if (url[0] == '/' && url[1] == '/')
-		return document.location.protocol + url;
-	if (url[0] == '/')
-		return document.location.protocol + "//" + window.location.hostname + url;
-	var base = document.baseURI.match(/.+\//);
-	if (!base)
-		return document.baseURI + "/" + url;
-	return base[0] + url;
-}
 function extractDomainFromURL(url) { // credit: NotScripts
 	if (!url) return "";
 	if (url.indexOf("://") != -1) url = url.substr(url.indexOf("://") + 3);
