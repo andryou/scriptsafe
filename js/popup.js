@@ -66,13 +66,17 @@ function init() {
 			tabdomain = bkg.extractDomainFromURL(taburl);
 			if (tabdomain.substr(0,4) == 'www.') tabdomain = tabdomain.substr(4);
 			tabid = tab.id;
-			if (taburl.substr(0, 4) != 'http' || tabdomain == 'chrome.google.com') {
+			if (tabdomain == 'chrome.google.com') {
 				$("#currentdomain").html("Not filtered");
 				$(".thirds").html('<i>This tab has loaded no external resources</i>');
 			} else {
 				chrome.extension.sendRequest({reqtype: "get-list", url: taburl, tid: tabid}, function(response) {
 					if (typeof response === 'undefined' || response == 'reload') {
-						$("table").html('<tr><td><strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.</td></tr>');
+						if (tab.url.substring(0, 4) == 'http') {
+							$("table").html('<tr><td><strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.</td></tr>');
+						} else {
+							$("table").html('<tr><td><strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.</td></tr>');
+						}
 						return;
 					}
 					mode = response.mode;
