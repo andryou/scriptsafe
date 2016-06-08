@@ -152,7 +152,7 @@ function init() {
 										undesirablecount++;
 									} else if ((parentstatus == '1' || parentstatus == '-1') && domainCheckStatus == '0') {
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .box1, #blocked [rel='x_"+itemdomainfriendly+"'] .x_trust, #blocked [rel='x_"+itemdomainfriendly+"'] .box3, #blocked [rel='x_"+itemdomainfriendly+"'] .box4").hide();
-										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Ignored whitelisted domain due to unknown tab domain").html("Ignored Whitelist").addClass("selected");
+										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Ignored allowed domain due to unknown tab domain").html("Ignored Allow").addClass("selected");
 									} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesstatus == '1') {
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
@@ -171,7 +171,7 @@ function init() {
 									}
 								}
 							}
-							$("#blocked").append($('.thirditem:has([title="Ignored whitelisted domain due to unknown tab domain"])'));
+							$("#blocked").append($('.thirditem:has([title="Ignored allowed domain due to unknown tab domain"])'));
 							$("#blocked").append($('.thirditem:has([title="Unwanted Content Provider"])'));
 							$("#blocked").append($('.thirditem:has([title="Antisocial"])'));
 							$("#blocked").append($('.thirditem:not(*>:has(.choices))'));

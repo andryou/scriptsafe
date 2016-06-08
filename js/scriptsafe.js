@@ -188,13 +188,13 @@ function ScriptSafe(req) {
 	var extractedReqDomain = extractDomainFromURL(req.url);
 	var domainCheckStatus = domainCheck(req.url, 1);
 	var tabDomainCheckStatus = domainCheck(extractedDomain, 1);
-	if (tabDomainCheckStatus == '1' || (tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['preservesamedomain'] == 'false')) {
+	if (tabDomainCheckStatus == '1' || (tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['paranoia'] == 'true' && localStorage['preservesamedomain'] == 'false')) {
 		elementStatusCheck = true;
 		thirdPartyCheck = true;
 	} else {
-		if (domainCheckStatus == '0' && !(tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block')) thirdPartyCheck = false;
+		if (domainCheckStatus == '0' && !(tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['paranoia'] == 'true')) thirdPartyCheck = false;
 		else thirdPartyCheck = thirdParty(req.url, extractedDomain);
-		if ((tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && localStorage['mode'] == 'block'))) || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))
+		if ((tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['paranoia'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && localStorage['mode'] == 'block'))) || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))
 			elementStatusCheck = true;
 		else elementStatusCheck = false;
 	}
@@ -431,6 +431,7 @@ function setDefaultOptions() {
 	defaultOptionValue("useragentspoof_os", "off");
 	defaultOptionValue("referrerspoof", "off");
 	defaultOptionValue("cookies", "true");
+	defaultOptionValue("paranoia", "false");
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
