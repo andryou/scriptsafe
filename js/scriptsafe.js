@@ -630,7 +630,7 @@ chrome.commands.onCommand.addListener(function (command) {
 					tempDomainList.push(extractDomainFromURL(tabs[0].url));
 			}
 			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
-				if (items[2] == '-1') tempDomainList.push(items[2]);
+				if (items[3] == '-1') tempDomainList.push(items[2]);
 			});
 			tempHandler({reqtype: "temp", url: tempDomainList, mode: tempMode});
 			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
