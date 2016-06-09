@@ -130,7 +130,7 @@ function loadOptions() {
 	loadCheckbox("webbugs");
 	loadElement("webrtc");
 	if (!bkg.checkWebRTC()) $("#webrtccell").html('<strong style="color: red;">This version of Chrome does not support WebRTC protection</strong>');
-	loadCheckbox("preservesamedomain");
+	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("classicoptions");
 	loadCheckbox("referrer");
@@ -175,7 +175,7 @@ function saveOptions() {
 	saveCheckbox("antisocial");
 	saveCheckbox("webbugs");
 	saveElement("webrtc");
-	saveCheckbox("preservesamedomain");
+	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
 	saveCheckbox("classicoptions");
 	saveCheckbox("referrer");
