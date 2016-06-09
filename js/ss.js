@@ -45,20 +45,17 @@ function block(event) {
 	var elWidth = $(el).attr('width');
 	var elHeight = $(el).attr('height');
 	var elStyle = $(el).attr('style');
-	var baddiesCheck = baddies(absoluteUrl, localStorage['annoyancesmode'], localStorage['antisocial']);
-	if (SETTINGS['DOMAINSTATUS'] == '1') {
+	var baddiesCheck = baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']);
+	if (SETTINGS['DOMAINSTATUS'] == '1' || (SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true' && SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
 		elementStatusCheck = true;
 		thirdPartyCheck = true;
 		domainCheckStatus = '1';
 	} else {
 		domainCheckStatus = domainCheck(absoluteUrl, 1);
-		if (domainCheckStatus == '0') thirdPartyCheck = false;
-		else if (SETTINGS['preservesamedomain'] == 'strict') {
-			if (extractDomainFromURL(absoluteUrl) == window.location.hostname) thirdPartyCheck = false;
-			else thirdPartyCheck = true;
-		}
+		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && extractDomainFromURL(absoluteUrl) == window.location.hostname)) thirdPartyCheck = false;
+		else if (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && extractDomainFromURL(absoluteUrl) != window.location.hostname) thirdPartyCheck = true;
 		else thirdPartyCheck = thirdParty(absoluteUrl);
-		if ((domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
+		if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
 			elementStatusCheck = true;
 		else elementStatusCheck = false;
 	}
@@ -103,7 +100,8 @@ function block(event) {
 					elType = "WEBBUG";
 				}
 				chrome.extension.sendRequest({reqtype: "update-blocked", src: absoluteUrl, node: elType});
-				$(el).remove();
+				if (elType == 'VIDEO' || elType == 'AUDIO') removeMedia($el);
+				else $(el).remove();
 			}
 		} else {
 			if (SETTINGS['EXPERIMENTAL'] == '0' && elSrc.substr(0,11) != 'javascript:' && elSrc.substr(0,17) != 'chrome-extension:' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
@@ -193,15 +191,15 @@ function removeMedia($el) {
 	$el[0].src = '';
 	$el.children('source').prop('src', '');
 	$el.load();
-	$el.hide();
-	//$el.remove().length = 0;
+	//$el.hide();
+	$el.remove().length = 0;
 };
 function ScriptSafe() {
 	if (SETTINGS['LINKTARGET'] != 'off') {
 		var linktrgt;
 		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
 		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
-		$("a").attr("target", linktrgt);
+		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
@@ -209,6 +207,12 @@ function ScriptSafe() {
 	if (SETTINGS['APPLET'] == 'true') $("applet").each(function() { var elSrc = $(this).attr('code'); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'APPLET'}); $(this).remove(); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'APPLET'}); } } });
 	if (SETTINGS['VIDEO'] == 'true') $("video").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'VIDEO'}); removeMedia($(this)); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'VIDEO'}); } } });
 	if (SETTINGS['AUDIO'] == 'true') $("audio").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'AUDIO'}); removeMedia($(this)); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'AUDIO'}); } } });
+	/* handled by background page, but clean up elements */
+	if (SETTINGS['IFRAME'] == 'true') $("iframe").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } } });
+	if (SETTINGS['OBJECT'] == 'true') $("object").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } } });
+	if (SETTINGS['EMBED'] == 'true') $("embed").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } } });
+	if (SETTINGS['IMAGE'] == 'true') $("picture").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } } });
+	if (SETTINGS['IMAGE'] == 'true') $("img").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } } });
 	if (SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0') {
 		clearUnloads();
 		$("script").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc.substr(0,11) != 'javascript:' && elSrc.substr(0,17) != 'chrome-extension:') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); } } } });
@@ -427,6 +431,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
+		ScriptSafe();
 		document.addEventListener("beforeload", block, true);
 		for (var i = 0; i < savedBeforeloadEvents.length; i++)
 			block(savedBeforeloadEvents[i]);
