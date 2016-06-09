@@ -469,7 +469,7 @@ function statuschanger() {
 		chrome.browserAction.setIcon({path: "../img/IconDisabled.png"});
 	} else {
 		localStorage['enable'] = 'true';
-		chrome.browserAction.setIcon({path: "../img/Forbidden.png"});
+		chrome.browserAction.setIcon({path: "../img/IconForbidden.png"});
 	}
 }
 function tempHandler(request) {
