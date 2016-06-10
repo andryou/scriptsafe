@@ -9,7 +9,7 @@ var version = (function () {
 var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
 var popup = [];
 var changed = false;
-const ITEMS = {};
+var ITEMS = {};
 var experimental = 0;
 var storageapi = false;
 function refreshRequestTypes() {
