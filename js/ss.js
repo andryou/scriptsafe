@@ -37,6 +37,7 @@ function block(event) {
 	var elSrc = getElSrc(el);
 	if (!elSrc) return;
 	var elType = el.nodeName.toUpperCase();
+	if (!(elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG")) return;
 	elSrc = elSrc.toLowerCase();
 	var thirdPartyCheck;
 	var elementStatusCheck;
@@ -52,14 +53,15 @@ function block(event) {
 		domainCheckStatus = '1';
 	} else {
 		domainCheckStatus = domainCheck(absoluteUrl, 1);
-		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && extractDomainFromURL(absoluteUrl) == window.location.hostname)) thirdPartyCheck = false;
-		else if (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && extractDomainFromURL(absoluteUrl) != window.location.hostname) thirdPartyCheck = true;
+		var elementDomain = extractDomainFromURL(absoluteUrl);
+		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && elementDomain == window.location.hostname)) thirdPartyCheck = false;
+		else if (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && elementDomain != window.location.hostname) thirdPartyCheck = true;
 		else thirdPartyCheck = thirdParty(absoluteUrl);
 		if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
 			elementStatusCheck = true;
 		else elementStatusCheck = false;
 	}
-	if (elSrc.substr(0,17) != 'chrome-extension:' && (elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && elementStatusCheck && (
+	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatusCheck && (
 		(
 			(
 				(
@@ -119,8 +121,9 @@ function postLoadCheck(elSrc) {
 		thirdPartyCheck = true;
 	} else {
 		domainCheckStatus = domainCheck(elSrc, 1);
-		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['preservesamedomain'] == 'strict' && extractDomainFromURL(elSrc) == window.location.hostname)) thirdPartyCheck = false;
-		else if (SETTINGS['preservesamedomain'] == 'strict' && extractDomainFromURL(elSrc) != window.location.hostname) thirdPartyCheck = true;
+		var elementDomain = extractDomainFromURL(elSrc);
+		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['preservesamedomain'] == 'strict' && elementDomain == window.location.hostname)) thirdPartyCheck = false;
+		else if (SETTINGS['preservesamedomain'] == 'strict' && elementDomain != window.location.hostname) thirdPartyCheck = true;
 		else thirdPartyCheck = thirdParty(elSrc);
 		if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
 			elementStatusCheck = true;
@@ -174,8 +177,9 @@ function blockreferrer() {
 				thirdPartyCheck = true;
 			} else {
 				domainCheckStatus = domainCheck(elSrc, 1);
-				if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['preservesamedomain'] == 'strict' && extractDomainFromURL(elSrc) == window.location.hostname)) thirdPartyCheck = false;
-				else if (SETTINGS['preservesamedomain'] == 'strict' && extractDomainFromURL(elSrc) != window.location.hostname) thirdPartyCheck = true;
+				var elementDomain = extractDomainFromURL(elSrc);
+				if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['preservesamedomain'] == 'strict' && elementDomain == window.location.hostname)) thirdPartyCheck = false;
+				else if (SETTINGS['preservesamedomain'] == 'strict' && elementDomain != window.location.hostname) thirdPartyCheck = true;
 				else thirdPartyCheck = thirdParty(elSrc);
 				if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
 					elementStatusCheck = true;
@@ -431,10 +435,12 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
-		ScriptSafe();
-		document.addEventListener("beforeload", block, true);
-		for (var i = 0; i < savedBeforeloadEvents.length; i++)
-			block(savedBeforeloadEvents[i]);
+		if (SETTINGS['LISTSTATUS'] == 'true') {
+			document.addEventListener("beforeload", block, true);
+			for (var i = 0; i < savedBeforeloadEvents.length; i++)
+				block(savedBeforeloadEvents[i]);
+			ScriptSafe();
+		}
 	}
 	delete savedBeforeloadEvents;
 });
