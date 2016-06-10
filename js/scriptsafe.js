@@ -336,7 +336,9 @@ function domainHandler(domain,action,listtype) {
 				var whiteInstancesCount = whiteInstances.length;
 				var blackInstancesCount = blackInstances.length;
 				if (whiteInstancesCount || blackInstancesCount) {
-					if (confirm('ScriptSafe detected '+(whiteInstancesCount+blackInstancesCount)+' existing rule(s) for '+tempDomain+' ('+whiteInstancesCount+' whitelist and '+blackInstancesCount+' blacklist).\r\nDo you want to delete them in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
+					var lingo = '';
+					if (action == 1) lingo = 'dis';
+					if (confirm('ScriptSafe detected '+(whiteInstancesCount+blackInstancesCount)+' existing rule(s) for '+tempDomain+' ('+whiteInstancesCount+' whitelist and '+blackInstancesCount+' blacklist).\r\nDo you want to delete them before '+lingo+'trusting the entire '+tempDomain+' domain in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
 						if (whiteInstancesCount) {
 							for (var x=0; x<whiteInstancesCount; x++) {
 								tempWhitelist.splice(tempWhitelist.indexOf(whiteInstances[x]),1);
@@ -348,8 +350,6 @@ function domainHandler(domain,action,listtype) {
 							}
 						}
 					} else {
-						var lingo = '';
-						if (action == 1) lingo = 'dis';
 						if (!confirm('Do you still want to proceed '+lingo+'trusting the entire '+tempDomain+' domain?')) {
 							return false;
 						}
