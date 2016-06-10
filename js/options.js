@@ -128,7 +128,7 @@ function loadOptions() {
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
-	loadCheckbox("preservesamedomain");
+	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("classicoptions");
 	loadCheckbox("referrer");
@@ -172,7 +172,7 @@ function saveOptions() {
 	saveElement("annoyancesmode");
 	saveCheckbox("antisocial");
 	saveCheckbox("webbugs");
-	saveCheckbox("preservesamedomain");
+	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
 	saveCheckbox("classicoptions");
 	saveCheckbox("referrer");

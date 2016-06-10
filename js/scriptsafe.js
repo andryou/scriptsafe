@@ -9,7 +9,7 @@ var version = (function () {
 var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
 var popup = [];
 var changed = false;
-const ITEMS = {};
+var ITEMS = {};
 var experimental = 0;
 var storageapi = false;
 function refreshRequestTypes() {
@@ -176,7 +176,8 @@ function ScriptSafe(req) {
 		elementStatusCheck = true;
 		thirdPartyCheck = true;
 	} else {
-		if (domainCheckStatus == '0' && !(tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['paranoia'] == 'true')) thirdPartyCheck = false;
+		if ((domainCheckStatus == '0' && !(tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['paranoia'] == 'true')) || (localStorage['preservesamedomain'] == 'strict' && extractedDomain == extractedReqDomain)) thirdPartyCheck = false;
+		else if (localStorage['preservesamedomain'] == 'strict' && extractedDomain != extractedReqDomain) thirdPartyCheck = true;
 		else thirdPartyCheck = thirdParty(req.url, extractedDomain);
 		if ((tabDomainCheckStatus == '-1' && localStorage['mode'] == 'block' && localStorage['paranoia'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && localStorage['mode'] == 'block'))) || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))
 			elementStatusCheck = true;
@@ -188,7 +189,7 @@ function ScriptSafe(req) {
 	} else {
 		return { cancel: false };
 	}
-	if (elementStatusCheck && ((localStorage['preservesamedomain'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')) {
+	if (elementStatusCheck && ((localStorage['preservesamedomain'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')) {
 		if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
 		if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
 			if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
@@ -422,8 +423,8 @@ function setDefaultOptions() {
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
 }
 function updateCount(tabId) {
-	const TAB_ITEMS = ITEMS[tabId] || (ITEMS[tabId] = [0]);
-	const TAB_BLOCKED_COUNT = ++TAB_ITEMS[0];
+	var TAB_ITEMS = ITEMS[tabId] || (ITEMS[tabId] = [0]);
+	var TAB_BLOCKED_COUNT = ++TAB_ITEMS[0];
 	chrome.browserAction.setBadgeBackgroundColor({ color: [208, 0, 24, 255], tabId: tabId });
 	chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
 }
@@ -543,7 +544,7 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], linktarget: localStorage['linktarget']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -568,11 +569,15 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else if (request.reqtype == 'update-blocked') {
 		if (request.src) {
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
-			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked'])) {
+			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT') {
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
-				ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2)]);
+				if (request.node == 'NOSCRIPT') {
+					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, request.src, '-1', '-1', false]);
+				} else {
+					ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2)]);
+				}
 				updateCount(sender.tab.id);
 			}
 		}
