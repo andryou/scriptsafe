@@ -440,8 +440,8 @@ function setDefaultOptions() {
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
 }
 function updateCount(tabId) {
-	const TAB_ITEMS = ITEMS[tabId] || (ITEMS[tabId] = [0]);
-	const TAB_BLOCKED_COUNT = ++TAB_ITEMS[0];
+	var TAB_ITEMS = ITEMS[tabId] || (ITEMS[tabId] = [0]);
+	var TAB_BLOCKED_COUNT = ++TAB_ITEMS[0];
 	chrome.browserAction.setBadgeBackgroundColor({ color: [208, 0, 24, 255], tabId: tabId });
 	chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
 }
