@@ -540,9 +540,6 @@ chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
 			chrome.browserAction.setIcon({path: "../img/Icon"+icontype+".png", tabId: tabid});
 		} else if (changeinfo.status == "complete") {
 			if (typeof ITEMS[tabid] !== 'undefined') {
-				if (localStorage['referrer'] == 'true') {
-					chrome.tabs.executeScript(tabid, {code: 'blockreferrer()', allFrames: true});
-				}
 				chrome.tabs.executeScript(tabid, {code: 'loaded()', allFrames: true});
 				changed = true;
 				if (localStorage['mode'] == 'block' && typeof ITEMS[tabid]['allowed'] !== 'undefined') {

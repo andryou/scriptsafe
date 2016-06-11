@@ -225,10 +225,15 @@ function ScriptSafe() {
 	}
 }
 function loaded() {
-	$('body').unbind('DOMNodeInserted.ScriptSafe');
-	$('body').bind('DOMNodeInserted.ScriptSafe', block);
 	if (SETTINGS['LISTSTATUS'] == 'true') {
+		$('body').unbind('DOMNodeInserted.ScriptSafe');
+		$('body').bind('DOMNodeInserted.ScriptSafe', ScriptSafe);
 		ScriptSafe();
+	}
+	if (SETTINGS['REFERRER'] == 'true') {
+		$('body').unbind('DOMNodeInserted.ScriptSafeReferrer');
+		$('body').bind('DOMNodeInserted.ScriptSafeReferrer', blockreferrer);
+		blockreferrer();
 	}
 }
 function getElSrc(el) {
