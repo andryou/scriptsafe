@@ -108,7 +108,6 @@ function loadOptions() {
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	loadCheckbox("syncfromnotify");
 	loadCheckbox("updatenotify");
-	loadCheckbox("updatemessagenotify");
 	loadCheckbox("syncnotify");
 	loadElement("mode");
 	loadCheckbox("refresh");
@@ -129,7 +128,7 @@ function loadOptions() {
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
 	loadElement("webrtc");
-	if (!bkg.checkWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
+	if (!bkg.getWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("classicoptions");
@@ -156,7 +155,6 @@ function saveOptions() {
 	saveCheckbox("syncnotify");
 	saveCheckbox("syncfromnotify");
 	saveCheckbox("updatenotify");
-	saveCheckbox("updatemessagenotify");
 	saveElement("mode");
 	saveCheckbox("refresh");
 	saveCheckbox("script");

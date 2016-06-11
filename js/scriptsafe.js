@@ -12,6 +12,7 @@ var changed = false;
 var ITEMS = {};
 var experimental = 0;
 var storageapi = false;
+var webrtcsupport = false;
 function refreshRequestTypes() {
 	requestTypes = ['main_frame'];
 	if (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')
@@ -26,7 +27,7 @@ function refreshRequestTypes() {
 		requestTypes.push('xmlhttprequest');
 }
 function initWebRTC() {
-	if (!checkWebRTC()) return;
+	if (!webrtcsupport) return;
 	if (localStorage['webrtc'] != 'off') {
 		chrome.privacy.network.webRTCIPHandlingPolicy.set({
 			value: localStorage['webrtc'],
@@ -36,6 +37,9 @@ function initWebRTC() {
 			value: 'default',
 		});		
 	}
+}
+function getWebRTC() {
+	return webrtcsupport;
 }
 function checkWebRTC() {
 	if (typeof chrome.privacy.network.webRTCIPHandlingPolicy === 'undefined') return false;
@@ -444,6 +448,7 @@ function setDefaultOptions() {
 	defaultOptionValue("referrerspoof", "off");
 	defaultOptionValue("cookies", "true");
 	defaultOptionValue("paranoia", "false");
+	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
@@ -634,7 +639,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		sendResponse({});
 });
 chrome.runtime.onUpdateAvailable.addListener(function (details) {
-	if (localStorage["updatemessagenotify"] == "true") chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}, function(callback) { return true; }); 
+	// do nothing, wait for user to reload browser before updating.
 });
 chrome.commands.onCommand.addListener(function (command) {
     if (command === "temppage") {
@@ -832,7 +837,8 @@ function listsSync(mode) {
 //////////////////////////////////////////////////////
 function init() {
 	setDefaultOptions();
-	initWebRTC();
+	webrtcsupport = checkWebRTC();
+	if (webrtcsupport) initWebRTC();
 	cacheLists();
 }
 function cacheLists() {
