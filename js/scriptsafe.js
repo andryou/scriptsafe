@@ -12,6 +12,7 @@ var changed = false;
 var ITEMS = {};
 var experimental = 0;
 var storageapi = false;
+var webrtcsupport = false;
 function refreshRequestTypes() {
 	requestTypes = ['main_frame'];
 	if (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')
@@ -320,7 +321,9 @@ function domainHandler(domain,action,listtype) {
 				var whiteInstancesCount = whiteInstances.length;
 				var blackInstancesCount = blackInstances.length;
 				if (whiteInstancesCount || blackInstancesCount) {
-					if (confirm('ScriptSafe detected '+(whiteInstancesCount+blackInstancesCount)+' existing rule(s) for '+tempDomain+' ('+whiteInstancesCount+' whitelist and '+blackInstancesCount+' blacklist).\r\nDo you want to delete them in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
+					var lingo = '';
+					if (action == 1) lingo = 'dis';
+					if (confirm('ScriptSafe detected '+(whiteInstancesCount+blackInstancesCount)+' existing rule(s) for '+tempDomain+' ('+whiteInstancesCount+' whitelist and '+blackInstancesCount+' blacklist).\r\nDo you want to delete them before '+lingo+'trusting the entire '+tempDomain+' domain in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
 						if (whiteInstancesCount) {
 							for (var x=0; x<whiteInstancesCount; x++) {
 								tempWhitelist.splice(tempWhitelist.indexOf(whiteInstances[x]),1);
@@ -332,8 +335,6 @@ function domainHandler(domain,action,listtype) {
 							}
 						}
 					} else {
-						var lingo = '';
-						if (action == 1) lingo = 'dis';
 						if (!confirm('Do you still want to proceed '+lingo+'trusting the entire '+tempDomain+' domain?')) {
 							return false;
 						}
@@ -416,6 +417,7 @@ function setDefaultOptions() {
 	defaultOptionValue("referrerspoof", "off");
 	defaultOptionValue("cookies", "true");
 	defaultOptionValue("paranoia", "false");
+	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
@@ -507,9 +509,6 @@ chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
 			chrome.browserAction.setIcon({path: "../img/Icon"+icontype+".png", tabId: tabid});
 		} else if (changeinfo.status == "complete") {
 			if (typeof ITEMS[tabid] !== 'undefined') {
-				if (localStorage['referrer'] == 'true') {
-					chrome.tabs.executeScript(tabid, {code: 'blockreferrer()', allFrames: true});
-				}
 				chrome.tabs.executeScript(tabid, {code: 'loaded()', allFrames: true});
 				changed = true;
 				if (localStorage['mode'] == 'block' && typeof ITEMS[tabid]['allowed'] !== 'undefined') {
@@ -606,7 +605,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		sendResponse({});
 });
 chrome.runtime.onUpdateAvailable.addListener(function (details) {
-	if (localStorage["updatemessagenotify"] == "true") chrome.notifications.create('updatenotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - Update Ready', 'message': 'A new version ('+details.version+') of ScriptSafe is available! ScriptSafe will auto-update once you restart your browser.'}, function(callback) { return true; }); 
+	// do nothing, wait for user to reload browser before updating.
 });
 chrome.commands.onCommand.addListener(function (command) {
     if (command === "temppage") {

@@ -164,31 +164,7 @@ function relativeToAbsoluteUrl(url) { // credit: NotScripts
 	return base[0] + url;
 }
 function blockreferrer() {
-	$("a[rel!='noreferrer']").each(function() {
-		var elSrc = getElSrc(this);
-		if (elSrc) {
-			elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase());
-			var domainCheckStatus;
-			var thirdPartyCheck;
-			var elementStatusCheck;
-			var baddiesCheck = baddies(elSrc, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL'], 2);
-			if (SETTINGS['DOMAINSTATUS'] == '1' || (SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true' && SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
-				elementStatusCheck = true;
-				thirdPartyCheck = true;
-			} else {
-				domainCheckStatus = domainCheck(elSrc, 1);
-				var elementDomain = extractDomainFromURL(elSrc);
-				if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['preservesamedomain'] == 'strict' && elementDomain == window.location.hostname)) thirdPartyCheck = false;
-				else if (SETTINGS['preservesamedomain'] == 'strict' && elementDomain != window.location.hostname) thirdPartyCheck = true;
-				else thirdPartyCheck = thirdParty(elSrc);
-				if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
-					elementStatusCheck = true;
-				else elementStatusCheck = false;
-			}
-			if (elementStatusCheck && ((SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || SETTINGS['PRESERVESAMEDOMAIN'] == 'false'))
-				$(this).attr("rel","noreferrer");
-		}
-	});
+	$("a[data-scriptsafe!='processed']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-scriptsafe","processed"); });
 }
 function removeMedia($el) {
 	$el[0].pause();
@@ -249,10 +225,15 @@ function ScriptSafe() {
 	}
 }
 function loaded() {
-	$('body').unbind('DOMNodeInserted.ScriptSafe');
-	$('body').bind('DOMNodeInserted.ScriptSafe', block);
 	if (SETTINGS['LISTSTATUS'] == 'true') {
+		$('body').unbind('DOMNodeInserted.ScriptSafe');
+		$('body').bind('DOMNodeInserted.ScriptSafe', ScriptSafe);
 		ScriptSafe();
+	}
+	if (SETTINGS['REFERRER'] == 'true') {
+		$('body').unbind('DOMNodeInserted.ScriptSafeReferrer');
+		$('body').bind('DOMNodeInserted.ScriptSafeReferrer', blockreferrer);
+		blockreferrer();
 	}
 }
 function getElSrc(el) {

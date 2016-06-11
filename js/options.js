@@ -108,7 +108,6 @@ function loadOptions() {
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	loadCheckbox("syncfromnotify");
 	loadCheckbox("updatenotify");
-	loadCheckbox("updatemessagenotify");
 	loadCheckbox("syncnotify");
 	loadElement("mode");
 	loadCheckbox("refresh");
@@ -154,7 +153,6 @@ function saveOptions() {
 	saveCheckbox("syncnotify");
 	saveCheckbox("syncfromnotify");
 	saveCheckbox("updatenotify");
-	saveCheckbox("updatemessagenotify");
 	saveElement("mode");
 	saveCheckbox("refresh");
 	saveCheckbox("script");
