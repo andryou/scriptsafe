@@ -129,7 +129,7 @@ function loadOptions() {
 	loadCheckbox("antisocial");
 	loadCheckbox("webbugs");
 	loadElement("webrtc");
-	if (!bkg.checkWebRTC()) $("#webrtccell").html('<strong style="color: red;">This version of Chrome does not support WebRTC protection</strong>');
+	if (!bkg.checkWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("classicoptions");
