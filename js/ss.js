@@ -164,7 +164,7 @@ function relativeToAbsoluteUrl(url) { // credit: NotScripts
 	return base[0] + url;
 }
 function blockreferrer() {
-	$("a[rel!='noreferrer']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } });
+	$("a[data-scriptsafe!='processed']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-scriptsafe","processed"); });
 }
 function removeMedia($el) {
 	$el[0].pause();
