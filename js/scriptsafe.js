@@ -12,7 +12,6 @@ var changed = false;
 var ITEMS = {};
 var experimental = 0;
 var storageapi = false;
-var webrtcsupport = false;
 function refreshRequestTypes() {
 	requestTypes = ['main_frame'];
 	if (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')
