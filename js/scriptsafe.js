@@ -39,7 +39,18 @@ function initWebRTC() {
 }
 function checkWebRTC() {
 	if (typeof chrome.privacy.network.webRTCIPHandlingPolicy === 'undefined') return false;
-	return true;
+	var rtcstatus = null;
+	var rtctest = self.RTCPeerConnection || self.webkitRTCPeerConnection;
+	try {
+		if (rtctest) rtcstatus = new rtctest(null);
+	} catch (exception) {
+		// do nothing
+	}
+	if (rtcstatus !== null) {
+		rtcstatus.close();
+		return true;
+	}
+	return false;
 }
 if (typeof chrome.storage !== 'undefined') {
 	storageapi = true;
