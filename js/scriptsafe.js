@@ -838,7 +838,7 @@ function listsSync(mode) {
 function init() {
 	setDefaultOptions();
 	webrtcsupport = checkWebRTC();
-	if (webrtcsupport) initWebRTC();
+	initWebRTC();
 	cacheLists();
 }
 function cacheLists() {
