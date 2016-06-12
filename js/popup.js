@@ -349,7 +349,7 @@ function remove(url, el, type) {
 	if (closepage == 'true') window.close();
 	else {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
-		if (el.parent().attr("sn_list") == '0') {
+		if (el.parent().attr("sn_list") == '0' || el.parent().attr("sn_list") == '3') {
 			$("[rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
 		}
 		el.hide();
