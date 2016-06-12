@@ -404,7 +404,7 @@ function save(url, el, type) {
 			if (el.attr("rel") == '3') {
 				$(".pallow, [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
 			} else if (el.attr("rel") == '4') {
-				$("[rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
+				$(".pdeny, [rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
 			}
 			if (val < 2) {
 				$(".pbypass, [rel='x_"+urlfriendly+"'] .x_bypass").hide();
