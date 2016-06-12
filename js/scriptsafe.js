@@ -191,11 +191,11 @@ function ScriptSafe(req) {
 		} else {
 			ITEMS[req.tabId]['url'] = req.url;
 		}
-		return { cancel: false };
 	}
 	if (typeof ITEMS[req.tabId] === 'undefined') return { cancel: false };
 	var reqtype = req.type;
 	if (reqtype == "sub_frame") reqtype = 'frame';
+	else if (reqtype == "main_frame") reqtype = 'page';
 	var thirdPartyCheck;
 	var elementStatusCheck;
 	var baddiesCheck = baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial'], 2);
@@ -215,7 +215,7 @@ function ScriptSafe(req) {
 		else elementStatusCheck = false;
 	}
 	if (elementStatusCheck && baddiesCheck && reqtype == "image") reqtype = 'webbug';
-	if ((reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
+	if ((reqtype == "page" && (domainCheckStatus == '1' || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))) || (reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
 		// request qualified for filtering, so continue.
 	} else {
 		return { cancel: false };

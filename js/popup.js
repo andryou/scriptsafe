@@ -86,7 +86,7 @@ function init() {
 					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					var tabdomainroot = bkg.getDomain(tabdomain);
 					$("#currentdomain").html('<span title="'+tabdomain+'">'+tabdomain+'</span>');
-					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false') {
+					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || response.enable == '1' || response.enable == '4') {
 						if (response.status == 'false') {
 							$(".thirds").html('<i>ScriptSafe is disabled</i>');
 							$("#parent").append('<div class="box box1 snstatus" title="Enable ScriptSafe">Enable ScriptSafe</div>');
