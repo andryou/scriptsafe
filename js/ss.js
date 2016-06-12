@@ -415,10 +415,12 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
+		$(document).ready(function() {
+			loaded();
+		});
 		document.addEventListener("beforeload", block, true);
 		for (var i = 0; i < savedBeforeloadEvents.length; i++)
 			block(savedBeforeloadEvents[i]);
-		ScriptSafe();
 	}
 	delete savedBeforeloadEvents;
 });
