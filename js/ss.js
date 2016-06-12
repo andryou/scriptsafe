@@ -2,6 +2,7 @@
 var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
+var timestamp = Math.round(new Date().getTime()/1000.0);
 // initialize settings object with default settings (that are overwritten by the actual user-set values later on)
 var SETTINGS = {
 	"MODE": "block",
@@ -164,7 +165,7 @@ function relativeToAbsoluteUrl(url) { // credit: NotScripts
 	return base[0] + url;
 }
 function blockreferrer() {
-	$("a[data-scriptsafe!='processed']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-scriptsafe","processed"); });
+	$("a[data-scriptsafe!='processed"+timestamp+"']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-scriptsafe","processed"+timestamp); });
 }
 function removeMedia($el) {
 	$el[0].pause();
