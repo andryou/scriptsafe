@@ -386,7 +386,6 @@ function setDefaultOptions() {
 	defaultOptionValue("syncnotify", "true");
 	defaultOptionValue("syncfromnotify", "true");
 	defaultOptionValue("updatenotify", "true");
-	defaultOptionValue("updatemessagenotify", "true");
 	defaultOptionValue("enable", "true");
 	defaultOptionValue("mode", "block");
 	defaultOptionValue("refresh", "true");
