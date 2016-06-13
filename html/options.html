@@ -41,6 +41,11 @@
 					<input type="checkbox" id="noscript" class="save" /><label for="noscript"> &lt;NOSCRIPT&gt;</label><br />
 					<input type="checkbox" id="image" class="save" /><label for="image"> &lt;IMG&gt;</label>
 				</td></tr>
+				<tr><td class="rowtitle"><label for="preservesamedomain">Respect Same-Domain</label>:</td><td><select id="preservesamedomain" class="savechange">
+					<option value="false">Disabled</option>
+					<option value="strict">Strict - allow same domain only</option>
+					<option value="true">Loose - allow same domain and subdomains</option>
+				</select><br /><i>(Default: Disabled; preserve same-domain elements)</i></td></tr>
 				<tr><td class="rowtitle"><label for="xml">XML HTTP Request Handling</label>:</td><td><select id="xml" class="savechange">
 					<option value="false">Disable</option>
 					<option value="true">Control Cross-Domain Requests (allow Same-Domain)</option>
@@ -111,11 +116,6 @@
 					<option value="same">Same Tab</option>
 					<option value="new">New Tab</option>
 				</select> <i>(Default: -Unchanged-; modifies how all links are opened)</i></td></tr>
-				<tr><td class="rowtitle"><label for="preservesamedomain">Respect Same-Domain</label>:</td><td><select id="preservesamedomain" class="savechange">
-					<option value="false">Disabled</option>
-					<option value="strict">Strict - allow same domain only</option>
-					<option value="true">Loose - allow same domain and subdomains</option>
-				</select><br /><i>(Default: Disabled; preserve same-domain elements)</i></td></tr>
 				<tr><td class="rowtitle"><label for="refresh">Auto-Refresh Page</label>:</td><td><input type="checkbox" id="refresh" class="save" /> <i>(Default: enabled; auto-refresh page after list change)</i></td></tr>
 				<tr><td class="rowtitle"><label for="rating">Show Rating Button</label>:</td><td><input type="checkbox" id="rating" class="save" /> <i>(Default: enabled; if ticked, adds rating button under domains in tab popup)</i></td></tr>
 				<tr><td class="rowtitle"><label for="classicoptions">Classic Options Mode</label>:</td><td><input type="checkbox" id="classicoptions" class="save" /> <i>(Default: disabled; if ticked, closes tab options everytime an option is clicked)</i></td></tr>
