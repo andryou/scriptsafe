@@ -86,7 +86,7 @@ function init() {
 					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					var tabdomainroot = bkg.getDomain(tabdomain);
 					$("#currentdomain").html('<span title="'+tabdomain+'">'+tabdomain+'</span>');
-					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false') {
+					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || response.enable == '1' || response.enable == '4') {
 						if (response.status == 'false') {
 							$(".thirds").html('<i>ScriptSafe is disabled</i>');
 							$("#parent").append('<div class="box box1 snstatus" title="Enable ScriptSafe">Enable ScriptSafe</div>');
@@ -349,7 +349,7 @@ function remove(url, el, type) {
 	if (closepage == 'true') window.close();
 	else {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
-		if (el.parent().attr("sn_list") == '0') {
+		if (el.parent().attr("sn_list") == '0' || el.parent().attr("sn_list") == '3') {
 			$("[rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
 		}
 		el.hide();
@@ -404,7 +404,7 @@ function save(url, el, type) {
 			if (el.attr("rel") == '3') {
 				$(".pallow, [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
 			} else if (el.attr("rel") == '4') {
-				$("[rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
+				$(".pdeny, [rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
 			}
 			if (val < 2) {
 				$(".pbypass, [rel='x_"+urlfriendly+"'] .x_bypass").hide();
