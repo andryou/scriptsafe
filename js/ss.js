@@ -44,6 +44,7 @@ function block(event) {
 	var elementStatusCheck;
 	var domainCheckStatus;
 	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+	if (absoluteUrl.substr(0,4) == 'http') return;
 	var elWidth = $(el).attr('width');
 	var elHeight = $(el).attr('height');
 	var elStyle = $(el).attr('style');
@@ -62,7 +63,7 @@ function block(event) {
 			elementStatusCheck = true;
 		else elementStatusCheck = false;
 	}
-	if (absoluteUrl.substr(0,4) == 'http' && elementStatusCheck && (
+	if (elementStatusCheck && (
 		(
 			(
 				(
@@ -74,7 +75,7 @@ function block(event) {
 					|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
 					|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
 					|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
-					|| (elType == "A" && (SETTINGS['REFERRER'] == 'everywhere' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')))
+					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')))
 				)
 				&& (
 					(SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck))
@@ -93,9 +94,9 @@ function block(event) {
 			)
 		)
 		|| (
-			(SETTINGS['REFERRER'] == 'everywhere' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
+			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
 	))) {
-			if ((SETTINGS['REFERRER'] == 'everywhere' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
 				$(el).attr("rel","noreferrer");
 			} else {
 				event.preventDefault();
@@ -230,7 +231,7 @@ function loaded() {
 	ScriptSafe();
 	$('body').unbind('DOMNodeInserted.ScriptSafe');
 	$('body').bind('DOMNodeInserted.ScriptSafe', ScriptSafe);
-	if (SETTINGS['REFERRER'] == 'everywhere' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
+	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
 		$('body').unbind('DOMNodeInserted.ScriptSafeReferrer');
 		$('body').bind('DOMNodeInserted.ScriptSafeReferrer', blockreferrer);
 		blockreferrer();
