@@ -86,7 +86,7 @@ function init() {
 					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					var tabdomainroot = bkg.getDomain(tabdomain);
 					$("#currentdomain").html('<span title="'+tabdomain+'">'+tabdomain+'</span>');
-					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || response.enable == '1' || response.enable == '4') {
+					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || (response.mode == 'block' && (response.enable == '1' || response.enable == '4'))) {
 						if (response.status == 'false') {
 							$(".thirds").html('<i>ScriptSafe is disabled</i>');
 							$("#parent").append('<div class="box box1 snstatus" title="Enable ScriptSafe">Enable ScriptSafe</div>');
@@ -193,12 +193,12 @@ function init() {
 								if (itemdomain) {
 									allowed.push(itemdomain);
 									var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
+									var baddiesstatus = response.alloweditems[i][4];
 									if ($('#allowed .choices[rel="'+itemdomain+'"]').length == 0) {
 										if (response.alloweditems[i][3] == '0') {
 											var trustval0 = '';
 											var trustval1 = '';
 											var allowedtype;
-											var baddiesstatus = response.alloweditems[i][4];
 											var trustType = bkg.trustCheck(itemdomain);
 											if (trustType == '1') {
 												trustval0 = ' selected';

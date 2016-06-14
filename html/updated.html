@@ -9,27 +9,32 @@
 	<div id="message"></div> 
 	<div id="main">
 	<div id="header"><span id="title">ScriptSafe</span><br /><br />
-	<h1>Updated to v<span id="versionno"></span>! (Monday, June 13, 2016)</h1>
+	<h1>Updated to v<span id="versionno"></span>! (Tuesday, June 14, 2016)</h1>
 	<br />
 	<hr>
 	<div style="text-align: left; line-height: 18px; font-size: 13px;"><br />
+	I am pushing this update out because it fixes some important issues with other extensions, as well as blocking behaviour if using "Allow" as "Default Mode".<br /><br />
+	Starting from v1.0.7.11, you will experience consistently fast page load times and the update notifications that many of you found to be annoying have been completely removed.<br /><br />
+	Over the past two weeks, significant updates have been made to ScriptSafe to bring more granular control, protection against WebRTC leaks, significant performance improvements, and most importantly, stronger security.<br /><br />
+	With this release you can expect stability and some peace and quiet, as I don't intend on pushing out another update unless absolutely required.<br /><br />
 	In this version you will find the following updates:
 	<ul>
-		<li><b>v1.0.7.11:</b><ul>
-			<li><strong>Announcement: <a href="https://github.com/andryou/scriptsafe/issues/29" target="_blank">changes to ScriptSafe updates</a></strong> (thank you to all those who helped test this release over this weekend)</li>
-			<li>Further important compatibility fixes for ScriptSafe to work in Chrome-derivative browsers (e.g. not crash)</li>
-			<li>Greatly reduced page load times/CPU usage if using large lists and "Block Click-Through Referrer" enabled</li>
-			<li>Removed update notification messages based on feedback</li>
-			<li>Better behaviour when visiting pages on blocked domains</li>
-			<li>Better handling of post-page-load inserted content</li>
+		<li><b>v1.0.7.12:</b><ul>
+			<li>Updated options for "Block Click-Through Referrer", whichs blocks referrer information when clicking on third-party links:<ul>
+				<li>Disabled - feature is disabled</li>
+				<li>Only on Unwhitelisted Domains - only applies to pages on unwhitelisted domains</li>
+				<li>All Domains - applies to third-party links on every domain, even if whitelisted</li>
+				<li><b>Default</b>: "Only on Unwhitelisted Domains" (as setting it to "All Domains" may cause issues (e.g. thumbnails in Tweetdeck))</li>
+			</ul></li>
+			<li>Corrected blocking behaviour if using "Allow" as "Default Mode"</li>
+			<li>Improve compatibility with other Chrome extensions</li>
 			<li>Updated unwanted content providers list</li>
 		</ul></li>
 	</ul>
 	I have put together <a href="https://github.com/andryou/scriptsafe/wiki" target="_blank">some documentation for ScriptSafe</a>, including "Getting Started" instructions.<br />
 	If you run into any issues, please <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">create an issue in Github</a>.
 	<br /><br />
-	I am quite active on Twitter, so if you don't mind the occasional cat tweet, you are free to follow me: <a href="https://twitter.com/andryou" target="_blank">@andryou</a>.<br />
-	If you like ScriptSafe, check out one of my other extensions: <a href="https://chrome.google.com/webstore/detail/decreased-productivity/nlbpiflhmdcklcbihngeffpmoklbiooj" target="_blank">Decreased Productivity</a>.<br /><br />
+	I am quite active on Twitter, so if you don't mind the occasional cat tweet, you are free to follow me: <a href="https://twitter.com/andryou" target="_blank">@andryou</a>.<br /><br />
 	Thank you,<br />
 	-Andrew<br /><br /></div>
 	<hr>

@@ -44,6 +44,7 @@ function block(event) {
 	var elementStatusCheck;
 	var domainCheckStatus;
 	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+	if (absoluteUrl.substr(0,4) == 'http') return;
 	var elWidth = $(el).attr('width');
 	var elHeight = $(el).attr('height');
 	var elStyle = $(el).attr('style');
@@ -62,7 +63,7 @@ function block(event) {
 			elementStatusCheck = true;
 		else elementStatusCheck = false;
 	}
-	if (elSrc.substr(0,17) != 'chrome-extension:' && elementStatusCheck && (
+	if (elementStatusCheck && (
 		(
 			(
 				(
@@ -74,7 +75,7 @@ function block(event) {
 					|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
 					|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
 					|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
-					|| (elType == "A" && SETTINGS['REFERRER'] == 'true')
+					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')))
 				)
 				&& (
 					(SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck))
@@ -93,9 +94,9 @@ function block(event) {
 			)
 		)
 		|| (
-			SETTINGS['REFERRER'] == 'true' && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
+			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
 	))) {
-			if (SETTINGS['REFERRER'] == 'true' && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
 				$(el).attr("rel","noreferrer");
 			} else {
 				event.preventDefault();
@@ -107,12 +108,13 @@ function block(event) {
 				else $(el).remove();
 			}
 		} else {
-			if (SETTINGS['EXPERIMENTAL'] == '0' && elSrc.substr(0,11) != 'javascript:' && elSrc.substr(0,17) != 'chrome-extension:' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
+			if (SETTINGS['EXPERIMENTAL'] == '0' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
 				chrome.extension.sendRequest({reqtype: "update-allowed", src: absoluteUrl, node: elType});
 			}
 		}
 }
 function postLoadCheck(elSrc) {
+	if (elSrc.substring(0,4) != 'http') return false;
 	var domainCheckStatus;
 	var thirdPartyCheck;
 	var elementStatusCheck;
@@ -196,7 +198,7 @@ function ScriptSafe() {
 	if (SETTINGS['IMAGE'] == 'true') $("img[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
 	if (SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0') {
 		clearUnloads();
-		$("script[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc.substr(0,11) != 'javascript:' && elSrc.substr(0,17) != 'chrome-extension:') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); $(this).attr("data-ss"+timestamp,'1'); } } } });
+		$("script[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc.substr(0,4) == 'http') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); $(this).attr("data-ss"+timestamp,'1'); } } } });
 		if ((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && SETTINGS['DOMAINSTATUS'] == '1'))) {
 			$("a[href^='javascript']").attr("href","javascript:;");
 			$("[onClick]").removeAttr("onClick");
@@ -229,7 +231,7 @@ function loaded() {
 	ScriptSafe();
 	$('body').unbind('DOMNodeInserted.ScriptSafe');
 	$('body').bind('DOMNodeInserted.ScriptSafe', ScriptSafe);
-	if (SETTINGS['REFERRER'] == 'true') {
+	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
 		$('body').unbind('DOMNodeInserted.ScriptSafeReferrer');
 		$('body').bind('DOMNodeInserted.ScriptSafeReferrer', blockreferrer);
 		blockreferrer();

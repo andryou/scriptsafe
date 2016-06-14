@@ -151,7 +151,7 @@ function inlineblock(req) {
     return { responseHeaders: headers };
 }
 function ScriptSafe(req) {
-	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false") {
+	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false" || req.url.substring(0,4) != 'http') {
 		return { cancel: false };
 	}
 	if (req.type == 'main_frame') {
@@ -184,7 +184,7 @@ function ScriptSafe(req) {
 		else elementStatusCheck = false;
 	}
 	if (elementStatusCheck && baddiesCheck && reqtype == "image") reqtype = 'webbug';
-	if ((reqtype == "page" && (domainCheckStatus == '1' || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))) || (reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
+	if ((reqtype == "page" && localStorage['mode'] == 'block' && (domainCheckStatus == '1' || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))) || (reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
 		// request qualified for filtering, so continue.
 	} else {
 		return { cancel: false };
@@ -213,7 +213,7 @@ function ScriptSafe(req) {
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1) 
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/')) 
 		return 'true';
 	return 'false';
 }

@@ -130,7 +130,7 @@ function loadOptions() {
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("classicoptions");
-	loadCheckbox("referrer");
+	loadElement("referrer");
 	loadCheckbox("rating");
 	loadCheckbox("domainsort");
 	loadElement("linktarget");
@@ -173,7 +173,7 @@ function saveOptions() {
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
 	saveCheckbox("classicoptions");
-	saveCheckbox("referrer");
+	saveElement("referrer");
 	saveCheckbox("rating");
 	saveCheckbox("cookies");
 	saveElement("useragentspoof");
