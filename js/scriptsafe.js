@@ -182,7 +182,7 @@ function inlineblock(req) {
     return { responseHeaders: headers };
 }
 function ScriptSafe(req) {
-	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false") {
+	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false" || req.url.substring(0,4) != 'http') {
 		return { cancel: false };
 	}
 	if (req.type == 'main_frame') {
@@ -244,7 +244,7 @@ function ScriptSafe(req) {
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1) 
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/')) 
 		return 'true';
 	return 'false';
 }
