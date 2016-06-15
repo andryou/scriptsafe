@@ -75,21 +75,10 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	delete savedBeforeloadEvents; // eventually remove
 });
 function loaded() {
-	var obtarget = document.querySelector("body"),
-		obconfig = {
-			childList: true,
-			subtree : true,
-			attributes: true,
-			characterData : false
-		};
+	var obtarget = document.querySelector("body");
+	var obconfig = { childList: true, subtree : true, attributes: false, characterData : false };
 	ScriptSafe();
-	var ssobserver = new MutationObserver(ScriptSafe);
-	ssobserver.observe(obtarget, obconfig);
-	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
-		blockreferrer();
-		var refobserver = new MutationObserver(blockreferrer);
-		refobserver.observe(obtarget, obconfig);
-	}
+	new MutationObserver(ScriptSafe).observe(obtarget, obconfig);
 }
 function ScriptSafe() {
 	if (SETTINGS['LINKTARGET'] != 'off') {
@@ -97,6 +86,9 @@ function ScriptSafe() {
 		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
 		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
+	}
+	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
+		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
@@ -141,9 +133,6 @@ function ScriptSafe() {
 			$("[onUnload]").removeAttr("onUnload");
 		}
 	}
-}
-function blockreferrer() {
-	$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
 }
 function postLoadCheck(elSrc) {
 	if (elSrc.substring(0,4) != 'http') return false;
