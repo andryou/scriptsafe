@@ -9,4 +9,4 @@ try {
 if (rtcstatus !== null) {
 	rtcstatus.close();
 }
-parent.testWebRTC(rtcstatus);
+parent.testWebRTC((rtcstatus !== null));

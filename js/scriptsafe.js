@@ -43,8 +43,7 @@ function getWebRTC() {
 }
 function testWebRTC(rtcstatus) {
 	document.getElementById('webrtc').remove();
-	if (rtcstatus !== null) webrtcsupport = true;
-	else webrtcsupport = false;
+	webrtcsupport = rtcstatus;
 }
 function checkWebRTC() {
 	if (typeof chrome.privacy.network.webRTCIPHandlingPolicy === 'undefined') return false;
