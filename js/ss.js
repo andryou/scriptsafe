@@ -75,13 +75,20 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	delete savedBeforeloadEvents; // eventually remove
 });
 function loaded() {
+	var obtarget = document.querySelector("body"),
+		obconfig = {
+			childList: true,
+			subtree : true,
+			attributes: true,
+			characterData : false
+		};
 	ScriptSafe();
-	$('body').unbind('DOMNodeInserted.ScriptSafe');
-	$('body').bind('DOMNodeInserted.ScriptSafe', ScriptSafe);
+	var ssobserver = new MutationObserver(ScriptSafe);
+	ssobserver.observe(obtarget, obconfig);
 	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
-		$('body').unbind('DOMNodeInserted.ScriptSafeReferrer');
-		$('body').bind('DOMNodeInserted.ScriptSafeReferrer', blockreferrer);
 		blockreferrer();
+		var refobserver = new MutationObserver(blockreferrer);
+		refobserver.observe(obtarget, obconfig);
 	}
 }
 function ScriptSafe() {
