@@ -41,20 +41,17 @@ function initWebRTC() {
 function getWebRTC() {
 	return webrtcsupport;
 }
+function testWebRTC(rtcstatus) {
+	document.getElementById('webrtc').remove();
+	if (rtcstatus !== null) webrtcsupport = true;
+	else webrtcsupport = false;
+}
 function checkWebRTC() {
 	if (typeof chrome.privacy.network.webRTCIPHandlingPolicy === 'undefined') return false;
-	var rtcstatus = null;
-	var rtctest = self.RTCPeerConnection || self.webkitRTCPeerConnection;
-	try {
-		if (rtctest) rtcstatus = new rtctest(null);
-	} catch (exception) {
-		// do nothing
-	}
-	if (rtcstatus !== null) {
-		rtcstatus.close();
-		return true;
-	}
-	return false;
+	var doc = document.getElementById('webrtc').contentWindow.document;
+	doc.open();
+	doc.write('<script src="../js/webrtctest.js"></script>');
+	doc.close();
 }
 if (typeof chrome.storage !== 'undefined') {
 	storageapi = true;
