@@ -32,86 +32,107 @@ var SETTINGS = {
 	"REFERRER": true,
 	"PARANOIA": 'true'
 };
-const reStartWProtocol = /^[^\.\/:]+:\/\//i; // credit: NotScripts
-function block(event) {
-	var el = event.target;
-	var elSrc = getElSrc(el);
-	if (!elSrc) return;
-	var elType = el.nodeName.toUpperCase();
-	if (!(elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG")) return;
-	elSrc = elSrc.toLowerCase();
-	var thirdPartyCheck;
-	var elementStatusCheck;
-	var domainCheckStatus;
-	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
-	if (absoluteUrl.substr(0,4) == 'http') return;
-	var elWidth = $(el).attr('width');
-	var elHeight = $(el).attr('height');
-	var elStyle = $(el).attr('style');
-	var baddiesCheck = baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']);
-	if (SETTINGS['DOMAINSTATUS'] == '1' || (SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true' && SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
-		elementStatusCheck = true;
-		thirdPartyCheck = true;
-		domainCheckStatus = '1';
-	} else {
-		domainCheckStatus = domainCheck(absoluteUrl, 1);
-		var elementDomain = extractDomainFromURL(absoluteUrl);
-		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && elementDomain == window.location.hostname)) thirdPartyCheck = false;
-		else if (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && elementDomain != window.location.hostname) thirdPartyCheck = true;
-		else thirdPartyCheck = thirdParty(absoluteUrl);
-		if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
-			elementStatusCheck = true;
-		else elementStatusCheck = false;
+document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
+if (window.self != window.top) iframe = 1;
+chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function(response) {
+    document.removeEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
+	if (typeof response === 'object' && response.status == 'true') {
+		SETTINGS['MODE'] = response.mode;
+		SETTINGS['ANNOYANCES'] = response.annoyances;
+		SETTINGS['ANNOYANCESMODE'] = response.annoyancesmode;
+		SETTINGS['ANTISOCIAL'] = response.antisocial;
+		SETTINGS['WHITELIST'] = response.whitelist;
+		SETTINGS['BLACKLIST'] = response.blacklist;	
+		SETTINGS['WHITELISTSESSION'] = response.whitelistSession;
+		SETTINGS['BLACKLISTSESSION'] = response.blackListSession;
+		SETTINGS['SCRIPT'] = response.script;
+		SETTINGS['PRESERVESAMEDOMAIN'] = response.preservesamedomain;
+		SETTINGS['EXPERIMENTAL'] = response.experimental;
+		SETTINGS['DOMAINSTATUS'] = domainCheck(window.location.href, 1);
+		if (SETTINGS['EXPERIMENTAL'] == '0' && (((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && SETTINGS['DOMAINSTATUS'] == '1')) && response.enable == 'true' && SETTINGS['SCRIPT'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0') || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && SETTINGS['DOMAINSTATUS'] != '0')) && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2'))))
+			mitigate();
+		SETTINGS['LISTSTATUS'] = response.enable;
+		SETTINGS['NOSCRIPT'] = response.noscript;
+		SETTINGS['OBJECT'] = response.object;
+		SETTINGS['APPLET'] = response.applet;
+		SETTINGS['EMBED'] = response.embed;
+		SETTINGS['IFRAME'] = response.iframe;
+		SETTINGS['FRAME'] = response.frame;
+		SETTINGS['AUDIO'] = response.audio;
+		SETTINGS['VIDEO'] = response.video;
+		SETTINGS['IMAGE'] = response.image;
+		SETTINGS['WEBBUGS'] = response.webbugs;
+		SETTINGS['LINKTARGET'] = response.linktarget;
+		SETTINGS['REFERRER'] = response.referrer;
+		SETTINGS['PARANOIA'] = response.paranoia;
+		$(document).ready(function() {
+			loaded();
+		});
+		document.addEventListener("beforeload", block, true); // eventually remove
+		for (var i = 0; i < savedBeforeloadEvents.length; i++) // eventually remove
+			block(savedBeforeloadEvents[i]); // eventually remove
 	}
-	if (elementStatusCheck && (
-		(
-			(
-				(
-					(elType == "IFRAME" && SETTINGS['IFRAME'] == 'true')
-					|| (elType == "FRAME" && SETTINGS['FRAME'] == 'true')
-					|| (elType == "EMBED" && SETTINGS['EMBED'] == 'true')
-					|| (elType == "OBJECT" && SETTINGS['OBJECT'] == 'true')
-					|| (elType == "SCRIPT" && SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0')
-					|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
-					|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
-					|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
-					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')))
-				)
-				&& (
-					(SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck))
-					|| SETTINGS['PRESERVESAMEDOMAIN'] == 'false'
-				)
-				
-			)
-		)
-		|| (
-			SETTINGS['WEBBUGS'] == 'true'
-			&& (elType == "IMG" || elType == "IFRAME" ||  elType == "FRAME" || elType == "EMBED" || elType == "OBJECT")
-			&& (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
-			&& (
-				(typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5)
-				|| (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i))
-			)
-		)
-		|| (
-			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
-	))) {
-			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
-				$(el).attr("rel","noreferrer");
-			} else {
-				event.preventDefault();
-				if (SETTINGS['WEBBUGS'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck) && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && ((typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5) || (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i)))) {
-					elType = "WEBBUG";
-				}
-				chrome.extension.sendRequest({reqtype: "update-blocked", src: absoluteUrl, node: elType});
-				if (elType == 'VIDEO' || elType == 'AUDIO') removeMedia($el);
-				else $(el).remove();
-			}
-		} else {
-			if (SETTINGS['EXPERIMENTAL'] == '0' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
-				chrome.extension.sendRequest({reqtype: "update-allowed", src: absoluteUrl, node: elType});
-			}
+	delete savedBeforeloadEvents; // eventually remove
+});
+function loaded() {
+	var obtarget = document.querySelector("body");
+	var obconfig = { childList: true, subtree : true, attributes: false, characterData : false };
+	ScriptSafe();
+	new MutationObserver(ScriptSafe).observe(obtarget, obconfig);
+}
+function ScriptSafe() {
+	if (SETTINGS['LINKTARGET'] != 'off') {
+		var linktrgt;
+		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
+		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
+		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
+	}
+	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
+		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
+	}
+	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
+		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
+	}
+	if (SETTINGS['APPLET'] == 'true') $("applet[data-ss"+timestamp+"!='1']").each(function() { var elSrc = $(this).attr('code'); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'APPLET'}); $(this).remove(); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'APPLET'}); $(this).attr("data-ss"+timestamp,'1'); } } });
+	if (SETTINGS['VIDEO'] == 'true') $("video[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'VIDEO'}); removeMedia($(this)); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'VIDEO'}); $(this).attr("data-ss"+timestamp,'1'); } } });
+	if (SETTINGS['AUDIO'] == 'true') $("audio[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'AUDIO'}); removeMedia($(this)); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'AUDIO'}); $(this).attr("data-ss"+timestamp,'1'); } } });
+	/* handled by background page, but clean up elements */
+	if (SETTINGS['IFRAME'] == 'true') $("iframe[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
+	if (SETTINGS['OBJECT'] == 'true') $("object[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
+	if (SETTINGS['EMBED'] == 'true') $("embed[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
+	if (SETTINGS['IMAGE'] == 'true') $("picture[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
+	if (SETTINGS['IMAGE'] == 'true') $("img[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
+	/* Fallback Inline Script Handling */
+	if (SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0') {
+		clearUnloads();
+		$("script[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc.substr(0,4) == 'http') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); $(this).attr("data-ss"+timestamp,'1'); } } } });
+		if ((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && SETTINGS['DOMAINSTATUS'] == '1'))) {
+			$("a[href^='javascript']").attr("href","javascript:;");
+			$("[onClick]").removeAttr("onClick");
+			$("[onAbort]").removeAttr("onAbort");
+			$("[onBlur]").removeAttr("onBlur");
+			$("[onChange]").removeAttr("onChange");
+			$("[onDblClick]").removeAttr("onDblClick");
+			$("[onDragDrop]").removeAttr("onDragDrop");
+			$("[onError]").removeAttr("onError");
+			$("[onFocus]").removeAttr("onFocus");
+			$("[onKeyDown]").removeAttr("onKeyDown");
+			$("[onKeyPress]").removeAttr("onKeyPress");
+			$("[onKeyUp]").removeAttr("onKeyUp");
+			$("[onLoad]").removeAttr("onLoad");
+			$("[onMouseDown]").removeAttr("onMouseDown");
+			$("[onMouseMove]").removeAttr("onMouseMove");
+			$("[onMouseOut]").removeAttr("onMouseOut");
+			$("[onMouseOver]").removeAttr("onMouseOver");
+			$("[onMouseUp]").removeAttr("onMouseUp");
+			$("[onMove]").removeAttr("onMove");
+			$("[onReset]").removeAttr("onReset");
+			$("[onResize]").removeAttr("onResize");
+			$("[onSelect]").removeAttr("onSelect");
+			$("[onSubmit]").removeAttr("onSubmit");
+			$("[onUnload]").removeAttr("onUnload");
 		}
+	}
 }
 function postLoadCheck(elSrc) {
 	if (elSrc.substring(0,4) != 'http') return false;
@@ -166,9 +187,6 @@ function relativeToAbsoluteUrl(url) { // credit: NotScripts
 		return document.baseURI + "/" + url;
 	return base[0] + url;
 }
-function blockreferrer() {
-	$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
-}
 function removeMedia($el) {
 	$el[0].pause();
 	$el[0].src = '';
@@ -177,67 +195,8 @@ function removeMedia($el) {
 	//$el.hide();
 	$el.remove().length = 0;
 };
-function ScriptSafe() {
-	if (SETTINGS['LINKTARGET'] != 'off') {
-		var linktrgt;
-		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
-		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
-		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
-	}
-	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
-		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
-	}
-	if (SETTINGS['APPLET'] == 'true') $("applet[data-ss"+timestamp+"!='1']").each(function() { var elSrc = $(this).attr('code'); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'APPLET'}); $(this).remove(); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'APPLET'}); $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['VIDEO'] == 'true') $("video[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'VIDEO'}); removeMedia($(this)); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'VIDEO'}); $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['AUDIO'] == 'true') $("audio[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc); if (postLoadCheck(elSrc.toLowerCase())) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'AUDIO'}); removeMedia($(this)); } else { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: 'AUDIO'}); $(this).attr("data-ss"+timestamp,'1'); } } });
-	/* handled by background page, but clean up elements */
-	if (SETTINGS['IFRAME'] == 'true') $("iframe[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['OBJECT'] == 'true') $("object[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['EMBED'] == 'true') $("embed[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['IMAGE'] == 'true') $("picture[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['IMAGE'] == 'true') $("img[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { $(this).remove(); } else { $(this).attr("data-ss"+timestamp,'1'); } } });
-	if (SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0') {
-		clearUnloads();
-		$("script[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (elSrc) { elSrc = relativeToAbsoluteUrl(elSrc.toLowerCase()); if (postLoadCheck(elSrc)) { chrome.extension.sendRequest({reqtype: "update-blocked", src: elSrc, node: 'SCRIPT'}); $(this).remove(); } else { if (elSrc.substr(0,4) == 'http') { chrome.extension.sendRequest({reqtype: "update-allowed", src: elSrc, node: "SCRIPT"}); $(this).attr("data-ss"+timestamp,'1'); } } } });
-		if ((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && SETTINGS['DOMAINSTATUS'] == '1'))) {
-			$("a[href^='javascript']").attr("href","javascript:;");
-			$("[onClick]").removeAttr("onClick");
-			$("[onAbort]").removeAttr("onAbort");
-			$("[onBlur]").removeAttr("onBlur");
-			$("[onChange]").removeAttr("onChange");
-			$("[onDblClick]").removeAttr("onDblClick");
-			$("[onDragDrop]").removeAttr("onDragDrop");
-			$("[onError]").removeAttr("onError");
-			$("[onFocus]").removeAttr("onFocus");
-			$("[onKeyDown]").removeAttr("onKeyDown");
-			$("[onKeyPress]").removeAttr("onKeyPress");
-			$("[onKeyUp]").removeAttr("onKeyUp");
-			$("[onLoad]").removeAttr("onLoad");
-			$("[onMouseDown]").removeAttr("onMouseDown");
-			$("[onMouseMove]").removeAttr("onMouseMove");
-			$("[onMouseOut]").removeAttr("onMouseOut");
-			$("[onMouseOver]").removeAttr("onMouseOver");
-			$("[onMouseUp]").removeAttr("onMouseUp");
-			$("[onMove]").removeAttr("onMove");
-			$("[onReset]").removeAttr("onReset");
-			$("[onResize]").removeAttr("onResize");
-			$("[onSelect]").removeAttr("onSelect");
-			$("[onSubmit]").removeAttr("onSubmit");
-			$("[onUnload]").removeAttr("onUnload");
-		}
-	}
-}
-function loaded() {
-	ScriptSafe();
-	$('body').unbind('DOMNodeInserted.ScriptSafe');
-	$('body').bind('DOMNodeInserted.ScriptSafe', ScriptSafe);
-	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
-		$('body').unbind('DOMNodeInserted.ScriptSafeReferrer');
-		$('body').bind('DOMNodeInserted.ScriptSafeReferrer', blockreferrer);
-		blockreferrer();
-	}
-}
 function getElSrc(el) {
+	var reStartWProtocol = /^[^\.\/:]+:\/\//i; // credit: NotScripts
 	switch (el.nodeName.toUpperCase()) {
 		case 'PICTURE':
 			var plist = el.getElementsByTagName('source');
@@ -311,13 +270,14 @@ function getElSrc(el) {
 			break;
 	}
 }
-function injectAnon(f) { // credit: NotScripts - eventually phase out
+/* Fallback Inline Script Handling (if Chrome doesn't support chrome.webRequest API) / */
+function injectAnon(f) { // credit: NotScripts
     var script = document.createElement("script");
 	script.type = "text/javascript";
     script.textContent = "(" + f + ")();";
     document.documentElement.appendChild(script);
 }
-function mitigate() { // credit: NotScripts - eventually phase out
+function mitigate() { // credit: NotScripts
 	injectAnon(function(){
 		for (var i in window) {
 			try {
@@ -381,48 +341,89 @@ function clearUnloads() { // credit: NotScripts
 	window.onunload = null;
 	if (keepGoing) timer = setTimeout("clearUnloads()", 5000);
 }
+/* / Fallback Inline Script Handling */
+/* Deprecated beforeload Handling / */
 function saveBeforeloadEvent(e) {
 	savedBeforeloadEvents.push(e);
 }
-document.addEventListener("beforeload", saveBeforeloadEvent, true);
-if (window.self != window.top) iframe = 1;
-chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function(response) {
-    document.removeEventListener("beforeload", saveBeforeloadEvent, true);
-	if (typeof response === 'object' && response.status == 'true') {
-		SETTINGS['MODE'] = response.mode;
-		SETTINGS['ANNOYANCES'] = response.annoyances;
-		SETTINGS['ANNOYANCESMODE'] = response.annoyancesmode;
-		SETTINGS['ANTISOCIAL'] = response.antisocial;
-		SETTINGS['WHITELIST'] = response.whitelist;
-		SETTINGS['BLACKLIST'] = response.blacklist;	
-		SETTINGS['WHITELISTSESSION'] = response.whitelistSession;
-		SETTINGS['BLACKLISTSESSION'] = response.blackListSession;
-		SETTINGS['SCRIPT'] = response.script;
-		SETTINGS['PRESERVESAMEDOMAIN'] = response.preservesamedomain;
-		SETTINGS['EXPERIMENTAL'] = response.experimental;
-		SETTINGS['DOMAINSTATUS'] = domainCheck(window.location.href, 1);
-		if (SETTINGS['EXPERIMENTAL'] == '0' && (((SETTINGS['PRESERVESAMEDOMAIN'] == 'false' || (SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && SETTINGS['DOMAINSTATUS'] == '1')) && response.enable == 'true' && SETTINGS['SCRIPT'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0') || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && SETTINGS['DOMAINSTATUS'] != '0')) && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddies(window.location.hostname, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']) == '2'))))
-			mitigate();
-		SETTINGS['LISTSTATUS'] = response.enable;
-		SETTINGS['NOSCRIPT'] = response.noscript;
-		SETTINGS['OBJECT'] = response.object;
-		SETTINGS['APPLET'] = response.applet;
-		SETTINGS['EMBED'] = response.embed;
-		SETTINGS['IFRAME'] = response.iframe;
-		SETTINGS['FRAME'] = response.frame;
-		SETTINGS['AUDIO'] = response.audio;
-		SETTINGS['VIDEO'] = response.video;
-		SETTINGS['IMAGE'] = response.image;
-		SETTINGS['WEBBUGS'] = response.webbugs;
-		SETTINGS['LINKTARGET'] = response.linktarget;
-		SETTINGS['REFERRER'] = response.referrer;
-		SETTINGS['PARANOIA'] = response.paranoia;
-		$(document).ready(function() {
-			loaded();
-		});
-		document.addEventListener("beforeload", block, true);
-		for (var i = 0; i < savedBeforeloadEvents.length; i++)
-			block(savedBeforeloadEvents[i]);
+function block(event) {
+	var el = event.target;
+	var elSrc = getElSrc(el);
+	if (!elSrc) return;
+	var elType = el.nodeName.toUpperCase();
+	if (!(elType == "A" || elType == "IFRAME" || elType == "FRAME" || (elType == "SCRIPT" && SETTINGS['EXPERIMENTAL'] == '0') || elType == "EMBED" || elType == "OBJECT" || elType == "IMG")) return;
+	elSrc = elSrc.toLowerCase();
+	var absoluteUrl = relativeToAbsoluteUrl(elSrc);
+	if (absoluteUrl.substr(0,4) != 'http') return;
+	var thirdPartyCheck;
+	var elementStatusCheck;
+	var domainCheckStatus;
+	var elWidth = $(el).attr('width');
+	var elHeight = $(el).attr('height');
+	var elStyle = $(el).attr('style');
+	var baddiesCheck = baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']);
+	if (SETTINGS['DOMAINSTATUS'] == '1' || (SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true' && SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
+		elementStatusCheck = true;
+		thirdPartyCheck = true;
+		domainCheckStatus = '1';
+	} else {
+		domainCheckStatus = domainCheck(absoluteUrl, 1);
+		var elementDomain = extractDomainFromURL(absoluteUrl);
+		if ((domainCheckStatus == '0' && !(SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true')) || (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && elementDomain == window.location.hostname)) thirdPartyCheck = false;
+		else if (SETTINGS['PRESERVESAMEDOMAIN'] == 'strict' && elementDomain != window.location.hostname) thirdPartyCheck = true;
+		else thirdPartyCheck = thirdParty(absoluteUrl);
+		if ((SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true') || (domainCheckStatus != '0' && (domainCheckStatus == '1' || (domainCheckStatus == '-1' && SETTINGS['MODE'] == 'block'))) || ((SETTINGS['ANNOYANCES'] == 'true' && (SETTINGS['ANNOYANCESMODE'] == 'strict' || (SETTINGS['ANNOYANCESMODE'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (SETTINGS['ANTISOCIAL'] == 'true' && baddiesCheck == '2'))
+			elementStatusCheck = true;
+		else elementStatusCheck = false;
 	}
-	delete savedBeforeloadEvents;
-});
+	if (elementStatusCheck && (
+		(
+			(
+				(
+					(elType == "IFRAME" && SETTINGS['IFRAME'] == 'true')
+					|| (elType == "FRAME" && SETTINGS['FRAME'] == 'true')
+					|| (elType == "EMBED" && SETTINGS['EMBED'] == 'true')
+					|| (elType == "OBJECT" && SETTINGS['OBJECT'] == 'true')
+					|| (elType == "SCRIPT" && SETTINGS['SCRIPT'] == 'true' && SETTINGS['EXPERIMENTAL'] == '0')
+					|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
+					|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
+					|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
+					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')))
+				)
+				&& (
+					(SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck))
+					|| SETTINGS['PRESERVESAMEDOMAIN'] == 'false'
+				)
+				
+			)
+		)
+		|| (
+			SETTINGS['WEBBUGS'] == 'true'
+			&& (elType == "IMG" || elType == "IFRAME" ||  elType == "FRAME" || elType == "EMBED" || elType == "OBJECT")
+			&& (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
+			&& (
+				(typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5)
+				|| (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i))
+			)
+		)
+		|| (
+			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
+	))) {
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
+				$(el).attr("rel","noreferrer");
+			} else {
+				event.preventDefault();
+				if (SETTINGS['WEBBUGS'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck) && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "IMG") && ((typeof elWidth !== 'undefined' && elWidth <= 5 && typeof elHeight !== 'undefined' && elHeight <= 5) || (typeof elStyle !== 'undefined' && elStyle.match(/(.*?;\s*|^\s*?)(height|width)\s*?:\s*?[0-5]\D.*?;\s*(height|width)\s*?:\s*?[0-5]\D/i)))) {
+					elType = "WEBBUG";
+				}
+				chrome.extension.sendRequest({reqtype: "update-blocked", src: absoluteUrl, node: elType});
+				if (elType == 'VIDEO' || elType == 'AUDIO') removeMedia($el);
+				else $(el).remove();
+			}
+		} else {
+			if (SETTINGS['EXPERIMENTAL'] == '0' && (elType == "IFRAME" || elType == "FRAME" || elType == "EMBED" || elType == "OBJECT" || elType == "SCRIPT")) {
+				chrome.extension.sendRequest({reqtype: "update-allowed", src: absoluteUrl, node: elType});
+			}
+		}
+}
+/* / Deprecated beforeload Handling */
