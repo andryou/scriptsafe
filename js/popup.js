@@ -10,6 +10,7 @@ var closepage, mode, taburl, tabid, tabdomain;
 var selected = false;
 var intemp = false;
 var undesirablecount = 0;
+var paranoiacount = 0;
 var blocked = [];
 var allowed = [];
 var statuschange = function() {
@@ -153,6 +154,7 @@ function init() {
 									} else if ((parentstatus == '1' || parentstatus == '-1') && domainCheckStatus == '0') {
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .box1, #blocked [rel='x_"+itemdomainfriendly+"'] .x_trust, #blocked [rel='x_"+itemdomainfriendly+"'] .box3, #blocked [rel='x_"+itemdomainfriendly+"'] .box4").hide();
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Ignored allowed domain due to unlisted tab domain").html("Ignored Allow").addClass("selected");
+										paranoiacount++;
 									} else if (response.annoyances == 'true' && domainCheckStatus == '-1' && baddiesstatus == '1') {
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html("Unwanted").addClass("selected");
@@ -251,7 +253,7 @@ function init() {
 							if (($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_no_script"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_web_bug"]').length == 1)) {
 								// empty space
 							} else {
-								if (blockedCount != 0 && undesirablecount != blockedCount) {
+								if (blockedCount != 0 && undesirablecount != blockedCount && paranoiacount != blockedCount) {
 									$(tempSel).append('<br /><div class="box box3 allowsession" title="Allow all blocked resources for the session (not including webbugs/noscript tags/annoyances)">Allow All Blocked For Session</div>');
 								} else {
 									$(tempSel).append('<br />');
