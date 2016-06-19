@@ -264,7 +264,7 @@ function init() {
 							if (($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_no_script"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_web_bug"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1)) {
 								// empty space
 							} else {
-								if ($("#blocked .x_whitelist").length != 0) {
+								if ($("#blocked .x_whitelist:visible").length != 0) {
 									$(tempSel).append('<br /><div class="box box3 allowsession" title="Allow all blocked resources for the session (not including webbugs/noscript/fingerprinting/annoyances)">Allow All Blocked For Session</div>');
 								} else {
 									$(tempSel).append('<br />');
