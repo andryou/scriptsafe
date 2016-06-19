@@ -132,6 +132,7 @@ function loadOptions() {
 	loadCheckbox("webgl");
 	loadCheckbox("battery");
 	loadCheckbox("webrtcdevice");
+	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
 	loadElement("webrtc");
 	if (!bkg.getWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
@@ -183,6 +184,7 @@ function saveOptions() {
 	saveCheckbox("webgl");
 	saveCheckbox("battery");
 	saveCheckbox("webrtcdevice");
+	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
 	saveElement("webrtc");
 	saveElement("preservesamedomain");

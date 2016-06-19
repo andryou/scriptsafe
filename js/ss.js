@@ -28,6 +28,7 @@ var SETTINGS = {
 	"AUDIOBLOCK": 'false',
 	"BATTERY": 'false',
 	"WEBGL": 'false',
+	"KEYBOARD": 'false',
 	"WEBRTCDEVICE": 'false',
 	"ANNOYANCES": 'false',
 	"ANNOYANCESMODE": "relaxed",
@@ -74,6 +75,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['BATTERY'] = response.battery;
 		SETTINGS['WEBGL'] = response.webgl;
 		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
+		SETTINGS['KEYBOARD'] = response.keyboard;
 		if (SETTINGS['CANVAS'] != 'false') {
 			if (SETTINGS['CANVAS'] == 'blank') canvasBlank();
 			else if (SETTINGS['CANVAS'] == 'random') canvasRandom();
@@ -90,6 +92,10 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['PARANOIA'] = response.paranoia;
 		$(document).ready(function() {
 			loaded();
+			if (SETTINGS['KEYBOARD'] == 'true') {
+				$(document).keyup(randomDelay);
+				$(document).keydown(randomDelay);
+			}
 		});
 		document.addEventListener("beforeload", block, true); // eventually remove
 		for (var i = 0; i < savedBeforeloadEvents.length; i++) // eventually remove
@@ -114,22 +120,22 @@ function ScriptSafe() {
 		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
 	}
 	if (SETTINGS['CANVAS'] != 'false') {
-		$("canvas.sstempcanvas").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Fingerprint'}); $(this).remove(); });
+		$("canvas.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Fingerprint'}); $(this).remove(); });
 	}
 	if (SETTINGS['CANVASFONT'] == 'true') {
-		$("div.sstempcanvasfont").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Font Access'}); $(this).remove(); });
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Font Access'}); $(this).remove(); });
 	}
 	if (SETTINGS['AUDIOBLOCK'] == 'true') {
-		$("div.sstempaudio").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Audio Fingerprint'}); $(this).remove(); });
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_audio").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Audio Fingerprint'}); $(this).remove(); });
 	}
 	if (SETTINGS['WEBGL'] == 'true') {
-		$("div.sstempwebgl").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'WebGL Fingerprint'}); $(this).remove(); });
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'WebGL Fingerprint'}); $(this).remove(); });
 	}
 	if (SETTINGS['BATTERY'] == 'true') {
-		$("div.sstempbattery").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Battery Fingerprint'}); $(this).remove(); });
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_battery").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Battery Fingerprint'}); $(this).remove(); });
 	}
 	if (SETTINGS['WEBRTCDEVICE'] == 'true') {
-		$("div.sstempwebrtc").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Device Enumeration'}); $(this).remove(); });
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Device Enumeration'}); $(this).remove(); });
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
@@ -311,11 +317,15 @@ function getElSrc(el) {
 			break;
 	}
 }
+function randomDelay() {
+	var zzz = (Date.now() + (Math.floor(Math.random() * 400) + 40));
+	while (Date.now() < zzz) {};
+}
 function canvasBlock() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var fakecanvas = scope.document.createElement('canvas');
-			fakecanvas.className = 'sstempcanvas';
+			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
 			var b = scope.HTMLCanvasElement;
 			b.prototype.toDataURL = function() {
 				fakecanvas.title = 'toDataURL';
@@ -371,7 +381,7 @@ function canvasBlank() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var fakecanvas = scope.document.createElement('canvas');
-			fakecanvas.className = 'sstempcanvas';
+			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
 			var b = scope.HTMLCanvasElement;
 			var origToDataURL = b.prototype.toDataURL;
 			var origToBlob = b.prototype.toBlob;
@@ -444,7 +454,7 @@ function canvasRandom() {
 			var fakecanvas = scope.document.createElement('canvas');
 			var fakewidth = fakecanvas.width = Math.floor(Math.random() * 999) + 1;
 			var fakeheight = fakecanvas.height = Math.floor(Math.random() * 999) + 1;
-			fakecanvas.className = 'sstempcanvas';
+			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
 			var b = scope.HTMLCanvasElement;
 			var origToDataURL = b.prototype.toDataURL;
 			var origToBlob = b.prototype.toBlob;
@@ -505,7 +515,7 @@ function audioBlock() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'sstempaudio';
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_audio';
 			var b = scope.AudioBuffer;
 			b.prototype.copyFromChannel = function() {
 				triggerblock.title = 'copyFromChannel';
@@ -565,7 +575,7 @@ function canvasFontBlock() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'sstempcanvasfont';
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont';
 			var b = scope.CanvasRenderingContext2D;
 			b.prototype.measureText = function() {
 				triggerblock.title = 'measureText';
@@ -599,7 +609,7 @@ function batteryBlock() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'sstempbattery';
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_battery';
 			var b = scope.navigator;
 			b.getBattery = function() {
 				triggerblock.title = 'getBattery';
@@ -633,7 +643,7 @@ function webrtcDeviceBlock() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'sstempwebrtc';
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc';
 			var b = scope.MediaStreamTrack;
 			b.getSources = function() {
 				triggerblock.title = 'getSources';
@@ -672,7 +682,7 @@ function webglBlock() {
 	injectAnon(function(){
 		function processFunctions(scope) {
 			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'sstempwebgl';
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
 			var b = scope.WebGLRenderingContext;
 			b.getSupportedExtensions = function() {
 				triggerblock.title = 'getSupportedExtensions';
