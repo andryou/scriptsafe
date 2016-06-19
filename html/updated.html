@@ -9,22 +9,27 @@
 	<div id="message"></div> 
 	<div id="main">
 	<div id="header"><span id="title">ScriptSafe</span><br /><br />
-	<h1>Updated to v<span id="versionno"></span>! (Thursday, June 16, 2016)</h1>
+	<h1>Updated to v<span id="versionno"></span>! (__, June __, 2016)</h1>
 	<br />
 	<hr>
 	<div style="text-align: left; line-height: 18px; font-size: 13px;"><br />
-	Over the past two weeks, significant updates have been made to ScriptSafe to bring you more granular control, protection against WebRTC leaks, significant performance improvements, and most importantly, stronger security.<br /><br />
-	Some of the things I will be working towards next are: 1) offering ScriptSafe in different languages; 2) enhancing security (e.g. fingerprinting); and 3) improving ScriptSafe's design and interface.<br /><br />
 	In this version you will find the following updates:
 	<ul>
-		<li><b>v1.0.7.13:</b><ul>
-			<li>Improved page processing performance (removed significant lag when loading large lists on a page)</li>
-			<li>Ensure WebRTC check is completely cleaned up to not interfere with device power management</li>
-			<li>Updated "Documentation" links within ScriptSafe to point to <a href="https://www.andryou.com/scriptsafe/" target="_blank">a newly created ScriptSafe site</a><ul>
-				<li>It features a <a href="https://www.andryou.com/scriptsafe/configuration-sets/" target="_blank">Configuration Sets page</a> where you can find the default settings as well as my personal settings</li>
-				<li>Up until now Github Wiki was used, but due to a constant error upon saving (and no progress when I reported it last week), I had no choice but to migrate everything over to my site</li>
+		<li><b>v1.0.7.14-DEV:</b><ul>
+			<li>Added a new <strong>Fingerprinting Protection</strong> section in the Options page with 6 new settings <i>(disabled by default)</i>:<ul>
+				<li><b>Canvas Fingerprint Protection</b> - protect against fingerprinting attempts through &lt;canvas&gt; elements, with the following options:<ul>
+					<li>Disabled</li>
+					<li>Blank Readout (serve an empty canvas with the original dimensions)</li>
+					<li>Random Readout (serve an empty canvas with random dimensions)</li>
+					<li>Completely Block Readout (refuse to serve any data)</li>
+				</ul></li>
+				<li><b>Block Audio Fingerprinting</b> - prevent fingerprinting via the AudioContext API</li>
+				<li><b>Block WebGL Fingerprinting</b> - prevent fingerprinting via the WebGL API</li>
+				<li><b>Block Battery Fingerprinting</b> - prevent fingerprinting via the Battery API</li>
+				<li><b>Block Device Enumeration</b> - prevent having hardware devices detected via the WebRTC API</li>
+				<li><b>Block Canvas Font Access</b> - prevent system fonts from being enumerated through &lt;canvas&gt; elements</li>
 			</ul></li>
-			<li>Updated unwanted content providers list</li>
+			<li>Due to inquiries from people wary of PayPal but wanted to still donate, I have set up Bitcoin: <strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong></li>
 		</ul></li>
 	</ul>
 	I have put together <a href="https://www.andryou.com/scriptsafe/" target="_blank">some documentation for ScriptSafe</a>, including "Getting Started" instructions.<br />
@@ -48,7 +53,7 @@
 	<input type="hidden" name="cmd" value="_s-xclick">
 	<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
 	<input type="image" src="../img/heartbig.png" border="0" name="submit" alt="Support Andrew!" title="Support Andrew!">
-	</form><br /><br />
+	</form><br />Bitcoin: <strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong><br /><br />
 	<i>
 	<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 	<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
