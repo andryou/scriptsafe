@@ -93,8 +93,8 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		$(document).ready(function() {
 			loaded();
 			if (SETTINGS['KEYBOARD'] == 'true') {
-				$(document).keyup(randomDelay);
-				$(document).keydown(randomDelay);
+				$('div, :input').keyup(randomDelay);
+				$('div, :input').keydown(randomDelay);
 			}
 		});
 		document.addEventListener("beforeload", block, true); // eventually remove
@@ -318,7 +318,7 @@ function getElSrc(el) {
 	}
 }
 function randomDelay() {
-	var zzz = (Date.now() + (Math.floor(Math.random() * 400) + 40));
+	var zzz = (Date.now() + (Math.floor(Math.random() * 250) + 25));
 	while (Date.now() < zzz) {};
 }
 function canvasBlock() {
