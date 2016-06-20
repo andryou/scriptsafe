@@ -132,12 +132,14 @@ function loadOptions() {
 	loadCheckbox("webgl");
 	loadCheckbox("battery");
 	loadCheckbox("webrtcdevice");
+	loadCheckbox("gamepad");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
 	loadElement("webrtc");
 	if (!bkg.getWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
+	loadCheckbox("clipboard");
 	loadCheckbox("classicoptions");
 	loadElement("referrer");
 	loadCheckbox("rating");
@@ -184,11 +186,13 @@ function saveOptions() {
 	saveCheckbox("webgl");
 	saveCheckbox("battery");
 	saveCheckbox("webrtcdevice");
+	saveCheckbox("gamepad");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
 	saveElement("webrtc");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
+	saveCheckbox("clipboard");
 	saveCheckbox("classicoptions");
 	saveElement("referrer");
 	saveCheckbox("rating");

@@ -1,4 +1,3 @@
-// Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 (function(){
 var savedBeforeloadEvents = new Array();
 var timer;
@@ -30,6 +29,7 @@ var SETTINGS = {
 	"WEBGL": 'false',
 	"KEYBOARD": 'false',
 	"WEBRTCDEVICE": 'false',
+	"GAMEPAD": 'false',
 	"ANNOYANCES": 'false',
 	"ANNOYANCESMODE": "relaxed",
 	"ANTISOCIAL": 'false',
@@ -38,7 +38,8 @@ var SETTINGS = {
 	"LINKTARGET": "off",
 	"EXPERIMENTAL": "0",
 	"REFERRER": 'true',
-	"PARANOIA": 'true'
+	"PARANOIA": 'true',
+	"CLIPBOARD": 'false'
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
 if (window.self != window.top) iframe = 1;
@@ -75,6 +76,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['BATTERY'] = response.battery;
 		SETTINGS['WEBGL'] = response.webgl;
 		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
+		SETTINGS['GAMEPAD'] = response.gamepad;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		if (SETTINGS['CANVAS'] != 'false') {
 			if (SETTINGS['CANVAS'] == 'blank') canvasBlank();
@@ -86,15 +88,21 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		if (SETTINGS['BATTERY'] == 'true') batteryBlock();
 		if (SETTINGS['WEBGL'] == 'true') webglBlock();
 		if (SETTINGS['WEBRTCDEVICE'] == 'true') webrtcDeviceBlock();
+		if (SETTINGS['GAMEPAD'] == 'true') gamepadBlock();
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
+		SETTINGS['CLIPBOARD'] = response.clipboard;
 		$(document).ready(function() {
 			loaded();
 			if (SETTINGS['KEYBOARD'] == 'true') {
 				$('div, :input').keyup(randomDelay);
 				$('div, :input').keydown(randomDelay);
+			}
+			if (SETTINGS['CLIPBOARD'] == 'true') {
+				clipboardProtect(window);
+				clipboardProtect(document);
 			}
 		});
 		document.addEventListener("beforeload", block, true); // eventually remove
@@ -103,6 +111,19 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	}
 	delete savedBeforeloadEvents; // eventually remove
 });
+function clipboardProtect(el) {
+    el.oncontextmenu = null;
+    el.onselectstart = null;
+    el.onmousedown = null;
+    el.oncopy = null;
+    el.oncut = null;
+    el.onpaste = null;
+	el.addEventListener('contextmenu', function(e) { e.returnValue = true; });
+	el.addEventListener('selectstart', function(e) { e.returnValue = true; });
+	el.addEventListener('mousedown', function(e) { e.returnValue = true; });
+	el.addEventListener('copy', function(e) { e.returnValue = true; });
+	el.addEventListener('cut', function(e) { e.returnValue = true; });
+}
 function loaded() {
 	var obtarget = document.querySelector("body");
 	var obconfig = { childList: true, subtree : true, attributes: false, characterData : false };
@@ -136,6 +157,9 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['WEBRTCDEVICE'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Device Enumeration'}); $(this).remove(); });
+	}
+	if (SETTINGS['GAMEPAD'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_gamepad").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Gamepad Enumeration'}); $(this).remove(); });
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
@@ -318,7 +342,7 @@ function getElSrc(el) {
 	}
 }
 function randomDelay() {
-	var zzz = (Date.now() + (Math.floor(Math.random() * 250) + 25));
+	var zzz = (Date.now() + (Math.floor(Math.random() * 100) + 10));
 	while (Date.now() < zzz) {};
 }
 function canvasBlock() {
@@ -706,6 +730,40 @@ function webglBlock() {
 			}
 			b.getExtension = function() {
 				triggerblock.title = 'getExtension';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function gamepadBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var triggerblock = scope.document.createElement('div');
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_gamepad';
+			var b = scope.navigator;
+			b.getGamepads = function() {
+				triggerblock.title = 'getGamepads';
 				document.body.appendChild(triggerblock);
 				return false;
 			}

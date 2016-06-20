@@ -10,7 +10,7 @@
 	<div id="message"></div> 
 	<div id="main">
 		<div id="header"><span id="title">ScriptSafe</span><br /><br />
-		<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+		<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 		<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
 		<br /><br />by <a href="https://twitter.com/andryou" target="_blank">Andrew Y.</a> <form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline;">
 		<input type="hidden" name="cmd" value="_s-xclick">
@@ -50,7 +50,7 @@
 				<tr><td class="rowtitle"><label for="syncfromnotify">Show Import Sync Notification</label>:</td><td><input type="checkbox" id="syncfromnotify" class="save" /> <i>(Default: enabled; show popup when settings synced <b>from</b> your Google Account)</i></td></tr>
 				<tr><td class="rowtitle"><label for="updatenotify">Show Changelog on Update</label>:</td><td><input type="checkbox" id="updatenotify" class="save" /> <i>(Default: enabled; show changelog page when ScriptSafe is updated)</i></td></tr>
 				<tr><td class="rowtitle">Hotkeys:</td><td> <a href="javascript:;" id="hotkeyspage">Configure the ScriptSafe hotkeys</a> (click on "Keyboard Shortcuts")</td></tr>
-				<tr><td colspan="2" class="section">Fingerprint Protection (highly recommended, but may "break" some sites)</td></tr>
+				<tr><td colspan="2" class="section">Fingerprint Protection (may "break" some sites)</td></tr>
 				<tr><td class="rowtitle"><label for="canvas">Canvas Fingerprint Protection</label>:</td><td><select id="canvas" class="savechange">
 					<option value="false">Disabled</option>
 					<option value="blank">Blank Readout</option>
@@ -61,6 +61,7 @@
 				<tr><td class="rowtitle"><label for="webgl">Block WebGL Fingerprinting</label>:</td><td><input type="checkbox" id="webgl" class="save" /> <i>(Default: disabled; prevent fingerprinting via the WebGL API)</i></td></tr>
 				<tr><td class="rowtitle"><label for="battery">Block Battery Fingerprinting</label>:</td><td><input type="checkbox" id="battery" class="save" /> <i>(Default: disabled; prevent fingerprinting via the Battery API)</i></td></tr>
 				<tr><td class="rowtitle"><label for="webrtcdevice">Block Device Enumeration</label>:</td><td><input type="checkbox" id="webrtcdevice" class="save" /> <i>(Default: disabled; prevent having hardware devices detected via the WebRTC API)</i></td></tr>
+				<tr><td class="rowtitle"><label for="gamepad">Block Gamepad Enumeration</label>:</td><td><input type="checkbox" id="gamepad" class="save" /> <i>(Default: disabled; prevent having devices detected via the Gamepad API)</i></td></tr>
 				<tr><td class="rowtitle"><label for="canvasfont">Block Canvas Font Access</label>:</td><td><input type="checkbox" id="canvasfont" class="save" /> <i>(Default: disabled; prevent system fonts from being enumerated through &lt;canvas&gt; elements)</i></td></tr>
 				<tr><td class="rowtitle"><label for="keyboard">Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>)</label>:</td><td><input type="checkbox" id="keyboard" class="save" /> <i>(Default: disabled; make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>))</i></td></tr>
 				<tr><td colspan="2" class="section">Privacy Settings</td></tr>
@@ -142,6 +143,7 @@
 				<tr><td class="rowtitle"><label for="rating">Show Rating Button</label>:</td><td><input type="checkbox" id="rating" class="save" /> <i>(Default: enabled; if ticked, adds rating button under domains in tab popup)</i></td></tr>
 				<tr><td class="rowtitle"><label for="classicoptions">Classic Options Mode</label>:</td><td><input type="checkbox" id="classicoptions" class="save" /> <i>(Default: disabled; if ticked, closes tab options everytime an option is clicked)</i></td></tr>
 				<tr><td class="rowtitle"><label for="domainsort">Sort by Domain</label>:</td><td> <input type="checkbox" id="domainsort" /> <i>(Default: enabled; sorts URL lists by domains)</i></td></tr>
+				<tr><td class="rowtitle"><label for="clipboard">Prevent Clipboard Interference</label>:</td><td><input type="checkbox" id="clipboard" class="save" /> <i>(Default: disabled; prevent pages from interfering with clipboard actions)</i></td></tr>
 			</table>
 		</td>
 		</tr>
@@ -176,7 +178,7 @@
 		</form><br />
 		<span class="i18_support">If you like this extension, support Andrew! :) (click the heart)</span><br />I also accept Bitcoin: <strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong><br /><br />
 		<i>
-		<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+		<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 		<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
 		</i><br /><br />
 		<i>Awesome icons by <a href="http://dryicons.com" target="_blank">http://dryicons.com</a></i>

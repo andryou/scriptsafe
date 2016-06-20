@@ -97,7 +97,7 @@ function init() {
 						if (responseBlockedCount != 0) {
 							if (response.domainsort == 'true') response.blockeditems = bkg.domainSort(response.blockeditems);
 							else response.blockeditems.sort();
-							$(".thirds").parent().after("<tr><td class='bolded' style='height: 14px; padding-top: 5px;'><span class='blocked'>Blocked Resources</span></td><td id='parent'></td></tr><tr><td class='thirds' id='blocked'></td><td></td></tr>");
+							$(".thirds").parent().after("<tr><td class='bolded' style='height: 14px; padding-top: 5px;'><span class='blocked'>Blocked Items</span></td><td id='parent'></td></tr><tr><td class='thirds' id='blocked'></td><td></td></tr>");
 							$(".thirds:first").parent().remove();
 							$("#parent").attr("rowspan","2");
 							for (var i=0;i<responseBlockedCount;i++) {
@@ -110,6 +110,7 @@ function init() {
 								else if (response.blockeditems[i][1] == 'WebGL Fingerprint') itemdomain = 'webgl.fingerprint';
 								else if (response.blockeditems[i][1] == 'Battery Fingerprint') itemdomain = 'battery.fingerprint';
 								else if (response.blockeditems[i][1] == 'Device Enumeration') itemdomain = 'device.enumeration';
+								else if (response.blockeditems[i][1] == 'Gamepad Enumeration') itemdomain = 'gamepad.enumeration';
 								if (itemdomain) {
 									var baddiesstatus = response.blockeditems[i][5];
 									var parentstatus = response.blockeditems[i][4];
@@ -131,12 +132,12 @@ function init() {
 											} else allowedtype = 1;
 											var outputdomain = itemdomain;
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') outputdomain = '&lt;'+response.blockeditems[i][1]+'&gt;';
-											else if (response.blockeditems[i][1] == 'Canvas Fingerprint' || response.blockeditems[i][1] == 'Canvas Font Access' || response.blockeditems[i][1] == 'Audio Fingerprint' || response.blockeditems[i][1] == 'WebGL Fingerprint' || response.blockeditems[i][1] == 'Battery Fingerprint' || response.blockeditems[i][1] == 'Device Enumeration') outputdomain = response.blockeditems[i][1];
+											else if (response.blockeditems[i][1] == 'Canvas Fingerprint' || response.blockeditems[i][1] == 'Canvas Font Access' || response.blockeditems[i][1] == 'Audio Fingerprint' || response.blockeditems[i][1] == 'WebGL Fingerprint' || response.blockeditems[i][1] == 'Battery Fingerprint' || response.blockeditems[i][1] == 'Device Enumeration' || response.blockeditems[i][1] == 'Gamepad Enumeration') outputdomain = response.blockeditems[i][1];
 											$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+outputdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span rel="r_'+itemdomainfriendly+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist selected" rel="1" title="Deny">Deny</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
 										} else {
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>&lt;'+response.blockeditems[i][1]+'&gt;</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span></div>');
-											} else if (response.blockeditems[i][1] == 'Canvas Fingerprint' || response.blockeditems[i][1] == 'Canvas Font Access' || response.blockeditems[i][1] == 'Audio Fingerprint' || response.blockeditems[i][1] == 'WebGL Fingerprint' || response.blockeditems[i][1] == 'Battery Fingerprint' || response.blockeditems[i][1] == 'Device Enumeration') {
+											} else if (response.blockeditems[i][1] == 'Canvas Fingerprint' || response.blockeditems[i][1] == 'Canvas Font Access' || response.blockeditems[i][1] == 'Audio Fingerprint' || response.blockeditems[i][1] == 'WebGL Fingerprint' || response.blockeditems[i][1] == 'Battery Fingerprint' || response.blockeditems[i][1] == 'Device Enumeration' || response.blockeditems[i][1] == 'Gamepad Enumeration') {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+response.blockeditems[i][1]+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span></div>');
 											} else {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span rel="r_'+itemdomainfriendly+'"></span><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">Clear</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">Allow</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">Trust</span><span class="box box2 x_blacklist" rel="1" title="Deny">Deny</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">Distrust</span><span class="box box3 x_bypass" rel="2" title="Temp.">Temp.</span></span></div>');
@@ -190,6 +191,7 @@ function init() {
 							$("#blocked").append($("#blocked [rel='x_audio_fingerprint']"));
 							$("#blocked").append($("#blocked [rel='x_webgl_fingerprint']"));
 							$("#blocked").append($("#blocked [rel='x_device_enumeration']"));
+							$("#blocked").append($("#blocked [rel='x_gamepad_enumeration']"));
 							$("#blocked").prepend($("#blocked [data-domain='"+tabdomainroot+"'][data-baddie='false']"));
 							$("#blocked [rel='x_"+tabdomainfriendly+"']").children().first().css("font-weight", "bold");
 							$("#blocked").prepend($("#blocked [rel='x_"+tabdomainfriendly+"']"));
@@ -198,7 +200,7 @@ function init() {
 							if (response.domainsort == 'true') response.alloweditems = bkg.domainSort(response.alloweditems);
 							else response.alloweditems.sort();
 							$("#parent").attr("rowspan","3");
-							$(".thirds").parent().parent().append("<tr><td class='bolded' style='height: 14px; padding-top: 15px;'><span class='allowed'>Allowed Resources</span></td><td class='bolded'></td></tr><tr><td class='thirds' id='allowed'></td><td></td></tr>");
+							$(".thirds").parent().parent().append("<tr><td class='bolded' style='height: 14px; padding-top: 15px;'><span class='allowed'>Allowed Items</span></td><td class='bolded'></td></tr><tr><td class='thirds' id='allowed'></td><td></td></tr>");
 							if (blocked.length != 0) $("#parent").attr("rowspan","4");
 							else $("td.bolded").css('padding-top', '0px');
 							for (var i=0;i<responseAllowedCount;i++) {
@@ -261,17 +263,17 @@ function init() {
 						if (responseAllowedCount == 0) tempSel = '.thirds';
 						else tempSel = '#allowed';
 						if (mode == 'block') {
-							if (($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_no_script"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_web_bug"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1) || ($('#blocked .thirditem').length == 1 && $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1)) {
+							if ($('#blocked .thirditem').length == 1 && ($('#blocked .thirditem[rel="x_no_script"]').length == 1 || $('#blocked .thirditem[rel="x_web_bug"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1 || $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_gamepad_enumeration"]').length == 1)) {
 								// empty space
 							} else {
 								if ($("#blocked .x_whitelist:visible").length != 0) {
-									$(tempSel).append('<br /><div class="box box3 allowsession" title="Allow all blocked resources for the session (not including webbugs/noscript/fingerprinting/annoyances)">Allow All Blocked For Session</div>');
+									$(tempSel).append('<br /><div class="box box3 allowsession" title="Allow all blocked items for the session (not including webbugs/noscript/fingerprinting/annoyances)">Allow All Blocked For Session</div>');
 								} else {
 									$(tempSel).append('<br />');
 								}
 							}
 						} else {
-							$(tempSel).append('<br /><div class="box box3 allowsession" title="Block all allowed resources for the session">Block All Allowed For Session</div>');
+							$(tempSel).append('<br /><div class="box box3 allowsession" title="Block all allowed items for the session">Block All Allowed For Session</div>');
 						}
 						$(".allowsession").bind("click", bulkhandle);
 						if (intemp || tabInTemp) {
