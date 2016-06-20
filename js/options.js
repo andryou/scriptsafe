@@ -132,10 +132,12 @@ function loadOptions() {
 	loadCheckbox("webgl");
 	loadCheckbox("battery");
 	loadCheckbox("webrtcdevice");
+	loadCheckbox("gamepad");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
+	loadCheckbox("clipboard");
 	loadCheckbox("classicoptions");
 	loadElement("referrer");
 	loadCheckbox("rating");
@@ -182,10 +184,12 @@ function saveOptions() {
 	saveCheckbox("webgl");
 	saveCheckbox("battery");
 	saveCheckbox("webrtcdevice");
+	saveCheckbox("gamepad");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
+	saveCheckbox("clipboard");
 	saveCheckbox("classicoptions");
 	saveElement("referrer");
 	saveCheckbox("rating");

@@ -9,14 +9,16 @@
 	<div id="message"></div> 
 	<div id="main">
 	<div id="header"><span id="title">ScriptSafe</span><br /><br />
-	<h1>Updated to v<span id="versionno"></span>! (__, June __, 2016)</h1>
+	<h1>Updated to v<span id="versionno"></span>! (Monday, June 20, 2016)</h1>
 	<br />
 	<hr>
 	<div style="text-align: left; line-height: 18px; font-size: 13px;"><br />
-	In this version you will find the following updates:
+	I spent the entire weekend focusing on bringing <strong>Fingerprinting Protection</strong> to ScriptSafe. The Options page now has a new Fingerprinting Protection section with not one, not two, not three, but <strong>eight brand-new options</strong>!<br /><br />
+	Still on my list: 1) translate ScriptSafe into multiple languages; and 2) improve design and appearance.<br /><br />
+	In this release you will find the following updates:
 	<ul>
-		<li><b>v1.0.7.14-DEV:</b><ul>
-			<li>Added a new <strong>Fingerprinting Protection</strong> section in the Options page with 6 new settings <i>(disabled by default)</i>:<ul>
+		<li><b>v1.0.7.14:</b><ul>
+			<li>Added a new <strong>Fingerprinting Protection</strong> section with 8 new options <i>(disabled by default)</i>:<ul>
 				<li><b>Canvas Fingerprint Protection</b> - protect against fingerprinting attempts through &lt;canvas&gt; elements, with the following options:<ul>
 					<li>Disabled</li>
 					<li>Blank Readout (serve an empty canvas with the original dimensions)</li>
@@ -27,13 +29,20 @@
 				<li><b>Block WebGL Fingerprinting</b> - prevent fingerprinting via the WebGL API</li>
 				<li><b>Block Battery Fingerprinting</b> - prevent fingerprinting via the Battery API</li>
 				<li><b>Block Device Enumeration</b> - prevent having hardware devices detected via the WebRTC API</li>
+				<li><b>Block Gamepad Enumeration</b> - prevent having hardware devices detected via the Gamepad API</li>
 				<li><b>Block Canvas Font Access</b> - prevent system fonts from being enumerated through &lt;canvas&gt; elements</li>
-				<li><b>Reduce Keyboard Fingerprinting</b> - make keypress timings more random to increase anonymity (note: adds a random delay between keypresses))</li>
+				<li><b>Reduce Keyboard Fingerprinting (for advanced users)</b> - make keypress timings more random to increase anonymity (note: adds a random delay between keypresses))</li>
+				<li><b>I recommend enabling all of the above options (except the last) for increased privacy</b>, and based on your needs disable the options that interfere with your usage.</li>
 			</ul></li>
-			<li>I now have a Bitcoin address due to inquiries from people wary of PayPal but wanted to still donate! It is: <strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong> (also found at the bottom of this page and the Options page)</li>
+			<li>Added new option: <strong>"Prevent Clipboard Interference"</strong> (under "Behavior Settings") - prevent pages from interfering with clipboard actions <i>(disabled by default)</i></li>
+			<li>Updated unwanted content providers list</li>
+			<li>Created a beta testing signup form. If you sign up to become a beta tester, you will be emailed when there is a new version ready to be tested before being pushed to the Chrome Web Store. <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Sign up to be a beta tester!</a></li>
+			<li>I now have a Bitcoin address due to inquiries from people wary of PayPal but wanted to still donate!<ul>
+				<li><strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong><br />(also found at the bottom of this page and the Options page)</li>
+			</ul></li>
 		</ul></li>
 	</ul>
-	I have put together <a href="https://www.andryou.com/scriptsafe/" target="_blank">some documentation for ScriptSafe</a>, including "Getting Started" instructions.<br />
+	I have put together <a href="https://www.andryou.com/scriptsafe/" target="_blank">some documentation for ScriptSafe</a>, including <a href="https://www.andryou.com/scriptsafe/quick-start/" target="_blank">"Getting Started" instructions</a>.<br />
 	If you run into any issues, please <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">create an issue in Github</a>.
 	<br /><br />
 	I am quite active on Twitter, so if you don't mind the occasional cat tweet, you are free to follow me: <a href="https://twitter.com/andryou" target="_blank">@andryou</a>.<br /><br />
@@ -43,6 +52,7 @@
 	<br />
 	<input type="button" id="loadoptionspage" value="Options" />
 	<input type="button" id="closepage" value="Close" />
+	<br />
 	<br />
 	<input type="button" id="disableNotification" value="Don't Show This Page Again" />
 	<br class="clear">
@@ -56,7 +66,7 @@
 	<input type="image" src="../img/heartbig.png" border="0" name="submit" alt="Support Andrew via PayPal!" title="Support Andrew via PayPal!">
 	</form><br />Bitcoin: <strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong><br /><br />
 	<i>
-	<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+	<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 	<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
 	</i>
 	</div>
