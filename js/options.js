@@ -126,6 +126,13 @@ function loadOptions() {
 	if (!$("#annoyances").prop('checked')) $("#annoyancesmoderow").hide();
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
+	loadElement("canvas");
+	loadCheckbox("canvasfont");
+	loadCheckbox("audioblock");
+	loadCheckbox("webgl");
+	loadCheckbox("battery");
+	loadCheckbox("webrtcdevice");
+	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
@@ -169,6 +176,13 @@ function saveOptions() {
 	saveCheckbox("annoyances");
 	saveElement("annoyancesmode");
 	saveCheckbox("antisocial");
+	saveElement("canvas");
+	saveCheckbox("canvasfont");
+	saveCheckbox("audioblock");
+	saveCheckbox("webgl");
+	saveCheckbox("battery");
+	saveCheckbox("webrtcdevice");
+	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");

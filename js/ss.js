@@ -1,4 +1,5 @@
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
+(function(){
 var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
@@ -12,24 +13,31 @@ var SETTINGS = {
 	"BLACKLIST": '',
 	"WHITELISTSESSION": '',
 	"BLACKLISTSESSION": '',
-	"SCRIPT": true,
-	"NOSCRIPT": true,
-	"OBJECT": true,
-	"APPLET": true,
-	"EMBED": true,
-	"IFRAME": true,
-	"FRAME": true,
-	"AUDIO": true,
-	"VIDEO": true,
-	"IMAGE": false,
-	"ANNOYANCES": false,
+	"SCRIPT": 'true',
+	"NOSCRIPT": 'true',
+	"OBJECT": 'true',
+	"APPLET": 'true',
+	"EMBED": 'true',
+	"IFRAME": 'true',
+	"FRAME": 'true',
+	"AUDIO": 'true',
+	"VIDEO": 'true',
+	"IMAGE": 'false',
+	"CANVAS": 'false',
+	"CANVASFONT": 'false',
+	"AUDIOBLOCK": 'false',
+	"BATTERY": 'false',
+	"WEBGL": 'false',
+	"KEYBOARD": 'false',
+	"WEBRTCDEVICE": 'false',
+	"ANNOYANCES": 'false',
 	"ANNOYANCESMODE": "relaxed",
-	"ANTISOCIAL": false,
-	"PRESERVESAMEDOMAIN": false,
-	"WEBBUGS": true,
+	"ANTISOCIAL": 'false',
+	"PRESERVESAMEDOMAIN": 'false',
+	"WEBBUGS": 'true',
 	"LINKTARGET": "off",
 	"EXPERIMENTAL": "0",
-	"REFERRER": true,
+	"REFERRER": 'true',
 	"PARANOIA": 'true'
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
@@ -61,12 +69,33 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['AUDIO'] = response.audio;
 		SETTINGS['VIDEO'] = response.video;
 		SETTINGS['IMAGE'] = response.image;
+		SETTINGS['CANVAS'] = response.canvas;
+		SETTINGS['CANVASFONT'] = response.canvasfont;
+		SETTINGS['AUDIOBLOCK'] = response.audioblock;
+		SETTINGS['BATTERY'] = response.battery;
+		SETTINGS['WEBGL'] = response.webgl;
+		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
+		SETTINGS['KEYBOARD'] = response.keyboard;
+		if (SETTINGS['CANVAS'] != 'false') {
+			if (SETTINGS['CANVAS'] == 'blank') canvasBlank();
+			else if (SETTINGS['CANVAS'] == 'random') canvasRandom();
+			else if (SETTINGS['CANVAS'] == 'block') canvasBlock();
+		}
+		if (SETTINGS['CANVASFONT'] == 'true') canvasFontBlock();
+		if (SETTINGS['AUDIOBLOCK'] == 'true') audioBlock();
+		if (SETTINGS['BATTERY'] == 'true') batteryBlock();
+		if (SETTINGS['WEBGL'] == 'true') webglBlock();
+		if (SETTINGS['WEBRTCDEVICE'] == 'true') webrtcDeviceBlock();
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
 		$(document).ready(function() {
 			loaded();
+			if (SETTINGS['KEYBOARD'] == 'true') {
+				$('div, :input').keyup(randomDelay);
+				$('div, :input').keydown(randomDelay);
+			}
 		});
 		document.addEventListener("beforeload", block, true); // eventually remove
 		for (var i = 0; i < savedBeforeloadEvents.length; i++) // eventually remove
@@ -89,6 +118,24 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
 		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
+	}
+	if (SETTINGS['CANVAS'] != 'false') {
+		$("canvas.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Fingerprint'}); $(this).remove(); });
+	}
+	if (SETTINGS['CANVASFONT'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Font Access'}); $(this).remove(); });
+	}
+	if (SETTINGS['AUDIOBLOCK'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_audio").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Audio Fingerprint'}); $(this).remove(); });
+	}
+	if (SETTINGS['WEBGL'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'WebGL Fingerprint'}); $(this).remove(); });
+	}
+	if (SETTINGS['BATTERY'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_battery").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Battery Fingerprint'}); $(this).remove(); });
+	}
+	if (SETTINGS['WEBRTCDEVICE'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Device Enumeration'}); $(this).remove(); });
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
@@ -270,13 +317,428 @@ function getElSrc(el) {
 			break;
 	}
 }
-/* Fallback Inline Script Handling (if Chrome doesn't support chrome.webRequest API) / */
-function injectAnon(f) { // credit: NotScripts
+function randomDelay() {
+	var zzz = (Date.now() + (Math.floor(Math.random() * 250) + 25));
+	while (Date.now() < zzz) {};
+}
+function canvasBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var fakecanvas = scope.document.createElement('canvas');
+			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
+			var b = scope.HTMLCanvasElement;
+			b.prototype.toDataURL = function() {
+				fakecanvas.title = 'toDataURL';
+				document.body.appendChild(fakecanvas);
+				return false;
+			};
+			b.prototype.toBlob = function() {
+				fakecanvas.title = 'toBlob';
+				document.body.appendChild(fakecanvas);
+				return false;
+			};
+			var c = scope.CanvasRenderingContext2D;
+			c.prototype.getImageData = function() {
+				fakecanvas.title = 'getImageData';
+				document.body.appendChild(fakecanvas);
+				return false;
+			}
+			c.prototype.getLineDash = function() {
+				fakecanvas.title = 'getLineDash';
+				document.body.appendChild(fakecanvas);
+				return false;
+			}
+			var d = scope.WebGLRenderingContext;
+			d.prototype.readPixels = function() {
+				fakecanvas.title = 'readPixels';
+				document.body.appendChild(fakecanvas);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function canvasBlank() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var fakecanvas = scope.document.createElement('canvas');
+			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
+			var b = scope.HTMLCanvasElement;
+			var origToDataURL = b.prototype.toDataURL;
+			var origToBlob = b.prototype.toBlob;
+			b.prototype.toDataURL = function() {
+				fakecanvas.title = 'toDataURL';
+				fakecanvas.width = this.width;
+				fakecanvas.height = this.height;
+				document.body.appendChild(fakecanvas);
+				return origToDataURL.apply(fakecanvas, arguments);
+			};
+			b.prototype.toBlob = function() {
+				fakecanvas.title = 'toBlob';
+				fakecanvas.width = this.width;
+				fakecanvas.height = this.height;
+				document.body.appendChild(fakecanvas);
+				return origToBlob.apply(fakecanvas, arguments);
+			};
+			var c = scope.CanvasRenderingContext2D;
+			var origGetImageData = c.prototype.getImageData;
+			c.prototype.getImageData = function() {
+				fakecanvas.title = 'getImageData';
+				fakecanvas.width = this.width;
+				fakecanvas.height = this.height;
+				document.body.appendChild(fakecanvas);
+				return origGetImageData.apply(fakecanvas.getContext('2d'), arguments);
+			}
+			var origGetLineDash = c.prototype.getLineDash;
+			c.prototype.getLineDash = function() {
+				fakecanvas.title = 'getLineDash';
+				fakecanvas.width = this.width;
+				fakecanvas.height = this.height;
+				document.body.appendChild(fakecanvas);
+				return origGetLineDash.apply(fakecanvas.getContext('2d'), [0, 0]);
+			}
+			var d = scope.WebGLRenderingContext;
+			var origReadPixels = d.prototype.readPixels;
+			d.prototype.readPixels = function() {
+				fakecanvas.title = 'readPixels';
+				fakecanvas.width = this.width;
+				fakecanvas.height = this.height;
+				document.body.appendChild(fakecanvas);
+				return origReadPixels.apply(fakecanvas.getContext('webgl'), arguments);
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function canvasRandom() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var fakecanvas = scope.document.createElement('canvas');
+			var fakewidth = fakecanvas.width = Math.floor(Math.random() * 999) + 1;
+			var fakeheight = fakecanvas.height = Math.floor(Math.random() * 999) + 1;
+			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
+			var b = scope.HTMLCanvasElement;
+			var origToDataURL = b.prototype.toDataURL;
+			var origToBlob = b.prototype.toBlob;
+			b.prototype.toDataURL = function() {
+				fakecanvas.title = 'toDataURL';
+				document.body.appendChild(fakecanvas);
+				return origToDataURL.apply(fakecanvas, arguments);
+			};
+			b.prototype.toBlob = function() {
+				fakecanvas.title = 'toBlob';
+				document.body.appendChild(fakecanvas);
+				return origToBlob.apply(fakecanvas, arguments);
+			};
+			var c = scope.CanvasRenderingContext2D;
+			var origGetImageData = c.prototype.getImageData;
+			c.prototype.getImageData = function() {
+				fakecanvas.title = 'getImageData';
+				document.body.appendChild(fakecanvas);
+				return origGetImageData.apply(fakecanvas.getContext('2d'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1]);
+			}
+			var origGetLineDash = c.prototype.getLineDash;
+			c.prototype.getLineDash = function() {
+				fakecanvas.title = 'getLineDash';
+				document.body.appendChild(fakecanvas);
+				return origGetLineDash.apply(fakecanvas.getContext('2d'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1]);
+			}
+			var d = scope.WebGLRenderingContext;
+			var origReadPixels = d.prototype.readPixels;
+			d.prototype.readPixels = function() {
+				fakecanvas.title = 'readPixels';
+				document.body.appendChild(fakecanvas);
+				return origReadPixels.apply(fakecanvas.getContext('webgl'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, arguments[4], arguments[5], arguments[6]]);
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function audioBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var triggerblock = scope.document.createElement('div');
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_audio';
+			var b = scope.AudioBuffer;
+			b.prototype.copyFromChannel = function() {
+				triggerblock.title = 'copyFromChannel';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			b.prototype.getChannelData = function() {
+				triggerblock.title = 'getChannelData';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			var c = scope.AnalyserNode;
+			c.prototype.getFloatFrequencyData = function() {
+				triggerblock.title = 'getFloatFrequencyData';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			c.prototype.getByteFrequencyData = function() {
+				triggerblock.title = 'getByteFrequencyData';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			c.prototype.getFloatTimeDomainData = function() {
+				triggerblock.title = 'getFloatTimeDomainData';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			c.prototype.getByteTimeDomainData = function() {
+				triggerblock.title = 'getByteTimeDomainData';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function canvasFontBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var triggerblock = scope.document.createElement('div');
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont';
+			var b = scope.CanvasRenderingContext2D;
+			b.prototype.measureText = function() {
+				triggerblock.title = 'measureText';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function batteryBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var triggerblock = scope.document.createElement('div');
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_battery';
+			var b = scope.navigator;
+			b.getBattery = function() {
+				triggerblock.title = 'getBattery';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function webrtcDeviceBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var triggerblock = scope.document.createElement('div');
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc';
+			var b = scope.MediaStreamTrack;
+			b.getSources = function() {
+				triggerblock.title = 'getSources';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			b.getMediaDevices = function() {
+				triggerblock.title = 'getMediaDevices';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function webglBlock() {
+	injectAnon(function(){
+		function processFunctions(scope) {
+			var triggerblock = scope.document.createElement('div');
+			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
+			var b = scope.WebGLRenderingContext;
+			b.getSupportedExtensions = function() {
+				triggerblock.title = 'getSupportedExtensions';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			b.getParameter = function() {
+				triggerblock.title = 'getParameter';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			b.getContextAttributes = function() {
+				triggerblock.title = 'getContextAttributes';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			b.getShaderPrecisionFormat = function() {
+				triggerblock.title = 'getShaderPrecisionFormat';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+			b.getExtension = function() {
+				triggerblock.title = 'getExtension';
+				document.body.appendChild(triggerblock);
+				return false;
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	});
+}
+function injectAnon(f) {
     var script = document.createElement("script");
 	script.type = "text/javascript";
     script.textContent = "(" + f + ")();";
     document.documentElement.appendChild(script);
 }
+/* Fallback Inline Script Handling (if Chrome doesn't support chrome.webRequest API) / */
 function mitigate() { // credit: NotScripts
 	injectAnon(function(){
 		for (var i in window) {
@@ -427,3 +889,4 @@ function block(event) {
 		}
 }
 /* / Deprecated beforeload Handling */
+})();
