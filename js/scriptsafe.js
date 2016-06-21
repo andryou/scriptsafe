@@ -893,7 +893,7 @@ if (!optionExists("version") || localStorage["version"] != version) {
 		}
 		localStorage['tempregexflag'] = "true";
 	}
-	if (!optionExists("version") && localStorage["updatenotify"] == "true") { // minor update so don't show updated page for existing installations
+	if (localStorage["updatenotify"] == "true") {
 		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html'), selected: true });
 	}
 	localStorage["version"] = version;
