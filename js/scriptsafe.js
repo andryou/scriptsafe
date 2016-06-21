@@ -1,3 +1,4 @@
+// ScriptSafe by Andrew
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
 var version = (function () {
@@ -862,10 +863,10 @@ if (!optionExists("version") || localStorage["version"] != version) {
 		}
 		localStorage['tempregexflag'] = "true";
 	}
-	localStorage["version"] = version;
-	if (localStorage["updatenotify"] == "true") {
+	if (!optionExists("version") && localStorage["updatenotify"] == "true") { // minor update so don't show updated page for existing installations
 		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html'), selected: true });
 	}
+	localStorage["version"] = version;
 }
 if (storageapi) {
 	chrome.storage.onChanged.addListener(function(changes, namespace) {
