@@ -385,7 +385,7 @@ function canvasBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -393,7 +393,7 @@ function canvasBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -458,7 +458,7 @@ function canvasBlank() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -466,7 +466,7 @@ function canvasBlank() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -523,7 +523,7 @@ function canvasRandom() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -531,7 +531,7 @@ function canvasRandom() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -585,7 +585,7 @@ function audioBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -593,7 +593,7 @@ function audioBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -621,7 +621,7 @@ function canvasFontBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -629,7 +629,7 @@ function canvasFontBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -657,7 +657,7 @@ function batteryBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -665,7 +665,7 @@ function batteryBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -698,7 +698,7 @@ function webrtcDeviceBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -706,7 +706,7 @@ function webrtcDeviceBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -754,7 +754,7 @@ function webglBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -762,7 +762,7 @@ function webglBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
@@ -790,7 +790,7 @@ function gamepadBlock() {
 			contentWindow: {
 				get: function() {
 					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return frame;
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
 					return frame;
@@ -798,7 +798,7 @@ function gamepadBlock() {
 			},
 			contentDocument: {
 				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.hostname != this.src.split('/')[2].split(':')[0]) return idoc.apply(this);
+					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
 					var frame = iwin.apply(this);
 					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
 					processFunctions(frame);
