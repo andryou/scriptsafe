@@ -86,7 +86,7 @@ function mitigate(req) {
 						req.requestHeaders[i].value = localStorage['referrerspoof'];
 					break;
 				case 'User-Agent':
-					if (localStorage['useragentspoof'] != 'off' && enabled(req.url) == 'true') {
+					if (localStorage['useragentspoof'] != 'off' && (enabled(req.url) == 'true' || localStorage['uaspoofallow'] == 'true')) {
 						var os;
 						if (localStorage['useragentspoof_os'] == 'w7') os = 'Windows; U; Windows NT 6.1';
 						else if (localStorage['useragentspoof_os'] == 'w10') os = 'Windows NT 10.0';
@@ -211,10 +211,12 @@ function ScriptSafe(req) {
 			elementStatusCheck = true;
 		else elementStatusCheck = false;
 	}
+	var utmCleanURL = utmclean(req.url);
 	if (elementStatusCheck && baddiesCheck && reqtype == "image") reqtype = 'webbug';
 	if ((reqtype == "page" && localStorage['mode'] == 'block' && (domainCheckStatus == '1' || ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && domainCheckStatus != '0'))) && baddiesCheck == '1') || (localStorage['antisocial'] == 'true' && baddiesCheck == '2'))) || (reqtype == "frame" && (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')) || (reqtype == "script" && localStorage['script'] == 'true') || (reqtype == "object" && (localStorage['object'] == 'true' || localStorage['embed'] == 'true')) || (reqtype == "image" && localStorage['image'] == 'true') || reqtype == "webbug" || (reqtype == "xmlhttprequest" && ((localStorage['xml'] == 'true' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['xml'] == 'all'))) {
 		// request qualified for filtering, so continue.
 	} else {
+		if (utmCleanURL) return { redirectUrl: utmCleanURL };
 		return { cancel: false };
 	}
 	if (elementStatusCheck && ((localStorage['preservesamedomain'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')) {
@@ -237,7 +239,19 @@ function ScriptSafe(req) {
 			ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
 		}
 	}
+	if (utmCleanURL) return { redirectUrl: utmCleanURL };
 	return { cancel: false };
+}
+function utmclean(url) {
+	if (localStorage['utm'] == "true") {
+		var paramstart = url.indexOf("?");
+		if (url.indexOf("utm_") > paramstart) {
+			var sanitized = url.replace(/[\?\&]utm_(?:cid|reader|term|content|source|medium|campaign)=[^&#]+/ig, "");
+			if (sanitized.charAt(paramstart) == "&") sanitized = sanitized.substring(0, paramstart)+"?"+sanitized.substring(paramstart+1);
+			return sanitized;
+		}
+	}
+	return false;
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
@@ -434,6 +448,7 @@ function setDefaultOptions() {
 	defaultOptionValue("battery", "false");
 	defaultOptionValue("webrtcdevice", "false");
 	defaultOptionValue("gamepad", "false");
+	defaultOptionValue("timezone", "false");
 	defaultOptionValue("keyboard", "false");
 	defaultOptionValue("xml", "true");
 	defaultOptionValue("annoyances", "true");
@@ -441,6 +456,7 @@ function setDefaultOptions() {
 	defaultOptionValue("antisocial", "false");
 	defaultOptionValue("preservesamedomain", "false");
 	defaultOptionValue("webbugs", "true");
+	defaultOptionValue("utm", "false");
 	defaultOptionValue("webrtc", "default_public_interface_only");
 	defaultOptionValue("classicoptions", "false");
 	defaultOptionValue("rating", "true");
@@ -449,6 +465,7 @@ function setDefaultOptions() {
 	defaultOptionValue("domainsort", "true");
 	defaultOptionValue("useragentspoof", "off");
 	defaultOptionValue("useragentspoof_os", "off");
+	defaultOptionValue("uaspoofallow", "false");
 	defaultOptionValue("referrerspoof", "off");
 	defaultOptionValue("cookies", "true");
 	defaultOptionValue("paranoia", "false");
@@ -578,7 +595,7 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -603,13 +620,13 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else if (request.reqtype == 'update-blocked') {
 		if (request.src) {
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
-			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration') {
+			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone') {
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
 				if (request.node == 'NOSCRIPT') {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, request.src, '-1', '-1', false]);
-				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration') {
+				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone') {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, extractedDomain, '-1', '-1', false]);
 				} else {
 					ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2)]);

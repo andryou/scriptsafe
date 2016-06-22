@@ -133,8 +133,10 @@ function loadOptions() {
 	loadCheckbox("battery");
 	loadCheckbox("webrtcdevice");
 	loadCheckbox("gamepad");
+	loadElement("timezone");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
+	loadCheckbox("utm");
 	loadElement("webrtc");
 	if (!bkg.getWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
 	loadElement("preservesamedomain");
@@ -147,8 +149,9 @@ function loadOptions() {
 	loadElement("linktarget");
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
-	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os").hide();
+	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
 	loadElement("useragentspoof_os");
+	loadCheckbox("uaspoofallow");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
 		$("#customreferrer").show();
@@ -187,8 +190,10 @@ function saveOptions() {
 	saveCheckbox("battery");
 	saveCheckbox("webrtcdevice");
 	saveCheckbox("gamepad");
+	saveElement("timezone");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
+	saveCheckbox("utm");
 	saveElement("webrtc");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
@@ -199,6 +204,7 @@ function saveOptions() {
 	saveCheckbox("cookies");
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
+	saveCheckbox("uaspoofallow");
 	if ($("#referrerspoof").val() != 'custom') {
 		saveElement("referrerspoof");
 		$("#customreferrer").hide();
@@ -213,8 +219,8 @@ function saveOptions() {
 	saveCheckbox("domainsort");
 	if (localStorage['annoyances'] == 'true') $("#annoyancesmoderow").show();
 	else $("#annoyancesmoderow").hide();
-	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os").show();
-	else $("#useragentspoof_os").hide();
+	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
+	else $("#useragentspoof_os, #applytoallow").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
 	bkg.initWebRTC();
