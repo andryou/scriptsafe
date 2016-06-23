@@ -10,6 +10,8 @@ var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
+	initTabs();
+	$('#sidebar').stickyScroll({ container: '.container' });
 	loadOptions();
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
@@ -19,18 +21,31 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#blackclear").click(blackclear);
 	$("#importwhite").click(importwhite);
 	$("#importblack").click(importblack);
+	$("#domaininfo").click(function() {
+		$("#domaininfocontainer").slideToggle('slow');
+	});
 	$("#hideimport").click(hidebulk);
 	$("#importsettings").click(settingsImport);
 	$("#settingsall").click(settingsall);
 	$(".savechange").change(saveOptions);
-	$(".close").click(closeOptions);
+	$(".closepage").click(closeOptions);
 	$("#syncimport").click(forceSyncImport);
 	$("#syncexport").click(forceSyncExport);
+	$("#savetxt").click(downloadtxt);
 	$("#hotkeyspage").click(function() {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
 	syncstatus = localStorage['syncenable'];
 });
+function initTabs() {
+	$('.list-group a').on('click', function(e)  {
+		var currentAttrValue = $(this).attr('href');
+		$("#sectionname").text($(this).text());
+		$('.tab-content ' + currentAttrValue).show().siblings().hide();
+		$(this).addClass('active').siblings().removeClass('active');
+		e.preventDefault();
+	});
+}
 function forceSyncExport() {
 	if (confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
 		if (bkg.freshSync(0, true) == 'true') {
@@ -128,13 +143,17 @@ function loadOptions() {
 	loadCheckbox("antisocial");
 	loadElement("canvas");
 	loadCheckbox("canvasfont");
+	loadCheckbox("clientrects");
 	loadCheckbox("audioblock");
 	loadCheckbox("webgl");
 	loadCheckbox("battery");
 	loadCheckbox("webrtcdevice");
 	loadCheckbox("gamepad");
+	loadElement("timezone");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
+	loadCheckbox("utm");
+	loadCheckbox("hashchecking");
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("clipboard");
@@ -145,8 +164,9 @@ function loadOptions() {
 	loadElement("linktarget");
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
-	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os").hide();
+	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
 	loadElement("useragentspoof_os");
+	loadCheckbox("uaspoofallow");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
 		$("#customreferrer").show();
@@ -180,13 +200,17 @@ function saveOptions() {
 	saveCheckbox("antisocial");
 	saveElement("canvas");
 	saveCheckbox("canvasfont");
+	saveCheckbox("clientrects");
 	saveCheckbox("audioblock");
 	saveCheckbox("webgl");
 	saveCheckbox("battery");
 	saveCheckbox("webrtcdevice");
 	saveCheckbox("gamepad");
+	saveElement("timezone");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
+	saveCheckbox("utm");
+	saveCheckbox("hashchecking");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
 	saveCheckbox("clipboard");
@@ -196,6 +220,7 @@ function saveOptions() {
 	saveCheckbox("cookies");
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
+	saveCheckbox("uaspoofallow");
 	if ($("#referrerspoof").val() != 'custom') {
 		saveElement("referrerspoof");
 		$("#customreferrer").hide();
@@ -210,8 +235,8 @@ function saveOptions() {
 	saveCheckbox("domainsort");
 	if (localStorage['annoyances'] == 'true') $("#annoyancesmoderow").show();
 	else $("#annoyancesmoderow").hide();
-	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os").show();
-	else $("#useragentspoof_os").hide();
+	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
+	else $("#useragentspoof_os, #applytoallow").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
 	syncstatus = bkg.freshSync(1);
@@ -264,6 +289,17 @@ function settingsImport() {
 		bkg.freshSync(0);
 		notification('Error importing the following settings (empty value and/or invalid setting name): '+error.slice(0, -2));
 	}
+}
+function downloadtxt() {
+	var textToWrite = $("#settingsexport").val();
+	var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+	var fileNameToSaveAs = "scriptsafe-settings-"+new Date().toJSON()+".txt";
+	var downloadLink = document.createElement("a");
+	downloadLink.download = fileNameToSaveAs;
+	downloadLink.innerHTML = "Download File";
+	downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
+	downloadLink.click();
+	downloadLink.remove();
 }
 function updateExport() {
 	$("#settingsexport").val("");
@@ -340,6 +376,9 @@ function hidebulk() {
 function bulk(type) {
 	var error = false;
 	hidebulk();
+	$('html, body').animate({
+        scrollTop: $(document).height()
+    }, 'slow');
 	if (!$("#bulk").is(":visible")) $("#bulk").slideDown("fast");
 	$("#bulk textarea").focus();
 	if (type == '0') {
@@ -387,14 +426,14 @@ function importbulk(type) {
 	} else {
 		bkg.freshSync(2);
 		notification('Error importing some domains');
-		$('#importerror').html('<br /><strong>Some Domains Not Imported</strong><br />The following domains were not imported as they are invalid (the others were successfully imported): <ul>'+error+'</ul>').stop().fadeIn("slow");
+		$('#importerror').html('<strong>Some Domains Not Imported</strong><br />The following domains were not imported as they are invalid (the others were successfully imported): <ul>'+error+'</ul>').stop().fadeIn("slow");
 	}
 }
 function listUpdate() {
 	var whiteList = JSON.parse(localStorage['whiteList']);
 	var blackList = JSON.parse(localStorage['blackList']);
 	var whitelistCompiled = '';
-	if (whiteList.length==0) whitelistCompiled = '[none]';
+	if (whiteList.length==0) whitelistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
@@ -404,7 +443,7 @@ function listUpdate() {
 		}
 	}
 	var blacklistCompiled = '';
-	if (blackList.length==0) blacklistCompiled = '[none]';
+	if (blackList.length==0) blacklistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
@@ -433,3 +472,5 @@ function listclear(type) {
 	}
 	return false;
 }
+
+!function(t){t.fn.stickyScroll=function(o){var e={init:function(o){function e(){return t(document).height()-i.container.offset().top-i.container.attr("offsetHeight")}function s(){return i.container.offset().top}function n(o){return t(o).attr("offsetHeight")}var i;return"auto"!==o.mode&&"manual"!==o.mode&&(o.container&&(o.mode="auto"),o.bottomBoundary&&(o.mode="manual")),i=t.extend({mode:"auto",container:t("body"),topBoundary:null,bottomBoundary:null},o),i.container=t(i.container),i.container.length?("auto"===i.mode&&(i.topBoundary=s(),i.bottomBoundary=e()),this.each(function(o){var c=t(this),a=t(window),r=Date.now()+o,l=n(c);c.data("sticky-id",r),a.bind("scroll.stickyscroll-"+r,function(){var o=t(document).scrollTop(),e=t(document).height()-o-l;e<=i.bottomBoundary?c.offset({top:t(document).height()-i.bottomBoundary-l}).removeClass("sticky-active").removeClass("sticky-inactive").addClass("sticky-stopped"):o>i.topBoundary?c.offset({top:t(window).scrollTop()}).removeClass("sticky-stopped").removeClass("sticky-inactive").addClass("sticky-active"):o<i.topBoundary&&c.css({position:"",top:"",bottom:""}).removeClass("sticky-stopped").removeClass("sticky-active").addClass("sticky-inactive")}),a.bind("resize.stickyscroll-"+r,function(){"auto"===i.mode&&(i.topBoundary=s(),i.bottomBoundary=e()),l=n(c),t(this).scroll()}),c.addClass("sticky-processed"),a.scroll()})):void(console&&console.log("StickyScroll: the element "+o.container+" does not exist, we're throwing in the towel"))},reset:function(){return this.each(function(){var o=t(this),e=o.data("sticky-id");o.css({position:"",top:"",bottom:""}).removeClass("sticky-stopped").removeClass("sticky-active").removeClass("sticky-inactive").removeClass("sticky-processed"),t(window).unbind(".stickyscroll-"+e)})}};return e[o]?e[o].apply(this,Array.prototype.slice.call(arguments,1)):"object"!=typeof o&&o?void(console&&console.log("Method"+o+" does not exist on jQuery.stickyScroll")):e.init.apply(this,arguments)}}(jQuery);

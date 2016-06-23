@@ -6,40 +6,42 @@ var timestamp = Math.round(new Date().getTime()/1000.0);
 // initialize settings object with default settings (that are overwritten by the actual user-set values later on)
 var SETTINGS = {
 	"MODE": "block",
-	"LISTSTATUS": 'false',
-	"DOMAINSTATUS": '-1',
-	"WHITELIST": '',
-	"BLACKLIST": '',
-	"WHITELISTSESSION": '',
-	"BLACKLISTSESSION": '',
-	"SCRIPT": 'true',
-	"NOSCRIPT": 'true',
-	"OBJECT": 'true',
-	"APPLET": 'true',
-	"EMBED": 'true',
-	"IFRAME": 'true',
-	"FRAME": 'true',
-	"AUDIO": 'true',
-	"VIDEO": 'true',
-	"IMAGE": 'false',
-	"CANVAS": 'false',
-	"CANVASFONT": 'false',
-	"AUDIOBLOCK": 'false',
-	"BATTERY": 'false',
-	"WEBGL": 'false',
-	"KEYBOARD": 'false',
-	"WEBRTCDEVICE": 'false',
-	"GAMEPAD": 'false',
-	"ANNOYANCES": 'false',
+	"LISTSTATUS": "false",
+	"DOMAINSTATUS": "-1",
+	"WHITELIST": "",
+	"BLACKLIST": "",
+	"WHITELISTSESSION": "",
+	"BLACKLISTSESSION": "",
+	"SCRIPT": "true",
+	"NOSCRIPT": "true",
+	"OBJECT": "true",
+	"APPLET": "true",
+	"EMBED": "true",
+	"IFRAME": "true",
+	"FRAME": "true",
+	"AUDIO": "true",
+	"VIDEO": "true",
+	"IMAGE": "false",
+	"CANVAS": "false",
+	"CANVASFONT": "false",
+	"CLIENTRECTS": "false",
+	"AUDIOBLOCK": "false",
+	"BATTERY": "false",
+	"WEBGL": "false",
+	"KEYBOARD": "false",
+	"WEBRTCDEVICE": "false",
+	"GAMEPAD": "false",
+	"TIMEZONE": "false",
+	"ANNOYANCES": "false",
 	"ANNOYANCESMODE": "relaxed",
-	"ANTISOCIAL": 'false',
-	"PRESERVESAMEDOMAIN": 'false',
-	"WEBBUGS": 'true',
+	"ANTISOCIAL": "false",
+	"PRESERVESAMEDOMAIN": "false",
+	"WEBBUGS": "true",
 	"LINKTARGET": "off",
 	"EXPERIMENTAL": "0",
-	"REFERRER": 'true',
-	"PARANOIA": 'true',
-	"CLIPBOARD": 'false'
+	"REFERRER": "true",
+	"PARANOIA": "true",
+	"CLIPBOARD": "false",
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
 if (window.self != window.top) iframe = 1;
@@ -72,28 +74,22 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['IMAGE'] = response.image;
 		SETTINGS['CANVAS'] = response.canvas;
 		SETTINGS['CANVASFONT'] = response.canvasfont;
+		SETTINGS['CLIENTRECTS'] = response.clientrects;
 		SETTINGS['AUDIOBLOCK'] = response.audioblock;
 		SETTINGS['BATTERY'] = response.battery;
 		SETTINGS['WEBGL'] = response.webgl;
 		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
 		SETTINGS['GAMEPAD'] = response.gamepad;
-		SETTINGS['KEYBOARD'] = response.keyboard;
-		if (SETTINGS['CANVAS'] != 'false') {
-			if (SETTINGS['CANVAS'] == 'blank') canvasBlank();
-			else if (SETTINGS['CANVAS'] == 'random') canvasRandom();
-			else if (SETTINGS['CANVAS'] == 'block') canvasBlock();
+		SETTINGS['TIMEZONE'] = response.timezone;
+		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false') {
+			fingerprintProtection();
 		}
-		if (SETTINGS['CANVASFONT'] == 'true') canvasFontBlock();
-		if (SETTINGS['AUDIOBLOCK'] == 'true') audioBlock();
-		if (SETTINGS['BATTERY'] == 'true') batteryBlock();
-		if (SETTINGS['WEBGL'] == 'true') webglBlock();
-		if (SETTINGS['WEBRTCDEVICE'] == 'true') webrtcDeviceBlock();
-		if (SETTINGS['GAMEPAD'] == 'true') gamepadBlock();
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
 		SETTINGS['CLIPBOARD'] = response.clipboard;
+		SETTINGS['KEYBOARD'] = response.keyboard;
 		$(document).ready(function() {
 			loaded();
 			if (SETTINGS['KEYBOARD'] == 'true') {
@@ -111,6 +107,250 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	}
 	delete savedBeforeloadEvents; // eventually remove
 });
+function fingerprintProtection() {
+	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, timezone, clientrects){
+		function processFunctions(scope) {
+			/* Canvas */
+			if (canvas != 'false') {
+				var fakecanvas = scope.document.createElement('canvas');
+				fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
+				if (canvas == 'random') {
+					var fakewidth = fakecanvas.width = Math.floor(Math.random() * 999) + 1;
+					var fakeheight = fakecanvas.height = Math.floor(Math.random() * 999) + 1;
+				}
+				var canvas_a = scope.HTMLCanvasElement;
+				var origToDataURL = canvas_a.prototype.toDataURL;
+				var origToBlob = canvas_a.prototype.toBlob;
+				canvas_a.prototype.toDataURL = function() {
+					fakecanvas.title = 'toDataURL';
+					document.documentElement.appendChild(fakecanvas);
+					if (canvas == 'block') return false;
+					else if (canvas == 'blank') {
+						fakecanvas.width = this.width;
+						fakecanvas.height = this.height;
+						return origToDataURL.apply(fakecanvas, arguments);
+					} else if (canvas == 'random') {
+						return origToDataURL.apply(fakecanvas, arguments);
+					}
+				};
+				canvas_a.prototype.toBlob = function() {
+					fakecanvas.title = 'toBlob';
+					document.documentElement.appendChild(fakecanvas);
+					if (canvas == 'block') return false;
+					else if (canvas == 'blank') {
+						fakecanvas.width = this.width;
+						fakecanvas.height = this.height;
+						return origToBlob.apply(fakecanvas, arguments);
+					} else if (canvas == 'random') {
+						return origToBlob.apply(fakecanvas, arguments);
+					}
+				};
+				var canvas_b = scope.CanvasRenderingContext2D;
+				var origGetImageData = canvas_b.prototype.getImageData;
+				canvas_b.prototype.getImageData = function() {
+					fakecanvas.title = 'getImageData';
+					document.documentElement.appendChild(fakecanvas);
+					if (canvas == 'block') return false;
+					else if (canvas == 'blank') {
+						fakecanvas.width = this.width;
+						fakecanvas.height = this.height;
+						return origGetImageData.apply(fakecanvas.getContext('2d'), arguments);
+					} else if (canvas == 'random') {
+						return origGetImageData.apply(fakecanvas.getContext('2d'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1]);
+					}
+				}
+				var origGetLineDash = canvas_b.prototype.getLineDash;
+				canvas_b.prototype.getLineDash = function() {
+					fakecanvas.title = 'getLineDash';
+					document.documentElement.appendChild(fakecanvas);
+					if (canvas == 'block') return false;
+					else if (canvas == 'blank') {
+						fakecanvas.width = this.width;
+						fakecanvas.height = this.height;
+						return origGetLineDash.apply(fakecanvas.getContext('2d'), [0, 0]);
+					} else if (canvas == 'random') {
+						return origGetLineDash.apply(fakecanvas.getContext('2d'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1]);
+					}
+				}
+				var canvas_c = scope.WebGLRenderingContext;
+				var origReadPixels = canvas_c.prototype.readPixels;
+				canvas_c.prototype.readPixels = function() {
+					fakecanvas.title = 'readPixels';
+					document.documentElement.appendChild(fakecanvas);
+					if (canvas == 'block') return false;
+					else if (canvas == 'blank') {
+						fakecanvas.width = this.width;
+						fakecanvas.height = this.height;
+						return origReadPixels.apply(fakecanvas.getContext('webgl'), arguments);
+					} else if (canvas == 'random') {
+						return origReadPixels.apply(fakecanvas.getContext('webgl'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, arguments[4], arguments[5], arguments[6]]);
+					}
+				}
+			}
+			/* Audio Block */
+			if (audioblock == 'true') {
+				var audioblock_triggerblock = scope.document.createElement('div');
+				audioblock_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_audio';
+				var audioblock_a = scope.AudioBuffer;
+				audioblock_a.prototype.copyFromChannel = function() {
+					audioblock_triggerblock.title = 'copyFromChannel';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				audioblock_a.prototype.getChannelData = function() {
+					audioblock_triggerblock.title = 'getChannelData';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				var audioblock_b = scope.AnalyserNode;
+				audioblock_b.prototype.getFloatFrequencyData = function() {
+					audioblock_triggerblock.title = 'getFloatFrequencyData';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				audioblock_b.prototype.getByteFrequencyData = function() {
+					audioblock_triggerblock.title = 'getByteFrequencyData';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				audioblock_b.prototype.getFloatTimeDomainData = function() {
+					audioblock_triggerblock.title = 'getFloatTimeDomainData';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				audioblock_b.prototype.getByteTimeDomainData = function() {
+					audioblock_triggerblock.title = 'getByteTimeDomainData';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+			}
+			/* Canvas Font */
+			if (canvasfont == 'true') {
+				var canvasfont_triggerblock = scope.document.createElement('div');
+				canvasfont_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont';
+				var canvasfont_a = scope.CanvasRenderingContext2D;
+				canvasfont_a.prototype.measureText = function() {
+					canvasfont_triggerblock.title = 'measureText';
+					document.documentElement.appendChild(canvasfont_triggerblock);
+					return false;
+				}
+			}
+			/* Battery */
+			if (battery == 'true') {
+				var battery_triggerblock = scope.document.createElement('div');
+				battery_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_battery';
+				var battery_a = scope.navigator;
+				battery_a.getBattery = function() {
+					battery_triggerblock.title = 'getBattery';
+					document.documentElement.appendChild(battery_triggerblock);
+					return false;
+				}
+			}
+			/* WebGL */
+			if (webgl == 'true') {
+				var webgl_triggerblock = scope.document.createElement('div');
+				webgl_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
+				var webgl_a = scope.WebGLRenderingContext;
+				webgl_a.getSupportedExtensions = function() {
+					webgl_triggerblock.title = 'getSupportedExtensions';
+					document.documentElement.appendChild(webgl_triggerblock);
+					return false;
+				}
+				webgl_a.getParameter = function() {
+					webgl_triggerblock.title = 'getParameter';
+					document.documentElement.appendChild(webgl_triggerblock);
+					return false;
+				}
+				webgl_a.getContextAttributes = function() {
+					webgl_triggerblock.title = 'getContextAttributes';
+					document.documentElement.appendChild(webgl_triggerblock);
+					return false;
+				}
+				webgl_a.getShaderPrecisionFormat = function() {
+					webgl_triggerblock.title = 'getShaderPrecisionFormat';
+					document.documentElement.appendChild(webgl_triggerblock);
+					return false;
+				}
+				webgl_a.getExtension = function() {
+					webgl_triggerblock.title = 'getExtension';
+					document.documentElement.appendChild(webgl_triggerblock);
+					return false;
+				}
+			}
+			/* WebRTC */
+			if (webrtcdevice == 'true') {
+				var webrtc_triggerblock = scope.document.createElement('div');
+				webrtc_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc';
+				var webrtc_a = scope.MediaStreamTrack;
+				webrtc_a.getSources = function() {
+					webrtc_triggerblock.title = 'getSources';
+					document.documentElement.appendChild(webrtc_triggerblock);
+					return false;
+				}
+				webrtc_a.getMediaDevices = function() {
+					webrtc_triggerblock.title = 'getMediaDevices';
+					document.documentElement.appendChild(webrtc_triggerblock);
+					return false;
+				}
+			}
+			/* Gamepad */
+			if (gamepad == 'true') {
+				var gamepad_triggerblock = scope.document.createElement('div');
+				gamepad_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_gamepad';
+				var gamepad_a = scope.navigator;
+				gamepad_a.getGamepads = function() {
+					gamepad_triggerblock.title = 'getGamepads';
+					document.documentElement.appendChild(gamepad_triggerblock);
+					return false;
+				}
+			}
+			/* Client Rectangles */
+			if (clientrects == 'true') {
+				var clientrects_triggerblock = scope.document.createElement('div');
+				clientrects_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_clientrects';
+				Element.prototype.getClientRects = function() {
+					clientrects_triggerblock.title = 'getClientRects';
+					document.documentElement.appendChild(clientrects_triggerblock);
+					return [{'top': 0, 'bottom': 0, 'left': 0, 'right': 0, 'height': 0, 'width': 0}];
+				}
+			}
+			/* Timezone */
+			if (timezone != 'false') {
+				var timezone_triggerblock = scope.document.createElement('div');
+				timezone_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_timezone';
+				var timezone_a = scope.Date;
+				timezone_a.prototype.getTimezoneOffset = function() {
+					timezone_triggerblock.title = 'getTimezoneOffset';
+					document.documentElement.appendChild(timezone_triggerblock);
+					if (timezone == 'random') return ['720','660','600','570','540','480','420','360','300','240','210','180','120','60','0','-60','-120','-180','-210','-240','-270','-300','-330','-345','-360','-390','-420','-480','-510','-525','-540','-570','-600','-630','-660','-720','-765','-780','-840'][Math.floor(Math.random() * 39)];
+					return timezone;
+				}
+			}
+		}
+		processFunctions(window);
+		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
+		Object.defineProperties(HTMLIFrameElement.prototype, {
+			contentWindow: {
+				get: function() {
+					var frame = iwin.apply(this);
+					if (this.src && this.src.indexOf('//') != -1 && location.host != this.src.split('/')[2]) return frame;
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return frame;
+				}
+			},
+			contentDocument: {
+				get: function() {
+					if (this.src && this.src.indexOf('//') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
+					var frame = iwin.apply(this);
+					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
+					processFunctions(frame);
+					return idoc.apply(this);
+				}
+			}
+		});
+	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"'");
+}
 function clipboardProtect(el) {
     el.oncontextmenu = null;
     el.onselectstart = null;
@@ -160,6 +400,12 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['GAMEPAD'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_gamepad").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Gamepad Enumeration'}); $(this).remove(); });
+	}
+	if (SETTINGS['CLIENTRECTS'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_clientrects").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Client Rectangles'}); $(this).remove(); });
+	}
+	if (SETTINGS['TIMEZONE'] != 'false') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_timezone").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Spoofed Timezone'}); $(this).remove(); });
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
 		$("noscript").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });
@@ -345,473 +591,11 @@ function randomDelay() {
 	var zzz = (Date.now() + (Math.floor(Math.random() * 100) + 10));
 	while (Date.now() < zzz) {};
 }
-function canvasBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var fakecanvas = scope.document.createElement('canvas');
-			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
-			var b = scope.HTMLCanvasElement;
-			b.prototype.toDataURL = function() {
-				fakecanvas.title = 'toDataURL';
-				document.body.appendChild(fakecanvas);
-				return false;
-			};
-			b.prototype.toBlob = function() {
-				fakecanvas.title = 'toBlob';
-				document.body.appendChild(fakecanvas);
-				return false;
-			};
-			var c = scope.CanvasRenderingContext2D;
-			c.prototype.getImageData = function() {
-				fakecanvas.title = 'getImageData';
-				document.body.appendChild(fakecanvas);
-				return false;
-			}
-			c.prototype.getLineDash = function() {
-				fakecanvas.title = 'getLineDash';
-				document.body.appendChild(fakecanvas);
-				return false;
-			}
-			var d = scope.WebGLRenderingContext;
-			d.prototype.readPixels = function() {
-				fakecanvas.title = 'readPixels';
-				document.body.appendChild(fakecanvas);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function canvasBlank() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var fakecanvas = scope.document.createElement('canvas');
-			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
-			var b = scope.HTMLCanvasElement;
-			var origToDataURL = b.prototype.toDataURL;
-			var origToBlob = b.prototype.toBlob;
-			b.prototype.toDataURL = function() {
-				fakecanvas.title = 'toDataURL';
-				fakecanvas.width = this.width;
-				fakecanvas.height = this.height;
-				document.body.appendChild(fakecanvas);
-				return origToDataURL.apply(fakecanvas, arguments);
-			};
-			b.prototype.toBlob = function() {
-				fakecanvas.title = 'toBlob';
-				fakecanvas.width = this.width;
-				fakecanvas.height = this.height;
-				document.body.appendChild(fakecanvas);
-				return origToBlob.apply(fakecanvas, arguments);
-			};
-			var c = scope.CanvasRenderingContext2D;
-			var origGetImageData = c.prototype.getImageData;
-			c.prototype.getImageData = function() {
-				fakecanvas.title = 'getImageData';
-				fakecanvas.width = this.width;
-				fakecanvas.height = this.height;
-				document.body.appendChild(fakecanvas);
-				return origGetImageData.apply(fakecanvas.getContext('2d'), arguments);
-			}
-			var origGetLineDash = c.prototype.getLineDash;
-			c.prototype.getLineDash = function() {
-				fakecanvas.title = 'getLineDash';
-				fakecanvas.width = this.width;
-				fakecanvas.height = this.height;
-				document.body.appendChild(fakecanvas);
-				return origGetLineDash.apply(fakecanvas.getContext('2d'), [0, 0]);
-			}
-			var d = scope.WebGLRenderingContext;
-			var origReadPixels = d.prototype.readPixels;
-			d.prototype.readPixels = function() {
-				fakecanvas.title = 'readPixels';
-				fakecanvas.width = this.width;
-				fakecanvas.height = this.height;
-				document.body.appendChild(fakecanvas);
-				return origReadPixels.apply(fakecanvas.getContext('webgl'), arguments);
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function canvasRandom() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var fakecanvas = scope.document.createElement('canvas');
-			var fakewidth = fakecanvas.width = Math.floor(Math.random() * 999) + 1;
-			var fakeheight = fakecanvas.height = Math.floor(Math.random() * 999) + 1;
-			fakecanvas.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas';
-			var b = scope.HTMLCanvasElement;
-			var origToDataURL = b.prototype.toDataURL;
-			var origToBlob = b.prototype.toBlob;
-			b.prototype.toDataURL = function() {
-				fakecanvas.title = 'toDataURL';
-				document.body.appendChild(fakecanvas);
-				return origToDataURL.apply(fakecanvas, arguments);
-			};
-			b.prototype.toBlob = function() {
-				fakecanvas.title = 'toBlob';
-				document.body.appendChild(fakecanvas);
-				return origToBlob.apply(fakecanvas, arguments);
-			};
-			var c = scope.CanvasRenderingContext2D;
-			var origGetImageData = c.prototype.getImageData;
-			c.prototype.getImageData = function() {
-				fakecanvas.title = 'getImageData';
-				document.body.appendChild(fakecanvas);
-				return origGetImageData.apply(fakecanvas.getContext('2d'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1]);
-			}
-			var origGetLineDash = c.prototype.getLineDash;
-			c.prototype.getLineDash = function() {
-				fakecanvas.title = 'getLineDash';
-				document.body.appendChild(fakecanvas);
-				return origGetLineDash.apply(fakecanvas.getContext('2d'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1]);
-			}
-			var d = scope.WebGLRenderingContext;
-			var origReadPixels = d.prototype.readPixels;
-			d.prototype.readPixels = function() {
-				fakecanvas.title = 'readPixels';
-				document.body.appendChild(fakecanvas);
-				return origReadPixels.apply(fakecanvas.getContext('webgl'), [Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, Math.floor(Math.random() * fakewidth) + 1, Math.floor(Math.random() * fakeheight) + 1, arguments[4], arguments[5], arguments[6]]);
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function audioBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_audio';
-			var b = scope.AudioBuffer;
-			b.prototype.copyFromChannel = function() {
-				triggerblock.title = 'copyFromChannel';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			b.prototype.getChannelData = function() {
-				triggerblock.title = 'getChannelData';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			var c = scope.AnalyserNode;
-			c.prototype.getFloatFrequencyData = function() {
-				triggerblock.title = 'getFloatFrequencyData';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			c.prototype.getByteFrequencyData = function() {
-				triggerblock.title = 'getByteFrequencyData';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			c.prototype.getFloatTimeDomainData = function() {
-				triggerblock.title = 'getFloatTimeDomainData';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			c.prototype.getByteTimeDomainData = function() {
-				triggerblock.title = 'getByteTimeDomainData';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function canvasFontBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont';
-			var b = scope.CanvasRenderingContext2D;
-			b.prototype.measureText = function() {
-				triggerblock.title = 'measureText';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function batteryBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_battery';
-			var b = scope.navigator;
-			b.getBattery = function() {
-				triggerblock.title = 'getBattery';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function webrtcDeviceBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webrtc';
-			var b = scope.MediaStreamTrack;
-			b.getSources = function() {
-				triggerblock.title = 'getSources';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			b.getMediaDevices = function() {
-				triggerblock.title = 'getMediaDevices';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function webglBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
-			var b = scope.WebGLRenderingContext;
-			b.getSupportedExtensions = function() {
-				triggerblock.title = 'getSupportedExtensions';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			b.getParameter = function() {
-				triggerblock.title = 'getParameter';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			b.getContextAttributes = function() {
-				triggerblock.title = 'getContextAttributes';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			b.getShaderPrecisionFormat = function() {
-				triggerblock.title = 'getShaderPrecisionFormat';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-			b.getExtension = function() {
-				triggerblock.title = 'getExtension';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function gamepadBlock() {
-	injectAnon(function(){
-		function processFunctions(scope) {
-			var triggerblock = scope.document.createElement('div');
-			triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_gamepad';
-			var b = scope.navigator;
-			b.getGamepads = function() {
-				triggerblock.title = 'getGamepads';
-				document.body.appendChild(triggerblock);
-				return false;
-			}
-		}
-		processFunctions(window);
-		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
-		Object.defineProperties(HTMLIFrameElement.prototype, {
-			contentWindow: {
-				get: function() {
-					var frame = iwin.apply(this);
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return frame;
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return frame;
-				}
-			},
-			contentDocument: {
-				get: function() {
-					if (this.src && this.src.indexOf('://') != -1 && location.host != this.src.split('/')[2]) return idoc.apply(this);
-					var frame = iwin.apply(this);
-					try { frame.HTMLCanvasElement } catch (err) { /* do nothing*/ }
-					processFunctions(frame);
-					return idoc.apply(this);
-				}
-			}
-		});
-	});
-}
-function injectAnon(f) {
+function injectAnon(f, val) {
     var script = document.createElement("script");
+	val = val || '';
 	script.type = "text/javascript";
-    script.textContent = "(" + f + ")();";
+    script.textContent = "(" + f + ")("+val+");";
     document.documentElement.appendChild(script);
 }
 /* Fallback Inline Script Handling (if Chrome doesn't support chrome.webRequest API) / */
