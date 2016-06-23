@@ -128,6 +128,7 @@ function loadOptions() {
 	loadCheckbox("antisocial");
 	loadElement("canvas");
 	loadCheckbox("canvasfont");
+	loadCheckbox("clientrects");
 	loadCheckbox("audioblock");
 	loadCheckbox("webgl");
 	loadCheckbox("battery");
@@ -137,6 +138,7 @@ function loadOptions() {
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
 	loadCheckbox("utm");
+	loadCheckbox("hashchecking");
 	loadElement("webrtc");
 	if (!bkg.getWebRTC()) $("#webrtccell").html('<strong style="color: red;">This browser does not support WebRTC protection</strong>');
 	loadElement("preservesamedomain");
@@ -185,6 +187,7 @@ function saveOptions() {
 	saveCheckbox("antisocial");
 	saveElement("canvas");
 	saveCheckbox("canvasfont");
+	saveCheckbox("clientrects");
 	saveCheckbox("audioblock");
 	saveCheckbox("webgl");
 	saveCheckbox("battery");
@@ -194,6 +197,7 @@ function saveOptions() {
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
 	saveCheckbox("utm");
+	saveCheckbox("hashchecking");
 	saveElement("webrtc");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");

@@ -63,49 +63,7 @@
 				<tr><td class="rowtitle"><label for="webrtcdevice">Block Device Enumeration</label>:</td><td><input type="checkbox" id="webrtcdevice" class="save" /> <i>(Default: disabled; prevent having hardware devices detected via the WebRTC API)</i></td></tr>
 				<tr><td class="rowtitle"><label for="gamepad">Block Gamepad Enumeration</label>:</td><td><input type="checkbox" id="gamepad" class="save" /> <i>(Default: disabled; prevent having devices detected via the Gamepad API)</i></td></tr>
 				<tr><td class="rowtitle"><label for="canvasfont">Block Canvas Font Access</label>:</td><td><input type="checkbox" id="canvasfont" class="save" /> <i>(Default: disabled; prevent system fonts from being enumerated through &lt;canvas&gt; elements)</i></td></tr>
-				<tr><td class="rowtitle"><label for="timezone">Spoof Timezone</label>:</td><td><select id="timezone" class="savechange">
-					<option value="false">Disabled</option>
-					<option value="random">Random</option>
-					<option value="720">UTC-12:00</option>
-					<option value="660">UTC-11:00</option>
-					<option value="600">UTC-10:00</option>
-					<option value="570">UTC-09:30</option>
-					<option value="540">UTC-09:00</option>
-					<option value="480">UTC-08:00</option>
-					<option value="420">UTC-07:00</option>
-					<option value="360">UTC-06:00</option>
-					<option value="300">UTC-05:00</option>
-					<option value="240">UTC-04:00</option>
-					<option value="210">UTC-03:30</option>
-					<option value="180">UTC-03:00</option>
-					<option value="120">UTC-02:00</option>
-					<option value="60">UTC-01:00</option>
-					<option value="0">UTC±00:00</option>
-					<option value="-60">UTC+01:00</option>
-					<option value="-120">UTC+02:00</option>
-					<option value="-180">UTC+03:00</option>
-					<option value="-210">UTC+03:30</option>
-					<option value="-240">UTC+04:00</option>
-					<option value="-270">UTC+04:30</option>
-					<option value="-300">UTC+05:00</option>
-					<option value="-330">UTC+05:30</option>
-					<option value="-345">UTC+05:45</option>
-					<option value="-360">UTC+06:00</option>
-					<option value="-390">UTC+06:30</option>
-					<option value="-420">UTC+07:00</option>
-					<option value="-480">UTC+08:00</option>
-					<option value="-510">UTC+08:30</option>
-					<option value="-525">UTC+08:45</option>
-					<option value="-540">UTC+09:00</option>
-					<option value="-570">UTC+09:30</option>
-					<option value="-600">UTC+10:00</option>
-					<option value="-630">UTC+10:30</option>
-					<option value="-660">UTC+11:00</option>
-					<option value="-720">UTC+12:00</option>
-					<option value="-765">UTC+12:45</option>
-					<option value="-780">UTC+13:00</option>
-					<option value="-840">UTC+14:00</option>
-				</select> <i>(Default: disabled; spoof or randomize your timezone)</i></td></tr>
+				<tr><td class="rowtitle"><label for="clientrects">Block Client Rectangles</label>:</td><td><input type="checkbox" id="clientrects" class="save" /> <i>(Default: disabled; prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.)</i></td></tr>
 				<tr><td class="rowtitle"><label for="keyboard">Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>)</label>:</td><td><input type="checkbox" id="keyboard" class="save" /> <i>(Default: disabled; make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>))</i></td></tr>
 				<tr><td colspan="2" class="section">Privacy Settings</td></tr>
 				<tr><td class="rowtitle"><label for="paranoia">Paranoia Mode</label>:</td><td><input type="checkbox" id="paranoia" class="save" /> <i>(Default: disabled; block allowed domains on unlisted domains)</i></td></tr>
@@ -123,6 +81,7 @@
 				</select> <i>(Default: Protect Local IP; prevent IP address leakage)</i></td></tr>
 				<tr><td class="rowtitle"><label for="webbugs">Remove Webbugs</label>:</td><td><input type="checkbox" id="webbugs" class="save" /> <i>(Default: enabled; remove "invisible" third-party elements)</i></td></tr>
 				<tr><td class="rowtitle"><label for="utm">Remove Google Analytics (UTM) Tracking</label>:</td><td><input type="checkbox" id="utm" class="save" /> <i>(Default: disabled; remove Google Analytics (UTM) tracking tokens)</i></td></tr>
+				<tr><td class="rowtitle"><label for="hashchecking">Remove Possible Hash Tracking</label>:</td><td><input type="checkbox" id="hashchecking" class="save" /> <i>(Default: disabled; remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1))</i></td></tr>
 				<tr><td class="rowtitle"><label for="referrer">Block Click-Through Referrer</label>:</td><td><select id="referrer" class="savechange">
 					<option value="false">Disabled</option>
 					<option value="true">Only on Unwhitelisted Domains</option>
@@ -173,6 +132,49 @@
 					<option value="domain">Same Domain</option>
 					<option value="custom">Custom</option>
 				</select><br /><i>(Default: -Off-; <b>warning</b>: if enabled, may "break" some sites (e.g. logging in))</i><div id="customreferrer" class="hide"><input id="userref" value="" /> <input type="button" class="save" value="Save" /></div></td></tr>
+				<tr><td class="rowtitle"><label for="timezone">Spoof Timezone</label>:</td><td><select id="timezone" class="savechange">
+					<option value="false">Disabled</option>
+					<option value="random">Random</option>
+					<option value="720">UTC-12:00</option>
+					<option value="660">UTC-11:00</option>
+					<option value="600">UTC-10:00</option>
+					<option value="570">UTC-09:30</option>
+					<option value="540">UTC-09:00</option>
+					<option value="480">UTC-08:00</option>
+					<option value="420">UTC-07:00</option>
+					<option value="360">UTC-06:00</option>
+					<option value="300">UTC-05:00</option>
+					<option value="240">UTC-04:00</option>
+					<option value="210">UTC-03:30</option>
+					<option value="180">UTC-03:00</option>
+					<option value="120">UTC-02:00</option>
+					<option value="60">UTC-01:00</option>
+					<option value="0">UTC±00:00</option>
+					<option value="-60">UTC+01:00</option>
+					<option value="-120">UTC+02:00</option>
+					<option value="-180">UTC+03:00</option>
+					<option value="-210">UTC+03:30</option>
+					<option value="-240">UTC+04:00</option>
+					<option value="-270">UTC+04:30</option>
+					<option value="-300">UTC+05:00</option>
+					<option value="-330">UTC+05:30</option>
+					<option value="-345">UTC+05:45</option>
+					<option value="-360">UTC+06:00</option>
+					<option value="-390">UTC+06:30</option>
+					<option value="-420">UTC+07:00</option>
+					<option value="-480">UTC+08:00</option>
+					<option value="-510">UTC+08:30</option>
+					<option value="-525">UTC+08:45</option>
+					<option value="-540">UTC+09:00</option>
+					<option value="-570">UTC+09:30</option>
+					<option value="-600">UTC+10:00</option>
+					<option value="-630">UTC+10:30</option>
+					<option value="-660">UTC+11:00</option>
+					<option value="-720">UTC+12:00</option>
+					<option value="-765">UTC+12:45</option>
+					<option value="-780">UTC+13:00</option>
+					<option value="-840">UTC+14:00</option>
+				</select> <i>(Default: disabled; spoof or randomize your timezone. May interfere with Gmail.)</i></td></tr>
 				<tr><td colspan="2" class="section">Behavior Settings</td></tr>
 				<tr><td class="rowtitle"><label for="linktarget">Page Link Opening Behaviour</label>:</td><td><select id="linktarget" class="savechange">
 					<option value="off">-Unchanged-</option>

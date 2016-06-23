@@ -18,7 +18,7 @@
 	In this release you will find the following updates:
 	<ul>
 		<li><b>v1.0.7.16-BETA:</b><ul>
-			<li>Added a new <strong>Fingerprinting Protection</strong> section with 9 new options <i>(disabled by default)</i>:<ul>
+			<li>Added a new <strong>Fingerprinting Protection</strong> section with 10 new options <i>(disabled by default)</i>:<ul>
 				<li><b>Canvas Fingerprint Protection</b> - protect against fingerprinting attempts through &lt;canvas&gt; elements, with the following options:<ul>
 					<li>Disabled</li>
 					<li>Blank Readout (serve an empty canvas with the original dimensions)</li>
@@ -30,12 +30,15 @@
 				<li><b>Block Battery Fingerprinting</b> - prevent fingerprinting via the Battery API</li>
 				<li><b>Block Device Enumeration</b> - prevent having hardware devices detected via the WebRTC API</li>
 				<li><b>Block Gamepad Enumeration</b> - prevent having hardware devices detected via the Gamepad API</li>
-				<li><b>Spoof Timezone</b> - spoof or randomize your timezone; useful if you use VPN</li>
+				<li><b>Block Canvas Font Access</b> - prevent system fonts from being enumerated through &lt;canvas&gt; elements</li>
+				<li><b>Block Client Rectangles Fingerprinting</b> - prevent fingerprinting through calculating element client rectangles)</li>
 				<li><b>Reduce Keyboard Fingerprinting (for advanced users)</b> - make keypress timings more random to increase anonymity (note: adds a random delay between keypresses))</li>
-				<li><b>I recommend enabling all of the above options (except the last) for increased privacy</b>, and based on your needs disable the options that interfere with your usage.</li>
+				<li><b>I recommend enabling all of the above options (except the last two) for increased privacy</b>, and based on your needs disable the options that interfere with your usage.</li>
 			</ul></li>
 			<li>Added <strong>Prevent Clipboard Interference</strong> (under <strong>Behavior Settings</strong>) - prevent pages from interfering with clipboard actions <i>(disabled by default)</i></li>
 			<li>Added <b>Remove Google Analytics (UTM) Tracking</b> option (under <strong>Privacy Settings</strong>) - remove Google Analytics (UTM) tracking tokens before they're actually passed to the server <i>(disabled by default)</i></li>
+			<li>Added <b>Remove Possible Hash Tracking</b> option (under <strong>Privacy Settings</strong>) - remove possible tracking tokens passed using hash, passing in an attribute and value (e.g. #xtor=RSS-1) <i>(disabled by default)</i></li>
+			<li>Added <b>Spoof Timezone</b> option (under <strong>Privacy Settings</strong>) - spoof or randomize your timezone; useful if you use VPN <i>(disabled by default)</i></li>
 			<li>Added option to apply user-agent spoofing on whitelisted domains as well (default behaviour is to disable spoofing on whitelisted domains to avoid issues, but enabling this option will spoof the user-agent regardless)</li>
 			<li>Updated unwanted content providers list</li>
 			<li>Created a beta testing signup form. If you sign up to become a beta tester, you will be emailed when there is a new version ready to be tested before being pushed to the Chrome Web Store. <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Sign up to be a beta tester!</a></li>
