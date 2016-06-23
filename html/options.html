@@ -10,7 +10,7 @@
 		<link rel="stylesheet" href="../css/bootstrap-theme.min.css" type="text/css" media="screen" />
 	</head>
 	<body>
-		<div id="message" class="alert alert-info"></div> 
+		<div id="message" class="alert alert-warning"></div> 
 		<div class="container">
 			<div class="row">
 				<div class="col-sm-6">
@@ -238,7 +238,7 @@
 						<div id="importrestore" class="tab">
 							<table class="table table-striped">
 								<tr><td><strong>Import</strong></td><td><strong>Export</strong> (<a href="javascript:;" id="settingsall">select all</a>)</td></tr>
-								<tr><td class="col-sm-6"><textarea id="settingsimport" class="form-control"></textarea><br /><input type="button" class="btn btn-info" value="Import" id="importsettings" /></td><td class="col-sm-6"><textarea id="settingsexport" class="form-control" readonly="readonly"></textarea><br /><input type="button" class="btn btn-warning" value="Save as Text File" id="savetxt" /></td></tr>
+								<tr><td class="col-sm-6"><p><textarea id="settingsimport" placeholder="Paste the settings you want to import into this box then click on the Import button." class="form-control"></textarea></p><p><input type="button" class="btn btn-info" value="Import" id="importsettings" /></p></td><td class="col-sm-6"><p><textarea id="settingsexport" class="form-control" readonly="readonly"></textarea></p><p><input type="button" class="btn btn-warning" value="Save as Text File" id="savetxt" /></p></td></tr>
 							</table>
 						</div>
 					</div>
