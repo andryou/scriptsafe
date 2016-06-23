@@ -11,7 +11,7 @@ var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	initTabs();
-	$('#sidebar').stickyScroll({ container: '.container' });
+	$('#sidebar').stickyScroll({ container: '#sectionname' });
 	loadOptions();
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
