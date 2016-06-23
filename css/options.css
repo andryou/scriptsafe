@@ -6,7 +6,7 @@ h3 { margin: 0px !important; }
 #title, .i18_support { color: green; font-size: 30px; font-weight: bold; }
 #title:hover { color: blue; }
 .i18_support { color: #000; font-size: 18px; }
-#message { color: #000; margin: 5px; position: fixed; top: 0; padding: 5px; font-weight: bold; }
+#message { z-index: 999; color: #000; margin: 5px; position: fixed; top: 0; padding: 5px; font-weight: bold; }
 .sshidden, #message { display: none; }
 .listentry, .clear { clear: both; }
 .listentry { border-bottom: 1px solid #eee; padding: 2px; }

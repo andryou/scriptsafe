@@ -21,6 +21,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#blackclear").click(blackclear);
 	$("#importwhite").click(importwhite);
 	$("#importblack").click(importblack);
+	$("#domaininfo").click(function() {
+		$("#domaininfocontainer").slideToggle('slow');
+	});
 	$("#hideimport").click(hidebulk);
 	$("#importsettings").click(settingsImport);
 	$("#settingsall").click(settingsall);
@@ -37,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
 		var currentAttrValue = $(this).attr('href');
+		$("#sectionname").text($(this).text());
 		$('.tab-content ' + currentAttrValue).show().siblings().hide();
 		$(this).addClass('active').siblings().removeClass('active');
 		e.preventDefault();
@@ -427,7 +431,7 @@ function importbulk(type) {
 	} else {
 		bkg.freshSync(2);
 		notification('Error importing some domains');
-		$('#importerror').html('<br /><strong>Some Domains Not Imported</strong><br />The following domains were not imported as they are invalid (the others were successfully imported): <ul>'+error+'</ul>').stop().fadeIn("slow");
+		$('#importerror').html('<strong>Some Domains Not Imported</strong><br />The following domains were not imported as they are invalid (the others were successfully imported): <ul>'+error+'</ul>').stop().fadeIn("slow");
 	}
 }
 function listUpdate() {
