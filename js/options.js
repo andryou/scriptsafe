@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
 		var currentAttrValue = $(this).attr('href');
-		$("#sectionname").text($(this).text());
+		$("#sectionname").text($(this).attr('rel'));
 		$('.tab-content ' + currentAttrValue).show().siblings().hide();
 		$(this).addClass('active').siblings().removeClass('active');
 		e.preventDefault();
