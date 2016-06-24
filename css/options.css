@@ -2,6 +2,7 @@ body { padding: 25px 0; }
 .tab { display:none; }
 .tab.active { display:block; }
 .table { margin-bottom: 0px !important; }
+.table tr:first-child td { border-top: none !important; }
 h3 { margin: 0px !important; }
 #title, .i18_support { color: green; font-size: 30px; font-weight: bold; }
 #title:hover { color: blue; }
