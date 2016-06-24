@@ -11,7 +11,7 @@ var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	initTabs();
-	$('#sidebar').stickyScroll({ container: '.container' });
+	$('#sidebar').stickyScroll({ container: '#sectionname' });
 	loadOptions();
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
@@ -138,7 +138,7 @@ function loadOptions() {
 	loadCheckbox("image");
 	loadElement("xml");
 	loadCheckbox("annoyances");
-	if (!$("#annoyances").prop('checked')) $("#annoyancesmoderow").hide();
+	if (!$("#annoyances").prop('checked')) $("#annoyancesmode").attr('disabled', 'true');
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadElement("canvas");
@@ -233,8 +233,8 @@ function saveOptions() {
 	}
 	saveElement("linktarget");
 	saveCheckbox("domainsort");
-	if (localStorage['annoyances'] == 'true') $("#annoyancesmoderow").show();
-	else $("#annoyancesmoderow").hide();
+	if (localStorage['annoyances'] == 'true') $("#annoyancesmode").removeAttr('disabled');
+	else $("#annoyancesmode").attr('disabled', 'true');
 	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
 	else $("#useragentspoof_os, #applytoallow").hide();
 	updateExport();
@@ -253,7 +253,7 @@ function settingsImport() {
 	var error = "";
 	var settings = $("#settingsimport").val().split("\n");
 	if ($.trim($("#settingsimport").val()) == "") {
-		notification('Paste in your exported settings and try again ;)');
+		notification('Paste in settings and try again');
 		return false;
 	}
 	if (settings.length > 0) {

@@ -74,7 +74,7 @@
 								<tr><td class="col-sm-4"><label for="syncnotify">Show Sync Notification:</label></td><td><input type="checkbox" id="syncnotify" class="save" /> <i>(Default: enabled; show popup when settings synced <strong>to</strong> your Google Account)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="syncfromnotify">Show Import Sync Notification:</label></td><td><input type="checkbox" id="syncfromnotify" class="save" /> <i>(Default: enabled; show popup when settings synced <strong>from</strong> your Google Account)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="updatenotify">Show Changelog on Update:</label></td><td><input type="checkbox" id="updatenotify" class="save" /> <i>(Default: enabled; show changelog page when ScriptSafe is updated)</i></td></tr>
-								<tr><td class="col-sm-4"><label>Hotkeys:</label></td><td> <a href="javascript:;" id="hotkeyspage" class="btn btn-primary">Configure the ScriptSafe hotkeys</a> (click on "Keyboard Shortcuts")</td></tr>
+								<tr><td class="col-sm-4"><label>Hotkeys:</label></td><td> <a href="javascript:;" id="hotkeyspage" class="btn btn-primary">Configure ScriptSafe hotkeys</a> (click on "Keyboard Shortcuts")</td></tr>
 							</table>
 						</div>
 						<div id="fingerprintprotection" class="tab">
@@ -100,7 +100,7 @@
 								<tr><td class="col-sm-4"><label for="paranoia">Paranoia Mode:</label></td><td><input type="checkbox" id="paranoia" class="save" /> <i>(Default: disabled; block allowed domains on unlisted domains)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="annoyances">Block Unwanted Content:</label></td><td><input type="checkbox" id="annoyances" class="save" /> <i>(Default: enabled; remove unwanted content from known ad / malware domains; domains gathered from <a href="http://winhelp2002.mvps.org/hosts.htm" target="_blank">MVPS HOSTS</a>, <a href="http://hosts-file.net" target="_blank">hpHOSTS (ad / tracking servers)</a>, <a href="http://pgl.yoyo.org/as/policy.php" target="_blank">Peter Lowe's HOSTS Project</a>, <a href="http://www.malwaredomainlist.com/" target="_blank">MalwareDomainList.com</a>)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="cookies">Block Unwanted Cookies:</label></td><td><input type="checkbox" id="cookies" class="save" /> <i>(Default: enabled; blocks cookies from known ad / malware domains; below mode applies to this as well)</i></td></tr>
-								<tr id="annoyancesmoderow"><td class="col-sm-4"><label for="annoyancesmode">Unwanted Content Mode:</label></td><td><select id="annoyancesmode" class="savechange form-control">
+								<tr><td class="col-sm-4"><label for="annoyancesmode">Unwanted Content Mode:</label></td><td><select id="annoyancesmode" class="savechange form-control">
 									<option value="relaxed">Relaxed</option>
 									<option value="strict">Strict</option>
 								</select> <i>(Default: Relaxed; Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted)</i></td></tr>
@@ -233,7 +233,7 @@
 						<div id="importrestore" class="tab">
 							<table class="table table-striped">
 								<tr><td><strong>Import</strong></td><td><strong>Export</strong> (<a href="javascript:;" id="settingsall">select all</a>)</td></tr>
-								<tr><td class="col-sm-6"><p><textarea id="settingsimport" placeholder="Paste the settings you want to import into this box then click on the Import button." class="form-control"></textarea></p><p><input type="button" class="btn btn-info" value="Import" id="importsettings" /></p></td><td class="col-sm-6"><p><textarea id="settingsexport" class="form-control" readonly="readonly"></textarea></p><p><input type="button" class="btn btn-warning" value="Save as Text File" id="savetxt" /></p></td></tr>
+								<tr><td class="col-sm-6"><p><textarea id="settingsimport" placeholder="Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button." class="form-control"></textarea></p><p><input type="button" class="btn btn-info" value="Import" id="importsettings" /></p></td><td class="col-sm-6"><p><textarea id="settingsexport" class="form-control" readonly="readonly"></textarea></p><p><input type="button" class="btn btn-warning" value="Save as Text File" id="savetxt" /></p></td></tr>
 							</table>
 						</div>
 					</div>

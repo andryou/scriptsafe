@@ -221,17 +221,15 @@ function ScriptSafe(req) {
 function utmClean(url) {
 	if (localStorage['utm'] == "true") {
 		var paramstart = url.indexOf("?");
-		var sanitized;
+		var sanitized = url;
 		if (paramstart != -1) {
 			if (url.indexOf("utm_") > paramstart) {
-				sanitized = url.replace(/[\?\&]utm_(?:cid|reader|term|content|source|medium|campaign)=[^&#]+/ig, "");
+				sanitized = sanitized.replace(/[\?\&]utm_(?:cid|reader|term|content|source|medium|campaign)=[^&#]+/ig, "");
 				if (sanitized.charAt(paramstart) == "&") sanitized = sanitized.substring(0, paramstart)+"?"+sanitized.substring(paramstart+1);
-				return sanitized;
 			}
-		} else {
-			sanitized = url.replace(/#utm_(?:cid|reader|term|content|source|medium|campaign)=.+/i, "");
-			if (url != sanitized) return sanitized;
 		}
+		sanitized = sanitized.replace(/#utm_(?:cid|reader|term|content|source|medium|campaign)=.+/i, "");
+		if (url != sanitized) return sanitized;
 	}
 	return false;
 }
