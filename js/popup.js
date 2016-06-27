@@ -49,7 +49,7 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
-	setTimeout(init, 0);
+	setTimeout(init, 150);
 	$("#pop_ay").click(function() { openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").click(function() { openTab('https://www.andryou.com/scriptsafe/'); });
 	$("#pop_project").click(function() { openTab('https://github.com/andryou/scriptsafe'); });
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_close").click(function() { window.close(); });
 });
 function init() {
-	$("#version").html(version);
+	$("#version").html(version+' Beta 2');
 	chrome.windows.getCurrent(function(w) {
 		chrome.tabs.getSelected(w.id, function(tab) {
 			taburl = tab.url;
