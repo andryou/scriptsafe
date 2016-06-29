@@ -15,3 +15,5 @@ h3 { margin: 0px !important; }
 .right { float: right; }
 .entryoptions { float: right; font-size: 11px; }
 .list, textarea { min-height: 300px !important; max-height: 300px; overflow-y: auto; }
+.sectionheading { margin-top: 20px; margin-bottom: 10px !important; }
+.sectionheading h4 { margin-bottom: 0px; }
