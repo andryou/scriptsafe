@@ -57,7 +57,7 @@ function viewToggle(commit) {
 		if (commit) localStorage['optionslist'] = 'true';
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
 		$(".tab").each(function() {
-			$(this).prepend('<div class="sectionheading alert alert-info"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
+			$(this).prepend('<div class="sectionheading alert alert-success"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
 		});
 		$(".sectionheading:first").css('margin-top', '0px');
 		$('#generalsettings .sectionheading').stickyScroll({ topBoundary: $("#generalsettings").offset().top, bottomBoundary: $("#fingerprintprotection").offset().top });
