@@ -462,6 +462,7 @@ function setDefaultOptions() {
 	defaultOptionValue("cookies", "true");
 	defaultOptionValue("paranoia", "false");
 	defaultOptionValue("clipboard", "false");
+	defaultOptionValue("optionslist", "false");
 	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);

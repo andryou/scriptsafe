@@ -32,10 +32,14 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#syncimport").click(forceSyncImport);
 	$("#syncexport").click(forceSyncExport);
 	$("#savetxt").click(downloadtxt);
+	$("#viewtoggle").click(function() {
+		viewToggle(1);
+	});
 	$("#hotkeyspage").click(function() {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
 	syncstatus = localStorage['syncenable'];
+	if (localStorage['optionslist'] == 'true') viewToggle(0);
 });
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
@@ -45,6 +49,31 @@ function initTabs() {
 		$(this).addClass('active').siblings().removeClass('active');
 		e.preventDefault();
 	});
+}
+function viewToggle(commit) {
+	$("#sidebar, #sectionname").toggle();
+	if ($(".tab-content").hasClass('col-sm-9')) {
+		$("#viewtoggle").text('Group All Settings').removeClass('btn-success').addClass('btn-info');
+		if (commit) localStorage['optionslist'] = 'true';
+		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
+		$(".tab").each(function(i) {
+			$(this).prepend('<div class="sectionheading alert alert-warning"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
+		});
+		$(".sectionheading:first").css('margin-top', '0px');
+		$('#generalsettings .sectionheading').stickyScroll({ topBoundary: $("#generalsettings").offset().top, bottomBoundary: $("#fingerprintprotection").offset().top });
+		$('#fingerprintprotection .sectionheading').stickyScroll({ topBoundary: $("#fingerprintprotection").offset().top, bottomBoundary: $("#privacysettings").offset().top });
+		$('#privacysettings .sectionheading').stickyScroll({ topBoundary: $("#privacysettings").offset().top, bottomBoundary: $("#behaviorsettings").offset().top });
+		$('#behaviorsettings .sectionheading').stickyScroll({ topBoundary: $("#behaviorsettings").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
+		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
+	} else {
+		$("#viewtoggle").text('List All Settings').removeClass('btn-info').addClass('btn-success');
+		if (commit) localStorage['optionslist'] = 'false';
+		$(".tab-content").removeClass('col-sm-12').addClass('col-sm-9');
+		$(".tab").hide();
+		$(".tab.active").show();
+		$('.sectionheading').stickyScroll('reset');
+		$(".sectionheading").remove();
+	}
 }
 function forceSyncExport() {
 	if (confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
