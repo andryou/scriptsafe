@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
 	syncstatus = localStorage['syncenable'];
-	if (localStorage['classicoptions'] == 'true') viewToggle(0);
+	if (localStorage['optionslist'] == 'true') viewToggle(0);
 });
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
@@ -54,7 +54,7 @@ function viewToggle(commit) {
 	$("#sidebar, #sectionname").toggle();
 	if ($(".tab-content").hasClass('col-sm-9')) {
 		$("#viewtoggle").text('Group All Settings').removeClass('btn-success').addClass('btn-info');
-		if (commit) localStorage['classicoptions'] = 'true';
+		if (commit) localStorage['optionslist'] = 'true';
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
 		$(".tab").each(function(i) {
 			$(this).prepend('<div class="sectionheading alert alert-warning"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
@@ -67,7 +67,7 @@ function viewToggle(commit) {
 		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 	} else {
 		$("#viewtoggle").text('List All Settings').removeClass('btn-info').addClass('btn-success');
-		if (commit) localStorage['classicoptions'] = 'false';
+		if (commit) localStorage['optionslist'] = 'false';
 		$(".tab-content").removeClass('col-sm-12').addClass('col-sm-9');
 		$(".tab").hide();
 		$(".tab.active").show();
