@@ -56,8 +56,8 @@ function viewToggle(commit) {
 		$("#viewtoggle").text('Group All Settings').removeClass('btn-success').addClass('btn-info');
 		if (commit) localStorage['optionslist'] = 'true';
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
-		$(".tab").each(function(i) {
-			$(this).prepend('<div class="sectionheading alert alert-warning"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
+		$(".tab").each(function() {
+			$(this).prepend('<div class="sectionheading alert alert-info"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
 		});
 		$(".sectionheading:first").css('margin-top', '0px');
 		$('#generalsettings .sectionheading').stickyScroll({ topBoundary: $("#generalsettings").offset().top, bottomBoundary: $("#fingerprintprotection").offset().top });
@@ -321,7 +321,7 @@ function settingsImport() {
 		$("#settingsimport").val("");
 	} else {
 		bkg.freshSync(0);
-		notification('Error importing the following settings (empty value and/or invalid setting name): '+error.slice(0, -2));
+		notification('Settings imported successfully, except the following (empty value or unrecognized name): '+error.slice(0, -2));
 	}
 }
 function downloadtxt() {
@@ -409,11 +409,14 @@ function hidebulk() {
 }
 function bulk(type) {
 	var error = false;
-	hidebulk();
-	$('html, body').animate({
-        scrollTop: $(document).height()
-    }, 'slow');
-	if (!$("#bulk").is(":visible")) $("#bulk").slideDown("fast");
+	if (!$("#bulk").is(":visible")) {
+		$("#bulk").slideDown("fast");
+		$('html, body').animate({
+			scrollTop: ($("#bulk").offset().top-55)
+		}, 'slow');
+	} else {
+		if ((type == '0' && $("#bulk strong").html() == "Whitelist Bulk Import") || (type == '1' && $("#bulk strong").html() == "Blacklist Bulk Import")) hidebulk();
+	}
 	$("#bulk textarea").focus();
 	if (type == '0') {
 		$("#bulk strong").html("Whitelist Bulk Import");
