@@ -32,36 +32,36 @@
 			<div class="panel panel-success">
 				<div class="panel-heading"><h3>Updated to v<span id="versionno"></span>! (Thursday, June 30, 2016)</h3></div>
 				<div class="panel-body">
-					<p>I spent the last two weeks focusing on bringing <b>Fingerprinting Protection</b> to ScriptSafe. The Options page now has a new Fingerprinting Protection section with not one, not two, not three, but <b>nine brand-new options</b>!</p>
+					<p>I spent the last two weeks focusing on bringing <strong>Fingerprinting Protection</strong> to ScriptSafe. The Options page now has a new Fingerprinting Protection section with not one, not two, not three, but <strong>nine brand-new options</strong>!</p>
 					<p>In addition, two new options have been added to remove URL-based tracking, as well as an option to spoof your browser's timezone (handy for VPN users).</p>
-					<p>As you have probably noticed already, the look of this page has changed! <strong>But wait, there's more!</strong> Check out the Options page (after you finish reading what's changed in this version below).</p>
+					<p>As you have probably noticed already, the look of this page has changed! <strong>But wait, there's more! <a href="options.html" target="_blank">Check out the Options page</a></strong> :)</p>
 					<p>Still on my list: 1) translate ScriptSafe into multiple languages; and 2) improve design and appearance.</p>
-					<p>Thank you to all who helped report issues and tested the beta versions of this release.</p>
+					<p>Much love to all who helped report issues and tested the beta versions of this release, as well as to everyone for inspiring me and sharing ideas on how to make ScriptSafe better for everyone.</p>
 					<p>In this release you will find the following updates:</p>
 					<ul>
-						<li><b>v1.0.7.16:</b><ul>
+						<li><strong>v1.0.7.16:</strong><ul>
 							<li>Revamped the design of this page and the Options page: wider layout, larger/more readable words, and intuitive buttons. On the new Options page you are able to toggle between Grouped and List views by clicking on the button in the top-right corner.</li>
-							<li>Added a new <b>Fingerprinting Protection</b> section with the following options <i>(all disabled by default)</i>:<ul>
-								<li><b>Canvas Fingerprint Protection</b> - protect against fingerprinting attempts through &lt;canvas&gt; elements, with the following options:<ul>
+							<li>Added a new <strong>Fingerprinting Protection</strong> section with the following options <i>(all disabled by default)</i>:<ul>
+								<li><strong>Canvas Fingerprint Protection</strong> - protect against fingerprinting attempts through &lt;canvas&gt; elements, with the following options:<ul>
 									<li>Disabled</li>
 									<li>Blank Readout (serve an empty canvas with the original dimensions)</li>
 									<li>Random Readout (serve an empty canvas with random dimensions)</li>
 									<li>Completely Block Readout (refuse to serve any data)</li>
 								</ul></li>
-								<li><b>Block Audio Fingerprinting</b> - prevent fingerprinting via the AudioContext API</li>
-								<li><b>Block WebGL Fingerprinting</b> - prevent fingerprinting via the WebGL API</li>
-								<li><b>Block Battery Fingerprinting</b> - prevent fingerprinting via the Battery API</li>
-								<li><b>Block Device Enumeration</b> - prevent having hardware devices detected via the WebRTC API</li>
-								<li><b>Block Gamepad Enumeration</b> - prevent having hardware devices detected via the Gamepad API</li>
-								<li><b>Block Canvas Font Access</b> - prevent system fonts from being enumerated through &lt;canvas&gt; elements</li>
-								<li><b>Block Client Rectangles Fingerprinting</b> - prevent fingerprinting through calculating element client rectangles)</li>
-								<li><b>Reduce Keyboard Fingerprinting (for advanced users)</b> - make keypress timings more random to increase anonymity (note: adds a random delay between keypresses))</li>
-								<li><b>I recommend enabling all of the above options (except the last two) for increased privacy</b>, and based on your needs disable the options that interfere with your usage.</li>
+								<li><strong>Block Audio Fingerprinting</strong> - prevent fingerprinting via the AudioContext API</li>
+								<li><strong>Block WebGL Fingerprinting</strong> - prevent fingerprinting via the WebGL API</li>
+								<li><strong>Block Battery Fingerprinting</strong> - prevent fingerprinting via the Battery API</li>
+								<li><strong>Block Device Enumeration</strong> - prevent having hardware devices detected via the WebRTC API</li>
+								<li><strong>Block Gamepad Enumeration</strong> - prevent having hardware devices detected via the Gamepad API</li>
+								<li><strong>Block Canvas Font Access</strong> - prevent system fonts from being enumerated through &lt;canvas&gt; elements</li>
+								<li><strong>Block Client Rectangles Fingerprinting</strong> - prevent fingerprinting through calculating element client rectangles)</li>
+								<li><strong>Reduce Keyboard Fingerprinting (for advanced users)</strong> - make keypress timings more random to increase anonymity (note: adds a random delay between keypresses))</li>
+								<li><strong>I recommend enabling all of the above options (except the last two) for increased privacy</strong>, and based on your needs disable the options that interfere with your usage.</li>
 							</ul></li>
-							<li>Added <b>Remove Google Analytics (UTM) Tracking</b> option (under <b>Privacy Settings</b>) - remove Google Analytics (UTM) tracking tokens before they're actually passed to the server <i>(disabled by default)</i></li>
-							<li>Added <b>Remove Possible Hash Tracking</b> option (under <b>Privacy Settings</b>) - remove possible tracking tokens passed using hash, passing in an attribute and value (e.g. #xtor=RSS-1) <i>(disabled by default)</i></li>
-							<li>Added <b>Spoof Timezone</b> option (under <b>Privacy Settings</b>) - spoof or randomize your timezone; useful if you use VPN <i>(disabled by default)</i></li>
-							<li>Added <b>Prevent Clipboard Interference</b> option (under <b>Behavior Settings</b>) - prevent pages from interfering with clipboard actions <i>(disabled by default)</i></li>
+							<li>Added <strong>Remove Google Analytics (UTM) Tracking</strong> option (under <strong>Privacy Settings</strong>) - remove Google Analytics (UTM) tracking tokens before they're actually passed to the server <i>(disabled by default)</i></li>
+							<li>Added <strong>Remove Possible Hash Tracking</strong> option (under <strong>Privacy Settings</strong>) - remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1) <i>(disabled by default)</i></li>
+							<li>Added <strong>Spoof Timezone</strong> option (under <strong>Privacy Settings</strong>) - spoof or randomize your timezone; useful if you use VPN <i>(disabled by default)</i></li>
+							<li>Added <strong>Prevent Clipboard Interference</strong> option (under <strong>Behavior Settings</strong>) - prevent pages from interfering with clipboard actions <i>(disabled by default)</i></li>
 							<li>Added option to apply user-agent spoofing on whitelisted domains as well (default behaviour is to disable spoofing on whitelisted domains to avoid issues, but enabling this option will spoof the user-agent regardless)</li>
 							<li>Added <strong>Save as Text File</strong> functionality to the Export Settings portion in the Options page</li>
 							<li>Fix Panel expand issue for Mac OS X users</a></li>
@@ -89,7 +89,7 @@
 				</p>
 			</div>
 			<hr>
-			<p><b>Just as a note: ScriptSafe does not have any backdoors, nor does it contact any third-party server at any point in time. ScriptSafe was created by one ordinary guy (me), lovingly coded in my bedroom, without any intention other than to give you back control of the Internet.</b><br /><br /><i>You can go through the code on Github (<a href="https://github.com/andryou/scriptsafe" target="_blank">https://github.com/andryou/scriptsafe</a>) AND the actual instance installed on your computer by going to C:\Users\<b>**your username**</b>\AppData\Local\Google\Chrome\User Data\Default\Extensions\oiigbmnaadbkfbmpbfijlflahbdbdgdf (for non-Windows users, search for a folder named <b>oiigbmnaadbkfbmpbfijlflahbdbdgdf</b>)</i></p>
+			<p><strong>Just as a note: ScriptSafe does not have any backdoors, nor does it contact any third-party server at any point in time. ScriptSafe was created by one ordinary guy (me), lovingly coded in my bedroom, without any intention other than to give you back control of the Internet.</strong><br /><br /><i>You can go through the code on Github (<a href="https://github.com/andryou/scriptsafe" target="_blank">https://github.com/andryou/scriptsafe</a>) AND the actual instance installed on your computer by going to C:\Users\<strong>**your username**</strong>\AppData\Local\Google\Chrome\User Data\Default\Extensions\oiigbmnaadbkfbmpbfijlflahbdbdgdf (for non-Windows users, search for a folder named <strong>oiigbmnaadbkfbmpbfijlflahbdbdgdf</strong>)</i></p>
 			<br />
 			<div class="text-center">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline;">
