@@ -11,7 +11,6 @@ var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	initTabs();
-	$('#sidebar').stickyScroll({ container: '#sectionname' });
 	loadOptions();
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
@@ -39,7 +38,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
 	syncstatus = localStorage['syncenable'];
+	$(".row-offcanvas").show();
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
+	$('#sidebar').stickyScroll({ container: '#sectionname' });
 });
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
@@ -47,17 +48,18 @@ function initTabs() {
 		$("#sectionname").text($(this).attr('rel'));
 		$('.tab-content ' + currentAttrValue).show().siblings().hide();
 		$(this).addClass('active').siblings().removeClass('active');
+		$('.tab-content ' + currentAttrValue).addClass('active').siblings().removeClass('active');
 		e.preventDefault();
 	});
 }
 function viewToggle(commit) {
 	$("#sidebar, #sectionname").toggle();
 	if ($(".tab-content").hasClass('col-sm-9')) {
-		$("#viewtoggle").text('Group All Settings').removeClass('btn-success').addClass('btn-info');
+		$("#viewtoggle").text('Group All Settings').removeClass('btn-info').addClass('btn-success');
 		if (commit) localStorage['optionslist'] = 'true';
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
-		$(".tab").each(function(i) {
-			$(this).prepend('<div class="sectionheading alert alert-warning"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
+		$(".tab").each(function() {
+			$(this).prepend('<div class="sectionheading alert alert-success"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
 		});
 		$(".sectionheading:first").css('margin-top', '0px');
 		$('#generalsettings .sectionheading').stickyScroll({ topBoundary: $("#generalsettings").offset().top, bottomBoundary: $("#fingerprintprotection").offset().top });
@@ -66,13 +68,15 @@ function viewToggle(commit) {
 		$('#behaviorsettings .sectionheading').stickyScroll({ topBoundary: $("#behaviorsettings").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 	} else {
-		$("#viewtoggle").text('List All Settings').removeClass('btn-info').addClass('btn-success');
+		$("#viewtoggle").text('List All Settings').removeClass('btn-success').addClass('btn-info');
 		if (commit) localStorage['optionslist'] = 'false';
 		$(".tab-content").removeClass('col-sm-12').addClass('col-sm-9');
 		$(".tab").hide();
 		$(".tab.active").show();
 		$('.sectionheading').stickyScroll('reset');
 		$(".sectionheading").remove();
+		$('#sidebar').stickyScroll('reset');
+		$('#sidebar').stickyScroll({ container: '#sectionname' });
 	}
 }
 function forceSyncExport() {
@@ -316,7 +320,7 @@ function settingsImport() {
 		$("#settingsimport").val("");
 	} else {
 		bkg.freshSync(0);
-		notification('Error importing the following settings (empty value and/or invalid setting name): '+error.slice(0, -2));
+		notification('Settings imported successfully, except the following (empty value or unrecognized name): '+error.slice(0, -2));
 	}
 }
 function downloadtxt() {
@@ -404,11 +408,14 @@ function hidebulk() {
 }
 function bulk(type) {
 	var error = false;
-	hidebulk();
-	$('html, body').animate({
-        scrollTop: $(document).height()
-    }, 'slow');
-	if (!$("#bulk").is(":visible")) $("#bulk").slideDown("fast");
+	if (!$("#bulk").is(":visible")) {
+		$("#bulk").slideDown("fast");
+		$('html, body').animate({
+			scrollTop: ($("#bulk").offset().top-55)
+		}, 'slow');
+	} else {
+		if ((type == '0' && $("#bulk strong").html() == "Whitelist Bulk Import") || (type == '1' && $("#bulk strong").html() == "Blacklist Bulk Import")) hidebulk();
+	}
 	$("#bulk textarea").focus();
 	if (type == '0') {
 		$("#bulk strong").html("Whitelist Bulk Import");
@@ -462,7 +469,8 @@ function listUpdate() {
 	var whiteList = JSON.parse(localStorage['whiteList']);
 	var blackList = JSON.parse(localStorage['blackList']);
 	var whitelistCompiled = '';
-	if (whiteList.length==0) whitelistCompiled = '[currently empty]';
+	var whitelistLength = whiteList.length;
+	if (whitelistLength==0) whitelistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
@@ -472,7 +480,8 @@ function listUpdate() {
 		}
 	}
 	var blacklistCompiled = '';
-	if (blackList.length==0) blacklistCompiled = '[currently empty]';
+	var blacklistLength = blackList.length;
+	if (blacklistLength==0) blacklistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
@@ -483,6 +492,8 @@ function listUpdate() {
 	}
 	$('#whitelist').html(whitelistCompiled);
 	$('#blacklist').html(blacklistCompiled);
+	$('#whitelistcount').html(whitelistLength);
+	$('#blacklistcount').html(blacklistLength);
 	$(".domainRemover, .topDomainAdd").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
