@@ -121,6 +121,49 @@
 									<option value="true">Only on Unwhitelisted Domains</option>
 									<option value="alldomains">On All Domains</option>
 								</select><i>(Default: Only on Unwhitelisted Domains; blocks referrer information when clicking on third-party links (note: setting this to "On All Domains" may cause issues (e.g. thumbnails in Tweetdeck))</i></td></tr>
+								<tr><td class="col-sm-4"><label for="timezone">Spoof Timezone:</label></td><td><select id="timezone" class="savechange form-control">
+									<option value="false">Disabled</option>
+									<option value="random">Random</option>
+									<option value="720">UTC-12:00</option>
+									<option value="660">UTC-11:00</option>
+									<option value="600">UTC-10:00</option>
+									<option value="570">UTC-09:30</option>
+									<option value="540">UTC-09:00</option>
+									<option value="480">UTC-08:00</option>
+									<option value="420">UTC-07:00</option>
+									<option value="360">UTC-06:00</option>
+									<option value="300">UTC-05:00</option>
+									<option value="240">UTC-04:00</option>
+									<option value="210">UTC-03:30</option>
+									<option value="180">UTC-03:00</option>
+									<option value="120">UTC-02:00</option>
+									<option value="60">UTC-01:00</option>
+									<option value="0">UTC±00:00</option>
+									<option value="-60">UTC+01:00</option>
+									<option value="-120">UTC+02:00</option>
+									<option value="-180">UTC+03:00</option>
+									<option value="-210">UTC+03:30</option>
+									<option value="-240">UTC+04:00</option>
+									<option value="-270">UTC+04:30</option>
+									<option value="-300">UTC+05:00</option>
+									<option value="-330">UTC+05:30</option>
+									<option value="-345">UTC+05:45</option>
+									<option value="-360">UTC+06:00</option>
+									<option value="-390">UTC+06:30</option>
+									<option value="-420">UTC+07:00</option>
+									<option value="-480">UTC+08:00</option>
+									<option value="-510">UTC+08:30</option>
+									<option value="-525">UTC+08:45</option>
+									<option value="-540">UTC+09:00</option>
+									<option value="-570">UTC+09:30</option>
+									<option value="-600">UTC+10:00</option>
+									<option value="-630">UTC+10:30</option>
+									<option value="-660">UTC+11:00</option>
+									<option value="-720">UTC+12:00</option>
+									<option value="-765">UTC+12:45</option>
+									<option value="-780">UTC+13:00</option>
+									<option value="-840">UTC+14:00</option>
+								</select> <i>(Default: disabled; spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="useragentspoof">User-Agent Spoof:</label></td><td><select id="useragentspoof" class="savechange form-control">
 									<option value="off">-Off-</option>
 									<option value="chrome50">Chrome 50.0.2661.102</option>
@@ -166,49 +209,6 @@
 									<option value="domain">Same Domain</option>
 									<option value="custom">Custom</option>
 								</select><i>(Default: -Off-; <strong>warning</strong>: if enabled, may "break" some sites (e.g. logging in))</i><div id="customreferrer" class="sshidden"><br /><p><input id="userref" class="form-control" value="" placeholder="Enter an address to set as your referrer value for all sites" /></p><p><input type="button" class="save btn btn-success" value="Save" /></p></div></td></tr>
-								<tr><td class="col-sm-4"><label for="timezone">Spoof Timezone:</label></td><td><select id="timezone" class="savechange form-control">
-									<option value="false">Disabled</option>
-									<option value="random">Random</option>
-									<option value="720">UTC-12:00</option>
-									<option value="660">UTC-11:00</option>
-									<option value="600">UTC-10:00</option>
-									<option value="570">UTC-09:30</option>
-									<option value="540">UTC-09:00</option>
-									<option value="480">UTC-08:00</option>
-									<option value="420">UTC-07:00</option>
-									<option value="360">UTC-06:00</option>
-									<option value="300">UTC-05:00</option>
-									<option value="240">UTC-04:00</option>
-									<option value="210">UTC-03:30</option>
-									<option value="180">UTC-03:00</option>
-									<option value="120">UTC-02:00</option>
-									<option value="60">UTC-01:00</option>
-									<option value="0">UTC±00:00</option>
-									<option value="-60">UTC+01:00</option>
-									<option value="-120">UTC+02:00</option>
-									<option value="-180">UTC+03:00</option>
-									<option value="-210">UTC+03:30</option>
-									<option value="-240">UTC+04:00</option>
-									<option value="-270">UTC+04:30</option>
-									<option value="-300">UTC+05:00</option>
-									<option value="-330">UTC+05:30</option>
-									<option value="-345">UTC+05:45</option>
-									<option value="-360">UTC+06:00</option>
-									<option value="-390">UTC+06:30</option>
-									<option value="-420">UTC+07:00</option>
-									<option value="-480">UTC+08:00</option>
-									<option value="-510">UTC+08:30</option>
-									<option value="-525">UTC+08:45</option>
-									<option value="-540">UTC+09:00</option>
-									<option value="-570">UTC+09:30</option>
-									<option value="-600">UTC+10:00</option>
-									<option value="-630">UTC+10:30</option>
-									<option value="-660">UTC+11:00</option>
-									<option value="-720">UTC+12:00</option>
-									<option value="-765">UTC+12:45</option>
-									<option value="-780">UTC+13:00</option>
-									<option value="-840">UTC+14:00</option>
-								</select> <i>(Default: disabled; spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.)</i></td></tr>
 							</table>
 						</div>
 						<div id="behaviorsettings" class="tab">
@@ -233,7 +233,7 @@
 						<div id="whitelistblacklist" class="tab">
 							<table class="table table-striped">
 								<tr><td colspan="2" class="middle"><p><label for="url">Domain:</label> <input id="url" value="" class="form-control" placeholder="Enter a domain or expression (click 'Help' for more info)" /></p><p><input type="button" id="whitebind" value="+ Whitelist" class="btn btn-success" /> <input type="button" id="blackbind" value="+ Blacklist" class="btn btn-danger" /> <input type="button" id="domaininfo" value="Help" class="btn btn-default" /></p><div id="domaininfocontainer" class="sshidden"><ul><li><strong>Entire Domain Matching</strong>: match an entire domain by adding <strong style="color: green">**.</strong> in front of it (or click on "Trust"/"Distrust" for an existing entry below).<br />Example: <strong style="color: green">**.domain.com</strong> will match <strong>domain.com</strong>, <strong>a.domain.com</strong>, <strong>1.2.domain.com</strong> and even <strong>1.2.3.domain.com</strong></li><li><strong>Wildcard Matching</strong>: match any string of characters (except periods ".") with a <strong style="color: green">*</strong> character.<br />Example: <strong style="color: green">*.domain.com</strong> will match <strong>a.domain.com</strong> but not <strong>domain.com</strong> (no subdomain)</li><li><strong>Single-Character Matching</strong>: match any single character with a <strong style="color: green">?</strong> character.<br />Example: <strong style="color: green">cat?.com</strong> will match <strong>cats.com</strong> and <strong>cat5.com</strong><br /><br /></li><li><strong>Note 1</strong>: you are able to combine the various matching expressions (e.g. <strong>192.16?.*.*, *.cat?.c*, abc*xyz.com</strong>)</li><li><strong>Note 2</strong>: IPv6 URLs must contain square brackets (e.g. <strong>[2001:4860:0:2001::68]</strong>)</li><li><strong>Note 3</strong>: the "www." prefix is automatically handled, so all entries below have it stripped out</li></ul></div></td></tr>
-								<tr><td class="col-sm-6"><p><strong>Whitelist</strong> (<a href="javascript:;" id="whiteclear">clear</a> | <a href="javascript:;" id="importwhite">bulk import</a>)</p><div class="list form-control" id="whitelist"></div><p><br /><small>Tip: press CTRL+F to search the lists</small></p></td><td class="col-sm-6"><p><strong>Blacklist</strong> (<a href="javascript:;" id="blackclear">clear</a> | <a href="javascript:;" id="importblack">bulk import</a>)</p><div class="list form-control" id="blacklist"></div>
+								<tr><td class="col-sm-6"><p><strong>Whitelist (<span id="whitelistcount"></span>)</strong> (<a href="javascript:;" id="whiteclear">clear</a> | <a href="javascript:;" id="importwhite">bulk import</a>)</p><div class="list form-control" id="whitelist"></div><p><br /><small>Tip: press CTRL+F to search the lists</small></p></td><td class="col-sm-6"><p><strong>Blacklist (<span id="blacklistcount"></span>)</strong> (<a href="javascript:;" id="blackclear">clear</a> | <a href="javascript:;" id="importblack">bulk import</a>)</p><div class="list form-control" id="blacklist"></div>
 								</td></tr>
 								<tr><td colspan="2" id="bulk" class="sshidden"><strong>Bulk Import</strong><br /><br />Copy and paste domains into the box below. Each domain should be on a separate line.<br /><br /><p><textarea class="form-control"></textarea></p><p><input type="button" value="Import to List" class="btn btn-info" id="bulkbtn" /> <input type="button" value="Hide" id="hideimport" class="btn btn-default" /></p><div id="importerror" class="sshidden alert alert-danger"></div></td></tr>
 							</table>

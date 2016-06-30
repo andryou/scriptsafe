@@ -474,7 +474,8 @@ function listUpdate() {
 	var whiteList = JSON.parse(localStorage['whiteList']);
 	var blackList = JSON.parse(localStorage['blackList']);
 	var whitelistCompiled = '';
-	if (whiteList.length==0) whitelistCompiled = '[currently empty]';
+	var whitelistLength = whiteList.length;
+	if (whitelistLength==0) whitelistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
@@ -484,7 +485,8 @@ function listUpdate() {
 		}
 	}
 	var blacklistCompiled = '';
-	if (blackList.length==0) blacklistCompiled = '[currently empty]';
+	var blacklistLength = blackList.length;
+	if (blacklistLength==0) blacklistCompiled = '[currently empty]';
 	else {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
@@ -495,6 +497,8 @@ function listUpdate() {
 	}
 	$('#whitelist').html(whitelistCompiled);
 	$('#blacklist').html(blacklistCompiled);
+	$('#whitelistcount').html(whitelistLength);
+	$('#blacklistcount').html(blacklistLength);
 	$(".domainRemover, .topDomainAdd").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
