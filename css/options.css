@@ -17,3 +17,4 @@ h3 { margin: 0px !important; }
 .entryoptions { float: right; font-size: 11px; }
 .list, textarea { min-height: 300px; max-height: 300px; overflow-y: auto; }
 .sectionheading, .sectionheading h4 { margin-bottom: 0px; }
+.row-offcanvas { display: none; }

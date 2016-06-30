@@ -11,7 +11,6 @@ var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	initTabs();
-	$('#sidebar').stickyScroll({ container: '#sectionname' });
 	loadOptions();
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
@@ -40,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	syncstatus = localStorage['syncenable'];
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
+	$(".row-offcanvas").show();
+	$('#sidebar').stickyScroll({ container: '#sectionname' });
 });
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
@@ -47,13 +48,14 @@ function initTabs() {
 		$("#sectionname").text($(this).attr('rel'));
 		$('.tab-content ' + currentAttrValue).show().siblings().hide();
 		$(this).addClass('active').siblings().removeClass('active');
+		$('.tab-content ' + currentAttrValue).addClass('active').siblings().removeClass('active');
 		e.preventDefault();
 	});
 }
 function viewToggle(commit) {
 	$("#sidebar, #sectionname").toggle();
 	if ($(".tab-content").hasClass('col-sm-9')) {
-		$("#viewtoggle").text('Group All Settings').removeClass('btn-success').addClass('btn-info');
+		$("#viewtoggle").text('Group All Settings').removeClass('btn-info').addClass('btn-success');
 		if (commit) localStorage['optionslist'] = 'true';
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
 		$(".tab").each(function() {
@@ -66,13 +68,15 @@ function viewToggle(commit) {
 		$('#behaviorsettings .sectionheading').stickyScroll({ topBoundary: $("#behaviorsettings").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 	} else {
-		$("#viewtoggle").text('List All Settings').removeClass('btn-info').addClass('btn-success');
+		$("#viewtoggle").text('List All Settings').removeClass('btn-success').addClass('btn-info');
 		if (commit) localStorage['optionslist'] = 'false';
 		$(".tab-content").removeClass('col-sm-12').addClass('col-sm-9');
 		$(".tab").hide();
 		$(".tab.active").show();
 		$('.sectionheading').stickyScroll('reset');
 		$(".sectionheading").remove();
+		$('#sidebar').stickyScroll('reset');
+		$('#sidebar').stickyScroll({ container: '#sectionname' });
 	}
 }
 function forceSyncExport() {
