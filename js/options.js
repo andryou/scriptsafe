@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
 	syncstatus = localStorage['syncenable'];
-	if (localStorage['optionslist'] == 'true') viewToggle(0);
 	$(".row-offcanvas").show();
+	if (localStorage['optionslist'] == 'true') viewToggle(0);
 	$('#sidebar').stickyScroll({ container: '#sectionname' });
 });
 function initTabs() {
