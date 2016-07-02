@@ -81,14 +81,14 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
 		SETTINGS['GAMEPAD'] = response.gamepad;
 		SETTINGS['TIMEZONE'] = response.timezone;
-		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false') {
+		SETTINGS['CLIPBOARD'] = response.clipboard;
+		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
 			fingerprintProtection();
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
-		SETTINGS['CLIPBOARD'] = response.clipboard;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		$(document).ready(function() {
 			loaded();
@@ -108,7 +108,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	delete savedBeforeloadEvents; // eventually remove
 });
 function fingerprintProtection() {
-	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, timezone, clientrects){
+	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, timezone, clientrects, clipboard){
 		function processFunctions(scope) {
 			/* Canvas */
 			if (canvas != 'false') {
@@ -326,6 +326,19 @@ function fingerprintProtection() {
 					return timezone;
 				}
 			}
+			/* Clipboard */
+			if (clipboard == 'true') {
+				var clipboard_triggerblock = scope.document.createElement('div');
+				clipboard_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_clipboard';
+				var clipboard_a = document;
+				var origExecCommand = clipboard_a.execCommand;
+				clipboard_a.execCommand = function() {
+					clipboard_triggerblock.title = 'execCommand';
+					document.documentElement.appendChild(clipboard_triggerblock);
+					if (arguments[0] == 'cut' || arguments[0] == 'copy') return false;
+					return origExecCommand.apply(this, arguments);
+				};
+			}
 		}
 		processFunctions(window);
 		var iwin = HTMLIFrameElement.prototype.__lookupGetter__('contentWindow'), idoc = HTMLIFrameElement.prototype.__lookupGetter__('contentDocument');
@@ -349,7 +362,7 @@ function fingerprintProtection() {
 				}
 			}
 		});
-	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"'");
+	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
 }
 function clipboardProtect(el) {
     el.oncontextmenu = null;
@@ -382,6 +395,9 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['CANVAS'] != 'false') {
 		$("canvas.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Fingerprint'}); $(this).remove(); });
+	}
+	if (SETTINGS['CLIPBOARD'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_clipboard").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Clipboard Interference'}); $(this).remove(); });
 	}
 	if (SETTINGS['CANVASFONT'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvasfont").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Font Access'}); $(this).remove(); });
