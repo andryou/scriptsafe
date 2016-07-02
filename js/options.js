@@ -397,6 +397,22 @@ function domainRemover(domain) {
 	}
 	return false;
 }
+function domainMove(domain, mode) {
+	var lingo;
+	if (mode == '0') lingo = 'whitelist';
+	else if (mode == '1') lingo = 'blacklist';
+	if (confirm("Are you sure you want to move "+domain+" to the "+lingo+"?")) {
+		bkg.domainHandler(domain, mode);
+		listUpdate();
+		syncstatus = bkg.freshSync(2);
+		if (syncstatus) {
+			notification(['Whitelisted','Blacklisted'][mode]+' '+domain+' and syncing in 30 seconds.');
+		} else {
+			notification(['Whitelisted','Blacklisted'][mode]+' '+domain);
+		}
+	}
+	return false;
+}
 function topDomainAdd(domain, mode) {
 	var lingo;
 	if (mode == '0') lingo = 'trust';
@@ -480,8 +496,8 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
 		for (var i in whiteList) {
-			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
-			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+whiteList[i]+'\' rel="0">Trust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove" title=\''+whiteList[i]+'\' rel="1">Move to Blacklist</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+whiteList[i]+'\' rel="0">Trust Domain</a> | <a href="javascript:;" class="domainMove" title=\''+whiteList[i]+'\' rel="1">Move to Blacklist</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 		}
 	}
 	var blacklistCompiled = '';
@@ -491,17 +507,18 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
 		for (var i in blackList) {
-			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
-			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+blackList[i]+'\' rel="1">Distrust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove" title=\''+blackList[i]+'\' rel="0">Move to Whitelist</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+blackList[i]+'\' rel="1">Distrust Domain</a> | <a href="javascript:;" class="domainMove" title=\''+blackList[i]+'\' rel="0">Move to Whitelist</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 		}
 	}
 	$('#whitelist').html(whitelistCompiled);
 	$('#blacklist').html(blacklistCompiled);
 	$('#whitelistcount').html(whitelistLength);
 	$('#blacklistcount').html(blacklistLength);
-	$(".domainRemover, .topDomainAdd").unbind('click');
+	$(".domainRemover, .topDomainAdd, .domainMove").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
+	$(".domainMove").click(function() { domainMove($(this).attr('title'), $(this).attr('rel'));});
 	updateExport();
 }
 function listclear(type) {
