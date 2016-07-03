@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "ควบคุมเว็บและท่องอย่างปลอดภัยมากขึ้น"
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "บนโดเมนทั้งหมด"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "อนุญาต"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "ให้ทุกบล็อคเซสชั่น"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "ปิดกั้นเนื้อหาที่ไม่พึงประสงค์:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "ลบเนื้อหาที่ไม่พึงประสงค์จากที่รู้จักกันโฆษณา / โดเมนมัลแวร์ โดเมนที่รวบรวมจาก <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPs โฮสต์</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( โฆษณา / ติดตามเซิร์ฟเวอร์)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>โฮสต์โครงการปีเตอร์โลว์</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "ที่ไม่พึงประสงค์โหมดเนื้อหา:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "ผ่อนคลาย = โดเมนที่อนุญาตพิเศษจะไม่ถูกบล็อก; เข้มงวดโดเมน = ในรายการโดเมนที่ไม่พึงประสงค์จะถูกปิดกั้นแม้ว่าอนุญาตพิเศษ"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "ต่อต้านสังคม"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "โหมดการต่อต้านสังคม:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "มักจะเอาเครื่องมือทางสังคม / ปุ่มแม้ว่าอนุญาตพิเศษ"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "สำหรับการปิดกั้นที่ครอบคลุมมากขึ้นให้ตรวจสอบ <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery </a, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>ตัด</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>เบลอ</a>, และ / หรือ <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock กำเนิด</a> ที่มีทั้งหมดของรายการการสมัครสมาชิกได้ที<a href=https://www.fanboy.co.nz/ target=_blank>เว็บไซต์ Fanboy</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "บล็อกเสียงลายพิมพ์:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "ป้องกันไม่ให้พิมพ์ลายนิ้วมือผ่าน AudioContext API"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "บล็อกแบตเตอรี่พิมพ์ลายนิ้วมือ:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "ป้องกันไม่ให้พิมพ์ลายนิ้วมือผ่านทาง API แบตเตอรี่"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "การตั้งค่าพฤติกรรม"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "บล็อก (แนะนำ)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "กลุ่ม"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "อุดตัน"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "บล็อกทั้งหมดได้รับอนุญาตสำหรับเซสชัน"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "นำเข้าจำนวนมาก"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "นำเข้ารายชื่อ"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "นำเข้าจำนวนมาก"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "คัดลอกและวางโดเมนลงในช่องด้านล่าง แต่ละโดเมนควรจะอยู่ในบรรทัดที่แยกต่างหาก"
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "ผ้าใบลายนิ้วมือป้องกัน:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe ไม่สามารถประมวลผลหน้านี้.</strong><br /><br />โปรดลองไปที่เว็บไซต์"
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "มิเตอร์ที่อ่านได้ว่างเปล่า"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "สุ่มมิเตอร์ที่อ่านได้"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "สมบูรณ์บล็อกมิเตอร์ที่อ่านได้"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "ป้องกันความพยายามในการพิมพ์ลายนิ้วมือผ่านองค์ประกอบ &lt;canvas&gt;"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "บล็อกผ้าใบเข้าถึงตัวอักษร:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "ป้องกันไม่ให้ตัวอักษรสำหรับระบบจากการถูกระบุถึงองค์ประกอบ &lt;canvas&gt; อาจรบกวนกับ Google เอกสาร"
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "คลาสสิกตัวเลือกโหมด:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "ถ้า ticked ปิดตัวเลือกแท็บทุกตัวเลือกที่มีการคลิก"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "ชัดเจน"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "ชัดเจน"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "บล็อกสี่เหลี่ยมลูกค้า:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "ป้องกันไม่ให้พิมพ์ลายนิ้วมือผ่านการคำนวณสี่เหลี่ยมองค์ประกอบ อาจรบกวนกับเมนูแบบเลื่อนลงบางส่วน"
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "ป้องกันไม่ให้เกิดการรบกวนคลิปบอร์ด:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "ป้องกันไม่ให้หน้าจากการรบกวนกับการกระทำของคลิปบอร์ด"
+   },
+   "close": {
+      "description": "Close",
+      "message": "ปิด"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "บล็อกคุกกี้ที่ไม่พึงประสงค์:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "คุกกี้ช่วงตึกจากโฆษณาที่รู้จักกัน / โดเมนมัลแวร์ ด้านล่างนี้นำไปใช้กับโหมดนี้เช่นกัน"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "กำหนดเอง"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "ปกป้องทรัพย์สินทางปัญญาท้องถิ่น"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "ปฏิเสธ"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "ปกป้อง IP ที่ท้องถิ่นและสาธารณะ"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "ปิดการใช้งาน"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "พิการ"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "พิการ"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "ซิงค์ถูกปิดใช้งาน\r\nรู้สึกอิสระที่จะไปที่หน้าตัวเลือกในเวลาใด ๆ ในการตั้งค่าการซิงค์ของคุณ (สำรองข้อมูลการตั้งค่าของคุณถ้าจำเป็น)"
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "ปิดการใช้งานและลบ:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "ไม่ไว้วางใจ"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "ไม่ไว้วางใจ"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "ไม่ไว้วางใจโดเมน"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "โดเมนเดียวกัน"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "เรียงตามโดเมน:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "ช่วยด้วย"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "โดเมนไม่ถูกต้อง / ที่อยู่"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "โดเมนหรือที่อยู่จะต้องมีบางตัวอักษร /"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "โดเมนไม่สามารถเพิ่มในขณะที่มันเป็นผู้ให้บริการเนื้อหาที่ไม่พึงประสงค์ (ดูบล็อกเนื้อหาที่ไม่พึงประสงค์และ / หรือโหมดต่อต้านสังคม)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "เรียงลำดับรายการ URL โดยโดเมนในหน้านี้และในแผง"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "เคล็ดลับ: กด Ctrl + F เพื่อค้นหารายการ"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "ไม่แสดงหน้านี้อีกครั้ง"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "เปิดใช้งาน:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "เปิดใช้งาน"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "เปิดใช้งาน ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "เปิดใช้งานการซิงค์:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "ส่งออก"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "การตั้งค่าของคุณได้รับการซิงค์เรียบร้อยแล้ว!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "การตั้งค่าการซิงค์!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "ป้องกันลายนิ้วมือ"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "ลายนิ้วมือป้องกัน (อาจแบ่งเว็บไซต์)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "ดูเหมือนว่าคุณยังไม่ได้ซิงค์การตั้งค่าของคุณกับบัญชี Google ของคุณเลย\r\nScriptSafe เป็นเรื่องเกี่ยวกับการซิงค์การตั้งค่าปัจจุบันของคุณไปยังบัญชี Google ของคุณ\r\nคลิกที่ 'ตกลง' ถ้าคุณต้องการที่จะดำเนินการต่อ\r\nถ้าไม่ได้ให้คลิก 'ยกเลิก' และบนอุปกรณ์อื่น ๆ ที่มีการตั้งค่าที่คุณต้องการอัปเดต ScriptSafe และคลิกที่ตกลงเมื่อคุณจะพบกับข้อความนี้้"
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "คุณต้องการที่จะซิงค์การตั้งค่าปัจจุบันของคุณไปยังบัญชี Google ของคุณหรือไม่\r\nหมายเหตุ: กรุณาอย่ากดนี้บ่อย มีขีด จำกัด ต่อนาที 10 และ 1,000 ต่อชั่วโมง"
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "คุณต้องการที่จะนำเข้าการตั้งค่าการซิงค์จากบัญชี Google ของคุณไปยังอุปกรณ์นี้หรือไม่?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "อง:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "การตั้งค่าทั่วไป"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "บล็อก Gamepad การแจงนับ:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "ป้องกันไม่ให้อุปกรณ์ที่มีการตรวจพบผ่าน Gamepad API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "การกระทำที่มีจำหน่ายฮอต"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "ชั่วคราวอนุญาต / ป้องกันทรัพยากรทั้งหมดสำหรับแท็บปัจจุบัน"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "เอาสิทธิ์ชั่วคราวสำหรับแท็บปัจจุบัน"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "เอาสิทธิ์ชั่วคราว"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "กำหนดค่าอง ScriptSafe:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "คลิกที่แป้นพิมพ์ลัด"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "รายการการตั้งค่าทั้งหมด"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "การตั้งค่าล่าสุดได้รับการดาวน์โหลดสำเร็จแล้ว!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "การตั้งค่าการดาวน์โหลด!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "กลุ่มการตั้งค่าทั้งหมด"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "ลบติดตามแฮเป็นไปได้:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "ลบราชสกุลติดตามไปได้ผ่านการใช้กัญชาที่มีคุณลักษณะและความคุ้มค่า (เช่น #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "ปิดบัง"
+   },
+   "import": {
+      "description": "Import",
+      "message": "นำเข้า"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "นำเข้า / Restore การตั้งค่า"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "การตั้งค่านำเข้าสำเร็จ"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "การตั้งค่านำเข้าสำเร็จยกเว้นดังต่อไปนี้ (ค่าว่างหรือชื่อที่ไม่รู้จัก):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "การตั้งค่านำเข้าสำเร็จและการซิงค์ใน 30 วินาที"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "ลดแป้นพิมพ์ลายนิ้วมือ (<strong>สำหรับผู้ใช้ขั้นสูง</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "ทำให้การกำหนดเวลากดปุ่มสุ่มเพื่อเพิ่มตัวตน (<strong>หมายเหตุ: เพิ่มความล่าช้าสุ่มระหว่างการกดปุ่ม; ปิดการใช้งานการตั้งค่านี้เป็นที่ยอมรับ</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "หน้าพฤติกรรมการเชื่อมโยงเปิด:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "ปรับเปลี่ยนวิธีการเชื่อมโยงทั้งหมดจะเปิด"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "หลวม - ให้โดเมนเดียวกันและโดเมนย่อย"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "โหมดเริ่มต้น"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "แท็บใหม่"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "แท็บนี้จะมีการโหลดไม่มีทรัพยากรภายนอก"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "ไม่ได้กรอง"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "เบราว์เซอร์นี้ไม่สนับสนุนการป้องกัน WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "เฉพาะใน Unwhitelisted โดเมน"
+   },
+   "options": {
+      "description": "Options",
+      "message": "ตัวเลือก"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "โหมดหวาดระแวง:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "บล็อกได้รับอนุญาตโดเมนในโดเมนที่ไม่แสดง"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "วางในการตั้งค่าและลองอีกครั้ง"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "เคารพเดียวกันโดเมน:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "รักษาองค์ประกอบเดียวกันโดเมน"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "การตั้งค่าความเป็นส่วนตัว"
+   },
+   "random": {
+      "description": "Random",
+      "message": "สุ่ม"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "แสดงการจัดอันดับปุ่ม:"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "ถ้า ticked เพิ่มปุ่มให้คะแนนภายใต้โดเมนในป๊อปอัพแท็บ"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe เมื่อเร็ว ๆ นี้มีการปรับปรุง / โหลดใหม่</strong><br /><br />คคุณจะต้องทั้งแท็บรีเฟรชนี้สร้างแท็บใหม่หรือรีสตาร์ทเบราว์เซอร์ของคุณเพื่อให้ ScriptSafe ในการทำงาน"
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "ป้องกันการคลิกผ่านของเล่นที่ชอบ:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "บล็อกข้อมูลอ้างอิงเมื่อคลิกที่การเชื่อมโยงของบุคคลที่สาม (หมายเหตุ: การตั้งค่านี้บนโดเมนทั้งหมดอาจทำให้เกิดปัญหา (เช่นภาพขนาดเล็กใน Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "หลอกของเล่นที่ชอบ:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>คำเตือน</strong>: ถ้าเปิดใช้งานอาจทำลายบางเว็บไซต์ (เช่นการเข้าสู่ระบบ)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "รีเฟรชหน้าอัตโนมัติ:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "หน้ารีเฟรชอัตโนมัติหลังการเปลี่ยนแปลงรายการ"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "ผ่อนคลาย"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "เพิกถอนหน้าชั่วคราว สิทธิ์"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "เพิกถอนชั่วคราว"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "เอกสารเดียวกัน"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "แท็บเดียวกัน"
+   },
+   "save": {
+      "description": "Save",
+      "message": "ประหยัด"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "บันทึกเป็นไฟล์ข้อความ"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "ส่วน"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "เลือกทั้งหมด"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "คัดลอกและวางตั้งค่าที่คุณต้องการที่จะนำเข้าสู่ ScriptSafe ลงในช่องนี้แล้วคลิกที่ปุ่มนำเข้า"
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "การตั้งค่าที่บันทึกไว้"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "การตั้งค่าการบันทึกและการซิงค์ใน 30 วินาที"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe ถูกปิดใช้งาน"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "เข้มงวด"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "เข้มงวด - ให้โดเมนเดียวกันเท่านั้น"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "เพื่อสนับสนุนการพัฒนาคลิกหัวใจ :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "คุณได้เปิดใช้งานการซิงค์อัตโนมัติ เพื่อป้องกันไม่ให้ลบข้อมูลที่ซิงค์ของคุณก่อนหน้านี้ (ถ้ามี) โปรดคลิกที่ตั้งค่าการซิงค์จากบัญชี Google"
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "ตั้งค่าการซิงค์จากบัญชี Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "ตั้งค่าการซิงค์กับบัญชี Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe ได้ตรวจพบว่าคุณมีการตั้งค่าการซิงค์ในบัญชี Google ของคุณ!\r\nคลิกที่ 'ตกลง' ถ้าคุณต้องการที่จะนำเข้าการตั้งค่าจากบัญชี Google ของคุณ"
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "ซิงค์ถูกปิดใช้งานเพื่อป้องกันการเขียนทับข้อมูลที่ซิงค์ของคุณแล้ว\r\nรู้สึกอิสระที่จะไปที่หน้าตัวเลือกในเวลาใด ๆ ในการตั้งค่าการซิงค์ของคุณ (สำรองข้อมูลการตั้งค่าของคุณถ้าจำเป็น)"
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "แสดงการแจ้งเตือนนำเข้าซิงค์:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "แสดงป๊อปอัพเมื่อตั้งค่าเชื่อมข้อมูลจากบัญชี Google ของคุณ"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "แสดงการแจ้งเตือนการซิงค์:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "แสดงป๊อปอัพเมื่อการตั้งค่าการซิงค์กับบัญชี Google ของคุณ"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "รุ่นปัจจุบันของ Google Chrome ไม่สนับสนุนการตั้งค่าการซิงค์ โปรดอัปเดตเวอร์ชันของ Chrome และลองอีกครั้ง"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "เขตเวลาลวง:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "หลอกหรือสุ่มเขตเวลาของคุณ หมายเหตุ: ถ้าเปิดใช้งานก็อาจรบกวนการตอบกลับอีเมลใน Gmail"
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "วางใจ"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "วางใจ"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "ความไว้วางใจโดเมน"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "นำไปใช้กับโดเมนที่อนุญาตพิเศษเช่นกัน"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "คณแน่ใจหรือว่าต้องการปิดใช้งานการแจ้งเตือนการปรับปรุงใด ๆ ในอนาคตเช่นเดียวจากที่ปรากฏนี้หรือไม่?\r\nคุณสามารถ re-อนุญาตให้มีการแจ้งเตือนการอัปเดตได้โดยไปที่หน้าตัวเลือก ScriptSafe และฟ้องกล่องข้างแสดงปรับปรุงป๊อปอัพ"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "แสดงการเปลี่ยนแปลงในการปรับปรุง:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "ที่ไม่พึงประสงค์"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "แสดงหน้าการเปลี่ยนแปลงเมื่อ ScriptSafe มีการปรับปรุง"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "โดเมน"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "ใส่โดเมนหรือการแสดงออก (คลิก \"ความช่วยเหลือ\" สำหรับข้อมูลเพิ่มเติม)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent ลวง:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "ตบตาของ user-agent (เบราว์เซอร์และระบบปฏิบัติการ)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "ใส่ที่อยู่ที่จะกำหนดเป็นค่าอ้างอิงของคุณสำหรับเว็บไซต์ทั้งหมด"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "ลบติดตามของ Google Analytics (UTM):"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "นำ Google Analytics (UTM) ราชสกุลติดตาม"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "นำ Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "ลบองค์ประกอบของบุคคลที่สามที่มองไม่เห็น"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "บล็อก WebGL พิมพ์ลายนิ้วมือ:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "ป้องกันไม่ให้พิมพ์ลายนิ้วมือผ่าน API ของ WebGL"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "อุปกรณ์ป้องกันการแจงนับ:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "ป้องกันไม่ให้มีการตรวจพบอุปกรณ์ฮาร์ดแวร์ผ่าน WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "คุ้มครอง WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "ป้องกันการรั่วไหลที่อยู่ IP"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Blacklist"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Whitelist"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "บัญชีดำ"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Whitelist"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "ขึ้นบัญชีดำ"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "อนุญาตพิเศษ"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "บัญชีดำ"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "รายการที่อนุญาต"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "ย้ายไปยังบัญชีดำ"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "ย้ายไปยังรายการที่อนุญาต"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Whitelist / Blacklist"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP การจัดการการร้องขอ:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "ควบคุมการร้องขอทั้งหมด"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "จองควบคุมข้ามโดเมน (อนุญาตเดียวกันโดเมน)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "การควบคุมการร้องขอ HTTP XML"
+   }
+}

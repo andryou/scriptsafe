@@ -33,7 +33,7 @@
       "matches": [ "http://*/*", "https://*/*" ],
       "run_at": "document_start"
    } ],
-   "description": "Regain control of the web and surf more securely.",
+   "description": "__MSG_appdescription__",
    "icons": {
       "128": "img/icon128.png",
       "16": "img/icon16.png",
@@ -41,6 +41,7 @@
       "32": "img/icon32.png",
       "48": "img/icon48.png"
    },
+   "default_locale": "en",
    "manifest_version": 2,
    "minimum_chrome_version": "6",
    "name": "ScriptSafe",

@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Повернути контроль над полотном і прибій більш надійно."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "На всіх доменах"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "дозволяти"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Дозволити всі блоковані для сесії"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Блок небажаного контенту:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "видалити небажаний контент з відомих оголошень / доменів шкідливих програм; домени, зібрані з <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS ВІДБУЛАСЯ</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( сервери оголошень / стеження)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>ВІДБУЛАСЯ проекту Пітера Лоу</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Небажаний контент Режим:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Ослаблений = Білий список доменів НЕ буде заблокований; Суворі = домени в списку небажаних домену буде заблокований, навіть якщо білий список"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "антигромадський"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Антисоціальна Режим:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "завжди видалити соціальні віджети / кнопки, навіть якщо білий список"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Для отримання більш повної блокування, ознайомтеся з <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Відключити</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Розумієте</a>, і / або <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock походження</a> з усіма підписних листів на <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy сайт</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Блок Audio Дактилоскопування:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "запобігти зняття відбитків пальців за допомогою API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Блок батарей Дактилоскопування:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "запобігти зняття відбитків пальців за допомогою API батареї"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "налаштування Поведінка"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Блок (рекомендується)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "блок"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "блокований"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Block All Дозволено для сесії"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "масовий імпорт"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Імпорт в список"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "масовий імпорт"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Копіювання і вставка доменів в поле нижче. Кожен домен повинен знаходитися на окремому рядку."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Полотно захисту відбитків пальців:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe не може обробити цю сторінку.</strong><br /><br />Будь ласка, спробуйте відвідати веб-сайт."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "порожній Відлік"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "випадкові лічильника"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Повністю блок лічильника"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "захисту від дактилоскопії спроби через &lt;canvas&gt; елементи"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Блок Canvas Шрифт доступу:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "запобігти системні шрифти від бути перераховані через &lt;canvas&gt; елементи. Може втручатися Google Docs."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Класичний режим Функції:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "якщо галочка, закриває Параметри вкладки кожен варіант клацання"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "ясно"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "ясно"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Блок клієнта Прямокутники:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "запобігти зняття відбитків пальців за допомогою обчислення елементів прямокутниками. Може перешкодити деяким випадають."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Запобігання Clipboard перешкод:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "запобігти сторінки від втручання в дії з буфером обміну"
+   },
+   "close": {
+      "description": "Close",
+      "message": "близько"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Блокування небажаних Cookies:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "блокує куки з відомих оголошень / доменів шкідливими; нижче режим застосовується до цього, а також"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "виготовлений на замовлення"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Захист локальний IP"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "спростовувати"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Захист місцевого публічного IP-адреси"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "забороняти"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "інвалід"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "інвалід"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Syncing відключений.\r\nНе соромтеся перейти на сторінку Параметри в будь-який час для синхронізації налаштувань (зробити резервну копію настройки при необхідності)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Відключення і видалення:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "недовіру"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "недовіру"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "недовіра домену"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "той же домен"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Сортування по домену:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "допомога"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Невірний домен / адреса"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Домен або адреса повинна містити деякі букви / цифри"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Домен не може бути доданий, оскільки це є постачальником небажаного контенту (див блокувати небажаний контент і / або режим антигромадських)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "сортує список URL-доменами на цій сторінці і на панелі"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Підказка: натисніть CTRL + F для пошуку списків"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Чи не показувати цю сторінку"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Enable:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "включений"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "включити ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Увімкнути синхронізацію:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "експорт"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Ваші налаштування були успішно синхронізовані!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Налаштування Синхронізовано!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "відбитків пальців захисту"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Захист відбитків пальців (може зламати сайти)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Схоже, ви не синхронізуються параметри до свого облікового запису Google поки.\r\nScriptSafe про синхронізацію поточних налаштувань в свій обліковий запис Google.\r\nНатисніть на \"OK\", якщо ви хочете, щоб продовжити.\r\nЯкщо немає, то натисніть кнопку \"Скасувати\", а на іншому пристрої з кращими настройками, оновити ScriptSafe і натисніть на кнопку OK, коли ви з цим повідомленням."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "ви хочете синхронізувати ваші поточні настройки в акаунті Google?\r\nПримітка: будь ласка, не натискайте це часто; є межа 10 в хвилину і 1000 за годину."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Ви хочете імпортувати синхронізовані налаштування з облікового запису Google на цей пристрій робити?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "клавіатурний:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Загальні налаштування"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Блок Геймпад Перелік:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "запобігти мають пристрої, виявлені за допомогою геймпада API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Доступні дії гарячих клавіш"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Тимчасово дозволити / блокувати всі ресурси на поточній вкладці"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Видалення тимчасових дозволів на поточній вкладці"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Видалити всі тимчасові дозволи"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Налаштування ScriptSafe гарячі клавіші:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "натисніть на швидких клавіш"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Список всіх налаштувань"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Останні налаштування були успішно завантажені!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Налаштування Завантажено!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Група Всі настройки"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Усунути можливі Відстеження Hash:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "видалити можливі відстеження маркерів були передані з використанням хеш, де є атрибут і значення (наприклад, #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "приховувати"
+   },
+   "import": {
+      "description": "Import",
+      "message": "імпорт"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Імпорт / Відновлення параметрів"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "Налаштування успішно імпортовані"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Налаштування успішно імпортовані, за винятком таких (пусте значення або невизнаного ім'я):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Налаштування успішно імпортовані і синхронізації протягом 30 секунд"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Зменшити клавіатури Fingerprinting (<strong>для просунутих користувачів</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "зробити при натисканні клавіш тайминги більш випадковий характер, щоб збільшити анонімність (<strong>Примітка: додає випадкову затримку між натисканням клавіш; відключити цей параметр є неприпустимим</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Сторінка Поведінка Посилання Відкриття:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "змінює, як відкриті всі посилання"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Сипучі - дозволяють одному домену і піддомени"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Режим за замовчуванням"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Нова вкладка"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Ця вкладка не завантажується ніяких зовнішніх ресурсів"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "Чи не відфільтровані"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Цей браузер не підтримує захист WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-OFF-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Тільки на Unwhitelisted Домени"
+   },
+   "options": {
+      "description": "Options",
+      "message": "опції"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Параноя Режим:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "блок-дозволені домени на невказаних доменах"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Вставити в настройках і спробуйте ще раз"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Респект тим же доменом:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "зберігають елементи з тим же доменом"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Налаштування конфіденційності"
+   },
+   "random": {
+      "description": "Random",
+      "message": "випадковий"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Показати рейтинг Кнопка:"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "якщо галочка, додає кнопку рейтинг під доменами в закладці спливаючого вікна"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe був недавно оновлений / перезавантажується.</strong><br /><br />Вам потрібно буде або оновити цю вкладку, створити нову вкладку, або перезапустити браузер для того, щоб ScriptSafe працювати."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Блок Click-Through Referrer:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "блоки посилається інформацію при натисканні на сторонніх посилань (примітка: установка цієї опції на всіх доменах може викликати проблеми (наприклад, ескізи в Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Referrer Spoof:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>УВАГА</strong>: Коли активований, може порушити деякі сайти (наприклад, входу в систему)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Автоматичне оновлення сторінки:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "автоматичне оновлення сторінки після зміни списку"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "розслаблений"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "Відкликати сторінку Temp. Дозволи"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "Відкликати Всі Temp."
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Цим же документом"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "Те ж Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "зберегти"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Зберегти як текстовий файл"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "розділи"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "вибрати все"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Скопіюйте та вставте налаштування, які ви хочете імпортувати в ScriptSafe в це поле і натисніть на кнопку Import."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "налаштування збережені"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Налаштування зберігаються і синхронізуються через 30 секунд"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe відключений"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "строгий"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Строгий - дозволяє тільки одному домену"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Для підтримки розвитку, натисніть серце :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Ви включили автоматичну синхронізацію. Для запобігання стирання ваші раніше синхронізовані дані (якщо такі є), будь ласка, натисніть на Установки синхронізації, зі свого облікового запису Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Налаштування синхронізації з рахунку Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Налаштування синхронізації на рахунок Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe виявив, що у вас є налаштування синхронізації на ваш обліковий запис Google!\r\nНатисніть на \"OK\", якщо ви хочете імпортувати настройки з вашого облікового запису Google."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Syncing була відключена, щоб запобігти перезапис ваші вже синхронізовані дані.\r\nНе соромтеся перейти на сторінку Параметри в будь-який час для синхронізації налаштувань (зробити резервну копію настройки при необхідності)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Показати Імпорт синхронізації Повідомлення:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "показати спливаюче вікно, коли настройки будуть синхронізуватися з вашого облікового запису Google"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Показати синхронізації Повідомлення:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "показати спливаюче вікно, коли налаштування синхронізуються з обліковим записом Google"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Ваша поточна версія Google Chrome не підтримує налаштування синхронізації. Будь ласка, спробуйте оновити версію Chrome і спробуйте ще раз."
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Пародія Timezone:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "підмінити або рандомізації часовий пояс. Примітка: якщо ця функція включена, вона може заважати відповідати на повідомлення електронної пошти в Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Довіра"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "довіра"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "цільовий домен"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Застосувати Білий список доменів, а також"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Ви впевнені, що хочете відключити будь-які майбутні повідомлення про оновлення, як цей від появи?\r\nВи завжди можете повторно увімкнути надсилання повідомлень про оновлення, перейшовши на сторінку ScriptSafe Options і встановивши прапорець поруч з полем Показати Спливаючі Update."
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Показати список змін на поновлення:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "непотрібний"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "показати журнал змін сторінки, коли ScriptSafe оновлюється"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "домен"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Введіть домен або вираз (натисніть \"Довідка\" для отримання додаткової інформації)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Spoof:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "підробляє ваш агент користувача (браузер і ОС)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Введіть адресу, щоб встановити в якості значення посилається для всіх сайтів"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Видалити Google Analytics (UTM) Відстеження:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "видалити Google Analytics (UTM) відстеження маркерів"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Видалити Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "видалити невидимі елементи сторонніх виробників"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Блок WebGL Дактилоскопування:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "запобігти зняття відбитків пальців за допомогою WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Блок Перелік пристроїв:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "запобігти наявність обладнання пристроїв, виявлених за допомогою API WebRTC"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Захист WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "запобігти витоку IP-адреса"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Чорний список"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Whitelist"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "чорний список"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Whitelist"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "блоковані"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "білий список"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "чорний список"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "білий список"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Перемістити в чорний список"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Перемістити в білий список"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Білий список / Чорний список"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP Request Handling:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Контроль всіх запитів"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Запити управління междоменной (дозволяють тим же доменом)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "управління XML-запитів HTTP"
+   }
+}

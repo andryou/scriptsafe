@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Získať kontrolu nad webe a surfovať bezpečnejšie."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Na všetkých doménach"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "povolit"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Povolit všetko blokovaná pre zasadnutie"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Blokovat nežiaduce obsah:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "odstránenie nežiaduceho obsahu zo známych reklamných malware domén /; domény nazhromaždené z <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVP hosts</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( ad / sledovanie serverov)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>pocítacoch Petera Lowe</a> <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Nežiaduci obsah Mode:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Uvolnené = povolených doménach nebudú blokované; Prísne = domény v zozname nechcené domény budú blokované aj ked na zozname povolených"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "nespolocenský"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Antisocial Mode:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "Vždy odstránit widgety tlacidiel / sociálne, aj ked na zozname povolených"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Pre viac comprehensive blokovanie, pozrite sa na <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Odpojit</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a> a / alebo <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Pôvod</a> so všetkými zoznamy predplatného na <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy web</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Blok Audio odtlackov prstov:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "predchádzat odtlacky prstov cez API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Blok akumulátora Snímanie odtlackov prstov:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "predchádzat odtlacky prstov cez API batérie"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "nastavenie Správanie"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Block (odporúcané)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "block"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "upchatý"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Zablokovat všetky povolené pre reláciu"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "bulk import"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Importovat do zoznamu"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "bulk import"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Kopírovanie a vkladanie domény do pola nižšie. Každá doména by mala byt na samostatnom riadku."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Protection Fingerprint Canvas:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe nemôže spracovat túto stránku.</strong><br /><br />Skúste návšteve webovej stránky."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "prázdne Odpocet"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "random Odpocet"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Úplne Block Odpocet"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "chránit pred odtlacky prstov sa pokúša skrze &lt;canvas&gt; prvky"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Blok Canvas Prístup Font:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "predchádzat systémové písma pred zoznamu skrze &lt;canvas&gt; prvky. Môže interferovat s Google Docs."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Možnosti Classic Mode:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "ak je zaškrtnuté, zavrie Možnosti karty zakaždým možnost kliknutia"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "jasný"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "jasný"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Blok Klientské obdlžniky:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "predchádzat odtlacky prstov cez výpocet prvkov obdlžniky. Môže interferovat s niektorými rozbalovacích."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Zabránit schránky rušenie:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "predchádzat stránok zasahovanie schránky akciami"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Blízky"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Blokovat nežiaduce súbory cookie:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "blokuje cookies z známe reklamných malware domén /; Nižšie režim sa vztahuje na to, ako dobre"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "zvyk"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Chránit Lokálne IP"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "popriet"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Chránit miestne a verejné IP adresy"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "zakázat"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "invalidný"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "invalidný"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Synchronizácia je vypnutá.\r\nNeváhajte a prejsť na stránke Voľby kedykoľvek pre synchronizáciu nastavenie (vytvoriť zálohu nastavenia v prípade potreby)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Vypnút a odstránit:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "nedôvera"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "nedôvera"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "nedôvera domény"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "rovnakej doméne"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Triedit podla domény:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Pomoc"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Neplatná doména / adresa"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Doména alebo adresa musí obsahovat niektoré písmená / císla"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Domény nemožno pridat, pretože je poskytovatelom nežiaduceho obsahu (pozri blokovat nežiaduce obsah a / alebo režim antisociálne)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "triedi zoznamy adries URL domén na tejto stránke a na paneli"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Tip: stlacte klávesy CTRL + F hladat zoznamy"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Nezobrazovat túto stránku znova"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "povolit:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "povolený"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "aktivovat ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Aktivovat synchronizáciu:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Export"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Nastavenia úspešne synchronizované!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Synchronizované nastavenia!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Protection Fingerprint"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Protection Fingerprint (môže prasknút stránky)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Zdá sa, že doteraz synchronizovat svoje nastavenia k svojmu úctu Google doteraz.\r\nScriptSafe sa chystá synchronizovat aktuálne nastavenie k svojmu úctu Google.\r\nKliknite na \"OK\", ak chcete pokracovat.\r\nAk nie kliknite na tlacidlo \"Zrušit\", a na druhej zariadenie s požadovaným nastavením aktualizovat ScriptSafe a kliknite na OK, ked sú prezentované s touto správou."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Chcete synchronizovat aktuálne nastavenie k svojmu úctu Google?\r\nPoznámka: Neposielajte stlacení tohto castejšie; tam je limit 10 za minútu a 1000 za hodinu."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Chcete importovat synchronizovaná nastavenia z vášho úctu Google do tohto zariadenia?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "klávesové skratky:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Všeobecné nastavenia"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Blok Gamepad Výpocet:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "predchádzat majú zariadenia sníma pomocou Gamepad API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Dostupné hotkey akcie"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Docasne povolit / zablokovat všetky prostriedky na aktuálnej karte"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Odstránte docasné oprávnenie pre aktuálnu karte"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Odstránte všetky docasné oprávnenie"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Konfigurácia ScriptSafe klávesové skratky:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "Kliknutím na Klávesové skratky"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Zoznam všetkých nastavení"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Posledné nastavenie boli úspešne stiahnutý!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Nastavenie Stiahnuté!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Skupina Všetky nastavenia"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Odstránenie prípadných Hash Tracking:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "odstránit prípadné sledovanie tokeny odovzdané pomocou hash tam, kde je atribút a hodnotu (napr. #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "skryt"
+   },
+   "import": {
+      "description": "Import",
+      "message": "import"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Import / obnovenie nastavení"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "Nastavenie úspešne importovaný"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Nastavenie úspešne importovaný, s výnimkou nasledujúceho (prázdne hodnoty alebo nerozpoznané meno):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Nastavenie úspešne dovezené a synchronizácia za 30 sekúnd"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Znížit klávesnica odobratie odtlackov prstov (<strong>pre pokrocilých používatelov</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "aby stlačení tlačidla časovanie viac náhodných na zvýšenie anonymity (<strong>Poznámka: pridáva náhodnú oneskorenie medzi stlačenia klávesov; zakázať toto nastavenie je neprijateľné</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Page Link Otvorenie Správanie:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "mení spôsob, akým sú otvorené všetky odkazy"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Loose - umožnujú rovnakú doménu a subdomén"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "predvolený režim"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Nová karta"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Táto karta bola vložená žiadna externé zdroje"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "nefiltruje"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Tento prehliadac nepodporuje ochranu WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Iba na Unwhitelisted domény"
+   },
+   "options": {
+      "description": "Options",
+      "message": "možnosti"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Paranoja Mode:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "blok povolené domény na nekótovaných doménach"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Vložit do nastavenia a skúste to znova"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Rešpektujú rovnaký-Domain:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "zachovat rovnaký doménami prvky"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Nastavenia ochrany osobných údajov"
+   },
+   "random": {
+      "description": "Random",
+      "message": "náhodný"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Zobrazit Hodnotenie Tlacidlo:"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "ak je zaškrtnuté, pridá tlacidlo rating v sekcii Domény na karte vyskakovacie"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe bola nedávno aktualizovaná / reloaded.</strong><br /><br />Budete musiet bud obnoví túto kartu vytvorit novú kartu, alebo reštartujte prehliadac, aby ScriptSafe do práce."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Blokovat Click-Through Referrer:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "blocks odkazujúceho serveru informácie pri kliknutí na odkazy tretích strán (poznámka: toto nastavenie zmenit na všetkých doménach môže spôsobit problémy (napríklad miniatúry v TweetDeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Referrer Strašidlo:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>Upozornenie:</strong>: ak je povolené, môže prerušit niektoré stránky (napr. Prihlásenie)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Auto-Refresh Page:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "auto-refresh stránky po každej zmene zoznamu"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "uvolnený"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "Odvolat stránky Temp. oprávnenie"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "Odvolat všetko Temp."
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "rovnaký dokument"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "rovnaký Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "uložit"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Uložit ako textový súbor"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "oddiely"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "vybrat všetko"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Skopírovat a vložit nastavenie, ktoré chcete importovat do ScriptSafe do tohto pola a potom kliknite na tlacidlo Import."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Nastavenia boli uložené"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Nastavenie uložené a synchronizácia za 30 sekúnd"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe je zakázaná"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "prísny"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Prísne - povolit iba rovnakú doménu"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Na podporu rozvoja, kliknite na srdce :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Povolili ste automatickej synchronizácie. Aby sa zabránilo vymazaniu svoje skôr synchronizovaných dát (ak existuje), kliknite na nastavenie synchronizácie z úctu Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Nastavenie Sync z úctu Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Nastavenia synchronizácie s úctom Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe zistil, že máte nastavenie synchronizovat vo vašom úcte Google!\r\nKliknite na \"OK\", ak chcete importovat nastavenia zo svojho úctu Google."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Synchronizácia bolo zakázané, aby sa zabránilo prepísanie už synchronizovaných dát.\r\nNeváhajte a prejsť na stránke Voľby kedykoľvek pre synchronizáciu nastavenie (vytvoriť zálohu nastavenia v prípade potreby)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Zobrazit import synchronizácie oznámenia:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "zobraziť vyskakovacie okno pri nastavení synchronizovaná z účtu Google"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Zobrazit synchronizácie oznámenia:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "zobraziť vyskakovacie okno pri nastavení synchronizujú s vaším účtom Google"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Vaša súcasná verzia prehliadaca Google Chrome nie je nastavenie synchronizácie podporovat. Skúste aktualizovat svoju verziu Chrome a skúste to znova."
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Strašidlo Casové pásmo:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "sfalšovat alebo náhodne svoje casové pásmo. Poznámka: Ak je povolené, môže dochádzat k interferencii s odpovedanie na e-maily v službe Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "dôvera"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "dôvera"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "dôvera domény"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Naneste na povolených doménach rovnako"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Ste si istí, že chcete zakázat akékolvek budúce oznámenia o aktualizáciu, ako je tento, aby sa nezobrazovali?\r\nMôžete vždy znova umožní oznámenia o aktualizácii tým, že pôjdete na stránku ScriptSafe Možnosti a zaškrtnutím polícka vedla Zobrazit aktualizácie V okne."
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Zobrazit Changelog na Update:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Nechcený"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "zobrazit changelog stránku, ked je aktualizovaný ScriptSafe"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "doména"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Zadajte doménu alebo výraz (kliknite na \"Help\" pre viac informácií)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "Užívatelskú Agent Strašidlo:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "spoofs svoju užívatelskú agent (prehliadaca a OS)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Zadajte adresu nastavit ako odkazujúceho hodnotu pre všetky weby"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Odstránte Google Analytics (UTM) Tracking:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "odobrat Google Analytics (UTM) sledovacie tokeny"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Odobrat Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "odstránit neviditelné elementy tretích strán"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Blok WebGL odtlackov prstov:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "zabránit snímanie odtlackov prstov pomocou rozhrania WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Block Device Výpocet:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "prevent že hardvérové ??zariadenia sníma pomocou WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Ochrana WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "zamedzit úniku IP address"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Blacklist"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Zoznam povolených"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "cierna listina"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "whitelist"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "na ciernej listine"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "whitelisted"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "cierna listina"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "whitelist"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Presunút do zoznamu zakázaných"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Presunút do Whitelist"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Whitelist / Blacklist"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP požiadavka pre zaobchádzanie:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Ovládat všetky Žiadosti"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Control Cross-Domain Žiadosti (dovolit rovnaký-domain)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "ovládanie Žiadosti XML HTTP"
+   }
+}

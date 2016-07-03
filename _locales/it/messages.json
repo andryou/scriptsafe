@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Riprendere il controllo del web e navigare in modo più sicuro."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Su tutti i domini"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "consentire"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Consentire a tutti bloccati per la sessione"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Bloccare i contenuti indesiderati:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "rimuovere i contenuti indesiderati da noti ad / domini di malware; domini raccolti da <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVP HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( ad server / tracking)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>host per progetto di Peter Lowe</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Unwanted Content modalità:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Relaxed = domini autorizzati non saranno bloccati; Severe = domini nella lista dominio indesiderati vengono bloccati anche se whitelist"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Antisociale"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Modalità Antisocial:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "rimuovere sempre widgets / pulsanti sociali, anche se whitelist"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Per il blocco più completo, controllare <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnetti</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, e / o <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock origine</a> con tutte le liste di sottoscrizione sul <a href=https://www.fanboy.co.nz/ target=_blank>sito Fanboy</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Blocco Audio Fingerprinting:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "evitare che le impronte digitali tramite l'API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Blocco batteria Fingerprinting:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "evitare che le impronte digitali tramite l'API batteria"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Impostazioni di comportamento"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Block (consigliato)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "Bloccare"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "bloccato"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Blocca tutto ammessi per la sessione"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "importazione di massa"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Importa nell'elenco"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "importazione di massa"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Copiare e incollare i domini nella casella qui sotto. Ogni dominio dovrebbe essere su una riga separata."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Tela di impronte digitali di protezione:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe non può elaborare questa pagina.</strong><br /><br />Si prega di provare a visitare un sito web."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Lettura in bianco"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "casuale Lettura"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Completamente Block Lettura"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "la protezione contro le impronte digitali tenta attraverso &lt;canvas&gt; elementi"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Blocca Canvas Font di accesso:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "evitare che i font di sistema di essere enumerato attraverso &lt;canvas&gt; elementi. Può interferire con Google Documenti."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Classic Modalità Opzioni:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "se selezionata, chiude opzioni della scheda ogni opzione viene cliccato"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Pulire"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "pulire"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Block client Rettangoli:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "evitare che le impronte digitali attraverso il calcolo rettangoli elemento. Possono interferire con alcuni menù a discesa."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Prevenire Appunti Interferenza:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "evitare che le pagine di interferire con le azioni degli appunti"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Vicino"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Bloccare i cookie indesiderati:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "blocca i cookie da Ad noto / domini di malware; qui di seguito modalità si applica a questo pure"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "costume"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Protect IP locale"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Negare"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Proteggere IP locali e pubblici"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "disabilitare"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "Disabilitato"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Disabilitato"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "La sincronizzazione è disabilitata.\r\nSentitevi liberi di andare alla pagina delle opzioni in qualsiasi momento per sincronizzare le impostazioni (fare un backup delle impostazioni, se necessario)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Disabilitare e rimuovere:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Diffidenza"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "diffidenza"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "La diffidenza di dominio"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "stesso dominio"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Ordina per Dominio:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Aiuto"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "dominio non valido / indirizzo"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Il dominio o l'indirizzo deve contenere alcune lettere / numeri"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Dominio non può essere aggiunto in quanto è un fornitore di contenuti indesiderati (vedi bloccare i contenuti indesiderati e / o modalità Antisocial)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "ordina elenchi di URL da domini in questa pagina e nel pannello"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Suggerimento: premere CTRL + F per cercare le liste"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Non visualizzare più questa pagina"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Consentire:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "abilitato"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Abilita ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Abilita sincronizzazione:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Esportare"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Le impostazioni sono state sincronizzate con successo!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Impostazioni sincronizzati!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Protezione di impronte digitali"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Protezione delle impronte digitali (potrebbe rompersi siti)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Sembra che tu non hai ancora sincronizzato le impostazioni al tuo account Google.\r\nScriptSafe sta per sincronizzare le impostazioni correnti al tuo account Google.\r\nClicca su 'OK' se si desidera continuare.\r\nSe non , fare clic su 'Annulla', e dall'altro dispositivo con le impostazioni preferite, aggiornare ScriptSafe e cliccare su OK quando si sono presentati con questo messaggio."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Volete sincronizzare le impostazioni correnti al tuo account Google\r\nNota: per favore non premere questo di frequente; c'è un limite di 10 al minuto e 1.000 all'ora."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Vuoi importare le impostazioni sincronizzati dal tuo account Google a questo dispositivo?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Tasti di scelta rapida:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Impostazioni generali"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Blocco Gamepad Enumeration:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "impedire che dispongono di dispositivi rilevati tramite il Gamepad API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "azioni hotkey disponibili"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Temporaneamente consentire / bloccare tutte le risorse per una scheda corrente"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Rimuovere i permessi temporanei per una scheda corrente"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Rimuovere tutte le autorizzazioni temporanee"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Configurare tasti di scelta rapida ScriptSafe:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "click su Tasti di scelta rapida"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Elencare tutte le impostazioni"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Le ultime impostazioni sono stati scaricati con successo!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Impostazioni Scaricato!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Tutte le impostazioni di gruppo"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Rimuovere Possibile monitoraggio Hash:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "rimuovere eventuali gettoni di monitoraggio passati utilizzando hash, dove vi è un attributo e un valore (ad esempio #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "nascondere"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Importare"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Importa / Ripristina impostazioni"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "Impostazioni importato con successo"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Impostazioni importato con successo, ad eccezione dei seguenti (valore vuoto o il nome non riconosciuta):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Impostazioni importati con successo e la sincronizzazione in 30 secondi"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Ridurre tastiera Fingerprinting (<strong>per gli utenti avanzati</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "make tempi di pressione dei tasti più casuale di aumentare l'anonimato (<strong>Nota: aggiunge un ritardo casuale tra le pressioni dei tasti, disabilitare questa impostazione se inaccettabile</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Collegamento pagina di apertura Comportamento:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "modifica come tutti i link vengono aperti"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Allentato - consentire stesso dominio e sottodomini"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Modalità di default"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Nuova scheda"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Questa scheda è stata caricata senza risorse esterne"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "non filtrato"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Questo browser non supporta la protezione WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-OFF-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Solo su Unwhitelisted Domini"
+   },
+   "options": {
+      "description": "Options",
+      "message": "Opzioni"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Modalità Paranoia:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "domini blocco permesso su domini non quotate"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Incollare in impostazioni e riprovare"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Rispetta dello stesso dominio:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "preservare gli elementi dello stesso dominio"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Impostazioni privacy"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Casuale"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Pulsante Mostra Voto:"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "se selezionata, aggiunge il pulsante Valutazione sotto domini nella scheda popup"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe è stato recentemente aggiornato / ricaricato.</strong><br /><br />Sarà necessario o aggiornare questa scheda, creare una nuova scheda, o riavviare il browser in modo che ScriptSafe al lavoro."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Bloccare Referente click-through:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "blocchi di informazioni referrer quando si clicca sui link di terze parti (nota: l'impostazione di questa a su tutti i domini può causare problemi (ad esempio le miniature in Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Spoof Referente:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>avviso</strong>: se abilitato, può rompere alcuni siti (ad esempio il login)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Auto-Aggiorna pagina:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "Pagina di aggiornamento automatico dopo il cambio elenco"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "Rilassato"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "Revoca Pagina Temp. Permessi"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "Revoca Tutti Temp."
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Lo stesso documento"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "stessa scheda"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Salvare"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Salva come file di testo"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "sezioni"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "seleziona tutto"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Copiare e incollare le impostazioni che si desidera importare in ScriptSafe in questa casella quindi fare clic sul pulsante Importa."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Impostazioni salvate"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Impostazioni salvate e la sincronizzazione in 30 secondi"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe è disattivato"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "Rigoroso"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Strict - consentire solo stesso dominio"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Per sostenere lo sviluppo, fare clic sul cuore :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "È stata attivata la sincronizzazione automatica. Al fine di evitare la cancellazione dei dati precedentemente sincronizzati (se presente), si prega di fare clic su Impostazioni di sincronizzazione dal tuo account Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Impostazioni di sincronizzazione dall'account Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Impostazioni Sync per account Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe ha rilevato che hai le impostazioni sincronizzati sul tuo account Google!\r\nClicca su 'OK' se si desidera importare le impostazioni del tuo account Google."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "La sincronizzazione è stato disattivato per evitare di sovrascrivere i dati già sincronizzati.\r\nSentitevi liberi di andare alla pagina delle opzioni in qualsiasi momento per sincronizzare le impostazioni (fare un backup delle impostazioni, se necessario)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Mostra notifica di importazione di sincronizzazione:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "show popup quando le impostazioni sincronizzati <strong>da</strong> il tuo account Google"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Mostra notifica Sync:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "mostrare pop-up quando le impostazioni sincronizzati <strong>a</strong> il tuo account Google"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "La versione corrente di Google Chrome non supporta le impostazioni di sincronizzazione. Si prega di provare ad aggiornare la versione di Chrome e riprova."
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Fuso orario Spoof:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "falsificare o casuale il fuso orario. NOTA: se attivata, potrebbe interferire con la risposta a messaggi di posta elettronica in Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Fiducia"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "fiducia"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "La fiducia di dominio"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Applicare a domini autorizzati, come pure"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Sei sicuro di voler disattivare eventuali notifiche di aggiornamento futuro come questo di apparire?\r\nÈ può sempre ri-consentire le notifiche di aggiornamento andando alla pagina Opzioni ScriptSafe e selezionando la casella accanto a Mostra aggiornamento Popup."
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Show Changelog su Aggiornamento:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Non desiderato"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "Mostra la pagina changelog quando ScriptSafe viene aggiornato"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Dominio"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Inserisci un dominio o di espressione (fare clic su 'Help' per maggiori informazioni)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Spoof:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "parodie vostro user-agent (browser e OS)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Inserire un indirizzo da impostare come valore referente per tutti i siti"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Rimuovere monitoraggio di Google Analytics (UTM):"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "rimuovere Google Analytics (UTM) di tracciamento gettoni"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Rimuovere Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "rimuovere gli elementi di terze parti invisibili"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Blocco WebGL Fingerprinting:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "evitare che le impronte digitali tramite l'API di WebGL"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Block Device Enumeration:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "evitare di dover dispositivi hardware rilevati tramite l'API WebRTC"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Protezione WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "evitare perdite indirizzo IP"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Blacklist"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Whitelist"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Lista nera"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Lista bianca"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "nella lista nera"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "whitelist"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "lista nera"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "lista bianca"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Sposta in lista nera"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Move to Whitelist"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Whitelist / Blacklist"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML richiesta HTTP Manipolazione:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Controllare tutte le richieste"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Le richieste di controllo Cross-Domain (consentire con lo stesso dominio)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "controllo richieste HTTP XML"
+   }
+}

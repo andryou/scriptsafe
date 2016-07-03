@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Возвратить контроль над полотном и прибой более надежно."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "На всех доменах"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "Позволять"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Разрешить все блокированные для сессии"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Блок нежелательного контента:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "удалить нежелательный контент из известных объявлений / доменов вредоносных программ; домены, собранные из <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS СОСТОЯЛАСЬ</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( серверы объявлений / слежение)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>СОСТОЯЛАСЬ проекта Питера Лоу</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Нежелательный контент Режим:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Ослабленный = Белый список доменов не будет заблокирован; Строгие = домены в списке нежелательных домена будет заблокирован, даже если белый список"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "антиобщественный"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Антисоциальное Режим:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "всегда удалить социальные виджеты / кнопки, даже если белый список"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Для получения более полной блокировки, ознакомьтесь с <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Отключить</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Размытие</a>, и / или <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock происхождения</a> со всеми подписных листов на <а href=https://www.fanboy.co.nz/ target=_blank>Fanboy сайт</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Блок Audio Дактилоскопирование:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "предотвратить снятие отпечатков пальцев с помощью API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Блок батарей Дактилоскопирование:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "предотвратить снятие отпечатков пальцев с помощью API батареи"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Настройки Поведение"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Блок (рекомендуется)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "блок"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "блокированный"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Block All Разрешен для сессии"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "Массовый импорт"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Импорт в список"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Массовый импорт"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Копирование и вставка доменов в поле ниже. Каждый домен должен находиться на отдельной строке."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Холст защиты отпечатков пальцев:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe не может обработать эту страницу.</strong><br /><br />Пожалуйста, попробуйте посетить веб-сайт."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Пустой Отсчет"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "Случайные счётчика"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Полностью блок счётчика"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "защиты от попыток снятия отпечатков пальцев через &lt;canvas&gt; элементов"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Блок Canvas Шрифт доступа:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "предотвратить системные шрифты от быть перечислены через &lt;canvas&gt; элементов. Может вмешиваться Google Docs."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Классический режим Функции:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "если галочка, закрывает Параметры вкладки каждый вариант щелчка"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Очистить"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "Чисто"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Блок клиента Прямоугольники:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "предотвратить снятие отпечатков пальцев с помощью вычисления элементов прямоугольниками. Может помешать некоторым выпадающие."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Предотвращение Clipboard помех:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "предотвратить страницы от вмешательства в действия с буфером обмена"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Закрыть"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Блокировка нежелательных Cookies:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "блокирует куки из известных объявлений / доменов вредоносными; ниже режим применяется к этому, а также"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "изготовленный на заказ"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Защита локальный IP"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Отрицать"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Защита местного публичного IP-адреса"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "запрещать"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "отключен"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Отключено"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Syncing отключен.\r\nНе стесняйтесь перейти на страницу Параметры в любое время для синхронизации настроек (сделать резервную копию настройки при необходимости)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Отключение и удаление:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Недоверие"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "недоверие"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "Недоверие домена"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "тот же домен"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Сортировка по домену:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Помогите"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Неверный домен / адрес"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Домен или адрес должен содержать некоторые буквы / цифры"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Домен не может быть добавлен, поскольку это является поставщиком нежелательного контента (см блокировать нежелательный контент и / или режим антиобщественных)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "сортирует список URL-доменами на этой странице и на панели"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Подсказка: нажмите CTRL + F для поиска списков"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Не показывать эту страницу"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Включить:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "включен"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Включить ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Включить синхронизацию:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "экспорт"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Ваши настройки были успешно синхронизированы!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Настройки Синхронизировано!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "отпечатков пальцев защиты"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Защита отпечатков пальцев (может сломать сайты)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Похоже, вы не синхронизируются параметры в свою учетную запись Google пока.\r\nScriptSafe о синхронизации текущих настроек в свою учетную запись Google.\r\nНажмите на \"OK\", если вы хотите, чтобы продолжить.\r\nЕсли нет, то нажмите кнопку \"Отмена\", а на другом устройстве с предпочтительными настройками, обновить ScriptSafe и нажмите на кнопку OK, когда вы с этим сообщением."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "вы хотите синхронизировать ваши текущие настройки в аккаунте Google?\r\nПримечание: пожалуйста, не нажимайте это часто; есть предел 10 в минуту и 1000 в час."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Вы хотите импортировать синхронизированные настройки из аккаунта Google на это устройство делать?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Клавиатурный:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "общие настройки"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Блок Геймпад Перечень:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "предотвратить имеющие устройства, обнаруженные с помощью геймпада API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Доступные действия горячих клавиш"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Временно разрешить / блокировать все ресурсы на текущей вкладке"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Удаление временных разрешений на текущей вкладке"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Удалить все временные разрешения"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Настройка ScriptSafe горячие клавиши:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "нажмите на быстрых клавиш"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Список всех настроек"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Последние настройки были успешно загружены!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Настройки Скачано!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Группа Все настройки"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Устранить возможные Отслеживание Hash:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "удалить возможные отслеживания маркеров были переданы с использованием хэш, где есть атрибут и значение (например, #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "Спрятать"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Импортировать"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Импорт / Восстановление параметров"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "Настройки успешно импортированы"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Настройки успешно импортированы, за исключением следующих (пустое значение или непризнанного имя):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Настройки успешно импортированы и синхронизации в течение 30 секунд"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Уменьшить клавиатуры дактилоскопической регистрации (<strong>для продвинутых пользователей</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "сделать при нажатии клавиш тайминги более случайный характер, чтобы увеличить анонимность (<strong>Примечание: добавляет случайная задержка между нажатиями; отключить этот параметр, если неприемлема</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Страница Поведение Ссылка Открытие:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "изменяет, как открыты все ссылки"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Сыпучие - позволяют одному домену и поддомены"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Режим по умолчанию"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Новая вкладка"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Эта вкладка не загружается никаких внешних ресурсов"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "Не отфильтрованы"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Этот браузер не поддерживает защиту WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-OFF-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Только на Unwhitelisted Домены"
+   },
+   "options": {
+      "description": "Options",
+      "message": "Опции"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Паранойя Режим:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "блок-разрешённые домены на неуказанных доменах"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Вставить в настройках и повторите попытку"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Респект тем же доменом:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "сохраняют элементы с тем же доменом"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Настройки конфиденциальности"
+   },
+   "random": {
+      "description": "Random",
+      "message": "случайный"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Показать рейтинг Кнопка:"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "если галочка, добавляет кнопку рейтинг под доменами в закладке всплывающего окна"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe был недавно обновлен / перезагружен.</strong><br /><br />Вам нужно будет либо обновить эту вкладку, создать новую вкладку, или перезапустить браузер для того, чтобы ScriptSafe работать."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Блок Click-Through Referrer:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "блоки ссылающейся информацию при нажатии на сторонних ссылок (примечание: установка этой опции на всех доменах может вызвать проблемы (например, эскизы в Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Referrer Spoof:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>предупреждение </strong>: если эта функция включена, может нарушить некоторые сайты (например, входа в систему)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Автоматическое обновление страницы:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "автоматическое обновление страницы после изменения списка"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "расслабленный"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "Отозвать страницу Temp. Разрешения"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "Отозвать Все Temp."
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Этим же документом"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "То же Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Сохранить"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Сохранить как текстовый файл"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "Разделы"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "выбрать все"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Скопируйте и вставьте настройки, которые вы хотите импортировать в ScriptSafe в это поле и нажмите на кнопку Import."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Настройки сохранены"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Настройки сохраняются и синхронизируются через 30 секунд"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe отключен"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "строгий"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Строгий - позволяет только одному домену"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Для поддержки развития, нажмите сердце :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Вы включили автоматическую синхронизацию. Для предотвращения стирания ваши ранее синхронизированные данные (если таковые имеются), пожалуйста, нажмите на Настройки синхронизации, из аккаунта Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Настройки синхронизации со счета Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Настройки синхронизации на счет Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe обнаружил, что у вас есть настройки синхронизации на вашем аккаунте Google!\r\nНажмите на \"OK\", если вы хотите импортировать настройки из вашего аккаунта Google."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Syncing была отключена, чтобы предотвратить перезапись ваши уже синхронизированные данные.\r\nНе стесняйтесь перейти на страницу Параметры в любое время для синхронизации настроек (сделать резервную копию настройки при необходимости)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Показать Импорт синхронизации Уведомление:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "показать всплывающее окно, когда настройки будут синхронизироваться с вашего аккаунта Google"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Показать синхронизации Уведомление:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "показать всплывающее окно, когда настройки синхронизируются с аккаунтом Google"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Ваша текущая версия Google Chrome не поддерживает настройки синхронизации. Пожалуйста, попробуйте обновить версию Chrome и повторите попытку."
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Пародия Timezone:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "подменить или рандомизации часовой пояс. Примечание: если эта функция включена, она может мешать отвечать на сообщения электронной почты в Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Доверять"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "доверять"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "Целевой домен"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Применить Белый список доменов, а также"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Вы уверены, что хотите отключить любые будущие уведомления об обновлении, как этот от появления?\r\nВы всегда можете повторно разрешить отправку уведомлений об обновлениях, перейдя на страницу ScriptSafe Options и установив флажок рядом с полем Показать Всплывающие Update."
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Показать список изменений на обновления:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "ненужный"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "показать журнал изменений страницы, когда ScriptSafe обновляется"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Домен"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Введите домен или выражение (нажмите \"Справка\" для получения дополнительной информации)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Spoof:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "подделывает ваш агент пользователя (браузер и ОС)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Введите адрес, чтобы установить в качестве значения ссылающейся для всех сайтов"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Удалить Google Analytics (UTM) Отслеживание:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "удалить Google Analytics (UTM) отслеживания маркеров"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Удалить Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "удалить невидимые элементы сторонних производителей"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Блок WebGL Дактилоскопирование:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "предотвратить снятие отпечатков пальцев с помощью WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Блок Перечень устройств:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "предотвратить наличие оборудования устройств, обнаруженных с помощью API WebRTC"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Защита WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "предотвратить утечку IP-адрес"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Черный список"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Whitelist"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Черный список"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Whitelist"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "Блокированные"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "белый список"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "черный список"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "Белый список"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Переместить в черный список"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Переместить в белый список"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Белый список / Черный список"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP Request Handling:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Контроль всех запросов"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Запросы управления Междоменные (позволяют тем же доменом)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "управления XML-запросов HTTP"
+   }
+}

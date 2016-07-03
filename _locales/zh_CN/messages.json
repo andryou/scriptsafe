@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "重新获得网络和冲浪的控制更加牢固。"
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "在所有域"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "允许"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "让所有阻塞会话"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "阻止不需要的内容："
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "从已知的广告/恶意软件的域删除不需要的内容;从<a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>，<a href=http://hosts-file.net target=_blank>hpHOSTS聚集区（广告/跟踪服务器）</a>，<a href=http://pgl.yoyo.org/as/policy.php target=_blank>彼得Lowe的HOSTS项目</a>，的<a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "不受欢迎的内容模式："
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "宽松=列入白名单的域不会被堵塞;在不需要域列表严格=域将在白名单中是否被堵塞，甚至"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "反社会的"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "反社会模式："
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "永远消除社会的小部件/按钮，即使列入白名单"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "为了更全面拦截，检查出<a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery的</a>，的<a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>断开</a>，<a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>模糊</a>，和/或<a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock</a>的起源与所有的订阅名单上的<一个<a href=https://www.fanboy.co.nz/ target=_blank>变形金刚迷网站</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "块音频指纹识别："
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "防止指纹通过AudioContext API"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "块电池指纹："
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "防止指纹通过电池API"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "行为设置"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "块（推荐）"
+   },
+   "block": {
+      "description": "Block",
+      "message": "块"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "受阻"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "阻止所有允许用于会话"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "批量导入"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "导入到列表"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "批量导入"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "复制和粘贴域到下面的框中。每个域应该是一个独立的行。"
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "帆布指纹保护："
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe无法处理此页。</strong><br /> <br />请尝试访问一个网站。"
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "空白读数"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "随机读出"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "完全阻挡读数"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "防止由于&lt;canvas&gt;元素指纹尝试"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "块帆布字体访问："
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "防止系统字体从通过&lt;canvas&gt;元素被枚举。可能与谷歌文档干涉。"
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "经典期权模式："
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "如果勾选，关闭标签选项每次一个选项被点击"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "明确"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "明确"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "阻止客户端矩形："
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "防止指纹通过计算元素的矩形。可能会对某些下拉菜单干扰。"
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "防止剪贴板干扰："
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "防止网页从剪贴板干预行动"
+   },
+   "close": {
+      "description": "Close",
+      "message": "关"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "阻止不需要的饼干："
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "从已知的广告/恶意软件的域块饼干;以下模式适用于这个问题，以及"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "习俗"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "保护本地IP"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "拒绝"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "保护本地和公网IP"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "关闭"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "残"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "残"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "同步被禁用。\r\n随意进入选项页面，随时同步你的设置（如有必要使您设置的备份）。"
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "禁用并删除："
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "怀疑"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "怀疑"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "不信任域"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "同一个域"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "排序方式域："
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "帮帮我"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "无效域/地址"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "该域名或地址必须包含一些字母/数字"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "域名不能被添加，因为它是不受欢迎的内容提供商（请参阅阻止不需要的内容和/或反社会模式）"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "通过此页面上的域，并在面板排序的URL列表"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "提示：按Ctrl + F搜索列表"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "不要显示此页再"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "启用："
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "启用"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "启用S​​criptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "启用同步："
+   },
+   "export": {
+      "description": "Export",
+      "message": "出口"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "您的设置已成功同步！"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "设置同步的！"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "指纹保护"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "指纹保护（可能会破坏网站）"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "您似乎没有同步你的设置，您的帐户谷歌还没有。\r\nScriptSafe是关于当前设置同步到您的谷歌帐户。\r\n如果你想继续，点击“OK”。\r\n如果没有，请单击“取消”，并与您的首选设置在其他设备上，更新ScriptSafe，当你跟此消息上单击OK。"
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "你想你的当前设置同步到您的谷歌帐户？\r\n注意：请不要按这种频繁;有每分钟10和1000每小时的限制。"
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "你想导入您的谷歌帐户的同步设置，此设备吗？"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "热键："
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "常规设置"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "手柄座枚举："
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "防止通过手柄API检测到具有设备"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "可用热键操作"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "暂时允许/禁止所有资源为当前标签页"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "对于当前的标签删除临时权限"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "删除所有临时权限"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "配置ScriptSafe热键："
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "点击键盘快捷键"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "列出所有设置"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "最新的设置已成功下载！"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "设置下载！"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "集团所有设置"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "除去可能存在哈希跟踪："
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "删除使用哈希，那里有一个属性和值可能通过跟踪标记（例如#xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "隐藏"
+   },
+   "import": {
+      "description": "Import",
+      "message": "进口"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "导入/恢复设置"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "设置成功导入"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "设置成功导入，除了以下（空值或无法识别的名称）："
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "成功导入，并在30秒内同步设置"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "减少键盘指纹（<STRONG>高级用户</strong>）："
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "让按键时序更随机增加匿名（<strong>注：增加了按键之间的随机延迟;禁用此设置是不可接受的</strong>）"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "页面链接开幕行为："
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "修改所有链接的打开方式"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "松散 - 允许相同的域和子域"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "默认模式"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "新标签"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "此标签加载任何外部资源"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "未经过滤"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "该浏览器不支持WebRTC技术保护"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "只有在Unwhitelisted域"
+   },
+   "options": {
+      "description": "Options",
+      "message": "选项"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "偏执狂方式："
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "未上市的上域块允许域"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "粘贴设置，然后再试一次"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "尊重同域："
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "保持同域元素"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "隐私设置"
+   },
+   "random": {
+      "description": "Random",
+      "message": "随机"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "显示评分按钮："
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "如果勾选，在增加了弹出选项卡下的域等级按钮"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe最近更新/重新加载。</strong><br /><br />您将需要或者刷新此选项卡中，创建一个新的标签，或为了ScriptSafe工作重新启动浏览器。"
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "阻止点击通过介绍人："
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "第三方链接时块引用信息（注：此设置对所有域可能会导致问题（例如，在TweetDeck的缩略图））"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "推荐人欺骗："
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>警告</strong>：如果启用，可能会打破一些网站（如登录）"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "自动刷新页面："
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "名单变更后自动刷新页面"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "轻松"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "撤消页温度。权限"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "撤销所有温度。"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "同一文档"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "同一选项卡"
+   },
+   "save": {
+      "description": "Save",
+      "message": "保存"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "另存为文本文件"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "第"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "全选"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "复制和粘贴要导入ScriptSafe设置到这个框，然后点击导入按钮。"
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "保存设置"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "设置保存并在30秒内同步"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe被禁用"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "严格"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "严格 - 只允许同一个域中"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "为了支持开发，点击心脏 :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "您已启用自动同步。为了防止擦掉你以前同步数据（如果有的话），请点击同步设置从谷歌帐户。"
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "同步设置从谷歌帐户"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "同步设置，以谷歌帐户"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe已检测到您的设置同步你的谷歌帐户！\r\n如果你想从你的谷歌帐户导入设置，点击“OK”。"
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "同步已被禁用，以防止覆盖您已经同步数据。\r\n随意进入选项页面，随时同步你的设置（如有必要使您设置的备份）。"
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "显示导入同步通知："
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "显示弹出的设置时，从你的谷歌账户同步"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "显示同步通知："
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "显示弹出时设置同步到您的谷歌帐户"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "您当前的谷歌浏览器版本不支持设置同步。请尝试更新您的Chrome浏览器版本，然后再试一次。"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "恶搞时区："
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "欺骗或随机的时区。注：如果启用，它可能会在Gmail中回复邮件干扰。"
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "相信"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "相信"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "信任域"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "适用于列入白名单域名，以及"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "你确定要禁用像这样出现的任何未来更新通知？\r\n通过转到ScriptSafe选项页，勾选显示更新弹出窗口旁边的框，您可以随时重新允许更新通知。"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "显示更新日志的更新："
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "无用"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "更新日志显示页面时ScriptSafe更新"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "域"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "输入域或表达式（更多资讯“帮助”）"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "用户代理欺骗："
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "伪造了您的用户代理（浏览器和操作系统）"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "输入地址设置为所有网站的引用值"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "删除谷歌分析（UTM）追踪："
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "删除谷歌分析（UTM）跟踪令牌"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "删除Webbugs："
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "除去看不见的第三方元素"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "WebGL的座指纹识别："
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "防止指纹，以便通过WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "块设备枚举："
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "防止不得不通过WebRTC技术API检测到的硬件设备"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC技术保护："
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "防止IP地址泄漏"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+黑名单"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+白名单"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "黑名单"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "白名单"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "列入黑名单"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "列入白名单"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "黑名单"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "白名单"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "移动到黑名单"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "移动到白名单"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "白名单/黑名单"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP请求处理："
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "控制所有请求"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "控制跨域请求（允许同域）"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "控制XML HTTP请求"
+   }
+}

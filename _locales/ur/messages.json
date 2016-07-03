@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "مزید محفوظ طریقے سے ویب اور سرف کا کنٹرول دوبارہ حاصل."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "تمام ڈومینز پر"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "اجازت دیں"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "تمام سیشن کے لئے بلاک کی اجازت دیں"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "ناپسندیدہ مواد بلاک:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "نام سے جانا جاتا اشتھار / میلویئر ڈومینز سے ناپسندیدہ مواد ہٹانے؛ ڈومینز MVPS لشکر hpHOSTS (AD / باخبر رہنے کے سرورز) سے جمع، پیٹر لو کے میزبان پروجیکٹ، MalwareDomainList.com"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "ناپسندیدہ مواد موڈ:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "آرام دہ = وائٹ لسٹ ڈومینز بلاک نہیں کیا جائے گا؛ ناپسندیدہ ڈومین فہرست میں سخت = ڈومینز بھی وائٹ لسٹ تو بلاک کیا جائے گا"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "اساماجک"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "اساماجک موڈ:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "ہمیشہ وائٹ لسٹ تو سماجی ویجٹ / بٹن، بھی ہٹا دیں"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "زیادہ جامع مسدود کرنے کے لئے، میں Fanboy سائٹ پر Ghostery، منقطع، کلنک، اور / یا uBlock نکالنے چیک سکریپشن فہرستوں کی سب کے ساتھ"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "بلاک آڈیو فنگر:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "AudioContext API کے ذریعے فنگر روکنے"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "بلاک بیٹری فنگر:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "بیٹری API کے ذریعے فنگر روکنے"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "برتاؤ ترتیبات"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "بلاک (سفارش)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "بند کرنا"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "کریں"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "تمام سیشن کے لئے اجازت BLOCK"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "بلک درآمد"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "فہرست کرنے کے لئے درآمد"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "بلک درآمد"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "ذیل کے خانے میں کاپی اور پیسٹ ڈومینز. ہر ڈومین ایک علیحدہ لائن پر ہونا چاہئے."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "کینوس فنگرپرنٹ تحفظ:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe اس صفحے پر کارروائی نہیں کرسکتے.</strong><br /><br />ایک ویب سائٹ کا دورہ کرنے کی کوشش کریں."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "خالی readout کے"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "رینڈم readout کے"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "مکمل طور پر بلاک readout کے"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "&lt;canvas&gt; عناصر کے ذریعے فنگر کوششوں کے خلاف کی حفاظت"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "بلاک کینوس فونٹ رسائی:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "&lt;canvas&gt; عناصر کے ذریعے مقرر کردہ ہونے سے سسٹم فانٹ کو روکنے. Google دستاویزات کے ساتھ مداخلت کر سکتے ہیں."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "کلاسیکی اختیارات موڈ:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "ticked کی تو اس کے ٹیب کے اختیارات ہر ایک آپشن کلک کیا جاتا ہے بند کر دیتا ہے"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "صاف"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "واضح"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "بلاک کلائنٹ مستطیل:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "عنصر مستطیل حساب لگانے کے ذریعے فنگر روکنے. کچھ dropdowns کے ساتھ مداخلت کر سکتے ہیں."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "تختہ تراشہ مداخلت کو روکنے کے:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "کلپ بورڈ کے اعمال کے ساتھ مداخلت سے صفحات کو روکنے کے"
+   },
+   "close": {
+      "description": "Close",
+      "message": "بند کریں"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "ناپسندیدہ کوکیز بلاک:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "نام سے جانا جاتا اشتھار / میلویئر ڈومینز سے بلاکس کوکیز؛ موڈ کے طور پر اچھی طرح سے اس پر لاگو ہوتا ہے ذیل میں"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "اپنی مرضی کے مطابق"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "مقامی IP حفاظت کرو"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "انکار"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "مقامی اور عوامی آئی پی ایس کی حفاظت"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "غیر فعال کریں"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "معذور افراد"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "معذور"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "مطابقت پذیری غیر فعال ہے.\r\nآپ کی ترتیبات کو مطابقت پذیر کرنے کے کسی بھی وقت کے اختیارات کے صفحے پر جانے کے لئے آزاد محسوس کرتے ہیں (اگر ضروری ہو تو آپ کی ترتیبات کی ایک بیک اپ بنانے کے لئے)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "غیر فعال کریں اور ہٹائیں:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "بد اعتمادی"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "بد اعتمادی"
+   },
+   "distrustdomain": {
+      "description": "Distrust Domain",
+      "message": "بد اعتمادی ڈومین"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "ایک ہی ڈومین"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "ڈومین کی طرف سے ترتیب دیں:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "مدد"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "غلط ڈومین / پتہ"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "ڈومین یا پتہ کچھ خط / تعداد پر مشتمل ہونا چاہئے"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "ڈومین یہ ایک ناپسندیدہ مواد کے فراہم کنندہ کے طور پر (بلاک ناپسندیدہ مواد اور / یا سے Antisocial موڈ دیکھ کر) شامل نہیں کیا جاسکتا"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "اور اس صفحے پر ڈومینز طرف کے پینل میں URL فہرستوں قسم"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "ترکیب: پریس CTRL + F فہرستوں تلاش کرنے کے لئے"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "ایک بار پھر اس صفحے کو ظاہر نہ کریں"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "فعال:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "چالو حالت میں"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "ScriptSafe فعال"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "مطابقت پذیری فعال کریں:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "برامد"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "آپ کی ترتیبات کو کامیابی سے موافقت پذیر کیا گیا ہے!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "ترتیبات موافقت پذیر!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "فنگرپرنٹ تحفظ"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "فنگرپرنٹ تحفظ (سائٹس توڑ سکتے ہیں)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "یہ آپ نے ابھی تک اپنے Google اکاؤنٹ میں آپ کی ترتیبات موافقت پذیر نہیں ہوا ہے ظاہر ہوتا ہے.\r\nScriptSafe اپنے Google اکاؤنٹ میں آپ کی موجودہ ترتیبات مطابقت پذیر کرنے کے بارے میں ہے.\r\nآپ جاری رکھنا چاہتے ہیں تو پر 'OK' کو کلک کریں.\r\nاگر نہیں تو، 'منسوخ کریں' پر کلک کریں، اور آپ کو ترجیح ترتیبات کے ساتھ دوسرے آلے پر، ScriptSafe اپ ڈیٹ کریں اور آپ کو اس پیغام کے ساتھ پیش کر رہے ہیں جب OK پر کلک کریں."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "آپ کو آپ کے Google اکاؤنٹ میں آپ کی موجودہ ترتیبات مطابقت پذیر کرنے کے لئے چاہتے ہیں؟\r\nنوٹ: اکثر اس پریس نہ کریں؛ 10 فی منٹ اور 1،000 فی گھنٹہ کی ایک حد ہوتی ہے."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "آپ کو اس آلہ پر اپنے Google اکاؤنٹ سے موافقت پذیر ترتیبات درآمد کرنا چاہتے ہیں؟"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "hotkeys کے:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "عام ترتیبات"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "بلاک gamepad کے شمار:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "تعلق آلات gamepad کے ذریعے API کے پتہ روکنے"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "دستیاب ہاٹکی اعمال"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "عارضی طور پر / کی اجازت دیتے ہیں ایک موجودہ ٹیب کے لئے تمام وسائل کو بلاک"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "ایک موجودہ ٹیب کے لئے عارضی اجازتیں حذف کریں"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "تمام عارضی اجازتیں حذف کریں"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "ScriptSafe hotkeys کے کی تشکیل:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "کی بورڈ شارٹ کٹ پر کلک کریں"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "تمام ترتیبات کو فہرست"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "تازہ ترین ترتیبات کامیابی سے ڈاؤن لوڈ کیا گیا ہے!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "ترتیبات ڈاؤن لوڈ کردہ!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "گروپ تمام ترتیبات"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "ممکنہ ہیش ٹریکنگ ہٹائیں:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "ہیش، ایک وصف اور قیمت نہیں ہے جہاں کا استعمال کرتے ہوئے ممکنہ ٹریکنگ ٹوکن منظور خارج کر دیں (جیسے #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "چھپائیے"
+   },
+   "import": {
+      "description": "Import",
+      "message": "درآمد کریں"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "درآمد / بحالی کی ترتیبات"
+   },
+   "importsuccess": {
+      "description": "Settings imported successfully",
+      "message": "ترتیبات کو کامیابی سے برآمد"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "ترتیبات، کامیابی سے درآمد مندرجہ ذیل (خالی قدر یا غیر تسلیم شدہ نام) سوائے:"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "ترتیبات کو کامیابی سے درآمد اور 30 ​​سیکنڈ میں موافقت پذیری"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "کی بورڈ فنگر کم کریں (<strong>اعلی درجے کی صارفین کے لئے</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "نام ظاہر نہ کرنے کو بڑھانے کے لئے کلید دبانے کے اوقات زیادہ بے ترتیب بنانے (<strong>نوٹ: اہم پریس درمیان ایک بے ترتیب تاخیر اضافہ کر دیتی ہے؛ غیر فعال اس ترتیب ناقابل قبول ہے</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "پیج لنک افتتاحی برتاؤ:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "تمام لنکس کھول دیے جاتے ہیں کس طرح میں ترمیم"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "ڈھیلا - ایک ہی ڈومین اور ذیلی اجازت دے"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "طے شدہ موڈ"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "نیا ٹیب"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "یہ ٹیب کوئی بیرونی وسائل بھری ہوئی ہے"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "فلٹر نہیں"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "یہ براؤزر WebRTC کے تحفظ کی حمایت نہیں کرتا"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-بند-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "صرف Unwhitelisted ڈومینز پر"
+   },
+   "options": {
+      "description": "Options",
+      "message": "اختیارات"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "سنویبرم موڈ:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "غیر مندرج ڈومینز پر بلاک کی اجازت ڈومینز"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "ترتیبات میں پیسٹ کریں اور دوبارہ کوشش کریں"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "احترام ایک ہی ڈومین:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "ایک ہی ڈومین کے عناصر کے تحفظ"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "رازداری کی ترتیبات"
+   },
+   "random": {
+      "description": "Random",
+      "message": "رینڈم"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "درجہ بندی بٹن دکھائیں:"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "ticked کی تو اس کے ٹیب پاپ اپ میں ڈومینز کے تحت درجہ بندی کے بٹن کا اضافہ کر دیتی"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe حال ہی میں دوبارہ اپ ڈیٹ / کیا گیا تھا.</strong><br /><br />تم اس ٹیب کو تازہ کرنے یا تو، ایک نیا ٹیب تخلیق، یا ScriptSafe کام کرنے کے لئے ترتیب میں اپنے براؤزر کو دوبارہ شروع کی ضرورت ہو گی."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "مسدود کریں پر کلک کے ذریعے حوالہ دہندہ:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "تیسری پارٹی کے لنکس پر کلک کرتے وقت بلاکس حوالہ دینے میں معلومات (نوٹ: تمام ڈومینز پر اس کی ترتیب کے مسائل کا سبب بن سکتا ہے (جیسے سے TweetDeck میں تمبنےل))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "حوالہ دہندہ پندرہ روزہ:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>انتباہ</strong>: اگر فعال، کچھ سائٹس کو توڑ سکتے ہیں (جیسے میں لاگ ان)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "آٹو تروتازہ صفحہ:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "فہرست تبدیلی کے بعد آٹو تروتازہ صفحہ"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "آرام دہ"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temp. Permissions",
+      "message": "صفحہ عارضی منسوخ. اجازتیں"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temp.",
+      "message": "تمام عارضی منسوخ."
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "اسی دستاویز"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "اسی ٹیب"
+   },
+   "save": {
+      "description": "Save",
+      "message": "محفوظ کریں"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "ٹیکسٹ فائل کے طور پر محفوظ کریں"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "حصے"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "تمام منتخب کریں"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "کاپی کریں اور اس باکس میں ترتیبات آپ ScriptSafe میں درآمد کرنا چاہتے ہیں چسپاں پھر درآمد بٹن پر کلک کریں."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "ترتیبات محفوظ"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "ترتیبات کو بچا لیا اور 30 ​​سیکنڈ میں موافقت پذیری"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe غیر فعال ہے"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "سخت"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "سخت - ایک ہی ڈومین رسائی کی اجازت دیتے ہیں"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "ترقی کی حمایت کرنے، دل کلک :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "آپ آٹو موافقت پذیری فعال کیا ہے. (اگر کوئی ہے تو) آپ نے پہلے مطابقت پذیر ڈیٹا مٹانے کو روکنے کے لئے، گوگل اکاؤنٹ سے مطابقت پذیری کی ترتیبات پر کلک کریں براہ مہربانی."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "مطابقت پذیری کی ترتیبات Google اکاؤنٹ سے"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Google اکاؤنٹ سے مطابقت پذیری کی ترتیبات"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe کا پتہ چلا ہے کہ آپ کو آپ کے Google اکاؤنٹ پر موافقت پذیر ترتیبات ہے کہ!\r\nآپ اپنے Google اکاؤنٹ سے ترتیبات کو درآمد کرنا چاہتے ہیں تو 'ٹھیک ہے' پر کلک کریں."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "موافقت پذیری آپ کے پاس پہلے سے ہی مطابقت پذیر ڈیٹا overwriting کی روک تھام کے لیے غیر فعال کر دیا گیا ہے.\r\nآپ کی ترتیبات کو مطابقت پذیر کرنے کے کسی بھی وقت کے اختیارات کے صفحے پر جانے کے لئے آزاد محسوس کرتے ہیں (اگر ضروری ہو تو آپ کی ترتیبات کی ایک بیک اپ بنانے کے لئے)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "دکھائیں درآمد مطابقت پذیری میں اہم اطلاع:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "ترتیبات کو آپ کے Google اکاؤنٹ سے موافقت پذیر جب پاپ اپ ظاہر"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "مطابقت پذیری اطلاع دکھائیں:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "ترتیبات کو آپ کے Google اکاؤنٹ سے مطابقت پذیری جب پاپ اپ ظاہر"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "گوگل کروم کے آپ کے موجودہ ورژن کی مطابقت پذیری کی ترتیبات کی حمایت نہیں کرتا. اپنے Chrome ورژن کو اپ ڈیٹ کرنے کی کوشش کریں اور دوبارہ کوشش کریں."
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "پندرہ روزہ ٹائم زون:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "دھوکہ دینا، یا آپ کے ٹائم زون کے randomize. نوٹ: اگر فعال، جو Gmail میں ای میلز کا جواب دینے کے ساتھ مداخلت کر سکتے ہیں."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "ٹرسٹ"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "اعتماد"
+   },
+   "trustdomain": {
+      "description": "Trust Domain",
+      "message": "ٹرسٹ ڈومین"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "اس کے ساتھ ساتھ وائٹ لسٹ ڈومینز پر لگائیں"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "کیا آپ واقعی دکھائے جانے سے ایک اس طرح کسی بھی مستقبل کے اپ ڈیٹ کی اطلاعات کو غیر فعال کرنا چاہتے ہیں؟\r\nآپ ہمیشہ ScriptSafe اختیارات کے صفحے پر جا کر اور شو اپ ڈیٹ پاپ اپ کے سوا باکس ٹک ٹک کی طرف اپ ڈیٹ کی اطلاعات دوبارہ اجازت دے سکتے ہیں."
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "اپ ڈیٹ پر changelog کے دکھائیں:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "ناپسندیدہ"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "جب ScriptSafe اپ ڈیٹ کیا جاتا ہے Changelog صفحے کو ظاہر"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "ڈومین"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "ایک ڈومین یا اظہار درج کریں (مزید معلومات کے لئے 'مدد' پر کلک کریں)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "صارف ایجنٹ پندرہ روزہ:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "آپ کے صارف کے ایجنٹ (براؤزر اور OS) جھانسے"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "تمام سائٹس کے لئے آپ کے حوالہ قیمت کے طور پر قائم کرنے کے لئے ایک ایڈریس درج کریں"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "گوگل کے تجزیات (UTM) ٹریکنگ ہٹائیں:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "گوگل کے تجزیات (UTM) سے باخبر رہنے ٹوکن ہٹا دیں"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Webbugs ہٹائیں:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "پوشیدہ تیسری پارٹی کے عناصر کو ہٹانے"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "بلاک WebGL کی فنگر:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "WebGL کی API کے ذریعے فنگر روکنے"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "بلاک ڈیوائس شمار:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "ہارڈ ویئر آلات WebRTC کے API کے ذریعے پتہ لگایا ہونے کو روکنے کے"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC کے تحفظ:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "IP ایڈریس کی لیکیج کو روکنے کے"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ بلیک لسٹ"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ وائٹ لسٹ"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "بلیک لسٹ"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "وائٹ لسٹ"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "بلیک لسٹ"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "وائٹ لسٹ"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "بلیک لسٹ"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "وائٹ لسٹ"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "بلیک لسٹ میں منتقل کریں"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "وائٹ لسٹ میں منتقل کریں"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "وائٹ لسٹ / بلیک لسٹ"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML ہینڈلنگ HTTP درخواست:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "تمام درخواستوں کو کنٹرول کریں"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "کنٹرول کراس ڈومین درخواست (ایک ہی ڈومین کی اجازت دیتے ہیں)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "کنٹرول XML HTTP درخواست"
+   }
+}
