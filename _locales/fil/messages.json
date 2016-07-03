@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Sa Lahat ng Domains"
+      "message": "Sa Lahat Ng Domains"
    },
    "allow": {
       "description": "Allow",
@@ -13,7 +13,7 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Payagan Lahat block Para Session"
+      "message": "Payagan Lahat Block Para Session"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",

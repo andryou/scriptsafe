@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Em todos os domínios"
+      "message": "Em Todos Os Domínios"
    },
    "allow": {
       "description": "Allow",
@@ -13,15 +13,15 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Permitir que todos os bloqueado por sessão"
+      "message": "Permitir Que Todos Os Bloqueado Por Sessão"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Bloquear conteúdo indesejado:"
+      "message": "Bloquear Conteúdo Indesejado:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
-      "message": "remover conteúdo indesejado / domínios de malware conhecidos de anúncios; domínios recolhidos a partir <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( servidores ad / rastreamento)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>de Peter Lowe</a> HOSTS Project, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+      "message": "remover conteúdo indesejado / domínios de malware conhecidos de anúncios; domínios recolhidos a partir <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( servidores ad / rastreamento)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank> HOSTS Project de Peter Lowe</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Canvas impressão digital de proteção:"
+      "message": "Canvas Impressão Digital de Proteção:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -145,7 +145,7 @@
    },
    "clearlow": {
       "description": "clear",
-      "message": "Claro"
+      "message": "claro"
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
@@ -285,7 +285,7 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Definições sincronizados!"
+      "message": "Definições Sincronizados!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
@@ -293,7 +293,7 @@
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Protecção de impressão digital (pode quebrar os sites)"
+      "message": "Protecção de Impressão Digital (pode quebrar os sites)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -325,7 +325,7 @@
    },
    "availablehotkeys": {
       "description": "Available hotkey actions",
-      "message": "acções das teclas de acesso disponíveis"
+      "message": "Acções das teclas de acesso disponíveis"
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
@@ -597,7 +597,7 @@
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
-      "message": "Mostrar Import sincronização Notificação:"
+      "message": "Mostrar Import Sincronização Notificação:"
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
@@ -677,7 +677,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Remover o Google Analytics (UTM):"
+      "message": "Remover o Google Analytics (UTM) Rastreamento:"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",

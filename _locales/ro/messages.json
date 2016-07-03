@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Pe toate domeniile"
+      "message": "Pe Toate Domeniile"
    },
    "allow": {
       "description": "Allow",
@@ -13,11 +13,11 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Permiteți toate blocate pentru sesiunea"
+      "message": "Permiteți Toate Blocate Pentru Sesiunea"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Bloca un conținut nedorit:"
+      "message": "Bloca Un Conținut Nedorit:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -225,7 +225,7 @@
    },
    "domain": {
       "description": "Same Domain",
-      "message": "Același domeniu"
+      "message": "Același Domeniu"
    },
    "domainsort": {
       "description": "Sort by Domain:",

@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Del visu domenu"
+      "message": "Del Visu Domenu"
    },
    "allow": {
       "description": "Allow",
@@ -13,7 +13,7 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Leisti visiems blokuojamas sesijos"
+      "message": "Leisti Visiems Blokuojamas Sesijos"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",

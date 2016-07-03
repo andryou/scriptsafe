@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Na všetkých doménach"
+      "message": "Na Všetkých doménach"
    },
    "allow": {
       "description": "Allow",
@@ -13,11 +13,11 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Povolit všetko blokovaná pre zasadnutie"
+      "message": "Povolit Všetko Blokovaná Pre Zasadnutie"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blokovat nežiaduce obsah:"
+      "message": "Blokovat Nežiaduce Obsah:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -221,7 +221,7 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "nedôvera domény"
+      "message": "Nedôvera Domény"
    },
    "domain": {
       "description": "Same Domain",
@@ -285,7 +285,7 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Synchronizované nastavenia!"
+      "message": "Synchronizované Nastavenia!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
@@ -309,7 +309,7 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "klávesové skratky:"
+      "message": "Klávesové skratky:"
    },
    "generalsettings": {
       "description": "General Settings",

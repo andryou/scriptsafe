@@ -5,11 +5,11 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Á öllum sviðum"
+      "message": "Á Öllum Sviðum"
    },
    "allow": {
       "description": "Allow",
-      "message": "leyfa"
+      "message": "Leyfa"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",

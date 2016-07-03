@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Op alle domeinen"
+      "message": "Op Alle Domeinen"
    },
    "allow": {
       "description": "Allow",
@@ -13,11 +13,11 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Toestaan ​​dat alle geblokkeerde Voor Session"
+      "message": "Toestaan ​​Dat Alle Geblokkeerde Voor Session"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blokkeer ongewenste inhoud:"
+      "message": "Blokkeer Ongewenste Inhoud:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
