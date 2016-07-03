@@ -9,7 +9,7 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "leisti"
+      "message": "Leisti"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
@@ -17,7 +17,7 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blokuoti nepageidaujamo turinio:"
+      "message": "Blokuoti Nepageidaujamo Turinio:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Nepageidaujamo turinio režimas:"
+      "message": "Nepageidaujamo Turinio Režimas:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -33,11 +33,11 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "antivisuomeninis"
+      "message": "Antivisuomeninis"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Asocialaus režimas:"
+      "message": "Asocialaus Režimas:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Blokuoti Garso Pirštu atspaudu:"
+      "message": "Blokuoti Garso Pirštu Atspaudu:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blokuoti Baterijos Pirštu atspaudu:"
+      "message": "Blokuoti Baterijos Pirštu Atspaudu:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "elgsena Nustatymai"
+      "message": "Elgsena Nustatymai"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -73,7 +73,7 @@
    },
    "block": {
       "description": "Block",
-      "message": "blokas"
+      "message": "Blokas"
    },
    "blocked": {
       "description": "Blocked",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Blokuoti visus leidžiama sesijos"
+      "message": "Blokuoti Visus Leidžiama Sesijos"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,7 +89,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importuoti i saraša"
+      "message": "Importuoti i Saraša"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Paveikslai pirštu apsauga:"
+      "message": "Paveikslai Pirštu Apsauga:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,7 +109,7 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "tušcia Skaitliuko parodymai"
+      "message": "Tušcia Skaitliuko parodymai"
    },
    "canvasrandom": {
       "description": "Random Readout",
@@ -117,7 +117,7 @@
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Visiškai blokuoti Skaitliuko parodymai"
+      "message": "Visiškai Blokuoti Skaitliuko Parodymai"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Blokuoti Paveikslai Šrifto prisjungimas:"
+      "message": "Blokuoti Paveikslai Šrifto Prisjungimas:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -133,7 +133,7 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Klasikinis Nustatymai režimas:"
+      "message": "Klasikinis Nustatymai Režimas:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
@@ -141,7 +141,7 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "aiškus"
+      "message": "Aiškus"
    },
    "clearlow": {
       "description": "clear",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blokuoti Klientu staciakampiai:"
+      "message": "Blokuoti Klientu Staciakampiai:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Neleiskite Mainu trukdžiu:"
+      "message": "Neleiskite Mainu Trukdžiu:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokuoti nepageidaujamus Slapukai:"
+      "message": "Blokuoti Nepageidaujamus Slapukai:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -177,23 +177,23 @@
    },
    "custom": {
       "description": "Custom",
-      "message": "paprotys"
+      "message": "Paprotys"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
-      "message": "Apsaugokite vietos IP"
+      "message": "Apsaugokite Vietos IP"
    },
    "deny": {
       "description": "Deny",
-      "message": "paneigti"
+      "message": "Paneigti"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Apsaugokite vietos ir viešas IP"
+      "message": "Apsaugokite Vietos ir Viešas IP"
    },
    "disable": {
       "description": "Disable",
-      "message": "išjungti"
+      "message": "Išjungti"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "neigalusis"
+      "message": "Neigalusis"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,11 +209,11 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Išjungti ir pašalinti:"
+      "message": "Išjungti ir Pašalinti:"
    },
    "distrust": {
       "description": "Distrust",
-      "message": "nepasitikejimas"
+      "message": "Nepasitikejimas"
    },
    "distrustlow": {
       "description": "distrust",
@@ -221,19 +221,19 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "nepasitikejimas Domenu"
+      "message": "Nepasitikejimas Domenu"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "pati domena"
+      "message": "Pati Domena"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Rušiuoti pagal sritis:"
+      "message": "Rušiuoti pagal Sritis:"
    },
    "domaininfo": {
       "description": "Help",
-      "message": "padeti"
+      "message": "Padeti"
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Daugiau nerodyti šio Puslapis Velgi"
+      "message": "Daugiau Nerodyti Šio Puslapis Velgi"
    },
    "enable": {
       "description": "Enable:",
@@ -277,7 +277,7 @@
    },
    "export": {
       "description": "Export",
-      "message": "eksportas"
+      "message": "Eksportas"
    },
    "exportsuccess": {
       "description": "Your settings have been successfully synced!",
@@ -285,15 +285,15 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Nustatymai sinchronizuotose!"
+      "message": "Nustatymai Sinchronizuotose!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "pirštu apsauga"
+      "message": "Pirštu Apsauga"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Pirštu apsauga (gali sulužti svetaines)"
+      "message": "Pirštu Apsauga (gali sulužti svetaines)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -309,15 +309,15 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "klavišai:"
+      "message": "Klavišai:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Bendrieji nustatymai"
+      "message": "Bendrieji Nustatymai"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Blokuoti Gamepad išvardinimo:"
+      "message": "Blokuoti Gamepad Išvardinimo:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -361,11 +361,11 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Grupes Visi nustatymai"
+      "message": "Grupes Visi Nustatymai"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Pašalinti Galima hash stebejimas:"
+      "message": "Pašalinti Galima Hash Stebejimas:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -373,15 +373,15 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "paslepti"
+      "message": "Paslepti"
    },
    "import": {
       "description": "Import",
-      "message": "importas"
+      "message": "Importas"
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Importo / atkurti Nustatymai"
+      "message": "Importo / Atkurti Nustatymai"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -397,7 +397,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Sumažinti Keyboard pirštu atspaudu (<strong>pažengusiems vartotojams</strong>):"
+      "message": "Sumažinti Keyboard Pirštu Atspaudu (<strong>pažengusiems vartotojams</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Puslapio nuoroda atidarymas elgsena:"
+      "message": "Puslapio Nuoroda Atidarymas Elgsena:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "numatytasis režimas"
+      "message": "Numatytasis Režimas"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Naujas skirtukas"
+      "message": "Naujas Skirtukas"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "nefiltruotas"
+      "message": "Nefiltruotas"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -449,7 +449,7 @@
    },
    "paranoia": {
       "description": "Paranoia Mode:",
-      "message": "Paranoja režimas:"
+      "message": "Paranoja Režimas:"
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Gerbkite pacios Domain:"
+      "message": "Gerbkite Pacios Domain:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,15 +469,15 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Privatumo nustatymai"
+      "message": "Privatumo Nustatymai"
    },
    "random": {
       "description": "Random",
-      "message": "atsitiktinis"
+      "message": "Atsitiktinis"
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Rodyti Vertinimas mygtuka:"
+      "message": "Rodyti Vertinimas Mygtuka:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Blokuoti Spustelekite, Per persiuntimo URL:"
+      "message": "Blokuoti Spustelekite, Per Persiuntimo URL:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -513,23 +513,23 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "atsipalaidaves"
+      "message": "Atsipalaidaves"
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Atšaukti tinklalapis Temp. Leidimai"
+      "message": "Atšaukti Tinklalapis Temp. Leidimai"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Atšaukti visus Temp."
+      "message": "Atšaukti Visus Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "paciame dokumente"
+      "message": "Paciame Dokumente"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "Tas pats Tab"
+      "message": "Tas Pats Tab"
    },
    "save": {
       "description": "Save",
@@ -537,7 +537,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Išsaugoti kaip tekstini faila"
+      "message": "Išsaugoti kaip Tekstini Faila"
    },
    "sections": {
       "description": "Sections",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "griežtas"
+      "message": "Griežtas"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -617,7 +617,7 @@
    },
    "timezone": {
       "description": "Spoof Timezone:",
-      "message": "Apgaulingas Laiko juosta:"
+      "message": "Apgaulingas Laiko Juosta:"
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
@@ -625,7 +625,7 @@
    },
    "trust": {
       "description": "Trust",
-      "message": "pasitikejimas"
+      "message": "Pasitikejimas"
    },
    "trustlow": {
       "description": "trust",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "pasitikejimas Domenu"
+      "message": "Pasitikejimas Domenu"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -645,7 +645,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Rodyti pakeitimu sarašas su Update:"
+      "message": "Rodyti Pakeitimu Sarašas su Update:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -677,7 +677,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Pašalinti \"Google Analytics\" (UTM) stebejimas:"
+      "message": "Pašalinti \"Google Analytics\" (UTM) Stebejimas:"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -693,7 +693,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Blokuoti \"WebGL\" Pirštu atspaudu:"
+      "message": "Blokuoti \"WebGL\" Pirštu Atspaudu:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
@@ -701,7 +701,7 @@
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Blokuoti Irenginiu numeracijos:"
+      "message": "Blokuoti Irenginiu Numeracijos:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
@@ -709,7 +709,7 @@
    },
    "webrtc": {
       "description": "WebRTC Protection:",
-      "message": "WebRTC apsauga:"
+      "message": "WebRTC Apsauga:"
    },
    "webrtcdesc": {
       "description": "prevent IP address leakage",
@@ -717,27 +717,27 @@
    },
    "blackbind": {
       "description": "+ Blacklist",
-      "message": "+ Juodasis sarašas"
+      "message": "+ Juodasis Sarašas"
    },
    "whitebind": {
       "description": "+ Whitelist",
-      "message": "+ baltasis sarašas"
+      "message": "+ Baltasis Sarašas"
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "juodasis sarašas"
+      "message": "Juodasis Sarašas"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "whitelist"
+      "message": "Whitelist"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "juodaji saraša"
+      "message": "Juodaji Saraša"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "i baltaji saraša"
+      "message": "I Baltaji Saraša"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -745,31 +745,31 @@
    },
    "whitelistlow": {
       "description": "whitelist",
-      "message": "Baltasis sarašas"
+      "message": "baltasis sarašas"
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Perkelti i juodaji saraša"
+      "message": "Perkelti i Juodaji Saraša"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Perkelti i baltaji saraša"
+      "message": "Perkelti i Baltaji Saraša"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Whitelist / Juodasis sarašas"
+      "message": "Whitelist / Juodasis Sarašas"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP užklausa Vartojimas:"
+      "message": "XML HTTP Užklausa Vartojimas:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Kontroliuoti visus prašymus"
+      "message": "Kontroliuoti Visus Prašymus"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Valdymo miedzydomenowy prašymu (leisti tos pacios domenas)"
+      "message": "Valdymo Miedzydomenowy Prašymu (leisti tos pacios domenas)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

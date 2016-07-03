@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "geblokkeerd"
+      "message": "Geblokkeerd"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Alles blokkeren toegestaan ​​Voor Session"
+      "message": "Alles Blokkeren Toegestaan ​​Voor Session"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,11 +89,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importeer naar de lijst"
+      "message": "Importeer naar de Lijst"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "bulk Import"
+      "message": "Bulk Import"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "blanco uitlezing"
+      "message": "Blanco Uitlezing"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "Random uitlezing"
+      "message": "Random Uitlezing"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Volledig blokkeren uitlezing"
+      "message": "Volledig Blokkeren Uitlezing"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Client rechthoeken:"
+      "message": "Block Client Rechthoeken:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -177,7 +177,7 @@
    },
    "custom": {
       "description": "Custom",
-      "message": "gewoonte"
+      "message": "Gewoonte"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
@@ -193,7 +193,7 @@
    },
    "disable": {
       "description": "Disable",
-      "message": "onbruikbaar maken"
+      "message": "Onbruikbaar Maken"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "invalide"
+      "message": "Invalide"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Uitschakelen en verwijderen:"
+      "message": "Uitschakelen en Verwijderen:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,11 +221,11 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "wantrouwen Domain"
+      "message": "Wantrouwen Domain"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "zelfde Domain"
+      "message": "Zelfde Domain"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Niet Laat deze pagina Again"
+      "message": "Niet Laat Deze Pagina Again"
    },
    "enable": {
       "description": "Enable:",
@@ -269,11 +269,11 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "inschakelen ScriptSafe"
+      "message": "Inschakelen ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Schakel synchronisatie:"
+      "message": "Schakel Synchronisatie:"
    },
    "export": {
       "description": "Export",
@@ -289,7 +289,7 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "vingerafdruk Protection"
+      "message": "Vingerafdruk Protection"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
@@ -313,7 +313,7 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Algemene instellingen"
+      "message": "Algemene Instellingen"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -345,11 +345,11 @@
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
-      "message": "Klik op Sneltoetsen"
+      "message": "klik op Sneltoetsen"
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Toon Alle instellingen"
+      "message": "Toon Alle Instellingen"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,7 +361,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Alle instellingen"
+      "message": "Alle Instellingen"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / Instellingen herstellen"
+      "message": "Import / Instellingen Herstellen"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Standaard modus"
+      "message": "Standaard Modus"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Nieuw tabblad"
+      "message": "Nieuw Tabblad"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "niet gefilterd"
+      "message": "Niet gefilterd"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -445,7 +445,7 @@
    },
    "options": {
       "description": "Options",
-      "message": "opties"
+      "message": "Opties"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -469,11 +469,11 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Privacy instellingen"
+      "message": "Privacy Instellingen"
    },
    "random": {
       "description": "Random",
-      "message": "toevallig"
+      "message": "Toevallig"
    },
    "rating": {
       "description": "Show Rating Button:",
@@ -525,11 +525,11 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "zelfde Document"
+      "message": "Zelfde Document"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "zelfde Tab"
+      "message": "Zelfde Tab"
    },
    "save": {
       "description": "Save",
@@ -537,11 +537,11 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Opslaan als tekstbestand"
+      "message": "Opslaan als Tekstbestand"
    },
    "sections": {
       "description": "Sections",
-      "message": "secties"
+      "message": "Secties"
    },
    "settingsall": {
       "description": "select all",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "streng"
+      "message": "Streng"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -701,7 +701,7 @@
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Block device opsomming:"
+      "message": "Block Device Opsomming:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
@@ -725,11 +725,11 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "blacklist"
+      "message": "Blacklist"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "whitelist"
+      "message": "Whitelist"
    },
    "blacklisted": {
       "description": "Blacklisted",
@@ -737,7 +737,7 @@
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "whitelist"
+      "message": "Whitelisted"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -765,7 +765,7 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Control Alle aanvragen"
+      "message": "Control Alle Aanvragen"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",

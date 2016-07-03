@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Mod de conținut nedorit:"
+      "message": "Mod de Conținut Nedorit:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -37,7 +37,7 @@
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Mod antisociala:"
+      "message": "Mod Antisociala:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Bloc baterie Amprentarea:"
+      "message": "Bloc Baterie Amprentarea:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "Setări de comportament"
+      "message": "Setări de Comportament"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -73,15 +73,15 @@
    },
    "block": {
       "description": "Block",
-      "message": "bloc"
+      "message": "Bloc"
    },
    "blocked": {
       "description": "Blocked",
-      "message": "blocate"
+      "message": "Blocate"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Toate permise pentru bloc de sesiune"
+      "message": "Toate Permise Pentru Bloc De Sesiune"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,11 +89,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Import la listă"
+      "message": "Import la Listă"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "Import în vrac"
+      "message": "Import în Vrac"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Panza de amprente Protecție:"
+      "message": "Panza de Amprente Protecție:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "Citirea martor"
+      "message": "Citirea Martor"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "aleatoare de citire"
+      "message": "Aleatoare de Citire"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Complet Bloc de citire"
+      "message": "Complet Bloc de Citire"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Bloc panza Acces Font:"
+      "message": "Bloc Panza Acces Font:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -133,7 +133,7 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Mod clasic Opțiuni:"
+      "message": "Mod Clasic Opțiuni:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
@@ -141,7 +141,7 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "clar"
+      "message": "Clar"
    },
    "clearlow": {
       "description": "clear",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Client: bloc dreptunghiuri"
+      "message": "Client Bloc Dreptunghiuri:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blocarea cookie-urilor nedorite:"
+      "message": "Blocarea Cookie-urilor Nedorite:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -185,15 +185,15 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "tăgădui"
+      "message": "Tăgădui"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Proteja IP-uri publice și locale"
+      "message": "Proteja IP-uri Publice și Locale"
    },
    "disable": {
       "description": "Disable",
-      "message": "nu fi de acord"
+      "message": "Nu fi de acord"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "invalid"
+      "message": "Invalid"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -221,15 +221,15 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "neîncrederii Domeniul"
+      "message": "Neîncrederii Domeniul"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "același domeniu"
+      "message": "Același domeniu"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Sortează după domeniu:"
+      "message": "Sortează după Domeniu:"
    },
    "domaininfo": {
       "description": "Help",
@@ -237,7 +237,7 @@
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
-      "message": "Domeniul nevalid / adresă"
+      "message": "Domeniul / adresă nevalid"
    },
    "domaininvalid2": {
       "description": "The domain or address must contain some letters/numbers",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Nu afișați din nou această pagină"
+      "message": "Nu Afișați Din Nou Această Pagină"
    },
    "enable": {
       "description": "Enable:",
@@ -269,7 +269,7 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "activaţi ScriptSafe"
+      "message": "Activaţi ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
@@ -289,11 +289,11 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "Protecție de amprente"
+      "message": "Protecție de Amprente"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Protecție de amprentă digitală (se poate rupe site-uri)"
+      "message": "Protecție de Amprentă Digitală (se poate rupe site-uri)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "hotkeys:"
+      "message": "Hotkeys:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "setari generale"
+      "message": "Setari Generale"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Lista de Toate setările"
+      "message": "Lista de Toate Setările"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -357,11 +357,11 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Setările descărcate!"
+      "message": "Setările Descărcate!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Toate setările de grup"
+      "message": "Toate Setările de Grup"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / Restabilire setări din"
+      "message": "Import / Restabilire Setări Din"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -397,7 +397,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Tastatura reduce Amprentarea (<strong>pentru utilizatorii avansați</strong>):"
+      "message": "Tastatura Reduce Amprentarea (<strong>pentru utilizatorii avansați</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Pagina de deschidere Legătură Comportament:"
+      "message": "Pagina de Deschidere Legătură Comportament:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Mod automat"
+      "message": "Mod Automat"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Filă nouă"
+      "message": "Filă Nouă"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "nu s-a filtrat"
+      "message": "Nu s-a filtrat"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -449,11 +449,11 @@
    },
    "paranoia": {
       "description": "Paranoia Mode:",
-      "message": "Mod paranoiei:"
+      "message": "Mod Paranoiei:"
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
-      "message": "Domeniile de bloc permise pe domenii nelistate"
+      "message": "domeniile de bloc permise pe domenii nelistate"
    },
    "pastesettings": {
       "description": "Paste in settings and try again",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "La fel respect domeniu:"
+      "message": "La Fel Respect Domeniu:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,7 +469,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Setările de confidențialitate"
+      "message": "Setările de Confidențialitate"
    },
    "random": {
       "description": "Random",
@@ -477,7 +477,7 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Afișați butonul Caracterizare:"
+      "message": "Afișați Butonul Caracterizare:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Bloca Referentului Faceți clic-prin:"
+      "message": "Bloca Referentului Faceți Clic-prin:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -497,7 +497,7 @@
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
-      "message": "Spoof adresă URL sursă:"
+      "message": "Spoof Adresă URL Sursă:"
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
@@ -517,19 +517,19 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Revocați pagină Temp. permisiuni"
+      "message": "Revocați Pagină Temp. permisiuni"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Toate Temp revocați."
+      "message": "Toate Temp Revocați."
    },
    "same": {
       "description": "Same Document",
-      "message": "acelaşi document"
+      "message": "Acelaşi document"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "aceeași filă"
+      "message": "Aceeași Filă"
    },
    "save": {
       "description": "Save",
@@ -541,7 +541,7 @@
    },
    "sections": {
       "description": "Sections",
-      "message": "secțiunile"
+      "message": "Secțiunile"
    },
    "settingsall": {
       "description": "select all",
@@ -597,7 +597,7 @@
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
-      "message": "Afișați notificări de import de sincronizare:"
+      "message": "Afișați Notificări de Import de Sincronizare:"
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
@@ -605,7 +605,7 @@
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "Se afișează o notificare de sincronizare:"
+      "message": "Se Afișează o Notificare de Sincronizare:"
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
@@ -617,7 +617,7 @@
    },
    "timezone": {
       "description": "Spoof Timezone:",
-      "message": "Timezone spoof:"
+      "message": "Timezone Spoof:"
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "Domeniul de încredere"
+      "message": "Domeniul de Încredere"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -725,19 +725,19 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "Lista neagra"
+      "message": "Lista Neagra"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "Listă albă"
+      "message": "Listă Albă"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "Inclusă pe lista neagră"
+      "message": "Inclusă pe Lista Neagră"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "În lista albă"
+      "message": "În Lista Albă"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,15 +749,15 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Mutați în lista neagră"
+      "message": "Mutați în Lista Neagră"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Mutați în listă albă"
+      "message": "Mutați în Listă Albă"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Listă albă / Blacklist"
+      "message": "Listă Albă / Blacklist"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
@@ -765,14 +765,14 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Toate solicitările de control"
+      "message": "Toate Solicitările de Control"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Cererile de control pe mai multe domenii (permit același domeniu)"
+      "message": "Cererile de Control Pe Mai Multe Domenii (permit același domeniu)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",
-      "message": "Cereri de control XML HTTP"
+      "message": "Cereri de Control XML HTTP"
    }
 }

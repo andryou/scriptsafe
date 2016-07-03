@@ -5,19 +5,19 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Na svim domenama"
+      "message": "Na Svim Domenama"
    },
    "allow": {
       "description": "Allow",
-      "message": "dopustiti"
+      "message": "Dopustiti"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Dopusti sve blokirane za sjednice"
+      "message": "Dopusti Sve Blokirane Za Sjednice"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blokiranje neželjenih sadržaja:"
+      "message": "Blokiranje Neželjenih Sadržaja:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -33,11 +33,11 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "nedruštven"
+      "message": "Nedruštven"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Antisocijalni nacin rada:"
+      "message": "Antisocijalni Nacin Rada:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blok Identifikacija baterije:"
+      "message": "Blok Identifikacija Baterije:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Blokirati sve dozvoljeno za sjednice"
+      "message": "Blokirati Sve Dozvoljeno Za Sjednice"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,11 +89,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Uvoz na popis"
+      "message": "Uvoz na Popis"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "Bulk uvoz"
+      "message": "Bulk Uvoz"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Zaštita Canvas otiska prsta:"
+      "message": "Zaštita Canvas Otiska Prsta:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -133,7 +133,7 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Klasicna opcije Mode:"
+      "message": "Klasicna Opcije Mode:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blok klijent pravokutnici:"
+      "message": "Blok Klijent Pravokutnici:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Sprijeciti Meduspremnik smetnje:"
+      "message": "Sprijeciti Meduspremnik Smetnje:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -193,7 +193,7 @@
    },
    "disable": {
       "description": "Disable",
-      "message": "onesposobiti"
+      "message": "Onesposobiti"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "onesposobljen"
+      "message": "Onesposobljen"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Onemoguciti i ukloniti:"
+      "message": "Onemoguciti i Ukloniti:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,15 +221,15 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "nepovjerenje domena"
+      "message": "Nepovjerenje Domena"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "isto domena"
+      "message": "Isto Domena"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Poredaj po domeni:"
+      "message": "Poredaj po Domeni:"
    },
    "domaininfo": {
       "description": "Help",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Ne prikazuj ponovo ovu stranicu"
+      "message": "Ne Prikazuj Ponovo Ovu Stranicu"
    },
    "enable": {
       "description": "Enable:",
@@ -293,7 +293,7 @@
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Zaštita otiska prsta (može doci do pucanja stranice)"
+      "message": "Zaštita Otiska Prsta (može doci do pucanja stranice)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -313,7 +313,7 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Opce postavke"
+      "message": "Opce Postavke"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Popis sve postavke"
+      "message": "Popis Sve Postavke"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,11 +361,11 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Svi Postavke grupe"
+      "message": "Svi Postavke Grupe"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Ukloni omogucilo pracenje Hash:"
+      "message": "Ukloni Omogucilo Pracenje Hash:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Uvoz / vracanje postavki"
+      "message": "Uvoz / Vracanje Postavki"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Zadani nacin rada"
+      "message": "Zadani Nacin Rada"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Nova kartica"
+      "message": "Nova Kartica"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "nije filtrirano"
+      "message": "Nije filtrirano"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -441,7 +441,7 @@
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "Samo na Unwhitelisted domena"
+      "message": "Samo na Unwhitelisted Domena"
    },
    "options": {
       "description": "Options",
@@ -469,11 +469,11 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Postavke privatnosti"
+      "message": "Postavke Privatnosti"
    },
    "random": {
       "description": "Random",
-      "message": "slucajan"
+      "message": "Slucajan"
    },
    "rating": {
       "description": "Show Rating Button:",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Blok od klikova preporuka:"
+      "message": "Blok od Klikova Preporuka:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -501,11 +501,11 @@
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Upozorenje</strong>: ako je omogucena, može razbiti neke stranice (npr prijavljivanja)"
+      "message": "<strong>upozorenje</strong>: ako je omogucena, može razbiti neke stranice (npr prijavljivanja)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Automatsko osvježavanje stranice:"
+      "message": "Automatsko Osvježavanje Stranice:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
@@ -517,19 +517,19 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Opoziv stranicu temp. Dozvole"
+      "message": "Opoziv Stranicu Temp. Dozvole"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Opoziv sve temp."
+      "message": "Opoziv Sve Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "isti dokument"
+      "message": "Isti Dokument"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "isto Tab"
+      "message": "Isto Tab"
    },
    "save": {
       "description": "Save",
@@ -537,7 +537,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Spremi kao tekst datoteku"
+      "message": "Spremi kao Tekst Datoteku"
    },
    "sections": {
       "description": "Sections",
@@ -545,7 +545,7 @@
    },
    "settingsall": {
       "description": "select all",
-      "message": "Odaberi sve"
+      "message": "odaberi sve"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -617,7 +617,7 @@
    },
    "timezone": {
       "description": "Spoof Timezone:",
-      "message": "Podvala zona:"
+      "message": "Podvala Zona:"
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "povjerenje domena"
+      "message": "Povjerenje Domena"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -645,7 +645,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Prikaži podmetnuto na Update:"
+      "message": "Prikaži Podmetnuto na Update:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -677,7 +677,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Uklonite Google Analytics (UTM) pracenje:"
+      "message": "Uklonite Google Analytics (UTM) Pracenje:"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -725,19 +725,19 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "staviti na crnu listu"
+      "message": "Staviti na Crnu Listu"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "Popis dopuštenih"
+      "message": "Popis Dopuštenih"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "crnoj listi"
+      "message": "Crnoj Listi"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "Na popisu dopuštenih"
+      "message": "Na Popisu Dopuštenih"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -745,7 +745,7 @@
    },
    "whitelistlow": {
       "description": "whitelist",
-      "message": "Popis dopuštenih"
+      "message": "popis dopuštenih"
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
@@ -753,23 +753,23 @@
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Pomicanje na popis pouzdanih adresa"
+      "message": "Pomicanje na Popis Pouzdanih Adresa"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Popis dopuštenih / Crna lista"
+      "message": "Popis Dopuštenih / Crna Lista"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP zahtjev Rukovanje:"
+      "message": "XML HTTP Zahtjev Rukovanje:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Kontrola Svi zahtjevi"
+      "message": "Kontrola Svi Zahtjevi"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Zahtjevi Kontrola domena (omogucilo istog domena)"
+      "message": "Zahtjevi Kontrola Domena (omogucilo istog domena)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

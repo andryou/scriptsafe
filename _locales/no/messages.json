@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Uønsket innhold Mode:"
+      "message": "Uønsket Innhold Mode:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "blokkert"
+      "message": "Blokkert"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Blokker alle tillatt for denne økten"
+      "message": "Blokker Alle Tillatt For Denne Økten"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,7 +89,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importer til liste"
+      "message": "Importer til Liste"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -109,11 +109,11 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "blank Timer"
+      "message": "Blank Timer"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "tilfeldig Timer"
+      "message": "Tilfeldig Timer"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Block Canvas Font tilgang:"
+      "message": "Block Canvas Font Tilgang:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Client rektangler:"
+      "message": "Block Client Rektangler:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokkere uønskede informasjonskapsler:"
+      "message": "Blokkere Uønskede Informasjonskapsler:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Deaktiver og fjern:"
+      "message": "Deaktiver og Fjern:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,15 +221,15 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "mistillit Domain"
+      "message": "Mistillit Domain"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "samme Domain"
+      "message": "Samme Domain"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Sorter etter domene:"
+      "message": "Sorter etter Domene:"
    },
    "domaininfo": {
       "description": "Help",
@@ -257,19 +257,19 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Ikke vis denne siden igjen"
+      "message": "Ikke Vis Denne Siden Igjen"
    },
    "enable": {
       "description": "Enable:",
-      "message": "aktiver:"
+      "message": "Aktiver:"
    },
    "enabled": {
       "description": "enabled",
-      "message": "aktivert"
+      "message": "Aktivert"
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "aktiver ScriptSafe"
+      "message": "Aktiver ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
@@ -289,7 +289,7 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "fingeravtrykk Protection"
+      "message": "Fingeravtrykk Protection"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "hurtigtaster:"
+      "message": "Hurtigtaster:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Generelle innstillinger"
+      "message": "Generelle Innstillinger"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "List Alle innstillinger"
+      "message": "List Alle Innstillinger"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -357,15 +357,15 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Innstillinger Lastet ned!"
+      "message": "Innstillinger Lastet Ned!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Gruppe Alle innstillinger"
+      "message": "Gruppe Alle Innstillinger"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Fjern eventuell Hash Tracking:"
+      "message": "Fjern Eventuell Hash Tracking:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -373,7 +373,7 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "Gjemme seg"
+      "message": "Gjemme Seg"
    },
    "import": {
       "description": "Import",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / gjenopprette innstillinger"
+      "message": "Import / Gjenopprette Innstillinger"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "standard Mode"
+      "message": "Standard Mode"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Ny fane"
+      "message": "Ny Fane"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "ikke filtrert"
+      "message": "Ikke filtrert"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -441,11 +441,11 @@
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "Bare på Unwhitelisted domener"
+      "message": "Bare på Unwhitelisted Domener"
    },
    "options": {
       "description": "Options",
-      "message": "alternativer"
+      "message": "Alternativer"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -505,7 +505,7 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-Oppdater siden:"
+      "message": "Auto-Oppdater Siden:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
@@ -517,7 +517,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Opphev Page Temp. tillatelser"
+      "message": "Opphev Page Temp. Tillatelser"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -525,11 +525,11 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "samme dokument"
+      "message": "Samme Dokument"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "samme Tab"
+      "message": "Samme Tab"
    },
    "save": {
       "description": "Save",
@@ -537,15 +537,15 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Lagre som tekstfil"
+      "message": "Lagre som Tekstfil"
    },
    "sections": {
       "description": "Sections",
-      "message": "seksjoner"
+      "message": "Seksjoner"
    },
    "settingsall": {
       "description": "select all",
-      "message": "Velg alle"
+      "message": "velg alle"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -725,7 +725,7 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "svarteliste"
+      "message": "Svarteliste"
    },
    "whitelist": {
       "description": "Whitelist",
@@ -737,7 +737,7 @@
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "hvitelistet"
+      "message": "Hvitelistet"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -753,11 +753,11 @@
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Flytt til hviteliste"
+      "message": "Flytt til Hviteliste"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Hviteliste / svarteliste"
+      "message": "Hviteliste / Svarteliste"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
@@ -765,11 +765,11 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Styr Alle forespørsler"
+      "message": "Styr Alle Forespørsler"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Kontroll på tvers av domener (tillate Same-domene)"
+      "message": "Kontroll På Tvers Av Domener (tillate Same-domene)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

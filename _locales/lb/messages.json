@@ -9,15 +9,15 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "erlaabt"
+      "message": "Erlaabt"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Erlaabt All Fir Sessioun blockéierte"
+      "message": "Erlaabt All Fir Sessioun Blockéierte"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Block Onerwënscht zefridde:"
+      "message": "Block Onerwënscht Zefridde:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Onerwënscht zefridde Mode:"
+      "message": "Onerwënscht Zefridde Mode:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -77,15 +77,15 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "blockéiert"
+      "message": "Blockéiert"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Block All PER Sessioun"
+      "message": "Block All Per Sessioun"
    },
    "bulkimport": {
       "description": "bulk import",
-      "message": "Gros z'importéieren"
+      "message": "gros z'importéieren"
    },
    "bulkbtn": {
       "description": "Import to List",
@@ -121,11 +121,11 @@
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
-      "message": "Schutz géint fingerprinting Versich duerch &lt;canvas&gt; Elementer"
+      "message": "schutz géint fingerprinting Versich duerch &lt;canvas&gt; Elementer"
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Block elektresch Font Access:"
+      "message": "Block Elektresch Font Access:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -141,7 +141,7 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "kloer"
+      "message": "Kloer"
    },
    "clearlow": {
       "description": "clear",
@@ -193,11 +193,11 @@
    },
    "disable": {
       "description": "Disable",
-      "message": "desaktivéieren"
+      "message": "Desaktivéieren"
    },
    "disabled": {
       "description": "disabled",
-      "message": "Behënnerten"
+      "message": "behënnerten"
    },
    "disabledcap": {
       "description": "Disabled",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Desaktivéieren an leschen:"
+      "message": "Desaktivéieren an Leschen:"
    },
    "distrust": {
       "description": "Distrust",
@@ -217,7 +217,7 @@
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "Mësstrauen"
+      "message": "mësstrauen"
    },
    "distrustdomain": {
       "description": "Distrust Domain",
@@ -225,7 +225,7 @@
    },
    "domain": {
       "description": "Same Domain",
-      "message": "selwechten Domain"
+      "message": "Selwechten Domain"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -261,7 +261,7 @@
    },
    "enable": {
       "description": "Enable:",
-      "message": "erméiglechen:"
+      "message": "Erméiglechen:"
    },
    "enabled": {
       "description": "enabled",
@@ -269,7 +269,7 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "aktivéiert ScriptSafe"
+      "message": "Aktivéiert ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
@@ -277,7 +277,7 @@
    },
    "export": {
       "description": "Export",
-      "message": "exportéieren"
+      "message": "Exportéieren"
    },
    "exportsuccess": {
       "description": "Your settings have been successfully synced!",
@@ -313,7 +313,7 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "allgemeng Parameteren"
+      "message": "Allgemeng Parameteren"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -357,7 +357,7 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Parameteren erofgeluede!"
+      "message": "Parameteren Erofgeluede!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
@@ -365,7 +365,7 @@
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Ewechhuelen Méiglech mä awer och Tracking:"
+      "message": "Ewechhuelen Méiglech Mä Awer Och Tracking:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -373,7 +373,7 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "verstoppen"
+      "message": "Verstoppen"
    },
    "import": {
       "description": "Import",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "net Filter"
+      "message": "Net filter"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -453,7 +453,7 @@
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
-      "message": "Spär erlaabt Beräicher op unlisted Beräicher"
+      "message": "spär erlaabt Beräicher op unlisted Beräicher"
    },
    "pastesettings": {
       "description": "Paste in settings and try again",
@@ -473,7 +473,7 @@
    },
    "random": {
       "description": "Random",
-      "message": "ënnerschiddleche"
+      "message": "Ënnerschiddleche"
    },
    "rating": {
       "description": "Show Rating Button:",
@@ -501,7 +501,7 @@
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Warnung</strong>: Wann ugeschalt, vläicht e puer Siten Paus (e.g. ofzeschléissen)"
+      "message": "<strong>warnung</strong>: Wann ugeschalt, vläicht e puer Siten Paus (e.g. ofzeschléissen)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
@@ -513,7 +513,7 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "relax"
+      "message": "Relax"
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
@@ -525,15 +525,15 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "selwecht Document"
+      "message": "Selwecht Document"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "selwecht Tab"
+      "message": "Selwecht Tab"
    },
    "save": {
       "description": "Save",
-      "message": "spueren"
+      "message": "Spueren"
    },
    "savetxt": {
       "description": "Save as Text File",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "strikt"
+      "message": "Strikt"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -717,7 +717,7 @@
    },
    "blackbind": {
       "description": "+ Blacklist",
-      "message": "+ relancéiert"
+      "message": "+ Relancéiert"
    },
    "whitebind": {
       "description": "+ Whitelist",
@@ -725,7 +725,7 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "relancéiert ginn"
+      "message": "Relancéiert Ginn"
    },
    "whitelist": {
       "description": "Whitelist",
@@ -757,7 +757,7 @@
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Whitelist / relancéiert"
+      "message": "Whitelist / Relancéiert"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",

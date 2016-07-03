@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "På alla domäner"
+      "message": "På Alla Domäner"
    },
    "allow": {
       "description": "Allow",
@@ -13,11 +13,11 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Tillåt alla Blockerad för Session"
+      "message": "Tillåt Alla Blockerad För Session"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blockera oönskat innehåll:"
+      "message": "Blockera Oönskat Innehåll:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Oönskat innehåll Läge:"
+      "message": "Oönskat Innehåll Läge:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Block Audio fingeravtryck:"
+      "message": "Block Audio Fingeravtryck:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Block batteri fingeravtryck:"
+      "message": "Block Batteri Fingeravtryck:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -89,7 +89,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importera till listan"
+      "message": "Importera till Listan"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -109,11 +109,11 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "blank Readout"
+      "message": "Blank Readout"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "slumpmässig Readout"
+      "message": "Slumpmässig Readout"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
@@ -133,7 +133,7 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Classic funktionen Options:"
+      "message": "Classic Funktionen Options:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Klient rektanglar:"
+      "message": "Block Klient Rektanglar:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blockera oönskade cookies:"
+      "message": "Blockera Oönskade Cookies:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -189,11 +189,11 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Skydda lokala och offentliga IP-adresser"
+      "message": "Skydda Lokala och Offentliga IP-adresser"
    },
    "disable": {
       "description": "Disable",
-      "message": "inaktivera"
+      "message": "Inaktivera"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "funktionshindrade"
+      "message": "Funktionshindrade"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Inaktivera och ta bort:"
+      "message": "Inaktivera och Ta Bort:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,11 +221,11 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "misstro domän"
+      "message": "Misstro Domän"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "samma domän"
+      "message": "Samma Domän"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Visa inte den här sidan igen"
+      "message": "Visa Inte Den Här Sidan Igen"
    },
    "enable": {
       "description": "Enable:",
@@ -269,11 +269,11 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "aktivera ScriptSafe"
+      "message": "Aktivera ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Aktivera synkronisering:"
+      "message": "Aktivera Synkronisering:"
    },
    "export": {
       "description": "Export",
@@ -309,7 +309,7 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "snabbtangenter:"
+      "message": "Snabbtangenter:"
    },
    "generalsettings": {
       "description": "General Settings",
@@ -325,7 +325,7 @@
    },
    "availablehotkeys": {
       "description": "Available hotkey actions",
-      "message": "Tillgängliga hotkey åtgärder"
+      "message": "Tillgängliga Hotkey Åtgärder"
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Visa alla inställningar"
+      "message": "Visa Alla Inställningar"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,7 +361,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Grupp Alla inställningar"
+      "message": "Grupp Alla Inställningar"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / Återställ inställningar"
+      "message": "Import / Återställ Inställningar"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "filtreras inte"
+      "message": "Filtreras inte"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -445,7 +445,7 @@
    },
    "options": {
       "description": "Options",
-      "message": "alternativ"
+      "message": "Alternativ"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Respektera med samma domän:"
+      "message": "Respektera med Samma Domän:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Blockera klickHänvisnings:"
+      "message": "Blockera KlickHänvisnings:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -497,7 +497,7 @@
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
-      "message": "Hänvisningsadress parodi:"
+      "message": "Hänvisningsadress Parodi:"
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
@@ -521,15 +521,15 @@
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Återkalla alla Temp."
+      "message": "Återkalla Alla Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "samma Document"
+      "message": "Samma Document"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "samma Tab"
+      "message": "Samma Tab"
    },
    "save": {
       "description": "Save",
@@ -537,15 +537,15 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Spara som textfil"
+      "message": "Spara som Textfil"
    },
    "sections": {
       "description": "Sections",
-      "message": "sektioner"
+      "message": "Sektioner"
    },
    "settingsall": {
       "description": "select all",
-      "message": "Välj alla"
+      "message": "välj alla"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -717,7 +717,7 @@
    },
    "blackbind": {
       "description": "+ Blacklist",
-      "message": "+ svartlista"
+      "message": "+ Svartlista"
    },
    "whitebind": {
       "description": "+ Whitelist",
@@ -729,15 +729,15 @@
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "vitlista"
+      "message": "Vitlista"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "svartlistad"
+      "message": "Svartlistad"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "vitlistad"
+      "message": "Vitlistad"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,11 +749,11 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Flytta till svartlista"
+      "message": "Flytta till Svartlista"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Flytta till vitlista"
+      "message": "Flytta till Vitlista"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",

@@ -5,19 +5,19 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "A Minden tartomány"
+      "message": "A Minden Tartomány"
    },
    "allow": {
       "description": "Allow",
-      "message": "Lehetové teszi"
+      "message": "Lehetové Teszi"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Lehetové teszi az összes zárolt Session"
+      "message": "Lehetové Teszi Az Összes Zárolt Session"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blokkolja a kéretlen tartalom:"
+      "message": "Blokkolja a Kéretlen Tartalom:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Nem kívánt tartalom mód:"
+      "message": "Nem Kívánt Tartalom Mód:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -37,11 +37,11 @@
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Antiszociális mód:"
+      "message": "Antiszociális Mód:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
-      "message": "Mindig távolítsa el a szociális widgets / gombokat, még akkor is, ha szerepel"
+      "message": "mindig távolítsa el a szociális widgets / gombokat, még akkor is, ha szerepel"
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Blokk audio ujjlenyomat:"
+      "message": "Blokk Audio Ujjlenyomat:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blokk Akkumulátor ujjlenyomat:"
+      "message": "Blokk Akkumulátor Ujjlenyomat:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "viselkedés beállításai"
+      "message": "Viselkedés Beállításai"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -73,7 +73,7 @@
    },
    "block": {
       "description": "Block",
-      "message": "tömb"
+      "message": "Tömb"
    },
    "blocked": {
       "description": "Blocked",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Blokkolja az összes engedélyezett Session"
+      "message": "Blokkolja Az Összes Engedélyezett Session"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,7 +89,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importálja kattintva"
+      "message": "Importálja Kattintva"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Vászon ujjlenyomat védelem:"
+      "message": "Vászon Ujjlenyomat Védelem:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "üres Üzemóra"
+      "message": "Üres Üzemóra"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "véletlen Üzemóra"
+      "message": "Véletlen Üzemóra"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Teljesen blokk Üzemóra"
+      "message": "Teljesen Blokk Üzemóra"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Blokk Canvas betutípus Access:"
+      "message": "Blokk Canvas Betutípus Access:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -133,11 +133,11 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Klasszikus Options mód:"
+      "message": "Klasszikus Options Mód:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "Ha be van jelölve, bezárja lap beállításai minden alkalommal lehetoséget kattintanak"
+      "message": "ha be van jelölve, bezárja lap beállításai minden alkalommal lehetoséget kattintanak"
    },
    "clear": {
       "description": "Clear",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blokk Client téglalapok:"
+      "message": "Blokk Client Téglalapok:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Akadályozza vágólap interferencia:"
+      "message": "Akadályozza Vágólap Interferencia:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokkolja a kéretlen sütik:"
+      "message": "Blokkolja a Kéretlen Sütik:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -197,7 +197,7 @@
    },
    "disabled": {
       "description": "disabled",
-      "message": "Tiltva"
+      "message": "tiltva"
    },
    "disabledcap": {
       "description": "Disabled",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Letiltása és eltávolítása:"
+      "message": "Letiltása és Eltávolítása:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,7 +221,7 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "bizalmatlanság Domain"
+      "message": "Bizalmatlanság Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Ne mutassa újra ezt az oldalt"
+      "message": "Ne Mutassa Újra Ezt Az Oldalt"
    },
    "enable": {
       "description": "Enable:",
@@ -269,11 +269,11 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "engedélyezze ScriptSafe"
+      "message": "Engedélyezze ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Szinkronizálásának engedélyezése:"
+      "message": "Szinkronizálásának Engedélyezése:"
    },
    "export": {
       "description": "Export",
@@ -285,15 +285,15 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Beállítások szinkronizált!"
+      "message": "Beállítások Szinkronizált!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "ujjlenyomat védelem"
+      "message": "Ujjlenyomat Védelem"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Ujjlenyomat védelem (eltörhet oldalak)"
+      "message": "Ujjlenyomat Védelem (eltörhet oldalak)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "gyorsbillentyuk:"
+      "message": "Gyorsbillentyuk:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Általános beállítások"
+      "message": "Általános Beállítások"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -345,7 +345,7 @@
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
-      "message": "kattintson gyorsbillentyuk"
+      "message": "kattintson yorsbillentyuk"
    },
    "listallsettings": {
       "description": "List All Settings",
@@ -357,7 +357,7 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Letöltött beállításokat!"
+      "message": "Letöltött Beállításokat!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
@@ -377,11 +377,11 @@
    },
    "import": {
       "description": "Import",
-      "message": "import"
+      "message": "Import"
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / Beállítások visszaállítása"
+      "message": "Import / Beállítások Visszaállítása"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Oldalhivatkozás megnyitása Viselkedés:"
+      "message": "Oldalhivatkozás Megnyitása Viselkedés:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Alapértelmezett mód"
+      "message": "Alapértelmezett Mód"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Új lap"
+      "message": "Új Lap"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "nem szurt"
+      "message": "Nem szurt"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -449,7 +449,7 @@
    },
    "paranoia": {
       "description": "Paranoia Mode:",
-      "message": "Paranoia mód:"
+      "message": "Paranoia Mód:"
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
@@ -469,7 +469,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Adatvédelmi beállítások"
+      "message": "Adatvédelmi Beállítások"
    },
    "random": {
       "description": "Random",
@@ -477,11 +477,11 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Itt található az értékelés gombot:"
+      "message": "Itt Található Az Értékelés Gombot:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
-      "message": "Ha be van jelölve, hozzáfuzi értékelése gombra tartományok lapon felugró"
+      "message": "ha be van jelölve, hozzáfuzi értékelése gombra tartományok lapon felugró"
    },
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Blokkolja Click-Through hivatkozó:"
+      "message": "Blokkolja Click-Through Hivatkozó:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -517,15 +517,15 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Visszavonja oldal Temp. Engedélyek"
+      "message": "Visszavonja Oldal Temp. Engedélyek"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Visszavonja összes Temp."
+      "message": "Visszavonja Összes Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "Azonos dokumentum"
+      "message": "Azonos Dokumentum"
    },
    "sametab": {
       "description": "Same Tab",
@@ -537,7 +537,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Mentés szövegként fájl"
+      "message": "Mentés Szövegként Fájl"
    },
    "sections": {
       "description": "Sections",
@@ -597,7 +597,7 @@
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
-      "message": "Show Import szinkronizálás értesítés:"
+      "message": "Show Import Szinkronizálás Értesítés:"
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
@@ -605,7 +605,7 @@
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "Itt található Szinkronizálás Notification:"
+      "message": "Itt Található Szinkronizálás Notification:"
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
@@ -693,7 +693,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Blokk WebGL ujjlenyomat:"
+      "message": "Blokk WebGL Ujjlenyomat:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
@@ -701,7 +701,7 @@
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Blokk Eszköz számlálás:"
+      "message": "Blokk Eszköz Számlálás:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
@@ -709,7 +709,7 @@
    },
    "webrtc": {
       "description": "WebRTC Protection:",
-      "message": "WebRTC védelem:"
+      "message": "WebRTC Védelem:"
    },
    "webrtcdesc": {
       "description": "prevent IP address leakage",
@@ -737,7 +737,7 @@
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "engedélyezolistán"
+      "message": "Engedélyezolistán"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,7 +749,7 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Mozgás a tiltólistára"
+      "message": "Mozgás a Tiltólistára"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
@@ -761,18 +761,18 @@
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP kérés Kezelés:"
+      "message": "XML HTTP Kérés Kezelés:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Irányítsd Összes kérés"
+      "message": "Irányítsd Összes Kérés"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Ellenorzo domainek közötti kérések (lehetové Azonos Domain)"
+      "message": "ElleNorzo Domainek Közötti Kérések (lehetové Azonos Domain)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",
-      "message": "vezérlés XML HTTP kérések"
+      "message": "Vezérlés XML HTTP Kérések"
    }
 }

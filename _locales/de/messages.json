@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Auf allen Domains"
+      "message": "Auf Allen Domains"
    },
    "allow": {
       "description": "Allow",
@@ -13,11 +13,11 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Allow All For Sitzung gesperrt"
+      "message": "Allow All For Sitzung Gesperrt"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blockieren unerwünschter Inhalt:"
+      "message": "Blockieren Unerwünschter Inhalt:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -33,7 +33,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "asozial"
+      "message": "Asozial"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -81,11 +81,11 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Alle blockieren erlaubt Für Session"
+      "message": "Alle Blockieren Erlaubt Für Session"
    },
    "bulkimport": {
       "description": "bulk import",
-      "message": "Bulk-Import"
+      "message": "bulk import"
    },
    "bulkbtn": {
       "description": "Import to List",
@@ -369,7 +369,7 @@
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
-      "message": "Entfernen möglich Nachverfolgungstoken mit Hash übergeben, wo es ist ein Attribut und Wert (z #xtor=RSS-1)"
+      "message": "entfernen möglich Nachverfolgungstoken mit Hash übergeben, wo es ist ein Attribut und Wert (z #xtor=RSS-1)"
    },
    "hide": {
       "description": "Hide",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / Einstellungen wiederherstellen"
+      "message": "Import / Einstellungen Wiederherstellen"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -453,7 +453,7 @@
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
-      "message": "Block erlaubt Domänen auf nicht börsennotierte Domains"
+      "message": "block erlaubt Domänen auf nicht börsennotierte Domains"
    },
    "pastesettings": {
       "description": "Paste in settings and try again",
@@ -493,7 +493,7 @@
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
-      "message": "Blöcke Referrer Informationen, wenn auf fremden Links klicken (Anmerkung: Um diese Einstellung auf alle Domänen können Probleme verursachen (z Thumbnails in Tweetdeck))"
+      "message": "blöcke Referrer Informationen, wenn auf fremden Links klicken (Anmerkung: Um diese Einstellung auf alle Domänen können Probleme verursachen (z Thumbnails in Tweetdeck))"
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
@@ -501,7 +501,7 @@
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Warnung</strong>: Wenn aktiviert, können einige Seiten (z Anmeldung)"
+      "message": "<strong>warnung</strong>: Wenn aktiviert, können einige Seiten (z Anmeldung)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
@@ -509,7 +509,7 @@
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
-      "message": "Auto-Refresh-Seite nach Liste ändern"
+      "message": "auto-refresh-seite nach liste ändern"
    },
    "relaxed": {
       "description": "Relaxed",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "streng"
+      "message": "Streng"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -629,7 +629,7 @@
    },
    "trustlow": {
       "description": "trust",
-      "message": "Vertrauen"
+      "message": "vertrauen"
    },
    "trustdomain": {
       "description": "Trust Domain",
@@ -681,7 +681,7 @@
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
-      "message": "entfernen Google Analytics (UTM) Nachverfolgungstoken"
+      "message": "Entfernen Google Analytics (UTM) Nachverfolgungstoken"
    },
    "webbugs": {
       "description": "Remove Webbugs:",
@@ -733,7 +733,7 @@
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "die schwarze Liste gesetzt"
+      "message": "Die Schwarze Liste Gesetzt"
    },
    "whitelisted": {
       "description": "Whitelisted",
@@ -741,11 +741,11 @@
    },
    "blacklistlow": {
       "description": "blacklist",
-      "message": "schwarze Liste"
+      "message": "schwarze liste"
    },
    "whitelistlow": {
       "description": "whitelist",
-      "message": "Weiße Liste"
+      "message": "weiße liste"
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
@@ -765,7 +765,7 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Steuern Sie alle Anfragen"
+      "message": "Steuern Sie Alle Anfragen"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
@@ -773,6 +773,6 @@
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",
-      "message": "Steuer XML HTTP-Requests"
+      "message": "steuer XML HTTP-Requests"
    }
 }

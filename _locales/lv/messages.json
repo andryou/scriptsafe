@@ -5,11 +5,11 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Uz visiem domeniem"
+      "message": "Uz Visiem Domeniem"
    },
    "allow": {
       "description": "Allow",
-      "message": "laut"
+      "message": "Laut"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
@@ -17,7 +17,7 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Bloket nevelamu saturu:"
+      "message": "Bloket Nevelamu Saturu:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -33,7 +33,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "antisocials"
+      "message": "Antisocials"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Block Audio Pirkstu nospiedumu:"
+      "message": "Block Audio Pirkstu Nospiedumu:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Block Battery Pirkstu nospiedumu:"
+      "message": "Block Battery Pirkstu Nospiedumu:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "uzvediba iestatijumi"
+      "message": "Uzvediba Iestatijumi"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "blokets"
+      "message": "Blokets"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Bloket visas lava sesija"
+      "message": "Bloket Visas Lava Sesija"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Gleznas Fingerprint aizsardziba:"
+      "message": "Gleznas Fingerprint Aizsardziba:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "blank stundu skaits"
+      "message": "Blank Stundu Skaits"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "Random stundu skaits"
+      "message": "Random Stundu Skaits"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Pilnigi Block stundu skaits"
+      "message": "Pilnigi Block Stundu Skaits"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -141,7 +141,7 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "skaidrs"
+      "message": "Skaidrs"
    },
    "clearlow": {
       "description": "clear",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Klientu taisnsturos:"
+      "message": "Block Klientu Taisnsturos:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Noverst starpliktuves radiuss:"
+      "message": "Noverst Starpliktuves Radiuss:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -165,11 +165,11 @@
    },
    "close": {
       "description": "Close",
-      "message": "aizvert"
+      "message": "Aizvert"
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Bloket nevelamu Cookies:"
+      "message": "Bloket Nevelamu Cookies:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -177,7 +177,7 @@
    },
    "custom": {
       "description": "Custom",
-      "message": "paraža"
+      "message": "Paraža"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
@@ -185,15 +185,15 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "noliegt"
+      "message": "Noliegt"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Aizsargat vietejas un valsts IP"
+      "message": "Aizsargat Vietejas un Valsts IP"
    },
    "disable": {
       "description": "Disable",
-      "message": "atslegt"
+      "message": "Atslegt"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "invalidiem"
+      "message": "Invalidiem"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -213,7 +213,7 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "turet aizdomas"
+      "message": "Turet Aizdomas"
    },
    "distrustlow": {
       "description": "distrust",
@@ -221,7 +221,7 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "neuzticiba Domain"
+      "message": "Neuzticiba Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -229,11 +229,11 @@
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Kartot pec domena:"
+      "message": "Kartot pec Domena:"
    },
    "domaininfo": {
       "description": "Help",
-      "message": "palidzet"
+      "message": "Palidzet"
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Neradit šo lapu velreiz"
+      "message": "Neradit Šo Lapu Velreiz"
    },
    "enable": {
       "description": "Enable:",
@@ -277,7 +277,7 @@
    },
    "export": {
       "description": "Export",
-      "message": "eksports"
+      "message": "Eksports"
    },
    "exportsuccess": {
       "description": "Your settings have been successfully synced!",
@@ -289,11 +289,11 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "Fingerprint aizsardziba"
+      "message": "Fingerprint Aizsardziba"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Fingerprint aizsardziba (var saplist vietnes)"
+      "message": "Fingerprint Aizsardziba (var saplist vietnes)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "taustini:"
+      "message": "Taustini:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Visparigie iestatijumi"
+      "message": "Visparigie Iestatijumi"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Uzskaitiet visus iestatijumus"
+      "message": "Uzskaitiet Visus Iestatijumus"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -357,15 +357,15 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Settings lejupieladet!"
+      "message": "Settings Lejupieladet!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Grupa Visi iestatijumi"
+      "message": "Grupa Visi Iestatijumi"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Noverstu iespejamas Hash sekošanas:"
+      "message": "Noverstu Iespejamas Hash Sekošanas:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -373,11 +373,11 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "slept"
+      "message": "Slept"
    },
    "import": {
       "description": "Import",
-      "message": "imports"
+      "message": "Imports"
    },
    "importexport": {
       "description": "Import / Restore Settings",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Page Link atklašana Behaviour:"
+      "message": "Page Link Atklašana Behaviour:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -421,7 +421,7 @@
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Jauna cilne"
+      "message": "Jauna Cilne"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "nav filtrets"
+      "message": "Nav filtrets"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -445,7 +445,7 @@
    },
    "options": {
       "description": "Options",
-      "message": "opcijas"
+      "message": "Opcijas"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Respect viena domenu:"
+      "message": "Respect Viena Domenu:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,15 +469,15 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Privatuma iestatijumi"
+      "message": "Privatuma Iestatijumi"
    },
    "random": {
       "description": "Random",
-      "message": "nejaušs"
+      "message": "Nejaušs"
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Radit Reitings poga:"
+      "message": "Radit Reitings Poga:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Bloket Click-Through novirzitajs:"
+      "message": "Bloket Click-Through Novirzitajs:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -497,11 +497,11 @@
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
-      "message": "Referrer šmaukšana:"
+      "message": "Referrer Šmaukšana:"
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Bridinajums</strong>: ja iespejota, var saplist dažas vietnes (piemeram, piesakoties)"
+      "message": "<strong>bridinajums</strong>: ja iespejota, var saplist dažas vietnes (piemeram, piesakoties)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
@@ -513,11 +513,11 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "atviegloti"
+      "message": "Atviegloti"
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Atsaukt lapu Temp. atlaujas"
+      "message": "Atsaukt Lapu Temp. Atlaujas"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -537,11 +537,11 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Saglabat ka teksta failu"
+      "message": "Saglabat ka Teksta Failu"
    },
    "sections": {
       "description": "Sections",
-      "message": "sekcijas"
+      "message": "Sekcijas"
    },
    "settingsall": {
       "description": "select all",
@@ -553,7 +553,7 @@
    },
    "settingssave": {
       "description": "Settings saved",
-      "message": "saglabati iestatijumi"
+      "message": "Saglabati iestatijumi"
    },
    "settingssavesync": {
       "description": "Settings saved and syncing in 30 seconds",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "stingrs"
+      "message": "Stingrs"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -625,7 +625,7 @@
    },
    "trust": {
       "description": "Trust",
-      "message": "uzticiba"
+      "message": "Uzticiba"
    },
    "trustlow": {
       "description": "trust",
@@ -657,7 +657,7 @@
    },
    "url": {
       "description": "Domain",
-      "message": "domens"
+      "message": "Domens"
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
@@ -665,7 +665,7 @@
    },
    "useragentspoof": {
       "description": "User-Agent Spoof:",
-      "message": "User-Agent šmaukšana:"
+      "message": "User-Agent Šmaukšana:"
    },
    "useragentspoofdesc": {
       "description": "spoofs your user-agent (browser and OS)",
@@ -677,7 +677,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Nonemt Google Analytics (UTM) sekošanas:"
+      "message": "Nonemt Google Analytics (UTM) Sekošanas:"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -693,7 +693,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Block WebGL Pirkstu nospiedumu:"
+      "message": "Block WebGL Pirkstu Nospiedumu:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
@@ -709,7 +709,7 @@
    },
    "webrtc": {
       "description": "WebRTC Protection:",
-      "message": "WebRTC aizsardziba:"
+      "message": "WebRTC Aizsardziba:"
    },
    "webrtcdesc": {
       "description": "prevent IP address leakage",
@@ -717,27 +717,27 @@
    },
    "blackbind": {
       "description": "+ Blacklist",
-      "message": "+ melnais saraksts"
+      "message": "+ Melnais Saraksts"
    },
    "whitebind": {
       "description": "+ Whitelist",
-      "message": "+ baltais saraksts"
+      "message": "+ Baltais Saraksts"
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "ierakstit melnaja saraksta"
+      "message": "Ierakstit Melnaja Saraksta"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "baltais saraksts"
+      "message": "Baltais Saraksts"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "melnaja saraksta"
+      "message": "Melnaja Saraksta"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "baltaja saraksta"
+      "message": "Baltaja Saraksta"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,27 +749,27 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Parvietot melnajam sarakstam"
+      "message": "Parvietot Melnajam Sarakstam"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Parvietot uz baltajam sarakstam"
+      "message": "Parvietot uz Baltajam Sarakstam"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Baltais saraksts / melnais saraksts"
+      "message": "Baltais Saraksts / Melnais Saraksts"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP pieprasijums Lietošana:"
+      "message": "XML HTTP Pieprasijums Lietošana:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Kontrolet visus pieprasijumus"
+      "message": "Kontrolet Visus Pieprasijumus"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Control starpdomenu pieprasijumus (atlaut viendzimuma Domain)"
+      "message": "Control Starpdomenu Pieprasijumus (atlaut viendzimuma Domain)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

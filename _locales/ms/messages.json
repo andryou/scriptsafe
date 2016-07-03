@@ -17,7 +17,7 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Menghalang kandungan yang tidak dikehendaki:"
+      "message": "Menghalang Kandungan Yang Tidak Dikehendaki:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Yang tidak diingini Mod Kandungan:"
+      "message": "Yang Tidak Diingini Mod Kandungan:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -33,11 +33,11 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "antisosial"
+      "message": "Antisosial"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Mod antisosial:"
+      "message": "Mod Antisosial:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "disekat"
+      "message": "Disekat"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Sekat semua Dibenarkan Untuk Sesi"
+      "message": "Sekat Semua Dibenarkan Untuk Sesi"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Canvas Perlindungan cap jari:"
+      "message": "Canvas Perlindungan Cap Jari:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "bacaan blank"
+      "message": "Bacaan Blank"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "bacaan rawak"
+      "message": "Bacaan Rawak"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Sepenuhnya Sekat bacaan"
+      "message": "Sepenuhnya Sekat Bacaan"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Pelanggan Segiempat tepat:"
+      "message": "Block Pelanggan Segiempat Tepat:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Mencegah klipbod Gangguan:"
+      "message": "Mencegah Klipbod Gangguan:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Menyekat Kuki yang tidak dikehendaki:"
+      "message": "Menyekat Kuki Yang Tidak Dikehendaki:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Melindungi IP tempatan dan Public"
+      "message": "Melindungi IP Tempatan dan Public"
    },
    "disable": {
       "description": "Disable",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "Orang kurang Upaya"
+      "message": "Orang Kurang Upaya"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -213,7 +213,7 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "kesangsian"
+      "message": "Kesangsian"
    },
    "distrustlow": {
       "description": "distrust",
@@ -221,7 +221,7 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "kesangsian Domain"
+      "message": "Kesangsian Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -237,7 +237,7 @@
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
-      "message": "domain tidak sah / alamat"
+      "message": "Domain / alamat tidak sah"
    },
    "domaininvalid2": {
       "description": "The domain or address must contain some letters/numbers",
@@ -257,11 +257,11 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Jangan Tunjukkan halaman ini Again"
+      "message": "Jangan Tunjukkan Halaman Ini Again"
    },
    "enable": {
       "description": "Enable:",
-      "message": "membolehkan:"
+      "message": "Membolehkan:"
    },
    "enabled": {
       "description": "enabled",
@@ -269,7 +269,7 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "membolehkan ScriptSafe"
+      "message": "Membolehkan ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
@@ -289,11 +289,11 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "Perlindungan cap jari"
+      "message": "Perlindungan Cap Jari"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Perlindungan cap jari (boleh memecah tapak)"
+      "message": "Perlindungan Cap Jari (boleh memecah tapak)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "hotkeys:"
+      "message": "Hotkeys:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Tetapan umum"
+      "message": "Tetapan Umum"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -357,7 +357,7 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Tetapan turun!"
+      "message": "Tetapan Turun!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
@@ -365,7 +365,7 @@
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Buang Tracking Hash mungkin:"
+      "message": "Buang Tracking Hash Mungkin:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -377,7 +377,7 @@
    },
    "import": {
       "description": "Import",
-      "message": "import"
+      "message": "Import"
    },
    "importexport": {
       "description": "Import / Restore Settings",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Mod lalai"
+      "message": "Mod Lalai"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Tab baru"
+      "message": "Tab Baru"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "tidak ditapis"
+      "message": "Tidak ditapis"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -445,7 +445,7 @@
    },
    "options": {
       "description": "Options",
-      "message": "pilihan"
+      "message": "Pilihan"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -469,7 +469,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Tetapan privasi"
+      "message": "Tetapan Privasi"
    },
    "random": {
       "description": "Random",
@@ -517,7 +517,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Membatalkan Page Temp. kebenaran"
+      "message": "Membatalkan Page Temp. Kebenaran"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -525,11 +525,11 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "Dokumen yang sama"
+      "message": "Dokumen Yang Sama"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "Tab sama"
+      "message": "Tab Sama"
    },
    "save": {
       "description": "Save",
@@ -541,7 +541,7 @@
    },
    "sections": {
       "description": "Sections",
-      "message": "seksyen"
+      "message": "Seksyen"
    },
    "settingsall": {
       "description": "select all",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "ketat"
+      "message": "Ketat"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -629,7 +629,7 @@
    },
    "trustlow": {
       "description": "trust",
-      "message": "amanah"
+      "message": "Amanah"
    },
    "trustdomain": {
       "description": "Trust Domain",
@@ -649,7 +649,7 @@
    },
    "unwanted": {
       "description": "Unwanted",
-      "message": "Yang tidak diingini"
+      "message": "Yang Tidak Diingini"
    },
    "updatenotifydesc": {
       "description": "show changelog page when ScriptSafe is updated",
@@ -657,7 +657,7 @@
    },
    "url": {
       "description": "Domain",
-      "message": "domain"
+      "message": "Domain"
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
@@ -725,7 +725,7 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "Senarai hitam"
+      "message": "Senarai Hitam"
    },
    "whitelist": {
       "description": "Whitelist",
@@ -733,11 +733,11 @@
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "disenaraihitamkan"
+      "message": "Disenaraihitamkan"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "disenarai putih"
+      "message": "Disenarai Putih"
    },
    "blacklistlow": {
       "description": "blacklist",

@@ -13,11 +13,11 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Leyfa öllum útilokaður þinginu"
+      "message": "Leyfa Öllum Útilokaður Þinginu"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Block óæskileg efni:"
+      "message": "Block Óæskileg Efni:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Óæskileg efni Mode:"
+      "message": "Óæskileg Efni Mode:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -33,7 +33,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "andfélagsleg"
+      "message": "Andfélagsleg"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Loka öllum leyfð þinginu"
+      "message": "Loka Öllum Leyfð Þinginu"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "Blank lesa"
+      "message": "Blank Lesa"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "Random lesa"
+      "message": "Random Lesa"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Alveg Block lesa"
+      "message": "Alveg Block Lesa"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Lokað Viðskiptavinur rétthyrningar:"
+      "message": "Lokað Viðskiptavinur Rétthyrningar:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Koma í veg fyrir Klemmuspjald truflunum:"
+      "message": "Koma í veg fyrir Klemmuspjald Truflunum:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Loka óæskilegum Cookies:"
+      "message": "Loka Óæskilegum Cookies:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -185,7 +185,7 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "neita"
+      "message": "Neita"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
@@ -209,11 +209,11 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Slökkva og fjarlægja:"
+      "message": "Slökkva og Fjarlægja:"
    },
    "distrust": {
       "description": "Distrust",
-      "message": "vantraust"
+      "message": "Vantraust"
    },
    "distrustlow": {
       "description": "distrust",
@@ -221,11 +221,11 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "vantraust Domain"
+      "message": "Vantraust Domain"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "sama Domain"
+      "message": "Sama Domain"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Ekki birta þessa síðu aftur"
+      "message": "Ekki Birta Þessa Síðu Aftur"
    },
    "enable": {
       "description": "Enable:",
@@ -277,7 +277,7 @@
    },
    "export": {
       "description": "Export",
-      "message": "útflutningur"
+      "message": "Útflutningur"
    },
    "exportsuccess": {
       "description": "Your settings have been successfully synced!",
@@ -289,7 +289,7 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "fingrafar Verndun"
+      "message": "Fingrafar Verndun"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "hotkeys:"
+      "message": "Hotkeys:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Almennar stillingar"
+      "message": "Almennar Stillingar"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Listi allar stillingar"
+      "message": "Listi Allar Stillingar"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -365,7 +365,7 @@
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Fjarlægja Möguleg Hash mælingar:"
+      "message": "Fjarlægja Möguleg Hash Mælingar:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -373,11 +373,11 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "fela"
+      "message": "Fela"
    },
    "import": {
       "description": "Import",
-      "message": "innflutningur"
+      "message": Innflutningur"
    },
    "importexport": {
       "description": "Import / Restore Settings",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "ekki síað"
+      "message": "Ekki síað"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -441,7 +441,7 @@
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "Aðeins á Unwhitelisted lén"
+      "message": "Aðeins á Unwhitelisted Lén"
    },
    "options": {
       "description": "Options",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Virðing sama Domain:"
+      "message": "Virðing Sama Domain:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Loka smella með Referrer:"
+      "message": "Loka Smella Með Referrer:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -505,11 +505,11 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-Uppfæra síðu:"
+      "message": "Auto-Uppfæra Síðu:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
-      "message": "Sjálfvirk endurnýjun síðu eftir listi breytingu"
+      "message": "sjálfvirk endurnýjun síðu eftir listi breytingu"
    },
    "relaxed": {
       "description": "Relaxed",
@@ -517,7 +517,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Afturkalla Page Temp. heimildir"
+      "message": "Afturkalla Page Temp. Heimildir"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -525,11 +525,11 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "sama skjali"
+      "message": "Sama skjali"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "sama Tab"
+      "message": "Sama Tab"
    },
    "save": {
       "description": "Save",
@@ -537,7 +537,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Vista sem textaskrá"
+      "message": "Vista sem Textaskrá"
    },
    "sections": {
       "description": "Sections",
@@ -553,7 +553,7 @@
    },
    "settingssave": {
       "description": "Settings saved",
-      "message": "stillingarnar vistaðar"
+      "message": "Stillingarnar vistaðar"
    },
    "settingssavesync": {
       "description": "Settings saved and syncing in 30 seconds",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "strangar"
+      "message": "Strangar"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -645,7 +645,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Sýnið changelog á Update:"
+      "message": "Sýnið Changelog á Update:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -701,7 +701,7 @@
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Block tækjatalningu:"
+      "message": "Block Tækjatalningu:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
@@ -725,19 +725,19 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "Svartur listi"
+      "message": "Svartur Listi"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "hvítlista"
+      "message": "Hvítlista"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "svartur listi"
+      "message": "Svartur Listi"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "undanþágulista"
+      "message": "Undanþágulista"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,15 +749,15 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Færa til svartan lista"
+      "message": "Færa til Svartan Lista"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Færa til gestalista"
+      "message": "Færa til Gestalista"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Hvítlista / Svartur listi"
+      "message": "Hvítlista / Svartur Listi"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
@@ -765,7 +765,7 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Stjórna allar beiðnir"
+      "message": "Stjórna Allar Beiðnir"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",

@@ -17,7 +17,7 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Bloker uønsket indhold:"
+      "message": "Bloker Uønsket Indhold:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Uønsket indhold Mode:"
+      "message": "Uønsket Indhold Mode:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -33,7 +33,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "asocial"
+      "message": "Asocial"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Blokere alle Tilladt For Session"
+      "message": "Blokere Alle Tilladt For Session"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,7 +89,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importer til liste"
+      "message": "Importer til Liste"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Bloker uønskede cookies:"
+      "message": "Bloker Uønskede Cookies:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Beskyt Lokale og offentlige IP'er"
+      "message": "Beskyt Lokale og Offentlige IP'er"
    },
    "disable": {
       "description": "Disable",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Deaktiver og fjern:"
+      "message": "Deaktiver og Fjern:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,11 +221,11 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "mistilliden domæne"
+      "message": "Mistilliden Domæne"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "samme domæne"
+      "message": "Samme Domæne"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Vis ikke denne side igen"
+      "message": "Vis Ikke Denne Side Igen"
    },
    "enable": {
       "description": "Enable:",
@@ -273,7 +273,7 @@
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Aktiver synkronisering:"
+      "message": "Aktiver Synkronisering:"
    },
    "export": {
       "description": "Export",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "genvejstaster:"
+      "message": "Genvejstaster:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Generelle indstillinger"
+      "message": "Generelle Indstillinger"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Liste Alle indstillinger"
+      "message": "Liste Alle Indstillinger"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,7 +361,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Gruppe Alle indstillinger"
+      "message": "Gruppe Alle Indstillinger"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -421,7 +421,7 @@
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Ny fane"
+      "message": "Ny Fane"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "Ikke filtreret"
+      "message": "Ikke Filtreret"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -477,7 +477,7 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Vis Rating knap:"
+      "message": "Vis Rating Knap:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
@@ -505,7 +505,7 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-Opdater side:"
+      "message": "Auto-Opdater Side:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
@@ -513,7 +513,7 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "afslappet"
+      "message": "Afslappet"
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
@@ -525,11 +525,11 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "samme dokument"
+      "message": "Samme Dokument"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "samme Tab"
+      "message": "Samme Tab"
    },
    "save": {
       "description": "Save",
@@ -537,7 +537,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Gem som tekstfil"
+      "message": "Gem som Tekstfil"
    },
    "sections": {
       "description": "Sections",
@@ -545,7 +545,7 @@
    },
    "settingsall": {
       "description": "select all",
-      "message": "Vælg alle"
+      "message": "vælg alle"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -729,15 +729,15 @@
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "whitelist"
+      "message": "Whitelist"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "sortlistet"
+      "message": "Sortlistet"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "hvidlistet"
+      "message": "Hvidlistet"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,7 +749,7 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Flyt til blackliste"
+      "message": "Flyt til Blackliste"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
@@ -765,7 +765,7 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Styr alle anmodninger"
+      "message": "Styr Alle Anmodninger"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",

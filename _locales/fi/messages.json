@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "On Kaikki toimialueet"
+      "message": "On Kaikki Toimialueet"
    },
    "allow": {
       "description": "Allow",
@@ -17,7 +17,7 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Estä ei-toivottua sisältöä:"
+      "message": "Estä Ei-Toivottua Sisältöä:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Ei-toivotut Sisältö tila:"
+      "message": "Ei-Toivotut Sisältö Tila:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -33,11 +33,11 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "ihmisiä vihaava"
+      "message": "Ihmisiä Vihaava"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Antisocial tila:"
+      "message": "Antisocial Tila:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "tukossa"
+      "message": "Tukossa"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Estä kaikki Sallittu Session"
+      "message": "Estä Kaikki Sallittu Session"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,11 +89,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Tuo luetteloon"
+      "message": "Tuo Luetteloon"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "Bulk tuonti"
+      "message": "Bulk Tuonti"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -109,7 +109,7 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "tyhjä lukema"
+      "message": "Tyhjä Lukema"
    },
    "canvasrandom": {
       "description": "Random Readout",
@@ -133,11 +133,11 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Classic Vaihtoehdot tila:"
+      "message": "Classic Vaihtoehdot Tila:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "Jos rasti, sulkee välilehdet aina vaihtoehto napsautetaan"
+      "message": "jos rasti, sulkee välilehdet aina vaihtoehto napsautetaan"
    },
    "clear": {
       "description": "Clear",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Asiakas suorakulmiot:"
+      "message": "Block Asiakas Suorakulmiot:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Estä ei-toivotut evästeet:"
+      "message": "Estä Ei-Toivotut Evästeet:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -177,7 +177,7 @@
    },
    "custom": {
       "description": "Custom",
-      "message": "asiakassuhde"
+      "message": "Asiakassuhde"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
@@ -193,7 +193,7 @@
    },
    "disable": {
       "description": "Disable",
-      "message": "Poista käytöstä"
+      "message": "Poista Käytöstä"
    },
    "disabled": {
       "description": "disabled",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Poistaa ja poista:"
+      "message": "Poistaa ja Poista:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,11 +221,11 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "epäluottamus Domain"
+      "message": "Epäluottamus Domain"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "sama Domain"
+      "message": "Sama Domain"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -309,15 +309,15 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "pikanäppäimiä:"
+      "message": "Pikanäppäimiä:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Yleiset asetukset"
+      "message": "Yleiset Asetukset"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Block peliohjain Enumeration:"
+      "message": "Block Peliohjain Enumeration:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Listaa kaikki asetukset"
+      "message": "Listaa Kaikki Asetukset"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,11 +361,11 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Ryhmä Kaikki asetukset"
+      "message": "Ryhmä Kaikki Asetukset"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Poista Mahdolliset Hash-seuranta:"
+      "message": "Poista Mahdolliset Hash-Seuranta:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Tuo / palauta asetukset"
+      "message": "Tuo / Palauta Asetukset"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Oletus tila"
+      "message": "Oletus Tila"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Uusi välilehti"
+      "message": "Uusi Välilehti"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "ei suodateta"
+      "message": "Ei suodateta"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -449,7 +449,7 @@
    },
    "paranoia": {
       "description": "Paranoia Mode:",
-      "message": "Paranoia-tila:"
+      "message": "Paranoia-Tila:"
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
@@ -469,11 +469,11 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Tietosuoja-asetukset"
+      "message": "Tietosuoja-Asetukset"
    },
    "random": {
       "description": "Random",
-      "message": "satunnainen"
+      "message": "Satunnainen"
    },
    "rating": {
       "description": "Show Rating Button:",
@@ -481,7 +481,7 @@
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
-      "message": "Jos rasti, lisää rating -painiketta verkkotunnuksia välilehden popup"
+      "message": "jos rasti, lisää rating -painiketta verkkotunnuksia välilehden popup"
    },
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Estä Napsautussuhdetulokset viittaaja:"
+      "message": "Estä Napsautussuhdetulokset Viittaaja:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -505,7 +505,7 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-Päivitä sivu:"
+      "message": "Auto-Päivitä Sivu:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
@@ -513,23 +513,23 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "rento"
+      "message": "Rento"
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Peruuttaa Page Temp. käyttöoikeudet"
+      "message": "Peruuttaa Page Temp. Käyttöoikeudet"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Peruuttaa kaikki Temp."
+      "message": "Peruuttaa Kaikki Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "sama asiakirja"
+      "message": "Sama Asiakirja"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "sama Tab"
+      "message": "Sama Tab"
    },
    "save": {
       "description": "Save",
@@ -545,7 +545,7 @@
    },
    "settingsall": {
       "description": "select all",
-      "message": "Valitse kaikki"
+      "message": "valitse kaikki"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -645,7 +645,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Näytä Muutosloki on päivitys:"
+      "message": "Näytä Muutosloki on Oäivitys:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -677,7 +677,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Poista Google Analytics (UTM) seuranta:"
+      "message": "Poista Google Analytics (UTM) Seuranta:"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -689,7 +689,7 @@
    },
    "webbugsdesc": {
       "description": "remove invisible third-party elements",
-      "message": "Poista näkymätön kolmannen osapuolen elementtejä"
+      "message": "poista näkymätön kolmannen osapuolen elementtejä"
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
@@ -725,19 +725,19 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "musta lista"
+      "message": "Musta Lista"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "Valkoinen lista"
+      "message": "Valkoinen Lista"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "mustalle listalle"
+      "message": "Mustalle Listalle"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "sallituiksi"
+      "message": "Sallituiksi"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,15 +749,15 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Siirrä mustalle listalle"
+      "message": "Siirrä Mustalle Listalle"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Siirrä sallittujen luetteloon"
+      "message": "Siirrä Sallittujen Luetteloon"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
-      "message": "Valkoinen lista / estolistalle"
+      "message": "Valkoinen Lista / Estolistalle"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
@@ -765,11 +765,11 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Ohjaa Kaikki pyynnöt"
+      "message": "Ohjaa Kaikki Pyynnöt"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Ohjaus Cross-Domain pyynnöt (sallia Same-Domain)"
+      "message": "Ohjaus Cross-Domain Pyynnöt (sallia Same-Domain)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

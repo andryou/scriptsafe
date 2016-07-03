@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Blok audio odcisków palców:"
+      "message": "Blok Audio Odcisków Palców:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blok baterii odcisków palców:"
+      "message": "Blok Baterii Odcisków Palców:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -89,11 +89,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importowac do listy"
+      "message": "Importowac do Listy"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "luzem Importuj"
+      "message": "Luzem Importuj"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Canvas Fingerprint ochrony:"
+      "message": "Canvas Fingerprint Ochrony:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,15 +109,15 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "puste Odczyt"
+      "message": "Puste Odczyt"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "Losowy odczyt"
+      "message": "Losowy Odczyt"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Calkowicie zablokowac odczyt"
+      "message": "Calkowicie Zablokowac Odczyt"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Blok Plótno czcionki dostepu:"
+      "message": "Blok Plótno Czcionki Dostepu:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -133,7 +133,7 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Opcje Tryb klasyczny:"
+      "message": "Opcje Tryb Klasyczny:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blok klienta prostokaty:"
+      "message": "Blok klienta Prostokaty:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Zapobiegac Schowek zaklócenia:"
+      "message": "Zapobiegac Schowek Zaklócenia:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokowanie niechcianych Cookies:"
+      "message": "Blokowanie Niechcianych Cookies:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Ochrony lokalnych i publicznych adresów IP"
+      "message": "Ochrony Lokalnych i Publicznych Adresów IP"
    },
    "disable": {
       "description": "Disable",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Wylacz i usun:"
+      "message": "Wylacz i Usun:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,15 +221,15 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "nieufnosc Domain"
+      "message": "Nieufnosc Domain"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "samej domenie"
+      "message": "Samej domenie"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Sortuj wedlug domeny:"
+      "message": "Sortuj wedlug Domeny:"
    },
    "domaininfo": {
       "description": "Help",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Nie pokazuj ponownie na te strone"
+      "message": "Nie Pokazuj Ponownie Na Te Strone"
    },
    "enable": {
       "description": "Enable:",
@@ -289,11 +289,11 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "Ochrona linii papilarnych"
+      "message": "Ochrona Linii Papilarnych"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Fingerprint ochrony (moze zlamac stron)"
+      "message": "Fingerprint Ochrony (moze zlamac stron)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -313,11 +313,11 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Ustawienia glówne"
+      "message": "Ustawienia Glówne"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Blok Gamepad liczby:"
+      "message": "Blok Gamepad Liczby:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Wymien wszystkie ustawienia"
+      "message": "Wymien Wszystkie Ustawienia"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -365,7 +365,7 @@
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Usuniecia ewentualnych Hash Tracking:"
+      "message": "Usuniecia Ewentualnych Hash Tracking:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / przywrócenia ustawien"
+      "message": "Import / Przywrócenia ustawien"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Strona Zachowanie link otwarcia:"
+      "message": "Strona Zachowanie Link Otwarcia:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Tryb domyslny"
+      "message": "Tryb Domyslny"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Nowa karta"
+      "message": "Nowa Karta"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "nie filtrowane"
+      "message": "Nie filtrowane"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -441,7 +441,7 @@
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "Tylko na Unwhitelisted domen"
+      "message": "Tylko na Unwhitelisted Domen"
    },
    "options": {
       "description": "Options",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Szanuj tej samej domenie:"
+      "message": "Szanuj tej Samej Domenie:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,7 +469,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Ustawienia prywatnosci"
+      "message": "Ustawienia Prywatnosci"
    },
    "random": {
       "description": "Random",
@@ -477,7 +477,7 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Pokaz ocena Przycisk:"
+      "message": "Pokaz Ocena Przycisk:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
@@ -489,11 +489,11 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Blokowanie klikalnosci Polecajacemu:"
+      "message": "Blokowanie Klikalnosci Polecajacemu:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
-      "message": "Bloki stron odsylajacych informacji po kliknieciu na linki trzecich (Uwaga: Ustawienie to we wszystkich domenach moze powodowac problemy (np miniatury w Tweetdeck))"
+      "message": "bloki stron odsylajacych informacji po kliknieciu na linki trzecich (Uwaga: Ustawienie to we wszystkich domenach moze powodowac problemy (np miniatury w Tweetdeck))"
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
@@ -505,7 +505,7 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Automatyczne odswiezanie strony:"
+      "message": "Automatyczne Odswiezanie Strony:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
@@ -517,19 +517,19 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Odwolywanie Temp strone. Uprawnienia"
+      "message": "Odwolywanie Temp Strone. Uprawnienia"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Uniewaznienia wszystkich Temp."
+      "message": "Uniewaznienia Wszystkich Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "Ten sam dokument"
+      "message": "Ten Sam Dokument"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "samej karcie"
+      "message": "Samej Karcie"
    },
    "save": {
       "description": "Save",
@@ -537,7 +537,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Zapisz jako pliku tekstowego"
+      "message": "Zapisz jako Pliku Tekstowego"
    },
    "sections": {
       "description": "Sections",
@@ -545,7 +545,7 @@
    },
    "settingsall": {
       "description": "select all",
-      "message": "Zaznacz wszystko"
+      "message": "zaznacz wszystko"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -597,7 +597,7 @@
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
-      "message": "Pokaz importu Sync Notification:"
+      "message": "Pokaz Importu Sync Notification:"
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
@@ -617,7 +617,7 @@
    },
    "timezone": {
       "description": "Spoof Timezone:",
-      "message": "Falszywe Strefa czasowa:"
+      "message": "Falszywe Strefa Czasowa:"
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "zaufanie Domain"
+      "message": "Zaufanie Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -693,7 +693,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Blok WebGL odcisków palców:"
+      "message": "Blok WebGL Odcisków Palców:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
@@ -701,7 +701,7 @@
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Blok Urzadzenie liczby:"
+      "message": "Blok Urzadzenie Liczby:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
@@ -709,7 +709,7 @@
    },
    "webrtc": {
       "description": "WebRTC Protection:",
-      "message": "WebRTC ochrony:"
+      "message": "WebRTC Ochrony:"
    },
    "webrtcdesc": {
       "description": "prevent IP address leakage",
@@ -725,7 +725,7 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "Czarna lista"
+      "message": "Czarna Lista"
    },
    "whitelist": {
       "description": "Whitelist",
@@ -733,11 +733,11 @@
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "czarnej liscie"
+      "message": "Czarnej Liscie"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "whitelisted"
+      "message": "Whitelisted"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,11 +749,11 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Przenies do czarnej listy"
+      "message": "Przenies do Czarnej Listy"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Przenies do bialej listy"
+      "message": "Przenies do Bialej Listy"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",
@@ -761,11 +761,11 @@
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML zadania HTTP Sposób obchodzenia sie:"
+      "message": "XML Zadania HTTP Sposób Obchodzenia Sie:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Kontrolowac wszystkie zadania"
+      "message": "Kontrolowac Wszystkie Zadania"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",

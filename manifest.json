@@ -12,19 +12,19 @@
         "suggested_key": {
              "default": "Ctrl+Shift+S" 
         },
-        "description": "Temporarily allow/block all resources for a current tab"
+        "description": "__MSG_hotkeystoggle__"
       },
       "removetemppage": {
         "suggested_key": {
             "default": "Ctrl+Shift+R"
         },
-        "description": "Remove temporary permissions for a current tab"
+        "description": "__MSG_hotkeysremove__"
       },
       "removetempall": {
         "suggested_key": {
             "default": "Ctrl+Shift+Q"
         },
-        "description": "Remove all temporary permissions"
+        "description": "__MSG_hotkeysremoveall__"
       }
    },
    "content_scripts": [ {

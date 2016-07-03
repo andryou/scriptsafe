@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Unwanted mode Contenu:"
+      "message": "Unwanted Mode Contenu:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Bloquer Audio dactyloscopie:"
+      "message": "Bloquer Audio Dactyloscopie:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Bloc batterie dactyloscopie:"
+      "message": "Bloc Batterie Dactyloscopie:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "Paramètres de comportement"
+      "message": "Paramètres de Comportement"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -93,7 +93,7 @@
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "l'importation en bloc"
+      "message": "L'importation en Bloc"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -113,7 +113,7 @@
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "aléatoire Readout"
+      "message": "Aléatoire Readout"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Bloquer Canvas police Accès:"
+      "message": "Bloquer Canvas Police Accès:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -133,7 +133,7 @@
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Classique mode Options:"
+      "message": "Classique Mode Options:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Bloquer les cookies indésirables:"
+      "message": "Bloquer les Cookies Indésirables:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "désactivé"
+      "message": "Désactivé"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Désactiver et supprimer:"
+      "message": "Désactiver et Supprimer:"
    },
    "distrust": {
       "description": "Distrust",
@@ -225,11 +225,11 @@
    },
    "domain": {
       "description": "Same Domain",
-      "message": "même domaine"
+      "message": "Même Domaine"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Trier par domaine:"
+      "message": "Trier par Domaine:"
    },
    "domaininfo": {
       "description": "Help",
@@ -237,7 +237,7 @@
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
-      "message": "domaine non valide / adresse"
+      "message": "Domaine/adresse non valide"
    },
    "domaininvalid2": {
       "description": "The domain or address must contain some letters/numbers",
@@ -285,15 +285,15 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Paramètres synchronisés!"
+      "message": "Paramètres Synchronisés!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "protection d'empreintes digitales"
+      "message": "Protection D'empreintes Digitales"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Protection d'empreintes digitales (peut briser des sites)"
+      "message": "Protection D'empreintes Digitales (peut briser des sites)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -313,7 +313,7 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "réglages généraux"
+      "message": "Réglages Généraux"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -325,11 +325,11 @@
    },
    "availablehotkeys": {
       "description": "Available hotkey actions",
-      "message": "actions de raccourci disponibles"
+      "message": "Actions de raccourci disponibles"
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
-      "message": "autoriser / bloquer toutes les ressources pour un onglet en cours temporairement"
+      "message": "Autoriser / bloquer toutes les ressources pour un onglet en cours temporairement"
    },
    "hotkeysremove": {
       "description": "Remove temporary permissions for a current tab",
@@ -345,11 +345,11 @@
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
-      "message": "cliquez sur Raccourcis clavier"
+      "message": "cliquez sur Raccourcis Clavier"
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Liste de tous les paramètres"
+      "message": "Liste de Tous les Paramètres"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,7 +361,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Groupe Tous les paramètres"
+      "message": "Groupe Tous Les Paramètres"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Importation / restauration des paramètres"
+      "message": "Importation / Restauration des Paramètres"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -397,7 +397,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Réduire Keyboard dactyloscopie (<strong>pour les utilisateurs avancés</strong>):"
+      "message": "Réduire Keyboard Dactyloscopie (<strong>pour les utilisateurs avancés</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Page Comportement lien d'ouverture:"
+      "message": "Page Comportement Lien D'ouverture:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -445,7 +445,7 @@
    },
    "options": {
       "description": "Options",
-      "message": "options de"
+      "message": "Options"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Respect du même domaine:"
+      "message": "Respect du Même Domaine:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,11 +469,11 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Paramètres de confidentialité"
+      "message": "Paramètres de Confidentialité"
    },
    "random": {
       "description": "Random",
-      "message": "aléatoire"
+      "message": "Aléatoire"
    },
    "rating": {
       "description": "Show Rating Button:",
@@ -509,7 +509,7 @@
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
-      "message": "Page d'actualisation automatique après changement de la liste"
+      "message": "page d'actualisation automatique après changement de la liste"
    },
    "relaxed": {
       "description": "Relaxed",
@@ -517,7 +517,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Révoquer page Temp. Autorisations"
+      "message": "Révoquer Page Temp. Autorisations"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -525,19 +525,19 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "même document"
+      "message": "Même document"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "même Tab"
+      "message": "Même Tab"
    },
    "save": {
       "description": "Save",
-      "message": "sauvegarder"
+      "message": "Sauvegarder"
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Enregistrer comme fichier texte"
+      "message": "Enregistrer Comme Fichier Texte"
    },
    "sections": {
       "description": "Sections",
@@ -545,7 +545,7 @@
    },
    "settingsall": {
       "description": "select all",
-      "message": "Sélectionner tout"
+      "message": "sélectionner tout"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -605,7 +605,7 @@
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "Afficher la notification Sync:"
+      "message": "Afficher la Notification Sync:"
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "fiducie de domaine"
+      "message": "Fiducie de Domaine"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -645,7 +645,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Afficher sur Changelog Mise à jour:"
+      "message": "Afficher sur Changelog Mise à Jour:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -685,7 +685,7 @@
    },
    "webbugs": {
       "description": "Remove Webbugs:",
-      "message": "Retirer webbugs:"
+      "message": "Retirer Webbugs:"
    },
    "webbugsdesc": {
       "description": "remove invisible third-party elements",
@@ -693,7 +693,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Bloc WebGL dactyloscopie:"
+      "message": "Bloc WebGL Dactyloscopie:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
@@ -765,14 +765,14 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Contrôle de toutes les demandes"
+      "message": "Contrôle de Toutes les Demandes"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Les demandes de contrôle inter-domaine (permettre du même domaine)"
+      "message": "Les Demandes de Contrôle Inter-domaine (permettre du même domaine)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",
-      "message": "Les demandes HTTP XML de contrôle"
+      "message": "les demandes HTTP XML de contrôle"
    }
 }

@@ -33,7 +33,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "antisosyal"
+      "message": "Antisosyal"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -73,7 +73,7 @@
    },
    "block": {
       "description": "Block",
-      "message": "bloke"
+      "message": "Bloke"
    },
    "blocked": {
       "description": "Blocked",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Harangan ang lahat ay tinatanggap Para Session"
+      "message": "Harangan Ang Lahat Ay Tinatanggap Para Session"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -93,7 +93,7 @@
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "bulk-import"
+      "message": "Bulk Import"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -117,7 +117,7 @@
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Ganap na-block ang mga oras i"
+      "message": "Ganap Na-Block Ang Mga Oras I"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -141,7 +141,7 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "malinaw"
+      "message": "Malinaw"
    },
    "clearlow": {
       "description": "clear",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "I-block ang Client parihaba:"
+      "message": "I-block ang Client Parihaba:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -165,7 +165,7 @@
    },
    "close": {
       "description": "Close",
-      "message": "malapit"
+      "message": "Malapit"
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
@@ -177,7 +177,7 @@
    },
    "custom": {
       "description": "Custom",
-      "message": "pasadya"
+      "message": "Pasadya"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
@@ -193,7 +193,7 @@
    },
    "disable": {
       "description": "Disable",
-      "message": "Huwag paganahin"
+      "message": "Huwag Paganahin"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "baldado"
+      "message": "Baldado"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -213,7 +213,7 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "kawalan ng tiwala"
+      "message": "Kawalan Ng Tiwala"
    },
    "distrustlow": {
       "description": "distrust",
@@ -221,7 +221,7 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "hindi magtiwala Domain"
+      "message": "Hindi Magtiwala Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -229,7 +229,7 @@
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Pagsunud-sunurin ayon Domain:"
+      "message": "Pagsunud-sunurin Ayon Domain:"
    },
    "domaininfo": {
       "description": "Help",
@@ -261,7 +261,7 @@
    },
    "enable": {
       "description": "Enable:",
-      "message": "paganahin:"
+      "message": "Paganahin:"
    },
    "enabled": {
       "description": "enabled",
@@ -269,7 +269,7 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "paganahin ScriptSafe"
+      "message": "Paganahin ScriptSafe"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
@@ -289,7 +289,7 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "fingerprint Protection"
+      "message": "Fingerprint Protection"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
@@ -309,7 +309,7 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "hotkeys:"
+      "message": "Hotkeys:"
    },
    "generalsettings": {
       "description": "General Settings",
@@ -409,7 +409,7 @@
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
-      "message": "Binabago kung paano ang lahat ng mga link ay binuksan"
+      "message": "binabago kung paano ang lahat ng mga link ay binuksan"
    },
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "default Mode"
+      "message": "Default Mode"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Bagong tab"
+      "message": "Bagong Tab"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "hindi na-filter"
+      "message": "Hindi na-filter"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Igalang sa katulad na Domain:"
+      "message": "Igalang sa Katulad na Domain:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,11 +469,11 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Settings para sa pagsasa-pribado"
+      "message": "Settings Para sa Pagsasa-Pribado"
    },
    "random": {
       "description": "Random",
-      "message": "random"
+      "message": "Random"
    },
    "rating": {
       "description": "Show Rating Button:",
@@ -513,11 +513,11 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "lundo"
+      "message": "Lundo"
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Bawiin Page Temp. pahintulot"
+      "message": "Bawiin Page Temp. Pahintulot"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -545,7 +545,7 @@
    },
    "settingsall": {
       "description": "select all",
-      "message": "Piliin lahat"
+      "message": "piliin lahat"
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
@@ -565,7 +565,7 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "mahigpit"
+      "message": "Mahigpit"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
@@ -625,7 +625,7 @@
    },
    "trust": {
       "description": "Trust",
-      "message": "tiwala"
+      "message": "Tiwala"
    },
    "trustlow": {
       "description": "trust",
@@ -657,7 +657,7 @@
    },
    "url": {
       "description": "Domain",
-      "message": "domain"
+      "message": "Domain"
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
@@ -725,19 +725,19 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "talaang-itim"
+      "message": "Talaang-Itim"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "whitelist"
+      "message": "Whitelist"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "blacklisted"
+      "message": "Blacklisted"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "whitelist"
+      "message": "Whitelisted"
    },
    "blacklistlow": {
       "description": "blacklist",

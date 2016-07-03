@@ -5,19 +5,19 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Su tutti i domini"
+      "message": "Su Tutti i Domini"
    },
    "allow": {
       "description": "Allow",
-      "message": "consentire"
+      "message": "Consentire"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Consentire a tutti bloccati per la sessione"
+      "message": "Consentire A Tutti Bloccati Per La Sessione"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Bloccare i contenuti indesiderati:"
+      "message": "Bloccare i Contenuti Indesiderati:"
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Unwanted Content modalità:"
+      "message": "Unwanted Content Modalità:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blocco batteria Fingerprinting:"
+      "message": "Blocco Batteria Fingerprinting:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "Impostazioni di comportamento"
+      "message": "Impostazioni di Comportamento"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "bloccato"
+      "message": "Bloccato"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Blocca tutto ammessi per la sessione"
+      "message": "Blocca Tutto Ammessi Per La Sessione"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -93,7 +93,7 @@
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "importazione di massa"
+      "message": "Importazione di Massa"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -101,7 +101,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Tela di impronte digitali di protezione:"
+      "message": "Tela di Impronte Digitali di Protezione:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -109,11 +109,11 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "Lettura in bianco"
+      "message": "Lettura in Bianco"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "casuale Lettura"
+      "message": "Casuale Lettura"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Blocca Canvas Font di accesso:"
+      "message": "Blocca Canvas Font di Accesso:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block client Rettangoli:"
+      "message": "Block Client Rettangoli:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Bloccare i cookie indesiderati:"
+      "message": "Bloccare i Cookie Indesiderati:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -177,11 +177,11 @@
    },
    "custom": {
       "description": "Custom",
-      "message": "costume"
+      "message": "Costume"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
-      "message": "Protect IP locale"
+      "message": "Protect IP Locale"
    },
    "deny": {
       "description": "Deny",
@@ -189,15 +189,15 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Proteggere IP locali e pubblici"
+      "message": "Proteggere IP Locali e Pubblici"
    },
    "disable": {
       "description": "Disable",
-      "message": "disabilitare"
+      "message": "Disabilitare"
    },
    "disabled": {
       "description": "disabled",
-      "message": "Disabilitato"
+      "message": "disabilitato"
    },
    "disabledcap": {
       "description": "Disabled",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Disabilitare e rimuovere:"
+      "message": "Disabilitare e Rimuovere:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,11 +221,11 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "La diffidenza di dominio"
+      "message": "La Diffidenza di Dominio"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "stesso dominio"
+      "message": "Stesso Dominio"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -237,7 +237,7 @@
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
-      "message": "dominio non valido / indirizzo"
+      "message": "Dominio / indirizzo non valido"
    },
    "domaininvalid2": {
       "description": "The domain or address must contain some letters/numbers",
@@ -285,15 +285,15 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Impostazioni sincronizzati!"
+      "message": "Impostazioni Sincronizzati!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "Protezione di impronte digitali"
+      "message": "Protezione di Impronte Digitali"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Protezione delle impronte digitali (potrebbe rompersi siti)"
+      "message": "Protezione Delle Impronte Digitali (potrebbe rompersi siti)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -313,7 +313,7 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Impostazioni generali"
+      "message": "Impostazioni Generali"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -325,7 +325,7 @@
    },
    "availablehotkeys": {
       "description": "Available hotkey actions",
-      "message": "azioni hotkey disponibili"
+      "message": "Azioni hotkey disponibili"
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Elencare tutte le impostazioni"
+      "message": "Elencare Tutte le Impostazioni"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,11 +361,11 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Tutte le impostazioni di gruppo"
+      "message": "Tutte le Impostazioni di Gruppo"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Rimuovere Possibile monitoraggio Hash:"
+      "message": "Rimuovere Possibile Monitoraggio Hash:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -373,7 +373,7 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "nascondere"
+      "message": "Nascondere"
    },
    "import": {
       "description": "Import",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Importa / Ripristina impostazioni"
+      "message": "Importa / Ripristina Impostazioni"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -397,7 +397,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Ridurre tastiera Fingerprinting (<strong>per gli utenti avanzati</strong>):"
+      "message": "Ridurre Tastiera Fingerprinting (<strong>per gli utenti avanzati</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -405,7 +405,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Collegamento pagina di apertura Comportamento:"
+      "message": "Collegamento Pagina di Apertura Comportamento:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Modalità di default"
+      "message": "Modalità di Default"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Nuova scheda"
+      "message": "Nuova Scheda"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "non filtrato"
+      "message": "Non filtrato"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -437,7 +437,7 @@
    },
    "off": {
       "description": "-Off-",
-      "message": "-OFF-"
+      "message": "-Off-"
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Rispetta dello stesso dominio:"
+      "message": "Rispetta Dello Stesso Dominio:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,7 +469,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Impostazioni privacy"
+      "message": "Impostazioni Privacy"
    },
    "random": {
       "description": "Random",
@@ -489,7 +489,7 @@
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Bloccare Referente click-through:"
+      "message": "Bloccare Referente Click-Through:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
@@ -505,11 +505,11 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-Aggiorna pagina:"
+      "message": "Auto-Aggiorna Pagina:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
-      "message": "Pagina di aggiornamento automatico dopo il cambio elenco"
+      "message": "pagina di aggiornamento automatico dopo il cambio elenco"
    },
    "relaxed": {
       "description": "Relaxed",
@@ -525,11 +525,11 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "Lo stesso documento"
+      "message": "Lo Stesso Documento"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "stessa scheda"
+      "message": "Stessa Scheda"
    },
    "save": {
       "description": "Save",
@@ -537,11 +537,11 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Salva come file di testo"
+      "message": "Salva come File di Testo"
    },
    "sections": {
       "description": "Sections",
-      "message": "sezioni"
+      "message": "Sezioni"
    },
    "settingsall": {
       "description": "select all",
@@ -597,7 +597,7 @@
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
-      "message": "Mostra notifica di importazione di sincronizzazione:"
+      "message": "Mostra Notifica di Importazione di Sincronizzazione:"
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
@@ -605,7 +605,7 @@
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "Mostra notifica Sync:"
+      "message": "Mostra Notifica Sync:"
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
@@ -617,7 +617,7 @@
    },
    "timezone": {
       "description": "Spoof Timezone:",
-      "message": "Fuso orario Spoof:"
+      "message": "Fuso Orario Spoof:"
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "La fiducia di dominio"
+      "message": "La Fiducia di Dominio"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -649,11 +649,11 @@
    },
    "unwanted": {
       "description": "Unwanted",
-      "message": "Non desiderato"
+      "message": "Non Desiderato"
    },
    "updatenotifydesc": {
       "description": "show changelog page when ScriptSafe is updated",
-      "message": "Mostra la pagina changelog quando ScriptSafe viene aggiornato"
+      "message": "mostra la pagina changelog quando ScriptSafe viene aggiornato"
    },
    "url": {
       "description": "Domain",
@@ -677,7 +677,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Rimuovere monitoraggio di Google Analytics (UTM):"
+      "message": "Rimuovere Monitoraggio di Google Analytics (UTM):"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -725,19 +725,19 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "Lista nera"
+      "message": "Lista Nera"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "Lista bianca"
+      "message": "Lista Bianca"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "nella lista nera"
+      "message": "Nella Lista Nera"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "whitelist"
+      "message": "Whitelist"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,7 +749,7 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Sposta in lista nera"
+      "message": "Sposta in Lista Nera"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
@@ -761,15 +761,15 @@
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML richiesta HTTP Manipolazione:"
+      "message": "XML Richiesta HTTP Manipolazione:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Controllare tutte le richieste"
+      "message": "Controllare Tutte le Richieste"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Le richieste di controllo Cross-Domain (consentire con lo stesso dominio)"
+      "message": "Le Richieste di Controllo Cross-Domain (consentire con lo stesso dominio)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

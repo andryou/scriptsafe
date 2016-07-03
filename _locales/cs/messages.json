@@ -5,11 +5,11 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Na všech doménách"
+      "message": "Na Všech Doménách"
    },
    "allow": {
       "description": "Allow",
-      "message": "povolit"
+      "message": "Povolit"
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
@@ -25,7 +25,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Nežádoucí obsah Mode:"
+      "message": "Nežádoucí Obsah Mode:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -33,7 +33,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "nespolecenský"
+      "message": "Nespolecenský"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -41,7 +41,7 @@
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
-      "message": "Vždy odstranit widgety tlacítek / sociální, i když na seznamu povolených"
+      "message": "vždy odstranit widgety tlacítek / sociální, i když na seznamu povolených"
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Blok Audio otisku prstu:"
+      "message": "Blok Audio Otisku Prstu:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -57,7 +57,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blok akumulátoru Snímání otisku prstu:"
+      "message": "Blok Akumulátoru Snímání Otisku Prstu:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -77,11 +77,11 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "ucpaný"
+      "message": "Ucpaný"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Zablokovat všechny povoleno pro relaci"
+      "message": "Zablokovat Všechny Povoleno Pro Relaci"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -89,11 +89,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importovat do seznamu"
+      "message": "Importovat do Seznamu"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "Bulk import"
+      "message": "Bulk Import"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -109,7 +109,7 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "prázdné Odecet"
+      "message": "Prázdné Odecet"
    },
    "canvasrandom": {
       "description": "Random Readout",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blok Klientské obdélníky:"
+      "message": "Blok Klientské Obdélníky:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -157,7 +157,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Zabránit schránky rušení:"
+      "message": "Zabránit Schránky Rušení:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokovat nežádoucí soubory cookie:"
+      "message": "Blokovat Nežádoucí Soubory Cookie:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -189,11 +189,11 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Chránit místní a verejné IP adresy"
+      "message": "Chránit Místní a Verejné IP Adresy"
    },
    "disable": {
       "description": "Disable",
-      "message": "zakázat"
+      "message": "Zakázat"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "invalidní"
+      "message": "Invalidní"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Zakázat a odebrat:"
+      "message": "Zakázat a Odebrat:"
    },
    "distrust": {
       "description": "Distrust",
@@ -221,15 +221,15 @@
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "neduvera domény"
+      "message": "Neduvera Domény"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "stejné doméne"
+      "message": "Stejné Doméne"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Trídit podle domény:"
+      "message": "Trídit Podle Domény:"
    },
    "domaininfo": {
       "description": "Help",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Nezobrazovat tuto stránku znovu"
+      "message": "Nezobrazovat Tuto Stránku Znovu"
    },
    "enable": {
       "description": "Enable:",
@@ -309,11 +309,11 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "klávesové zkratky:"
+      "message": "Klávesové Zkratky:"
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Obecné nastavení"
+      "message": "Obecné Nastavení"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -349,7 +349,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Seznam všech nastavení"
+      "message": "Seznam Všech Nastavení"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,11 +361,11 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Skupina Všechna nastavení"
+      "message": "Skupina Všechna Nastavení"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Odstranení prípadných Hash Tracking:"
+      "message": "Odstranení Prípadných Hash Tracking:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -381,7 +381,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / obnovení nastavení"
+      "message": "Import / Obnovení Nastavení"
    },
    "importsuccess": {
       "description": "Settings imported successfully",
@@ -397,7 +397,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Snížit klávesnice odebrání otisku prstu (<strong>pro pokrocilé uživatele</strong>):"
+      "message": "Snížit Klávesnice Odebrání Otisku Prstu (<strong>pro pokrocilé uživatele</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -417,11 +417,11 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Výchozí režim"
+      "message": "Výchozí Režim"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Nová karta"
+      "message": "Nová Karta"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -429,7 +429,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "není filtrován"
+      "message": "Není filtrován"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -437,15 +437,15 @@
    },
    "off": {
       "description": "-Off-",
-      "message": "-OFF-"
+      "message": "-Off-"
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "Pouze na Unwhitelisted domény"
+      "message": "Pouze na Unwhitelisted Domény"
    },
    "options": {
       "description": "Options",
-      "message": "možnosti"
+      "message": "Možnosti"
    },
    "paranoia": {
       "description": "Paranoia Mode:",
@@ -461,7 +461,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Respektují stejný-Domain:"
+      "message": "Respektují Stejný-Domain:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -469,7 +469,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Nastavení ochrany osobních údaju"
+      "message": "Nastavení Ochrany Osobních Údaju"
    },
    "random": {
       "description": "Random",
@@ -501,7 +501,7 @@
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Upozornení:</strong>: pokud je povoleno, muže prerušit nekteré stránky (napr. Prihlášení)"
+      "message": "<strong>upozornení:</strong>: pokud je povoleno, muže prerušit nekteré stránky (napr. Prihlášení)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
@@ -517,19 +517,19 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Odvolat stránky Temp. oprávnení"
+      "message": "Odvolat Stránky Temp. Oprávnení"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Odvolat vše Temp."
+      "message": "Odvolat Vše Temp."
    },
    "same": {
       "description": "Same Document",
-      "message": "stejný dokument"
+      "message": "Stejný Dokument"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "stejný Tab"
+      "message": "Stejný Tab"
    },
    "save": {
       "description": "Save",
@@ -537,11 +537,11 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Uložit jako textový soubor"
+      "message": "Uložit Jako Textový Soubor"
    },
    "sections": {
       "description": "Sections",
-      "message": "oddíly"
+      "message": "Oddíly"
    },
    "settingsall": {
       "description": "select all",
@@ -605,7 +605,7 @@
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "Zobrazit synchronizace oznámení:"
+      "message": "Zobrazit Synchronizace Oznámení:"
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
@@ -617,7 +617,7 @@
    },
    "timezone": {
       "description": "Spoof Timezone:",
-      "message": "Strašidlo Casové pásmo:"
+      "message": "Strašidlo Casové Pásmo:"
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
@@ -633,7 +633,7 @@
    },
    "trustdomain": {
       "description": "Trust Domain",
-      "message": "Duvera domény"
+      "message": "Duvera Domény"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -693,7 +693,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Blok WebGL otisku prstu:"
+      "message": "Blok WebGL Otisku Prstu:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
@@ -725,23 +725,23 @@
    },
    "blacklist": {
       "description": "Blacklist",
-      "message": "Cerná listina"
+      "message": "Cerná Listina"
    },
    "whitelist": {
       "description": "Whitelist",
-      "message": "whitelist"
+      "message": "Whitelist"
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "na cerné listine"
+      "message": "Na Cerné Listine"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "whitelisted"
+      "message": "Whitelisted"
    },
    "blacklistlow": {
       "description": "blacklist",
-      "message": "cerná listina"
+      "message": "Cerná Listina"
    },
    "whitelistlow": {
       "description": "whitelist",
@@ -749,7 +749,7 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Presunout do seznamu zakázaných"
+      "message": "Presunout do Seznamu Zakázaných"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
@@ -765,7 +765,7 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Ovládání všech žádostí"
+      "message": "Ovládání Všech Žádostí"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
