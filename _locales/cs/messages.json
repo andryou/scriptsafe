@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Seznam Všech Nastavení"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoroval Umožnit"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Poslední nastavení byly úspešne stažen!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Obnovení Nastavení"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Nastavení úspešne importován"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "zobrazit vyskakovací okno při nastavení synchronizována z účtu Google"
+      "message": "zobrazit vyskakovací okno při nastavení <strong>synchronizována z</strong> účtu Google"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "zobrazit vyskakovací okno při nastavení synchronizují s vaším účtem Google"
+      "message": "zobrazit vyskakovací okno při nastavení <strong>synchronizují s</strong> vaším účtem Google"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -741,7 +745,7 @@
    },
    "blacklistlow": {
       "description": "blacklist",
-      "message": "Cerná Listina"
+      "message": "cerná listina"
    },
    "whitelistlow": {
       "description": "whitelist",
@@ -761,7 +765,7 @@
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP požadavek pro zacházení:"
+      "message": "XML HTTP Požadavek Pro Zacházení:"
    },
    "xmlall": {
       "description": "Control All Requests",

@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Yerel ve Kamu IP'leri koruyun"
+      "message": "Yerel ve Kamu IP'leri Koruyun"
    },
    "disable": {
       "description": "Disable",
@@ -337,7 +337,7 @@
    },
    "hotkeysremoveall": {
       "description": "Remove all temporary permissions",
-      "message": "tüm geçici izinleri kaldirmak"
+      "message": "Tüm geçici izinleri kaldirmak"
    },
    "hotkeyspage": {
       "description": "Configure ScriptSafe hotkeys:",
@@ -350,6 +350,10 @@
    "listallsettings": {
       "description": "List All Settings",
       "message": "Tüm Ayarlari Liste"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "İzin Yok Sayılan"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Ithalat / Restore Ayarlari"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Ayarlar basariyla ithal"
    },
@@ -469,7 +473,7 @@
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Gizlilik ayarlari"
+      "message": "Gizlilik Ayarlari"
    },
    "random": {
       "description": "Random",
@@ -477,7 +481,7 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Degerlendirme Dügmesi göster:"
+      "message": "Degerlendirme Dügmesi Göster:"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "ayarlar Google Hesabinizdan senkronize zaman pop-up göstermek"
+      "message": "<strong>ayarlar</strong> Google Hesabinizdan senkronize zaman pop-up göstermek"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "ayarlariniz Google Hesabinizla senkronize zaman pop-up göstermek"
+      "message": "<strong>ayarlariniz</strong> Google Hesabinizla senkronize zaman pop-up göstermek"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

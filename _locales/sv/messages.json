@@ -289,11 +289,11 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "fingeravtryck Protection"
+      "message": "Fingeravtryck Protection"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Fingerprint Protection (kan gå sönder platser)"
+      "message": "Fingeravtryck Protection (kan gå sönder platser)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Visa Alla Inställningar"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoreras Tillåt"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "De senaste inställningarna har hämtats!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Återställ Inställningar"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Inställningar importerats"
    },
@@ -665,7 +669,7 @@
    },
    "useragentspoof": {
       "description": "User-Agent Spoof:",
-      "message": "User-Agent parodi:"
+      "message": "User-Agent Parodi:"
    },
    "useragentspoofdesc": {
       "description": "spoofs your user-agent (browser and OS)",

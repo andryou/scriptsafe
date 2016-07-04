@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "सूची सबै सेटिङ"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "अनुमति उपेक्षा"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "पछिल्लो सेटिङहरू सफलतापूर्वक डाउनलोड गरिएको छ!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "आयात / पुनर्स्थापना सेटिङ"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "सेटिङ सफलतापूर्वक आयात"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "सेटिङहरू तपाईंको गुगल खाता बाट समन्वयन गर्दा पपअप देखाउन"
+      "message": "सेटिङहरू तपाईंको गुगल खाता <strong>बाट समन्वयन</strong> गर्दा पपअप देखाउन"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "सेटिङहरू तपाईंको गुगल खाता समिकरण गर्दा पपअप देखाउन"
+      "message": "सेटिङहरू तपाईंको गुगल खाता <strong>समिकरण</strong> गर्दा पपअप देखाउन"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

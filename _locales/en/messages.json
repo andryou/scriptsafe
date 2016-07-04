@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "List All Settings"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignored Allow"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "The latest settings have been successfully downloaded!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Restore Settings"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Settings imported successfully"
    },
@@ -486,10 +490,6 @@
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
       "message": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work."
-   },
-   "referrer": {
-      "description": "Block Click-Through Referrer:",
-      "message": "Block Click-Through Referrer:"
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",

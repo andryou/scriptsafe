@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Listi Allar Stillingar"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Hunsað Leyfa"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Nýjasta stillingar hafa verið sótt!"
@@ -361,7 +365,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Hópur Allar stillingar"
+      "message": "Hópur Allar Stillingar"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Innflutningur / Endurheimta Stillingar"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Stillingar flutt inn"
    },

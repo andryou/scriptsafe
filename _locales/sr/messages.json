@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Лист Алл Сеттингс"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "игнорисао Дозволи"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Најновији поставке су успешно преузети!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Импорт / враћање подешавања"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Подешавања увезена успешно"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "схов попуп кад подешавања на са Гоогле налога"
+      "message": "схов попуп кад подешавања <strong>на са Гоогле налога</strong>"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "схов попуп кад подешавања синхронизују са Гоогле налогом"
+      "message": "схов попуп кад подешавања <strong>синхронизују са Гоогле налогом</strong>"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

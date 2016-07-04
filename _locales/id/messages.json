@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Daftar Semua Pengaturan"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Diabaikan Izinkan"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Pengaturan terbaru telah berhasil diunduh!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Impor / Restore Settings"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Pengaturan berhasil diimpor"
    },
@@ -517,7 +521,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Mencabut Halaman Temp. izin"
+      "message": "Mencabut Halaman Temp. Izin"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -585,7 +589,7 @@
    },
    "syncexport": {
       "description": "Sync Settings TO Google Account",
-      "message": "Sinkronisasi ke Akun Google"
+      "message": "Sinkronisasi KE Akun Google"
    },
    "syncdetect": {
       "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
@@ -733,7 +737,7 @@
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "Daftar hitam"
+      "message": "Daftar Hitam"
    },
    "whitelisted": {
       "description": "Whitelisted",

@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "அனைத்து அமைப்புகள் பட்டியல்"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "அனுமதி புறக்கணிக்கப்பட்ட"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "சமீபத்திய அமைப்புகளை வெற்றிகரமாக பதிவிறக்கம் வருகின்றன!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "இறக்குமதி / மீட்டமை அமைப்புகள்"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "அமைப்புகள் வெற்றிகரமாக இறக்குமதி"
    },

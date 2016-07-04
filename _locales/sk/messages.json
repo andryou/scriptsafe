@@ -273,7 +273,7 @@
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Aktivovat synchronizáciu:"
+      "message": "Aktivovat Synchronizáciu:"
    },
    "export": {
       "description": "Export",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Zoznam Všetkých Nastavení"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoroval Umožniť"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Posledné nastavenie boli úspešne stiahnutý!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Obnovenie Nastavení"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Nastavenie úspešne importovaný"
    },
@@ -501,7 +505,7 @@
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Upozornenie:</strong>: ak je povolené, môže prerušit niektoré stránky (napr. Prihlásenie)"
+      "message": "<strong>upozornenie:</strong>: ak je povolené, môže prerušit niektoré stránky (napr. Prihlásenie)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "zobraziť vyskakovacie okno pri nastavení synchronizovaná z účtu Google"
+      "message": "zobraziť vyskakovacie okno pri nastavení synchronizovaná <strong>z účtu</strong> Google"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "zobraziť vyskakovacie okno pri nastavení synchronizujú s vaším účtom Google"
+      "message": "zobraziť vyskakovacie okno pri nastavení synchronizujú <strong>s vaším účtom</strong> Google"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

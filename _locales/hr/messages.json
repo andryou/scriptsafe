@@ -41,7 +41,7 @@
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
-      "message": "Uvijek uklonite widgete / gumbe društvenih, cak i ako je na bijeloj listi"
+      "message": "uvijek uklonite widgete / gumbe društvenih, cak i ako je na bijeloj listi"
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Blok Canvas Pristup slova:"
+      "message": "Blok Canvas Pristup Slova:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokiraj neželjene kolacice:"
+      "message": "Blokiraj Neželjene Kolacice:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -181,15 +181,15 @@
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
-      "message": "Zaštitite lokalnu IP"
+      "message": "Zaštitite Lokalnu IP"
    },
    "deny": {
       "description": "Deny",
-      "message": "odbiti"
+      "message": "Odbiti"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Zaštitite lokalna i javna IP"
+      "message": "Zaštitite Lokalna i Javna IP"
    },
    "disable": {
       "description": "Disable",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Popis Sve Postavke"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Zanemareni Dopusti"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Najnoviji Postavke su uspješno skinuti!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Uvoz / Vracanje Postavki"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Postavke uspješno uvezena"
    },
@@ -397,7 +401,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Smanjite tipkovnice otisaka prstiju (<strong>za napredne korisnike</strong>):"
+      "message": "Smanjite Tipkovnice Otisaka Prstiju (<strong>za napredne korisnike</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -461,7 +465,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Poštujte iste domene:"
+      "message": "Poštujte Iste Domene:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "pokazuju popup kad Postavke sinkronizirati s vašim Google računom"
+      "message": "pokazuju popup <strong>kad</strong> postavke sinkronizirati s vašim Google računom"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "pokazuju popup kada postavke sinkronizirati s vašim Google računom"
+      "message": "pokazuju popup <strong>kada</strong> postavke sinkronizirati s vašim Google računom"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -701,7 +705,7 @@
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Blok Brojanje uredaja:"
+      "message": "Blok Brojanje Uredaja:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",

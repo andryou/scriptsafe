@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "รายการการตั้งค่าทั้งหมด"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "ละเว้นการอนุญาตให้"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "การตั้งค่าล่าสุดได้รับการดาวน์โหลดสำเร็จแล้ว!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "นำเข้า / Restore การตั้งค่า"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "การตั้งค่านำเข้าสำเร็จ"
    },

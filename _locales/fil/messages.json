@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Huwag paganahin at Tanggalin:"
+      "message": "Huwag Paganahin at Tanggalin:"
    },
    "distrust": {
       "description": "Distrust",
@@ -265,7 +265,7 @@
    },
    "enabled": {
       "description": "enabled",
-      "message": "Pinagana"
+      "message": "pinagana"
    },
    "enabless": {
       "description": "Enable ScriptSafe",
@@ -349,7 +349,11 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Ilista Lahat ng Mga Setting"
+      "message": "Ilista Lahat Ng Mga Setting"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Binalewalang Payagan"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,7 +365,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Group Lahat ng Mga Setting"
+      "message": "Group Lahat Ng Mga Setting"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Ibalik Setting"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Setting matagumpay na-import"
    },
@@ -505,7 +509,7 @@
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-refresh ng pahina:"
+      "message": "Auto-Refresh ng Pahina:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",

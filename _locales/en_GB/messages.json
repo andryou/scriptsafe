@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "List All Settings"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignored Allow"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "The latest settings have been successfully downloaded!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Restore Settings"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Settings imported successfully"
    },

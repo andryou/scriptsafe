@@ -317,7 +317,7 @@
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Block Gamepad opsomming:"
+      "message": "Block Gamepad Opsomming:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Toon Alle Instellingen"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Genegeerd Toestaan"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "De nieuwste instellingen zijn succesvol gedownload!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Instellingen Herstellen"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Instellingen met succes geïmporteerd"
    },

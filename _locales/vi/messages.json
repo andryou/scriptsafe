@@ -49,7 +49,7 @@
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Khối âm thanh Fingerprinting:"
+      "message": "Khối Âm Thanh Fingerprinting:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -65,7 +65,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "Cài đặt Behaviour"
+      "message": "Cài Đặt Behaviour"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -77,7 +77,7 @@
    },
    "blocked": {
       "description": "Blocked",
-      "message": "Bị chặn"
+      "message": "Bị Chặn"
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
@@ -189,11 +189,11 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Bảo vệ khu công nghiệp địa phương và công cộng"
+      "message": "Bảo Vệ Khu Công Nghiệp Địa Phương Và Công Cộng"
    },
    "disable": {
       "description": "Disable",
-      "message": "Vô hiệu hóa"
+      "message": "Vô Hiệu Hóa"
    },
    "disabled": {
       "description": "disabled",
@@ -201,7 +201,7 @@
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "Tàn tật"
+      "message": "Tàn Tật"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Vô hiệu hóa và loại bỏ:"
+      "message": "Vô Hiệu Hóa Và Loại Bỏ:"
    },
    "distrust": {
       "description": "Distrust",
@@ -229,11 +229,11 @@
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Sắp xếp theo tên miền:"
+      "message": "Sắp Xếp Theo Tên Miền:"
    },
    "domaininfo": {
       "description": "Help",
-      "message": "Cứu giúp"
+      "message": "Cứu Giúp"
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
@@ -285,7 +285,7 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Cài đặt đồng bộ hoá!"
+      "message": "Cài Đặt Đồng Bộ Hoá!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
@@ -313,7 +313,7 @@
    },
    "generalsettings": {
       "description": "General Settings",
-      "message": "Cài đặt Chung"
+      "message": "Cài Đặt Chung"
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
@@ -351,13 +351,17 @@
       "description": "List All Settings",
       "message": "Liệt Kê Tất Cả Cài Đặt"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Bỏ Qua Phép"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Các thiết lập mới nhất đã được tải về thành công!"
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Cài đặt tải!"
+      "message": "Cài Đặt Tải!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
@@ -373,7 +377,7 @@
    },
    "hide": {
       "description": "Hide",
-      "message": "Ẩn giấu"
+      "message": "Ẩn Giấu"
    },
    "import": {
       "description": "Import",
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Nhập / Restore Cài Đặt"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Cài đặt nhập thành công"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "hiện popup khi thiết lập đồng bộ hóa từ Tài khoản Google của bạn"
+      "message": "hiện popup khi thiết lập đồng bộ <strong>hóa từ Tài</strong> khoản Google của bạn"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "hiện popup khi thiết lập đồng bộ hóa Tài khoản Google của bạn"
+      "message": "hiện popup khi thiết lập đồng bộ <strong>hóa Tài</strong> khoản Google của bạn"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -645,7 +649,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Hiện Changelog trên Cập nhật:"
+      "message": "Hiện Changelog Trên Cập Nhật:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -677,7 +681,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Hủy bỏ Google Analytics (UTM) theo dõi:"
+      "message": "Hủy Bỏ Google Analytics (Utm) Theo Dõi:"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -733,11 +737,11 @@
    },
    "blacklisted": {
       "description": "Blacklisted",
-      "message": "Danh sách đen"
+      "message": "Danh Sách Đen"
    },
    "whitelisted": {
       "description": "Whitelisted",
-      "message": "Danh sách trắng"
+      "message": "Danh Sách Trắng"
    },
    "blacklistlow": {
       "description": "blacklist",
@@ -749,7 +753,7 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Di chuyển đến trong danh Sách Đen"
+      "message": "Di chuyển đến Trong Danh Sách Đen"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
@@ -761,7 +765,7 @@
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP Request Xử lý:"
+      "message": "XML HTTP Request Xử Lý:"
    },
    "xmlall": {
       "description": "Control All Requests",

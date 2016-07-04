@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Lista de Toate Setările"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignorată Permite"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Cele mai recente setări au fost descărcate cu succes!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Restabilire Setări Din"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Setările importate cu succes"
    },
@@ -525,7 +529,7 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "Acelaşi document"
+      "message": "Acelaşi Document"
    },
    "sametab": {
       "description": "Same Tab",
@@ -745,7 +749,7 @@
    },
    "whitelistlow": {
       "description": "whitelist",
-      "message": "Listă albă"
+      "message": "listă albă"
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
@@ -773,6 +777,6 @@
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",
-      "message": "Cereri de Control XML HTTP"
+      "message": "cereri de control XML HTTP"
    }
 }

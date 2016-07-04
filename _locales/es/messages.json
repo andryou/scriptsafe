@@ -5,7 +5,7 @@
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "En Todos los Dominios"
+      "message": "En Todos Los Dominios"
    },
    "allow": {
       "description": "Allow",
@@ -13,7 +13,7 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Para Permitir Que Todos los Bloqueados Sesión"
+      "message": "Para Permitir Que Todos Los Bloqueados Sesión"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
@@ -81,7 +81,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Para Bloquear Todas las Mascotas Sesión"
+      "message": "Para Bloquear Todas Las Mascotas Sesión"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -125,7 +125,7 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Bloquear &lt;canvas&gt; de Fuentes de Acceso:"
+      "message": "Bloquear El Acceso De La Lona De Fuente:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
@@ -181,7 +181,7 @@
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
-      "message": "Proteger IP local"
+      "message": "Proteger IP Local"
    },
    "deny": {
       "description": "Deny",
@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Proteger a los PI y locales públicos"
+      "message": "Proteger a Los PI y Locales Públicos"
    },
    "disable": {
       "description": "Disable",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "No mostrar esta página"
+      "message": "No Mostrar Esta Página"
    },
    "enable": {
       "description": "Enable:",
@@ -317,7 +317,7 @@
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Bloque Gamepad enumeración:"
+      "message": "Bloque Gamepad Enumeración:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -349,7 +349,11 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Listar Todos los Ajustes"
+      "message": "Listar Todos Los Ajustes"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Permitir Ignorado"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -361,7 +365,7 @@
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Grupo de Todos los Ajustes"
+      "message": "Grupo de Todos Los Ajustes"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
@@ -381,9 +385,9 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Importar / restaurar configuración"
+      "message": "Importar / Restaurar Configuración"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Ajustes importado correctamente"
    },
@@ -397,7 +401,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Reducir el teclado de huellas dactilares (<strong>para usuarios avanzados</strong>):"
+      "message": "Reducir el Teclado de Huellas Dactilares (<strong>para usuarios avanzados</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -521,7 +525,7 @@
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Revocar Todos los Temp."
+      "message": "Revocar Todos Los Temp."
    },
    "same": {
       "description": "Same Document",
@@ -537,7 +541,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Guardar como archivo de texto"
+      "message": "Guardar como Archivo de Texto"
    },
    "sections": {
       "description": "Sections",
@@ -677,7 +681,7 @@
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
-      "message": "Retire seguimiento de Google Analytics (UTM):"
+      "message": "Retire Seguimiento de Google Analytics (UTM):"
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
@@ -685,7 +689,7 @@
    },
    "webbugs": {
       "description": "Remove Webbugs:",
-      "message": "Retire webbugs:"
+      "message": "Retire Webbugs:"
    },
    "webbugsdesc": {
       "description": "remove invisible third-party elements",
@@ -693,7 +697,7 @@
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "WebGL bloque de huellas digitales:"
+      "message": "WebGL Bloque de Huellas Digitales:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",

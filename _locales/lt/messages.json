@@ -109,11 +109,11 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "Tušcia Skaitliuko parodymai"
+      "message": "Tušcia Skaitliuko Parodymai"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "Atsitiktines Skaitliuko parodymai"
+      "message": "Atsitiktines Skaitliuko Parodymai"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Sarašas All Settings"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoruojami Leisti"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Naujos nustatymai buvo sekmingai atsisiusti!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Importo / Atkurti Nustatymai"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Nustatymai sekmingai importuotas"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "rodo iššokantį kai nustatymai sinchronizuojami iš jūsų \"Google\" paskyra"
+      "message": "rodo iššokantį kai nustatymai sinchronizuojami <strong>iš jūsų</strong> \"Google\" paskyra"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "rodo iššokantį kai nustatymai sinchronizuojami su \"Google\" paskyra"
+      "message": "rodo iššokantį kai nustatymai sinchronizuojami <strong>su</strong> \"Google\" paskyra"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

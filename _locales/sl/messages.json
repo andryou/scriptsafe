@@ -1,7 +1,7 @@
 {
    "appdescription": {
       "description": "Regain control of the web and surf more securely.",
-      "message": "bolj varno ponovno pridobiti nadzor nad spleta in surf."
+      "message": "Bolj varno ponovno pridobiti nadzor nad spleta in surf."
    },
    "alldomains": {
       "description": "On All Domains",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Seznam Vse Nastavitve"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Prezrti Dovoli"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Najnovejši nastavitve so bile uspešno prenesli!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Uvoz / Povrni Nastavitve"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Nastavitve uspešno uvožena"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "kažejo popup ko nastavitve sinhronizirani iz Google Računa"
+      "message": "kažejo popup ko nastavitve sinhronizirani <strong>iz</strong> Google Računa"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "kažejo popup ko nastavitve sinhronizirani z Google Računom"
+      "message": "kažejo popup ko nastavitve sinhronizirani <strong>z</strong> Google Računom"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -765,7 +769,7 @@
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Nadzor Vseh Zahtevkov,"
+      "message": "Nadzor Vseh Zahtevkov"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",

@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "すべての設定を一覧表示"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "許可は無視されます"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "最新の設定が正常にダウンロードされています！"
@@ -369,7 +373,7 @@
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
-      "message": "属性と値があるハッシュを使用して渡さ可能な追跡トークンを削除する（例えば＃xtor = RSS-1）"
+      "message": "属性と値があるハッシュを使用して渡さ可能な追跡トークンを削除する（例えば＃xtor=RSS-1）"
    },
    "hide": {
       "description": "Hide",
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "インポート/復元の設定"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "正常にインポート設定"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "設定は、Googleアカウントから同期されたときにポップアップを表示"
+      "message": "設定は、Googleアカウント<strong>から同期された</strong>ときにポップアップを表示"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "設定はGoogleアカウントに同期するときにポップアップを表示"
+      "message": "設定はGoogleアカウント<strong>に同期する</strong>ときにポップアップを表示"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

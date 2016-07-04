@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Schützen Lokal an Ëffentlech virzehuelen"
+      "message": "Schützen Lokal an Ëffentlech Virzehuelen"
    },
    "disable": {
       "description": "Disable",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Net erëm Show Dëst Page"
+      "message": "Net Erëm Show Dëst Page"
    },
    "enable": {
       "description": "Enable:",
@@ -285,7 +285,7 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Parameteren guttheeschen!"
+      "message": "Parameteren Guttheeschen!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Lëscht All Parameteren"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoréiert Erlaabt"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Déi läscht Astellungen erfollegräich erofgeluede gewiescht!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Noënnen Parameteren"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Parameteren importéiert erfollegräich"
    },
@@ -517,11 +521,11 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Zréckzéien Page Server. Permissiounen"
+      "message": "Zréckzéien Page Temp. Permissiounen"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "Zréckzéien All Server."
+      "message": "Zréckzéien All Temp."
    },
    "same": {
       "description": "Same Document",
@@ -629,7 +633,7 @@
    },
    "trustlow": {
       "description": "trust",
-      "message": "Vertrauen"
+      "message": "vertrauen"
    },
    "trustdomain": {
       "description": "Trust Domain",
@@ -645,7 +649,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Show ChangelogLanguage op Update:"
+      "message": "Show Changelog op Update:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -749,7 +753,7 @@
    },
    "blacklistmove": {
       "description": "Move to Blacklist",
-      "message": "Plënneren relancéiert"
+      "message": "Plënneren Relancéiert"
    },
    "whitelistmove": {
       "description": "Move to Whitelist",

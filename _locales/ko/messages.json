@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "모든 설정을 나열"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "허용 무시"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "최신 설정이 성공적으로 다운로드되었습니다!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "가져 오기 / 복원 설정"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "설정을 성공적으로 가져"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "설정이 Google 계정에서 동기화 할 때 팝업을 표시"
+      "message": "설정이 Google <strong>계정에서</strong> 동기화 할 때 팝업을 표시"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "설정이 Google 계정에 동기화 할 때 팝업을 표시"
+      "message": "설정이 Google <strong>계정에</strong> 동기화 할 때 팝업을 표시"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

@@ -137,7 +137,7 @@
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "Hvis krysset av, lukker fanealternativer hver gang et alternativ er klikket"
+      "message": "hvis krysset av, lukker fanealternativer hver gang et alternativ er klikket"
    },
    "clear": {
       "description": "Clear",
@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Beskytt Lokale og offentlige IP-adresser"
+      "message": "Beskytt Lokale og Offentlige IP-adresser"
    },
    "disable": {
       "description": "Disable",
@@ -273,7 +273,7 @@
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Aktiver synkronisering:"
+      "message": "Aktiver Synkronisering:"
    },
    "export": {
       "description": "Export",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "List Alle Innstillinger"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignorert Tillat"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "De siste innstillingene har blitt lastet ned!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Gjenopprette Innstillinger"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Settings importert"
    },
@@ -461,7 +465,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Respekter Same-domene:"
+      "message": "Respekter Same-Domene:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",

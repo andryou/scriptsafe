@@ -181,7 +181,7 @@
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
-      "message": "Védje a helyi IP"
+      "message": "Védje a Helyi IP"
    },
    "deny": {
       "description": "Deny",
@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Protect helyi és nyilvános IP"
+      "message": "Protect Helyi és Nyilvános IP"
    },
    "disable": {
       "description": "Disable",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Sorolja All Settings"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Figyelmen Kívül Hagyva Engedélyezése"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "A legutolsó beállítás sikerült letölteni!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Beállítások Visszaállítása"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Beállítások importálása sikeres"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "azt mutatják, felugró, amikor a beállítások szinkronizálása a Google-fiók"
+      "message": "azt mutatják, felugró, amikor a beállítások <strong>szinkronizálása a</strong> Google-fiók"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "azt mutatják, felugró, amikor a beállítások szinkronizálódnak Google-fiók"
+      "message": "azt mutatják, felugró, amikor a beállítások <strong>szinkronizálódnak</strong> Google-fiók"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -645,7 +649,7 @@
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Mutasd Változások a frissítés:"
+      "message": "Mutasd Változások a Frissítés:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -681,7 +685,7 @@
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
-      "message": "A Google Analytics (UTM) követési tokenek"
+      "message": "a Google Analytics (UTM) követési tokenek"
    },
    "webbugs": {
       "description": "Remove Webbugs:",

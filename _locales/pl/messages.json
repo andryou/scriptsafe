@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blok klienta Prostokaty:"
+      "message": "Blok Klienta Prostokaty:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -225,7 +225,7 @@
    },
    "domain": {
       "description": "Same Domain",
-      "message": "Samej domenie"
+      "message": "Samej Domenie"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -273,7 +273,7 @@
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Wlacz synchronizacje:"
+      "message": "Wlacz Synchronizacje:"
    },
    "export": {
       "description": "Export",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Wymien Wszystkie Ustawienia"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Pozwól Ignorowane"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Najnowsze ustawienia zostaly pomyslnie pobrane!"
@@ -381,9 +385,9 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "Import / Przywrócenia ustawien"
+      "message": "Import / Przywrócenia Ustawien"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Ustawienia zaimportowany"
    },
@@ -397,7 +401,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Zmniejszyc klawiatury daktyloskopii (<strong>Dla zaawansowanych uzytkowników</strong>):"
+      "message": "Zmniejszyc Klawiatury Daktyloskopii (<strong>dla zaawansowanych uzytkowników</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -501,7 +505,7 @@
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>Uwaga</strong>: jesli wlaczona, moze zlamac kilka stron (np zalogowaniu)"
+      "message": "<strong>uwaga</strong>: jesli wlaczona, moze zlamac kilka stron (np zalogowaniu)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
@@ -653,7 +657,7 @@
    },
    "updatenotifydesc": {
       "description": "show changelog page when ScriptSafe is updated",
-      "message": "Pokaz strone changelog gdy ScriptSafe jest aktualizowana"
+      "message": "pokaz strone changelog gdy ScriptSafe jest aktualizowana"
    },
    "url": {
       "description": "Domain",

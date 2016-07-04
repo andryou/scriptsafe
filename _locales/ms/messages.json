@@ -225,7 +225,7 @@
    },
    "domain": {
       "description": "Same Domain",
-      "message": "Domain sama"
+      "message": "Domain Sama"
    },
    "domainsort": {
       "description": "Sort by Domain:",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Senarai Semua Tetapan"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Diabaikan Benarkan"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Tetapan terkini telah berjaya dimuat turun!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Restore Settings"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Tetapan diimport berjaya"
    },

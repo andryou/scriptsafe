@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "قائمة جميع الإعدادات"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "تجاهل السماح"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "تم تحميل أحدث الإعدادات بنجاح!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "استيراد / استعادة الإعدادات"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "إعدادات المستوردة بنجاح"
    },

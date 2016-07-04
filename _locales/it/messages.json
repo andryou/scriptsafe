@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Non visualizzare più questa pagina"
+      "message": "Non Visualizzare Più Questa Pagina"
    },
    "enable": {
       "description": "Enable:",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Elencare Tutte le Impostazioni"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignorato Consenti"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Le ultime impostazioni sono stati scaricati con successo!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Importa / Ripristina Impostazioni"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Impostazioni importato con successo"
    },
@@ -753,7 +757,7 @@
    },
    "whitelistmove": {
       "description": "Move to Whitelist",
-      "message": "Move to Whitelist"
+      "message": "Sposta in Lista Bianca"
    },
    "whitelistblacklist": {
       "description": "Whitelist / Blacklist",

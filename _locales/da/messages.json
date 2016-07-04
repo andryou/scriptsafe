@@ -13,7 +13,7 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Tillad alle Blokeret For Session"
+      "message": "Tillad Alle Blokeret For Session"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
@@ -149,7 +149,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Bloker Client rektangler:"
+      "message": "Bloker Client Rektangler:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Liste Alle Indstillinger"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoreret Tillad"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "De seneste indstillinger er hentet!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Restore Settings"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Indstillinger importeret"
    },
@@ -397,7 +401,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Reducer Tastatur fingeraftryk (<strong>for avancerede brugere</strong>):"
+      "message": "Reducer Tastatur Fingeraftryk (<strong>for avancerede brugere</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -417,7 +421,7 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Standard-tilstand"
+      "message": "Standard-Tilstand"
    },
    "newtab": {
       "description": "New Tab",

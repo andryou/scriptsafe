@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Список всіх налаштувань"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "ігнорується Дозволити"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Останні налаштування були успішно завантажені!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Імпорт / Відновлення параметрів"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Налаштування успішно імпортовані"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "показати спливаюче вікно, коли настройки будуть синхронізуватися з вашого облікового запису Google"
+      "message": "показати спливаюче вікно, коли <strong>настройки будуть синхронізуватися з вашого облікового запису</strong> Google"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "показати спливаюче вікно, коли налаштування синхронізуються з обліковим записом Google"
+      "message": "показати спливаюче вікно, коли <strong>налаштування синхронізуються з обліковим записом</strong> Google"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

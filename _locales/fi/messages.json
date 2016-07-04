@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Älä näytä tätä sivua uudelleen"
+      "message": "Älä Näytä Tätä Sivua Uudelleen"
    },
    "enable": {
       "description": "Enable:",
@@ -273,7 +273,7 @@
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Ota synkronointi:"
+      "message": "Ota Synkronointi:"
    },
    "export": {
       "description": "Export",
@@ -289,7 +289,7 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "sormenjälki Protection"
+      "message": "Sormenjälki Protection"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Listaa Kaikki Asetukset"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ohitetut Salli"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Viimeisimmät asetukset on onnistuneesti ladattu!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Tuo / Palauta Asetukset"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Asetukset tuominen onnistui"
    },
@@ -649,7 +653,7 @@
    },
    "unwanted": {
       "description": "Unwanted",
-      "message": "Ei toivottu"
+      "message": "Ei Toivottu"
    },
    "updatenotifydesc": {
       "description": "show changelog page when ScriptSafe is updated",

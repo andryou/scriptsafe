@@ -89,7 +89,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importieren Sie zur Liste"
+      "message": "Importieren Sie Zur Liste"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -169,7 +169,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blockieren Sie unerwünschte Cookies:"
+      "message": "Blockieren Sie Unerwünschte Cookies:"
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -209,7 +209,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Deaktivieren und Entfernen von:"
+      "message": "Deaktivieren und Entfernen Von:"
    },
    "distrust": {
       "description": "Distrust",
@@ -217,11 +217,11 @@
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "Misstrauen"
+      "message": "misstrauen"
    },
    "distrustdomain": {
       "description": "Distrust Domain",
-      "message": "Das Misstrauen gegen Domain"
+      "message": "Das Misstrauen Gegen Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Nicht mehr anzeigen Diese Seite"
+      "message": "Nicht Mehr Anzeigen Diese Seite"
    },
    "enable": {
       "description": "Enable:",
@@ -345,11 +345,15 @@
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
-      "message": "Klicken Sie auf Tastaturbefehle"
+      "message": "klicken Sie auf Tastaturbefehle"
    },
    "listallsettings": {
       "description": "List All Settings",
       "message": "Liste alle Einstellungen"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoriert Zulassen"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -357,7 +361,7 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Einstellungen heruntergeladen!"
+      "message": "Einstellungen Heruntergeladen!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
@@ -365,7 +369,7 @@
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Entfernen Sie mögliche Hash-Tracking:"
+      "message": "Entfernen Sie Mögliche Hash-Tracking:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Import / Einstellungen Wiederherstellen"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Einstellungen erfolgreich importiert"
    },
@@ -525,7 +529,7 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "demselben Dokument"
+      "message": "Demselben Dokument"
    },
    "sametab": {
       "description": "Same Tab",
@@ -533,7 +537,7 @@
    },
    "save": {
       "description": "Save",
-      "message": "sparen"
+      "message": "Sparen"
    },
    "savetxt": {
       "description": "Save as Text File",
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "zeigen Popup, wenn die Einstellungen von Ihrem Google-Konto synchronisiert"
+      "message": "zeigen Popup, wenn die Einstellungen <strong>von Ihrem Google-Konto synchronisiert</strong>"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "zeigen Popup, wenn die Einstellungen synchronisiert Ihrem Google-Konto"
+      "message": "zeigen Popup, wenn die Einstellungen <strong>synchronisiert Ihrem Google-Konto</strong>"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -681,7 +685,7 @@
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
-      "message": "Entfernen Google Analytics (UTM) Nachverfolgungstoken"
+      "message": "entfernen Google Analytics (UTM) Nachverfolgungstoken"
    },
    "webbugs": {
       "description": "Remove Webbugs:",

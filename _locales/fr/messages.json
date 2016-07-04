@@ -189,7 +189,7 @@
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Protéger les IP locales et publiques"
+      "message": "Protéger les IP Locales et Publiques"
    },
    "disable": {
       "description": "Disable",
@@ -257,7 +257,7 @@
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Ne pas afficher cette page"
+      "message": "Ne Pas Afficher Cette Page"
    },
    "enable": {
       "description": "Enable:",
@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "Liste de Tous les Paramètres"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoré Autoriser"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "Les derniers réglages ont été téléchargés avec succès!"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "Importation / Restauration des Paramètres"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "Paramètres importés avec succès"
    },
@@ -417,7 +421,7 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Mode par défaut"
+      "message": "Mode Par Défaut"
    },
    "newtab": {
       "description": "New Tab",
@@ -525,7 +529,7 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "Même document"
+      "message": "Même Document"
    },
    "sametab": {
       "description": "Same Tab",
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "montrer le popup lorsque les réglages synchronisés à partir de votre compte Google"
+      "message": "montrer le popup lorsque les réglages synchronisés <strong>à partir de</strong> votre compte Google"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "montrer le popup lorsque les réglages synchronisés avec votre compte Google"
+      "message": "montrer le popup lorsque les réglages synchronisés <strong>avec</strong> votre compte Google"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",

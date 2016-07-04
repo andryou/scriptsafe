@@ -351,6 +351,10 @@
       "description": "List All Settings",
       "message": "列出所有设置"
    },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "忽略允许"
+   },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
       "message": "最新的设置已成功下载！"
@@ -383,7 +387,7 @@
       "description": "Import / Restore Settings",
       "message": "导入/恢复设置"
    },
-   "importsuccess": {
+   "importsuccessoptions": {
       "description": "Settings imported successfully",
       "message": "设置成功导入"
    },
@@ -601,7 +605,7 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "显示弹出的设置时，从你的谷歌账户同步"
+      "message": "显示弹出的设置时，<strong>从</strong>你的谷歌账户同步"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
@@ -609,7 +613,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "显示弹出时设置同步到您的谷歌帐户"
+      "message": "显示弹出时设置同步<strong>到</strong>您的谷歌帐户"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
