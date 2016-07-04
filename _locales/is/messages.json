@@ -381,7 +381,7 @@
    },
    "import": {
       "description": "Import",
-      "message": Innflutningur"
+      "message": "Innflutningur"
    },
    "importexport": {
       "description": "Import / Restore Settings",
