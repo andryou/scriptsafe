@@ -373,7 +373,7 @@
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
-      "message": "حذف نشانه ردیابی ممکن گذشت با استفاده از هش، است که در آن ویژگی و ارزش وجود دارد (به عنوان مثال #xtor = RSS-1)"
+      "message": "حذف نشانه ردیابی ممکن گذشت با استفاده از هش، است که در آن ویژگی و ارزش وجود دارد (به عنوان مثال #xtor=RSS-1)"
    },
    "hide": {
       "description": "Hide",

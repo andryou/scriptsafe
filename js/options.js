@@ -464,7 +464,7 @@ function settingsImport() {
 		if (syncstatus) {
 			notification(chrome.i18n.getMessage("importsuccesssync"));
 		} else {
-			notification(chrome.i18n.getMessage("importsuccess"));
+			notification(chrome.i18n.getMessage("importsuccessoptions"));
 		}
 		bkg.refreshRequestTypes();
 		bkg.initWebRTC();

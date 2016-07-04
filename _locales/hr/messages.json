@@ -373,7 +373,7 @@
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
-      "message": "ukloniti eventualne pracenje tokeni prošao pomocu hash, gdje postoji atribut i vrijednost (npr # xtor=RSS-1)"
+      "message": "ukloniti eventualne pracenje tokeni prošao pomocu hash, gdje postoji atribut i vrijednost (npr #xtor=RSS-1)"
    },
    "hide": {
       "description": "Hide",

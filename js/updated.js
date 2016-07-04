@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#disableNotification").click(disableNotification);
 	$("#loadoptionspage").val(chrome.i18n.getMessage("options"));
 	$(".i18_options").html(chrome.i18n.getMessage("options"));
+	$(".i18_support").html(chrome.i18n.getMessage("support"));
 	$("#closepage").val(chrome.i18n.getMessage("close"));
 	$("#disableNotification").val(chrome.i18n.getMessage("dontshowpage"));
 });
