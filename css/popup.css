@@ -25,7 +25,7 @@ th { padding-bottom: 5px; }
 .thirditem:hover {
 	background-color: #f0f0f0;
 }
-.wot { padding-left: 4px; }
+.wot { padding-right: 4px; }
 .wot a { color: #555; }
 .choices { float: right; }
 
