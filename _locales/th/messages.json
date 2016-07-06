@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "แสดงการจัดอันดับปุ่ม:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "อันดับ"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ถ้า ticked เพิ่มปุ่มให้คะแนนภายใต้โดเมนในป๊อปอัพแท็บ"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "คณแน่ใจหรือว่าต้องการปิดใช้งานการแจ้งเตือนการปรับปรุงใด ๆ ในอนาคตเช่นเดียวจากที่ปรากฏนี้หรือไม่?\r\nคุณสามารถ re-อนุญาตให้มีการแจ้งเตือนการอัปเดตได้โดยไปที่หน้าตัวเลือก ScriptSafe และฟ้องกล่องข้างแสดงปรับปรุงป๊อปอัพ"
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "การแจ้งเตือนการปรับปรุงปิดการใช้งาน"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

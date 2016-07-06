@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "تظهر التصويت زر:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "تصنيف"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "إذا تكتك، ويضيف زر تصنيف تحت المجالات في منبثقة التبويب"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "هل أنت متأكد أنك تريد تعطيل أي إخطارات التحديث في المستقبل مثل هذا واحد من الظهور؟\r\nيمكنك دائما إعادة السماح إخطارات التحديث عن طريق الذهاب إلى صفحة خيارات ScriptSafe وعلامة في المربع بجانب مشاهدة تحديث قافزة."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "تحديث الإخطارات تعطيل"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

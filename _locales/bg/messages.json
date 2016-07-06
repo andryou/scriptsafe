@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Покажи Рейтинг Бътън:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "оценка"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ако има отметка, добавя бутон рейтинг под домейни в раздела изскачащ"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Сигурни ли сте, че искате да деактивирате всички бъдещи известията за актуализиране като този да се появи?\r\nВие винаги може отново да се даде възможност за обновяване уведомления, като отидете на страницата ScriptSafe Options и отметка в квадратчето до Show Актуализация Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "изключени известията за актуализиране"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

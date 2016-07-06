@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Visa Rating knapp:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Betyg"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "om förkryssat, tillägger rating knappen under domäner i fliken popup"
@@ -529,7 +533,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Återkalla Page Temp. behörigheter"
+      "message": "Återkalla Page Temp. Behörigheter"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Är du säker på att du vill inaktivera eventuella framtida uppdateringsmeddelanden som den här från att visas?\r\nDu kan alltid låta uppdateringsnotifieringar genom att gå till ScriptSafe sidan Alternativ och markera rutan bredvid Show Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Uppdatera meddelanden inaktive"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

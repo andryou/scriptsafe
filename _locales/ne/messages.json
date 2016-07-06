@@ -137,7 +137,7 @@
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
-      "message": &lt;canvas&gt; तत्व मार्फत enumerated हुनबाट सिस्टम फन्ट रोक्न। Google कागजात हस्तक्षेप गर्न सक्छ।"
+      "message": "&lt;canvas&gt; तत्व मार्फत enumerated हुनबाट सिस्टम फन्ट रोक्न। Google कागजात हस्तक्षेप गर्न सक्छ।"
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "मूल्यांकन बटन देखाउनुहोस्:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "दर्जा"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ticked भने, ट्याब पपअप डोमेन अन्तर्गत दर्जा बटन भन्छन्"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "के तपाईं पक्का देखिने यो एक जस्तै कुनै पनि भविष्यमा अपडेट सूचनाहरू असक्षम गर्न चाहनुहुन्छ?\r\nतपाईं सधैं ScriptSafe विकल्प पृष्ठ गएर र छेउमा अपडेट पपअप देखाउनुहोस् बक्समा टिक द्वारा अपडेट सूचनाहरू पुन: अनुमति दिन सक्छ।"
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "अपडेट सूचनाहरू असक्षम"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

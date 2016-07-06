@@ -305,7 +305,7 @@
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Энэ нь та хараахан таны Google бүртгэлээр таны тохиргоог синхрончилсон чадаагүй байна байна.\r\nScriptSafe таны Google дансанд таны одоогийн тохиргоогоо хэлбэрт авчирсан гэж байна.\r\n'OK' дээр дарна уу үргэлжлүүлэхийг хүсэж байгаа бол.\r\nХэрэв тийм биш бол товшино "Cancel", таны илүүд тохиргоо бусад төхөөрөмж дээр, ScriptSafe шинэчлэх, та энэ мэдээг танилцуулж байгаа үед OK дээр дарна уу."
+      "message": "Энэ нь та хараахан таны Google бүртгэлээр таны тохиргоог синхрончилсон чадаагүй байна байна.\r\nScriptSafe таны Google дансанд таны одоогийн тохиргоогоо хэлбэрт авчирсан гэж байна.\r\n'OK' дээр дарна уу үргэлжлүүлэхийг хүсэж байгаа бол.\r\nХэрэв тийм биш бол товшино \"Cancel\", таны илүүд тохиргоо бусад төхөөрөмж дээр, ScriptSafe шинэчлэх, та энэ мэдээг танилцуулж байгаа үед OK дээр дарна уу."
    },
    "forcesyncexport": {
       "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Rating Товч харуулах:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Үнэлгээгээр"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ticked яг тохирч байвал таб цонх нь домэйн дор үнэлгээ товчин дээр нэмдэг"
@@ -601,7 +605,7 @@
    },
    "syncdetect": {
       "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe та Google-ийн дансанд синхрончлогдсон тохиргоог байна гэж илэрсэн байна!\r\n"OK" дээр дарж та Google Account-аас тохиргоог импортлох гэж байгаа бол."
+      "message": "ScriptSafe та Google-ийн дансанд синхрончлогдсон тохиргоог байна гэж илэрсэн байна!\r\n\"OK\" дээр дарж та Google Account-аас тохиргоог импортлох гэж байгаа бол."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -651,6 +655,10 @@
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Та гарч ирэх нь энэ нэг адил ямар ч ирээдүйн шинэчлэх мэдэгдэл идэвхгүй болгох хүсэлтэй байна уу?\r\nТа үргэлж ScriptSafe Options хуудсанд очиж, шоу шинэчлэх цонх хажууд хайрцгийг аюултай зүйл өөр шинэчлэх мэдэгдлийг дахин зөвшөөрч болно."
    },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Шинэчлэх мэдэгдэл идэвхгүй"
+   },
    "updatenotify": {
       "description": "Show Changelog on Update:",
       "message": "Update дээр CHANGELOG харуулах:"
@@ -669,7 +677,7 @@
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
-      "message": "Домэйн, эсвэл илэрхийлэх оруулна уу (товшино уу Дэлгэрэнгүйг нь "Тусламж")"
+      "message": "Домэйн, эсвэл илэрхийлэх оруулна уу (товшино уу Дэлгэрэнгүйг нь \"Тусламж\")"
    },
    "useragentspoof": {
       "description": "User-Agent Spoof:",

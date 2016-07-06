@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Sýna Einkunn Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Einkunn"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ef merkt, bætir umsagna hnappinn undir lén í flipanum sprettiglugga"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Ertu viss um að þú viljir gera allir framtíðinni tilkynningum update svona einn birtist?\r\nÞú getur alltaf aftur að leyfa tilkynningum uppfærslu með því að fara á ScriptSafe Valkostir síðunni og tjalddúkur í reitinn við hliðina Sýna Uppfæra Almenningur."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Tilkynningar uppfæra óvirk"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

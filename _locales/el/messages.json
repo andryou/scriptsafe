@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Εμφάνιση κουμπιού Αξιολόγηση:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Εκτίμηση"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "αν επιλεγεί, προσθέτει το κουμπί βαθμολογία κάτω τομείς στην καρτέλα αναδυόμενο"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Είστε σίγουροι ότι θέλετε να απενεργοποιήσετε τυχόν μελλοντικές ειδοποιήσεις ενημέρωση όπως αυτή την εμφάνιση;\r\nΜπορείτε πάντα εκ νέου επιτρέπουν ειδοποιήσεις ενημέρωση πηγαίνοντας στη σελίδα Επιλογές ScriptSafe και επιλέγοντας το πλαίσιο δίπλα Εμφάνιση Ενημέρωση Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "ειδοποιήσεις Ενημέρωση απενεργοποιηθεί"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

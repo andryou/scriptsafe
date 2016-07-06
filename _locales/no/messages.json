@@ -305,7 +305,7 @@
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Det ser ut til at du ikke har synkronisert innstillingene til Google-kontoen din ennå.\r\nScriptSafe er i ferd med å synkronisere gjeldende innstillinger til Google-kontoen din.\r\nKlikk på "OK" hvis du ønsker å fortsette.\r\nHvis ikke, klikker du på Avbryt, og på den andre enheten med dine foretrukne innstillinger, oppdatere ScriptSafe og klikk på OK når du blir presentert med denne meldingen."
+      "message": "Det ser ut til at du ikke har synkronisert innstillingene til Google-kontoen din ennå.\r\nScriptSafe er i ferd med å synkronisere gjeldende innstillinger til Google-kontoen din.\r\nKlikk på \"OK\" hvis du ønsker å fortsette.\r\nHvis ikke, klikker du på Avbryt, og på den andre enheten med dine foretrukne innstillinger, oppdatere ScriptSafe og klikk på OK når du blir presentert med denne meldingen."
    },
    "forcesyncexport": {
       "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Vis Rating Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Vurdering"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "Hvis krysset av, legger fra knappen under domener i kategorien popup"
@@ -601,7 +605,7 @@
    },
    "syncdetect": {
       "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe har oppdaget at du har innstillinger synkroniseres med Google-kontoen din!\r\nKlikk på "OK" hvis du ønsker å importere innstillinger fra din Google-konto."
+      "message": "ScriptSafe har oppdaget at du har innstillinger synkroniseres med Google-kontoen din!\r\nKlikk på \"OK\" hvis du ønsker å importere innstillinger fra din Google-konto."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Er du sikker på at du vil deaktivere eventuelle fremtidige oppdateringsvarsler som dette vises?\r\nDu kan alltid re-tillate oppdateringsvarsler ved å gå til siden ScriptSafe Valg og krysse av i boksen ved siden av Vis Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Oppdater varsler deaktivert"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

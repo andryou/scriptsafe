@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "نمایش رتبه دکمه:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "رتبه"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "اگر علامت، اضافه کردن دکمه امتیاز را زیر Domains در پنجره زبانه"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside \"Show Update Popup\".",
       "message": "آیا مطمئن هستید که می خواهید به غیر فعال کردن هر به روز رسانی های آینده مثل این یکی از ظاهر؟\r\nشما همیشه می توانید دوباره اجازه می دهد به روز رسانی با رفتن به صفحه تنظیمات ScriptSafe و تیک تاک کادر کنار \"نمایش به روز رسانی پنجره\"."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "به روز رسانی غیر فعال"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

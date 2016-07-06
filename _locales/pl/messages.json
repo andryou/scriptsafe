@@ -9,7 +9,7 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "Dopuszczac"
+      "message": "Pozwalać"
    },
    "alloweditems": {
       "description": "Allowed Items",
@@ -197,7 +197,7 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "Zaprzeczac"
+      "message": "Pozbawiać"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Pokaz Ocena Przycisk:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Ocena"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "jesli zaznaczone, dodaje przycisk rating pod domenami w zakladce popup"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Czy na pewno chcesz wylaczyc wszelkie przyszle powiadomienia o aktualizacjach jak ten od wyswietlane?\r\nMozesz zawsze ponownie umozliwic powiadomienia o aktualizacjach, przechodzac do strony Opcje ScriptSafe i zaznaczajac pole obok Show aktualizacji kontekstowego."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Powiadomienia aktualizuj wyłączony"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

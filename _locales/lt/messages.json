@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Rodyti Vertinimas Mygtuka:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Reitingas"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "jei pažymejote, prideda reitingo mygtuka pagal domenu skirtuku iššokanti"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Ar tikrai norite išjungti bet kokius busimus atnaujinimo pranešimus patiko ši viena iš jo nesimatytu?\r\nMozesz visada vel leisti atnaujinti pranešimus, eikite i ScriptSafe Options puslapyje ir pažymedami šalia Rodyti atnaujinimo Popup langeli."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Atnaujinti pranešimai išjungtas"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

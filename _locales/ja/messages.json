@@ -9,7 +9,7 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "許可します"
+      "message": "聴す"
    },
    "alloweditems": {
       "description": "Allowed Items",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "評価ボタンを表示："
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "評価"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "チェックが入っている場合、タブのポップアップ内のドメインの下に評価ボタンが追加されます"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "あなたが表示されてから、このように任意の将来のアップデート通知を無効にしてもよろしいですか？\r\nあなたはいつもScriptSafeオプション]ページに移動して表示を更新ポップアップの横のボックスを刻むことにより、更新通知を再許可することができます。"
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "更新通知は無効"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

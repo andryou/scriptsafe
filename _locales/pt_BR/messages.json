@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Mostrar o Botão Avaliação:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Classificação"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "Se marcada, adiciona botão de classificação sob domínios em pop-up guia"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Tem certeza de que deseja desativar as notificações de atualização futuros como este de aparecer?\r\n Você sempre pode voltar a permitir que as notificações de atualização, vá para a página Opções ScriptSafe e assinalando a caixa ao lado de Mostrar Atualização Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Notificações de atualização desativada"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

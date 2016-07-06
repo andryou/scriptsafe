@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Näytä Rating Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Luokitus"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "jos rasti, lisää rating -painiketta verkkotunnuksia välilehden popup"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Oletko varma, että haluat poistaa kaikki tulevat päivitysilmoituksia kuten tämä näkymisen?\r\nVoit uudelleen sallia päivitysilmoituksia menemällä ScriptSafe-sivulla ja rastittamalla vieressä Show Update ponnahdusikkunoiden."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Päivitysilmoituksia käytöstä"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

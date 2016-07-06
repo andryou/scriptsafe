@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Hiện Rating Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Xêp Hạng"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "nếu chọn, bổ sung thêm nút xếp hạng thuộc lĩnh vực trong tab cửa sổ bật lên"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Bạn có chắc chắn bạn muốn vô hiệu hóa bất kỳ thông báo cập nhật trong tương lai như thế này xuất hiện?\r\nBạn luôn có thể cho phép thông báo cập nhật bằng cách vào trang ScriptSafe Options và đánh dấu vào hộp bên cạnh Hiện Cập nhật Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Cập nhật thông báo vô hiệu hóa"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

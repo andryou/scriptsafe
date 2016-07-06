@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Laat Rating Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Rating"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "indien aangevinkt, voegt waardering knop onder domeinen in tab popup"
@@ -529,7 +533,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Intrekken Pagina Temp. machtigingen"
+      "message": "Intrekken Pagina Temp. Machtigingen"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Weet u zeker dat u wilt een toekomstige update meldingen zoals deze worden weergegeven uitschakelen?\r\nU kunt altijd opnieuw laten updatemeldingen door te gaan naar de pagina ScriptSafe opties en het aanvinken van het vakje naast Show update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Meldingen update uitgeschakeld"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

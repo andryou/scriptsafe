@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Voir Note Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Évaluation"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "si cochée, ajoute note bouton sous domaines dans l'onglet contextuel"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Êtes-vous sûr de vouloir désactiver les futures notifications de mise à jour comme celui-ci d'apparaître?\r\nVous peut toujours re-autoriser les notifications de mise à jour en allant à la page Options ScriptSafe et en cochant la case Afficher Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Notifications de mise à jour désactivées"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

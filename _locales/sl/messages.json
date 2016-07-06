@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Pokaži Gumb Ocena:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Ocena"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ce oznacili, dodaja gumba za oceno v skladu s podrocij v zavihku ljudstvo"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Ali ste prepricani, da želite onemogociti vse prihodnje obvestil o posodobitvah, kot je ta iz pojavljajo?\r\nV lahko vedno znova omogoci obvestil o posodobitvah, ki jih bo stran ScriptSafe Možnosti in odkljuka polje poleg Show Update Pojav."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Obvestila o posodobitvah onemogočeno"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Tunjukkan Rating Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Rating"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "jika ditandakan, menambah butang Kedudukan di bawah domain dalam tab popup"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Adakah anda pasti anda mahu untuk melumpuhkan sebarang pemberitahuan kemas kini masa depan seperti ini daripada muncul?\r\nAnda sentiasa boleh membenarkan semula pemberitahuan kemas kini dengan pergi ke laman ScriptSafe Pilihan dan menandakan kotak di sebelah Show Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Pemberitahuan kemas kini yang tidak aktif"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

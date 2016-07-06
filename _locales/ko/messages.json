@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "평가 버튼 표시 :"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "평가"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "틱 경우, 탭 팝업에서 도메인에 따라 평가 단추를 추가"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "당신은 당신이 나타나는에서이 같은 향후 업데이트 알림을 해제 하시겠습니까?\r\n당신은 항상 ScriptSafe 옵션 페이지로 이동하여보기 업데이트 팝업 옆에있는 상자를 똑딱에 의해 업데이트 알림을 다시 허용 할 수 있습니다."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "업데이트 알림이 비활성화"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

@@ -197,7 +197,7 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "Menyangkal"
+      "message": "Menolak"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
@@ -225,11 +225,11 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "Ketidakpercayaan"
+      "message": "Kecurigaan"
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "ketidakpercayaan"
+      "message": "kecurigaan"
    },
    "domain": {
       "description": "Same Domain",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Tampilkan Penilaian Tombol:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Penilaian"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "jika dicentang, menambahkan tombol rating di bawah domain di tab popup"
@@ -637,11 +641,11 @@
    },
    "trust": {
       "description": "Trust",
-      "message": "Kepercayaan"
+      "message": "Mempercayai"
    },
    "trustlow": {
       "description": "trust",
-      "message": "kepercayaan"
+      "message": "mempercayai"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Apakah Anda yakin ingin menonaktifkan pemberitahuan pembaruan masa depan seperti ini muncul?\r\nAnda dapat selalu memungkinkan kembali pemberitahuan update dengan pergi ke halaman ScriptSafe Options dan mencentang kotak di samping Tampilkan Perbarui Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Pemberitahuan update dinonaktifkan"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

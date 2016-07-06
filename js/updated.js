@@ -19,6 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function disableNotification() {
 	if (confirm(chrome.i18n.getMessage("updatedisable"))) {
 		localStorage['updatenotify'] = 'false';
-		$('#message').html('Update notifications disabled').stop().fadeIn("slow").delay(2000).fadeOut("slow");
+		$('#message').html(chrome.i18n.getMessage("updatedisablemessage")).stop().fadeIn("slow").delay(2000).fadeOut("slow");
 	}
 }

@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "درجہ بندی بٹن دکھائیں:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "درجہ بندی"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ticked کی تو اس کے ٹیب پاپ اپ میں ڈومینز کے تحت درجہ بندی کے بٹن کا اضافہ کر دیتی"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "کیا آپ واقعی دکھائے جانے سے ایک اس طرح کسی بھی مستقبل کے اپ ڈیٹ کی اطلاعات کو غیر فعال کرنا چاہتے ہیں؟\r\nآپ ہمیشہ ScriptSafe اختیارات کے صفحے پر جا کر اور شو اپ ڈیٹ پاپ اپ کے سوا باکس ٹک ٹک کی طرف اپ ڈیٹ کی اطلاعات دوبارہ اجازت دے سکتے ہیں."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "اپ ڈیٹ کی اطلاعات کو غیر فعال کر"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

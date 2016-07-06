@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Afișați Butonul Caracterizare:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Evaluare"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "dacă este bifată, adaugă butonul de evaluare în cadrul domeniilor în tab-ul pop-up"
@@ -529,7 +533,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "Revocați Pagină Temp. permisiuni"
+      "message": "Revocați Pagină Temp. Permisiuni"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Sunteți sigur că doriți să dezactivați orice notificări de actualizare viitoare ca aceasta să apară?\r\nPuteți oricând să re-permit notificări de actualizare accesând pagina Opțiuni ScriptSafe și bifând caseta de lângă Afișare actualizare Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Notificări de actualizare dezactivate"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

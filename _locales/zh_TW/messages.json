@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "顯示評分按鈕："
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "評分"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "如果勾選，在增加了彈出選項卡下的域等級按鈕"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "你確定要禁用像這樣出現的任何未來更新通知？\r\n通過轉到ScriptSafe選項頁，勾選顯示更新彈出窗口旁邊的框，您可以隨時重新允許更新通知。"
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "更新通知禁用"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

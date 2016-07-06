@@ -9,7 +9,7 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "Give Lov Til"
+      "message": "Tillade"
    },
    "alloweditems": {
       "description": "Allowed Items",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Vis Rating Knap:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Bedømmelse"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "hvis afkrydset, tilføjer bedømmelse knappen under domæner i fanen popup"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Er du sikker på du vil deaktivere eventuelle fremtidige opdateringsmeddelelser som denne i at blive vist?\r\nDu kan altid re-tillade opdateringsmeddelelser ved at gå til siden ScriptSafe Options og afkrydse boksen ved siden af ??Show opdatering Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Opdater meddelelser deaktiveret"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

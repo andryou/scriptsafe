@@ -225,11 +225,11 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "Kawalan Ng Tiwala"
+      "message": "Walang Tiwala"
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "kawalan ng tiwala"
+      "message": "walang tiwala"
    },
    "domain": {
       "description": "Same Domain",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Ipakita Rating Pindutan:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Marka"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "kung ticked, nagdadagdag rating button sa ilalim domain sa tab popup"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Sigurado ka bang gusto mong i-disable ang anumang dumarating na mga abiso update tulad ng isang ito mula sa paglitaw?\r\nMaaari mong palaging muling payagan abiso update sa pamamagitan ng pagpunta sa pahina ng ScriptSafe Opsyon at gris ang kahon sa tabi Show Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Pinagana update ang mga abiso"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

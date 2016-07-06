@@ -9,7 +9,7 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "Lehetové Teszi"
+      "message": "Enged"
    },
    "alloweditems": {
       "description": "Allowed Items",
@@ -149,11 +149,11 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "Egyértelmu"
+      "message": "Tiszta"
    },
    "clearlow": {
       "description": "clear",
-      "message": "egyértelmu"
+      "message": "tiszta"
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
@@ -225,11 +225,11 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "Bizalmatlanság"
+      "message": "Nem Bízik"
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "bizalmatlanság"
+      "message": "nem bízik"
    },
    "domain": {
       "description": "Same Domain",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Itt Található Az Értékelés Gombot:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Értékelés"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "ha be van jelölve, hozzáfuzi értékelése gombra tartományok lapon felugró"
@@ -650,6 +654,10 @@
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Biztos benne, hogy le akarja tiltani a jövobeni értesítések mint ez megjelenjen?\r\nA mindig újra lehetové értesítések megy, a ScriptSafe lehetoségek oldalon és négyzet bejelölésével mellett mutatása Frissítés Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Frissítés értesítések le vannak tiltva"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",

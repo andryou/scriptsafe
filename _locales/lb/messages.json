@@ -305,7 +305,7 @@
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Et schéngt Dir Är Astellungen ze Är Google Kont nach net synchroniséiert hun.\r\nScriptSafe iwwer ass Är aktuell Astellungen ze Är Google Kont synchroniséiert.\r\nClick op "OK" wann dir weiderfueren.\r\nIf net , klickt 'Ofbriechen', an op der aneren Apparat mat Äre Spiller Astellungen, update ScriptSafe a klickt op OK wann Dir mat dësem Message virgestallt ginn."
+      "message": "Et schéngt Dir Är Astellungen ze Är Google Kont nach net synchroniséiert hun.\r\nScriptSafe iwwer ass Är aktuell Astellungen ze Är Google Kont synchroniséiert.\r\nClick op \"OK\" wann dir weiderfueren.\r\nIf net , klickt 'Ofbriechen', an op der aneren Apparat mat Äre Spiller Astellungen, update ScriptSafe a klickt op OK wann Dir mat dësem Message virgestallt ginn."
    },
    "forcesyncexport": {
       "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
@@ -491,6 +491,10 @@
       "description": "Show Rating Button:",
       "message": "Show Enn Button:"
    },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Bewäertung"
+   },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
       "message": "wann ugekräizt, Dësweidere Bewäertung Knäppchen ënner Domainen an Reiter virzehuelen"
@@ -601,7 +605,7 @@
    },
    "syncdetect": {
       "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe huet festgestallt, dass Dir Astellungen op ärem Google Account synchroniséiert hun!\r\nClick op "OK", wann Dir d'Astellunge vun Äre Google Account ze Import wëllen."
+      "message": "ScriptSafe huet festgestallt, dass Dir Astellungen op ärem Google Account synchroniséiert hun!\r\nClick op \"OK\", wann Dir d'Astellunge vun Äre Google Account ze Import wëllen."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -651,6 +655,10 @@
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
       "message": "Sidd Dir sécher, dass Dir an Zukunft all Aktualiséierung Notifikatiounen esou eng eidel?\r\nYou kann ëmmer bass-erlaben update Notifikatiounen vun elo un d'ScriptSafe Optiounen Säit a kee Geck der Këscht nieft Show Update Popup- auszeschalten wëllen."
    },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Update botifikatiounen behënnerten"
+   },
    "updatenotify": {
       "description": "Show Changelog on Update:",
       "message": "Show Changelog op Update:"
@@ -669,7 +677,7 @@
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
-      "message": "Gitt engem Domän oder Ausdrock (click "Hëllef" fir méi Informatiounen)"
+      "message": "Gitt engem Domän oder Ausdrock (click \"Hëllef\" fir méi Informatiounen)"
    },
    "useragentspoof": {
       "description": "User-Agent Spoof:",
