@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "அனுமதி"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "அனுமதிக்கப்பட்ட பொருட்கள்"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "தடுக்கப்பட்டவை"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "அனைத்து அமர்வு தடுக்கப்பட்டது அனுமதி"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "விருப்ப"
    },
+   "default": {
+      "description": "Default",
+      "message": "இயல்புநிலை"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "உள்ளூர் ஐபி பாதுகாக்க"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "அவநம்பிக்கை"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "அவநம்பிக்கை டொமைன்"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "நம்பிக்கை"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "அறக்கட்டளை டொமைன்"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Lehetové Teszi"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Engedélyezett Elemek"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Blokkolt Elemek"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Lehetové Teszi Az Összes Zárolt Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Szokás"
    },
+   "default": {
+      "description": "Default",
+      "message": "Alapértelmezett"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Védje a Helyi IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "bizalmatlanság"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Bizalmatlanság Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "bizalom"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Trust Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

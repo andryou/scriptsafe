@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Allow"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Allowed Items"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Blocked Items"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Allow All Blocked For Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Custom"
    },
+   "default": {
+      "description": "Default",
+      "message": "Default"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Protect Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "distrust"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Distrust Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "trust"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Trust Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

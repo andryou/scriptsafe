@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Laut"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Atļautie Items"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Bloķētie Items"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Atlaut Visas Blokets Sesija"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Paraža"
    },
+   "default": {
+      "description": "Default",
+      "message": "Default"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Aizsargat Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "turet aizdomas"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Neuzticiba Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "uzticiba"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Trust Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

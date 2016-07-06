@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "السماح"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "الأصناف المسموح بها"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "العناصر المحظورة"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "السماح لجميع محظور لدورة"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "عرف"
    },
+   "default": {
+      "description": "Default",
+      "message": "افتراضي"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "حماية الملكية الفكرية المحلية"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "عدم الثقة"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "المجال انعدام الثقة"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "ثقة"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "المجال الثقة"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Позволява"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Позволени артикули"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Блокирани елементи"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Даде възможност на всички блокирани за Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Персонализиран"
    },
+   "default": {
+      "description": "Default",
+      "message": "По подразбиране"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Защитете Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "недоверие"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Недоверието домейн"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "Доверие"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Trust домейн"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

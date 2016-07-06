@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "अनुमति"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "अनुमति वस्तुहरू"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "अवरुद्ध वस्तुहरू"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "सत्र लागि अवरुद्ध अनुमति दिने सबै"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "अनुकूलन"
    },
+   "default": {
+      "description": "Default",
+      "message": "पूर्वनिर्धारित"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "सुरक्षित स्थानीय आईपी"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "अविश्वास"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "अविश्वास डोमेन"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "भरोसा"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "भरोसा डोमेन"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

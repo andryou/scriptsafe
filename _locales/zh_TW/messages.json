@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "允許"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "允許的項目"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "項目受阻"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "讓所有阻塞會話"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "習俗"
    },
+   "default": {
+      "description": "Default",
+      "message": "默認"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "保護本地IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "懷疑"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "不信任域"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "相信"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "信任域"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

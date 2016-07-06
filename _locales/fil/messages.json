@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Payagan"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Pinayagan Items"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Naharang Na Mga Item"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Payagan Lahat Block Para Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Pasadya"
    },
+   "default": {
+      "description": "Default",
+      "message": "Default"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Protektahan Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "kawalan ng tiwala"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Hindi Magtiwala Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "tiwala"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Trust Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

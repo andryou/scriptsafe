@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "дозволяти"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "дозволені товари"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Заблоковані товари"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Дозволити всі блоковані для сесії"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "виготовлений на замовлення"
    },
+   "default": {
+      "description": "Default",
+      "message": "дефолт"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Захист локальний IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "недовіру"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "недовіра домену"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "довіра"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "цільовий домен"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Give Lov Til"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Medbringes Elementer"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Blokerede Elementer"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Tillad Alle Blokeret For Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Brugerdefinerede"
    },
+   "default": {
+      "description": "Default",
+      "message": "Misligholdelse"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Beskyt Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "mistillid"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Mistilliden Domæne"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "tillid"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Trust Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

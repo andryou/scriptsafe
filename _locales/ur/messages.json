@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "اجازت دیں"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "اجازت اشیا"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "بلاک شدہ اشیا"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "تمام سیشن کے لئے بلاک کی اجازت دیں"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "اپنی مرضی کے مطابق"
    },
+   "default": {
+      "description": "Default",
+      "message": "پہلے سے طے شدہ"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "مقامی IP حفاظت کرو"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "بد اعتمادی"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "بد اعتمادی ڈومین"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "اعتماد"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "ٹرسٹ ڈومین"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

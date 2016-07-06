@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Cho Phép"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Mục Cho Phép"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Các Mục Bị Chặn"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Cho Phép Tất Cả Bị Chặn Đối Với Phiên"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Tập Quán"
    },
+   "default": {
+      "description": "Default",
+      "message": "Mặc Định"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Bảo vệ Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "nghi ngờ"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Ngờ Vực Miền"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "lòng tin"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Niềm Tin Tên Miền"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

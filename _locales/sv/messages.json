@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Tillåta"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Tillåtna Items"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Spärrade Objekt"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Tillåt Alla Blockerad För Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Beställnings"
    },
+   "default": {
+      "description": "Default",
+      "message": "Standard"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Skydda Local IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "misstro"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Misstro Domän"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "förtroende"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "förtroende domän"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Dopustiti"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Dopuštene Stavke"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Blokirane Stavke"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Dopusti Sve Blokirane Za Sjednice"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Obicaj"
    },
+   "default": {
+      "description": "Default",
+      "message": "Zadano"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Zaštitite Lokalnu IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "nepovjerenje"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Nepovjerenje Domena"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "povjerenje"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Povjerenje Domena"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

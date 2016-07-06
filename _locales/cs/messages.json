@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Povolit"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Povolené Položky"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Blokované Položky"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Povolit Vše Blokována Pro Zasedání"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Zvyk"
    },
+   "default": {
+      "description": "Default",
+      "message": "Standardní"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Chránit Lokální IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "neduvera"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Neduvera Domény"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "duvera"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Duvera Domény"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

@@ -52,6 +52,7 @@ function i18load() {
 	$(".i18_close").val(chrome.i18n.getMessage("close"));
 	$(".i18_enable").html(chrome.i18n.getMessage("enable"));
 	$(".i18_mode").html(chrome.i18n.getMessage("mode"));
+	$(".i18_default").html(chrome.i18n.getMessage("default"));
 	$(".i18_enabled").html(chrome.i18n.getMessage("enabled"));
 	$(".i18_disabled").html(chrome.i18n.getMessage("disabled"));
 	$(".i18_enablesyncing").html(chrome.i18n.getMessage("enablesyncing"));
@@ -563,7 +564,7 @@ function topDomainAdd(domain, mode) {
 	var lingo;
 	if (mode == '0') lingo = chrome.i18n.getMessage("trustlow");
 	else if (mode == '1') lingo = chrome.i18n.getMessage("distrustlow");
-	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])$/g) && domain[0] != '*' && domain[1] != '*' && domain[2] != '.' && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
+	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])$/g) && domain.indexOf('**.') != 0 && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
 		var result = bkg.topHandler(domain, mode);
 		listUpdate();
 		bkg.freshSync(2);
@@ -642,8 +643,8 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
 		for (var i in whiteList) {
-			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+whiteList[i]+'\' rel="1">'+chrome.i18n.getMessage("blacklistmove")+'</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
-			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+whiteList[i]+'\' rel="0">'+chrome.i18n.getMessage("trustdomain")+'</a> | <a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+whiteList[i]+'\' rel="1">'+chrome.i18n.getMessage("blacklistmove")+'</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+chrome.i18n.getMessage("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+chrome.i18n.getMessage("trust")+' '+whiteList[i]+'\' data-domain=\''+whiteList[i]+'\' data-mode="0">'+chrome.i18n.getMessage("trust")+'</a> | <a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+chrome.i18n.getMessage("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 		}
 	}
 	var blacklistCompiled = '';
@@ -653,8 +654,8 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
 		for (var i in blackList) {
-			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+blackList[i]+'\' rel="0">'+chrome.i18n.getMessage("whitelistmove")+'</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
-			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+blackList[i]+'\' rel="1">'+chrome.i18n.getMessage("distrustdomain")+'</a> | <a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+blackList[i]+'\' rel="0">'+chrome.i18n.getMessage("whitelistmove")+'</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+blackList[i]+'\' data-domain=\''+chrome.i18n.getMessage("whitelistmove")+'\' data-mode="0">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+chrome.i18n.getMessage("distrust")+' '+blackList[i]+'\' data-domain=\''+blackList[i]+'\' data-mode="1">'+chrome.i18n.getMessage("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+chrome.i18n.getMessage("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 		}
 	}
 	$('#whitelist').html(whitelistCompiled);
@@ -663,8 +664,8 @@ function listUpdate() {
 	$('#blacklistcount').html(blacklistLength);
 	$(".domainRemover, .topDomainAdd, .domainMove").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
-	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
-	$(".domainMove").click(function() { domainMove($(this).attr('title'), $(this).attr('rel'));});
+	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('data-domain'), $(this).attr('data-mode'));});
+	$(".domainMove").click(function() { domainMove($(this).attr('data-domain'), $(this).attr('data-mode'));});
 	updateExport();
 }
 function listclear(type) {

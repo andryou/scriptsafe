@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Izin Vermek"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "İzin Öğeler"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Engellenen Öğeler"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Tüm Oturum Için Engellenen Izin Ver"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Görenek"
    },
+   "default": {
+      "description": "Default",
+      "message": "Varsayılan"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Yerel IP Korumak"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "güvensizlik"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Güvensizlik Alan"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "güven"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Güven Alan"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

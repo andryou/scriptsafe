@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Mengizinkan"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Diizinkan Item"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Diblokir Item"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Izinkan Semua Diblokir Untuk Sesi"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Adat"
    },
+   "default": {
+      "description": "Default",
+      "message": "Kegagalan"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Melindungi lokal IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "ketidakpercayaan"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Ketidakpercayaan Domain"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "kepercayaan"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Kepercayaan Domain"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

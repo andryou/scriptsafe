@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "許可します"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "可アイテム"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "ブロックされたアイテム"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "すべてのセッションのためにブロックされた許可"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "カスタム"
    },
+   "default": {
+      "description": "Default",
+      "message": "デフォルト"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "ローカルIPを保護します"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "不信"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "不信ドメイン"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "信頼"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "信頼ドメイン"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

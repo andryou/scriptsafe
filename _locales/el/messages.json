@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Επιτρέπω"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "επιτρέπονται Είδη"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Αποκλεισμένα Στοιχεία"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Να επιτρέπεται σε όλους Αποκλεισμένοι Για Session"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Έθιμο"
    },
+   "default": {
+      "description": "Default",
+      "message": "Αθέτηση"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Προστατέψτε Τοπική IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "δυσπιστία"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "δυσπιστία τομέα"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "εμπιστοσύνη"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "εμπιστοσύνη τομέα"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",

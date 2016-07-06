@@ -11,6 +11,14 @@
       "description": "Allow",
       "message": "Leisti"
    },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Leidžiami Daiktai"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Užblokuoti Daiktai"
+   },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
       "message": "Leisti Visiems Blokuojamas Sesijos"
@@ -179,6 +187,10 @@
       "description": "Custom",
       "message": "Paprotys"
    },
+   "default": {
+      "description": "Default",
+      "message": "Numatytas"
+   },
    "default_public_interface_only": {
       "description": "Protect Local IP",
       "message": "Apsaugokite Vietos IP"
@@ -218,10 +230,6 @@
    "distrustlow": {
       "description": "distrust",
       "message": "nepasitikejimas"
-   },
-   "distrustdomain": {
-      "description": "Distrust Domain",
-      "message": "Nepasitikejimas Domenu"
    },
    "domain": {
       "description": "Same Domain",
@@ -634,10 +642,6 @@
    "trustlow": {
       "description": "trust",
       "message": "pasitikejimas"
-   },
-   "trustdomain": {
-      "description": "Trust Domain",
-      "message": "Pasitikejimas Domenu"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
