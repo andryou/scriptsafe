@@ -9,7 +9,7 @@
    },
    "allow": {
       "description": "Allow",
-      "message": "聴す"
+      "message": "許可"
    },
    "alloweditems": {
       "description": "Allowed Items",
@@ -21,15 +21,15 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "すべてのセッションのためにブロックされた許可"
+      "message": "ブロックされたセッションをすべて許可"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "不要なコンテンツをブロックします："
+      "message": "不要なコンテンツをブロック："
    },
    "annoyancesdesc": {
-      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
-      "message": "知られている広告/マルウェアのドメインから不要なコンテンツを削除します。ドメインはMVPSのHOSTS、hpHOSTS（広告/追跡サーバ）から収集した、ピーター・ロウズHOSTSプロジェクト、MalwareDomainList.com"
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a target="_blank" href="http://winhelp2002.mvps.org/hosts.htm">MVPS HOSTS</a>, <a target="_blank" href="http://hosts-file.net">hpHOSTS (ad / tracking servers)</a>, <a target="_blank" href="http://pgl.yoyo.org/as/policy.php">Peter Lowe's HOSTS Project</a>, <a target="_blank" href="http://www.malwaredomainlist.com/">MalwareDomainList.com</a>",
+      "message": "知られている広告/マルウェアのドメインから不要なコンテンツを削除します。ドメインは<a target="_blank" href="http://winhelp2002.mvps.org/hosts.htm">MVPSのHOSTS</a>、<a target="_blank" href="http://hosts-file.net">hpHOSTS（広告/追跡サーバ）</a>から収集した、<a target="_blank" href="http://pgl.yoyo.org/as/policy.php">ピーター・ロウズHOSTSプロジェクト</a>、<a target="_blank" href="http://www.malwaredomainlist.com/">MalwareDomainList.com</a>"
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
@@ -52,8 +52,8 @@
       "message": "常にホワイトリストに登録しても、社会的なウィジェット/ボタンを削除"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
-      "message": "より包括的なブロッキングについては、おたくのサイト上のサブスクリプションリストのすべてとGhostery、切断し、ブラー、および/またはuBlock原産地をチェックしてください"
+      "description": "For more comprehensive blocking, check out <a target="_blank" href="https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij">Ghostery</a>, <a target="_blank" href="https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo">Disconnect</a>, <a target="_blank" href="https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd">Blur</a>, and/or <a target="_blank" href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">uBlock Origin</a> with all of the subscription lists on the <a target="_blank" href="https://www.fanboy.co.nz/">Fanboy site</a>",
+      "message": "より包括的なブロッキングについては、<a target="_blank" href="https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij">Ghostery</a>、<a target="_blank" href="https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo">Disconnect</a>、<a target="_blank" href="https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd">Blur</a>、<a target="_blank" href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm">uBlock Origin</a> および <a target="_blank" href="https://www.fanboy.co.nz/">Fanboy site</a>上のサブスクリプションリストをチェックしてください"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -145,7 +145,7 @@
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "チェックが入っている場合、毎回オ​​プションをクリックすると、タブのオプションを閉じ"
+      "message": "チェックが入っている場合、毎回オプションをクリックすると、タブのオプションを閉じ"
    },
    "clear": {
       "description": "Clear",
@@ -197,7 +197,7 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "否定します"
+      "message": "拒否"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
@@ -241,7 +241,7 @@
    },
    "domaininfo": {
       "description": "Help",
-      "message": "助けて"
+      "message": "ヘルプ"
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
@@ -285,7 +285,7 @@
    },
    "export": {
       "description": "Export",
-      "message": "輸出する"
+      "message": "エクスポート"
    },
    "exportsuccess": {
       "description": "Your settings have been successfully synced!",
@@ -533,11 +533,11 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "ページの温度を取り消します。パーミッション"
+      "message": "一時的な許可を取り消し"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
-      "message": "すべての温度を取り消します。"
+      "message": "一時的な許可を取り消し"
    },
    "same": {
       "description": "Same Document",
@@ -553,7 +553,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "テキストフ​​ァイルとして保存します"
+      "message": "テキストファイルとして保存します"
    },
    "sections": {
       "description": "Sections",
