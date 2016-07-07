@@ -25,11 +25,11 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "不要なコンテンツをブロック："
+      "message": "不要なコンテンツをブロックします："
    },
    "annoyancesdesc": {
-      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a target=\"_blank\" href=\"http://winhelp2002.mvps.org/hosts.htm\">MVPS HOSTS</a>, <a target=\"_blank\" href=\"http://hosts-file.net\">hpHOSTS (ad / tracking servers)</a>, <a target=\"_blank\" href=\"http://pgl.yoyo.org/as/policy.php\">Peter Lowe's HOSTS Project</a>, <a target=\"_blank\" href=\"http://www.malwaredomainlist.com/\">MalwareDomainList.com</a>",
-      "message": "知られている広告/マルウェアのドメインから不要なコンテンツを削除します。ドメインは<a target=\"_blank\" href=\"http://winhelp2002.mvps.org/hosts.htm\">MVPSのHOSTS</a>、<a target=\"_blank\" href=\"http://hosts-file.net\">hpHOSTS（広告/追跡サーバ）</a>から収集した、<a target=\"_blank\" href=\"http://pgl.yoyo.org/as/policy.php\">ピーター・ロウズHOSTSプロジェクト</a>、<a target=\"_blank\" href=\"http://www.malwaredomainlist.com/\">MalwareDomainList.com</a>"
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "知られている広告/マルウェアのドメインから不要なコンテンツを削除します。ドメインは<a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPSのHOSTS</a>、<a href=http://hosts-file.net target=_blank>hpHOSTS（広告/追跡サーバ）</a>から収集した、<a href=http://pgl.yoyo.org/as/policy.php target=_blank>ピーター・ロウズHOSTSプロジェクト</a>、<a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
@@ -41,23 +41,23 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "反社会的"
+      "message": "SNS 拒否/ブロック"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "反社会的なモード："
+      "message": "SNS 拒否/ブロックモード："
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
-      "message": "常にホワイトリストに登録しても、社会的なウィジェット/ボタンを削除"
+      "message": "常にホワイトリストに登録しても、SNS ウィジェット/ボタンを削除"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\">Ghostery</a>, <a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\">Disconnect</a>, <a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\">Blur</a>, and/or <a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\">uBlock Origin</a> with all of the subscription lists on the <a target=\"_blank\" href=\"https://www.fanboy.co.nz/\">Fanboy site</a>",
-      "message": "より包括的なブロッキングについては、<a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\">Ghostery</a>、<a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\">Disconnect</a>、<a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\">Blur</a>、<a target=\"_blank\" href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\">uBlock Origin</a> および <a target=\"_blank\" href=\"https://www.fanboy.co.nz/\">Fanboy site</a>上のサブスクリプションリストをチェックしてください"
+      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
+      "message": "より包括的なブロッキングについては、<a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>、<a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>、<a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>、<a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> および <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>上のサブスクリプションリストをチェックしてください"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Blockオーディオフィンガープリント："
+      "message": "ブロックオーディオフィンガープリント："
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
@@ -89,7 +89,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "ブロックは、すべてのセッションに許可します"
+      "message": "許可したすべてのセッションをブロック"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -109,7 +109,7 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "キャンバス指紋保護："
+      "message": "キャンバスフィンガープリント保護："
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
@@ -145,7 +145,7 @@
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "チェックが入っている場合、毎回オプションをクリックすると、タブのオプションを閉じ"
+      "message": "チェックが入っている場合、毎回オ​​プションをクリックすると、タブのオプションを閉じ"
    },
    "clear": {
       "description": "Clear",
@@ -157,11 +157,11 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "ブロッククライアント四角形："
+      "message": "ブロッククライアントレクタングル："
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
-      "message": "要素の四角形を計算を通じてフィンガープリントを防ぎます。いくつかのドロップダウンを妨げる可能性があります。"
+      "message": "要素のレクタングルを計算を通じてフィンガープリントを防ぎます。いくつかのドロップダウンを妨げる可能性があります。"
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
@@ -225,11 +225,11 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "不信"
+      "message": "不審"
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "不信"
+      "message": "不審"
    },
    "domain": {
       "description": "Same Domain",
@@ -253,7 +253,7 @@
    },
    "domaininvalid3": {
       "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
-      "message": "それが不要なコンテンツの提供者であるとして、ドメインを追加することはできません（ブロック不要なコンテンツおよび/または反社会的モードを参照してください）"
+      "message": "それが不要なコンテンツの提供者であるとして、ドメインを追加することはできません（ブロック不要なコンテンツおよび/またはSNS 拒否/ブロックモードを参照してください）"
    },
    "domainsortdesc": {
       "description": "sorts URL lists by domains on this page and in the panel",
@@ -297,11 +297,11 @@
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "指紋保護"
+      "message": "フィンガープリント保護"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "指紋保護（サイトを壊す場合があります）"
+      "message": "フィンガープリント保護（サイトを壊す場合があります）"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
@@ -325,7 +325,7 @@
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Blockゲームパッド列挙："
+      "message": "ブロックゲームパッド列挙："
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -361,7 +361,7 @@
    },
    "ignoredallow": {
       "description": "Ignored Allow",
-      "message": "許可は無視されます"
+      "message": "許可を無視"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -533,7 +533,7 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temp. Permissions",
-      "message": "一時的な許可を取り消し"
+      "message": "一時的な許可の取り消し"
    },
    "revoketempall": {
       "description": "Revoke All Temp.",
@@ -553,7 +553,7 @@
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "テキストファイルとして保存します"
+      "message": "テキストフ​​ァイルとして保存します"
    },
    "sections": {
       "description": "Sections",
@@ -589,7 +589,7 @@
    },
    "support": {
       "description": "To support development, click the heart :)",
-      "message": "開発をサポートするために、心臓をクリックして:)"
+      "message": "開発をサポートするために、ハートアイコンをクリックして :)"
    },
    "syncdisable": {
       "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
