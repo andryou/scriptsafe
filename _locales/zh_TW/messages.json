@@ -532,12 +532,12 @@
       "message": "輕鬆"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "撤消頁溫度。權限"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "撤銷頁碼臨時權限"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "撤銷所有溫度。"
+      "description": "Revoke All Temporary",
+      "message": "撤消所有臨時"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "您當前的谷歌瀏覽器版本不支持設置同步。請嘗試更新您的Chrome瀏覽器版本，然後再試一次。"
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "臨時"
    },
    "timezone": {
       "description": "Spoof Timezone:",

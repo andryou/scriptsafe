@@ -532,12 +532,12 @@
       "message": "отпуснат"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Отмяна Page Темп. Разрешения"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Отмяна Page временните разрешения"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Отмяна на всички Temp."
+      "description": "Revoke All Temporary",
+      "message": "Отмяна на всички временни"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Текущата версия на Google Chrome не поддържа настройки синхронизират. Моля, опитайте да актуализирате версията Chrome и опитайте отново."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "временен"
    },
    "timezone": {
       "description": "Spoof Timezone:",

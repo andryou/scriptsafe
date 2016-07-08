@@ -532,12 +532,12 @@
       "message": "ผ่อนคลาย"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "เพิกถอนหน้าชั่วคราว สิทธิ์"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "เพิกถอนสิทธิ์หน้าชั่วคราว์"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "เพิกถอนชั่วคราว"
+      "description": "Revoke All Temporary",
+      "message": "เพิกถอนชั่วคราวทั้งหมด"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "รุ่นปัจจุบันของ Google Chrome ไม่สนับสนุนการตั้งค่าการซิงค์ โปรดอัปเดตเวอร์ชันของ Chrome และลองอีกครั้ง"
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "ชั่วคราว"
    },
    "timezone": {
       "description": "Spoof Timezone:",

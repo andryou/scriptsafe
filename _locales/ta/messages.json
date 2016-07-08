@@ -532,12 +532,12 @@
       "message": "தளர்வான"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "பக்கம் தற்காலிக திரும்பப்பெறு. அனுமதிகள்"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "திரும்பப்பெறு பக்கம் தற்காலிக அனுமதிகள்"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "அனைத்து தற்காலிக திரும்பப்பெறு."
+      "description": "Revoke All Temporary",
+      "message": "அனைத்து தற்காலிக திரும்பப்பெறு"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Google Chrome இன் உங்கள் தற்போதைய பதிப்பு ஒத்திசைவை அமைப்புகளை ஆதரிக்கவில்லை. உங்கள் Chrome பதிப்பு மேம்படுத்தும் முயற்சி, மீண்டும் முயற்சிக்கவும்."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "தற்காலிக"
    },
    "timezone": {
       "description": "Spoof Timezone:",

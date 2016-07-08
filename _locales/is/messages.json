@@ -532,12 +532,12 @@
       "message": "Relaxed"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Afturkalla Page Temp. Heimildir"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Afturkalla Page Temporary Heimildir"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Afturkalla All Temp."
+      "description": "Revoke All Temporary",
+      "message": "Afturkalla All Tímabundin"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Núverandi útgáfa þín af Google Chrome styður ekki stillingar syncing. Reyndu að uppfæra Chrome útgáfa og reyndu aftur."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Tímabundin"
    },
    "timezone": {
       "description": "Spoof Timezone:",

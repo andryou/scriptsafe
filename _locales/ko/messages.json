@@ -532,12 +532,12 @@
       "message": "편안한"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "페이지 온도를 취소. 권한"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "페이지 임시 권한을 취소"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "모든 온도를 취소."
+      "description": "Revoke All Temporary",
+      "message": "모든 임시을 취소"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "구글 크롬의 현재 버전은 동기화 설정을 지원하지 않습니다. 당신의 크롬 버전을 업데이트 시도하고 다시 시도하십시오."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "일시적인"
    },
    "timezone": {
       "description": "Spoof Timezone:",

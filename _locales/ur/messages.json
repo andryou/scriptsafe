@@ -532,12 +532,12 @@
       "message": "آرام دہ"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "صفحہ عارضی منسوخ. اجازتیں"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "کالعدم پیج عارضی اجازت"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "تمام عارضی منسوخ."
+      "description": "Revoke All Temporary",
+      "message": "تمام عارضی کالعدم"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "گوگل کروم کے آپ کے موجودہ ورژن کی مطابقت پذیری کی ترتیبات کی حمایت نہیں کرتا. اپنے Chrome ورژن کو اپ ڈیٹ کرنے کی کوشش کریں اور دوبارہ کوشش کریں."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "عارضی"
    },
    "timezone": {
       "description": "Spoof Timezone:",

@@ -341,11 +341,11 @@
    },
    "hotkeysremove": {
       "description": "Remove temporary permissions for a current tab",
-      "message": "現在のタブのための一時的なアクセス権を削除します"
+      "message": "現在のタブのための一時的なアクセス権を削除する"
    },
    "hotkeysremoveall": {
       "description": "Remove all temporary permissions",
-      "message": "すべての一時的な権限を削除し"
+      "message": "すべての一時的な権限を削除する"
    },
    "hotkeyspage": {
       "description": "Configure ScriptSafe hotkeys:",
@@ -532,11 +532,11 @@
       "message": "リラックスしました"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
+      "description": "Revoke Page Temporary Permissions",
       "message": "一時的な許可の取り消し"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
+      "description": "Revoke All Temporary",
       "message": "一時的な許可を取り消し"
    },
    "same": {
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Google Chromeののあなたの現在のバージョンでは、同期の設定をサポートしていません。お使いのChromeのバージョンを更新しようとしてから、もう一度お試しください。"
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "一時的"
    },
    "timezone": {
       "description": "Spoof Timezone:",

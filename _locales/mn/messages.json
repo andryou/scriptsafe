@@ -532,12 +532,12 @@
       "message": "тайван"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Page Temp хүчингүй болгох. зөвшөөрлүүд"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Page түр Зөвшөөрлийг хүчингүй болгох"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Бүх Temp хүчингүй болгох."
+      "description": "Revoke All Temporary",
+      "message": "Хүчингүй болгох мэдээлэл, түр зуурын"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Google Chrome Таны одоогийн хувилбар нь сүүлийн хэлбэрт аваачих, тохиргоог дэмждэггүй. Таны Chrome хувилбарыг шинэчлэх оролдлого, дахин оролдоно уу."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "түр"
    },
    "timezone": {
       "description": "Spoof Timezone:",

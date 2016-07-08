@@ -532,12 +532,12 @@
       "message": "Descontraído"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Revogar Página Temp. Permissões"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Revogar As Permissões De Página Temporário"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Revogar Todos Os Temp."
+      "description": "Revoke All Temporary",
+      "message": "Revogar Todos Os Temporária"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Sua versão atual do Google Chrome não suporta configurações de sincronização. Por favor, tente atualizar sua versão do Chrome e tente novamente."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Temporário"
    },
    "timezone": {
       "description": "Spoof Timezone:",

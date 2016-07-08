@@ -532,12 +532,12 @@
       "message": "Santai"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Membatalkan Page Temp. Kebenaran"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Membatalkan Page Sementara Kebenaran"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Membatalkan Semua Temp."
+      "description": "Revoke All Temporary",
+      "message": "Membatalkan Semua Temporary"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "versi semasa Google Chrome tidak menyokong tetapan penyegerakan. Sila cuba mengemas kini versi Chrome anda dan cuba lagi."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Sementara"
    },
    "timezone": {
       "description": "Spoof Timezone:",

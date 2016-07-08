@@ -532,12 +532,12 @@
       "message": "استرخاء"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "إلغاء الصفحة درجة الحرارة. أذونات"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "إلغاء ضوابط صفحة المؤقتة"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "إلغاء جميع الحرارة."
+      "description": "Revoke All Temporary",
+      "message": "إلغاء جميع المؤقتة"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "لا يدعم الإصدار الحالي من جوجل كروم إعدادات المزامنة. من فضلك حاول تحديث إصدار Chrome وحاول مرة أخرى."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "مؤقت"
    },
    "timezone": {
       "description": "Spoof Timezone:",

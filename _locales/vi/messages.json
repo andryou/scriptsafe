@@ -532,12 +532,12 @@
       "message": "Thư Giãn"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Thu Hồi Trang Temp. Quyền"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Thu Hồi Trang Temporary Quyền"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Thu Hồi Tất Cả Temp."
+      "description": "Revoke All Temporary",
+      "message": "Thu Hồi Tất Cả Tạm Thời"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Phiên bản hiện tại của Google Chrome không hỗ trợ cài đặt đồng bộ. Hãy cập nhật phiên bản Chrome của bạn và thử lại."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Tạm Thời"
    },
    "timezone": {
       "description": "Spoof Timezone:",

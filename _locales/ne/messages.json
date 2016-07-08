@@ -532,12 +532,12 @@
       "message": "तनावमुक्त"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "पृष्ठ तापमान रद्द। अनुमति"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "पृष्ठ अस्थायी अनुमति रद्द"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "सबै अस्थायी रद्द।"
+      "description": "Revoke All Temporary",
+      "message": "रद्द सबै अस्थायी"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Google Chrome को आफ्नो वर्तमान संस्करण सिङ्क सेटिङहरू समर्थन गर्दैन। कृपया आफ्नो क्रोम संस्करण अद्यावधिक गर्ने प्रयास गर्नुहोस् र पुन: प्रयास गर्नुहोस्।"
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "अस्थायी"
    },
    "timezone": {
       "description": "Spoof Timezone:",

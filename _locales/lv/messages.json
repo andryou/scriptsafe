@@ -532,12 +532,12 @@
       "message": "Atviegloti"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Atsaukt Lapu Temp. Atlaujas"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Atsaukt Page Pagaidu Atļaujām"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Atsaukt All Temp."
+      "description": "Revoke All Temporary",
+      "message": "Atsaukt Visām Pagaidu"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Jusu pašreizeja versija Google Chrome neatbalsta iestatijumus sinhronizeti. Ludzu, meginiet atjauninat Chrome versiju un meginiet velreiz."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Temporary"
    },
    "timezone": {
       "description": "Spoof Timezone:",

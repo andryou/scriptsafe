@@ -532,12 +532,12 @@
       "message": "Relaxat"
    },
    "revoketemp": {
-      "description": "Revoke Page Temp. Permissions",
-      "message": "Revocați Pagină Temp. Permisiuni"
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Revocați Pagina Temporare Permisiuni"
    },
    "revoketempall": {
-      "description": "Revoke All Temp.",
-      "message": "Toate Temp Revocați."
+      "description": "Revoke All Temporary",
+      "message": "Revocați Toate Temporare"
    },
    "same": {
       "description": "Same Document",
@@ -630,6 +630,10 @@
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
       "message": "Versiunea curentă de Google Chrome nu acceptă setările de sincronizare. Vă rugăm să încercați să actualizați versiunea Chrome și încercați din nou."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Temporar"
    },
    "timezone": {
       "description": "Spoof Timezone:",
