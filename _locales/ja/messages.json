@@ -149,11 +149,11 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "クリア"
+      "message": "消去"
    },
    "clearlow": {
       "description": "clear",
-      "message": "クリア"
+      "message": "消去"
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
