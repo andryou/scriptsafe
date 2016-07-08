@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_close").click(function() { window.close(); });
 });
 function init() {
-	$("#version").html(version+" Beta");
+	$("#version").html(version);
 	$("#pop_options").html(chrome.i18n.getMessage("options"));
 	chrome.windows.getCurrent(function(w) {
 		chrome.tabs.getSelected(w.id, function(tab) {
