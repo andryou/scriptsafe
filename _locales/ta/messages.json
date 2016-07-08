@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "மிகவும் பாதுகாப்பாக வலை மற்றும் சர்ஃப் கட்டுப்பாட்டை மீண்டும்."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "எல்லா களங்களிலும்"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "அனுமதி"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "அனுமதிக்கப்பட்ட பொருட்கள்"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "தடுக்கப்பட்டவை"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "அனைத்து அமர்வு தடுக்கப்பட்டது அனுமதி"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "தேவையற்ற உள்ளடக்கத்தை தொகுதி:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "அறியப்பட்ட விளம்பரம் / தீம்பொருள் களங்களில் இருந்து தேவையற்ற உள்ளடக்கத்தை நீக்க; களங்கள் MVPS சேனைகளும் hpHOSTS (விளம்பரம் / கண்காணிப்பு சர்வர்கள்) இருந்து சேகரிக்கப்பட்ட, பீட்டர் லோவ் புரவலன்களை திட்ட, MalwareDomainList.com"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "தேவையற்ற உள்ளடக்கத்தை முறை:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "தளர்வான = அனுமதி பட்டியலில்தான் களங்கள் தடுக்கப்படவில்லை முடியாது; அனுமதி பட்டியலில்தான் என்றால் தேவையற்ற டொமைன் பட்டியலில் கண்டிப்பு = களங்கள் கூட தடுக்கப்படும்"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "சமூகவிரோத"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "சமூகவிரோத முறை:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "அனுமதி பட்டியலில்தான் என்றால் எப்போதும் சமூக விட்ஜெட்டுகளை / பொத்தான்கள், கூட நீக்க"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "மேலும் விரிவான தடுப்பதை, வெளியே Fanboy தளத்தில் சந்தா பட்டியல்கள் அனைத்து Ghostery, துண்டி, தெளிவின்மை, மற்றும் / அல்லது uBlock பிறப்பிடம் பார்க்கலாம்"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "பிளாக் ஆடியோ கைரேகை:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "AudioContext API வழியாக கைரேகை பதிவு தடுக்க"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "பிளாக் பேட்டரி கைரேகை:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "பேட்டரி API வழியாக கைரேகை பதிவு தடுக்க"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "நடத்தை அமைப்புகள்"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "தடு (பரிந்துரைக்கப்பட்டது)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "பிளாக்"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "தடுக்கப்பட்ட"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "அனைத்து சீசனுக்கு அனுமதிக்கப்படும் தொகுதி"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "மொத்தமாக இறக்குமதி"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "பட்டியல் இறக்குமதி"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "மொத்த இறக்குமதி"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "கீழே உள்ள பெட்டியில் நகல் மற்றும் பேஸ்ட் களங்கள். ஒவ்வொரு டொமைன் ஒரு தனி வரி இருக்க வேண்டும்."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "கேன்வாஸ் கைரேகை பாதுகாப்பு:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe இந்த பக்கம் செயல்படுத்த முடியாது.</strong><br /><br />ஒரு இணையதளத்தில் சென்று முயற்சிக்கவும்."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "வெற்று readout"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "ரேண்டம் readout"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "முழுமையாக தடு readout"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "&lt;canvas&gt; உறுப்புகள் மூலம் கைரேகை பதிவு முயற்சிகளுக்கு எதிராக பாதுகாக்க"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "பிளாக் கேன்வாஸ் எழுத்துரு அணுகல்:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "&lt;canvas&gt; உறுப்புகள் மூலம் கணக்கெடுத்து இருந்து கணினி எழுத்துருக்களை தடுக்க. கூகுள் டாக்ஸ் உடன் தலையிட வேண்டும்."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "கிளாசிக் விருப்பங்கள் முறை:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "தேர்ந்தெடுக்கப்பட்டால், தாவல் விருப்பங்கள் எல்லாம் ஒரு விருப்பத்தை சொடுக்கும் நிறைவடைகிறது"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "தெளிவு"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "தெளிவான"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "பிளாக் கிளையண்ட் செவ்வகங்கள்:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "உறுப்பு செவ்வகங்கள் கணக்கிட்டு மூலம் கைரேகை பதிவு தடுக்க. சில கீழ்தோன்றுபவற்றை உடன் தலையிட வேண்டும்."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "பிடிப்புபலகை தலையீட்டை தடுக்கும்:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "க்ளிப்போர்டு செயல்கள் குறுக்கிட்டு பக்கங்களை தடுக்க"
+   },
+   "close": {
+      "description": "Close",
+      "message": "நெருக்கமான"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "தேவையற்ற குக்கீகளை தடுங்கள்:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "அறியப்பட்ட விளம்பரம் / தீம்பொருள் களங்களில் இருந்து தொகுதிகள் குக்கீகளை; முறை அதே இந்த பொருந்தும் கீழே"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "விருப்ப"
+   },
+   "default": {
+      "description": "Default",
+      "message": "இயல்புநிலை"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "மறு"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "முடக்கு"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "ஊனமுற்ற"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "முடக்கப்பட்டது"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "ஒத்திசைக்கிறது முடக்கப்பட்டுள்ளது.\r\nஉங்கள் அமைப்புகளை ஒத்திசைக்க எந்த நேரத்திலும் விருப்பங்கள் பக்கம் போய் தாராளமாக (தேவைப்பட்டால் உங்கள் அமைப்புகளை ஒரு காப்பு செய்ய)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "முடக்கு மற்றும் நீக்க:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "அவநம்பிக்கை"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "அவநம்பிக்கை"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "அதே களத்தில்"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "இணைய மூலம் வரிசை:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "உதவி"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "தவறான டொமைன் / முகவரி"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "டொமைன் அல்லது முகவரி, சில கடிதங்கள் / எண்கள் இருக்கக் கூடாது"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "டொமைன் அது தேவையற்ற உள்ளடக்கத்தை வழங்கி உள்ளது (பிளாக் தேவையற்ற உள்ளடக்கத்தை மற்றும் / அல்லது சமூகவிரோத முறை பார்க்க) சேர்க்க முடியாது"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "இந்த பக்கத்தில் களங்கள் மூலம் மற்றும் குழு URL ஐ பட்டியல்கள் வகையான"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "குறிப்பு: CTRL + எஃப் பட்டியல்கள் தேட"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "மீண்டும் இந்த பக்கம் காட்ட வேண்டாம்"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "இயக்கு:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "இயலுமைப்படுத்த"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "ScriptSafe இயக்கு"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "ஒத்திசைக்கிறது இயக்கு:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "ஏற்றுமதி"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "அமைப்புகள் வெற்றிகரமாக ஒத்திசைக்கப்பட்டது!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "அமைப்புகள் ஒத்திசைக்கப்பட்டன!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "கைரேகை பாதுகாப்பு"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "கைரேகை பாதுகாப்பு (தளங்கள் உடைத்து இருக்கலாம்)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "அதை நீங்கள் இன்னும் உங்கள் Google கணக்கில் உங்கள் அமைப்புகளை ஒத்திசைக்கவில்லை தோன்றுகிறது.\r\nScriptSafe உங்கள் Google கணக்கில் உங்கள் தற்போதைய அமைப்புகளை ஒத்திசைக்க பற்றி.\r\n'சரி' கிளிக் செய்யவும் நீங்கள் தொடர விரும்பினால்.\r\nஇல்லை என்றால், கிளிக் 'ரத்து செய்', மற்றும் உங்கள் விருப்பமான அமைப்புகளை மற்ற சாதனத்தில், ScriptSafe மேம்படுத்த நீங்கள் இந்த செய்தியை வழங்கப்படுகிறது போது சரி செய்யவும்."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "நீங்கள் உங்கள் Google கணக்கில் உங்கள் தற்போதைய அமைப்புகளை ஒத்திசைக்க வேண்டும் என்று நீங்கள் விரும்புகிறீர்களா?\r\nகுறிப்பு: தயவு செய்து இந்த அடிக்கடி அழுத்தவும் வேண்டாம்; நிமிடத்திற்கு 10 மற்றும் ஒரு மணி நேரத்திற்கு 1,000 ஒரு எல்லை இருக்கிறது."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "நீங்கள் இந்த சாதனத்தை, உங்கள் Google கணக்கில் இருந்து ஒத்திசைந்த அமைப்புகள் இறக்குமதி செய்ய வேண்டுமா?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "குறுக்குவிசைகள்:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "பொது அமைப்புகள்"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "பிளாக் கேம்பேட் கணக்கெடுப்பு:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "கேம்பேட் API வழியாக கண்டறியப்பட்டது கொண்ட சாதனங்கள் தடுக்க"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "கிடைக்கும் குறுக்குவிசையாக செயல்கள்"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "தற்காலிகமாக ஒரு அனுமதி / தற்போதைய தாவலை வளம் தடுக்க"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "ஒரு தற்போதைய தாவலை தற்காலிக அனுமதிகளை நீக்க"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "அனைத்து தற்காலிக அனுமதிகளை நீக்க"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "ScriptSafe குறுக்குவிசைகள் கட்டமைக்கவும்:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "விசைப்பலகை குறுக்குவழிகள் கிளிக்"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "அனைத்து அமைப்புகள் பட்டியல்"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "அனுமதி புறக்கணிக்கப்பட்ட"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "சமீபத்திய அமைப்புகளை வெற்றிகரமாக பதிவிறக்கம் வருகின்றன!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "அமைப்புகள் Downloaded!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "குழு அனைத்து அமைப்புகள்"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "சாத்தியமான ஹாஷ் கண்காணிப்பு நீக்க:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "ஒரு பண்பு மற்றும் மதிப்பு அங்கு புல, பயன்படுத்தி முடிந்தவரை கண்காணிப்பு டோக்கன்கள் கடந்து நீக்க (எ.கா #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "மறை"
+   },
+   "import": {
+      "description": "Import",
+      "message": "இறக்குமதி"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "இறக்குமதி / மீட்டமை அமைப்புகள்"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "அமைப்புகள் வெற்றிகரமாக இறக்குமதி"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "அமைப்புகள் பின்வரும் (வெற்று மதிப்பு அல்லது அங்கீகரிக்கப்படாத பெயர்) தவிர, வெற்றிகரமாக இறக்குமதி:"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "அமைப்புகள் வெற்றிகரமாக இறக்குமதி மற்றும் 30 நொடிகளில் ஒத்திசைவை"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "விசைப்பலகை கைரேகை குறைக்க (<strong>மேம்பட்ட பயனர்கள்</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "தெரியாத அதிகரிக்க விசையழுத்தத்தின்போது நேரம் இன்னும் சீரற்ற செய்ய (<strong>குறிப்பு: விசையை அழுத்த இடையே ஒரு சீரற்ற தாமதம் சேர்க்கிறது; இந்த அமைப்பை ஏற்க தக்கது அல்ல முடக்க</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "பக்கம் இணைப்பை திறந்து நடத்தை:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "அனைத்து இணைப்புகள் திறந்து எப்படி மாற்றியமைக்கும்"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "லூஸ் - அதே களத்தில் மற்றும் உள்களங்களை அனுமதி"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "இயல்புநிலை முறையில்"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "புதிய தாவலில்"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "இந்த தாவல் எந்த வெளிச்சான்றுகள் ஏற்றப்படும்"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "வடிகட்டாதவை"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "ஒரே Unwhitelisted களங்களில்"
+   },
+   "options": {
+      "description": "Options",
+      "message": "விருப்பங்கள்"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "சித்த முறை:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "பட்டியலிடப்படாத களங்களில் தொகுதி அனுமதி களங்கள்"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "அமைப்புகளை ஒட்டு மீண்டும் முயற்சி"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "ஒரே இணைய மரியாதை:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "அதே-டொமைன் உறுப்புகள் பாதுகாக்க"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "தனியுரிமை அமைப்புகள்"
+   },
+   "random": {
+      "description": "Random",
+      "message": "சீரற்ற"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "மதிப்பீடு பட்டன் காட்டு:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "மதிப்பீடு"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "தேர்ந்தெடுக்கப்பட்டால், தாவலை பாப் களங்கள் கீழ் மதிப்பீடு பொத்தானை சேர்க்கிறது"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe சமீபத்தில் புதுப்பிக்கப்பட்ட / ஏற்றப்படுகின்றது இருந்தது.</strong><br /><br />நீங்கள், இந்த தாவலை புதுப்பிக்க புதிய தாவலை உருவாக்கும், அல்லது ScriptSafe வேலை செய்ய வேண்டுமென்றால் உங்கள் உலாவியை மறுதொடக்கம் செய்ய வேண்டும்."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "தடு கிளிக் மூலம் பரிந்துரையாளர்:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "மூன்றாம் தரப்பு இணைப்புகளை கிளிக் செய்வதன் போது தொகுதிகள் அளித்தவரின் தகவல் (குறிப்பு: அனைத்து களங்களில் இந்த அமைப்பை பிரச்சினைகளை ஏற்படுத்தும், (எ.கா. TweetDeck சிறு))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "பரிந்துரையாளர் ஏமாற்றுகிற:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>எச்சரிக்கை</strong>: ஐ இயலுமைப்படுத்த வேண்டும், சில தளங்கள் உடைக்க இருக்கலாம் (எ.கா. உள்நுழைந்து)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "ஆட்டோ புதுப்பி பக்கம்:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "பட்டியலில் மாற்றம் பிறகு தானாக புதுப்பித்தல் பக்கம்"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "தளர்வான"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "திரும்பப்பெறு பக்கம் தற்காலிக அனுமதிகள்"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "அனைத்து தற்காலிக திரும்பப்பெறு"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "அதே ஆவணம்"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "அதே தாவலை"
+   },
+   "save": {
+      "description": "Save",
+      "message": "சேமி"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "உரை கோப்பு அதை காப்பாற்ற"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "பிரிவுகள்"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "அனைத்தையும் தெரிவுசெய்"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "இந்த பெட்டியில் ஒரு நகல் மற்றும் நீங்கள் ஒரு ScriptSafe இறக்குமதி செய்ய விரும்பும் அமைப்புகள் ஒட்டவும் பின்னர் இறக்குமதி பொத்தானை கிளிக் செய்யவும்."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "அமைப்புகள் சேமிக்கப்படும்"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "அமைப்புகள் சேமிக்கப்படும் மற்றும் 30 நொடிகளில் ஒத்திசைவை"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe முடக்கப்பட்டுள்ளது"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "கண்டிப்பான"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "கண்டிப்பு - அனுமதிக்க அதே களத்தில் மட்டுமே"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "வளர்ச்சி ஆதரவு, இதய கிளிக் :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "நீங்கள் கார் ஒத்தசைவுக்கு இயலுமைப்படுத்த வேண்டும். (ஏதாவது இருந்தால்) உங்கள் முன்பு ஒத்திசைத்த தரவு அழித்தலை தடுக்கும் பொருட்டு, Google கணக்கில் இருந்து ஒத்திசைவு அமைப்புகளைத் கிளிக் செய்யவும்."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "ஒத்திசைவு அமைப்புகளை Google கணக்கில் இருந்து"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "ஒத்திசைவு அமைப்புகளை Google கணக்கில்"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe நீங்கள் அமைப்புகளை உங்கள் Google கணக்கில் ஒத்திசைத்தக் கண்டறிந்துள்ளது!\r\nநீங்கள் உங்கள் Google கணக்கில் இருந்து அமைப்புகளை இறக்குமதி செய்ய வேண்டும் என்றால், 'சரி' கிளிக் செய்யவும்."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "ஒத்திசைக்கிறது உங்கள் ஏற்கனவே ஒத்திசைத்த தரவு மேற்சேர்க்கை தடுக்க முடக்கப்பட்டுள்ளது.\r\nஉங்கள் அமைப்புகளை ஒத்திசைக்க எந்த நேரத்திலும் விருப்பங்கள் பக்கம் போய் தாராளமாக (தேவைப்பட்டால் உங்கள் அமைப்புகளை ஒரு காப்பு செய்ய)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "இறக்குமதி ஒத்திசைவு அறிவித்தல் காட்டு:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "அமைப்புகள் உங்கள் Google கணக்கில் ஒத்திசைக்கப்பட்ட போது பாப் அப்"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "ஒத்திசைவு அறிவித்தல் காட்டு:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "அமைப்புகள் உங்கள் Google கணக்கில் ஒத்திசைக்கப்படும் போது பாப் அப்"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Google Chrome இன் உங்கள் தற்போதைய பதிப்பு ஒத்திசைவை அமைப்புகளை ஆதரிக்கவில்லை. உங்கள் Chrome பதிப்பு மேம்படுத்தும் முயற்சி, மீண்டும் முயற்சிக்கவும்."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "தற்காலிக"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "ஏமாற்றுகிற நேர மண்டலம்:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "ஏமாற்றுகிற அல்லது உங்கள் நேர வரிசையின்றி. குறிப்பு: ஐ இயலுமைப்படுத்த வேண்டும், அது Gmail இல் மின்னஞ்சல்களுக்கு பதிலளிப்பது உடன் தலையிட வேண்டும்."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "அறக்கட்டளை"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "நம்பிக்கை"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "அத்துடன், அனுமதி பட்டியலில்தான் களங்கள் விண்ணப்பிக்க"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "நீங்கள் தோன்றும் இருந்து இது போன்ற எந்த எதிர்கால மேம்படுத்தல் அறிவிப்புகளை முடக்க வேண்டும் என்பதில் உறுதியாக இருக்கிறீர்களா?\r\nநீங்கள் எப்போதும் ScriptSafe விருப்பங்கள் பக்கம் போகிறது மற்றும் நிகழ்ச்சி மேம்படுத்தல் மேல்மீட்பு அருகில் பெட்டி துடிப்பதாக மூலம் மேம்படுத்தல் அறிவிப்புகளை மீண்டும் அனுமதிக்க முடியாது."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "புதுப்பிக்கப்பட்டது அறிவிப்புகள் முடக்கப்பட்டன"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "புதுப்பிக்கப்பட்டது சேஞ்ச் காட்டு:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "தேவையற்ற"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "ScriptSafe மேம்படுத்தப்பட்டது போது சேஞ்ச் பக்கம் காட்ட"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "டொமைன்"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "ஒரு டொமைன் அல்லது நுழைத்திடுக (மேலும் தகவல் \"உதவி\" -ஐ)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "பயனர் முகவர் ஏமாற்றுகிற:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "உங்கள் பயனர் முகவர் (உலாவி மற்றும் OS) ஏமாற்றும்"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "எல்லா தளங்களிலும் அளித்தவரின் மதிப்பு அமைக்க முகவரியை உள்ளிடவும்"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "கூகுள் அனலிட்டிக்ஸ் (UTM) கண்காணிப்பு நீக்க:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "கூகுள் அனலிட்டிக்ஸ் (UTM) கண்காணிப்பு டோக்கன்கள் நீக்க"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Webbugs நீக்க:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "கண்ணுக்கு தெரியாத மூன்றாம் தரப்பு கூறுகள் நீக்க"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "பிளாக் WebGL ஐ கைரேகை:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "WebGL API வழியாக கைரேகை பதிவு தடுக்க"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "பிளாக் சாதன கணக்கெடுப்பை:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "வன்பொருள் சாதனங்கள், WebRTC API வழியாக கண்டறியப்பட்டது கொண்ட தடுக்க"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ பிளாக்லிஸ்ட்"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ அனுமதிப்பட்டியல்"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "பிளாக்லிஸ்ட்"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "அனுமதிப்பட்டியல்"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "தடுப்புப்பட்டியலிடப்பட்ட"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "அனுமதிக்கப்பட்டவை"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "கருப்புபட்டியலையோ"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "அனுமதிப் பட்டியலை"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "பிளாக்லிஸ்ட் நகர்த்து"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "அனுமதிப்பட்டியல் நகர்த்து"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "அனுமதிப்பட்டியல் / பிளாக்லிஸ்ட்"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "பிற HTTP கோரிக்கை கையாளுதல்:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "அனைத்து கோரிக்கைகள் கட்டுப்படுத்த"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "கட்டுப்பாடு குறுக்கு டொமைன் கோரிக்கைகள் (சேம்-டொமைன் அனுமதிக்க)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "கட்டுப்பாடு பிற HTTP கோரிக்கைகள்"
+   }
+}

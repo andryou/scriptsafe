@@ -10,10 +10,15 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#loadoptionspage").click(function() { location.href='options.html'; });
 	$("#closepage").click(function() { window.open('', '_self', '');window.close(); });
 	$("#disableNotification").click(disableNotification);
+	$("#loadoptionspage").val(chrome.i18n.getMessage("options"));
+	$(".i18_options").html(chrome.i18n.getMessage("options"));
+	$(".i18_support").html(chrome.i18n.getMessage("support"));
+	$("#closepage").val(chrome.i18n.getMessage("close"));
+	$("#disableNotification").val(chrome.i18n.getMessage("dontshowpage"));
 });
 function disableNotification() {
-	if (confirm('Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside "Show Update Popup".')) {
+	if (confirm(chrome.i18n.getMessage("updatedisable"))) {
 		localStorage['updatenotify'] = 'false';
-		$('#message').html('Update notifications disabled').stop().fadeIn("slow").delay(2000).fadeOut("slow");
+		$('#message').html(chrome.i18n.getMessage("updatedisablemessage")).stop().fadeIn("slow").delay(2000).fadeOut("slow");
 	}
 }

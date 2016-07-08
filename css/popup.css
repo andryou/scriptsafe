@@ -25,8 +25,8 @@ th { padding-bottom: 5px; }
 .thirditem:hover {
 	background-color: #f0f0f0;
 }
-.wot { float: left; }
-.wot a { color: #fff; }
+.wot { padding-right: 4px; }
+.wot a { color: #555; }
 .choices { float: right; }
 
 /* Footer */
@@ -41,6 +41,8 @@ th { padding-bottom: 5px; }
 /* Misc */
 hr { border: 0; border-top: 1px solid #eeeeee; }
 .bolded { font-weight: bold; }
+#pop_webstore { color: #000; text-decoration: none; }
+#pop_webstore:hover { color: #000; text-decoration: underline; }
 
 /* Boxes */
 .box:hover {
@@ -52,11 +54,9 @@ hr { border: 0; border-top: 1px solid #eeeeee; }
 	font-size: 11px;
 	font-weight: bold;
 	text-align: center;
-	height: 27px;
-	line-height: 27px;
 	min-width: 70px;
 	outline: 0;
-	padding: 0 8px;
+	padding: 8px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -299,7 +299,8 @@ span.box {
 }
 
 /* Temp. Permissions */
-.allowsession, .prevoke, .clearglobaltemp { 
+.allowsession, .prevoke, .clearglobaltemp {
+	clear: both;
 	margin-left: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;

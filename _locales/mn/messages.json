@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "илүү найдвартай вэб болон аялахад хяналтыг сэргээхэд."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Бүх домэйн дээр"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "зөвшөөрөх"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "зөвшөөрөгдсөн зүйлс"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "хаагдсан зүйлс"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Чуулганаар хэлэлцэх нь мэдээлэл түгжигдсэн зөвшөөрөх"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Хүсээгүй агуулга хаах:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "мэдэх зар / үзүүлж чадахгүй домэйноос хүсээгүй агуулгыг устгах; <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS хостууд</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS цуглуулсан домайн ( зар сурталчилгаа / мөрдөх серверүүд)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Петр Lowe-ийн хостууд Төслийн</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Хүсээгүй Агуулга Mode:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Тайван = жагсаасан домэйнууд хааж байх болно; тэр ч байтугай жагсаасан бол хүсээгүй домэйн жагсаалтад хатуу = домэйнууд хааж болно"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Antisocial"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Antisocial Mode:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "үргэлж жагсаасан бол нийгмийн виджетийг / товч, тэр ч байтугай устгах"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "дэлгэрэнгүй хаах нь гарч Fanboy газар дээр нь захиалгын жагсаалт бүх Ghostery, таслах, Blur ба / эсвэл uBlock гаралтай шалгах"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Блок Аудио хурууны:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "AudioContext API дамжуулан хурууны урьдчилан сэргийлэх"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Блок Зай хурууны:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "Зай API дамжуулан хурууны урьдчилан сэргийлэх"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Зан Тохиргоо"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Блок (байлгахыг зөвлөдөг)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "блок"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "түгжигдсэн"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Чуулганаар хэлэлцэх нь мэдээлэл Зөвшөөрөгдсөн блок"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "их хэмжээний импорт"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Жагсаалтад импортлох"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Бөөнөөр нь импортын"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Доорх хайрцаг руу хуулах, оо домэйнууд. Домэйн бүр нь тусдаа мөрөнд байх ёстой."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Canvas Хурууны хээ хамгаалах:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe энэ хуудсыг боловсруулж чадахгүй.</strong><br /><br />нь цахим хуудастай танилцан оролдоно уу."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Хоосон заагч"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "санамсаргүй заагч"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Бүрэн Блок заагч"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "&lt;canvas&gt; элементийн дамжуулан хурууны оролдлого хамгаалах"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Блок Canvas Font Access:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "&lt;canvas&gt; элементийн дамжуулан дурдсан байгаа нь систем фонтуудыг урьдчилан сэргийлэх. Google Docs нь саад болно."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Сонгодог Options Mode:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "ticked яг тохирч байвал таб сонголт everytime сонголт дарсан байна хаадаг"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Цэвэр"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "цэвэр"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Блок Client тэгш өнцөгтийн:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "элемент нь тэгш өнцөгтийн тооцох замаар хурууны урьдчилан сэргийлэх. Зарим уудын хэмжээ ижил нөлөөлж болно."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Урьдчилан сэргийлэх Бал хөндлөнгийн:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "Бал үйл ажиллагаанд хөндлөнгөөс оролцохыг хуудсыг урьдчилан сэргийлэх"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Close"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Хүсээгүй Cookies хаах:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "мэдэх зар / үзүүлж чадахгүй домэйноос блок жигнэмэг, горим, түүнчлэн энэ хамаарна доор"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Custom"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Default утга нь"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "үгүйсгэдэг"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "идэвхгүй болгох"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "Хөгжлийн бэрхшээлтэй"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Хөгжлийн бэрхшээлтэй"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Синк хийж байна хөгжлийн бэрхшээлтэй юм.\r\nӨөрийн тохиргоог хуулагдахыг ямар ч үед Options хуудас руу чөлөөтэй мэдэр (хэрэв шаардлагатай бол таны тохиргоонд нь нөөцлөн)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Идэвхгүй болон устгана:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "сэжиг"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "сэжиг"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "ижил Домэйн"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Домэйноор Төрөл:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Туслаач"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Буруу домэйн / хаяг"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "домэйн эсвэл хаяг зарим захидал / тоо агуулсан байх ёстой"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Домэйн нэмэгдсэн байх нь хүсээгүй агуулга нь үйлчилгээ үзүүлэгч юм (Block Хүсээгүй агуулга болон / эсвэл Antisocial Mode-ийг үз) чадахгүй байна"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "Энэ хуудсан дээр домэйн болон самбар URL жагсаалт ялгадаг"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Зөвлөгөө: Хэвлэлийн CTRL + F жагсаалт хайх"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Дахин хэлэхэд энэ хуудсыг бүү үзүүл"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "идэвхжүүлнэ:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "идэвхжүүлсэн"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "ScriptSafe идэвхжүүлэх"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Сүүлийн хэлбэрт аваачих, идэвхжүүлэх:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Экспортын"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Таны тохиргоог амжилттай синхрончлогдсон байна!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Тохиргоо Синк хийгдсэн!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Хурууны хээ хамгаалах"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Хурууны хээ хамгаалах (сайтыг эвдэх болно)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Энэ нь та хараахан таны Google бүртгэлээр таны тохиргоог синхрончилсон чадаагүй байна байна.\r\nScriptSafe таны Google дансанд таны одоогийн тохиргоогоо хэлбэрт авчирсан гэж байна.\r\n'OK' дээр дарна уу үргэлжлүүлэхийг хүсэж байгаа бол.\r\nХэрэв тийм биш бол товшино \"Cancel\", таны илүүд тохиргоо бусад төхөөрөмж дээр, ScriptSafe шинэчлэх, та энэ мэдээг танилцуулж байгаа үед OK дээр дарна уу."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Хэрэв та Google Account нь таны одоогийн тохиргоо хуулагдахыг хүсэж байна уу?\r\nТэмдэглэл: Энэ удаа дарж чадахгүй байна уу, Минутанд 10, цагт 1000 хязгаар байдаг."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Хэрэв та энэ төхөөрөмж нь таны Google Account-аас синхрончлогдсон тохиргоог импортлох хүсэж байна уу?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Hotkeys:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Ерөнхий Тохиргоо"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Блок Gamepad Тооллогын:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "Gamepad API ашиглан илрүүлсэн бүхий төхөөрөмжүүдийг урьдчилан сэргийлэх"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Боломжит хялбар товчны хослол үүсгэж үйл ажиллагаа"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Түр / зөвшөөрөх нь одоогийн таб бүх эх үүсвэрийг хаах"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Одоогийн таб түр зөвшөөрөл ав"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Бүх түр зөвшөөрлийг ав"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "ScriptSafe hotkeys тохируулна:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "Keyboard товчлол дээр товшино уу"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Жагсаана мэдээлэл Тохиргоо"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "зөвшөөрөх үл тоомсорлож"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Хамгийн сүүлийн үеийн тохиргоо нь амжилттай татаж байна!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Тохиргоо Татаж авсан!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Бүлгийн мэдээлэл Тохиргоо"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Байж болох Хэш дагах нь устгана:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "чагт нь шинж чанар болон үнэ цэнэ байхгүй ашиглан өнгөрч аль хянах жетон арилгах (жишээ нь: #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "нуух"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Импортын"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Импортын / Restore Settings"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "Тохиргоо амжилттай импортын"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Тохиргоо Дараах (хоосон үнэ цэнэ буюу хүлээн зөвшөөрөөгүй нэр) бусад тохиолдолд амжилттай оруулсан:"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Тохиргоо амжилттай импортын болон 30 секундын дотор сүүлийн хэлбэрт аваачих,"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Гарын хурууны бууруулах (<strong>дэвшилтэт хэрэглэгчдийн хувьд</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "нууцлалыг нэмэгдүүлэх Товч дарахад цагийг илүү санамсаргүй хийх (<strong>ТАЙЛБАР: гол дарахыг хоорондох санамсаргүй саатал нэмдэг; Энэ тохиргоо нь хүлээн зөвшөөрөх боломжгүй юм идэвхгүй</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Page Link нээлт Зан:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "Бүх холбоосууд хэрхэн нээсэн байна өөрчлөхийн"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Сул - ижил домэйныг болон дэд боломж"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Үндсэн горим"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Шинэ таб"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Энэ таб ямар ч гадаад нөөцийг ачаалал ихтэй байна"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "шүүсэн бус,"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Зөвхөн Unwhitelisted домэйнд дээр"
+   },
+   "options": {
+      "description": "Options",
+      "message": "сонголтууд"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Паранойд Mode:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "бүртгэлгүй домэйн дээр блок зөвшөөрсөн домэйнууд"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "орчинд Paste дахин оролдож үзнэ үү"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Хүндэтгэ Ижил домэйн"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "ижил домэйн элементүүдийг хадгалах"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Нууцлалын Тохиргоо"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Санамсаргүй"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Rating Товч харуулах:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Үнэлгээгээр"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "ticked яг тохирч байвал таб цонх нь домэйн дор үнэлгээ товчин дээр нэмдэг"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe саяхан шинэчлэгдсэн / дахин ачаалах юм.</strong><br /><br />Та энэ таб сэргээх эсвэл шинэ чихийг бий болгох, эсвэл ScriptSafe ажиллах тулд өөрийн хөтчийг дахин эхлүүлэх хэрэгтэй."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Дээр дарна уу-дамжуулан болгогчийн хаах:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "блок болгогчийн мэдээлэл гуравдагч талын холбоос дээр дарж үед (анхаарна: Бvх домэйн дээр энэ нь тогтоох асуудлыг үүсгэж болно (Tweetdeck-д жишээ нь өнгөц зураг))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Болгогчийн хуурч:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>анхааруулах</strong>: боломжтой бол, зарим сайт эвдэж болно (жишээ нь: нэвтэрч)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Авто Сэргээх Хуудас:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "жагсаалт өөрчлөлт хийсний дараа автоматаар явахдаа хуудас"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "тайван"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Page түр Зөвшөөрлийг хүчингүй болгох"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "Хүчингүй болгох мэдээлэл, түр зуурын"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "ижил баримт бичиг"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "ижил Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Save"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Текст файл болгон хадгална"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "хэсэг"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "бүгдийг сонгох"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Хуулбар, та ScriptSafe руу импортлох хүсэж байгаа тохиргоонуудыг оо энэ хайрцаг руу дараа нь Импортын товч дээр дарна уу."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Тохиргоо аварсан"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Тохиргоо хадгалсан, 30 секундын дотор сүүлийн хэлбэрт аваачих,"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe хөгжлийн бэрхшээлтэй байна"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "хатуу"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Хатуу - нэг домэйн цорын ганц боломж"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "хөгжлийг дэмжих, зүрх товшино уу :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Та автоматаар Синкийг идэвхжүүлсэн байна. Таны урьд нь синхрончилсон мэдээллийг устгана (хэрэв байгаа бол) урьдчилан сэргийлэхийн тулд, Google данснаас Sync Тохиргоо дээр дарна уу."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Sync Тохиргоо Google-ийн данснаас"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Google Account-TO Sync Тохиргоо"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe та Google-ийн дансанд синхрончлогдсон тохиргоог байна гэж илэрсэн байна!\r\n\"OK\" дээр дарж та Google Account-аас тохиргоог импортлох гэж байгаа бол."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Синк хийж байна таны аль хэдийн синхрончилсон өгөгдлийг дарж бичихээс сэргийлж хаасан байна.\r\nӨөрийн тохиргоог хуулагдахыг ямар ч үед Options хуудас руу чөлөөтэй мэдэр (хэрэв шаардлагатай бол таны тохиргоонд нь нөөцлөн)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Импортын Sync мэдэгдэх харуулах:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "тохиргоонууд нь таны Google Account <strong>аас</strong> синхрончлогдсон үед цонх харуулж байна"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Sync мэдэгдэх харуулах:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "тохиргоонууд нь таны Google Account <strong>руу</strong> синхрончлогдсон үед цонх харуулж байна"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Google Chrome Таны одоогийн хувилбар нь сүүлийн хэлбэрт аваачих, тохиргоог дэмждэггүй. Таны Chrome хувилбарыг шинэчлэх оролдлого, дахин оролдоно уу."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "түр"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Хуурч Цагийн бүс:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "хуурч эсвэл өөрийнхөө цагийн бүсийг randomize. Тайлбар: идэвхжүүлсэн бол энэ нь Gmail-д и-мэйл нь хариулах гээд саад болно."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Итгэлцлийн"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "итгэлцэл"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "мөн жагсаасан салбарт хэрэглэнэ"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Та гарч ирэх нь энэ нэг адил ямар ч ирээдүйн шинэчлэх мэдэгдэл идэвхгүй болгох хүсэлтэй байна уу?\r\nТа үргэлж ScriptSafe Options хуудсанд очиж, шоу шинэчлэх цонх хажууд хайрцгийг аюултай зүйл өөр шинэчлэх мэдэгдлийг дахин зөвшөөрч болно."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Шинэчлэх мэдэгдэл идэвхгүй"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Update дээр CHANGELOG харуулах:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "хүсээгүй"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "ScriptSafe шинэчилсэн үед CHANGELOG хуудсыг харуулах"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "домэйн"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Домэйн, эсвэл илэрхийлэх оруулна уу (товшино уу Дэлгэрэнгүйг нь \"Тусламж\")"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "Хэрэглэгчийн Agent хуурч:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "Таны хэрэглэгчийн агент (хөтөч болон OS) spoofs"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Бүх сайтууд таны болгогчийн утга гэж тохируулах нь хаягаа оруулна уу"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Remove Google Analytics (UTM) дагах нь:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "Google Analytics (UTM) хянах Токенууд устгах"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Webbugs устгана:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "Үл үзэгдэгч гуравдагч этгээдийн элементүүдийг устгах"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Блок WebGL хурууны:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "WebGL API дамжуулан хурууны урьдчилан сэргийлэх"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Блок Device Тооллогын:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "төхөөрөмжүүдийг WebRTC API-аар илэрсэн учир урьдчилан сэргийлэх"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Хар жагсаалт"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Цагаан жагсаалтаар"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Хар жагсаалт"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Цагаан жагсаалтаар"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "хар дансанд"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "Зөвшөөрөгдсөн жагсаалтанд орсон"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "Хар жагсаалт"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "Цагаан жагсаалтаар"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Хар жагсаалт руу шилжих"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Цагаан жагсаалтаар шилжих"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Цагаан жагсаалтаар / Хар жагсаалт"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP авагч харьцах:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Зохицуулалт бүх хүсэлтүүд"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Control Cross-Домэйн хүсэлт (ижил домэйн боломж олгодог)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "хяналтын XML HTTP хүсэлт"
+   }
+}

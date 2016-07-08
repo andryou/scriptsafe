@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "より安全にウェブやサーフィンの制御を取り戻します。"
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "すべてのドメイン上の"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "許可"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "可アイテム"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "ブロックされたアイテム"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "ブロックされたセッションをすべて許可"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "不要なコンテンツをブロックします："
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "知られている広告/マルウェアのドメインから不要なコンテンツを削除します。ドメインは<a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPSのHOSTS</a>、<a href=http://hosts-file.net target=_blank>hpHOSTS（広告/追跡サーバ）</a>から収集した、<a href=http://pgl.yoyo.org/as/policy.php target=_blank>ピーター・ロウズHOSTSプロジェクト</a>、<a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "不要なコンテンツモード："
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "リラックスした=ホワイトリストに登録されたドメインがブロックされません。不要なドメインリスト内の厳密=ドメインは、ホワイトリストに登録場合であってもブロックされます"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "SNS 拒否/ブロック"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "SNS 拒否/ブロックモード："
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "常にホワイトリストに登録しても、SNS ウィジェット/ボタンを削除"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
+      "message": "より包括的なブロッキングについては、<a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>、<a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>、<a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>、<a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> および <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>上のサブスクリプションリストをチェックしてください"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "ブロックオーディオフィンガープリント："
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "AudioContext APIを介してフィンガープリントを防ぎます"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "ブロックバッテリーフィンガープリント："
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "バッテリーのAPIを介してフィンガープリントを防ぎます"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "行動の設定"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "ブロック（推奨）"
+   },
+   "block": {
+      "description": "Block",
+      "message": "ブロック"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "ブロックされました"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "許可したすべてのセッションをブロック"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "一括インポート"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "リストにインポート"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "一括インポート"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "下のボックスにコピー＆ペーストドメイン。各ドメインは、別の行にする必要があります。"
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "キャンバスフィンガープリント保護："
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafeは、このページを処理することはできません。</strong><br /><br />ウェブサイトを訪問してみてください。"
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "空白の読み出し"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "ランダム読み出し"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "完全にブロック読み出し"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "&lt;canvas&gt;要素を介して、フィンガープリントの試みに対する保護"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "ブロックキャンバスフォントのアクセス："
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "&lt;canvas&gt;要素を介して列挙されることからシステムフォントを防ぎます。 Googleドキュメントに干渉することがあります。"
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "クラシックオプションモード："
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "チェックが入っている場合、毎回オ​​プションをクリックすると、タブのオプションを閉じ"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "消去"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "消去"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "ブロッククライアントレクタングル："
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "要素のレクタングルを計算を通じてフィンガープリントを防ぎます。いくつかのドロップダウンを妨げる可能性があります。"
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "クリップボードの干渉を防ぎます。"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "クリップボードの操作に干渉からページを防ぎます"
+   },
+   "close": {
+      "description": "Close",
+      "message": "閉じる"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "不要なクッキーをブロックします："
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "知られている広告/マルウェアのドメインからブロッククッキー。モードの下だけでなく、これに適用されます"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "カスタム"
+   },
+   "default": {
+      "description": "Default",
+      "message": "デフォルト"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "拒否"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "無効にします"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "使用禁止"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "使用禁止"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "同期が無効になっています。\r\nあなたの設定を同期する任意の時点で[オプション]ページに移動してお気軽に（必要に応じて、設定のバックアップを作成）。"
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "無効にして削除します。"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "不審"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "不審"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "同じドメイン"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "ドメインで並べ替え："
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "ヘルプ"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "無効なドメイン/アドレス"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "ドメインまたはアドレスは、いくつかの文字/数字を含める必要があります"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "それが不要なコンテンツの提供者であるとして、ドメインを追加することはできません（ブロック不要なコンテンツおよび/またはSNS 拒否/ブロックモードを参照してください）"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "このページ上のドメインにより、パネルにURLリストをソート"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "ヒント：Ctrl + Fキーを押しリストを検索します"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "このページは表示しません"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "有効にします："
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "使用可能"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "ScriptSafeを有効にします"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "同期を有効にします："
+   },
+   "export": {
+      "description": "Export",
+      "message": "エクスポート"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "お使いの設定が正常に同期されています！"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "設定が同期！"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "フィンガープリント保護"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "フィンガープリント保護（サイトを壊す場合があります）"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "あなたがまだGoogleアカウントに設定を同期していない表示されます。\r\nScriptSafeは、Googleアカウントに現在の設定を同期しようとしています。\r\n続行する場合は「OK」をクリックします。\r\nない場合は、クリックして「キャンセル」、そしてお好みの設定で他のデバイス上で、ScriptSafeを更新しますが、このメッセージが表示されたら、[OK]をクリックします。"
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Googleアカウントに現在の設定を同期してもよろしいですか？\r\n注：これを頻繁に押さないでください。毎分10と毎時千の限界があります。"
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "あなたは、このデバイスにGoogleアカウントから同期設定をインポートしますか？"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "ホットキー："
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "一般設定"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "ブロックゲームパッド列挙："
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "ゲームパッドAPIを介して検出されたデバイスを防ぎます"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "利用可能なホットキーアクション"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "一時的に許可する/現在のタブのすべてのリソースをブロック"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "現在のタブのための一時的なアクセス権を削除する"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "すべての一時的な権限を削除する"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "ScriptSafeのホットキーを設定します。"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "キーボードショートカットをクリックしてください"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "すべての設定を一覧表示"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "許可を無視"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "最新の設定が正常にダウンロードされています！"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "設定のダウンロード！"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "グループのすべての設定"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "可能なハッシュトラッキングを削除します。"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "属性と値があるハッシュを使用して渡さ可能な追跡トークンを削除する（例えば＃xtor=RSS-1）"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "隠す"
+   },
+   "import": {
+      "description": "Import",
+      "message": "インポート"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "インポート/復元の設定"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "正常にインポート設定"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "以下の（空の値または認識されない名前）を除いて、正常にインポートセッティング："
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "設定が正常にインポートし、30秒で同期"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "キーボードフィンガープリントを削減 (<strong>上級ユーザー向け</strong>)："
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "匿名性を高めるためにキー入力タイミングがよりランダムにします (<strong>注：キーの押下の間のランダムな遅延を追加します。この設定が受け入れられない無効</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "行動を開くページリンク："
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "すべてのリンクが開いているか修正"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "ルース - 同じドメインおよびサブドメインを許可します"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "デフォルトモード"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "新しいタブ"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "このタブには外部リソースをロードしていません"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "フィルタリングされません"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-オフ-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Unwhitelistedドメインでのみ"
+   },
+   "options": {
+      "description": "Options",
+      "message": "オプション"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "パラノイアモード："
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "非上場のドメイン上のブロック許可されているドメイン"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "設定に貼り付けて再試行してください"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "同じドメインを尊重します："
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "同じドメイン要素を保持します"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "プライバシー設定"
+   },
+   "random": {
+      "description": "Random",
+      "message": "ランダム"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "評価ボタンを表示："
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "評価"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "チェックが入っている場合、タブのポップアップ内のドメインの下に評価ボタンが追加されます"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafeは最近、再読み込み/更新されました。</strong><br /><br />あなたは、このタブを更新し、新しいタブを作成したり、ScriptSafeが機能するためには、ブラウザを再起動するのいずれかが必要になります。"
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "クリックスルーリファラーをブロックします："
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "サードパーティのリンクをクリックするブロックリファラー情報（注：すべてのドメイン上にこれを設定するTweetdeckの中の問題（例えば、サムネイルを引き起こす可能性があります）"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "リファラー偽装："
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>警告</strong>： 有効にした場合、いくつかのサイトを破ることができる（例えば、ログイン）"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "オートリフレッシュページ："
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "リスト変更後のオートリフレッシュページ"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "リラックスしました"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "一時的な許可の取り消し"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "一時的な許可を取り消し"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "同じドキュメント"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "同じタブ"
+   },
+   "save": {
+      "description": "Save",
+      "message": "セーブ"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "テキストフ​​ァイルとして保存します"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "セクション"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "すべて選択"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "あなたはこのボックスにScriptSafeにインポートする設定は、[インポート]ボタンをクリックしてコピーして貼り付けます。"
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "設定が保存されました"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "30秒での設定保存と同期"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafeは無効になっています"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "厳格な"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "厳格な - 同じドメインのみ許可します"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "開発をサポートするために、ハートアイコンをクリックして :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "あなたは、自動同期を有効にしています。 （もしあれば）あなたの以前に同期されたデータを消去しないようにするためには、Googleアカウントの同期設定]をクリックしてください。"
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Googleアカウントから同期設定"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Googleアカウントに同期設定"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafeはGoogleアカウントに同期する設定を持っていることを検出しました！\r\nGoogleアカウントから設定をインポートしたい場合は、「OK」をクリックします。"
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "同期は既に同期されたデータを上書きを防止するために無効にされています。\r\nあなたの設定を同期する任意の時点で[オプション]ページに移動してお気軽に（必要に応じて、設定のバックアップを作成）。"
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "インポート同期の通知を表示します："
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "設定は、Googleアカウント<strong>から同期された</strong>ときにポップアップを表示"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "同期通知を表示："
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "設定はGoogleアカウント<strong>に同期する</strong>ときにポップアップを表示"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Google Chromeののあなたの現在のバージョンでは、同期の設定をサポートしていません。お使いのChromeのバージョンを更新しようとしてから、もう一度お試しください。"
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "一時的"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "偽装タイムゾーン："
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "あなたのタイムゾーンをスプーフィングまたはランダム化します。注：有効にした場合、それは、Gmailのメールに返信を妨げる可能性があります。"
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "信頼"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "信頼"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "同様にホワイトリストに登録されたドメインに適用されます"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "あなたが表示されてから、このように任意の将来のアップデート通知を無効にしてもよろしいですか？\r\nあなたはいつもScriptSafeオプション]ページに移動して表示を更新ポップアップの横のボックスを刻むことにより、更新通知を再許可することができます。"
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "更新通知は無効"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "アップデートの変更を表示します："
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "不要な"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "ScriptSafeが更新されたときに更新履歴ページを表示"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "ドメイン"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "ドメインまたは式を入力します（詳細は[ヘルプ]をクリックします）"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "ユーザーエージェント偽装："
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "あなたのユーザーエージェント（ブラウザとOS）を偽装"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "すべてのサイトのリファラー値として設定するアドレスを入力してください"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Googleアナリティクス（UTM）の追跡を削除します。"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "Googleアナリティクス（UTM）の追跡トークンを削除"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Webbugsを削除します。"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "目に見えない、サードパーティ製の要素を削除"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "ブロックWebGLのフィンガープリント："
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "WebGLのAPIを介してフィンガープリントを防ぎます"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "ブロックデバイスの列挙："
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "WebRTC APIを介して検出されたハードウェアデバイスを持つ防ぎます"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ブラックリスト"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ホワイトリスト"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "ブラックリスト"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "ホワイトリスト"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "ブラックリストに載って"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "ホワイトリストに登録"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "ブラックリスト"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "ホワイトリスト"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "ブラックリストに移動"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "ホワイトリストに移動"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "ホワイトリスト/ブラックリスト"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTPリクエストの処理："
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "すべての要求を制御します"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "コントロールクロスドメインリクエスト（同じドメインを許可）"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "コントロールのXML HTTP要求"
+   }
+}

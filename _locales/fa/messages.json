@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "دست آوردن مجدد کنترل وب و گشت و گذار امن تر است."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "در تمام حوزه ها"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "اجازه دادن"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "موارد مجاز"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "موارد مسدود شده"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "اجازه می دهد همه مسدود شده برای جلسه"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "بلوک محتوای ناخواسته:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=\"http://winhelp2002.mvps.org/hosts.htm\" target=\"_blank\">MVPS HOSTS</a>, <a href=\"http://hosts-file.net\" target=\"_blank\">hpHOSTS (ad / tracking servers)</a>, <a href=\"http://pgl.yoyo.org/as/policy.php\" target=\"_blank\">Peter Lowe's HOSTS Project</a>, <a href=\"http://www.malwaredomainlist.com/\" target=\"_blank\">MalwareDomainList.com</a>",
+      "message": "حذف محتوای ناخواسته از شناخته شده AD / حوزه نرم افزارهای مخرب. حوزه از میزبان MVPS، hpHOSTS (سرور AD / ردیابی) جمع آوری، میزبان پروژه پیتر لاو، MalwareDomainList.com"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "ناخواسته حالت محتوا:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "آرام = دامنه در لیست سفید نمی مسدود خواهد شد. سخت = دامنه در لیست دامنه های ناخواسته حتی مسدود خواهد شد اگر در لیست سفید"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "دشمن جامعه"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "حالت ضد اجتماعی:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "همیشه حذف ویدجت های اجتماعی / دکمه، حتی اگر در لیست سفید"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=\"_blank\">Fanboy site</a>",
+      "message": "برای مسدود کردن جامع تر، چک کردن Ghostery، قطع ارتباط، تاری، و / یا uBlock منبع با تمام لیست اشتراک در سایت fanboy در"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "بلوک های صوتی انگشت:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "جلوگیری از انگشت نگاری از طریق API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "بلوک باتری انگشت:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "جلوگیری از انگشت نگاری از طریق API باتری"
+   },
+   "behavior": {
+      "description": "Behavior Settings",
+      "message": "تنظیمات رفتار"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "بلوک (توصیه می شود)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "مسدود کردن"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "مسدود"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "مسدود کردن همه مجاز برای جلسه"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "واردات فله"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "واردات به لیست"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "واردات فله"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "کپی و چسباندن حوزه را در کادر زیر. هر دامنه باید در یک خط جداگانه باشد."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "بوم اثر انگشت حفاظتی:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe می توانید این صفحه را پردازش کند.</strong><br /><br />لطفا سعی کنید بازدید از یک وب سایت است."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "بازخوانی خالی"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "تصادفی بازخوانی"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "کاملا مسدود بازخوانی"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "محافظت در برابر تلاش انگشت نگاری از طریق عناصر &lt;canvas&gt;"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "بلوک بوم فونت دسترسی:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "جلوگیری از فونت های سیستم از طریق عناصر &lt;canvas&gt; برشمرده است. ممکن است با Google Docs تداخل داشته باشد."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "گزینه های حالت کلاسیک:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "اگر علامت، بسته زبانه گزینه هر زمان یک گزینه کلیک می شود"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "واضح"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "واضح"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "بلوک مشتری مستطیل است:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "جلوگیری از انگشت نگاری از طریق محاسبه مستطیل عنصر. ممکن است با برخی منو تداخل داشته باشد."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "جلوگیری از تخته تداخل:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "جلوگیری از صفحات از تداخل با اقدامات کلیپ بورد"
+   },
+   "close": {
+      "description": "Close",
+      "message": "نزدیک"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "مسدود کوکی های ناخواسته:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "بلوک کوکی ها از تبلیغ شناخته شده است / حوزه نرم افزارهای مخرب. زیر حالت امر به این عنوان است"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "سفارشی"
+   },
+   "default": {
+      "description": "Default",
+      "message": "به طور پیش فرض"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "انکار"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "از کار انداختن"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "معلول"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "معلول"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "همگام سازی غیر فعال است.\r\nاحساس رایگان برای رفتن به صفحه گزینه در هر زمان برای همگام سازی تنظیمات خود را (گرفتن پشتیبان از تنظیمات خود را در صورت لزوم)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "غیر فعال کردن و حذف:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "بی اعتمادی"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "بی اعتمادی"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "دامنه همان"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "مرتب سازی بر اساس دامنه:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "کمک"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "دامنه نامعتبر / آدرس"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "دامنه یا آدرس باید شامل برخی از حروف / شماره"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see \"Block Unwanted Content\" and/or \"Antisocial Mode\")",
+      "message": "دامنه نمی تواند اضافه شود آن را به عنوان ارائه دهنده محتوای ناخواسته است (نگاه کنید به \"بلوک محتوای ناخواسته\" و / یا \"حالت ضد اجتماعی\")"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "انواع لیست URL های دامنه در این صفحه و در پانل"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "نکته: کلید Ctrl + F برای جستجو در لیست"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "هنوز این صفحه به دوباره"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "فعال کردن:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "فعال"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "فعال کردن ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "فعال کردن همگامسازی:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "صادرات"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "تنظیمات شما با موفقیت همگام سازی شده است!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "تنظیمات همگام سازی شده!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "حفاظت اثر انگشت"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "اثر انگشت حفاظتی (ممکن است سایت های شکستن)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "به نظر می رسد شما تنظیمات خود را به حساب Google خود را همگام سازی نکرده است.\r\nScriptSafe مورد برای همگام سازی تنظیمات فعلی خود را به حساب گوگل شما است.\r\nدر 'OK' را کلیک کنید اگر شما می خواهید به ادامه.\r\nاگر نه، روی لغو کلیک کنید، و در دستگاه دیگر که دارای تنظیمات مورد نظر خود را، به روز رسانی ScriptSafe و کلیک بر روی OK زمانی که شما با این پیام معرفی شده اند."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "آیا شما می خواهید برای همگام سازی تنظیمات فعلی خود را به حساب Google خود را؟\r\nتوجه: لطفا از این فشار دهید اغلب؛ محدود است از 10 در دقیقه و 1000 در ساعت وجود دارد."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "آیا شما می خواهید برای وارد کردن تنظیمات همگامسازی شده از حساب گوگل خود را به این دستگاه؟"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "کلید میانبر:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "تنظیمات عمومی"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "بلوک گیم پد شمارش:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "جلوگیری از داشتن دستگاه های شناسایی از طریق گیم پد API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "اقدامات کلید فوری موجود"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "به طور موقت اجازه می دهد / مسدود کردن تمام منابع برای یک برگه فعلی"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "حذف مجوز موقت برای یک برگه فعلی"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "حذف تمام مجوز موقت"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "پیکربندی کلیدهای میانبر ScriptSafe:"
+   },
+   "hotkeysinst": {
+      "description": "click on \"Keyboard Shortcuts\"",
+      "message": "با کلیک بر روی \"میانبرهای صفحهکلید\""
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "لیست تمام تنظیمات"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "نادیده گرفته اجازه"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "آخرین دانلود تنظیمات شده است!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "تنظیمات دانلود!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "گروه همه تنظیمات"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "حذف پیگیری هش احتمالی:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "حذف نشانه ردیابی ممکن گذشت با استفاده از هش، است که در آن ویژگی و ارزش وجود دارد (به عنوان مثال #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "پنهان شدن"
+   },
+   "import": {
+      "description": "Import",
+      "message": "وارد كردن"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "واردات / بازیابی تنظیمات"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "تنظیمات با موفقیت وارد"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "تنظیمات با موفقیت وارد، به جز در بر داشت زیر (مقدار خالی یا نام ناشناخته):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "تنظیمات با موفقیت وارد شد و همگام سازی در 30 ثانیه"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "کاهش اثر انگشت صفحه کلید (<strong>برای کاربران حرفه ای</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "را زمان فشار کلید تصادفی برای افزایش نامش فاش نشود، (<strong>توجه: می افزاید: یک تاخیر تصادفی بین پرس کلیدی؛ غیر فعال کردن این تنظیم غیر قابل قبول است</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behavior:",
+      "message": "صفحه رفتار ارتباطات افتتاح:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "نمایش تمام لینک ها اصلاح شده را باز می"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "شل - اجازه می دهد همان دامنه و زیر دامنه"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "حالت پیش فرض"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "برگه جدید"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "این برگه هیچ منابع خارجی لود شده است"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "فیلتر نشده"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "تنها در غیر در لیست سفید دامنه"
+   },
+   "options": {
+      "description": "Options",
+      "message": "گزینه ها"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "حالت پارانویا:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "بلوک اجازه حوزه در حوزه راهنمای تلفن موجود نیست"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "قرار دادن در تنظیمات و دوباره سعی کنید"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "احترام همان دامنه:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "حفظ همان عناصر دامنه"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "تنظیمات حریم خصوصی"
+   },
+   "random": {
+      "description": "Random",
+      "message": "تصادفی"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "نمایش رتبه دکمه:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "رتبه"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "اگر علامت، اضافه کردن دکمه امتیاز را زیر Domains در پنجره زبانه"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe تازگی به روز رسانی شد / دوباره.</strong><br /><br />شما باید به یکی از دو روز کردن این زبانه، ایجاد یک تب جدید، و یا مرورگر خود را راه اندازی مجدد در جهت ScriptSafe به کار است."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "مسدود کلیک کنید، از طریق ارجاع:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to \"On All Domains\" may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "بلوک های اطلاعات مرجع در هنگام کلیک کردن بر روی لینک های شخص ثالث (توجه داشته باشید: تنظیم این به \"در تمام حوزه\" ممکن است مسائل (به عنوان مثال عکسها در برنامه Tweetdeck شود))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "کلاه برداری ارجاع:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may \"break\" some sites (e.g. logging in)",
+      "message": "<strong>هشدار</strong>: اگر فعال باشد، ممکن است \"شکستن\" برخی از سایت های (به عنوان مثال ورود به سیستم)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "خودکار تازه کردن صفحه:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "بازخوانی خودکار صفحه بعد از تغییر فهرست"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "آرام"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "لغو صفحه موقت مجوز ها"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "لغو همه موقت"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "همان سند"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "همان برگه"
+   },
+   "save": {
+      "description": "Save",
+      "message": "صرفه جویی"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "ذخیره به عنوان فایل متنی"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "بخش"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "انتخاب همه"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "کپی و تنظیمات شما می خواهید برای وارد کردن به ScriptSafe رب را به این کادر و سپس بر روی دکمه واردات را کلیک کنید."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "تنظیمات ذخیره شد"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "تنظیمات ذخیره شده و همگام سازی در 30 ثانیه"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe غیر فعال است"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "سخت گیرانه"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "سخت - اجازه می دهد تنها همان دامنه"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "برای حمایت از توسعه، با کلیک بر قلب :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on \"Sync Settings FROM Google Account\".",
+      "message": "شما همگام سازی خودکار را فعال کنید. به منظور جلوگیری از پاک کردن داده ها که قبلا همگام سازی خود را (در صورت وجود)، لطفا بر روی \"تنظیمات همگام سازی از حساب Google\" کلیک کنید."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "تنظیمات همگام سازی از حساب Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "تنظیمات همگام سازی به حساب گوگل"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe تشخیص داده است که شما تنظیمات همگام سازی شده در حساب Google خود!\r\nدر 'OK' را کلیک کنید اگر شما می خواهید برای وارد کردن تنظیمات از حساب Google خود را."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "همگام سازی غیر فعال شده است برای جلوگیری از جای نوشتن داده ها در حال حاضر همگام سازی خود را.\r\nاحساس رایگان برای رفتن به صفحه گزینه در هر زمان برای همگام سازی تنظیمات خود را (گرفتن پشتیبان از تنظیمات خود را در صورت لزوم)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "نشان دادن اطلاع رسانی واردات همگام سازی:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "نمایش پنجره تنظیمات که از حساب Google خود را همگام سازی"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "نشان دادن اطلاع رسانی همگام سازی:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "نمایش پنجره تنظیمات که به حساب Google شما همگام"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "نسخه فعلی خود را از گوگل کروم تنظیمات همگام سازی پشتیبانی نمی کند. لطفا سعی کنید به روز رسانی نسخه Chrome و دوباره امتحان کنید."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "موقت"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "منطقه زمانی کلاه برداری:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "جعل و یا تصادفی منطقه زمانی خود را. توجه داشته باشید: اگر فعال باشد، ممکن است با پاسخ دادن به ایمیلها در Gmail دخالت کند."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "اعتماد"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "اعتماد"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "درخواست برای دامنه لیست سفید و همچنین"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside \"Show Update Popup\".",
+      "message": "آیا مطمئن هستید که می خواهید به غیر فعال کردن هر به روز رسانی های آینده مثل این یکی از ظاهر؟\r\nشما همیشه می توانید دوباره اجازه می دهد به روز رسانی با رفتن به صفحه تنظیمات ScriptSafe و تیک تاک کادر کنار \"نمایش به روز رسانی پنجره\"."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "به روز رسانی غیر فعال"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "نمایش تغییرات در به روز رسانی:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "ناخواسته"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "نمایش صفحه تغییرات که ScriptSafe به روز شده است"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "دامنه"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "یک دامنه یا بیان را وارد کنید (کلیک کنید \"کمک\" برای اطلاعات بیشتر)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "کاربر-عامل کلاه برداری:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "جعل خود را عامل کاربر (مرورگر و سیستم عامل)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "یک آدرس به عنوان ارزش ارجاع خود را برای همه سایت های مجموعه را وارد کنید"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "حذف گوگل آنالیز (UTM) پیگیری:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "حذف گوگل آنالیز (UTM) نشانه ردیابی"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "حذف اشکالات وب سایت:"
+   },
+   "webbugsdesc": {
+      "description": "remove \"invisible\" third-party elements",
+      "message": "حذف عناصر شخص ثالث \"نامرئی\""
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "بلوک از WebGL انگشت:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "جلوگیری از انگشت نگاری از طریق WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "بلوک شمارش دستگاه:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "جلوگیری از داشتن دستگاه های سخت افزاری شناسایی از طریق WebRTC به API"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ لیست سیاه"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ لیست سفید"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "لیست سیاه"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "لیست سفید"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "لیست سیاه"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "در لیست سفید"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "لیست سیاه"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "لیست سفید"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "انتقال به لیست سیاه"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "انتقال به لیست سفید"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "لیست سفید / لیست سیاه"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML جابجایی HTTP درخواست پاسخ به:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "کنترل تمام درخواست"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "درخواست کنترل صلیب دامنه (اجازه می دهد همان دامنه)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "کنترل درخواست XML HTTP"
+      }
+}

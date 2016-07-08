@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Återta kontrollen över banan och surfa säkrare."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "På Alla Domäner"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "Tillåta"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Tillåtna Items"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Spärrade Objekt"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Tillåt Alla Blockerad För Session"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Blockera Oönskat Innehåll:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "ta bort oönskat innehåll från kända ad / malware domäner; domäner som samlats in från <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVP HOSTS</a> <a href=http://hosts-file.net target=_blank>hpHOSTS ( ad / tracking servrar)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe värdar Project</a> <a href=http://www.malwaredomainlist.com/ rikta =_blank> MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Oönskat Innehåll Läge:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Avslappnad = godkända domäner inte kommer att blockeras; Strikta = domäner i listan oönskade domänen kommer att blockeras, även om vitlistade"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Asocial"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Antisocial Läge:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "alltid bort sociala widgets / knappar, även om vitlistade"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "För mer omfattande blockering, kolla in <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a> <a href=https://chrome.google. com / webbutik / detalj / koppla / jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Koppla</a> <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a> och / eller <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> med alla teckningslistor på <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy webbplats</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Block Audio Fingeravtryck:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "förhindra fingeravtryck via AudioContext API"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Block Batteri Fingeravtryck:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "förhindra fingeravtryck via batteri API"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Beteende Inställningar"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Block (rekommenderas)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "Blockera"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "Blockerad"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Blockera Alla Tillåtet För Session"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "bulk import"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Importera till Listan"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Bulk Import"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Kopiera och klistra in domäner i rutan nedan. Varje domän ska vara på en separat rad."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Duk Fingerprint Skydd:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe kan inte bearbeta denna sida.</strong><br /><br />Försök att besöka en webbplats."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Blank Readout"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "Slumpmässig Readout"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Helt Block Avläsning"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "skyddar mot fingeravtryck försöker igenom &lt;canvas&gt; element"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Block Canvas Font Tillgång:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "förhindra systemtypsnitt från att räknas upp genom &lt;canvas&gt; element. Kan störa Google Dokument."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Classic Funktionen Options:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "om markerad stänger fliken alternativ varje gång ett alternativ klickas"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Klar"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "klar"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Block Klient Rektanglar:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "förhindra fingeravtryck genom beräkning av elementet rektanglar. Kan störa vissa menyerna."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Förhindra Urklipp Interference:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "förhindra sidor från att störa Urklipp åtgärder"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Stänga"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Blockera Oönskade Cookies:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "blockerar cookies från kända ad / malware domäner; under läge gäller detta också"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Beställnings"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Standard"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Förneka"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "Inaktivera"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "inaktiverad"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Funktionshindrade"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Synkroniseringen är inaktiverad.\r\nKänn dig fri att gå till sidan Alternativ när som helst för att synkronisera inställningarna (göra en säkerhetskopia av inställningarna om det behövs)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Inaktivera och Ta Bort:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Misstro"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "misstro"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "Samma Domän"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Sortera efter Domän:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Hjälp"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Ogiltig domän / adress"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Domänen eller adress måste innehålla vissa bokstäver / siffror"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Domän kan inte läggas till som det är en leverantör av oönskat innehåll (se Block oönskat innehåll och / eller Antisocial Mode)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "sorterar URL listor av domäner på denna sida och i panelen"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Tips: Tryck på Ctrl + F för att söka listorna"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Visa Inte Den Här Sidan Igen"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Möjliggöra:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "aktiverad"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Aktivera ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Aktivera Synkronisering:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Exportera"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Inställningarna har synkroniserats!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Inställningar Synkroniserad!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Fingeravtryck Protection"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Fingeravtryck Protection (kan gå sönder platser)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Det verkar som om du inte har synkroniserat inställningarna till ditt Google-konto ännu.\r\nScriptSafe är på väg att synkronisera de aktuella inställningarna till ditt Google-konto.\r\nKlicka på \"OK\" om du vill fortsätta.\r\nOm inte , klicka på \"Avbryt\", och på den andra enheten med dina egna inställningar, uppdatera ScriptSafe och klicka på OK när du presenteras med det här meddelandet."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Vill du synkronisera de aktuella inställningarna till ditt Google-konto\r\nObs: Tryck inte detta ofta; Det finns en gräns på 10 per minut och 1000 per timme."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Vill du importera synkroniserade inställningar från ditt Google-konto till den här enheten?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Snabbtangenter:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Allmänna Inställningar"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Block Gamepad Räkning:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "förhindra ha anordningar som upptäckts via Gamepad API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Tillgängliga Hotkey Åtgärder"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Tillfälligt tillåta / blockera alla resurser för en aktuell flik"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Ta bort tillfälliga tillstånd för en aktuell flik"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Ta bort alla tillfälliga tillstånd"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Konfigurera ScriptSafe kommando:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "klicka på kortkommandon"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Visa Alla Inställningar"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Ignoreras Tillåt"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "De senaste inställningarna har hämtats!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Inställningar Nedladdat!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Grupp Alla Inställningar"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Ta Möjlig Hash Spårning:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "avlägsna eventuella spårnings tokens skickas med hash, där det finns ett attribut och värde (t ex #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "Dölja"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Importera"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Import / Återställ Inställningar"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "Inställningar importerats"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Inställningar importerats, utom följande (tomt värde eller okända namn):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Inställningar importerats och synkronisera på 30 sekunder"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Minska tangentbord Fingeravtryck (<strong>för avancerade användare</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "göra knapptrycknings timings mer slumpmässig att öka anonymitet (<strong>OBS: lägger till en slumpmässig fördröjning mellan tangenttryckningar, inaktivera den här inställningen om oacceptabla</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Sidlänk Öppnings Beteende:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "modifierar hur alla länkar öppnas"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Lös - tillåta samma domän och underdomäner"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Standardläge"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Ny flik"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Den här fliken har laddats inga externa resurser"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "Filtreras inte"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Av-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Endast på Unwhitelisted domäner"
+   },
+   "options": {
+      "description": "Options",
+      "message": "Alternativ"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Paranoia Läge:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "blockera tillåtna domäner på onoterade domäner"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Klistra in inställningar och försök igen"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Respektera med Samma Domän:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "bevara samma domän element"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Sekretessinställningar"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Slumpmässig"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Visa Rating knapp:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Betyg"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "om förkryssat, tillägger rating knappen under domäner i fliken popup"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe var nyligen uppdaterade / lastas.</strong><br /><br />Du måste antingen uppdatera den här fliken skapa en ny flik, eller starta om webbläsaren för att ScriptSafe att fungera."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Blockera KlickHänvisnings:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "block hänvisnings information när du klickar på tredje part länkar (notera: sätta detta till På alla områden kan orsaka problem (exempelvis miniatyr i Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Hänvisningsadress Parodi:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>varning</strong>: om den är aktiverad, kan bryta vissa platser (t.ex. logga in)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Automatisk uppdatering Sida:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "auto-refresh sida efter listbytet"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "Avslappnad"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Återkalla Page Tillfälliga Tillstånd"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "Återkalla Alla Temporära"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Samma Document"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "Samma Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Spara"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Spara som Textfil"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "Sektioner"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "välj alla"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Kopiera och klistra in de inställningar du vill importera till ScriptSafe i denna ruta och klicka sedan på knappen Importera."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Inställningar Sparade"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Inställningar som sparats och synkronisera på 30 sekunder"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe är inaktiverad"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "Sträng"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Strikt - tillåter endast samma domän"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "För att stödja utvecklingen genom att klicka på hjärtat :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Du har aktiverat automatisk synkronisering. För att förhindra att radera dina tidigare synkroniserade data (i förekommande fall), klicka på inställningar för synkronisering Google-konto."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Inställningar för synkronisering Google-konto"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Synkronisera inställningar för att Google-konto"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe har upptäckt att du har inställningar synkroniserade på ditt Google-konto!\r\nKlicka på \"OK\" om du vill importera inställningarna från ditt Google-konto."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Synkronisering har inaktiverats för att förhindra överskrivning dina redan synkroniserade data.\r\nKänn dig fri att gå till sidan Alternativ när som helst för att synkronisera inställningarna (göra en säkerhetskopia av inställningarna om det behövs)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Visa Import Sync Anmälan:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "visa popup när inställningar synkroniseras <strong>från</strong> ditt Google-konto"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Visa Sync Anmälan:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "visa popup när inställningar synkroniseras <strong>till</strong> ditt Google-konto"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Din nuvarande version av Google Chrome stöder inte inställningar synkronisering. Försök att uppdatera din version av Chrome och försök igen."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Temporär"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Spoof Tidszon:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "parodi eller slumpmässigt din tidszon. OBS: om den är aktiverad, kan det störa svara på e-postmeddelanden i Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Förtroende"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "förtroende"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Applicera på godkända domäner samt"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Är du säker på att du vill inaktivera eventuella framtida uppdateringsmeddelanden som den här från att visas?\r\nDu kan alltid låta uppdateringsnotifieringar genom att gå till ScriptSafe sidan Alternativ och markera rutan bredvid Show Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Uppdatera meddelanden inaktive"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Visa Ändringslogg på Uppdatering:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Oönskade"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "visa ändrings sida när ScriptSafe uppdateras"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Domän"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Ange en domän eller uttryck (klicka på \"Hjälp\" för mer information)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Parodi:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "kapar din user-agent (webbläsare och operativsystem)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Ange en adress för att ställa in som din hänvisnings värde för alla webbplatser"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Ta bort Google Analytics (UTM) Spårning:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "bort Google Analytics (UTM) spårning tokens"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Avlägsna Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "avlägsna osynliga tredjepartselement"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Block WebGL Fingerprinting:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "förhindra fingeravtryck via WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Blockenhets Räkning:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "förhindra att ha hårdvara upptäcks via WebRTC API"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Svartlista"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Vitlista"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Svartlista"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Vitlista"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "Svartlistad"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "Vitlistad"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "svarta listan"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "vitlista"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Flytta till Svartlista"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Flytta till Vitlista"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Whitelist / Svartlista"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP Request Hantering:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Styr alla Begäran"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Kontroll Cross-Domain Begäran (tillåta Same-domän)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "kontroll XML HTTP-begäranden"
+   }
+}

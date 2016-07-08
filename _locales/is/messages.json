@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Ná stjórn á vefnum og brim fleiri öruggur."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Á Öllum Sviðum"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "Leyfa"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Leyfð Items"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Læst Items"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Leyfa Öllum Útilokaður Þinginu"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Block Óæskileg Efni:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "fjarlægja óæskileg efni úr þekktum AD / malware lén; lén safnað frá <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS gestgjafi</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( auglýsingin / mælingar netþjóna)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe gestgjafi Project</a>, <a href=http://www.malwaredomainlist.com/ miða =_blank> MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Óæskileg Efni Mode:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Slaka = undanþágulista lén verður ekki lokað; Strangar = lén í óæskilegum Lénalisti verður lokað þótt undanþágulista"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Andfélagsleg"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Andfélagsleg Mode:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "alltaf fjarlægja félagslega græjum / hnappa, jafnvel þótt undanþágulista"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Fyrir ítarlegri sljór, kíkja á <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Aftengja</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, og / eða <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Uppruni</a> með öllum áskriftar- lista á <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy síða</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Block Audio Fingraförun:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "koma í veg fyrir fingerprinting gegnum AudioContext API"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Block Rafhlaða Fingraförun:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "koma í veg fyrir fingerprinting gegnum Rafhlaða API"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Hegðun Stillingar"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Block (mælt með)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "Block"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "Bannaður"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Loka Öllum Leyfð Þinginu"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "magn innflutnings"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Flyttu til Listi"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Magn Import"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Afrita og líma ríki í reitinn hér að neðan. Hvert ríki skal á sérstakri línu."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Canvas Fingrafar Verndun:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe getur ekki framkvæmt þessa síðu.</strong><br /><br />Vinsamlegast reyndu að heimsækja vefsíðu."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Blank Lesa"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "Random Lesa"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Alveg Block Lesa"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "vernda gegn fingrafara tilraunir með &lt;canvas&gt; þættir"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Block Canvas Font Aðgangur:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "koma í veg fyrir kerfi letur frá því að vera talin með &lt;canvas&gt; þættir. Geta truflað Google Docs."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Classic Options Mode:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "ef merkt, lokar flipann valkostir allt sem möguleiki er smellt"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Hreinsa"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "ljóst"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Lokað Viðskiptavinur Rétthyrningar:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "koma í veg fyrir fingerprinting gegnum reikna þátturinn ferhyrninga. Geta truflað sum dropdowns."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Koma í veg fyrir Klemmuspjald Truflunum:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "koma í veg fyrir síður trufli aðgerðum klippispjaldsins"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Loka"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Loka Óæskilegum Cookies:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "blokkir smákökur frá þekktur AD / malware lén; hér ham gildir þetta eins vel"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Custom"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Sjálfgefið"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Neita"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "Slökkva"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "fatlaður"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Fatlaðir"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Syncing er óvirk.\r\nFeel frjáls til að fara á Valkostir síðu á hverjum tíma til að samræma stillingar (gera afrit af stillingum ef þörf krefur)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Slökkva og Fjarlægja:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Vantraust"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "vantraust"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "Sama Domain"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Raða eftir Domain:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Hjálp"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Ógilt lén / netfang"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Lénið eða heimilisfang verður að innihalda nokkur stafina / tölurnar"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Lén er ekki hægt að bæta eins og það er fyrir hendi af óæskilegum efni (sjá Block óæskileg efni og / eða andfélagsleg Mode)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "skiptir URL lista með lén á síðunni og í spjaldið"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Ábending: Ýttu á CTRL + F til að leita listana"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Ekki Birta Þessa Síðu Aftur"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Virkja:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "virkt"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Virkja ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Virkja samstillingu:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Útflutningur"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Stillingar þínar hafa verið samstilltar!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Stillingar Samstillt!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Fingrafar Verndun"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Fingrafar Protection (getur skemmt staður)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Það virðist sem þú hefur ekki samstillt stillingar á Google reikninginn þinn enn.\r\nScriptSafe er um að samræma núverandi stillingar á Google reikninginn þinn.\r\nSmelltu á 'Í lagi' ef þú vilt halda áfram.\r\nEf ekki , smelltu á 'Hætta við' og hins tækisins með valinn stillingar, uppfæra ScriptSafe og smelltu á OK þegar þú ert kynnt með þessum pósti."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Viltu samstilla núverandi stillingar á Google reikninginn þinn\r\nAthugaðu:? Skaltu ekki ýta þetta oft; það er takmarkað á 10 mínútu og 1.000 á klukkustund."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Viltu flytja samstillt stillingar frá Google reikningnum þínum til að þetta tæki?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Hotkeys:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Almennar Stillingar"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Block Gamepad Talning:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "koma í veg fyrir sem hafa tæki uppgötva í gegnum leikjafjarstýringu API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Laus aðgerðir hotkey"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Tímabundið leyfa / loka á allar auðlindir fyrir núverandi flipa"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Fjarlægja tímabundið leyfi fyrir núverandi flipa"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Fjarlægja öll tímabundnar heimildir"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Stilla ScriptSafe flýtilykla:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "smelltu á Hljómborð Smákaka"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Listi Allar Stillingar"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Hunsað Leyfa"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Nýjasta stillingar hafa verið sótt!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Stillingar Sótt!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Hópur Allar Stillingar"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Fjarlægja Möguleg Hash Mælingar:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "fjarlægja hugsanlegar mælingar tákn liðin með hass, þar er eiginleiki og gildi (t.d. #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "Fela"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Innflutningur"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Innflutningur / Endurheimta Stillingar"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "Stillingar flutt inn"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Stillingar flutt inn, nema eftirfarandi (fastandi gildi eða óþekkt nafn):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Stillingar flutt með góðum árangri og syncing í 30 sekúndur"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Draga Lyklaborð Fingraförun (<strong>fyrir háþróaður notandi</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "gera innslátt tímasetning meira handahófi til að auka nafnleynd (<strong>Ath: bætir handahófi töf milli lyklaborðsaðgerðir; slekkur á þessari stillingu ef óásættanlegt</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Page Link Opnun Hegðun:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "breytir hvernig allir tenglar eru opnuð"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Laus - leyfa sama lén og undirlén"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Sjálfgefið Mode"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Nýr flipi"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Þessi flipi hefur hlaðinn engin utanaðkomandi fjármagn"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "Ekki síað"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Aðeins á Unwhitelisted Lén"
+   },
+   "options": {
+      "description": "Options",
+      "message": "Valmöguleikar"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Ofsóknarbrjálæði Mode:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "blokk leyft lén á óskráðum lén"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Líma í stillingum og reyndu aftur"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Virðing Sama Domain:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "varðveita sama ríki þætti"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Öryggisstillingar"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Handahófi"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Sýna Einkunn Button:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Einkunn"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "ef merkt, bætir umsagna hnappinn undir lén í flipanum sprettiglugga"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe var nýlega uppfærð / reloaded.</strong><br /><br />Þú þarft annaðhvort að endurnýja þennan flipa, búa til nýja flipa, eða endurræsa vafrann til þess að ScriptSafe að vinna."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Loka Smella Með Referrer:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "blokkir tilvísun upplýsingar þegar smellt er á þriðja aðila tenglar (athugið: að stilla þetta á á öllum lénum getur valdið mál (t.d. smámyndir í TweetDeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Tilvísun Skopstæling:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>viðvörun</strong>: Ef virkt, gætir brjóta nokkrar síður (til dæmis að skrá þig inn)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Auto-Uppfæra Síðu:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "sjálfvirk endurnýjun síðu eftir listi breytingu"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "Relaxed"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Afturkalla Page Temporary Heimildir"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "Afturkalla All Tímabundin"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Sama skjali"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "Sama Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Vista"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Vista sem Textaskrá"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "Deildir"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "velja allt"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Afritaðu og límdu stillingarnar sem þú vilt flytja inn ScriptSafe í þennan reit þá smellur á the Import hnappinn."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Stillingarnar vistaðar"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Stillingar vistuð og syncing í 30 sekúndur"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe er óvirk"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "Strangar"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Strangar - leyfa aðeins sama lén"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Að styðja þróun, smelltu hjartað :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Þú hefur virkjað sjálfvirka samstillingu. Í því skyni að koma í veg fyrir að hreinsa áður samstilltum gögnum (ef einhver), skaltu smella á samstillingarkostir frá Google reikningnum."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Stillingar samstillingar frá Google reikningnum"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Stillingar samstillingar á Google reikning"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe hefur sjáum að þú hafa stillingar samstillt á Google reikninginn þinn!\r\nSmelltu á 'Í lagi' ef þú vilt flytja inn stillingar frá Google reikningnum þínum."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Syncing hefur verið gerð óvirk að koma í veg fyrir að skrifa of mikið þegar samstilltum gögnum.\r\nFeel frjáls til að fara á Valkostir síðu á hverjum tíma til að samræma stillingar (gera afrit af stillingum ef þörf krefur)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Sýna Innflutningur Sync Tilkynning:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "sýna sprettiglugga þegar stillingar fyrir samstillingu <strong>frá</strong> Google reikningnum þínum"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Sýna Sync Tilkynning:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "sýna sprettiglugga þegar stillingar fyrir samstillingu <strong>í</strong> Google reikningnum þínum"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Núverandi útgáfa þín af Google Chrome styður ekki stillingar syncing. Reyndu að uppfæra Chrome útgáfa og reyndu aftur."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Tímabundin"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Skopstæling Tímabelti:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "skopstæling eða randomize tímabelti þínu. ATH: Ef virkt, getur það truflað svara tölvupósti í Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Trust"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "traust"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Berið á undanþágulista lén eins vel"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Ertu viss um að þú viljir gera allir framtíðinni tilkynningum update svona einn birtist?\r\nÞú getur alltaf aftur að leyfa tilkynningum uppfærslu með því að fara á ScriptSafe Valkostir síðunni og tjalddúkur í reitinn við hliðina Sýna Uppfæra Almenningur."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Tilkynningar uppfæra óvirk"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Sýnið Changelog á Update:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Óæskilegur"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "sýna changelog síðu þegar ScriptSafe er uppfærð"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Domain"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Sláðu inn lén eða tjáningu (smella á 'Hjálp' fyrir frekari upplýsingar)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Skopstæling:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "spoofs þinn user-agent (Vafri og OS)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Sláðu inn netfang til að setja sem tilvísun gildi fyrir öllum stöðum"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Fjarlægja Google Analytics (UTM) Mælingar:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "fjarlægja Google Analytics (UTM) mælingar tákn"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Fjarlægja Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "fjarlægja ósýnilega þriðja aðila þætti"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Block WebGL Fingraförun:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "koma í veg fyrir fingerprinting um WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Block Tækjatalningu:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "veg hafa vélbúnaður tæki fundist um WebRTC API"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Svartur listi"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Undanþágulisti"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Svartur Listi"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Hvítlista"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "Svartur Listi"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "Undanþágulista"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "svartan lista"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "hvítlista"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Færa til Svartan Lista"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Færa til Gestalista"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Hvítlista / Svartur Listi"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP Beiðni Meðhöndlun:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Stjórna Allar Beiðnir"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Control Cross-Domain Beiðnir (leyfa sama-Domain)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "stjórna XML HTTP beiðnir"
+   }
+}

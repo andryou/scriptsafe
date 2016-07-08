@@ -11,6 +11,7 @@ var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
 	initTabs();
+	i18load();
 	loadOptions();
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
@@ -42,6 +43,148 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
 	$('#sidebar').stickyScroll({ container: '#sectionname' });
 });
+function i18load() {
+	$(".i18_support").html(chrome.i18n.getMessage("support"));
+	$(".i18_listallsettings").html(chrome.i18n.getMessage("listallsettings"));
+	$(".i18_groupallsettings").html(chrome.i18n.getMessage("groupallsettings"));
+	$(".i18_sections").html(chrome.i18n.getMessage("sections"));
+	$(".i18_save").val(chrome.i18n.getMessage("save"));
+	$(".i18_close").val(chrome.i18n.getMessage("close"));
+	$(".i18_enable").html(chrome.i18n.getMessage("enable"));
+	$(".i18_mode").html(chrome.i18n.getMessage("mode"));
+	$(".i18_default").html(chrome.i18n.getMessage("default"));
+	$(".i18_enabled").html(chrome.i18n.getMessage("enabled"));
+	$(".i18_disabled").html(chrome.i18n.getMessage("disabled"));
+	$(".i18_enablesyncing").html(chrome.i18n.getMessage("enablesyncing"));
+	$("#syncimport").val(chrome.i18n.getMessage("syncimport"));
+	$("#syncexport").val(chrome.i18n.getMessage("syncexport"));
+	$(".i18_blockrec").html(chrome.i18n.getMessage("blockrec"));
+	$(".i18_block").html(chrome.i18n.getMessage("block"));
+	$(".i18_allow").html(chrome.i18n.getMessage("allow"));
+	$(".i18_disableremove").html(chrome.i18n.getMessage("disableremove"));
+	$(".i18_xml").html(chrome.i18n.getMessage("xml"));
+	$(".i18_disabledcap").html(chrome.i18n.getMessage("disabledcap"));
+	$(".i18_xmlcross").html(chrome.i18n.getMessage("xmlcross"));
+	$(".i18_xmlall").html(chrome.i18n.getMessage("xmlall"));
+	$(".i18_xmldesc").html(chrome.i18n.getMessage("xmldesc"));
+	$(".i18_syncnotify").html(chrome.i18n.getMessage("syncnotify"));
+	$(".i18_syncnotifydesc").html(chrome.i18n.getMessage("syncnotifydesc"));
+	$(".i18_syncfromnotify").html(chrome.i18n.getMessage("syncfromnotify"));
+	$(".i18_syncfromnotifydesc").html(chrome.i18n.getMessage("syncfromnotifydesc"));
+	$(".i18_updatenotify").html(chrome.i18n.getMessage("updatenotify"));
+	$(".i18_updatenotifydesc").html(chrome.i18n.getMessage("updatenotifydesc"));
+	$(".i18_hotkeys").html(chrome.i18n.getMessage("hotkeys"));
+	$(".i18_availablehotkeys").html(chrome.i18n.getMessage("availablehotkeys"));
+	$(".i18_hotkeystoggle").html(chrome.i18n.getMessage("hotkeystoggle"));
+	$(".i18_hotkeysremove").html(chrome.i18n.getMessage("hotkeysremove"));
+	$(".i18_hotkeysremoveall").html(chrome.i18n.getMessage("hotkeysremoveall"));
+	$("#hotkeyspage").html(chrome.i18n.getMessage("hotkeyspage"));
+	$(".i18_hotkeysinst").html(chrome.i18n.getMessage("hotkeysinst"));
+	$(".i18_canvas").html(chrome.i18n.getMessage("canvas"));
+	$(".i18_canvasblank").html(chrome.i18n.getMessage("canvasblank"));
+	$(".i18_canvasrandom").html(chrome.i18n.getMessage("canvasrandom"));
+	$(".i18_canvasblock").html(chrome.i18n.getMessage("canvasblock"));
+	$(".i18_canvasdesc").html(chrome.i18n.getMessage("canvasdesc"));
+	$(".i18_audioblock").html(chrome.i18n.getMessage("audioblock"));
+	$(".i18_audioblockdesc").html(chrome.i18n.getMessage("audioblockdesc"));
+	$(".i18_webgl").html(chrome.i18n.getMessage("webgl"));
+	$(".i18_webgldesc").html(chrome.i18n.getMessage("webgldesc"));
+	$(".i18_battery").html(chrome.i18n.getMessage("battery"));
+	$(".i18_batterydesc").html(chrome.i18n.getMessage("batterydesc"));
+	$(".i18_webrtcdevice").html(chrome.i18n.getMessage("webrtcdevice"));
+	$(".i18_webrtcdevicedesc").html(chrome.i18n.getMessage("webrtcdevicedesc"));
+	$(".i18_gamepad").html(chrome.i18n.getMessage("gamepad"));
+	$(".i18_gamepaddesc").html(chrome.i18n.getMessage("gamepaddesc"));
+	$(".i18_canvasfont").html(chrome.i18n.getMessage("canvasfont"));
+	$(".i18_canvasfontdesc").html(chrome.i18n.getMessage("canvasfontdesc"));
+	$(".i18_clientrects").html(chrome.i18n.getMessage("clientrects"));
+	$(".i18_clientrectsdesc").html(chrome.i18n.getMessage("clientrectsdesc"));
+	$(".i18_keyboard").html(chrome.i18n.getMessage("keyboard"));
+	$(".i18_keyboarddesc").html(chrome.i18n.getMessage("keyboarddesc"));
+	$(".i18_paranoia").html(chrome.i18n.getMessage("paranoia"));
+	$(".i18_paranoiadesc").html(chrome.i18n.getMessage("paranoiadesc"));
+	$(".i18_annoyances").html(chrome.i18n.getMessage("annoyances"));
+	$(".i18_annoyancesdesc").html(chrome.i18n.getMessage("annoyancesdesc"));
+	$(".i18_cookies").html(chrome.i18n.getMessage("cookies"));
+	$(".i18_cookiesdesc").html(chrome.i18n.getMessage("cookiesdesc"));
+	$(".i18_annoyancesmode").html(chrome.i18n.getMessage("annoyancesmode"));
+	$(".i18_annoyancesmodedesc").html(chrome.i18n.getMessage("annoyancesmodedesc"));
+	$(".i18_antisocial").html(chrome.i18n.getMessage("antisocial"));
+	$(".i18_antisocialdesc").html(chrome.i18n.getMessage("antisocialdesc"));
+	$(".i18_antisocialdesc2").html(chrome.i18n.getMessage("antisocialdesc2"));
+	$(".i18_webbugs").html(chrome.i18n.getMessage("webbugs"));
+	$(".i18_webbugsdesc").html(chrome.i18n.getMessage("webbugsdesc"));
+	$(".i18_utm").html(chrome.i18n.getMessage("utm"));
+	$(".i18_utmdesc").html(chrome.i18n.getMessage("utmdesc"));
+	$(".i18_hashchecking").html(chrome.i18n.getMessage("hashchecking"));
+	$(".i18_hashcheckingdesc").html(chrome.i18n.getMessage("hashcheckingdesc"));
+	$(".i18_referrer").html(chrome.i18n.getMessage("referrer"));
+	$(".i18_referrerdesc").html(chrome.i18n.getMessage("referrerdesc"));
+	$(".i18_timezone").html(chrome.i18n.getMessage("timezone"));
+	$(".i18_timezonedesc").html(chrome.i18n.getMessage("timezonedesc"));
+	$(".i18_useragentspoof").html(chrome.i18n.getMessage("useragentspoof"));
+	$(".i18_useragentspoofdesc").html(chrome.i18n.getMessage("useragentspoofdesc"));
+	$(".i18_uaspoofallow").html(chrome.i18n.getMessage("uaspoofallow"));
+	$(".i18_referrerspoof").html(chrome.i18n.getMessage("referrerspoof"));
+	$(".i18_referrerspoofdesc").html(chrome.i18n.getMessage("referrerspoofdesc"));
+	$("#userref").attr('placeholder', chrome.i18n.getMessage("userref"));
+	$(".i18_linktarget").html(chrome.i18n.getMessage("linktarget"));
+	$(".i18_linktargetdesc").html(chrome.i18n.getMessage("linktargetdesc"));
+	$(".i18_preservesamedomain").html(chrome.i18n.getMessage("preservesamedomain"));
+	$(".i18_preservesamedomaindesc").html(chrome.i18n.getMessage("preservesamedomaindesc"));
+	$(".i18_refresh").html(chrome.i18n.getMessage("refresh"));
+	$(".i18_refreshdesc").html(chrome.i18n.getMessage("refreshdesc"));
+	$(".i18_rating").html(chrome.i18n.getMessage("rating"));
+	$(".i18_ratingdesc").html(chrome.i18n.getMessage("ratingdesc"));
+	$(".i18_classicoptions").html(chrome.i18n.getMessage("classicoptions"));
+	$(".i18_classicoptionsdesc").html(chrome.i18n.getMessage("classicoptionsdesc"));
+	$(".i18_clipboard").html(chrome.i18n.getMessage("clipboard"));
+	$(".i18_clipboarddesc").html(chrome.i18n.getMessage("clipboarddesc"));
+	$(".i18_domainsort").html(chrome.i18n.getMessage("domainsort"));
+	$(".i18_domainsortdesc").html(chrome.i18n.getMessage("domainsortdesc"));
+	$(".i18_url").html(chrome.i18n.getMessage("url"));
+	$("#url").attr('placeholder', chrome.i18n.getMessage("urldesc"));
+	$("#whitebind").val(chrome.i18n.getMessage("whitebind"));
+	$("#blackbind").val(chrome.i18n.getMessage("blackbind"));
+	$("#domaininfo").val(chrome.i18n.getMessage("domaininfo"));
+	$(".i18_whitelist").html(chrome.i18n.getMessage("whitelist"));
+	$(".i18_blacklist").html(chrome.i18n.getMessage("blacklist"));
+	$("#blackclear, #whiteclear").html(chrome.i18n.getMessage("clearlow"));
+	$("#importwhite, #importblack").html(chrome.i18n.getMessage("bulkimport"));
+	$(".i18_bulkimportcap").html(chrome.i18n.getMessage("bulkimportcap"));
+	$(".i18_bulkimportcapdesc").html(chrome.i18n.getMessage("bulkimportcapdesc"));
+	$("#bulkbtn").html(chrome.i18n.getMessage("bulkbtn"));
+	$("#hideimport").val(chrome.i18n.getMessage("hide"));
+	$(".i18_import").html(chrome.i18n.getMessage("import"));
+	$("#importsettings").val(chrome.i18n.getMessage("import"));
+	$(".i18_export").html(chrome.i18n.getMessage("export"));
+	$("#settingsall").html(chrome.i18n.getMessage("settingsall"));
+	$("#settingsimport").attr('placeholder', chrome.i18n.getMessage("settingsimport"));
+	$("#savetxt").val(chrome.i18n.getMessage("savetxt"));
+	$(".i18_relaxed").html(chrome.i18n.getMessage("relaxed"));
+	$(".i18_strict").html(chrome.i18n.getMessage("strict"));
+	$(".i18_onlyunwhitelisted").html(chrome.i18n.getMessage("onlyunwhitelisted"));
+	$(".i18_alldomains").html(chrome.i18n.getMessage("alldomains"));
+	$(".i18_random").html(chrome.i18n.getMessage("random"));
+	$(".i18_off").html(chrome.i18n.getMessage("off"));
+	$(".i18_same").html(chrome.i18n.getMessage("same"));
+	$(".i18_domain").html(chrome.i18n.getMessage("domain"));
+	$(".i18_custom").html(chrome.i18n.getMessage("custom"));
+	$(".i18_sametab").html(chrome.i18n.getMessage("sametab"));
+	$(".i18_newtab").html(chrome.i18n.getMessage("newtab"));
+	$(".i18_strictsamedomain").html(chrome.i18n.getMessage("strictsamedomain"));
+	$(".i18_loosesamedomain").html(chrome.i18n.getMessage("loosesamedomain"));
+	$(".i18_whitelistmove").html(chrome.i18n.getMessage("whitelistmove"));
+	$(".i18_blacklistmove").html(chrome.i18n.getMessage("blacklistmove"));
+	$(".i18_domaintip").html(chrome.i18n.getMessage("domaintip"));
+	$("#sectionname").html(chrome.i18n.getMessage("generalsettings"));
+	$("#menu_generalsettings").attr('rel', chrome.i18n.getMessage("generalsettings")).html(chrome.i18n.getMessage("generalsettings"));
+	$("#menu_fingerprint").attr('rel', chrome.i18n.getMessage("fingerprintdesc")).html(chrome.i18n.getMessage("fingerprint"));
+	$("#menu_privacy").attr('rel', chrome.i18n.getMessage("privacy")).html(chrome.i18n.getMessage("privacy"));
+	$("#menu_behavior").attr('rel', chrome.i18n.getMessage("behavior")).html(chrome.i18n.getMessage("behavior"));
+	$("#menu_whitelistblacklist").attr('rel', chrome.i18n.getMessage("whitelistblacklist")).html(chrome.i18n.getMessage("whitelistblacklist"));
+	$("#menu_importexport").attr('rel', chrome.i18n.getMessage("importexport")).html(chrome.i18n.getMessage("importexport"));
+}
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
 		var currentAttrValue = $(this).attr('href');
@@ -55,7 +198,7 @@ function initTabs() {
 function viewToggle(commit) {
 	$("#sidebar, #sectionname").toggle();
 	if ($(".tab-content").hasClass('col-sm-9')) {
-		$("#viewtoggle").text('Group All Settings').removeClass('btn-info').addClass('btn-success');
+		$("#viewtoggle").text(chrome.i18n.getMessage("groupallsettings")).removeClass('btn-info').addClass('btn-success');
 		if (commit) localStorage['optionslist'] = 'true';
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
 		$(".tab").each(function() {
@@ -68,7 +211,7 @@ function viewToggle(commit) {
 		$('#behaviorsettings .sectionheading').stickyScroll({ topBoundary: $("#behaviorsettings").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 	} else {
-		$("#viewtoggle").text('List All Settings').removeClass('btn-success').addClass('btn-info');
+		$("#viewtoggle").text(chrome.i18n.getMessage("listallsettings")).removeClass('btn-success').addClass('btn-info');
 		if (commit) localStorage['optionslist'] = 'false';
 		$(".tab-content").removeClass('col-sm-12').addClass('col-sm-9');
 		$(".tab").hide();
@@ -80,14 +223,14 @@ function viewToggle(commit) {
 	}
 }
 function forceSyncExport() {
-	if (confirm('Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.')) {
+	if (confirm(chrome.i18n.getMessage("forcesyncexport"))) {
 		if (bkg.freshSync(0, true) == 'true') {
-			notification('Settings successfully synced to your Google Account');
+			notification(chrome.i18n.getMessage("exportsuccess"));
 		}
 	}
 }
 function forceSyncImport() {
-	if (confirm('Do you want to import the synced settings from your Google Account to this device?')) {
+	if (confirm(chrome.i18n.getMessage("forcesyncimport"))) {
 		bkg.importSyncHandle(1);
 		setTimeout(function(){ window.location.reload(1); }, 10000);
 	}
@@ -139,7 +282,7 @@ function saveCheckbox(id) {
 			return;
 		}
 		if (syncstatus == 'false') {
-			alert('You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on "Sync Settings FROM Google Account".');
+			alert(chrome.i18n.getMessage("forcesyncimport"));
 			syncstatus = 'true';
 		} else {
 			syncstatus = 'true';
@@ -274,9 +417,9 @@ function saveOptions() {
 	bkg.refreshRequestTypes();
 	syncstatus = bkg.freshSync(1);
 	if (syncstatus) {
-		notification('Settings saved and syncing in 30 seconds');
+		notification(chrome.i18n.getMessage("settingssavesync"));
 	} else {
-		notification('Settings saved');
+		notification(chrome.i18n.getMessage("settingssave"));
 	}
 }
 function selectAll(id) {
@@ -286,7 +429,7 @@ function settingsImport() {
 	var error = "";
 	var settings = $("#settingsimport").val().split("\n");
 	if ($.trim($("#settingsimport").val()) == "") {
-		notification('Paste in settings and try again');
+		notification(chrome.i18n.getMessage("pastesettings"));
 		return false;
 	}
 	if (settings.length > 0) {
@@ -312,15 +455,15 @@ function settingsImport() {
 	if (!error) {
 		syncstatus = bkg.freshSync(0);
 		if (syncstatus) {
-			notification('Settings imported successfully and syncing in 30 seconds');
+			notification(chrome.i18n.getMessage("importsuccesssync"));
 		} else {
-			notification('Settings imported successfully');
+			notification(chrome.i18n.getMessage("importsuccessoptions"));
 		}
 		bkg.refreshRequestTypes();
 		$("#settingsimport").val("");
 	} else {
 		bkg.freshSync(0);
-		notification('Settings imported successfully, except the following (empty value or unrecognized name): '+error.slice(0, -2));
+		notification(chrome.i18n.getMessage("importsuccesscond")+error.slice(0, -2));
 	}
 }
 function downloadtxt() {
@@ -354,25 +497,25 @@ function notification(msg) {
 function addList(type) {
 	var domain = $('#url').val().toLowerCase().replace("http://", "").replace("https://", "");
 	if (!domain.match(/^(?:[\-\w\*\?]+(\.[\-\w\*\?]+)*|((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})|\[[A-Fa-f0-9:.]+\])?$/g)) {
-		notification('Invalid domain/address');
+		notification(chrome.i18n.getMessage("domaininvalid"));
 	} else if (!domain.match(/[a-z0-9]/g)) {
-		notification('The domain or address must contain some letters/numbers');
+		notification(chrome.i18n.getMessage("domaininvalid2"));
 	} else {
 		if ((localStorage['annoyances'] == 'true' && (localStorage['annoyancesmode'] == 'strict' || (localStorage['annoyancesmode'] == 'relaxed' && bkg.domainCheck(domain, 1) != '0')) && bkg.baddies(bkg.getDomain(domain), localStorage['annoyancesmode'], localStorage['antisocial']) == 1) || (localStorage['antisocial'] == 'true' && bkg.baddies(bkg.getDomain(domain), localStorage['annoyancesmode'], localStorage['antisocial']) == '2')) {
-			notification('Domain cannot be added as it is a provider of unwanted content (see "Block Unwanted Content" and/or "Antisocial Mode")');
+			notification(chrome.i18n.getMessage("domaininvalid3"));
 		} else {
 			var responseflag = bkg.domainHandler(domain, type);
 			if (responseflag) {
 				$('#url').val('');
 				syncstatus = bkg.freshSync(2);
 				if (syncstatus) {
-					notification(['Whitelisted','Blacklisted'][type]+' '+domain+' and syncing in 30 seconds.');
+					notification([chrome.i18n.getMessage("whitelisted"),chrome.i18n.getMessage("blacklisted")][type]+' '+domain+' and syncing in 30 seconds.');
 				} else {
-					notification(['Whitelisted','Blacklisted'][type]+' '+domain+'.');
+					notification([chrome.i18n.getMessage("whitelisted"),chrome.i18n.getMessage("blacklisted")][type]+' '+domain+'.');
 				}
 				listUpdate();
 			} else {
-				notification(domain+' not added as it already exists in the list or the entire domain has been '+['whitelisted','blacklisted'][type]);
+				notification(domain+' not added as it already exists in the list or the entire domain has been '+[chrome.i18n.getMessage("whitelisted"),chrome.i18n.getMessage("blacklisted")][type]);
 			}
 			$('#url').focus();
 		}
@@ -392,11 +535,27 @@ function domainRemover(domain) {
 	}
 	return false;
 }
+function domainMove(domain, mode) {
+	var lingo;
+	if (mode == '0') lingo = chrome.i18n.getMessage("whitelistlow");
+	else if (mode == '1') lingo = chrome.i18n.getMessage("blacklistlow");
+	if (confirm("Are you sure you want to move "+domain+" to the "+lingo+"?")) {
+		bkg.domainHandler(domain, mode);
+		listUpdate();
+		syncstatus = bkg.freshSync(2);
+		if (syncstatus) {
+			notification([chrome.i18n.getMessage("whitelisted"),chrome.i18n.getMessage("blacklisted")][mode]+' '+domain+' and syncing in 30 seconds.');
+		} else {
+			notification([chrome.i18n.getMessage("whitelisted"),chrome.i18n.getMessage("blacklisted")][mode]+' '+domain);
+		}
+	}
+	return false;
+}
 function topDomainAdd(domain, mode) {
 	var lingo;
-	if (mode == '0') lingo = 'trust';
-	else if (mode == '1') lingo = 'distrust';
-	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])$/g) && domain[0] != '*' && domain[1] != '*' && domain[2] != '.' && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
+	if (mode == '0') lingo = chrome.i18n.getMessage("trustlow");
+	else if (mode == '1') lingo = chrome.i18n.getMessage("distrustlow");
+	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])$/g) && domain.indexOf('**.') != 0 && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
 		var result = bkg.topHandler(domain, mode);
 		listUpdate();
 		bkg.freshSync(2);
@@ -414,15 +573,15 @@ function bulk(type) {
 			scrollTop: ($("#bulk").offset().top-55)
 		}, 'slow');
 	} else {
-		if ((type == '0' && $("#bulk strong").html() == "Whitelist Bulk Import") || (type == '1' && $("#bulk strong").html() == "Blacklist Bulk Import")) hidebulk();
+		if ((type == '0' && $("#bulk strong").html() == chrome.i18n.getMessage("whitelist")+" "+chrome.i18n.getMessage("bulkimportcap")) || (type == '1' && $("#bulk strong").html() == chrome.i18n.getMessage("blacklist")+" "+chrome.i18n.getMessage("bulkimportcap"))) hidebulk();
 	}
 	$("#bulk textarea").focus();
 	if (type == '0') {
-		$("#bulk strong").html("Whitelist Bulk Import");
-		$("#bulkbtn").val("Import to Whitelist").click(importbulkwhite);
+		$("#bulk strong").html(chrome.i18n.getMessage("whitelist")+" "+chrome.i18n.getMessage("bulkimportcap"));
+		$("#bulkbtn").val(chrome.i18n.getMessage("whitebind")).click(importbulkwhite);
 	} else if (type == '1') {
-		$("#bulk strong").html("Blacklist Bulk Import");
-		$("#bulkbtn").val("Import to Blacklist").click(importbulkblack);
+		$("#bulk strong").html(chrome.i18n.getMessage("blacklist")+" "+chrome.i18n.getMessage("bulkimportcap"));
+		$("#bulkbtn").val(chrome.i18n.getMessage("blackbind")).click(importbulkblack);
 	}
 }
 function importbulk(type) {
@@ -475,8 +634,8 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
 		for (var i in whiteList) {
-			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
-			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+whiteList[i]+'\' rel="0">Trust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+chrome.i18n.getMessage("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
+			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+chrome.i18n.getMessage("trust")+' '+whiteList[i]+'\' data-domain=\''+whiteList[i]+'\' data-mode="0">'+chrome.i18n.getMessage("trust")+'</a> | <a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+chrome.i18n.getMessage("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'>X</a></div>'+whiteList[i]+'</div>';
 		}
 	}
 	var blacklistCompiled = '';
@@ -486,17 +645,18 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
 		for (var i in blackList) {
-			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
-			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+blackList[i]+'\' rel="1">Distrust Domain</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+chrome.i18n.getMessage("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
+			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+chrome.i18n.getMessage("distrust")+' '+blackList[i]+'\' data-domain=\''+blackList[i]+'\' data-mode="1">'+chrome.i18n.getMessage("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+chrome.i18n.getMessage("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0">&#8644;</a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'>X</a></div>'+blackList[i]+'</div>';
 		}
 	}
 	$('#whitelist').html(whitelistCompiled);
 	$('#blacklist').html(blacklistCompiled);
 	$('#whitelistcount').html(whitelistLength);
 	$('#blacklistcount').html(blacklistLength);
-	$(".domainRemover, .topDomainAdd").unbind('click');
+	$(".domainRemover, .topDomainAdd, .domainMove").unbind('click');
 	$(".domainRemover").click(function() { domainRemover($(this).attr('rel'));});
-	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('title'), $(this).attr('rel'));});
+	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('data-domain'), $(this).attr('data-mode'));});
+	$(".domainMove").click(function() { domainMove($(this).attr('data-domain'), $(this).attr('data-mode'));});
 	updateExport();
 }
 function listclear(type) {

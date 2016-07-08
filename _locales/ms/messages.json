@@ -1,0 +1,778 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Mendapatkan semula kawalan ke atas web dan melayari lebih selamat."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Pada Semua Domain"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "Benarkan"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Item Dibenarkan"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Item Disekat"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Benarkan Semua Disekat Untuk Sesi"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Menghalang Kandungan Yang Tidak Dikehendaki:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "membuang kandungan yang tidak diingini daripada iklan / domain malware dikenali; domain dikumpulkan dari <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( pelayan iklan / pengesanan)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>TUAN RUMAH Projek Peter Lowe</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Yang Tidak Diingini Mod Kandungan:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Santai = domain disenarai putih tidak akan disekat; Ketat = domain dalam senarai domain yang tidak diingini akan disekat walaupun disenarai putih"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Antisosial"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Mod Antisosial:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "sentiasa keluarkan widget / butang sosial, walaupun disenarai putih"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Untuk menyekat lebih menyeluruh, lihat <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>putus sambungan</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, dan / atau <a target=_blank>uBlock asal</a> dengan semua senarai langganan pada <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm href=https: sasaran //www.fanboy.co.nz/ =_blank> tapak Fanboy</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Block Audio Fingerprinting:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "mengelakkan cap jari melalui API AudioContext yang"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Block Battery Fingerprinting:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "mengelakkan cap jari melalui API Bateri"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Tetapan Kelakuan"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Block (disyorkan)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "Bongkah"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "Disekat"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Sekat Semua Dibenarkan Untuk Sesi"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "import pukal"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Import ke Senarai"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Import Bulk"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Copy dan paste domain ke dalam kotak di bawah. Setiap domain seharusnya berada di baris yang berasingan."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Canvas Perlindungan Cap Jari:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe tidak boleh memproses halaman ini.</strong><br /><br />Sila cuba melawat sebuah laman web."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Bacaan Blank"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "Bacaan Rawak"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Sepenuhnya Sekat Bacaan"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "melindungi daripada cap jari cuba melalui &lt;canvas&gt; unsur-unsur"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Block Canvas Font Akses:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "menghalang fon sistem daripada yang disebut satu persatu melalui elemen-elemen &lt;canvas&gt;. Boleh mengganggu Google Docs .."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Pilihan Classic Mode:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "jika ditandakan, menutup pilihan tab setiap kali pilihan diklik"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Clear"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "jelas"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Block Pelanggan Segiempat Tepat:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "mengelakkan cap jari melalui mengira segi empat tepat elemen. Boleh mengganggu sesetengah dropdowns."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Mencegah Klipbod Gangguan:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "mengelakkan halaman daripada mengganggu tindakan clipboard"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Tutup"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Menyekat Kuki Yang Tidak Dikehendaki:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "blok cookies daripada iklan dikenali / domain malware; bawah mod terpakai kepada ini dan juga"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Custom"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Lalai"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Deny"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "Matikan"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "kurang upaya"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Orang Kurang Upaya"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Penyegerakan dilumpuhkan.\r\nFeel bebas untuk pergi ke halaman Pilihan pada bila-bila masa untuk menyegerakkan tetapan anda (membuat sandaran tetapan anda jika perlu)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Melumpuhkan dan Buang:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Kesangsian"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "kesangsian"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "Domain Sama"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Susun mengikut Domain:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Bantu"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Domain / alamat tidak sah"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Domain atau alamat mesti mempunyai surat / nombor"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Domain tidak boleh ditambah kerana ia adalah sebuah pembekal kandungan yang tidak diingini (lihat Blok Kandungan yang tidak diingini dan / atau Mod Antisocial)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "menyusun senarai URL oleh domain di halaman ini dan dalam panel"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Petua: Tekan CTRL + F untuk mencari senarai"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Jangan Tunjukkan Halaman Ini Again"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Membolehkan:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "membolehkan"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Membolehkan ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Membolehkan Penyelarasan:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Eksport"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Tetapan anda telah berjaya disegerakkan!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Tetapan Disegerakkan!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Perlindungan Cap Jari"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Perlindungan Cap Jari (boleh memecah tapak)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Nampaknya anda tidak disegerakkan tetapan anda ke akaun Google anda lagi.\r\nScriptSafe adalah kira-kira untuk menyegerakkan tetapan semasa anda ke akaun Google anda.\r\n Klik 'OK' jika anda mahu terus.\r\nJika tidak , klik 'Batal' dan pada peranti yang lain dengan tetapan pilihan anda, mengemas kini ScriptSafe dan klik pada OK apabila anda dibentangkan dengan mesej ini."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Adakah anda mahu selaraskan tetapan semasa anda ke Akaun Google anda\r\nNota: sila tekan ini dengan kerap; terdapat had sebanyak 10 minit dan 1000 sejam."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Adakah anda ingin mengimport tetapan yang disegerakkan daripada Akaun Google anda kepada peranti ini?"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Hotkeys:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Tetapan Umum"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Block Gamepad Penghitungan:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "mencegah yang mempunyai peranti yang dikesan melalui Gamepad API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Terdapat tindakan hotkey"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Sementara membenarkan / menyekat semua sumber untuk tab semasa"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Alih keluar keizinan sementara untuk tab semasa"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Alih keluar semua kebenaran sementara"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys:",
+      "message": "Konfigurasi hotkeys ScriptSafe:"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "klik pada Pintasan Papan Kekunci"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Senarai Semua Tetapan"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Diabaikan Benarkan"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Tetapan terkini telah berjaya dimuat turun!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Tetapan Turun!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Kumpulan Semua Tetapan"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Buang Tracking Hash Mungkin:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "keluarkan mungkin token pengesanan diluluskan menggunakan hash, di mana terdapat satu sifat dan nilai (cth #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "Sembunyi"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Import"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Import / Restore Settings"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "Tetapan diimport berjaya"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "message": "Tetapan diimport berjaya, kecuali (nilai kosong atau nama yang tidak diiktiraf) dengan yang berikut:"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 30 seconds",
+      "message": "Tetapan diimport berjaya dan penyegerakan dalam 30 saat"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Mengurangkan Keyboard Fingerprinting (<strong>untuk pengguna yang maju</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "membuat pengaturan masa tekanan kekunci lebih rawak untuk meningkatkan namanya disiarkan (<strong>NOTA: menambah kelewatan rawak antara kekunci daripada ditekan; melumpuhkan tetapan ini jika tidak boleh diterima</strong>)"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Page Link Pembukaan Behaviour:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "mengubah bagaimana semua pautan dibuka"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Longgar - membolehkan domain dan subdomain sama"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Mod Lalai"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Tab Baru"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Tab ini telah dimuatkan tiada sumber luaran"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "Tidak ditapis"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Off-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Hanya pada Unwhitelisted Domain"
+   },
+   "options": {
+      "description": "Options",
+      "message": "Pilihan"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Paranoia Mode:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "blok dibenarkan domain pada domain tidak tersenarai"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Paste tetapan dan cuba lagi"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Menghormati Sama-Domain:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "mengekalkan unsur-unsur yang sama-domain"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Tetapan Privasi"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Random"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Tunjukkan Rating Button:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Rating"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "jika ditandakan, menambah butang Kedudukan di bawah domain dalam tab popup"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe baru-baru ini dikemaskini / reloaded.</strong><br /><br />Anda akan perlu untuk memuat menyegarkan tab ini, buka tab baru, atau memulakan semula penyemak imbas anda supaya ScriptSafe untuk bekerja."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Menyekat Referrer Klik-Melalui:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "blok maklumat perujuk apabila klik pada pautan pihak ketiga (nota: menetapkan ini kepada On Semua Domain boleh menyebabkan isu-isu (mis imej kecil dalam Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Spoof Referrer:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>amaran</strong>: jika dibolehkan, boleh memecah beberapa laman web (cth log masuk)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Auto-Refresh Page:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "halaman muat semula automatik selepas senarai perubahan"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "Santai"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Membatalkan Page Sementara Kebenaran"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "Membatalkan Semua Temporary"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Dokumen Yang Sama"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "Tab Sama"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Simpan"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Jadikan Text File"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "Seksyen"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "pilih semua"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Salin dan tampal tetapan yang anda mahu untuk mengimport ke dalam ScriptSafe ke dalam kotak ini kemudian klik pada butang Import."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Tetapan disimpan"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 30 seconds",
+      "message": "Tetapan disimpan dan penyegerakan dalam 30 saat"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe dilumpuhkan"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "Ketat"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Ketat - membolehkan domain sama hanya"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Untuk menyokong pembangunan, klik hati :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Anda telah membolehkan auto-penyegerakan. Untuk mengelakkan memadam data anda yang disegerakkan sebelum ini (jika ada), sila klik pada Tetapan Penyegerakan DARI Akaun Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Tetapan Penyegerakan DARI Akaun Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Tetapan Penyegerakan KE Akaun Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe telah mengesan bahawa anda mempunyai tetapan disegerakkan dalam akaun Google anda!\r\n Klik 'OK' jika anda mahu mengimport tetapan daripada Akaun Google anda."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Penyegerakan telah dimatikan untuk mengelakkan menulis ganti data anda telah disegerakkan.\r\nJangan ragu untuk pergi ke halaman Pilihan pada bila-bila masa untuk menyegerakkan tetapan anda (membuat sandaran tetapan anda jika perlu)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Tunjukkan Pemberitahuan Sync Import:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "menunjukkan pop timbul apabila tetapan disegerakkan <strong>dari</strong> Akaun Google anda"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Tunjukkan Pemberitahuan Sync:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "menunjukkan pop timbul apabila tetapan disegerakkan <strong>untuk</strong> Akaun Google anda"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "versi semasa Google Chrome tidak menyokong tetapan penyegerakan. Sila cuba mengemas kini versi Chrome anda dan cuba lagi."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Sementara"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Zon Spoof:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "spoof atau Rawakkan zon waktu anda. NOTA: Jika diaktifkan, ia mungkin mengganggu membalas e-mel dalam Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Trust"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "Amanah"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Memohon kepada domain disenarai putih dan juga"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Adakah anda pasti anda mahu untuk melumpuhkan sebarang pemberitahuan kemas kini masa depan seperti ini daripada muncul?\r\nAnda sentiasa boleh membenarkan semula pemberitahuan kemas kini dengan pergi ke laman ScriptSafe Pilihan dan menandakan kotak di sebelah Show Update Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Pemberitahuan kemas kini yang tidak aktif"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Tunjukkan Changelog di Update:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Yang Tidak Diingini"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "menunjukkan halaman Changelog apabila ScriptSafe dikemaskini"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Domain"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Masukkan domain atau ungkapan (klik 'Bantuan' untuk maklumat lanjut)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Spoof:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "spoofs Ejen pengguna anda (pelayar dan OS)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Masukkan alamat untuk ditetapkan sebagai nilai perujuk anda untuk semua tapak"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Buang Google Analytics (UTM) Tracking:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "keluarkan Google Analytics (UTM) tokens pengesanan"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Buang Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "membuang unsur-unsur pihak ketiga yang tidak dapat dilihat"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Block WebGL Fingerprinting:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "mengelakkan cap jari melalui API WebGL"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Block Peranti Penghitungan:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "menghalang peranti perkakasan telah dikesan melalui WebRTC API"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Blacklist"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Senarai Putih"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Senarai Hitam"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Senarai Putih"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "Disenaraihitamkan"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "Disenarai Putih"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "senarai hitam"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "senarai putih"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Pindah ke Senarai Hitam"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Pindah ke Senarai Putih"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Senarai Putih / Blacklist"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP Permintaan Pengendalian:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Mengawal Semua Permintaan"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Permintaan Kawalan Cross-Domain (membolehkan Sama-Domain)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "kawalan Permintaan XML HTTP"
+   }
+}
