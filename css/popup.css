@@ -41,6 +41,8 @@ th { padding-bottom: 5px; }
 /* Misc */
 hr { border: 0; border-top: 1px solid #eeeeee; }
 .bolded { font-weight: bold; }
+#pop_webstore { color: #000; text-decoration: none; }
+#pop_webstore:hover { color: #000; text-decoration: underline; }
 
 /* Boxes */
 .box:hover {
