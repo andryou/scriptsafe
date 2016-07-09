@@ -13,7 +13,7 @@
    },
    "alloweditems": {
       "description": "Allowed Items",
-      "message": "可アイテム"
+      "message": "許可されたアイテム"
    },
    "blockeditems": {
       "description": "Blocked Items",
