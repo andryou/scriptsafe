@@ -930,6 +930,7 @@ if (!optionExists("version") || localStorage["version"] != version) {
 			}
 		}
 		localStorage['tempregexflag'] = "true";
+		syncQueue();
 	}
 	if (localStorage["updatenotify"] == "true") {
 		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html'), selected: true });
