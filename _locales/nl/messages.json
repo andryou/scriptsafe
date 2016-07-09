@@ -1,11 +1,11 @@
 {
    "appdescription": {
       "description": "Regain control of the web and surf more securely.",
-      "message": "Weer controle over het web en surfen veiliger."
+      "message": "Herneem controle over het web en surf veiliger."
    },
    "alldomains": {
       "description": "On All Domains",
-      "message": "Op Alle Domeinen"
+      "message": "Op alle domeinen"
    },
    "allow": {
       "description": "Allow",
@@ -13,7 +13,7 @@
    },
    "alloweditems": {
       "description": "Allowed Items",
-      "message": "Toegestaan Items"
+      "message": "Toegestane Items"
    },
    "blockeditems": {
       "description": "Blocked Items",
@@ -21,23 +21,23 @@
    },
    "allowallblocked": {
       "description": "Allow All Blocked For Session",
-      "message": "Toestaan ​​Dat Alle Geblokkeerde Voor Session"
+      "message": "Alle 'Geblokkeerd voor sessie' toestaan"
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "Blokkeer Ongewenste Inhoud:"
+      "message": "Blokkeer ongewenste inhoud:"
    },
    "annoyancesdesc": {
-      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
-      "message": "verwijderen van ongewenste inhoud van bekende ad / malware domeinen; domeinen verzameld van <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( ad / het bijhouden van servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>systemen Project Peter Lowe's</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>MalwareDomainList.com</a>"
+      "description": "remove unwanted content from known ad/malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad/tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "verwijder ongewenste inhoud van bekende ad/malware domeinen; domeinen verzameld van <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad/tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>systemen Project Peter Lowe's</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>MalwareDomainList.com</a>"
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "Ongewenste Content Mode:"
+      "message": "Ongewenste inhoud mode:"
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
-      "message": "Relaxed = whitelist domeinen zullen niet worden geblokkeerd; Strikte = domeinen in de ongewenste domein lijst zal ook worden geblokkeerd als whitelist"
+      "message": "Relaxed = whitelisted domeinen zullen niet worden geblokkeerd; Strikt = domeinen in de ongewenste domein lijst zullen ook worden geblokkeerd zelfs als whitelisted"
    },
    "antisocialpopup": {
       "description": "Antisocial",
@@ -45,31 +45,31 @@
    },
    "antisocial": {
       "description": "Antisocial Mode:",
-      "message": "Asociaal Mode:"
+      "message": "Antisociaal mode:"
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
-      "message": "Verwijder altijd sociale widgets / knoppen, zelfs als de witte lijst"
+      "message": "Verwijder altijd sociale widgets/knoppen, zelfs als whitelisted"
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Voor uitgebreidere blokkeren, kijk op <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, en / of <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> met al het abonnement lijsten op de <a href = https: //www.fanboy.co.nz/ target=_blank>Fanboy website</a>"
+      "message": "Voor uitgebreider blokkeren, kijk op <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, en/of <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> met al de abonnement lijsten op de <a href = https: //www.fanboy.co.nz/ target=_blank>Fanboy website</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
-      "message": "Block Audio Fingerprinting:"
+      "message": "Blokkeer audio fingerprinting:"
    },
    "audioblockdesc": {
       "description": "prevent fingerprinting via the AudioContext API",
-      "message": "voorkomen dat vingerafdrukken via de AudioContext API"
+      "message": "voorkomt  fingerprinting via de AudioContext API"
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blok Batterij Fingerprinting:"
+      "message": "Blokkeer Batterij fingerprinting:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
-      "message": "voorkomen dat vingerafdrukken via de API Battery"
+      "message": "voorkomen fingerprinting via de batterij API"
    },
    "behavior": {
       "description": "Behaviour Settings",
@@ -77,11 +77,11 @@
    },
    "blockrec": {
       "description": "Block (recommended)",
-      "message": "Block (aanbevolen)"
+      "message": "Blokkeren (aanbevolen)"
    },
    "block": {
       "description": "Block",
-      "message": "Blok"
+      "message": "Blokkeren"
    },
    "blocked": {
       "description": "Blocked",
@@ -89,7 +89,7 @@
    },
    "blockallallowed": {
       "description": "Block All Allowed For Session",
-      "message": "Alles Blokkeren Toegestaan ​​Voor Session"
+      "message": "Alles blokkeren toestaan v​oor sessie"
    },
    "bulkimport": {
       "description": "bulk import",
@@ -97,11 +97,11 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Importeer naar de Lijst"
+      "message": "Importeer naar lijst"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
-      "message": "Bulk Import"
+      "message": "Bulk import"
    },
    "bulkimportcapdesc": {
       "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
@@ -109,43 +109,43 @@
    },
    "canvas": {
       "description": "Canvas Fingerprint Protection:",
-      "message": "Canvas Vingerafdruk Protection:"
+      "message": "Canvas fingerprint bescherming:"
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
-      "message": "<strong>ScriptSafe kunt deze pagina niet verwerken.</strong><br /> <br />Probeer het bezoeken van een website."
+      "message": "<strong>ScriptSafe kan deze pagina niet verwerken.</strong><br /> <br />Probeer een website te bezoeken."
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "Blanco Uitlezing"
+      "message": "Blanco uitlezing"
    },
    "canvasrandom": {
       "description": "Random Readout",
-      "message": "Random Uitlezing"
+      "message": "Willekeurige uitlezing"
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "Volledig Blokkeren Uitlezing"
+      "message": "Volledig blokkeren uitlezing"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
-      "message": "beschermt tegen vingerafdrukken probeert door middel van &lt;canvas&gt; elementen"
+      "message": "beschermt tegen fingerprinting pogingen door middel van &lt;canvas&gt; elementen"
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Block Canvas Font Toegang:"
+      "message": "Blokkeer canvas font toegang:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
-      "message": "voorkomen dat het systeem fonts van wordt opgesomd door middel van &lt;canvas&gt; elementen. Kunnen interfereren met Google Docs."
+      "message": "voorkom dat systeem fonts worden opgesomd door middel van &lt;canvas&gt; elementen. Kan interfereren met Google Docs."
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
-      "message": "Classic Opties Mode:"
+      "message": "Klassieke opties mode:"
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "indien aangevinkt, sluit tabbladopties everytime een optie wordt geklikt"
+      "message": "indien aangevinkt, sluit het tabblad opties elke keer dat op een optie wordt geklikt"
    },
    "clear": {
       "description": "Clear",
@@ -157,35 +157,35 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Block Client Rechthoeken:"
+      "message": "Blokkeer cliënt rechthoeken:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
-      "message": "voorkomen fingerprinting door middel van het berekenen element rechthoeken. Kan interfereren met enkele dropdowns."
+      "message": "voorkomen fingerprinting door middel van het berekenen van element rechthoeken. Kan interfereren met enkele dropdowns."
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "Voorkom Clipboard Interferentie:"
+      "message": "Voorkom klembord interferentie:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
-      "message": "voorkomen dat pagina's uit te bemoeien met klembord acties"
+      "message": "voorkom dat pagina's interfereren met klembord acties"
    },
    "close": {
       "description": "Close",
-      "message": "Dichtbij"
+      "message": "Sluiten"
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "Blokkeer ongewenste Cookies:"
+      "message": "Blokkeer ongewenste cookies:"
    },
    "cookiesdesc": {
-      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
-      "message": "blokken cookies van bekende ad / malware domeinen; hieronder modus geldt voor dit zo goed"
+      "description": "blocks cookies from known ad/malware domains; below mode applies to this as well",
+      "message": "blokkeert cookies van bekende ad/malware domeinen; onderstaande modus geldt ook hiervoor"
    },
    "custom": {
       "description": "Custom",
-      "message": "Gewoonte"
+      "message": "Aangepast"
    },
    "default": {
       "description": "Default",
@@ -197,79 +197,79 @@
    },
    "deny": {
       "description": "Deny",
-      "message": "Ontkennen"
+      "message": "Weigeren"
    },
    "disable_non_proxied_udp": {
       "description": "Protect Local and Public IPs",
-      "message": "Bescherm Lokale en Openbare IPs"
+      "message": "Bescherm lokale en openbare IP's"
    },
    "disable": {
       "description": "Disable",
-      "message": "Onbruikbaar Maken"
+      "message": "Uitschakelen"
    },
    "disabled": {
       "description": "disabled",
-      "message": "invalide"
+      "message": "uitgeschakeld"
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "Invalide"
+      "message": "Uitgeschakeld"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
-      "message": "Synchroniseren is uitgeschakeld.\r\nVoel je vrij om te gaan naar de pagina Opties op elk gewenst moment om uw instellingen te synchroniseren (maak een back-up van uw instellingen indien nodig)."
+      "message": "Synchroniseren is uitgeschakeld.\r\nVoel u vrij om op elk gewenst moment naar de pagina Opties te gaan om uw instellingen te synchroniseren (maak een back-up van uw instellingen indien nodig)."
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "Uitschakelen en Verwijderen:"
+      "message": "Uitschakelen en verwijderen:"
    },
    "distrust": {
       "description": "Distrust",
-      "message": "Wantrouwen"
+      "message": "Wantrouw"
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "wantrouwen"
+      "message": "wantrouw"
    },
    "domain": {
       "description": "Same Domain",
-      "message": "Zelfde Domain"
+      "message": "Zelfde domein"
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Sorteren op Domein:"
+      "message": "Sorteren op domein:"
    },
    "domaininfo": {
       "description": "Help",
-      "message": "Hulp"
+      "message": "Help"
    },
    "domaininvalid": {
       "description": "Invalid domain/address",
-      "message": "Ongeldig domein / adres"
+      "message": "Ongeldig domein/adres"
    },
    "domaininvalid2": {
       "description": "The domain or address must contain some letters/numbers",
-      "message": "Het domein of adres moet een aantal letters / cijfers bevatten"
+      "message": "Het domein of adres moet een aantal letters/cijfers bevatten"
    },
    "domaininvalid3": {
       "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
-      "message": "Domein kan niet worden toegevoegd omdat het een leverancier van ongewenste inhoud (zie Blok ongewenste inhoud en / of Asociaal Mode)"
+      "message": "Domein kan niet worden toegevoegd omdat het een leverancier van ongewenste inhoud betreft (zie: Blokkeer ongewenste inhoud en/of Antisociaal mode)"
    },
    "domainsortdesc": {
       "description": "sorts URL lists by domains on this page and in the panel",
-      "message": "sorteert URL lijsten van domeinen op deze pagina en in het paneel"
+      "message": "sorteert URL lijsten op domeinen op deze pagina en in het paneel"
    },
    "domaintip": {
       "description": "Tip: press CTRL+F to search the lists",
-      "message": "Tip: druk op CTRL + F om de lijsten te zoeken"
+      "message": "Tip: druk op CTRL+F om de lijsten te doorzoeken"
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
-      "message": "Niet Laat Deze Pagina Again"
+      "message": "Deze pagina niet meer weergeven"
    },
    "enable": {
       "description": "Enable:",
-      "message": "Enable:"
+      "message": "Inschakelen:"
    },
    "enabled": {
       "description": "enabled",
@@ -277,11 +277,11 @@
    },
    "enabless": {
       "description": "Enable ScriptSafe",
-      "message": "Inschakelen ScriptSafe"
+      "message": "ScriptSafe inschakelen"
    },
    "enablesyncing": {
       "description": "Enable Syncing:",
-      "message": "Schakel Synchronisatie:"
+      "message": "Schakel Synchronisatie in:"
    },
    "export": {
       "description": "Export",
@@ -293,27 +293,27 @@
    },
    "exportsuccesstitle": {
       "description": "Settings Synced!",
-      "message": "Instellingen Synced!"
+      "message": "Instellingen gesynchroniseerd!"
    },
    "fingerprint": {
       "description": "Fingerprint Protection",
-      "message": "Vingerafdruk Protection"
+      "message": "Fingerprint bescherming"
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "Vingerafdruk Protection (kunnen plaatsen breken)"
+      "message": "Fingerprint bescherming (kan sites breken)"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Het lijkt erop dat je nog niet de instellingen gesynchroniseerd met uw Google-account.\r\nScriptSafe staat op het punt de huidige instellingen synchroniseren met uw Google-account.\r\nKlik op 'OK' als u wilt doorgaan.\r\nZo niet, dan klikt u op 'Annuleren', en op het andere apparaat met de gewenste instellingen, werken ScriptSafe en klik op OK wanneer u worden met deze boodschap."
+      "message": "Het lijkt erop dat u de instellingen nog niet heeft gesynchroniseerd met uw Google-account.\r\nScriptSafe staat op het punt de huidige instellingen te synchroniseren met uw Google-account.\r\nKlik op 'OK' als u wilt doorgaan.\r\nZo niet, klikt dan op 'Annuleren', en op het andere apparaat met de gewenste instellingen, update ScriptSafe en klik op 'OK' wanneer deze boodschap wordt getoond."
    },
    "forcesyncexport": {
       "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Wilt u uw huidige instellingen synchroniseren met uw Google-account?\r\nLet op: gelieve dit niet druk vaak; Er is een limiet van 10 per minuut en 1000 per uur."
+      "message": "Wilt u uw huidige instellingen synchroniseren met uw Google-account?\r\nLet op: druk hier niet te vaak; Er is een limiet van 10 per minuut en 1000 per uur."
    },
    "forcesyncimport": {
       "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Wilt u de gesynchroniseerde instellingen van uw Google-account te importeren naar dit apparaat?"
+      "message": "Wilt u de gesynchroniseerde instellingen van uw Google-account importeren naar dit apparaat?"
    },
    "hotkeys": {
       "description": "Hotkeys:",
@@ -325,23 +325,23 @@
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Block Gamepad Opsomming:"
+      "message": "Blokkeer Gamepad Opsomming:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
-      "message": "voorkomen dat apparaten gedetecteerd via de Gamepad API"
+      "message": "voorkomen dat apparaten gedetecteerd worden via de Gamepad API"
    },
    "availablehotkeys": {
       "description": "Available hotkey actions",
-      "message": "Beschikbare hotkey acties"
+      "message": "Beschikbare sneltoets acties"
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
-      "message": "Tijdelijk toestaan ​​/ blokkeren van alle middelen voor een huidige tabblad"
+      "message": "Tijdelijk toestaan/blokkeren van alle middelen voor een huidig tabblad"
    },
    "hotkeysremove": {
       "description": "Remove temporary permissions for a current tab",
-      "message": "Verwijder de tijdelijke vergunningen voor een huidige tabblad"
+      "message": "Verwijder de tijdelijke toestemmingen voor een huidig tabblad"
    },
    "hotkeysremoveall": {
       "description": "Remove all temporary permissions",
@@ -349,7 +349,7 @@
    },
    "hotkeyspage": {
       "description": "Configure ScriptSafe hotkeys:",
-      "message": "Configureren ScriptSafe hotkeys:"
+      "message": "Configureer ScriptSafe sneltoetsen:"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -357,7 +357,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Toon Alle Instellingen"
+      "message": "Toon alle instellingen"
    },
    "ignoredallow": {
       "description": "Ignored Allow",
@@ -369,7 +369,7 @@
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Instellingen Gedownloade!"
+      "message": "Instellingen Gedownload!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
@@ -377,11 +377,11 @@
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Verwijder Mogelijke Hash Tracking:"
+      "message": "Verwijder mogelijke hash tracking:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
-      "message": "verwijderen van alle eventuele volgen tokens doorgegeven met behulp van hash, waar sprake is van een attribuut en de waarde (bijvoorbeeld #xtor=RSS-1)"
+      "message": "verwijder alle eventuele tracking tokens doorgegeven met behulp van hash, waar sprake is van een attribuut en de waarde (bijvoorbeeld #xtor=RSS-1)"
    },
    "hide": {
       "description": "Hide",
@@ -392,8 +392,8 @@
       "message": "Importeren"
    },
    "importexport": {
-      "description": "Import / Restore Settings",
-      "message": "Import / Instellingen Herstellen"
+      "description": "Import/Restore Settings",
+      "message": "Import/Instellingen herstellen"
    },
    "importsuccessoptions": {
       "description": "Settings imported successfully",
@@ -401,7 +401,7 @@
    },
    "importsuccesscond": {
       "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
-      "message": "Instellingen geïmporteerd, met uitzondering van de volgende (lege waarde of niet-opgenomen naam):"
+      "message": "Instellingen geïmporteerd, met uitzondering van de volgende (lege waarde of niet-herkende naam):"
    },
    "importsuccesssync": {
       "description": "Settings imported successfully and syncing in 30 seconds",
@@ -409,15 +409,15 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "Verminder Keyboard Fingerprinting (<strong>voor gevorderde gebruikers</strong>):"
+      "message": "Verminder keyboard fingerprinting (<strong>voor gevorderde gebruikers</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
-      "message": "maken keypress timings meer willekeurige om de anonimiteit te verhogen (<strong>LET OP: voegt een willekeurige vertraging tussen toetsaanslagen; uitschakelen van deze instelling is onaanvaardbaar</strong>)"
+      "message": "maak toetsaanslag timing meer willekeurig om de anonimiteit te verhogen (<strong>LET OP: voegt een willekeurige vertraging tussen toetsaanslagen; uitschakelen van deze instelling is onaanvaardbaar</strong>)"
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Pagina Link Opening Gedrag:"
+      "message": "Pagina link openen gedrag:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -425,15 +425,15 @@
    },
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
-      "message": "Loose - toestaan ​​hetzelfde domein en subdomeinen"
+      "message": "Los - staat ​​hetzelfde domein en sub-domeinen toe"
    },
    "mode": {
       "description": "Default Mode",
-      "message": "Standaard Modus"
+      "message": "Standaard modus"
    },
    "newtab": {
       "description": "New Tab",
-      "message": "Nieuw Tabblad"
+      "message": "Nieuw tabblad"
    },
    "noexternal": {
       "description": "This tab has loaded no external resources",
@@ -461,11 +461,11 @@
    },
    "paranoia": {
       "description": "Paranoia Mode:",
-      "message": "Paranoia Mode:"
+      "message": "Paranoïde mode:"
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
-      "message": "block toegestaan ​​domeinen op niet-beursgenoteerde domeinen"
+      "message": "blokkeren toegestaan ​​domeinen op geheime domeinen"
    },
    "pastesettings": {
       "description": "Paste in settings and try again",
@@ -473,55 +473,55 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Respecteer Same-Domein:"
+      "message": "Respecteer het zelfde domein:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
-      "message": "het behoud van hetzelfde domein elementen"
+      "message": "behoud dezelfde domein elementen"
    },
    "privacy": {
       "description": "Privacy Settings",
-      "message": "Privacy Instellingen"
+      "message": "Privacy instellingen"
    },
    "random": {
       "description": "Random",
-      "message": "Toevallig"
+      "message": "Willekeurig"
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Laat Rating Button:"
+      "message": "Toon beoordeling knop:"
    },
    "ratingbtn": {
       "description": "Rating",
-      "message": "Rating"
+      "message": "Beoordeling"
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
-      "message": "indien aangevinkt, voegt waardering knop onder domeinen in tab popup"
+      "message": "indien aangevinkt, wordt een beoordeling knop toegevoegd onder domeinen in tab popup"
    },
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
-      "message": "<strong>ScriptSafe was onlangs bijgewerkt / herladen.</strong><br /><br />U moet ofwel vernieuwen deze tab, maak een nieuwe tab, of uw browser herstarten om ScriptSafe te werken."
+      "message": "<strong>ScriptSafe is onlangs bijgewerkt/herladen.</strong><br /><br />U moet ofwel deze tab vernieuwen, een nieuwe tab maken, of uw browser herstarten om ScriptSafe te laten werken."
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
-      "message": "Blokkeer Click-Through Referrer:"
+      "message": "Blokkeer Click-Through Verwijzer:"
    },
    "referrerdesc": {
       "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
-      "message": "blokken referrer informatie bij het klikken op links van derden (let op: deze instelling op voor alle domeinen kunnen problemen (bijvoorbeeld miniaturen veroorzaken in Tweetdeck))"
+      "message": "blokkeer referrer informatie bij het klikken op links van derden (let op: deze instellen op 'voor alle domeinen' kan problemen opleveren (bijvoorbeeld miniaturen veroorzaken in Tweetdeck))"
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
-      "message": "Verwijzer Spoof:"
+      "message": "Verwijzer spoof:"
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
-      "message": "<strong>waarschuwing</strong>: indien geactiveerd, kunnen sommige sites breken (bijvoorbeeld in te loggen)"
+      "message": "<strong>waarschuwing</strong>: indien geactiveerd, kunnen sommige sites breken (bijvoorbeeld inloggen)"
    },
    "refresh": {
       "description": "Auto-Refresh Page:",
-      "message": "Auto-Refresh Pagina:"
+      "message": "Auto-Refresh pagina:"
    },
    "refreshdesc": {
       "description": "auto-refresh page after list change",
@@ -533,27 +533,27 @@
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
-      "message": "Intrekken Pagina Tijdelijke Vergunningen"
+      "message": "Intrekken pagina tijdelijke toestemmingen"
    },
    "revoketempall": {
       "description": "Revoke All Temporary",
-      "message": "Intrekken Alle Tijdelijke"
+      "message": "Intrekken alle tijdelijke"
    },
    "same": {
       "description": "Same Document",
-      "message": "Zelfde Document"
+      "message": "Zelfde document"
    },
    "sametab": {
       "description": "Same Tab",
-      "message": "Zelfde Tab"
+      "message": "Zelfde tab"
    },
    "save": {
       "description": "Save",
-      "message": "Save"
+      "message": "Opslaan"
    },
    "savetxt": {
       "description": "Save as Text File",
-      "message": "Opslaan als Tekstbestand"
+      "message": "Opslaan als tekstbestand"
    },
    "sections": {
       "description": "Sections",
@@ -581,11 +581,11 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "Streng"
+      "message": "Strikt"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
-      "message": "Strikte - staan ​​alleen hetzelfde domein"
+      "message": "Strikt - staat ​​alleen hetzelfde domein toe"
    },
    "support": {
       "description": "To support development, click the heart :)",
@@ -593,7 +593,7 @@
    },
    "syncdisable": {
       "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Je hebt automatische synchronisatie ingeschakeld. Om te voorkomen dat het wissen van uw eerder gesynchroniseerde gegevens (indien van toepassing), klikt u op Synchronisatie-instellingen van Google-account."
+      "message": "U heeft automatische synchronisatie ingeschakeld. Om te voorkomen dat uw eerder gesynchroniseerde gegevens worden gewist (indien van toepassing), klikt u op Synchronisatie-instellingen van Google-account."
    },
    "syncimport": {
       "description": "Sync Settings FROM Google Account",
@@ -601,15 +601,15 @@
    },
    "syncexport": {
       "description": "Sync Settings TO Google Account",
-      "message": "Synchronisatie-instellingen om Google-account"
+      "message": "Synchronisatie-instellingen naar Google-account"
    },
    "syncdetect": {
       "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe heeft ontdekt dat je de instellingen gesynchroniseerd op uw Google-account!\r\nKlik op 'OK' als u de instellingen van uw Google-account te importeren."
+      "message": "ScriptSafe heeft ontdekt dat u de instellingen heeft gesynchroniseerd op uw Google-account!\r\nKlik op 'OK' als u de instellingen van uw Google-account wilt importeren."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
-      "message": "Synchronisatie is uitgeschakeld om te voorkomen dat het overschrijven van uw reeds gesynchroniseerde gegevens.\r\nVoel je vrij om te gaan naar de pagina Opties op elk gewenst moment om uw instellingen te synchroniseren (maak een back-up van uw instellingen indien nodig)."
+      "message": "Synchronisatie is uitgeschakeld om het overschrijven van uw reeds gesynchroniseerde gegevens te voorkomen.\r\nVoel u vrij om op elk gewenst moment naar de pagina Opties te gaan om uw instellingen te synchroniseren (maak een back-up van uw instellingen indien nodig)."
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
@@ -617,15 +617,15 @@
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "tonen popup wanneer de instellingen gesynchroniseerd <strong>vanuit uw</strong> Google-account"
+      "message": "toon popup wanneer de instellingen gesynchroniseerd zijn <strong>vanuit</strong> uw Google-account"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "Toon Sync Mededeling:"
+      "message": "Toon Sync mededeling:"
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "tonen popup wanneer de instellingen gesynchroniseerd <strong>met je</strong> Google-account"
+      "message": "toon popup wanneer de instellingen gesynchroniseerd zijn <strong>met</strong> uw Google-account"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
@@ -641,31 +641,31 @@
    },
    "timezonedesc": {
       "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
-      "message": "spoof of willekeurig je tijdzone. NB: indien geactiveerd, kan het interfereren met het beantwoorden van e-mails in Gmail."
+      "message": "spoof of randomiseer uw tijdzone. NB: indien geactiveerd, kan het interfereren met het beantwoorden van e-mails in Gmail."
    },
    "trust": {
       "description": "Trust",
-      "message": "Vertrouwen"
+      "message": "Vertrouw"
    },
    "trustlow": {
       "description": "trust",
-      "message": "vertrouwen"
+      "message": "vertrouw"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
-      "message": "Breng aan op de witte lijst domeinen ook"
+      "message": "Ook toepassen op de wwhitelisted domeinen"
    },
    "updatedisable": {
       "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
-      "message": "Weet u zeker dat u wilt een toekomstige update meldingen zoals deze worden weergegeven uitschakelen?\r\nU kunt altijd opnieuw laten updatemeldingen door te gaan naar de pagina ScriptSafe opties en het aanvinken van het vakje naast Show update Popup."
+      "message": "Weet u zeker dat u toekomstige update meldingen wilt uitschakelen zoals deze worden weergegeven?\r\nU kunt altijd opnieuw updatemeldingen laten doorgeven, door naar de pagina ScriptSafe opties te gaan en het vakje naast 'Toon update popup' aan te vinken."
    },
    "updatedisablemessage": {
       "description": "Update notifications disabled",
-      "message": "Meldingen update uitgeschakeld"
+      "message": "Update meldingen uitgeschakeld"
    },
    "updatenotify": {
       "description": "Show Changelog on Update:",
-      "message": "Laat Changelog op Update:"
+      "message": "Laat Changelog zien bij Update:"
    },
    "unwanted": {
       "description": "Unwanted",
@@ -673,7 +673,7 @@
    },
    "updatenotifydesc": {
       "description": "show changelog page when ScriptSafe is updated",
-      "message": "tonen changelog pagina wanneer ScriptSafe wordt bijgewerkt"
+      "message": "toon changelog pagina wanneer ScriptSafe wordt bijgewerkt"
    },
    "url": {
       "description": "Domain",
@@ -681,7 +681,7 @@
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
-      "message": "Voer een domein of expressie (klik op 'Help' voor meer info)"
+      "message": "Voer een domein of expressie in (klik op 'Help' voor meer info)"
    },
    "useragentspoof": {
       "description": "User-Agent Spoof:",
@@ -689,11 +689,11 @@
    },
    "useragentspoofdesc": {
       "description": "spoofs your user-agent (browser and OS)",
-      "message": "spoofs uw user-agent (browser en OS)"
+      "message": "spooft uw user-agent (browser en OS)"
    },
    "userref": {
       "description": "Enter an address to set as your referrer value for all sites",
-      "message": "Voer een adres in te stellen als uw verwijzer waarde voor alle sites"
+      "message": "Voer een adres in als uw verwijzer waarde voor alle sites"
    },
    "utm": {
       "description": "Remove Google Analytics (UTM) Tracking:",
@@ -701,7 +701,7 @@
    },
    "utmdesc": {
       "description": "remove Google Analytics (UTM) tracking tokens",
-      "message": "verwijderen van Google Analytics (UTM) volgen tokens"
+      "message": "verwijderen van Google Analytics (UTM) tracking tokens"
    },
    "webbugs": {
       "description": "Remove Webbugs:",
@@ -709,31 +709,31 @@
    },
    "webbugsdesc": {
       "description": "remove invisible third-party elements",
-      "message": "verwijderen onzichtbare derden elementen"
+      "message": "verwijder onzichtbare elementen van derden"
    },
    "webgl": {
       "description": "Block WebGL Fingerprinting:",
-      "message": "Block WebGL Fingerprinting:"
+      "message": "Blokkeer WebGL fingerprinting:"
    },
    "webgldesc": {
       "description": "prevent fingerprinting via the WebGL API",
-      "message": "voorkomen dat vingerafdrukken via de WebGL-API"
+      "message": "voorkomt fingerprinting via de WebGL-API"
    },
    "webrtcdevice": {
       "description": "Block Device Enumeration:",
-      "message": "Block Device Opsomming:"
+      "message": "Blokkeer apparaat opsomming:"
    },
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
-      "message": "voorkomen dat hardware-apparaten gedetecteerd via de WebRTC API"
+      "message": "voorkomen dat hardware-apparaten gedetecteerd worden via de WebRTC API"
    },
    "webrtc": {
       "description": "WebRTC Protection:",
-      "message": "WebRTC Protection:"
+      "message": "WebRTC bescherming:"
    },
    "webrtcdesc": {
       "description": "prevent IP address leakage",
-      "message": "voorkomen dat IP-adres lekkage"
+      "message": "voorkomen IP-adres lekkage"
    },
    "blackbind": {
       "description": "+ Blacklist",
@@ -776,23 +776,23 @@
       "message": "Verplaatsen naar Whitelist"
    },
    "whitelistblacklist": {
-      "description": "Whitelist / Blacklist",
-      "message": "Whitelist / Blacklist"
+      "description": "Whitelist/Blacklist",
+      "message": "Whitelist/Blacklist"
    },
    "xml": {
       "description": "XML HTTP Request Handling:",
-      "message": "XML HTTP Request Handling:"
+      "message": "XML HTTP Vraag afhandeling:"
    },
    "xmlall": {
       "description": "Control All Requests",
-      "message": "Control Alle Aanvragen"
+      "message": "Controleer alle aanvragen"
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Controle Cross-Domain Requests (mogelijk met hetzelfde domein)"
+      "message": "Controleer Cross-Domain aanvragen (mogelijk met hetzelfde domein)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",
-      "message": "controle XML HTTP Requests"
+      "message": "controleer XML HTTP aanvragen"
    }
 }
