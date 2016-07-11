@@ -1,7 +1,7 @@
 {
    "appdescription": {
       "description": "Regain control of the web and surf more securely.",
-      "message": "Reprenez le contrôle du web et navigez de façon plus sécurisée."
+      "message": "Reprenez le contrôle du web et naviguez de façon plus sécurisée."
    },
    "alldomains": {
       "description": "On All Domains",
@@ -29,7 +29,7 @@
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
-      "message": "supprimer le contenu plubicitaire indésirable et les domaines malveillants; domaines recueillies à partir de <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, de <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, de <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a> et de <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+      "message": "supprimer le contenu publicitaire indésirable et les domaines malveillants; domaines recueillies à partir de <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, de <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, de <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a> et de <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
@@ -37,7 +37,7 @@
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
-      "message": "Détendu = les domaines de la liste blanche ne seront pas bloqués; Strict = les domaines de la liste des indésirables seront bloqués même s'ils sont dans la liste blanche"
+      "message": "Détendu = les domaines de la liste blanche ne seront pas bloqués; Strict = les domaines de la liste des indésirables seront bloqués même s'ils sont sur la liste blanche"
    },
    "antisocialpopup": {
       "description": "Antisocial",
@@ -49,7 +49,7 @@
    },
    "antisocialdesc": {
       "description": "always remove social widgets/buttons, even if whitelisted",
-      "message": "toujours retirer les widgets et boutons sociaux, même s'ils sont dans la liste blanche"
+      "message": "toujours retirer les widgets et les boutons sociaux, même s'ils sont sur la liste blanche"
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
@@ -73,7 +73,7 @@
    },
    "behavior": {
       "description": "Behaviour Settings",
-      "message": "Paramètres de Comportement"
+      "message": "Paramètres de fonctionnement"
    },
    "blockrec": {
       "description": "Block (recommended)",
@@ -225,11 +225,11 @@
    },
    "distrust": {
       "description": "Distrust",
-      "message": "Ne pas faire confiance"
+      "message": "Se méfier"
    },
    "distrustlow": {
       "description": "distrust",
-      "message": "ne pas faire confiance"
+      "message": "se méfier"
    },
    "domain": {
       "description": "Same Domain",
@@ -285,7 +285,7 @@
    },
    "export": {
       "description": "Export",
-      "message": "Exportation"
+      "message": "Exporter"
    },
    "exportsuccess": {
       "description": "Your settings have been successfully synced!",
@@ -317,7 +317,7 @@
    },
    "hotkeys": {
       "description": "Hotkeys:",
-      "message": "Hotkeys:"
+      "message": "Raccourcis:"
    },
    "generalsettings": {
       "description": "General Settings",
@@ -325,7 +325,7 @@
    },
    "gamepad": {
       "description": "Block Gamepad Enumeration:",
-      "message": "Bloc Gamepad Enumeration:"
+      "message": "Bloquer l'énumération des manettes de jeu:"
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
@@ -337,7 +337,7 @@
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
-      "message": "Temporairement Autoriser / bloquer toutes les ressources pour un onglet en cours"
+      "message": "Autoriser / Bloquer temporairement toutes les ressources pour un onglet en cours"
    },
    "hotkeysremove": {
       "description": "Remove temporary permissions for a current tab",
@@ -357,7 +357,7 @@
    },
    "listallsettings": {
       "description": "List All Settings",
-      "message": "Liste de tous les paramètres"
+      "message": "Afficher tous les paramètres"
    },
    "ignoredallow": {
       "description": "Ignored Allow",
@@ -417,7 +417,7 @@
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Comportement d'ouverture d'un lien:"
+      "message": "Comportement d'ouverture de liens:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -441,7 +441,7 @@
    },
    "notfiltered": {
       "description": "Not filtered",
-      "message": "Non filtrée"
+      "message": "Non filtré"
    },
    "nowebrtc": {
       "description": "This browser does not support WebRTC protection",
@@ -449,11 +449,11 @@
    },
    "off": {
       "description": "-Off-",
-      "message": "-Désactiver-"
+      "message": "-Désactivé-"
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "Uniquement sur les domains ne figurant pas sur la liste blanche"
+      "message": "Uniquement sur les domaines ne figurant pas sur la liste blanche"
    },
    "options": {
       "description": "Options",
@@ -469,7 +469,7 @@
    },
    "pastesettings": {
       "description": "Paste in settings and try again",
-      "message": "Coller les paramètres et essayez à nouveau"
+      "message": "Collez les paramètres et essayez à nouveau"
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
@@ -489,7 +489,7 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "Afficher le boutton d'évaluation:"
+      "message": "Afficher le bouton d'évaluation:"
    },
    "ratingbtn": {
       "description": "Rating",
@@ -497,11 +497,11 @@
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
-      "message": "si cochée, ajoute le boutton d'évaluation sous les domaines dans l'onglet contextuel"
+      "message": "si cochée, ajoute le bouton d'évaluation sous les domaines dans l'onglet contextuel"
    },
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
-      "message": "<strong>ScriptSafe a été récemment mis à jour / rechargées.</strong><br /><br />Vous devrez soit rafraîchir cet onglet, créer un nouvel onglet, ou redémarrer votre navigateur pour que ScriptSafe fonctionne."
+      "message": "<strong>ScriptSafe a été récemment mis à jour / rechargé.</strong><br /><br />Vous devrez soit rafraîchir cet onglet, créer un nouvel onglet, ou redémarrer votre navigateur pour que ScriptSafe fonctionne."
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
@@ -593,7 +593,7 @@
    },
    "syncdisable": {
       "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Vous avez activé l'auto-synchronisation. Afin d'éviter l'effacement de vos données précédemment synchronisées (dans le cas échéant), s'il vous plaît cliquer sur synchronisation à partir du Google."
+      "message": "Vous avez activé l'auto-synchronisation. Afin d'éviter l'effacement de vos données précédemment synchronisées (dans le cas échéant), s'il vous plaît cliquer sur synchronisation à partir du compte Google."
    },
    "syncimport": {
       "description": "Sync Settings FROM Google Account",
@@ -609,7 +609,7 @@
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
-      "message": "Synchroniser a été désactivé pour éviter d'écraser vos données déjà synchronisées.\r\nAller à la page Options à tout moment pour synchroniser vos paramètres (faites une sauvegarde de vos paramètres si nécessaire)."
+      "message": "La synchronisation a été désactivée pour éviter d'écraser vos données déjà synchronisées.\r\nAllez à la page Options à tout moment pour synchroniser vos paramètres (faites une sauvegarde de vos paramètres si nécessaire)."
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
@@ -625,7 +625,7 @@
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "montrer le popup lorsque les réglages synchronisés <strong>vers</strong> votre compte Google"
+      "message": "montrer le popup lorsque les réglages sont synchronisés <strong>vers</strong> votre compte Google"
    },
    "syncnotsupported": {
       "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
