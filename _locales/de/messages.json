@@ -157,7 +157,7 @@
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
-      "message": "Blockiere Client-Rectangles:"
+      "message": "Blockiere Client-Rechtecke:"
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
@@ -309,7 +309,7 @@
    },
    "forcesyncexport": {
       "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Möchten Sie Ihre aktuellen Einstellungen in Ihrem Google-Konto synchronisieren\r\nHinweis: Bitte drücken Sie diese nicht häufig; gibt es eine Grenze von 10 pro Minute und 1.000 pro Stunde."
+      "message": "Möchten Sie Ihre aktuellen Einstellungen in Ihrem Google-Konto synchronisieren\r\nHinweis: Bitte drücken Sie dies nicht häufig; es gibt eine Grenze von 10 pro Minute und 1.000 pro Stunde."
    },
    "forcesyncimport": {
       "description": "Do you want to import the synced settings from your Google Account to this device?",
@@ -329,7 +329,7 @@
    },
    "gamepaddesc": {
       "description": "prevent having devices detected via the Gamepad API",
-      "message": "Verhindert, dass Geräte über das Gamepad API erkannt"
+      "message": "Verhindert, dass Geräte über das Gamepad API erkannt werden"
    },
    "availablehotkeys": {
       "description": "Available hotkey actions",
@@ -337,7 +337,7 @@
    },
    "hotkeystoggle": {
       "description": "Temporarily allow/block all resources for a current tab",
-      "message": "Vorübergehend alle Resourcend für einen Tab erlauben / blockieren"
+      "message": "Vorübergehend alle Resourcen für einen Tab erlauben"
    },
    "hotkeysremove": {
       "description": "Remove temporary permissions for a current tab",
@@ -361,11 +361,11 @@
    },
    "ignoredallow": {
       "description": "Ignored Allow",
-      "message": "Ignorierte Zulassen"
+      "message": "Ignoriere Zugelassene"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
-      "message": "Die letzten Einstellungen wurden erfolgreich heruntergeladen!"
+      "message": "Die neuesten Einstellungen wurden erfolgreich heruntergeladen!"
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
@@ -381,7 +381,7 @@
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
-      "message": "entfernt möglich Nachverfolgungstoken, welche mit Hash übergeben wurden, wo es ein Attribut und einen Wert gibt (z.B. #xtor=RSS-1)"
+      "message": "entfernt mögliche Nachverfolgungstoken, welche mit Hash übergeben wurden, bei denen es ein Attribut und einen Wert gibt (z.B. #xtor=RSS-1)"
    },
    "hide": {
       "description": "Hide",
@@ -593,7 +593,7 @@
    },
    "syncdisable": {
       "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Sie haben die automatische Synchronisierung aktiviert. Um die Löschung Ihre zuvor synchronisierten Daten (falls vorhanden) zu verhindern, klicken Sie bitte auf Einstellungen vom Google-Konto synchronisieren."
+      "message": "Sie haben die automatische Synchronisierung aktiviert. Um die Löschung Ihrer zuvor synchronisierten Daten (falls vorhanden) zu verhindern, klicken Sie bitte auf Einstellungen vom Google-Konto synchronisieren."
    },
    "syncimport": {
       "description": "Sync Settings FROM Google Account",
