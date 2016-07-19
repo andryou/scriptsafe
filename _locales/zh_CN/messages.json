@@ -25,7 +25,7 @@
    },
    "annoyances": {
       "description": "Block Unwanted Content:",
-      "message": "阻挡不需要的内容："
+      "message": "反广告及反跟踪列表："
    },
    "annoyancesdesc": {
       "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
@@ -33,7 +33,7 @@
    },
    "annoyancesmode": {
       "description": "Unwanted Content Mode:",
-      "message": "内容拦截设置："
+      "message": "拦截模式："
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
@@ -41,7 +41,7 @@
    },
    "antisocialpopup": {
       "description": "Antisocial",
-      "message": "清净的"
+      "message": "清净模式"
    },
    "antisocial": {
       "description": "Antisocial Mode:",
@@ -53,7 +53,7 @@
    },
    "antisocialdesc2": {
       "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "为了更全面拦截，可使用以下插件<a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank> uBlock Origin </a>并订阅<a href=https://www.fanboy.co.nz/ target=_blank>Fanboy</a>上的列表"
+      "message": "想得到更好的效果，可使用以下插件<a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank> uBlock Origin </a>并订阅<a href=https://www.fanboy.co.nz/ target=_blank>Fanboy</a>的列表"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -77,7 +77,7 @@
    },
    "blockrec": {
       "description": "Block (recommended)",
-      "message": "阻挡（推荐）"
+      "message": "不允许加载脚本（推荐）"
    },
    "block": {
       "description": "Block",
@@ -113,7 +113,7 @@
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
-      "message": "<strong>ScriptSafe无法处理此页面。</strong><br /> <br />请尝试访问一个网站。"
+      "message": "<strong>本页面不启用ScriptSafe。</strong><br /> <br />请访问别的网站。"
    },
    "canvasblank": {
       "description": "Blank Readout",
@@ -145,7 +145,7 @@
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "如果勾选，关闭标签选项每次一个选项被点击"
+      "message": "如启用，弹出式选项卡会在每次点击后关闭；如不启用，则需手动关闭弹出式选项卡"
    },
    "clear": {
       "description": "Clear",
@@ -165,11 +165,11 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "防止复制粘贴被禁止："
+      "message": "破解网页禁止复制粘贴的脚本："
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
-      "message": "破解网页禁止复制粘贴的脚本"
+      "message": ""
    },
    "close": {
       "description": "Close",
@@ -177,7 +177,7 @@
    },
    "cookies": {
       "description": "Block Unwanted Cookies:",
-      "message": "阻挡不需要的Cookies："
+      "message": "拦截跟踪用户的Cookies："
    },
    "cookiesdesc": {
       "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
@@ -209,11 +209,11 @@
    },
    "disabled": {
       "description": "disabled",
-      "message": "已禁用"
+      "message": "未启用"
    },
    "disabledcap": {
       "description": "Disabled",
-      "message": "已禁用"
+      "message": "未启用"
    },
    "disabledsync": {
       "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -257,7 +257,7 @@
    },
    "domainsortdesc": {
       "description": "sorts URL lists by domains on this page and in the panel",
-      "message": "将此页面及面板里的网址列表按域名排序"
+      "message": "将网址列表按域名排序"
    },
    "domaintip": {
       "description": "Tip: press CTRL+F to search the lists",
@@ -301,11 +301,11 @@
    },
    "fingerprintdesc": {
       "description": "Fingerprint Protection (may break sites)",
-      "message": "防止用户信息被收集（可能影响所浏览的网站部分功能）"
+      "message": "防止用户信息被收集和识别（可能会影响您浏览的网站的部分功能）"
    },
    "firstsync": {
       "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "您的设置还没有同步到Google帐户。\r\nScriptSafe正准备把当前设置同步到您的谷歌帐户。\r\n如果同意，请点击“确认”。\r\n如果不同意，请单击“取消”，并与您的首选设置在其他设备上，更新ScriptSafe，当你跟此消息上单击OK。"
+      "message": "您的设置还没有同步到Google帐户。\r\nScriptSafe正准备把当前设置同步到您的谷歌帐户。\r\n如果同意，请点击“确认”。\r\n如果不同意，请单击“取消”。您也可以在其它设备上通过此对话框同步您的设置。"
    },
    "forcesyncexport": {
       "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
@@ -361,7 +361,7 @@
    },
    "ignoredallow": {
       "description": "Ignored Allow",
-      "message": "忽略允许"
+      "message": "忽略已允许的"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
@@ -393,7 +393,7 @@
    },
    "importexport": {
       "description": "Import / Restore Settings",
-      "message": "导入/恢复设置"
+      "message": "导入/导出设置"
    },
    "importsuccessoptions": {
       "description": "Settings imported successfully",
@@ -413,19 +413,19 @@
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
-      "message": "使按键时间显得更随机以提高匿名性（<strong>注：在每次按键之间添加了随机延迟；如对结果不满意，请禁用此设置</strong>）"
+      "message": "可以使按键时间显得更随机以提高匿名性（<strong>注：在每次按键之间插入随机延迟；如对效果不满意，请禁用此设置</strong>）"
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "打开页面链接行为设置："
+      "message": "设置新链接的打开方式："
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
-      "message": "修改所有打开链接的方式"
+      "message": "强制新链接在同一标签页或新标签页打开"
    },
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
-      "message": "一般 - 允许相同的域名和子域名"
+      "message": "一般模式 - 对相同的域名和子域名都有效"
    },
    "mode": {
       "description": "Default Mode",
@@ -449,11 +449,11 @@
    },
    "off": {
       "description": "-Off-",
-      "message": "-关闭-"
+      "message": "-未设置-"
    },
    "onlyunwhitelisted": {
       "description": "Only on Unwhitelisted Domains",
-      "message": "只在黑名单域名"
+      "message": "仅对黑名单域名有效"
    },
    "options": {
       "description": "Options",
@@ -461,11 +461,11 @@
    },
    "paranoia": {
       "description": "Paranoia Mode:",
-      "message": "严格模式："
+      "message": "超严格模式："
    },
    "paranoiadesc": {
       "description": "block allowed domains on unlisted domains",
-      "message": "未上市的上域块允许域"
+      "message": "会影响白名单的域名"
    },
    "pastesettings": {
       "description": "Paste in settings and try again",
@@ -473,11 +473,11 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "允许同域名："
+      "message": "保留相同域名的网页元素："
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
-      "message": "保留同域名的元素"
+      "message": ""
    },
    "privacy": {
       "description": "Privacy Settings",
@@ -489,7 +489,7 @@
    },
    "rating": {
       "description": "Show Rating Button:",
-      "message": "显示评分按钮："
+      "message": "显示WOT评分按钮："
    },
    "ratingbtn": {
       "description": "Rating",
@@ -497,7 +497,7 @@
    },
    "ratingdesc": {
       "description": "if ticked, adds rating button under domains in tab popup",
-      "message": "如果勾选，在增加了弹出选项卡下的域等级按钮"
+      "message": "勾选后可以通过点选网址前的放大镜图标对该网址进行WOT评分"
    },
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
@@ -541,7 +541,7 @@
    },
    "same": {
       "description": "Same Document",
-      "message": "同一文档"
+      "message": "同一页面"
    },
    "sametab": {
       "description": "Same Tab",
@@ -565,7 +565,7 @@
    },
    "settingsimport": {
       "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
-      "message": "复制粘贴所需导入的ScriptSafe设置到此文本框内，然后点击导入按钮。"
+      "message": "可以把之前导出的ScriptSafe设置粘贴到此处，然后点击导入按钮即可。"
    },
    "settingssave": {
       "description": "Settings saved",
@@ -585,7 +585,7 @@
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
-      "message": "严格模式 - 只允许相同域名"
+      "message": "严格模式 - 仅对相同域名的网页元素有效"
    },
    "support": {
       "description": "To support development, click the heart :)",
@@ -613,7 +613,7 @@
    },
    "syncfromnotify": {
       "description": "Show Import Sync Notification:",
-      "message": "显示“导入”的消息通知："
+      "message": "显示“网络同步导入”的消息通知："
    },
    "syncfromnotifydesc": {
       "description": "show popup when settings synced <strong>from</strong> your Google Account",
@@ -621,7 +621,7 @@
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
-      "message": "显示“导出”的消息通知："
+      "message": "显示“网络同步导出”的消息通知："
    },
    "syncnotifydesc": {
       "description": "show popup when settings synced <strong>to</strong> your Google Account",
@@ -633,7 +633,7 @@
    },
    "temp": {
       "description": "Temporary",
-      "message": "临时"
+      "message": "临时允许"
    },
    "timezone": {
       "description": "Spoof Timezone:",
@@ -669,11 +669,11 @@
    },
    "unwanted": {
       "description": "Unwanted",
-      "message": "不需要的"
+      "message": "广告/跟踪"
    },
    "updatenotifydesc": {
       "description": "show changelog page when ScriptSafe is updated",
-      "message": "在ScriptSafe更新后显示更新日志"
+      "message": "成功更新ScriptSafe后显示更新日志"
    },
    "url": {
       "description": "Domain",
