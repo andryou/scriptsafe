@@ -243,7 +243,7 @@ function fingerprintProtection() {
 				battery_a.getBattery = function() {
 					battery_triggerblock.title = 'getBattery';
 					document.documentElement.appendChild(battery_triggerblock);
-					return false;
+					return void(0);
 				}
 			}
 			/* WebGL */
