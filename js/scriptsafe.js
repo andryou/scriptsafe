@@ -36,7 +36,7 @@ function initWebRTC() {
 	} else {
 		chrome.privacy.network.webRTCIPHandlingPolicy.set({
 			value: 'default',
-		});		
+		});
 	}
 }
 function getWebRTC() {
@@ -74,16 +74,22 @@ function mitigate(req) {
 		if (req.requestHeaders[i].name == 'User-Agent' || req.requestHeaders[i].name == 'Referer' || req.requestHeaders[i].name == 'Cookie') {
 			switch (req.requestHeaders[i].name) {
 				case 'Cookie':
-					if (localStorage['cookies'] == 'true' && baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial'])) 
+					if (localStorage['cookies'] == 'true' && baddies(req.url, localStorage['annoyancesmode'], localStorage['antisocial']))
 						req.requestHeaders[i].value = '';
 					break;
 				case 'Referer':
-					if (localStorage['referrerspoof'] == 'same')
-						req.requestHeaders[i].value = req.url;
-					else if (localStorage['referrerspoof'] == 'domain')
-						req.requestHeaders[i].value = req.url.split("//")[0]+'//'+req.url.split("/")[2];
-					else if (localStorage['referrerspoof'] != 'off')
-						req.requestHeaders[i].value = localStorage['referrerspoof'];
+					var domainname = extractDomainFromURL(req.url);
+					var whitelisted = in_array(domainname, whiteList);
+					var checkWhiteListedToo = localStorage['referrerspoofdenywhitelisted'] == 'true';
+					var check = whitelisted ? checkWhiteListedToo : true;
+					if(check) {
+						if (localStorage['referrerspoof'] == 'same')
+							req.requestHeaders[i].value = req.url;
+						else if (localStorage['referrerspoof'] == 'domain')
+							req.requestHeaders[i].value = req.url.split("//")[0] + '//' + req.url.split("/")[2];
+						else if (localStorage['referrerspoof'] != 'off')
+							req.requestHeaders[i].value = localStorage['referrerspoof'];
+					}
 					break;
 				case 'User-Agent':
 					if (localStorage['useragentspoof'] != 'off' && (enabled(req.url) == 'true' || localStorage['uaspoofallow'] == 'true')) {
@@ -273,7 +279,7 @@ function hashTrackingClean(url) {
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/')) 
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/'))
 		return 'true';
 	return 'false';
 }
@@ -487,6 +493,7 @@ function setDefaultOptions() {
 	defaultOptionValue("useragentspoof_os", "off");
 	defaultOptionValue("uaspoofallow", "false");
 	defaultOptionValue("referrerspoof", "off");
+	defaultOptionValue("referrerspoofdenywhitelisted", "true");
 	defaultOptionValue("cookies", "true");
 	defaultOptionValue("paranoia", "false");
 	defaultOptionValue("clipboard", "false");
@@ -616,7 +623,7 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
