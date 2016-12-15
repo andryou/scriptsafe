@@ -84,7 +84,7 @@ function mitigate(req) {
 					var whitelisted = in_array(domainname, whiteList);
 					var checkWhiteListedToo = localStorage['referrerspoofdenywhitelisted'] == 'true';
 					var check = whitelisted ? checkWhiteListedToo : true;
-					if(check) {
+					if (check) {
 						if (localStorage['referrerspoof'] == 'same')
 							req.requestHeaders[i].value = req.url;
 						else if (localStorage['referrerspoof'] == 'domain')
@@ -495,7 +495,7 @@ function setDefaultOptions() {
 	defaultOptionValue("useragentspoof_os", "off");
 	defaultOptionValue("uaspoofallow", "false");
 	defaultOptionValue("referrerspoof", "off");
-	defaultOptionValue("referrerspoofdenywhitelisted", "true");
+	defaultOptionValue("referrerspoofdenywhitelisted", "false");
 	defaultOptionValue("cookies", "true");
 	defaultOptionValue("paranoia", "false");
 	defaultOptionValue("clipboard", "false");

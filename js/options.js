@@ -349,6 +349,7 @@ function loadOptions() {
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
 	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
+	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
 	loadElement("useragentspoof_os");
 	loadCheckbox("uaspoofallow");
 	loadCheckbox("referrerspoofdenywhitelisted");
@@ -424,6 +425,8 @@ function saveOptions() {
 	else $("#annoyancesmode").attr('disabled', 'true');
 	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
 	else $("#useragentspoof_os, #applytoallow").hide();
+	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
+	else $("#applyreferrerspoofdenywhitelisted").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
 	bkg.initWebRTC();
