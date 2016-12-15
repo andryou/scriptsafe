@@ -42,6 +42,7 @@ var SETTINGS = {
 	"LINKTARGET": "off",
 	"EXPERIMENTAL": "0",
 	"REFERRER": "true",
+	"REFERRERSPOOFDENYWHITELISTED": "true",
 	"PARANOIA": "true",
 	"CLIPBOARD": "false",
 };
@@ -90,6 +91,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
+		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrer;
 		SETTINGS['PARANOIA'] = response.paranoia;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		$(document).ready(function() {

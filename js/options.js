@@ -351,6 +351,7 @@ function loadOptions() {
 	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
 	loadElement("useragentspoof_os");
 	loadCheckbox("uaspoofallow");
+	loadCheckbox("referrerspoofdenywhitelisted");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
 		$("#customreferrer").show();
@@ -406,6 +407,7 @@ function saveOptions() {
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
 	saveCheckbox("uaspoofallow");
+	saveCheckbox("referrerspoofdenywhitelisted");
 	if ($("#referrerspoof").val() != 'custom') {
 		saveElement("referrerspoof");
 		$("#customreferrer").hide();
