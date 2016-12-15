@@ -1,3 +1,6 @@
+// ScriptSafe - Copyright (C) andryou
+// Distributed under the terms of the GNU General Public License
+// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 var version = (function () {
 	var xhr = new XMLHttpRequest();
 	xhr.open('GET', chrome.extension.getURL('../manifest.json'), false);

@@ -1,4 +1,6 @@
-// (c) Andrew Y.
+// ScriptSafe - Copyright (C) andryou
+// Distributed under the terms of the GNU General Public License
+// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
 var version = (function () {
 	var xhr = new XMLHttpRequest();
@@ -487,6 +489,7 @@ function downloadtxt() {
 	downloadLink.remove();
 }
 function updateExport() {
+	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
 		if (i != "version" && i != "whiteListCount" && i != "blackListCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw") {

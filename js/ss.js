@@ -1,4 +1,6 @@
-// ScriptSafe by Andrew
+// ScriptSafe - Copyright (C) andryou
+// Distributed under the terms of the GNU General Public License
+// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
