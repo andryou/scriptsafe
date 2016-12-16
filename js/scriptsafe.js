@@ -80,21 +80,17 @@ function mitigate(req) {
 						req.requestHeaders[i].value = '';
 					break;
 				case 'Referer':
-					var domainname = extractDomainFromURL(req.url);
-					var whitelisted = in_array(domainname, whiteList);
-					var checkWhiteListedToo = localStorage['referrerspoofdenywhitelisted'] == 'true';
-					var check = whitelisted ? checkWhiteListedToo : true;
-					if (check) {
+					if (localStorage['referrerspoof'] != 'off' && (localStorage['referrerspoofdenywhitelisted'] == 'true' || enabled(req.url) == 'true')) {
 						if (localStorage['referrerspoof'] == 'same')
 							req.requestHeaders[i].value = req.url;
 						else if (localStorage['referrerspoof'] == 'domain')
 							req.requestHeaders[i].value = req.url.split("//")[0] + '//' + req.url.split("/")[2];
-						else if (localStorage['referrerspoof'] != 'off')
+						else
 							req.requestHeaders[i].value = localStorage['referrerspoof'];
 					}
 					break;
 				case 'User-Agent':
-					if (localStorage['useragentspoof'] != 'off' && (enabled(req.url) == 'true' || localStorage['uaspoofallow'] == 'true')) {
+					if (localStorage['useragentspoof'] != 'off' && (localStorage['uaspoofallow'] == 'true' || enabled(req.url) == 'true')) {
 						var os;
 						if (localStorage['useragentspoof_os'] == 'w7') os = 'Windows; U; Windows NT 6.1';
 						else if (localStorage['useragentspoof_os'] == 'w10') os = 'Windows NT 10.0';
@@ -500,6 +496,7 @@ function setDefaultOptions() {
 	defaultOptionValue("paranoia", "false");
 	defaultOptionValue("clipboard", "false");
 	defaultOptionValue("optionslist", "false");
+	defaultOptionValue("fingerprintblockall", "false");
 	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
@@ -625,7 +622,7 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], fingerprintblockall: localStorage['fingerprintblockall'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {

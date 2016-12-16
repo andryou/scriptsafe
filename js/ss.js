@@ -85,7 +85,8 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['GAMEPAD'] = response.gamepad;
 		SETTINGS['TIMEZONE'] = response.timezone;
 		SETTINGS['CLIPBOARD'] = response.clipboard;
-		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
+		SETTINGS['FINGERPRINTBLOCKALL'] = response.fingerprintblockall;
+		if ((SETTINGS['FINGERPRINTBLOCKALL'] == 'true' || (SETTINGS['FINGERPRINTBLOCKALL'] == 'false' && SETTINGS['DOMAINSTATUS'] != '0')) && (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true')) {
 			fingerprintProtection();
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
