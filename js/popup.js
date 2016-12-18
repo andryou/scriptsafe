@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_options").click(function() { openTab(chrome.extension.getURL('html/options.html')); });
 	$("#pop_webstore").click(function() { openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
 	$("#pop_close").click(function() { window.close(); });
-	$("#pop_refresh").click(function() { chrome.tabs.reload(); });
+	$("#pop_refresh").click(function() { chrome.tabs.reload(); window.close(); });
 });
 function init() {
 	$("#version").html(version);
