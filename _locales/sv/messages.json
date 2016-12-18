@@ -789,7 +789,7 @@
    },
    "xmlcross": {
       "description": "Control Cross-Domain Requests (allow Same-Domain)",
-      "message": "Kontrollera Kors-Domänbegäran (tillåta Same-domän)"
+      "message": "Kontrollera Kors-Domänbegäran (tillåta Samma Domän)"
    },
    "xmldesc": {
       "description": "control XML HTTP Requests",

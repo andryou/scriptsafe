@@ -92,10 +92,10 @@ function mitigate(req) {
 				case 'User-Agent':
 					if (localStorage['useragentspoof'] != 'off' && (localStorage['uaspoofallow'] == 'true' || enabled(req.url) == 'true')) {
 						var os;
-						if (localStorage['useragentspoof_os'] == 'w7') os = 'Windows; U; Windows NT 6.1';
-						else if (localStorage['useragentspoof_os'] == 'w10') os = 'Windows NT 10.0';
-						else if (localStorage['useragentspoof_os'] == 'w8') os = 'Windows NT 6.2';
+						if (localStorage['useragentspoof_os'] == 'w10') os = 'Windows NT 10.0';
 						else if (localStorage['useragentspoof_os'] == 'w81') os = 'Windows NT 6.3';
+						else if (localStorage['useragentspoof_os'] == 'w8') os = 'Windows NT 6.2';
+						else if (localStorage['useragentspoof_os'] == 'w7') os = 'Windows; U; Windows NT 6.1';
 						else if (localStorage['useragentspoof_os'] == 'wv') os = 'Windows; U; Windows NT 6.0';
 						else if (localStorage['useragentspoof_os'] == 'w2k3') os = 'Windows; U; Windows NT 5.2';
 						else if (localStorage['useragentspoof_os'] == 'wxp') os = 'Windows; U; Windows NT 5.1';
@@ -103,22 +103,36 @@ function mitigate(req) {
 						else if (localStorage['useragentspoof_os'] == 'w95') os = 'Windows; U; Windows 95';
 						else if (localStorage['useragentspoof_os'] == 'linux64') os = 'X11; U; Linux x86_64';
 						else if (localStorage['useragentspoof_os'] == 'linux32') os = 'X11; U; Linux x86_32';
+						else if (localStorage['useragentspoof_os'] == 'macsierra') os = 'Macintosh; U; Intel Mac OS X 10_12_2';
+						else if (localStorage['useragentspoof_os'] == 'macelcapitan') os = 'Macintosh; U; Intel Mac OS X 10_11_6';
+						else if (localStorage['useragentspoof_os'] == 'macyosemite') os = 'Macintosh; U; Intel Mac OS X 10_10_5';
+						else if (localStorage['useragentspoof_os'] == 'macmavericks') os = 'Macintosh; U; Intel Mac OS X 10_9_5';
+						else if (localStorage['useragentspoof_os'] == 'macmountainlion') os = 'Macintosh; U; Intel Mac OS X 10_8_5';
+						else if (localStorage['useragentspoof_os'] == 'maclion') os = 'Macintosh; U; Intel Mac OS X 10_7_5';
 						else if (localStorage['useragentspoof_os'] == 'macsnow') os = 'Macintosh; U; Intel Mac OS X 10_6_8';
 						else if (localStorage['useragentspoof_os'] == 'chromeos') os = 'X11; U; CrOS i686 0.13.507';
-						if (localStorage['useragentspoof'] == 'chrome14')
+						if (localStorage['useragentspoof'] == 'chrome55')
+							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36';
+						else if (localStorage['useragentspoof'] == 'chrome50')
+							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36 OPR/37.0.2178.43';
+						else if (localStorage['useragentspoof'] == 'chrome14')
 							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.94 Safari/535.1';
 						else if (localStorage['useragentspoof'] == 'chrome13')
 							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/535.1 (KHTML, like Gecko) Chrome/13.0.782.43 Safari/535.1';
 						else if (localStorage['useragentspoof'] == 'chrome12')
 							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/534.30 (KHTML, like Gecko) Chrome/12.0.750.0 Safari/534.30';
-						else if (localStorage['useragentspoof'] == 'chrome50')
-							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36 OPR/37.0.2178.43';
+						else if (localStorage['useragentspoof'] == 'opera42')
+							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36 OPR/42.0.2393.85';
 						else if (localStorage['useragentspoof'] == 'opera37')
 							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') Presto/2.9.181 Version/12.00';
 						else if (localStorage['useragentspoof'] == 'opera12')
 							req.requestHeaders[i].value = 'Opera/9.80 ('+os+') Presto/2.9.181 Version/12.00';
 						else if (localStorage['useragentspoof'] == 'opera11')
 							req.requestHeaders[i].value = 'Opera/9.80 ('+os+') Presto/2.9.168 Version/11.50';
+						else if (localStorage['useragentspoof'] == 'firefox50')
+							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+'; rv:50.0) Gecko/20100101 Firefox/50.0';
+						else if (localStorage['useragentspoof'] == 'firefox48')
+							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+'; rv:48.0) Gecko/20100101 Firefox/48.0';
 						else if (localStorage['useragentspoof'] == 'firefox46')
 							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+'; rv:44.0) Gecko/20100101 Firefox/44.0';
 						else if (localStorage['useragentspoof'] == 'firefox6')
@@ -143,6 +157,8 @@ function mitigate(req) {
 							req.requestHeaders[i].value = 'Mozilla/4.0 (compatible; MSIE 6.1; '+os+')';
 						else if (localStorage['useragentspoof'] == 'ie60')
 							req.requestHeaders[i].value = 'Mozilla/4.0 (compatible; MSIE 6.0; '+os+')';
+						else if (localStorage['useragentspoof'] == 'safari8')
+							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/600.7.12 (KHTML, like Gecko) Version/8.0.7 Safari/600.7.12';
 						else if (localStorage['useragentspoof'] == 'safari7')
 							req.requestHeaders[i].value = 'Mozilla/5.0 ('+os+') AppleWebKit/537.75.14 (KHTML, like Gecko) Version/7.0.3 Safari/7046A194A';
 						else if (localStorage['useragentspoof'] == 'safari5')

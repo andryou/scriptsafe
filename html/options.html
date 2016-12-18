@@ -165,10 +165,13 @@
 								</select> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_timezonedesc">spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.</span>)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="useragentspoof" class="i18_useragentspoof">User-Agent Spoof:</label></td><td><select id="useragentspoof" class="savechange form-control">
 									<option value="off" class="i18_off">-Off-</option>
+									<option value="chrome55">Chrome 55.0.2883.87</option>
 									<option value="chrome50">Chrome 50.0.2661.102</option>
 									<option value="chrome14">Chrome 14.0.835.94</option>
 									<option value="chrome13">Chrome 13.0.782.43</option>
 									<option value="chrome12">Chrome 12.0.750.0</option>
+									<option value="firefox50">Firefox 50.1.0</option>
+									<option value="firefox48">Firefox 48.0.2</option>
 									<option value="firefox46">Firefox 46.0.1</option>
 									<option value="firefox6">Firefox 6.0a2</option>
 									<option value="firefox5">Firefox 5.0</option>
@@ -181,9 +184,11 @@
 									<option value="ie7">Internet Explorer 7</option>
 									<option value="ie61">Internet Explorer 6.1</option>
 									<option value="ie60">Internet Explorer 6.0</option>
+									<option value="opera42">Opera 42.00</option>
 									<option value="opera37">Opera 37.00</option>
 									<option value="opera12">Opera 12.00</option>
 									<option value="opera11">Opera 11.50</option>
+									<option value="safari8">Safari 8.0.7</option>
 									<option value="safari7">Safari 7.0.3</option>
 									<option value="safari5">Safari 5.0.5</option>
 								</select> <select id="useragentspoof_os" class="savechange form-control">
@@ -197,9 +202,15 @@
 									<option value="wxp">Windows XP</option>
 									<option value="w98">Windows 98</option>
 									<option value="w95">Windows 95</option>
-									<option value="macsnow">OSX Snow Leopard</option>
+									<option value="macsierra">Mac - macOS - Sierra (v10.12.2)</option>
+									<option value="macelcapitan">Mac - OS X - El Capitan (v10.11.6)</option>
+									<option value="macyosemite">Mac - OS X - Yosemite (v10.10.5)</option>
+									<option value="macmavericks">Mac - OS X - Mavericks (v10.9.5)</option>
+									<option value="macmountainlion">Mac - OS X - Mountain Lion (v10.8.5)</option>
+									<option value="maclion">Mac - OS X - Lion (v10.7.5)</option>
+									<option value="macsnow">Mac - OS X - Snow Leopard (v10.6.8)</option>
 									<option value="chromeos">Chrome OS</option>
-									<option value="off">-Off-</option>
+									<option value="off" class="i18_off">-Off-</option>
 								</select><i>(<span class="i18_default">Default</span>: <span class="i18_off">-Off-</span>; <span class="i18_useragentspoofdesc">spoofs your user-agent (browser and OS)</span>)</i>
 								<div id="applytoallow"><br /><input type="checkbox" id="uaspoofallow" class="save" /><label for="uaspoofallow">&nbsp;<span class="i18_uaspoofallow">Apply to whitelisted domains as well</span> (<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>)</label></div></td></tr>
 								<tr><td class="col-sm-4"><label for="referrerspoof" class="i18_referrerspoof">Referrer Spoof:</label></td><td><select id="referrerspoof" class="savechange form-control">
