@@ -510,7 +510,7 @@ function initCount(tabId) {
 	var TAB_ITEMS = ITEMS[tabId] || (ITEMS[tabId] = [0]);
 	var TAB_BLOCKED_COUNT = TAB_ITEMS[0];
 	chrome.browserAction.setBadgeBackgroundColor({ color: [208, 0, 24, 255], tabId: tabId });
-	chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
+	if (TAB_BLOCKED_COUNT != 0) chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
 }
 function removeHash(str) {
 	var hashindex = str.indexOf("#");
