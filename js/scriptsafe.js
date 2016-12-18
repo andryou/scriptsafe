@@ -187,11 +187,7 @@ function ScriptSafe(req) {
 		return { cancel: false };
 	}
 	if (req.type == 'main_frame') {
-		if (typeof ITEMS[req.tabId] === 'undefined') {
-			resetTabData(req.tabId, req.url);
-		} else {
-			ITEMS[req.tabId]['url'] = req.url;
-		}
+		resetTabData(req.tabId, req.url);
 	}
 	if (typeof ITEMS[req.tabId] === 'undefined') return { cancel: false };
 	var reqtype = req.type;
@@ -510,6 +506,12 @@ function updateCount(tabId) {
 	chrome.browserAction.setBadgeBackgroundColor({ color: [208, 0, 24, 255], tabId: tabId });
 	chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
 }
+function initCount(tabId) {
+	var TAB_ITEMS = ITEMS[tabId] || (ITEMS[tabId] = [0]);
+	var TAB_BLOCKED_COUNT = TAB_ITEMS[0];
+	chrome.browserAction.setBadgeBackgroundColor({ color: [208, 0, 24, 255], tabId: tabId });
+	chrome.browserAction.setBadgeText({tabId: tabId, text: TAB_BLOCKED_COUNT + ''});
+}
 function removeHash(str) {
 	var hashindex = str.indexOf("#");
 	if (hashindex != -1) return str.substr(0, hashindex);
@@ -627,7 +629,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
 			if ((request.iframe != '1' && ((ITEMS[sender.tab.id]['url'] != sender.tab.url && (sender.tab.url.indexOf("#") != -1 || ITEMS[sender.tab.id]['url'].indexOf("#") != -1) && removeHash(sender.tab.url) != removeHash(ITEMS[sender.tab.id]['url'])) || (sender.tab.url.indexOf("#") == -1 && ITEMS[sender.tab.id]['url'].indexOf("#") == -1 && sender.tab.url != ITEMS[sender.tab.id]['url']) || changed) || sender.tab.url.indexOf('https://chrome.google.com/webstore') != -1)) {
-				resetTabData(sender.tab.id, sender.tab.url);
+				if (changed && ITEMS[sender.tab.id]['url'] == sender.tab.url) {
+					initCount(sender.tab.id);
+				} else {
+					resetTabData(sender.tab.id, sender.tab.url);
+				}
 			}
 		}
 	} else if (request.reqtype == 'get-list') {
