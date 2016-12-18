@@ -296,6 +296,12 @@ function fingerprintProtection() {
 					document.documentElement.appendChild(webrtc_triggerblock);
 					return false;
 				}
+				var webrtc_b = scope.navigator.mediaDevices;
+				webrtc_b.enumerateDevices = function() {
+					webrtc_triggerblock.title = 'enumerateDevices';
+					document.documentElement.appendChild(webrtc_triggerblock);
+					return false;
+				}
 			}
 			/* Gamepad */
 			if (gamepad == 'true') {
