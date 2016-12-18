@@ -103,7 +103,6 @@ function i18load() {
 	$(".i18_clientrectsdesc").html(chrome.i18n.getMessage("clientrectsdesc"));
 	$(".i18_keyboard").html(chrome.i18n.getMessage("keyboard"));
 	$(".i18_keyboarddesc").html(chrome.i18n.getMessage("keyboarddesc"));
-	$(".i18_fingerprint").html(chrome.i18n.getMessage("fingerprint"));
 	$(".i18_paranoia").html(chrome.i18n.getMessage("paranoia"));
 	$(".i18_paranoiadesc").html(chrome.i18n.getMessage("paranoiadesc"));
 	$(".i18_annoyances").html(chrome.i18n.getMessage("annoyances"));
@@ -333,7 +332,6 @@ function loadOptions() {
 	loadCheckbox("webrtcdevice");
 	loadCheckbox("gamepad");
 	loadElement("timezone");
-	loadCheckbox("fingerprintblockall");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
 	loadCheckbox("utm");
@@ -395,7 +393,6 @@ function saveOptions() {
 	saveCheckbox("webrtcdevice");
 	saveCheckbox("gamepad");
 	saveElement("timezone");
-	saveCheckbox("fingerprintblockall");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
 	saveCheckbox("utm");
