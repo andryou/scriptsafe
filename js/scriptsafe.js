@@ -10,6 +10,8 @@ var version = (function () {
 	return JSON.parse(xhr.responseText).version;
 }());
 var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
+var fpLists = [];
+var fpListsSession = [];
 var popup = [];
 var changed = false;
 var ITEMS = {};
@@ -241,7 +243,7 @@ function ScriptSafe(req) {
 		if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
 		if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
 			if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
-			ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, tabDomainCheckStatus, baddiesCheck]);
+			ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, tabDomainCheckStatus, baddiesCheck, false]);
 			updateCount(req.tabId);
 		}
 		if (reqtype == 'frame') {
@@ -293,6 +295,13 @@ function enabled(url) {
 		return 'true';
 	return 'false';
 }
+function enabledfp(url, fptype) {
+	if ((localStorage['canvas'] == 'false' && fptype == 'fpCanvas') || (localStorage['canvasfont'] == 'false' && fptype == 'fpCanvasFont') || (localStorage['audioblock'] == 'false' && fptype == 'fpAudio') || (localStorage['webgl'] == 'false' && fptype == 'fpWebGL') || (localStorage['battery'] == 'false' && fptype == 'fpBattery') || (localStorage['webrtcdevice'] == 'false' && fptype == 'fpDevice') || (localStorage['gamepad'] == 'false' && fptype == 'fpGamepad') || (localStorage['clientrects'] == 'false' && fptype == 'fpClientRectangles') || (localStorage['clipboard'] == 'false' && fptype == 'fpClipboard')) return '-1';
+	var domainname = extractDomainFromURL(url);
+	if (in_array(domainname, fpLists[fptype])) return '1';
+	if (in_array(domainname, fpListsSession[fptype])) return '1';
+	return '-1';
+}
 function domainCheck(domain, req) {
 	if (req === undefined) {
 		var baddiesCheck = baddies(domain, localStorage['annoyancesmode'], localStorage['antisocial']);
@@ -316,11 +325,11 @@ function domainSort(hosts) {
 	if (hosts.length > 0) {
 		if (typeof hosts[0] === 'object') {
 			for (var h in hosts) {
-				split_hosts.push([getDomain(hosts[h][2]), hosts[h][0], hosts[h][1], hosts[h][2], hosts[h][3], hosts[h][4], hosts[h][5]]);
+				split_hosts.push([getDomain(hosts[h][2]), hosts[h][0], hosts[h][1], hosts[h][2], hosts[h][3], hosts[h][4], hosts[h][5], hosts[h][6]]);
 			}
 			split_hosts.sort();
 			for (var h in split_hosts) {
-				sorted_hosts.push([split_hosts[h][1], split_hosts[h][2], split_hosts[h][3], split_hosts[h][4], split_hosts[h][5], split_hosts[h][6]]);
+				sorted_hosts.push([split_hosts[h][1], split_hosts[h][2], split_hosts[h][3], split_hosts[h][4], split_hosts[h][5], split_hosts[h][6], split_hosts[h][7]]);
 			}
 		} else {
 			for (var h in hosts) {
@@ -343,7 +352,8 @@ function trustCheck(domain) {
 function topHandler(domain, mode) {
 	if (domain) {
 		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
-		domainHandler(domain, mode);
+		if (mode != '0' && mode != '1') fpDomainHandler(domain, mode, 1);
+		else domainHandler(domain, mode);
 		return true;
 	}
 	return false;
@@ -449,6 +459,72 @@ function domainHandler(domain,action,listtype) {
 	}
 	return false;
 }
+function fpDomainHandler(domain,listtype,action,temp) {
+	if (temp === undefined)
+		temp = 0;
+	if (domain) {
+		action = parseInt(action);
+		// Initialize local storage
+		if (temp == 0) {
+			if (typeof(localStorage[listtype])==='undefined') localStorage[listtype] = JSON.stringify([]);
+			var tempList = JSON.parse(localStorage[listtype]);
+		} else if (temp == 1) {
+			if (typeof(localStorage[listtype])==='undefined') sessionStorage[listtype] = JSON.stringify([]);
+			var tempList = JSON.parse(sessionStorage[listtype]);
+		}
+		// Remove domain from list
+		var pos = tempList.indexOf(domain);
+		if (pos != -1) tempList.splice(pos,1);
+		if (domain.substr(0,4)=='www.') {
+			domain = domain.substr(4);
+			pos = tempList.indexOf(domain);
+			if (pos != -1) tempList.splice(pos,1);
+		}
+		if (action != -1) {
+			var tempDomain;
+			if (domain.substr(0,3)=='**.') {
+				tempDomain = domain.substr(3);
+				var instances = haystackSearch(tempDomain, tempList);
+				var instancesCount = instances.length;
+				if (instancesCount) {
+					if (confirm('ScriptSafe detected '+instancesCount+' existing rule(s) for '+tempDomain+'.\r\nDo you want to delete them before trusting the entire '+tempDomain+' domain in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
+						if (instancesCount) {
+							for (var x=0; x<instancesCount; x++) {
+								tempList.splice(tempList.indexOf(instances[x]),1);
+							}
+						}
+					} else {
+						if (!confirm('Do you still want to proceed trusting the entire '+tempDomain+' domain?')) {
+							return false;
+						}
+					}
+				}
+			} else {
+				tempDomain = '**.'+getDomain(domain);
+			}
+			var pos = tempList.indexOf(tempDomain);
+			if (pos != -1) tempList.splice(pos,1);
+		}
+		switch(action) {
+			case 1:	// Add
+				tempList.push(domain);
+				break;
+			case -1: // Remove
+				break;
+		}
+		if (temp == 0) {
+			localStorage[listtype] = JSON.stringify(tempList);
+			tempList = tempList.sort();
+			fpLists[listtype] = tempList;
+		} else if (temp == 1) {
+			sessionStorage[listtype] = JSON.stringify(tempList);
+			tempList = tempList.sort();
+			fpListsSession[listtype] = tempList;
+		}
+		return true;
+	}
+	return false;
+}
 function optionExists(opt) {
 	return (typeof localStorage[opt] !== "undefined");
 }
@@ -511,8 +587,26 @@ function setDefaultOptions() {
 	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
 	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
+	if (!optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
+	if (!optionExists("fpCanvasFont")) localStorage['fpCanvasFont'] = JSON.stringify([]);
+	if (!optionExists("fpAudio")) localStorage['fpAudio'] = JSON.stringify([]);
+	if (!optionExists("fpWebGL")) localStorage['fpWebGL'] = JSON.stringify([]);
+	if (!optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
+	if (!optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
+	if (!optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
+	if (!optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
+	if (!optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
 	if (typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpCanvasFont'] === "undefined") sessionStorage['fpCanvasFont'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpAudio'] === "undefined") sessionStorage['fpAudio'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpWebGL'] === "undefined") sessionStorage['fpWebGL'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpBattery'] === "undefined") sessionStorage['fpBattery'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpDevice'] === "undefined") sessionStorage['fpDevice'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpGamepad'] === "undefined") sessionStorage['fpGamepad'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
 }
 function updateCount(tabId) {
@@ -543,8 +637,18 @@ function resetTabData(id, url) {
 function revokeTemp() {
 	sessionBlackList = '';
 	sessionWhiteList = '';
+	fpListsSession = [];
 	sessionStorage['blackList'] = JSON.stringify([]);
 	sessionStorage['whiteList'] = JSON.stringify([]);
+	sessionStorage['fpCanvas'] = JSON.stringify([]);
+	sessionStorage['fpCanvasFont'] = JSON.stringify([]);
+	sessionStorage['fpAudio'] = JSON.stringify([]);
+	sessionStorage['fpWebGL'] = JSON.stringify([]);
+	sessionStorage['fpBattery'] = JSON.stringify([]);
+	sessionStorage['fpDevice'] = JSON.stringify([]);
+	sessionStorage['fpGamepad'] = JSON.stringify([]);
+	sessionStorage['fpClientRectangles'] = JSON.stringify([]);
+	sessionStorage['fpClipboard'] = JSON.stringify([]);
 }
 function statuschanger() {
 	if (localStorage['enable'] == 'true') {
@@ -639,7 +743,7 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: enabledfp(sender.tab.url, 'fpCanvas'), fp_canvasfont: enabledfp(sender.tab.url, 'fpCanvasFont'), fp_audio: enabledfp(sender.tab.url, 'fpAudio'), fp_webgl: enabledfp(sender.tab.url, 'fpWebGL'), fp_battery: enabledfp(sender.tab.url, 'fpBattery'), fp_device: enabledfp(sender.tab.url, 'fpDevice'), fp_gamepad: enabledfp(sender.tab.url, 'fpGamepad'), fp_clientrectangles: enabledfp(sender.tab.url, 'fpClientRectangles'), fp_clipboard: enabledfp(sender.tab.url, 'fpClipboard'), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -663,7 +767,14 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		else if (trustType == '2') enableval = 4;
 		if (localStorage['mode'] == 'block') sessionlist = sessionWhiteList;
 		else if (localStorage['mode'] == 'allow') sessionlist = sessionBlackList;
-		sendResponse({status: localStorage['enable'], enable: enableval, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], annoyances: localStorage['annoyances'], closepage: localStorage['classicoptions'], rating: localStorage['rating'], temp: sessionlist, blockeditems: ITEMS[request.tid]['blocked'], alloweditems: ITEMS[request.tid]['allowed'], domainsort: localStorage['domainsort']});
+		var sessionfplist = false;
+		for (var i in fpListsSession) {
+			if (fpListsSession[i].length != 0) {
+				sessionfplist = true;
+				break;
+			}
+		}
+		sendResponse({status: localStorage['enable'], enable: enableval, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], annoyances: localStorage['annoyances'], closepage: localStorage['classicoptions'], rating: localStorage['rating'], temp: sessionlist, tempfp: sessionfplist, blockeditems: ITEMS[request.tid]['blocked'], alloweditems: ITEMS[request.tid]['allowed'], domainsort: localStorage['domainsort']});
 		changed = true;
 	} else if (request.reqtype == 'update-blocked') {
 		if (request.src) {
@@ -673,11 +784,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
 				if (request.node == 'NOSCRIPT') {
-					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, request.src, '-1', '-1', false]);
+					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, request.src, '-1', '-1', false, false]);
 				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
-					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, extractedDomain, '-1', '-1', false]);
+					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, extractedDomain, '-1', '-1', false, true]);
 				} else {
-					ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2)]);
+					ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2), false]);
 				}
 				updateCount(sender.tab.id);
 			}
@@ -699,6 +810,17 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		tempHandler(request);
 	} else if (request.reqtype == 'remove-temp') {
 		removeTempHandler(request);
+	} else if (request.reqtype == 'save-fp') {
+		fpDomainHandler(request.url, request.list, -1);
+		fpDomainHandler(request.url, request.list, 1);
+		freshSync(2);
+		changed = true;
+	} else if (request.reqtype == 'temp-fp') {
+		fpDomainHandler(request.url, request.list, 1, 1);
+		changed = true;
+	} else if (request.reqtype == 'remove-temp-fp') {
+		fpDomainHandler(request.url, request.list, -1, 1);
+		changed = true;
 	} else if (request.reqtype == 'refresh-page-icon') {
 		if (request.type == '0') chrome.browserAction.setIcon({path: "../img/IconAllowed.png", tabId: request.tid});
 		else if (request.type == '1') chrome.browserAction.setIcon({path: "../img/IconForbidden.png", tabId: request.tid});
@@ -900,6 +1022,7 @@ function listsSync(mode) {
 		if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
 		else localStorage['blackList'] = JSON.stringify(concatlistarr);
 		cacheLists();
+		cacheFpLists();
 	}
 }
 //////////////////////////////////////////////////////
@@ -908,6 +1031,7 @@ function init() {
 	webrtcsupport = checkWebRTC();
 	initWebRTC();
 	cacheLists();
+	cacheFpLists();
 }
 function cacheLists() {
 	var tempList = JSON.parse(localStorage['whiteList']);
@@ -932,6 +1056,71 @@ function cacheLists() {
 	blackList = tempDomain;
 	tempWildDomain = tempWildDomain.sort();
 	distrustList = tempWildDomain;
+}
+function cacheFpLists() {
+	var tempList = JSON.parse(localStorage['fpCanvas']);
+	var tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpCanvas"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpCanvasFont']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpCanvasFont"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpAudio']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpAudio"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpWebGL']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpWebGL"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpBattery']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpBattery"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpDevice']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpDevice"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpGamepad']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpGamepad"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpClientRectangles']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpClientRectangles"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpClipboard']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpClipboard"] = tempDomain;
 }
 if (!optionExists("version") || localStorage["version"] != version) {
 	// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0

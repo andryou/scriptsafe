@@ -113,7 +113,7 @@
    },
    "cannotprocess": {
       "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
-      "message": "<strong>ScriptSafe nem tudja feldolgozni ezt az oldalt.</strong><br /><br />Keressen fel a weboldalt."
+      "message": "<strong>ScriptSafe nem tudja feldolgozni ezt az oldalt.</strong><br /><br />Keressen fel egy weboldalt."
    },
    "canvasblank": {
       "description": "Blank Readout",
@@ -237,7 +237,7 @@
    },
    "domainsort": {
       "description": "Sort by Domain:",
-      "message": "Rendezás domain szerint:"
+      "message": "Rendezés Domain Szerint:"
    },
    "domaininfo": {
       "description": "Help",
