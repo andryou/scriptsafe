@@ -406,16 +406,16 @@ function remove(url, el, type) {
 	else {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (el.parent().attr("sn_list") == '0' || el.parent().attr("sn_list") == '3') {
-			$("[rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
+			$(".thirditem [rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
 		}
 		el.hide();
 		if (type == '0') {
-			$(".x_"+urlfriendly).parent().children().removeClass("selected");
-			$(".x_"+urlfriendly).hide();
+			$(".thirditem .x_"+urlfriendly).parent().children().removeClass("selected");
+			$(".thirditem .x_"+urlfriendly).hide();
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			if ($("[rel='x_"+urlfriendly+"'] .x_blacklist").text() == 'Unwanted') $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass("selected");
+			if ($(".thirditem [rel='x_"+urlfriendly+"'] .x_blacklist").text() == 'Unwanted') $(".thirditem [rel='x_"+urlfriendly+"'] .x_blacklist").addClass("selected");
 			$(".pbypass").show();
-			$("[rel='x_"+urlfriendly+"'] .x_bypass").show();
+			$(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").show();
 		} else if (type == '1') {
 			if (!el.parent().hasClass("fpchoices")) {
 				if (url == tabdomain) {
@@ -476,27 +476,27 @@ function save(url, el, type) {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (type == '0') {
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			$("[rel='x_"+urlfriendly+"'] .choices").children().removeClass("selected");
-			$(".x_"+urlfriendly).hide();
-			if (val == 0) $("[rel='x_"+urlfriendly+"'] .x_whitelist").addClass('selected');
-			else if (val == 1) $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass('selected');
-			else if (val == 2) $("[rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
+			$(".thirditem [rel='x_"+urlfriendly+"'] .choices").children().removeClass("selected");
+			$(".thirditem .x_"+urlfriendly).hide();
+			if (val == 0) $(".thirditem [rel='x_"+urlfriendly+"'] .x_whitelist").addClass('selected');
+			else if (val == 1) $(".thirditem [rel='x_"+urlfriendly+"'] .x_blacklist").addClass('selected');
+			else if (val == 2) $(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
 			$(".pclear").hide();
 			if (el.attr("rel") == '3') {
-				$(".pallow, [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
+				$(".pallow, .thirditem [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
 			} else if (el.attr("rel") == '4') {
-				$(".pdeny, [rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
+				$(".pdeny, .thirditem [rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
 			}
 			if (val < 2) {
-				$(".pbypass, [rel='x_"+urlfriendly+"'] .x_bypass").hide();
-				$(".x_"+urlfriendly+", .pclear").show();
+				$(".pbypass, .thirditem [rel='x_"+urlfriendly+"'] .x_bypass").hide();
+				$(".thirditem .x_"+urlfriendly+", .pclear").show();
 				el.addClass('selected');
 			} else {
 				if (!selected) {
 					el.addClass('selected');
-					$("[rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
+					$(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
 				} else {
-					$("[rel='x_"+urlfriendly+"'] .x_bypass").removeClass('selected');
+					$(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").removeClass('selected');
 				}
 			}
 		} else if (type == '1') {
