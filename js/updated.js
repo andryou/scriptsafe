@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		xhr.send(null);
 		return JSON.parse(xhr.responseText).version;
 	}());
-	$("#title").html("ScriptSafe v"+version);
+	$("#title").html("ScriptSafe v"+version+" BETA 2");
 	$('#versionno').html(version);
 	$("#loadoptionspage").click(function() { location.href='options.html'; });
 	$("#closepage").click(function() { window.open('', '_self', '');window.close(); });
