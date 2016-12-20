@@ -299,7 +299,7 @@ function enabledfp(url, fptype) {
 	if ((localStorage['canvas'] == 'false' && fptype == 'fpCanvas') || (localStorage['canvasfont'] == 'false' && fptype == 'fpCanvasFont') || (localStorage['audioblock'] == 'false' && fptype == 'fpAudio') || (localStorage['webgl'] == 'false' && fptype == 'fpWebGL') || (localStorage['battery'] == 'false' && fptype == 'fpBattery') || (localStorage['webrtcdevice'] == 'false' && fptype == 'fpDevice') || (localStorage['gamepad'] == 'false' && fptype == 'fpGamepad') || (localStorage['clientrects'] == 'false' && fptype == 'fpClientRectangles') || (localStorage['clipboard'] == 'false' && fptype == 'fpClipboard')) return '-1';
 	var domainname = extractDomainFromURL(url);
 	if (in_array(domainname, fpLists[fptype])) return '1';
-	if (in_array(domainname, fpListsSession[fptype])) return '1';
+	if (in_array(domainname, fpListsSession[fptype])) return '2';
 	return '-1';
 }
 function domainCheck(domain, req) {
@@ -743,7 +743,12 @@ chrome.extension.onConnect.addListener(function(port) {
 });
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: enabledfp(sender.tab.url, 'fpCanvas'), fp_canvasfont: enabledfp(sender.tab.url, 'fpCanvasFont'), fp_audio: enabledfp(sender.tab.url, 'fpAudio'), fp_webgl: enabledfp(sender.tab.url, 'fpWebGL'), fp_battery: enabledfp(sender.tab.url, 'fpBattery'), fp_device: enabledfp(sender.tab.url, 'fpDevice'), fp_gamepad: enabledfp(sender.tab.url, 'fpGamepad'), fp_clientrectangles: enabledfp(sender.tab.url, 'fpClientRectangles'), fp_clipboard: enabledfp(sender.tab.url, 'fpClipboard'), experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
+		var fpListStatus = [];
+		var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpClientRectangles', 'fpClipboard'];
+		for (var i in fpTypes) {
+			fpListStatus[fpTypes[i]] = enabledfp(sender.tab.url, fpTypes[i]);
+		}
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -753,6 +758,21 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				} else {
 					resetTabData(sender.tab.id, sender.tab.url);
 				}
+			}
+		}
+		for (var i in fpListStatus) {
+			if (fpListStatus[i] != '-1') {
+				var fptype;
+				if (i == 'fpCanvas') fptype = 'Canvas Fingerprint';
+				else if (i == 'fpCanvasFont') fptype = 'Canvas Font Access';
+				else if (i == 'fpAudio') fptype = 'Audio Fingerprint';
+				else if (i == 'fpWebGL') fptype = 'WebGL Fingerprint';
+				else if (i == 'fpBattery') fptype = 'Battery Fingerprint';
+				else if (i == 'fpDevice') fptype = 'Device Enumeration';
+				else if (i == 'fpGamepad') fptype = 'Gamepad Enumeration';
+				else if (i == 'fpClientRectangles') fptype = 'Client Rectangles';
+				else if (i == 'fpClipboard') fptype = 'Clipboard Interference';
+				ITEMS[sender.tab.id]['allowed'].push([removeParams(sender.tab.url), fptype, extractDomainFromURL(sender.tab.url), fpListStatus[i], false, true]);
 			}
 		}
 	} else if (request.reqtype == 'get-list') {
@@ -811,7 +831,6 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else if (request.reqtype == 'remove-temp') {
 		removeTempHandler(request);
 	} else if (request.reqtype == 'save-fp') {
-		fpDomainHandler(request.url, request.list, -1);
 		fpDomainHandler(request.url, request.list, 1);
 		freshSync(2);
 		changed = true;
