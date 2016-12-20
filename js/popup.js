@@ -159,12 +159,13 @@ function init() {
 													$('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem [rel="fpcount_'+fpitemdomainfriendly+'"]').html((parseInt($("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] .fpitem [rel='fpcount_"+fpitemdomainfriendly+"']").html())+1));
 													$("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] [rel='count_"+itemdomainfriendly+"']").html((parseInt($("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] [rel='count_"+itemdomainfriendly+"']").html())+1));
 												}
+												$("#blocked [rel='x_"+itemdomainfriendly+"'] .fp_"+fpitemdomainfriendly).bind("click", x_removehandle);
 											} else {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span rel="r_'+itemdomainfriendly+'"></span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</span><span class="box box2 x_blacklist" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
 												$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 											}
 										}
-										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly+", #blocked [rel='x_"+itemdomainfriendly+"'] .fp_"+fpitemdomainfriendly).bind("click", x_removehandle);
+										$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).bind("click", x_removehandle);
 									} else {
 										$("#blocked [rel='x_"+itemdomainfriendly+"']").attr("title",$("#blocked [rel='x_"+itemdomainfriendly+"']").attr("title")+"\r\n["+response.blockeditems[i][1]+"] "+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&")));
 										$("#blocked [rel='count_"+itemdomainfriendly+"']").html((parseInt($("#blocked [rel='count_"+itemdomainfriendly+"']").html())+1));
