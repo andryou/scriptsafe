@@ -712,7 +712,7 @@ function fpListProcess(fpType) {
 		else fpList.sort();
 		for (var i in fpList) {
 			if (fpList[i][0] == '*' || fpList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || fpList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) fpListCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="fpDomainRemover" rel=\''+fpList[i]+'\'>X</a></div>'+fpList[i]+'</div>';
-			else fpListCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="fpTopDomainAdd" title=\''+chrome.i18n.getMessage("trust")+' '+fpList[i]+'\' data-domain=\''+fpList[i]+'\' data-mode="0">'+chrome.i18n.getMessage("trust")+'</a> | <a href="javascript:;" style="color:#f00;" class="fpDomainRemover" rel=\''+fpList[i]+'\'>X</a></div>'+fpList[i]+'</div>';
+			else fpListCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="fpDomainRemover" rel=\''+fpList[i]+'\'>X</a></div>'+fpList[i]+'</div>';
 		}
 	}
 	$('#'+fpType).html(fpListCompiled);
