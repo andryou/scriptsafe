@@ -236,6 +236,17 @@ function fingerprintProtection() {
 					document.documentElement.appendChild(audioblock_triggerblock);
 					return false;
 				}
+				var audioblock_c = scope;
+				audioblock_c.AudioContext = function() {
+					audioblock_triggerblock.title = 'AudioContext';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				audioblock_c.webkitAudioContext = function() {
+					audioblock_triggerblock.title = 'webkitAudioContext';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
 			}
 			/* Canvas Font */
 			if (canvasfont == 'true') {
