@@ -55,6 +55,7 @@ function checkWebRTC() {
 if (typeof chrome.storage !== 'undefined') {
 	storageapi = true;
 }
+storageapi = false; // note: opera does not support syncing.
 if (typeof chrome.webRequest !== 'undefined') {
 	if (experimental == 0) experimental = 1;
 	var requestUrls = ["http://*/*", "https://*/*"];
