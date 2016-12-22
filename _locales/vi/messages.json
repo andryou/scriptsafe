@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Mặc Định"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Bảo vệ Local IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Từ Chối"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Bảo Vệ Khu Công Nghiệp Địa Phương Và Công Cộng"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Không lọc"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Trình duyệt này không hỗ trợ bảo vệ WebRT"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "ngăn chặn có thiết bị phần cứng được phát hiện qua các WebRTC của API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Bảo vệ WebRTC Được:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "ngăn chặn rò rỉ địa chỉ IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

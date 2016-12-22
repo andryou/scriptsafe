@@ -1,9 +1,7 @@
-var version = (function () {
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', chrome.extension.getURL('../manifest.json'), false);
-	xhr.send(null);
-	return JSON.parse(xhr.responseText).version;
-}());
+// ScriptSafe - Copyright (C) andryou
+// Distributed under the terms of the GNU General Public License
+// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
+var version = '1.0.8.5';
 var port = chrome.extension.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -56,6 +54,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_options").click(function() { openTab(chrome.extension.getURL('html/options.html')); });
 	$("#pop_webstore").click(function() { openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
 	$("#pop_close").click(function() { window.close(); });
+	$("#pop_refresh").click(function() { chrome.tabs.reload(); window.close(); });
 });
 function init() {
 	$("#version").html(version);
@@ -103,6 +102,7 @@ function init() {
 							$("#parent").attr("rowspan","2");
 							for (var i=0;i<responseBlockedCount;i++) {
 								var itemdomain = response.blockeditems[i][2];
+								var fpitemdomain = response.blockeditems[i][2];
 								if (response.blockeditems[i][1] == 'NOSCRIPT') itemdomain = 'no.script';
 								else if (response.blockeditems[i][1] == 'WEBBUG') itemdomain = 'web.bug';
 								else if (response.blockeditems[i][1] == 'Canvas Fingerprint') itemdomain = 'canvas.fingerprint';
@@ -119,6 +119,7 @@ function init() {
 									var baddiesstatus = response.blockeditems[i][5];
 									var parentstatus = response.blockeditems[i][4];
 									var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
+									var fpitemdomainfriendly = fpitemdomain.replace(/[.\[\]:]/g,"_");
 									var domainCheckStatus = response.blockeditems[i][3];
 									blocked.push(itemdomain);
 									if ($('#blocked .thirditem[rel="x_'+itemdomainfriendly+'"]').length == 0) {
@@ -136,13 +137,24 @@ function init() {
 											} else allowedtype = 1;
 											var outputdomain = itemdomain;
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') outputdomain = '&lt;'+response.blockeditems[i][1]+'&gt;';
-											else if (response.blockeditems[i][1] == 'Canvas Fingerprint' || response.blockeditems[i][1] == 'Canvas Font Access' || response.blockeditems[i][1] == 'Audio Fingerprint' || response.blockeditems[i][1] == 'WebGL Fingerprint' || response.blockeditems[i][1] == 'Battery Fingerprint' || response.blockeditems[i][1] == 'Device Enumeration' || response.blockeditems[i][1] == 'Gamepad Enumeration' || response.blockeditems[i][1] == 'Spoofed Timezone' || response.blockeditems[i][1] == 'Client Rectangles' || response.blockeditems[i][1] == 'Clipboard Interference') outputdomain = response.blockeditems[i][1];
+											else if (response.blockeditems[i][6]) outputdomain = response.blockeditems[i][1];
 											$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span rel="r_'+itemdomainfriendly+'"></span><span>'+outputdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</span><span class="box box2 x_blacklist selected" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
 										} else {
 											if (response.blockeditems[i][1] == 'NOSCRIPT' || response.blockeditems[i][1] == 'WEBBUG') {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>&lt;'+response.blockeditems[i][1]+'&gt;</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span></div>');
-											} else if (response.blockeditems[i][1] == 'Canvas Fingerprint' || response.blockeditems[i][1] == 'Canvas Font Access' || response.blockeditems[i][1] == 'Audio Fingerprint' || response.blockeditems[i][1] == 'WebGL Fingerprint' || response.blockeditems[i][1] == 'Battery Fingerprint' || response.blockeditems[i][1] == 'Device Enumeration' || response.blockeditems[i][1] == 'Gamepad Enumeration' || response.blockeditems[i][1] == 'Spoofed Timezone' || response.blockeditems[i][1] == 'Client Rectangles' || response.blockeditems[i][1] == 'Clipboard Interference') {
+											} else if (response.blockeditems[i][1] == 'Spoofed Timezone') {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+response.blockeditems[i][1]+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span></div>');
+											} else if (response.blockeditems[i][6]) {
+												if ($('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"]').length == 0) {
+													$("#blocked").append('<div class="fpcat" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><div class="fphead">'+response.blockeditems[i][1]+' (<span rel="count_'+itemdomainfriendly+'">1</span>)</div><div class="fpoptions details_'+itemdomainfriendly+'"><div class="fpitem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="fp_'+fpitemdomainfriendly+'" data-fpdomain="'+bkg.getDomain(fpitemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+fpitemdomain+'</span> (<span rel="fpcount_'+fpitemdomainfriendly+'">1</span>)</span><br /><span class="choices fpchoices" rel="'+fpitemdomain+'" sn_list="'+itemdomain+'"><span style="display: none;" class="box box4 fp_'+fpitemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div></div></div>');
+												} else {
+													if ($('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"]').length == 0) $("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] .fpoptions").append('<div class="fpitem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="fp_'+fpitemdomainfriendly+'" data-fpdomain="'+bkg.getDomain(fpitemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+fpitemdomain+'</span> (<span rel="fpcount_'+fpitemdomainfriendly+'">1</span>)</span><br /><span class="choices fpchoices" rel="'+fpitemdomain+'" sn_list="'+itemdomain+'"><span style="display: none;" class="box box4 fp_'+fpitemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
+													$('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"]').attr("title",$('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"]').attr("title")+"\r\n["+response.blockeditems[i][1]+"] "+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&")));
+													$('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"]').attr("title",$('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"]').attr("title")+"\r\n["+response.blockeditems[i][1]+"] "+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&")));
+													$('#blocked .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem [rel="fpcount_'+fpitemdomainfriendly+'"]').html((parseInt($("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] .fpitem [rel='fpcount_"+fpitemdomainfriendly+"']").html())+1));
+													$("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] [rel='count_"+itemdomainfriendly+"']").html((parseInt($("#blocked .fpcat[rel='x_"+itemdomainfriendly+"'] [rel='count_"+itemdomainfriendly+"']").html())+1));
+												}
+												$("#blocked [rel='x_"+itemdomainfriendly+"'] .fp_"+fpitemdomainfriendly).bind("click", x_removehandle);
 											} else {
 												$("#blocked").append('<div class="thirditem" title="['+response.blockeditems[i][1]+'] '+$.trim(response.blockeditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span rel="r_'+itemdomainfriendly+'"></span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</span><span class="box box2 x_blacklist" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
 												$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
@@ -189,6 +201,7 @@ function init() {
 							$("#blocked").append($('.thirditem:not(*>:has(.choices))'));
 							$("#blocked").append($("#blocked [rel='x_web_bug']"));
 							$("#blocked").append($("#blocked [rel='x_no_script']"));
+							$("#blocked").append($("#blocked [rel='x_spoofed_timezone']"));
 							$("#blocked").append($("#blocked [rel='x_canvas_fingerprint']"));
 							$("#blocked").append($("#blocked [rel='x_canvas_font_access']"));
 							$("#blocked").append($("#blocked [rel='x_battery_fingerprint']"));
@@ -198,9 +211,9 @@ function init() {
 							$("#blocked").append($("#blocked [rel='x_gamepad_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_client_rectangles']"));
 							$("#blocked").append($("#blocked [rel='x_clipboard_interference']"));
-							$("#blocked").append($("#blocked [rel='x_spoofed_timezone']"));
 							$("#blocked").prepend($("#blocked [data-domain='"+tabdomainroot+"'][data-baddie='false']"));
 							$("#blocked [rel='x_"+tabdomainfriendly+"']").children().first().css("font-weight", "bold");
+							$("#blocked [rel='fp_"+tabdomainfriendly+"']").children().css("font-weight", "bold");
 							$("#blocked").prepend($("#blocked [rel='x_"+tabdomainfriendly+"']"));
 						}
 						if (responseAllowedCount != 0) {
@@ -212,9 +225,20 @@ function init() {
 							else $("td.bolded").css('padding-top', '0px');
 							for (var i=0;i<responseAllowedCount;i++) {
 								var itemdomain = response.alloweditems[i][2];
+								var fpitemdomain = response.alloweditems[i][2];
+								if (response.alloweditems[i][1] == 'Canvas Fingerprint') itemdomain = 'canvas.fingerprint';
+								else if (response.alloweditems[i][1] == 'Canvas Font Access') itemdomain = 'canvas.font.access';
+								else if (response.alloweditems[i][1] == 'Audio Fingerprint') itemdomain = 'audio.fingerprint';
+								else if (response.alloweditems[i][1] == 'WebGL Fingerprint') itemdomain = 'webgl.fingerprint';
+								else if (response.alloweditems[i][1] == 'Battery Fingerprint') itemdomain = 'battery.fingerprint';
+								else if (response.alloweditems[i][1] == 'Device Enumeration') itemdomain = 'device.enumeration';
+								else if (response.alloweditems[i][1] == 'Gamepad Enumeration') itemdomain = 'gamepad.enumeration';
+								else if (response.alloweditems[i][1] == 'Client Rectangles') itemdomain = 'client.rectangles';
+								else if (response.alloweditems[i][1] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
 								if (itemdomain) {
 									allowed.push(itemdomain);
 									var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
+									var fpitemdomainfriendly = fpitemdomain.replace(/[.\[\]:]/g,"_");
 									var baddiesstatus = response.alloweditems[i][4];
 									if ($('#allowed .choices[rel="'+itemdomain+'"]').length == 0) {
 										if (response.alloweditems[i][3] == '0') {
@@ -232,8 +256,16 @@ function init() {
 											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span rel="r_'+itemdomainfriendly+'"></span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span class="choices" rel="'+itemdomain+'" sn_list="'+allowedtype+'"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist selected" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box1 x_trust'+trustval0+'" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</span><span class="box box2 x_blacklist" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</span><span class="box box2 x_trust'+trustval1+'" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
 											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).bind("click", x_removehandle);
 										} else {
-											$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span rel="r_'+itemdomainfriendly+'"></span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</span><span class="box box2 x_blacklist" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
-											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
+											if (response.alloweditems[i][5]) {
+												if ($('#allowed .fpcat[rel="x_'+itemdomainfriendly+'"]').length == 0) {
+													$("#allowed").append('<div class="fpcat" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><div class="fphead">'+response.alloweditems[i][1]+'</div><div class="fpoptions details_'+itemdomainfriendly+'"><div class="fpitem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="fp_'+fpitemdomainfriendly+'" data-fpdomain="'+bkg.getDomain(fpitemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+fpitemdomain+'</span></span><br /><span class="choices fpchoices" rel="'+fpitemdomain+'" sn_list="'+itemdomain+'"><span style="display: none;" class="box box4 fp_'+fpitemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div></div></div>');
+												} else {
+													if ($('#allowed .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"]').length == 0) $("#allowed .fpcat[rel='x_"+itemdomainfriendly+"'] .fpoptions").append('<div class="fpitem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="fp_'+fpitemdomainfriendly+'" data-fpdomain="'+bkg.getDomain(fpitemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span>'+fpitemdomain+'</span></span><br /><span class="choices fpchoices" rel="'+fpitemdomain+'" sn_list="'+itemdomain+'"><span style="display: none;" class="box box4 fp_'+fpitemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
+												}
+											} else {
+												$("#allowed").append('<div class="thirditem" title="['+response.alloweditems[i][1]+'] '+$.trim(response.alloweditems[i][0].replace(/"/g, "'").replace(/\&lt;/g, "<").replace(/\&gt;/g, ">").replace(/\&amp;/g, "&"))+'" rel="x_'+itemdomainfriendly+'" data-domain="'+bkg.getDomain(itemdomain)+'" data-baddie="'+baddiesstatus+'"><span><span rel="r_'+itemdomainfriendly+'"></span><span>'+itemdomain+'</span> (<span rel="count_'+itemdomainfriendly+'">1</span>)</span><br /><span class="choices" rel="'+itemdomain+'" sn_list="-1"><span class="box box4 x_'+itemdomainfriendly+'" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</span><span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+chrome.i18n.getMessage("allow")+'</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</span><span class="box box2 x_blacklist" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</span></span></div>');
+												$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
+											}
 										}
 									} else {
 										$("#allowed [rel='x_"+itemdomainfriendly+"']").attr("title",$("#allowed [rel='x_"+itemdomainfriendly+"']").attr("title")+"\r\n["+response.alloweditems[i][1]+"] "+response.alloweditems[i][0]);
@@ -255,11 +287,29 @@ function init() {
 											$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_bypass").hide();
 										}
 									}
+									if (response.alloweditems[i][5]) {
+										if (response.alloweditems[i][3] == '2') $('#allowed .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"] .x_bypass').addClass('selected').show();
+										else if (response.alloweditems[i][3] == '1') {
+											$('#allowed .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"] .x_whitelist').addClass('selected').show();
+											$('#allowed .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"] .box4').show();
+										}
+										$('#allowed .fpcat[rel="x_'+itemdomainfriendly+'"] .fpitem[rel="fp_'+fpitemdomainfriendly+'"] .box4').bind("click", x_removehandle);
+									}
 								}
 							}
 							$("#allowed").prepend($("#allowed [data-domain='"+tabdomainroot+"'][data-baddie='false']"));
 							$("#allowed [rel='x_"+tabdomainfriendly+"']").children().first().css("font-weight", "bold");
+							$("#allowed [rel='fp_"+tabdomainfriendly+"']").children().css("font-weight", "bold");
 							$("#allowed").prepend($("#allowed [rel='x_"+tabdomainfriendly+"']"));
+							$("#allowed").append($("#allowed [rel='x_canvas_fingerprint']"));
+							$("#allowed").append($("#allowed [rel='x_canvas_font_access']"));
+							$("#allowed").append($("#allowed [rel='x_battery_fingerprint']"));
+							$("#allowed").append($("#allowed [rel='x_audio_fingerprint']"));
+							$("#allowed").append($("#allowed [rel='x_webgl_fingerprint']"));
+							$("#allowed").append($("#allowed [rel='x_device_enumeration']"));
+							$("#allowed").append($("#allowed [rel='x_gamepad_enumeration']"));
+							$("#allowed").append($("#allowed [rel='x_client_rectangles']"));
+							$("#allowed").append($("#allowed [rel='x_clipboard_interference']"));
 						}
 						var blockedCount = blocked.length;
 						var allowedCount = allowed.length;
@@ -288,7 +338,7 @@ function init() {
 							$(".prevoke").bind("click", bulkhandle);
 						}
 					}
-					if (typeof response.temp !== 'undefined' && response.temp.length) {
+					if (typeof response.temp !== 'undefined' && response.temp.length || (typeof response.tempfp !== 'undefined' && response.tempfp)) {
 						$("#parent").append('<hr><div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">'+chrome.i18n.getMessage("revoketempall")+'</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
 					}
@@ -335,6 +385,9 @@ function init() {
 					}
 					if (response.status == 'true') $("#footer").prepend('<span class="box box2 snstatus" title="Disable ScriptSafe">'+chrome.i18n.getMessage("disable")+'</span>&nbsp;|&nbsp;');
 					$(".snstatus").bind("click", statuschange);
+					$(".fphead").bind("click", function() {
+						$(this).next().toggle();
+					});
 					closepage = response.closepage;
 				});
 			}
@@ -359,34 +412,52 @@ function remove(url, el, type) {
 	var selected = el.hasClass("selected");
 	if (val != 2 && selected) return;
 	port.postMessage({url: taburl, tid: tabid});
-	var trustType = bkg.trustCheck(url);
-	if (trustType) {
-		bkg.domainHandler('**.'+bkg.getDomain(url), 2);
-		bkg.domainHandler('**.'+bkg.getDomain(url), 2, 1);
+	if (el.parent().hasClass("fpchoices")) {
+		var fpType = el.parent().attr("sn_list");
+		var fpList;
+		if (fpType == 'canvas.fingerprint') fpList = 'fpCanvas';
+		else if (fpType == 'canvas.font.access') fpList = 'fpCanvasFont';
+		else if (fpType == 'audio.fingerprint') fpList = 'fpAudio';
+		else if (fpType == 'webgl.fingerprint') fpList = 'fpWebGL';
+		else if (fpType == 'battery.fingerprint') fpList = 'fpBattery';
+		else if (fpType == 'device.enumeration') fpList = 'fpDevice';
+		else if (fpType == 'gamepad.enumeration') fpList = 'fpGamepad';
+		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
+		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
+		bkg.fpDomainHandler('**.'+bkg.getDomain(url), fpList, -1);
+		bkg.fpDomainHandler(url, fpList, -1);
 	} else {
-		bkg.domainHandler(url, 2);
-		bkg.domainHandler(url, 2, 1);
+		var trustType = bkg.trustCheck(url);
+		if (trustType) {
+			bkg.domainHandler('**.'+bkg.getDomain(url), 2);
+			bkg.domainHandler('**.'+bkg.getDomain(url), 2, 1);
+		} else {
+			bkg.domainHandler(url, 2);
+			bkg.domainHandler(url, 2, 1);
+		}
 	}
 	chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: 1});
 	if (closepage == 'true') window.close();
 	else {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (el.parent().attr("sn_list") == '0' || el.parent().attr("sn_list") == '3') {
-			$("[rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
+			$(".thirditem [rel='x_"+urlfriendly+"'] .choices, #parent").attr("sn_list", "-1");
 		}
 		el.hide();
 		if (type == '0') {
-			$(".x_"+urlfriendly).parent().children().removeClass("selected");
-			$(".x_"+urlfriendly).hide();
+			$(".thirditem .x_"+urlfriendly).parent().children().removeClass("selected");
+			$(".thirditem .x_"+urlfriendly).hide();
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			if ($("[rel='x_"+urlfriendly+"'] .x_blacklist").text() == 'Unwanted') $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass("selected");
+			if ($(".thirditem [rel='x_"+urlfriendly+"'] .x_blacklist").text() == 'Unwanted') $(".thirditem [rel='x_"+urlfriendly+"'] .x_blacklist").addClass("selected");
 			$(".pbypass").show();
-			$("[rel='x_"+urlfriendly+"'] .x_bypass").show();
+			$(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").show();
 		} else if (type == '1') {
-			if (url == tabdomain) {
-				$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-				$(".pbypass").show();
-				$('.pclear').hide();
+			if (!el.parent().hasClass("fpchoices")) {
+				if (url == tabdomain) {
+					$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
+					$(".pbypass").show();
+					$('.pclear').hide();
+				}
 			}
 			$(".x_bypass", el.parent()).show();
 			el.parent().children().removeClass("selected");
@@ -398,18 +469,42 @@ function save(url, el, type) {
 	var val = el.attr("rel");
 	var selected = el.hasClass("selected");
 	if (val != 2 && selected) return;
-	if (val < 2) {
-		bkg.domainHandler(url, '2', '1');
-		chrome.extension.sendRequest({reqtype: "save", url: url, list: val});
-	} else if (val == 2) {
-		if (selected) chrome.extension.sendRequest({reqtype: "remove-temp", url: url});
-		else chrome.extension.sendRequest({reqtype: "temp", url: url, mode: mode});
-	} else if (val == 3) {
-		bkg.topHandler(url, 0);
-		val = 0;
-	} else if (val == 4) {
-		bkg.topHandler(url, 1);
-		val = 1;
+	if (el.parent().hasClass("fpchoices")) {
+		var fpType = el.parent().attr("sn_list");
+		var fpList;
+		if (fpType == 'canvas.fingerprint') fpList = 'fpCanvas';
+		else if (fpType == 'canvas.font.access') fpList = 'fpCanvasFont';
+		else if (fpType == 'audio.fingerprint') fpList = 'fpAudio';
+		else if (fpType == 'webgl.fingerprint') fpList = 'fpWebGL';
+		else if (fpType == 'battery.fingerprint') fpList = 'fpBattery';
+		else if (fpType == 'device.enumeration') fpList = 'fpDevice';
+		else if (fpType == 'gamepad.enumeration') fpList = 'fpGamepad';
+		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
+		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
+		if (val < 2) {
+			bkg.fpDomainHandler(url, fpList, -1, 1);
+			chrome.extension.sendRequest({reqtype: "save-fp", url: url, list: fpList});
+		} else if (val == 2) {
+			if (selected) chrome.extension.sendRequest({reqtype: "remove-temp-fp", url: url, list: fpList});
+			else chrome.extension.sendRequest({reqtype: "temp-fp", url: url, list: fpList});
+		} else if (val == 3) {
+			bkg.topHandler(url, fpList);
+			val = 0;
+		}
+	} else {
+		if (val < 2) {
+			bkg.domainHandler(url, '2', '1');
+			chrome.extension.sendRequest({reqtype: "save", url: url, list: val});
+		} else if (val == 2) {
+			if (selected) chrome.extension.sendRequest({reqtype: "remove-temp", url: url});
+			else chrome.extension.sendRequest({reqtype: "temp", url: url, mode: mode});
+		} else if (val == 3) {
+			bkg.topHandler(url, 0);
+			val = 0;
+		} else if (val == 4) {
+			bkg.topHandler(url, 1);
+			val = 1;
+		}
 	}
 	if (url == tabdomain) chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: val});
 	if (closepage == 'true') window.close();
@@ -417,39 +512,41 @@ function save(url, el, type) {
 		var urlfriendly = url.replace(/[.\[\]:]/g,"_");
 		if (type == '0') {
 			$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-			$("[rel='x_"+urlfriendly+"'] .choices").children().removeClass("selected");
-			$(".x_"+urlfriendly).hide();
-			if (val == 0) $("[rel='x_"+urlfriendly+"'] .x_whitelist").addClass('selected');
-			else if (val == 1) $("[rel='x_"+urlfriendly+"'] .x_blacklist").addClass('selected');
-			else if (val == 2) $("[rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
+			$(".thirditem [rel='x_"+urlfriendly+"'] .choices").children().removeClass("selected");
+			$(".thirditem .x_"+urlfriendly).hide();
+			if (val == 0) $(".thirditem [rel='x_"+urlfriendly+"'] .x_whitelist").addClass('selected');
+			else if (val == 1) $(".thirditem [rel='x_"+urlfriendly+"'] .x_blacklist").addClass('selected');
+			else if (val == 2) $(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
 			$(".pclear").hide();
 			if (el.attr("rel") == '3') {
-				$(".pallow, [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
+				$(".pallow, .thirditem [rel='x_"+urlfriendly+"'] .x_trust[rel='3']").addClass('selected');
 			} else if (el.attr("rel") == '4') {
-				$(".pdeny, [rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
+				$(".pdeny, .thirditem [rel='x_"+urlfriendly+"'] .x_trust[rel='4']").addClass('selected');
 			}
 			if (val < 2) {
-				$(".pbypass, [rel='x_"+urlfriendly+"'] .x_bypass").hide();
-				$(".x_"+urlfriendly+", .pclear").show();
+				$(".pbypass, .thirditem [rel='x_"+urlfriendly+"'] .x_bypass").hide();
+				$(".thirditem .x_"+urlfriendly+", .pclear").show();
 				el.addClass('selected');
 			} else {
 				if (!selected) {
 					el.addClass('selected');
-					$("[rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
+					$(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").addClass('selected');
 				} else {
-					$("[rel='x_"+urlfriendly+"'] .x_bypass").removeClass('selected');
+					$(".thirditem [rel='x_"+urlfriendly+"'] .x_bypass").removeClass('selected');
 				}
 			}
 		} else if (type == '1') {
 			el.parent().children().removeClass("selected");
-			$(".x_"+urlfriendly).hide();
+			if (!el.parent().hasClass("fpchoices")) $(".x_"+urlfriendly).hide();
 			if (url == tabdomain) {
-				$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
-				$(".pclear").hide();
-				if (val == 0) $(".pallow").addClass('selected');
-				else if (val == 1) $(".pdeny").addClass('selected');
+				if (!el.parent().hasClass("fpchoices")) {
+					$(".pallow,.pdeny,.pbypass,.ptrust").removeClass("selected");
+					$(".pclear").hide();
+					if (val == 0) $(".pallow").addClass('selected');
+					else if (val == 1) $(".pdeny").addClass('selected');
+				}
 				if (el.attr("rel") == '3') {
-					$(".ptrust[rel='3']").addClass('selected');
+					if (!el.parent().hasClass("fpchoices")) $(".ptrust[rel='3']").addClass('selected');
 					$(".x_whitelist", el.parent()).addClass('selected');
 				} else if (el.attr("rel") == '4') {
 					$(".ptrust[rel='4']").addClass('selected');
@@ -458,21 +555,24 @@ function save(url, el, type) {
 			}
 			if (val < 2) {
 				if (url == tabdomain) {
-					$(".pclear").show();
-					$(".pbypass").hide();
+					if (!el.parent().hasClass("fpchoices")) {
+						$(".pclear").show();
+						$(".pbypass").hide();
+					}
 				} else {
 					if (el.attr("rel") == '3') $(".x_whitelist", el.parent()).addClass('selected');
 					else if (el.attr("rel") == '4') $(".x_blacklist", el.parent()).addClass('selected');
 				}
 				el.addClass('selected');
-				$(".x_"+urlfriendly).show();
+				if (!el.parent().hasClass("fpchoices")) $(".x_"+urlfriendly).show();
+				if (el.parent().hasClass("fpchoices")) $(".fp_"+urlfriendly).show();
 				$(".x_bypass", el.parent()).hide();
 			} else {
 				if (!selected) {
 					el.addClass('selected');
-					if (url == tabdomain) $(".pbypass").addClass('selected').show();
+					if (url == tabdomain && !el.parent().hasClass("fpchoices")) $(".pbypass").addClass('selected').show();
 				} else {
-					if (url == tabdomain) $(".pbypass").removeClass('selected').show();
+					if (url == tabdomain && !el.parent().hasClass("fpchoices")) $(".pbypass").removeClass('selected').show();
 					if ($(".x_blacklist", el.parent()).text() == 'Unwanted') $(".x_blacklist", el.parent()).addClass("selected");
 				}
 				$(".x_bypass", el.parent()).show();

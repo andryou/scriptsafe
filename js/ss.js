@@ -1,4 +1,6 @@
-// ScriptSafe by Andrew
+// ScriptSafe - Copyright (C) andryou
+// Distributed under the terms of the GNU General Public License
+// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
@@ -40,6 +42,7 @@ var SETTINGS = {
 	"LINKTARGET": "off",
 	"EXPERIMENTAL": "0",
 	"REFERRER": "true",
+	"REFERRERSPOOFDENYWHITELISTED": "true",
 	"PARANOIA": "true",
 	"CLIPBOARD": "false",
 };
@@ -82,12 +85,22 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['GAMEPAD'] = response.gamepad;
 		SETTINGS['TIMEZONE'] = response.timezone;
 		SETTINGS['CLIPBOARD'] = response.clipboard;
+		if (SETTINGS['CANVAS'] != 'false' && response.fp_canvas != '-1') SETTINGS['CANVAS'] = 'false';
+		if (SETTINGS['CANVASFONT'] == 'true' && response.fp_canvasfont != '-1') SETTINGS['CANVASFONT'] = 'false';
+		if (SETTINGS['AUDIOBLOCK'] == 'true' && response.fp_audio != '-1') SETTINGS['AUDIOBLOCK'] = 'false';
+		if (SETTINGS['WEBGL'] == 'true' && response.fp_webgl != '-1') SETTINGS['WEBGL'] = 'false';
+		if (SETTINGS['BATTERY'] == 'true' && response.fp_battery != '-1') SETTINGS['BATTERY'] = 'false';
+		if (SETTINGS['WEBRTCDEVICE'] == 'true' && response.fp_device != '-1') SETTINGS['WEBRTCDEVICE'] = 'false';
+		if (SETTINGS['GAMEPAD'] == 'true' && response.fp_gamepad != '-1') SETTINGS['GAMEPAD'] = 'false';
+		if (SETTINGS['CLIENTRECTS'] == 'true' && response.fp_clientrectangles != '-1') SETTINGS['CLIENTRECTS'] = 'false';
+		if (SETTINGS['CLIPBOARD'] == 'true' && response.fp_clipboard != '-1') SETTINGS['CLIPBOARD'] = 'false';
 		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
 			fingerprintProtection();
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		SETTINGS['REFERRER'] = response.referrer;
+		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenywhitelisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		$(document).ready(function() {
@@ -223,6 +236,17 @@ function fingerprintProtection() {
 					document.documentElement.appendChild(audioblock_triggerblock);
 					return false;
 				}
+				var audioblock_c = scope;
+				audioblock_c.AudioContext = function() {
+					audioblock_triggerblock.title = 'AudioContext';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
+				audioblock_c.webkitAudioContext = function() {
+					audioblock_triggerblock.title = 'webkitAudioContext';
+					document.documentElement.appendChild(audioblock_triggerblock);
+					return false;
+				}
 			}
 			/* Canvas Font */
 			if (canvasfont == 'true') {
@@ -243,7 +267,7 @@ function fingerprintProtection() {
 				battery_a.getBattery = function() {
 					battery_triggerblock.title = 'getBattery';
 					document.documentElement.appendChild(battery_triggerblock);
-					return false;
+					return void(0);
 				}
 			}
 			/* WebGL */
@@ -289,6 +313,12 @@ function fingerprintProtection() {
 				}
 				webrtc_a.getMediaDevices = function() {
 					webrtc_triggerblock.title = 'getMediaDevices';
+					document.documentElement.appendChild(webrtc_triggerblock);
+					return false;
+				}
+				var webrtc_b = scope.navigator.mediaDevices;
+				webrtc_b.enumerateDevices = function() {
+					webrtc_triggerblock.title = 'enumerateDevices';
 					document.documentElement.appendChild(webrtc_triggerblock);
 					return false;
 				}
@@ -390,7 +420,7 @@ function ScriptSafe() {
 		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
 	}
-	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) {
+	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
 		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
 	}
 	if (SETTINGS['CANVAS'] != 'false') {
@@ -725,7 +755,7 @@ function block(event) {
 					|| (elType == "VIDEO" && SETTINGS['VIDEO'] == 'true')
 					|| (elType == "AUDIO" && SETTINGS['AUDIO'] == 'true')
 					|| (elType == "IMG" && SETTINGS['IMAGE'] == 'true')
-					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')))
+					|| (elType == "A" && (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))))
 				)
 				&& (
 					(SETTINGS['PRESERVESAMEDOMAIN'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck))
@@ -744,9 +774,9 @@ function block(event) {
 			)
 		)
 		|| (
-			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
+			(SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)
 	))) {
-			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && SETTINGS['DOMAINSTATUS'] != '0')) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && elType == "A" && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) {
 				$(el).attr("rel","noreferrer");
 			} else {
 				event.preventDefault();

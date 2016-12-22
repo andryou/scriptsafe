@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Default"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Protektahan Local IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Tanggihan"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Protektahan Local and Public IPs"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Hindi na-filter"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Ang browser na ito ay hindi sumusuporta sa WebRTC proteksyon"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "maiwasan pagkakaroon hardware device napansin sa pamamagitan ng WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Protection:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "maiwasan IP address tulo"
    },
    "blackbind": {
       "description": "+ Blacklist",

@@ -13,7 +13,7 @@
    },
    "alloweditems": {
       "description": "Allowed Items",
-      "message": "可アイテム"
+      "message": "許可されたアイテム"
    },
    "blockeditems": {
       "description": "Blocked Items",
@@ -37,7 +37,7 @@
    },
    "annoyancesmodedesc": {
       "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
-      "message": "リラックスした=ホワイトリストに登録されたドメインがブロックされません。不要なドメインリスト内の厳密=ドメインは、ホワイトリストに登録場合であってもブロックされます"
+      "message": "寛容=ホワイトリストに登録されたドメインはブロックされません。厳格=不要なドメインは、ホワイトリストに登録されていてもブロックされます"
    },
    "antisocialpopup": {
       "description": "Antisocial",
@@ -117,7 +117,7 @@
    },
    "canvasblank": {
       "description": "Blank Readout",
-      "message": "空白の読み出し"
+      "message": "空白を読み出し"
    },
    "canvasrandom": {
       "description": "Random Readout",
@@ -125,7 +125,7 @@
    },
    "canvasblock": {
       "description": "Completely Block Readout",
-      "message": "完全にブロック読み出し"
+      "message": "読み出しを完全にブロック"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "デフォルト"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "ローカルIPを保護します"
+   },
    "deny": {
       "description": "Deny",
       "message": "拒否"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "ローカルおよびパブリックIPを保護します"
    },
    "disable": {
       "description": "Disable",
@@ -435,6 +443,10 @@
       "description": "Not filtered",
       "message": "フィルタリングされません"
    },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "このブラウザはWebRTCの保護をサポートしていません。"
+   },
    "off": {
       "description": "-Off-",
       "message": "-オフ-"
@@ -517,7 +529,7 @@
    },
    "relaxed": {
       "description": "Relaxed",
-      "message": "リラックスしました"
+      "message": "寛容"
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
@@ -569,11 +581,11 @@
    },
    "strict": {
       "description": "Strict",
-      "message": "厳格な"
+      "message": "厳格"
    },
    "strictsamedomain": {
       "description": "Strict - allow same domain only",
-      "message": "厳格な - 同じドメインのみ許可します"
+      "message": "厳格 - 同じドメインのみ許可します"
    },
    "support": {
       "description": "To support development, click the heart :)",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "WebRTC APIを介して検出されたハードウェアデバイスを持つ防ぎます"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTCの保護："
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "IPアドレス漏れを防止"
    },
    "blackbind": {
       "description": "+ Blacklist",

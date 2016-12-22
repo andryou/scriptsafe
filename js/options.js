@@ -1,11 +1,8 @@
-// (c) Andrew Y.
+// ScriptSafe - Copyright (C) andryou
+// Distributed under the terms of the GNU General Public License
+// The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = (function () {
-	var xhr = new XMLHttpRequest();
-	xhr.open('GET', chrome.extension.getURL('../manifest.json'), false);
-	xhr.send(null);
-	return JSON.parse(xhr.responseText).version;
-}());
+var version = '1.0.8.5';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
@@ -266,7 +263,7 @@ function blacklistlisten() {
 	addList(1);
 }
 function domainsort() {
-	saveOptions();listUpdate();
+	saveOptions();listUpdate();fpListUpdate();
 }
 function loadCheckbox(id) {
 	document.getElementById(id).checked = typeof localStorage[id] == "undefined" ? false : localStorage[id] == "true";
@@ -340,15 +337,20 @@ function loadOptions() {
 	loadElement("linktarget");
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
-	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
 	loadElement("useragentspoof_os");
 	loadCheckbox("uaspoofallow");
+	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
+	else $("#useragentspoof_os, #applytoallow").show();
+	loadCheckbox("referrerspoofdenywhitelisted");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
 		$("#customreferrer").show();
 		$("#userref").val(localStorage['referrerspoof']);
 	} else loadElement("referrerspoof");
+	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
+	else $("#applyreferrerspoofdenywhitelisted").show();
 	listUpdate();
+	fpListUpdate();
 }
 function saveOptions() {
 	saveCheckbox("enable");
@@ -397,6 +399,7 @@ function saveOptions() {
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
 	saveCheckbox("uaspoofallow");
+	saveCheckbox("referrerspoofdenywhitelisted");
 	if ($("#referrerspoof").val() != 'custom') {
 		saveElement("referrerspoof");
 		$("#customreferrer").hide();
@@ -413,6 +416,8 @@ function saveOptions() {
 	else $("#annoyancesmode").attr('disabled', 'true');
 	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
 	else $("#useragentspoof_os, #applytoallow").hide();
+	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
+	else $("#applyreferrerspoofdenywhitelisted").hide();
 	updateExport();
 	bkg.refreshRequestTypes();
 	syncstatus = bkg.freshSync(1);
@@ -451,6 +456,7 @@ function settingsImport() {
 	}
 	loadOptions();
 	listUpdate();
+	fpListUpdate();
 	bkg.cacheLists();
 	if (!error) {
 		syncstatus = bkg.freshSync(0);
@@ -478,6 +484,7 @@ function downloadtxt() {
 	downloadLink.remove();
 }
 function updateExport() {
+	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
 		if (i != "version" && i != "whiteListCount" && i != "blackListCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw") {
@@ -522,10 +529,16 @@ function addList(type) {
 	}
 	return false;
 }
-function domainRemover(domain) {
+function domainRemover(domain, type) {
 	if (confirm("Are you sure you want to remove "+domain+" from this list?")) {
-		bkg.domainHandler(domain,2);
-		listUpdate();
+		if (type === undefined) type = false;
+		if (!type) {
+			bkg.domainHandler(domain,2);
+			listUpdate();
+		} else {
+			bkg.fpDomainHandler(domain,type,-1);
+			fpListUpdate();
+		}
 		syncstatus = bkg.freshSync(2);
 		if (syncstatus) {
 			notification('Successfully removed: '+domain+' and syncing in 30 seconds.');
@@ -553,11 +566,17 @@ function domainMove(domain, mode) {
 }
 function topDomainAdd(domain, mode) {
 	var lingo;
+	var fpmode = false;
 	if (mode == '0') lingo = chrome.i18n.getMessage("trustlow");
 	else if (mode == '1') lingo = chrome.i18n.getMessage("distrustlow");
+	else {
+		lingo = chrome.i18n.getMessage("trustlow");
+		fpmode = true;
+	}
 	if (domain && !domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])$/g) && domain.indexOf('**.') != 0 && confirm("Are you sure you want to "+lingo+" "+bkg.getDomain(domain)+"?\r\n\r\Click OK will mean all subdomains on "+bkg.getDomain(domain)+" will be "+lingo+"ed, such as _."+bkg.getDomain(domain)+" and even _._._."+bkg.getDomain(domain)+".")) {
-		var result = bkg.topHandler(domain, mode);
-		listUpdate();
+		bkg.topHandler(domain, mode);
+		if (!fpmode) listUpdate();
+		else fpListUpdate();
 		bkg.freshSync(2);
 		notification('Successfully '+lingo+'ed: '+domain);
 	}
@@ -658,6 +677,32 @@ function listUpdate() {
 	$(".topDomainAdd").click(function() { topDomainAdd($(this).attr('data-domain'), $(this).attr('data-mode'));});
 	$(".domainMove").click(function() { domainMove($(this).attr('data-domain'), $(this).attr('data-mode'));});
 	updateExport();
+}
+function fpListUpdate() {
+	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpClientRectangles', 'fpClipboard'];
+	for (var i in fpTypes) {
+		fpListProcess(fpTypes[i]);
+	}
+	$(".fpDomainRemover, .fpTopDomainAdd").unbind('click');
+	$(".fpDomainRemover").click(function() { domainRemover($(this).attr('rel'), $(this).parent().parent().parent().attr('id')); });
+	$(".fpTopDomainAdd").click(function() { topDomainAdd($(this).attr('data-domain'), $(this).parent().parent().parent().attr('id'));});
+	updateExport();
+}
+function fpListProcess(fpType) {
+	var fpList = JSON.parse(localStorage[fpType]);
+	var fpListCompiled = '';
+	var fpListLength = fpList.length;
+	if (fpListLength==0) fpListCompiled = '[currently empty]';
+	else {
+		if (localStorage['domainsort'] == 'true') fpList = bkg.domainSort(fpList);
+		else fpList.sort();
+		for (var i in fpList) {
+			if (fpList[i][0] == '*' || fpList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || fpList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) fpListCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="fpDomainRemover" rel=\''+fpList[i]+'\'>X</a></div>'+fpList[i]+'</div>';
+			else fpListCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:#f00;" class="fpDomainRemover" rel=\''+fpList[i]+'\'>X</a></div>'+fpList[i]+'</div>';
+		}
+	}
+	$('#'+fpType).html(fpListCompiled);
+	$('#'+fpType+'count').html(fpListLength);
 }
 function listclear(type) {
 	if (confirm(['Clear whitelist?','Clear blacklist?'][type])) {

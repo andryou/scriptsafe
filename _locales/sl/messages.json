@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Privzeto"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Zašcitite Lokalni IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Zanikati"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Zašcitite Lokalnih in Javnih IP"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Ne filtrira"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Ta brskalnik ne podpira WebRTC zašcite"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "preprecujejo, ki so strojne naprave zazna prek WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Zašcita:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "preprecujejo uhajanje IP naslov"
    },
    "blackbind": {
       "description": "+ Blacklist",

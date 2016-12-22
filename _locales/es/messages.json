@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Defecto"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Proteger IP Local"
+   },
    "deny": {
       "description": "Deny",
       "message": "Negar"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Proteger a Los PI y Locales Públicos"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "No filtrada"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Este navegador no es compatible con la protección WebRTC"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "evitar tener dispositivos de hardware detectados a través de la API de WebRTC"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Protección WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "evitar fugas dirección IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

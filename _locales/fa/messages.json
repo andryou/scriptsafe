@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "به طور پیش فرض"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "محافظت از IP محلی"
+   },
    "deny": {
       "description": "Deny",
       "message": "انکار"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "محافظت از IP های محلی و عمومی"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "فیلتر نشده"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "این مرورگر حفاظت از WebRTC پشتیبانی نمی"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "جلوگیری از داشتن دستگاه های سخت افزاری شناسایی از طریق WebRTC به API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC به حفاظت:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "جلوگیری از نشت آدرس IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

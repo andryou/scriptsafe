@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Default утга нь"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Орон нутгийн IP хамгаалах"
+   },
    "deny": {
       "description": "Deny",
       "message": "үгүйсгэдэг"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Орон нутгийн болон олон нийтийн IPS хамгаалах"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "шүүсэн бус,"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Энэ хөтөч WebRTC хамгаалах дэмждэггүй байна"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "төхөөрөмжүүдийг WebRTC API-аар илэрсэн учир урьдчилан сэргийлэх"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC хамгаалах:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "IP хаяг алдагдал урьдчилан сэргийлэх"
    },
    "blackbind": {
       "description": "+ Blacklist",

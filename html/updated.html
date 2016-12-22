@@ -15,8 +15,8 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<span id="title">ScriptSafe</span><br />by <a href="https://twitter.com/andryou" target="_blank">Andrew Y.</a><br /><br />
-					<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
-					<strong>Changelog</strong> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
+					<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> | <a href="https://addons.opera.com/en/extensions/details/scriptsafe/" target="_blank">Opera</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+					<strong>Changelog</strong> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>) | <a href="https://www.andryou.com/scriptsafe/translate" target="_blank"><strong>Help Translate!</strong></a>
 				</div>
 				<div class="col-sm-6 text-right">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline;" target="_blank">
@@ -31,17 +31,24 @@
 			</div>
 			<hr>
 			<div class="panel panel-success">
-				<div class="panel-heading"><h3>Updated to v<span id="versionno"></span>! (Friday, July 8, 2016)</h3></div>
+				<div class="panel-heading"><h3>Updated to v<span id="versionno"></span>! (Thursday, December 22, 2016)</h3></div>
 				<div class="panel-body">
 					<p>In this release you will find the following updates:</p>
 					<ul>
-						<li><strong>v1.0.8.2:</strong><ul>
-							<li>I've translated ScriptSafe into <strong>46 languages</strong>! These translations are not perfect or complete, so I welcome anyone to <a href="https://github.com/andryou/scriptsafe/tree/master/_locales" target="_blank">take a look</a> and help translate. You can either create a new issue on Github or email me: andryou@gmail.com</li>
-							<li>Updated the panel to better adjust to translations that have long phrases (e.g. changed "Rating" button to a star icon with a description on hover)</li>
-							<li>Added ability on the Options page to quickly move whitelist/blacklist entries to the other list (e.g. move a whitelist entry to the blacklist)</li>
-							<li>Enhance "Prevent Clipboard Interference" feature to protect against execCommand('copy') and execCommand ('cut') calls</li>
-							<li>Fix issue where some elements were not being listed under "Blocked Items"</li>
+						<li><strong>v1.0.8.5:</strong><ul>
+							<li>Resolved issue where blocked items were sometimes not being listed in the panel</li>
+							<li>Added the ability to selectively disable Fingerprint Protection on a per-domain, per-option basis</li>
+							<li>Added more control over Referrer Spoofing (thanks AykutCevik)</li>
+							<li>Improved Audio Fingerprint Protection to block AudioContext and webkitAudioContext</li>
+							<li>Improved Block Device Enumeration to block mediaDevices.enumerateDevices()</li>
+							<li>Made Battery Fingerprint Blocking more compatible with sites (thanks TjWallas)</li>
+							<li>Included translations for 13 new languages: Chinese - Simplified, Chinese - Traditional, Czech, Dutch, French, German, Hungarian, Italian, Korean, Latvian, Romanian, Russian, and Swedish (thanks to all translators listed at the bottom of this page)</li>
+							<li>Improved syncing of existing rules if upgrading from a pre-v1.0.7.0 instance</li>
+							<li>Added a reload icon to the panel</li>
 							<li>Updated unwanted content providers list</li>
+							<li>Updated available Operating System and Browsers for User Agent spoofing</li>
+							<li>Resolved minor issue with Referrer Spoof and User-Agent Spoof options display</li>
+							<li>ScriptSafe is now released under the GNU GPLv3 license</li>
 						</ul></li>
 					</ul>
 					<p>I have put together <a href="https://www.andryou.com/scriptsafe/" target="_blank">some documentation for ScriptSafe</a>, including <a href="https://www.andryou.com/scriptsafe/quick-start/" target="_blank">"Getting Started" instructions</a>.</p>
@@ -61,7 +68,7 @@
 				</p>
 			</div>
 			<hr>
-			<p><strong>Just as a note: ScriptSafe does not have any backdoors, nor does it contact any third-party server at any point in time. ScriptSafe was created by one ordinary guy (me), lovingly coded in my bedroom, without any intention other than to give you back control of the Internet.</strong><br /><br /><i>You can go through the code on Github (<a href="https://github.com/andryou/scriptsafe" target="_blank">https://github.com/andryou/scriptsafe</a>) AND the actual instance installed on your computer by going to C:\Users\<strong>**your username**</strong>\AppData\Local\Google\Chrome\User Data\Default\Extensions\oiigbmnaadbkfbmpbfijlflahbdbdgdf (for non-Windows users, search for a folder named <strong>oiigbmnaadbkfbmpbfijlflahbdbdgdf</strong>)</i></p>
+			<p><strong>Just as a note: ScriptSafe does not have any backdoors, nor does it contact any third-party server at any point in time. ScriptSafe was created by one ordinary guy (me), lovingly coded in my bedroom, without any intention other than to give you back control of the Internet. ScriptSafe is released under the GNU GPLv3 license for true open-source freedom.</strong><br /><br /><i>You can go through the code on Github (<a href="https://github.com/andryou/scriptsafe" target="_blank">https://github.com/andryou/scriptsafe</a>) AND the actual instance installed on your computer by going to C:\Users\<strong>**your username**</strong>\AppData\Local\Google\Chrome\User Data\Default\Extensions\oiigbmnaadbkfbmpbfijlflahbdbdgdf (for non-Windows users, search for a folder named <strong>oiigbmnaadbkfbmpbfijlflahbdbdgdf</strong>)</i></p>
 			<br />
 			<div class="text-center">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline;">
@@ -70,10 +77,12 @@
 				<input type="image" src="../img/heartbig.png" name="submit" alt="Support Andrew via PayPal!" title="Support Andrew via PayPal!">
 				</form><br />Bitcoin: <a href="bitcoin:39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92"><strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong></a><br /><br />
 				<i>
-				<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+				<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> | <a href="https://addons.opera.com/en/extensions/details/scriptsafe/" target="_blank">Opera</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 				<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
 				</i>
 			</div>
+			<hr>
+			<small>Translations: Chinese - Simplified (Chiuwing LUK), Chinese - Traditional (Sam Lee), Czech (callipso), Dutch (Robert J. Klop), French (Marc0303), German (Daniel Neubauer (d4nin3u), Daniel Ring), Hungarian (Calmarius), Italian (Ezio Tescari), Japanese (noushibou, たこすけ), Korean (ARMO), Latvian (Vladimirs Smirnovs), Romanian (Sirius98), Russian (WatsonRus), Swedish (Guy Fredlund)</small>
 		</div>
 		<script type="text/javascript" src="../js/jquery.js"></script>
 		<script type="text/javascript" src="../js/updated.js"></script>

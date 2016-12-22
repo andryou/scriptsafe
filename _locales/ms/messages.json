@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Lalai"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Melindungi IP Tempatan"
+   },
    "deny": {
       "description": "Deny",
       "message": "Deny"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Melindungi IP Tempatan dan Public"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Tidak ditapis"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "pelayar ini tidak menyokong perlindungan WebRTC"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "menghalang peranti perkakasan telah dikesan melalui WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Perlindungan WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "mengelakkan kebocoran alamat IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Αθέτηση"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Προστατέψτε Τοπική IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Αρνούμαι"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Προστατέψτε τοπικές και δημόσιες διευθύνσεις IP"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "δεν φιλτραρισμένα"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει προστασία WebRTC"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "μην χρειάζεται συσκευές υλικού ανιχνεύεται μέσω του WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Προστασία:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "αποτρέπεται η διαρροή διεύθυνση IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

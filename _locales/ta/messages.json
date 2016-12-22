@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "இயல்புநிலை"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "உள்ளூர் ஐபி பாதுகாக்க"
+   },
    "deny": {
       "description": "Deny",
       "message": "மறு"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "உள்ளூர் மற்றும் பொது ஐபிஎஸ் பாதுகாக்க"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "வடிகட்டாதவை"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "இந்த உலாவியானது WebRTC பாதுகாப்பு ஆதரிக்கவில்லை"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "வன்பொருள் சாதனங்கள், WebRTC API வழியாக கண்டறியப்பட்டது கொண்ட தடுக்க"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC, பாதுகாப்பு:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "IP முகவரி கசிவு தடுக்க"
    },
    "blackbind": {
       "description": "+ Blacklist",

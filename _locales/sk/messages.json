@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Štandardné"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Chránit Lokálne IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Popriet"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Chránit Miestne a Verejné IP Adresy"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Nefiltruje"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Tento prehliadac nepodporuje ochranu WebRTC"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "prevent že hardvérové ??zariadenia sníma pomocou WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Ochrana WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "zamedzit úniku IP address"
    },
    "blackbind": {
       "description": "+ Blacklist",

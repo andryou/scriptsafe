@@ -16,5 +16,7 @@ h3 { margin: 0px !important; }
 .right { float: right; }
 .entryoptions { float: right; font-size: 11px; }
 .list, textarea { min-height: 300px; max-height: 300px; overflow-y: auto; }
+.fp-list { min-height: 100px; max-height: 100px; }
+.fp-list .entryoptions { padding-top: 3px; }
 .sectionheading, .sectionheading h4 { margin-bottom: 0px; }
 .row-offcanvas { display: none; }

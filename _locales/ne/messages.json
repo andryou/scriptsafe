@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "पूर्वनिर्धारित"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "सुरक्षित स्थानीय आईपी"
+   },
    "deny": {
       "description": "Deny",
       "message": "अस्वीकार"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "स्थानीय र सार्वजनिक IP हरू सुरक्षित"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "फिल्टर छैन"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "यो ब्राउजर WebRTC सुरक्षा समर्थन गर्दैन"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "रोकन भएको हार्डवेयर उपकरणहरू पार्दा WebRTC एपीआई मार्फत पत्ता"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC संरक्षण:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "आईपी ​​ठेगाना रिसाव रोक्न"
    },
    "blackbind": {
       "description": "+ Blacklist",

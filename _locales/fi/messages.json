@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Oletusarvo"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Suojaa Local IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Kieltää"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Suojaa Paikalliset ja julkinen IP"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Ei suodateta"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Tämä selain ei tue WebRTC suojaa"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "estävät ottaa laitteita havaittu kautta WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Protection:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "estää IP-osoite vuoto"
    },
    "blackbind": {
       "description": "+ Blacklist",

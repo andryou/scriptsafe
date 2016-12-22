@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Default"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Schützen Lokal IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Deny"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Schützen Lokal an Ëffentlech Virzehuelen"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Net filter"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Dëst Browser heescht Ënnerstëtzung net WebRTC Schutz"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "verhënneren dass Hardware Apparater via de WebRTC API fonnt"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Protection:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "IP Adress Auslafe verhënneren"
    },
    "blackbind": {
       "description": "+ Blacklist",

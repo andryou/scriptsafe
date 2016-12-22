@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Sjálfgefið"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Vernda Local IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Neita"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Vernda Local and Public IP-tölum"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Ekki síað"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Þessi vafri styður ekki WebRTC vernd"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "veg hafa vélbúnaður tæki fundist um WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Verndun:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "koma í veg fyrir IP tölu leka"
    },
    "blackbind": {
       "description": "+ Blacklist",

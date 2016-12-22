@@ -15,8 +15,8 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<span id="title">ScriptSafe</span><br />by <a href="https://twitter.com/andryou" target="_blank">Andrew Y.</a><br /><br />
-					<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome Web Store</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
-					<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
+					<a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> | <a href="https://addons.opera.com/en/extensions/details/scriptsafe/" target="_blank">Opera</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+					<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>) | <a href="https://www.andryou.com/scriptsafe/translate" target="_blank"><strong>Help Translate!</strong></a>
 				</div>
 				<div class="col-sm-6 text-right">
 					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline;" target="_blank">
@@ -80,19 +80,20 @@
 						</div>
 						<div id="fingerprintprotection" class="tab">
 							<table class="table table-striped table-hover table-condensed">
-								<tr><td class="col-sm-4"><label for="canvas" class="i18_canvas">Canvas Fingerprint Protection:</label></td><td><select id="canvas" class="savechange form-control">
+								<tr><td class="col-sm-4"><label for="canvas" class="i18_canvas">Canvas Fingerprint Protection:</label></td><td><p><select id="canvas" class="savechange form-control">
 									<option value="false" class="i18_disabledcap">Disabled</option>
 									<option value="blank" class="i18_canvasblank">Blank Readout</option>
 									<option value="random" class="i18_canvasrandom">Random Readout</option>
 									<option value="block" class="i18_canvasblock">Completely Block Readout</option>
-								</select><i>(<span class="i18_default">Default</span>: <span class="i18_disabledcap">Disabled</span>; <span class="i18_canvasdesc">protect against fingerprinting attempts through &lt;canvas&gt; elements</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="audioblock" class="i18_audioblock">Block Audio Fingerprinting:</label></td><td><input type="checkbox" id="audioblock" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_audioblockdesc">prevent fingerprinting via the AudioContext API</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="webgl" class="i18_webgl">Block WebGL Fingerprinting:</label></td><td><input type="checkbox" id="webgl" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_webgldesc">prevent fingerprinting via the WebGL API</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="battery" class="i18_battery">Block Battery Fingerprinting:</label></td><td><input type="checkbox" id="battery" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_batterydesc">prevent fingerprinting via the Battery API</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="webrtcdevice" class="i18_webrtcdevice">Block Device Enumeration:</label></td><td><input type="checkbox" id="webrtcdevice" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_webrtcdevicedesc">prevent having hardware devices detected via the WebRTC API</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="gamepad" class="i18_gamepad">Block Gamepad Enumeration:</label></td><td><input type="checkbox" id="gamepad" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_gamepaddesc">prevent having devices detected via the Gamepad API</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="canvasfont" class="i18_canvasfont">Block Canvas Font Access:</label></td><td><input type="checkbox" id="canvasfont" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_canvasfontdesc">prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="clientrects" class="i18_clientrects">Block Client Rectangles:</label></td><td><input type="checkbox" id="clientrects" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_clientrectsdesc">prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.</span>)</i></td></tr>
+								</select><i>(<span class="i18_default">Default</span>: <span class="i18_disabledcap">Disabled</span>; <span class="i18_canvasdesc">protect against fingerprinting attempts through &lt;canvas&gt; elements</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpCanvascount"></span>):</strong></p><div class="list fp-list form-control" id="fpCanvas"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="audioblock" class="i18_audioblock">Block Audio Fingerprinting:</label></td><td><p><input type="checkbox" id="audioblock" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_audioblockdesc">prevent fingerprinting via the AudioContext API</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpAudiocount"></span>):</strong></p><div class="list fp-list form-control" id="fpAudio"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="webgl" class="i18_webgl">Block WebGL Fingerprinting:</label></td><td><p><input type="checkbox" id="webgl" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_webgldesc">prevent fingerprinting via the WebGL API</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpWebGLcount"></span>):</strong></p><div class="list fp-list form-control" id="fpWebGL"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="battery" class="i18_battery">Block Battery Fingerprinting:</label></td><td><p><input type="checkbox" id="battery" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_batterydesc">prevent fingerprinting via the Battery API</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpBatterycount"></span>):</strong></p><div class="list fp-list form-control" id="fpBattery"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="webrtcdevice" class="i18_webrtcdevice">Block Device Enumeration:</label></td><td><p><input type="checkbox" id="webrtcdevice" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_webrtcdevicedesc">prevent having hardware devices detected via the WebRTC API</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpDevicecount"></span>):</strong></p><div class="list fp-list form-control" id="fpDevice"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="gamepad" class="i18_gamepad">Block Gamepad Enumeration:</label></td><td><p><input type="checkbox" id="gamepad" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_gamepaddesc">prevent having devices detected via the Gamepad API</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpGamepadcount"></span>):</strong></p><div class="list fp-list form-control" id="fpGamepad"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="canvasfont" class="i18_canvasfont">Block Canvas Font Access:</label></td><td><p><input type="checkbox" id="canvasfont" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_canvasfontdesc">prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpCanvasFontcount"></span>):</strong></p><div class="list fp-list form-control" id="fpCanvasFont"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="clientrects" class="i18_clientrects">Block Client Rectangles:</label></td><td><p><input type="checkbox" id="clientrects" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_clientrectsdesc">prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpClientRectanglescount"></span>):</strong></p><div class="list fp-list form-control" id="fpClientRectangles"></div></td></tr>
+								<tr><td class="col-sm-4"><label for="clipboard" class="i18_clipboard">Prevent Clipboard Interference:</label></td><td><p><input type="checkbox" id="clipboard" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_clipboarddesc">prevent pages from interfering with clipboard actions</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpClipboardcount"></span>):</strong></p><div class="list fp-list form-control" id="fpClipboard"></div></td></tr>
 								<tr class="danger"><td class="col-sm-4"><label for="keyboard" class="i18_keyboard">Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):</label></td><td><input type="checkbox" id="keyboard" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_keyboarddesc">make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)</span>)</i></td></tr>
 							</table>
 						</div>
@@ -159,10 +160,13 @@
 								</select> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_timezonedesc">spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.</span>)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="useragentspoof" class="i18_useragentspoof">User-Agent Spoof:</label></td><td><select id="useragentspoof" class="savechange form-control">
 									<option value="off" class="i18_off">-Off-</option>
+									<option value="chrome55">Chrome 55.0.2883.87</option>
 									<option value="chrome50">Chrome 50.0.2661.102</option>
 									<option value="chrome14">Chrome 14.0.835.94</option>
 									<option value="chrome13">Chrome 13.0.782.43</option>
 									<option value="chrome12">Chrome 12.0.750.0</option>
+									<option value="firefox50">Firefox 50.1.0</option>
+									<option value="firefox48">Firefox 48.0.2</option>
 									<option value="firefox46">Firefox 46.0.1</option>
 									<option value="firefox6">Firefox 6.0a2</option>
 									<option value="firefox5">Firefox 5.0</option>
@@ -175,9 +179,11 @@
 									<option value="ie7">Internet Explorer 7</option>
 									<option value="ie61">Internet Explorer 6.1</option>
 									<option value="ie60">Internet Explorer 6.0</option>
+									<option value="opera42">Opera 42.00</option>
 									<option value="opera37">Opera 37.00</option>
 									<option value="opera12">Opera 12.00</option>
 									<option value="opera11">Opera 11.50</option>
+									<option value="safari8">Safari 8.0.7</option>
 									<option value="safari7">Safari 7.0.3</option>
 									<option value="safari5">Safari 5.0.5</option>
 								</select> <select id="useragentspoof_os" class="savechange form-control">
@@ -191,9 +197,15 @@
 									<option value="wxp">Windows XP</option>
 									<option value="w98">Windows 98</option>
 									<option value="w95">Windows 95</option>
-									<option value="macsnow">OSX Snow Leopard</option>
+									<option value="macsierra">Mac - macOS - Sierra (v10.12.2)</option>
+									<option value="macelcapitan">Mac - OS X - El Capitan (v10.11.6)</option>
+									<option value="macyosemite">Mac - OS X - Yosemite (v10.10.5)</option>
+									<option value="macmavericks">Mac - OS X - Mavericks (v10.9.5)</option>
+									<option value="macmountainlion">Mac - OS X - Mountain Lion (v10.8.5)</option>
+									<option value="maclion">Mac - OS X - Lion (v10.7.5)</option>
+									<option value="macsnow">Mac - OS X - Snow Leopard (v10.6.8)</option>
 									<option value="chromeos">Chrome OS</option>
-									<option value="off">-Off-</option>
+									<option value="off" class="i18_off">-Off-</option>
 								</select><i>(<span class="i18_default">Default</span>: <span class="i18_off">-Off-</span>; <span class="i18_useragentspoofdesc">spoofs your user-agent (browser and OS)</span>)</i>
 								<div id="applytoallow"><br /><input type="checkbox" id="uaspoofallow" class="save" /><label for="uaspoofallow">&nbsp;<span class="i18_uaspoofallow">Apply to whitelisted domains as well</span> (<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>)</label></div></td></tr>
 								<tr><td class="col-sm-4"><label for="referrerspoof" class="i18_referrerspoof">Referrer Spoof:</label></td><td><select id="referrerspoof" class="savechange form-control">
@@ -201,7 +213,8 @@
 									<option value="same" class="i18_same">Same Document</option>
 									<option value="domain" class="i18_domain">Same Domain</option>
 									<option value="custom" class="i18_custom">Custom</option>
-								</select><i>(<span class="i18_default">Default</span>: <span class="i18_off">-Off-</span>; <span class="i18_referrerspoofdesc"><strong>warning</strong>: if enabled, may "break" some sites (e.g. logging in)</span>)</i><div id="customreferrer" class="sshidden"><br /><p><input id="userref" class="form-control" value="" placeholder="Enter an address to set as your referrer value for all sites" /></p><p><input type="button" class="save btn btn-success i18_save" value="Save" /></p></div></td></tr>
+								</select><i>(<span class="i18_default">Default</span>: <span class="i18_off">-Off-</span>; <span class="i18_referrerspoofdesc"><strong>warning</strong>: if enabled, may "break" some sites (e.g. logging in)</span>)</i><div id="customreferrer" class="sshidden"><br /><p><input id="userref" class="form-control" value="" placeholder="Enter an address to set as your referrer value for all sites" /></p><p><input type="button" class="save btn btn-success i18_save" value="Save" /></p></div>
+									<div id="applyreferrerspoofdenywhitelisted"><br /><input type="checkbox" id="referrerspoofdenywhitelisted" class="save" /><label for="referrerspoofdenywhitelisted">&nbsp;<span class="i18_uaspoofallow">Apply to whitelisted domains as well</span> (<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>)</label></div></td></tr>
 							</table>
 						</div>
 						<div id="behaviorsettings" class="tab">
@@ -219,7 +232,6 @@
 								<tr><td class="col-sm-4"><label for="refresh" class="i18_refresh">Auto-Refresh Page:</label></td><td><input type="checkbox" id="refresh" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_enabled">enabled</span>; <span class="i18_refreshdesc">auto-refresh page after list change</span>)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="rating" class="i18_rating">Show Rating Button:</label></td><td><input type="checkbox" id="rating" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_enabled">enabled</span>; <span class="i18_ratingdesc">if ticked, adds rating button under domains in tab popup</span>)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="classicoptions" class="i18_classicoptions">Classic Options Mode:</label></td><td><input type="checkbox" id="classicoptions" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_classicoptionsdesc">if ticked, closes tab options everytime an option is clicked</span>)</i></td></tr>
-								<tr><td class="col-sm-4"><label for="clipboard" class="i18_clipboard">Prevent Clipboard Interference:</label></td><td><input type="checkbox" id="clipboard" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_clipboarddesc">prevent pages from interfering with clipboard actions</span>)</i></td></tr>
 								<tr><td class="col-sm-4"><label for="domainsort" class="i18_domainsort">Sort by Domain:</label></td><td> <input type="checkbox" id="domainsort" /> <i>(<span class="i18_default">Default</span>: <span class="i18_enabled">enabled</span>; <span class="i18_domainsortdesc">sorts URL lists by domains on this page and in the panel</span>)</i></td></tr>
 							</table>
 						</div>
@@ -238,6 +250,8 @@
 							</table>
 						</div>
 					</div>
+					<hr>
+					<small>Translations: Chinese - Simplified (Chiuwing LUK), Chinese - Traditional (Sam Lee), Czech (callipso), Dutch (Robert J. Klop), French (Marc0303), German (Daniel Neubauer (d4nin3u), Daniel Ring), Hungarian (Calmarius), Italian (Ezio Tescari), Japanese (noushibou, たこすけ), Korean (ARMO), Latvian (Vladimirs Smirnovs), Romanian (Sirius98), Russian (WatsonRus), Swedish (Guy Fredlund)</small>
 				</div>
 			</div>
 		</div>

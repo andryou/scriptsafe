@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Varsayılan"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Yerel IP Korumak"
+   },
    "deny": {
       "description": "Deny",
       "message": "Reddetmek"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Yerel ve Kamu IP'leri Koruyun"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Filtrelenmeyen"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Bu tarayici WebRTC koruma desteklemiyor"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "donanim aygitlari WebRTC API araciligiyla tespit ettikten önlemek"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Korumasi:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "IP adresi sizintisini önlemek"
    },
    "blackbind": {
       "description": "+ Blacklist",

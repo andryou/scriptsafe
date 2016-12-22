@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "افتراضي"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "حماية الملكية الفكرية المحلية"
+   },
    "deny": {
       "description": "Deny",
       "message": "رفض"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "حماية المتكاملة المحلية والعامة"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "لا تصفيتها"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "هذا المتصفح لا يدعم حماية بتقنية WebRTC"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "حيلولة دون الحاجة الأجهزة الكشف عن طريق بتقنية WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "حماية بتقنية WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "منع تسرب عنوان IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

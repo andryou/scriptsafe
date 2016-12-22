@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "ค่าเริ่มต้น"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "ปกป้องทรัพย์สินทางปัญญาท้องถิ่น"
+   },
    "deny": {
       "description": "Deny",
       "message": "ปฏิเสธ"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "ปกป้อง IP ที่ท้องถิ่นและสาธารณะ"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "ไม่ได้กรอง"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "เบราว์เซอร์นี้ไม่สนับสนุนการป้องกัน WebRTC"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "ป้องกันไม่ให้มีการตรวจพบอุปกรณ์ฮาร์ดแวร์ผ่าน WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "คุ้มครอง WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "ป้องกันการรั่วไหลที่อยู่ IP"
    },
    "blackbind": {
       "description": "+ Blacklist",

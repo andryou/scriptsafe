@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Misligholdelse"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Beskyt Local IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Nægte"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Beskyt Lokale og Offentlige IP'er"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Ikke Filtreret"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Denne browser understøtter ikke WebRTC beskyttelse"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": "forhindre at have hardwareenheder opdaget via WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Beskyttelse:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "forhindre IP-adresse lækage"
    },
    "blackbind": {
       "description": "+ Blacklist",

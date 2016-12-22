@@ -191,9 +191,17 @@
       "description": "Default",
       "message": "Numatytas"
    },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Apsaugokite Vietos IP"
+   },
    "deny": {
       "description": "Deny",
       "message": "Paneigti"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Apsaugokite Vietos ir Viešas IP"
    },
    "disable": {
       "description": "Disable",
@@ -434,6 +442,10 @@
    "notfiltered": {
       "description": "Not filtered",
       "message": "Nefiltruotas"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Ši naršykle nepalaiko WebRTC apsauga"
    },
    "off": {
       "description": "-Off-",
@@ -714,6 +726,14 @@
    "webrtcdevicedesc": {
       "description": "prevent having hardware devices detected via the WebRTC API",
       "message": ", nereikes kompiuterine iranga aptikta per WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Apsauga:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "išvengti IP adreso nutekejimo"
    },
    "blackbind": {
       "description": "+ Blacklist",
