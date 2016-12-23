@@ -727,9 +727,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				}
 			}
 		}
+		var fptype;
+		var cleanedUrl = removeParams(sender.tab.url);
+		var extractedDomain = extractDomainFromURL(sender.tab.url);
 		for (var i in fpListStatus) {
 			if (fpListStatus[i] != '-1') {
-				var fptype;
 				if (i == 'fpCanvas') fptype = 'Canvas Fingerprint';
 				else if (i == 'fpCanvasFont') fptype = 'Canvas Font Access';
 				else if (i == 'fpAudio') fptype = 'Audio Fingerprint';
@@ -739,7 +741,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				else if (i == 'fpGamepad') fptype = 'Gamepad Enumeration';
 				else if (i == 'fpClientRectangles') fptype = 'Client Rectangles';
 				else if (i == 'fpClipboard') fptype = 'Clipboard Interference';
-				ITEMS[sender.tab.id]['allowed'].push([removeParams(sender.tab.url), fptype, extractDomainFromURL(sender.tab.url), fpListStatus[i], false, true]);
+				ITEMS[sender.tab.id]['allowed'].push([cleanedUrl, fptype, extractedDomain, fpListStatus[i], false, true]);
 			}
 		}
 	} else if (request.reqtype == 'get-list') {
