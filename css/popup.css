@@ -13,10 +13,11 @@ th { padding-bottom: 5px; }
 
 /* Resource List */
 .thirds { vertical-align: top; }
+.thirditem span, .fpitem span { word-wrap: break-word; }
 .thirditem span a, fpitem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover, .fpitem span a:hover { text-decoration: underline; }
 .allowed, .blocked { padding: 0 5px; }
-.thirds { min-width: 316px; padding-top: 5px; padding-right: 5px; }
+.thirds { min-width: 316px; max-width: 401px; padding-top: 5px; padding-right: 5px; }
 .thirditem, .fpitem, .fpcat, .fphead {
 	clear: both;
 	border-bottom: 1px solid #eee;
