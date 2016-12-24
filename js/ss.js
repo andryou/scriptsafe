@@ -408,10 +408,8 @@ function clipboardProtect(el) {
 	el.addEventListener('cut', function(e) { e.returnValue = true; });
 }
 function loaded() {
-	var obtarget = document.querySelector("body");
-	var obconfig = { childList: true, subtree : true, attributes: false, characterData : false };
 	ScriptSafe();
-	new MutationObserver(ScriptSafe).observe(obtarget, obconfig);
+	new MutationObserver(ScriptSafe).observe(document.querySelector("body"), { childList: true, subtree : true, attributes: false, characterData : false });
 }
 function ScriptSafe() {
 	if (SETTINGS['LINKTARGET'] != 'off') {

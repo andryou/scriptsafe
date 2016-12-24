@@ -630,24 +630,22 @@ function tempHandler(request) {
 	if (typeof request.url === 'object') {
 		for (var i=0;i<request.url.length;i++) {
 			if (request.url[i][0] != 'no.script' && request.url[i][0] != 'web.bug') {
-				var requesturl = request.url[i];
-				var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
+				var baddiesStatus = baddies(request.url[i], localStorage['annoyancesmode'], localStorage['antisocial']);
 				if ((localStorage['annoyances'] == 'true' && localStorage['annoyancesmode'] == 'strict' && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
 					// do nothing
 				} else {
-					if (request.mode == 'block') domainHandler(requesturl, 0, 1);
-					else domainHandler(requesturl, 1, 1);
+					if (request.mode == 'block') domainHandler(request.url[i], 0, 1);
+					else domainHandler(request.url[i], 1, 1);
 				}
 			}
 		}
 	} else {
-		var requesturl = request.url;
-		var baddiesStatus = baddies(requesturl, localStorage['annoyancesmode'], localStorage['antisocial']);
+		var baddiesStatus = baddies(request.url, localStorage['annoyancesmode'], localStorage['antisocial']);
 		if ((localStorage['annoyances'] == 'true' && localStorage['annoyancesmode'] == 'strict' && baddiesStatus == 1) || (localStorage['antisocial'] == 'true' && baddiesStatus == '2')) {
 			// do nothing
 		} else {
-			if (request.mode == 'block') domainHandler(requesturl, 0, 1);
-			else domainHandler(requesturl, 1, 1);
+			if (request.mode == 'block') domainHandler(request.url, 0, 1);
+			else domainHandler(request.url, 1, 1);
 		}
 	}
 	changed = true;
