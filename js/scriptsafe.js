@@ -678,13 +678,17 @@ chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
 				changed = true;
 				if (localStorage['mode'] == 'block' && typeof ITEMS[tabid]['allowed'] !== 'undefined') {
 					for (var i=0; i<ITEMS[tabid]['allowed'].length; i++) {
-						if (in_array(extractDomainFromURL(ITEMS[tabid]['allowed'][i][0]), sessionWhiteList))
+						if (in_array(extractDomainFromURL(ITEMS[tabid]['allowed'][i][0]), sessionWhiteList)) {
 							chrome.browserAction.setIcon({path: "../img/IconTemp.png", tabId: tabid});
+							break;
+						}
 					}
 				} else if (localStorage['mode'] == 'allow' && typeof ITEMS[tabid]['blocked'] !== 'undefined') {
 					for (var i=0; i<ITEMS[tabid]['blocked'].length; i++) {
-						if (in_array(extractDomainFromURL(ITEMS[tabid]['blocked'][i][0]), sessionBlackList))
+						if (in_array(extractDomainFromURL(ITEMS[tabid]['blocked'][i][0]), sessionBlackList)) {
 							chrome.browserAction.setIcon({path: "../img/IconTemp.png", tabId: tabid});
+							break;
+						}
 					}
 				}
 			}
