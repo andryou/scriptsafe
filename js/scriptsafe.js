@@ -234,11 +234,12 @@ function ScriptSafe(req) {
 		if (hashCleanURL) return { redirectUrl: hashCleanURL };
 		return { cancel: false };
 	}
+	var cleanedUrl = removeParams(req.url);
 	if (elementStatusCheck && ((localStorage['preservesamedomain'] != 'false' && (thirdPartyCheck || domainCheckStatus == '1' || baddiesCheck)) || localStorage['preservesamedomain'] == 'false')) {
 		if (typeof ITEMS[req.tabId]['blocked'] === 'undefined') ITEMS[req.tabId]['blocked'] = [];
-		if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['blocked'])) {
+		if (!UrlInList(cleanedUrl, ITEMS[req.tabId]['blocked'])) {
 			if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
-			ITEMS[req.tabId]['blocked'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, tabDomainCheckStatus, baddiesCheck, false]);
+			ITEMS[req.tabId]['blocked'].push([cleanedUrl, reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, tabDomainCheckStatus, baddiesCheck, false]);
 			updateCount(req.tabId);
 		}
 		if (reqtype == 'frame') {
@@ -249,9 +250,9 @@ function ScriptSafe(req) {
 		return { cancel: true };
 	} else {
 		if (typeof ITEMS[req.tabId]['allowed'] === 'undefined') ITEMS[req.tabId]['allowed'] = [];
-		if (!UrlInList(removeParams(req.url), ITEMS[req.tabId]['allowed'])) {
+		if (!UrlInList(cleanedUrl, ITEMS[req.tabId]['allowed'])) {
 			if (extractedReqDomain.substr(0,4) == 'www.') extractedReqDomain = extractedReqDomain.substr(4);
-			ITEMS[req.tabId]['allowed'].push([removeParams(req.url), reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
+			ITEMS[req.tabId]['allowed'].push([cleanedUrl, reqtype.toUpperCase(), extractedReqDomain, domainCheckStatus, baddiesCheck]);
 		}
 	}
 	if (utmCleanURL) return { redirectUrl: utmCleanURL };
@@ -794,8 +795,9 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		changed = true;
 	} else if (request.reqtype == 'update-blocked') {
 		if (request.src) {
+			var cleanedUrl = removeParams(request.src);
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
-			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
+			if (!UrlInList(cleanedUrl, ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
@@ -804,7 +806,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, extractedDomain, '-1', '-1', false, true]);
 				} else {
-					ITEMS[sender.tab.id]['blocked'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2), false]);
+					ITEMS[sender.tab.id]['blocked'].push([cleanedUrl, request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2), false]);
 				}
 				updateCount(sender.tab.id);
 			}
@@ -812,10 +814,11 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	} else if (request.reqtype == 'update-allowed') {
 		if (request.src) {
 			if (typeof ITEMS[sender.tab.id]['allowed'] === 'undefined') ITEMS[sender.tab.id]['allowed'] = [];
-			if (!UrlInList(removeParams(request.src), ITEMS[sender.tab.id]['allowed'])) {
+			var cleanedUrl = removeParams(request.src);
+			if (!UrlInList(cleanedUrl, ITEMS[sender.tab.id]['allowed'])) {
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
-				ITEMS[sender.tab.id]['allowed'].push([removeParams(request.src), request.node, extractedDomain, domainCheck(request.src, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2)]);
+				ITEMS[sender.tab.id]['allowed'].push([cleanedUrl, request.node, extractedDomain, domainCheck(request.src, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2)]);
 			}
 		}
 	} else if (request.reqtype == 'save') {
