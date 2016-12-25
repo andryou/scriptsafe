@@ -265,7 +265,7 @@ function utmClean(url) {
 		var sanitized = url;
 		if (paramstart != -1) {
 			if (url.indexOf("utm_") > paramstart) {
-				sanitized = sanitized.replace(/[\?\&]utm_(?:cid|reader|term|content|source|medium|campaign)=[^&#]+/ig, "");
+				sanitized = sanitized.replace(/[\?\&]utm_(?:cid|reader|term|content|source|medium|campaign|name)=[^&#]+/ig, "");
 				if (sanitized.charAt(paramstart) == "&") sanitized = sanitized.substring(0, paramstart)+"?"+sanitized.substring(paramstart+1);
 			}
 		}
