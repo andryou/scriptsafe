@@ -149,11 +149,11 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "Klar"
+      "message": "Rensa"
    },
    "clearlow": {
       "description": "clear",
-      "message": "klar"
+      "message": "rensa"
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
