@@ -6,18 +6,25 @@ html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
 td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
+div#header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
+div#header a#pop_webstore:hover { text-decoration: underline; }
+div#header div { float: right; }
+#pop_close { margin-right: 5px; }
+div#header { padding-bottom: 10px; }
+#parent { padding-bottom: 5px; }
 
 /* Tab Options */
-#parent, #currentdomain { max-width: 210px; padding-left: 5px; border-left: 1px solid #ccc; word-wrap: break-word; }
-#parent div { margin: 2px auto; }
+#parent, #currentdomain { max-width: 568px; word-wrap: break-word; }
+#parent { text-align: right; }
+#parent > div { border-bottom: none; display: inline-block; }
 
 /* Resource List */
 .thirds { vertical-align: top; }
 .thirditem span, .fpitem span { word-wrap: break-word; }
 .thirditem span a, fpitem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover, .fpitem span a:hover { text-decoration: underline; }
-.allowed, .blocked { padding: 0 5px; }
-.thirds { min-width: 316px; max-width: 401px; padding-top: 5px; padding-right: 5px; }
+.allowed, .blocked, .domainname { padding: 0 5px; }
+.thirds { padding-top: 5px; padding-right: 5px; }
 .thirditem, .fpitem, .fpcat, .fphead {
 	clear: both;
 	border-bottom: 1px solid #eee;
@@ -43,22 +50,21 @@ th { padding-bottom: 5px; }
 }
 .wot { padding-right: 4px; }
 .wot a { color: #555; }
+#currentdomain .wot a { color: #fff; text-decoration: none; }
+#currentdomain .wot a:hover { text-decoration: underline; }
 .choices { float: right; }
 
 /* Footer */
 #bottom { padding-top: 10px; }
-#credit { float: left; }
-#footer { text-align: right; margin-top: -2px; }
-#credit, #footer { font-weight: bold; font-size: 11px; color: #555; }
-#footer a, #credit a { text-decoration: underline; }
-#footer a:hover, #credit a:hover { text-decoration: none; }
+#credit { text-align: right; padding-right: 5px; }
+#credit { font-weight: bold; font-size: 11px; color: #555; }
+#credit a, #pop_options { text-decoration: underline; }
+#credit a:hover, #pop_options:hover { text-decoration: none; }
 #closebtn { width: 5px; text-align: right; }
 
 /* Misc */
 hr { border: 0; border-top: 1px solid #eeeeee; }
-.bolded { font-weight: bold; }
-#pop_webstore { color: #000; text-decoration: none; }
-#pop_webstore:hover { color: #000; text-decoration: underline; }
+.bolded, #pop_options { font-weight: bold; }
 
 /* Boxes */
 .box:hover, .fphead {
@@ -72,7 +78,7 @@ hr { border: 0; border-top: 1px solid #eeeeee; }
 	text-align: center;
 	min-width: 70px;
 	outline: 0;
-	padding: 8px;
+	padding: 6px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -181,7 +187,7 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.box3 {
+.box3, .domainname {
 	background-color: #4D90FE;
 	border: 1px solid #3079ED;
 	color: white;

@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.8.5';
+var version = '1.0.8.6';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
@@ -92,6 +92,8 @@ function i18load() {
 	$(".i18_webrtcdevicedesc").html(chrome.i18n.getMessage("webrtcdevicedesc"));
 	$(".i18_gamepad").html(chrome.i18n.getMessage("gamepad"));
 	$(".i18_gamepaddesc").html(chrome.i18n.getMessage("gamepaddesc"));
+	$(".i18_webvr").html(chrome.i18n.getMessage("webvr"));
+	$(".i18_webvrdesc").html(chrome.i18n.getMessage("webvrdesc"));
 	$(".i18_canvasfont").html(chrome.i18n.getMessage("canvasfont"));
 	$(".i18_canvasfontdesc").html(chrome.i18n.getMessage("canvasfontdesc"));
 	$(".i18_clientrects").html(chrome.i18n.getMessage("clientrects"));
@@ -326,6 +328,7 @@ function loadOptions() {
 	loadCheckbox("battery");
 	loadCheckbox("webrtcdevice");
 	loadCheckbox("gamepad");
+	loadCheckbox("webvr");
 	loadElement("timezone");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
@@ -390,6 +393,7 @@ function saveOptions() {
 	saveCheckbox("battery");
 	saveCheckbox("webrtcdevice");
 	saveCheckbox("gamepad");
+	saveCheckbox("webvr");
 	saveElement("timezone");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
@@ -688,7 +692,7 @@ function listUpdate() {
 	updateExport();
 }
 function fpListUpdate() {
-	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpClientRectangles', 'fpClipboard'];
+	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpClientRectangles', 'fpClipboard'];
 	for (var i in fpTypes) {
 		fpListProcess(fpTypes[i]);
 	}

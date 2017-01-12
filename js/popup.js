@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.8.5';
+var version = '1.0.8.6';
 var port = chrome.extension.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -65,7 +65,7 @@ function init() {
 			tabdomain = bkg.extractDomainFromURL(taburl);
 			if (tabdomain.substr(0,4) == 'www.') tabdomain = tabdomain.substr(4);
 			tabid = tab.id;
-			if (tabdomain == 'chrome.google.com') {
+			if (tabdomain == 'chrome.google.com' || taburl.indexOf('chrome-extension://') == 0) {
 				$("#currentdomain").html(chrome.i18n.getMessage("notfiltered"));
 				$(".thirds").html('<i>'+chrome.i18n.getMessage("noexternal")+'</i>');
 			} else {
@@ -84,11 +84,15 @@ function init() {
 					var tabInTemp = bkg.in_array(tabdomain, response.temp);
 					var tabdomainfriendly = tabdomain.replace(/[.\[\]:]/g,"_");
 					var tabdomainroot = bkg.getDomain(tabdomain);
-					$("#currentdomain").html('<span title="'+tabdomain+'">'+tabdomain+'</span>');
+					if (response.rating == 'true') $("#currentdomain").html('<span class="domainname" title="'+tabdomain+'"><span class="wot"><a href="http://www.mywot.com/en/scorecard/'+tabdomain+'" target="_blank" title="'+chrome.i18n.getMessage("ratingbtn")+': '+tabdomain+'">&#128269;</a></span>'+tabdomain+'</span>');
+					else $("#currentdomain").html('<span class="domainname" title="'+tabdomain+'">'+tabdomain+'</span>');
 					if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || (response.mode == 'block' && (response.enable == '1' || response.enable == '4'))) {
 						if (response.status == 'false') {
-							$(".thirds").html('<i>'+chrome.i18n.getMessage("ssdisabled")+'</i>');
-							$("#parent").append('<div class="box box1 snstatus" title="'+chrome.i18n.getMessage("enabless")+'">'+chrome.i18n.getMessage("enabless")+'</div>');
+							$("#currentdomain").hide();
+							$("html").css('width', '410px');
+							$("body").css('width', '400px');
+							$(".thirds").css('text-align', 'center').html('<i>'+chrome.i18n.getMessage("ssdisabled")+'</i>');
+							$("#parent").css('text-align', 'center').append('<div class="box box1 snstatus" title="'+chrome.i18n.getMessage("enabless")+'">'+chrome.i18n.getMessage("enabless")+'</div>');
 							$(".snstatus").bind("click", statuschange);
 							return false;
 						}
@@ -97,9 +101,8 @@ function init() {
 						if (responseBlockedCount != 0) {
 							if (response.domainsort == 'true') response.blockeditems = bkg.domainSort(response.blockeditems);
 							else response.blockeditems.sort();
-							$(".thirds").parent().after("<tr><td class='bolded' style='height: 14px; padding-top: 5px;'><span class='blocked'>"+chrome.i18n.getMessage("blockeditems")+"</span></td><td id='parent'></td></tr><tr><td class='thirds' id='blocked'></td><td></td></tr>");
+							$(".thirds").parent().after("<tr><td class='bolded' style='height: 14px; padding-top: 5px;'><span class='blocked'>"+chrome.i18n.getMessage("blockeditems")+"</span></td></tr><tr><td class='thirds' id='blocked'></td></tr>");
 							$(".thirds:first").parent().remove();
-							$("#parent").attr("rowspan","2");
 							for (var i=0;i<responseBlockedCount;i++) {
 								var itemdomain = response.blockeditems[i][2];
 								var fpitemdomain = response.blockeditems[i][2];
@@ -112,6 +115,7 @@ function init() {
 								else if (response.blockeditems[i][1] == 'Battery Fingerprint') itemdomain = 'battery.fingerprint';
 								else if (response.blockeditems[i][1] == 'Device Enumeration') itemdomain = 'device.enumeration';
 								else if (response.blockeditems[i][1] == 'Gamepad Enumeration') itemdomain = 'gamepad.enumeration';
+								else if (response.blockeditems[i][1] == 'WebVR Enumeration') itemdomain = 'webvr.enumeration';
 								else if (response.blockeditems[i][1] == 'Spoofed Timezone') itemdomain = 'spoofed.timezone';
 								else if (response.blockeditems[i][1] == 'Client Rectangles') itemdomain = 'client.rectangles';
 								else if (response.blockeditems[i][1] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
@@ -209,6 +213,7 @@ function init() {
 							$("#blocked").append($("#blocked [rel='x_webgl_fingerprint']"));
 							$("#blocked").append($("#blocked [rel='x_device_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_gamepad_enumeration']"));
+							$("#blocked").append($("#blocked [rel='x_webvr_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_client_rectangles']"));
 							$("#blocked").append($("#blocked [rel='x_clipboard_interference']"));
 							$("#blocked").prepend($("#blocked [data-domain='"+tabdomainroot+"'][data-baddie='false']"));
@@ -219,10 +224,7 @@ function init() {
 						if (responseAllowedCount != 0) {
 							if (response.domainsort == 'true') response.alloweditems = bkg.domainSort(response.alloweditems);
 							else response.alloweditems.sort();
-							$("#parent").attr("rowspan","3");
-							$(".thirds").parent().parent().append("<tr><td class='bolded' style='height: 14px; padding-top: 15px;'><span class='allowed'>"+chrome.i18n.getMessage("alloweditems")+"</span></td><td class='bolded'></td></tr><tr><td class='thirds' id='allowed'></td><td></td></tr>");
-							if (blocked.length != 0) $("#parent").attr("rowspan","4");
-							else $("td.bolded").css('padding-top', '0px');
+							$(".thirds").parent().parent().append("<tr><td class='bolded' style='height: 14px; padding-top: 15px;'><span class='allowed'>"+chrome.i18n.getMessage("alloweditems")+"</span></td></tr><tr><td class='thirds' id='allowed'></td></tr>");
 							for (var i=0;i<responseAllowedCount;i++) {
 								var itemdomain = response.alloweditems[i][2];
 								var fpitemdomain = response.alloweditems[i][2];
@@ -233,6 +235,7 @@ function init() {
 								else if (response.alloweditems[i][1] == 'Battery Fingerprint') itemdomain = 'battery.fingerprint';
 								else if (response.alloweditems[i][1] == 'Device Enumeration') itemdomain = 'device.enumeration';
 								else if (response.alloweditems[i][1] == 'Gamepad Enumeration') itemdomain = 'gamepad.enumeration';
+								else if (response.alloweditems[i][1] == 'WebVR Enumeration') itemdomain = 'webvr.enumeration';
 								else if (response.alloweditems[i][1] == 'Client Rectangles') itemdomain = 'client.rectangles';
 								else if (response.alloweditems[i][1] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
 								if (itemdomain) {
@@ -308,6 +311,7 @@ function init() {
 							$("#allowed").append($("#allowed [rel='x_webgl_fingerprint']"));
 							$("#allowed").append($("#allowed [rel='x_device_enumeration']"));
 							$("#allowed").append($("#allowed [rel='x_gamepad_enumeration']"));
+							$("#allowed").append($("#allowed [rel='x_webvr_enumeration']"));
 							$("#allowed").append($("#allowed [rel='x_client_rectangles']"));
 							$("#allowed").append($("#allowed [rel='x_clipboard_interference']"));
 						}
@@ -320,7 +324,7 @@ function init() {
 						if (responseAllowedCount == 0) tempSel = '.thirds';
 						else tempSel = '#allowed';
 						if (mode == 'block') {
-							if ($('#blocked .thirditem').length == 1 && ($('#blocked .thirditem[rel="x_no_script"]').length == 1 || $('#blocked .thirditem[rel="x_web_bug"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1 || $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_gamepad_enumeration"]').length == 1) || $('#blocked .thirditem[rel="x_timezone_offset"]').length == 1 || $('#blocked .thirditem[rel="x_client_rectangles"]').length == 1 || $('#blocked .thirditem[rel="x_clipboard_interference"]').length == 1) {
+							if ($('#blocked .thirditem').length == 1 && ($('#blocked .thirditem[rel="x_no_script"]').length == 1 || $('#blocked .thirditem[rel="x_web_bug"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1 || $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_gamepad_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_webvr_enumeration"]').length == 1) || $('#blocked .thirditem[rel="x_timezone_offset"]').length == 1 || $('#blocked .thirditem[rel="x_client_rectangles"]').length == 1 || $('#blocked .thirditem[rel="x_clipboard_interference"]').length == 1) {
 								// empty space
 							} else {
 								if ($("#blocked .x_whitelist:visible").length != 0) {
@@ -339,10 +343,10 @@ function init() {
 						}
 					}
 					if (typeof response.temp !== 'undefined' && response.temp.length || (typeof response.tempfp !== 'undefined' && response.tempfp)) {
-						$("#parent").append('<hr><div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">'+chrome.i18n.getMessage("revoketempall")+'</div>');
+						$(tempSel).append('<div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">'+chrome.i18n.getMessage("revoketempall")+'</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
 					}
-					$("#parent").prepend('<div class="box box1 pallow" rel="0" title="Allow Current Domain">'+chrome.i18n.getMessage("allow")+'</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</div><div class="box box2 pdeny" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</div><div class="box box3 pbypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</div><div class="box box4 pclear" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</div>').attr("sn_list",response.enable);
+					$("#parent").prepend('<div class="box box4 pclear" title="Clear Domain from List">'+chrome.i18n.getMessage("clear")+'</div><div class="box box1 pallow" rel="0" title="Allow Current Domain">'+chrome.i18n.getMessage("allow")+'</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">'+chrome.i18n.getMessage("trust")+'</div><div class="box box2 pdeny" rel="1" title="Deny">'+chrome.i18n.getMessage("deny")+'</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">'+chrome.i18n.getMessage("distrust")+'</div><div class="box box3 pbypass" rel="2" title="Temporary">'+chrome.i18n.getMessage("temp")+'</div>').attr("sn_list",response.enable);
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
 					$(".pclear").bind("click", removehandle).hide();
 					if (tabdomain[0] == '[' || tabdomain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g)) $(".ptrust").hide();
@@ -383,12 +387,18 @@ function init() {
 							if (response.enable == '3') $(".ptrust[rel='3']").addClass("selected");
 						}
 					}
-					if (response.status == 'true') $("#footer").prepend('<span class="box box2 snstatus" title="Disable ScriptSafe">'+chrome.i18n.getMessage("disable")+'</span>&nbsp;|&nbsp;');
+					if (response.status == 'true') $("#credit").append('&nbsp;|&nbsp;<span class="box box2 snstatus" title="Disable ScriptSafe">'+chrome.i18n.getMessage("disable")+'</span>');
 					$(".snstatus").bind("click", statuschange);
 					$(".fphead").bind("click", function() {
 						$(this).next().toggle();
 					});
 					closepage = response.closepage;
+					if (response.rating == 'true') {
+						$(".wot a").click(function() {
+							chrome.tabs.create({url: $(this).attr('href'), active: false});
+							return false;
+						});
+					}
 				});
 			}
 		});
@@ -422,6 +432,7 @@ function remove(url, el, type) {
 		else if (fpType == 'battery.fingerprint') fpList = 'fpBattery';
 		else if (fpType == 'device.enumeration') fpList = 'fpDevice';
 		else if (fpType == 'gamepad.enumeration') fpList = 'fpGamepad';
+		else if (fpType == 'webvr.enumeration') fpList = 'fpWebVR';
 		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
 		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
 		bkg.fpDomainHandler('**.'+bkg.getDomain(url), fpList, -1);
@@ -479,6 +490,7 @@ function save(url, el, type) {
 		else if (fpType == 'battery.fingerprint') fpList = 'fpBattery';
 		else if (fpType == 'device.enumeration') fpList = 'fpDevice';
 		else if (fpType == 'gamepad.enumeration') fpList = 'fpGamepad';
+		else if (fpType == 'webvr.enumeration') fpList = 'fpWebVR';
 		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
 		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
 		if (val < 2) {

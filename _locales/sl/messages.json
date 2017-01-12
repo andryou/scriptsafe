@@ -735,6 +735,14 @@
       "description": "prevent IP address leakage",
       "message": "preprecujejo uhajanje IP naslov"
    },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Block WebVR Štetja:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "preprecevanje, ki imajo naprave, odkritih preko WebVR API"
+   },
    "blackbind": {
       "description": "+ Blacklist",
       "message": "+ Blacklist"

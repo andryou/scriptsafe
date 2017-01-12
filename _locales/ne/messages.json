@@ -735,6 +735,14 @@
       "description": "prevent IP address leakage",
       "message": "आईपी ​​ठेगाना रिसाव रोक्न"
    },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "ब्लक WebVR इनुमरेसन:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "को WebVR एपीआई मार्फत पत्ता भइरहेको उपकरणहरू रोक्न"
+   },
    "blackbind": {
       "description": "+ Blacklist",
       "message": "+ ब्ल्याकलिस्ट"
