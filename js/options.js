@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.8.6';
+var version = '1.0.9.0';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
@@ -432,6 +432,7 @@ function saveOptions() {
 	updateExport();
 	bkg.refreshRequestTypes();
 	bkg.initWebRTC();
+	bkg.reinitContext();
 	syncstatus = bkg.freshSync(1);
 	if (syncstatus) {
 		notification(chrome.i18n.getMessage("settingssavesync"));
@@ -470,6 +471,7 @@ function settingsImport() {
 	listUpdate();
 	fpListUpdate();
 	bkg.cacheLists();
+	bkg.reinitContext();
 	if (!error) {
 		syncstatus = bkg.freshSync(0);
 		if (syncstatus) {

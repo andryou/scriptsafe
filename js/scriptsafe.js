@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.8.6';
+var version = '1.0.9.0';
 var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
 var fpLists = [];
 var fpListsSession = [];
@@ -866,6 +866,11 @@ chrome.commands.onCommand.addListener(function (command) {
 		removeTempAll();
     }
 });
+function reinitContext() {
+	chrome.contextMenus.removeAll(function() {
+		genContextMenu();
+	});
+}
 function genContextMenu() {
 	var parent = chrome.contextMenus.create({"title": "ScriptSafe", "contexts": ["page"]});
 	if (localStorage['mode'] == 'block') {
@@ -885,29 +890,33 @@ function genContextMenu() {
 	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketempall"), "parentId": parent, "onclick": removeTempAll});
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
 	chrome.contextMenus.create({"title": chrome.i18n.getMessage("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
+	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": chrome.i18n.getMessage("enabless"), "parentId": parent, "onclick": function() { localStorage["enable"] = "true"; contextHandle('toggle'); }});
+	else chrome.contextMenus.create({"title": chrome.i18n.getMessage("disable"), "parentId": parent, "onclick": function() { localStorage["enable"] = "false"; contextHandle('toggle'); }});
 }
 function contextHandle(mode) {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-		var tabdomain = extractDomainFromURL(tabs[0].url);
-		var domainCheckStatus = domainCheck(tabs[0].url);
-		if (mode == 'allow') {
-			domainHandler(tabdomain, 2, 1);
-			domainHandler(tabdomain, 0);
-		} else if (mode == 'block') {
-			domainHandler(tabdomain, 2, 1);
-			domainHandler(tabdomain, 1);
-		} else if (mode == 'allowtemp' && domainCheckStatus == '-1') tempHandler({reqtype: "temp", url: tabdomain, mode: 'block'});
-		else if (mode == 'blocktemp' && domainCheckStatus == '-1') tempHandler({reqtype: "temp", url: tabdomain, mode: 'allow'});
-		else if (mode == 'trust') topHandler(tabdomain, 0);
-		else if (mode == 'distrust') topHandler(tabdomain, 1);
-		else if (mode == 'clear') {
-			if (trustCheck(tabdomain)) domainHandler('**.'+getDomain(tabdomain), 2);
-			else {
+		if (tabs[0].url.indexOf('http') == 0) {
+			var tabdomain = extractDomainFromURL(tabs[0].url);
+			var domainCheckStatus = domainCheck(tabs[0].url);
+			if (mode == 'allow') {
 				domainHandler(tabdomain, 2, 1);
-				domainHandler(tabdomain, 2);
-			}
+				domainHandler(tabdomain, 0);
+			} else if (mode == 'block') {
+				domainHandler(tabdomain, 2, 1);
+				domainHandler(tabdomain, 1);
+			} else if (mode == 'allowtemp' && domainCheckStatus == '-1') tempHandler({reqtype: "temp", url: tabdomain, mode: 'block'});
+			else if (mode == 'blocktemp' && domainCheckStatus == '-1') tempHandler({reqtype: "temp", url: tabdomain, mode: 'allow'});
+			else if (mode == 'trust') topHandler(tabdomain, 0);
+			else if (mode == 'distrust') topHandler(tabdomain, 1);
+			else if (mode == 'clear') {
+				if (trustCheck(tabdomain)) domainHandler('**.'+getDomain(tabdomain), 2);
+				else {
+					domainHandler(tabdomain, 2, 1);
+					domainHandler(tabdomain, 2);
+				}
+			} else if (mode == 'toggle') reinitContext();
+			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
 		}
-		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
 	}); 
 }
 function tempPage() {

@@ -80,7 +80,7 @@ hr { border: 0; border-top: 1px solid #eeeeee; }
 	text-align: center;
 	min-width: 70px;
 	outline: 0;
-	padding: 6px;
+	padding: 8px 6px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
