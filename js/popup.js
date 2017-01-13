@@ -48,13 +48,12 @@ function truncate(str, len) {
 }
 document.addEventListener('DOMContentLoaded', function () {
 	setTimeout(init, 150);
-	$("#pop_ay").click(function() { openTab('https://twitter.com/andryou'); });
-	$("#pop_docs").click(function() { openTab('https://www.andryou.com/scriptsafe/'); });
-	$("#pop_project").click(function() { openTab('https://github.com/andryou/scriptsafe'); });
-	$("#pop_options").click(function() { openTab(chrome.extension.getURL('html/options.html')); });
-	$("#pop_webstore").click(function() { openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
-	$("#pop_close").click(function() { window.close(); }).attr('title', chrome.i18n.getMessage("close"));
-	$("#pop_refresh").click(function() { chrome.tabs.reload(); window.close(); });
+	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
+	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe'); });
+	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
+	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
+	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', chrome.i18n.getMessage("close"));
+	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 });
 function init() {
 	$("#version").html(version);
