@@ -899,7 +899,10 @@ function contextHandle(mode) {
 		else if (mode == 'distrust') topHandler(tabdomain, 1);
 		else if (mode == 'clear') {
 			if (trustCheck(tabdomain)) domainHandler('**.'+getDomain(tabdomain), 2);
-			else domainHandler(tabdomain, 2);
+			else {
+				domainHandler(tabdomain, 2, 1);
+				domainHandler(tabdomain, 2);
+			}
 		}
 		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
 	}); 
