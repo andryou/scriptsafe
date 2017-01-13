@@ -659,6 +659,7 @@ function statuschanger() {
 		localStorage['enable'] = 'true';
 		chrome.browserAction.setIcon({path: "../img/IconForbidden.png"});
 	}
+	reinitContext();
 }
 function tempHandler(request) {
 	if (typeof request.url === 'object') {
