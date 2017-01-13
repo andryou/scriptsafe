@@ -19,7 +19,7 @@ div#header { padding-bottom: 10px; }
 #parent > div { border-bottom: none; display: inline-block; }
 
 /* Resource List */
-.thirds { vertical-align: top; }
+.thirds { vertical-align: top; max-width: 563px; }
 .thirditem span, .fpitem span { word-wrap: break-word; }
 .thirditem span a, fpitem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover, .fpitem span a:hover { text-decoration: underline; }
