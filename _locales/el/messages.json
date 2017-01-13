@@ -735,6 +735,14 @@
       "description": "prevent IP address leakage",
       "message": "αποτρέπεται η διαρροή διεύθυνση IP"
    },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Αποκλεισμός WebVR Καταμέτρηση:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "αποτρέψει έχουν συσκευές ανιχνεύονται μέσω του WebVR API"
+   },
    "blackbind": {
       "description": "+ Blacklist",
       "message": "+ Blacklist"

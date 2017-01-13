@@ -735,6 +735,14 @@
       "description": "prevent IP address leakage",
       "message": "IP хаяг алдагдал урьдчилан сэргийлэх"
    },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Блок WebVR Тооллогын:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "WebVR API ашиглан илрүүлсэн бүхий төхөөрөмжүүдийг урьдчилан сэргийлэх"
+   },
    "blackbind": {
       "description": "+ Blacklist",
       "message": "+ Хар жагсаалт"

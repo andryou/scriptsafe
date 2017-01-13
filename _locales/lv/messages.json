@@ -735,6 +735,14 @@
       "description": "prevent IP address leakage",
       "message": "novērš IP adreses noplūdi caur WebRTC"
    },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Bloķēt WebVR sarakstu:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "novērš pieejamo ierīču saraksta iegūšanu, WebVR API izmantojot, atrastos"
+   },
    "blackbind": {
       "description": "+ Blacklist",
       "message": "+ Melnais Saraksts"
