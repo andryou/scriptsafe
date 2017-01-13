@@ -871,15 +871,18 @@ function genContextMenu() {
 	if (localStorage['mode'] == 'block') {
 		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allow"), "parentId": parent, "onclick": function() { contextHandle('allow'); }});
 		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allow")+' ('+chrome.i18n.getMessage("temp")+')', "parentId": parent, "onclick": function() { contextHandle('allowtemp'); }});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allowallblocked"), "parentId": parent, "onclick": tempPage});
 		chrome.contextMenus.create({"title": chrome.i18n.getMessage("trust"), "parentId": parent, "onclick": function() { contextHandle('trust'); }});
 	} else {
 		chrome.contextMenus.create({"title": chrome.i18n.getMessage("deny"), "parentId": parent, "onclick": function() { contextHandle('block'); }});
 		chrome.contextMenus.create({"title": chrome.i18n.getMessage("deny")+' ('+chrome.i18n.getMessage("temp")+')', "parentId": parent, "onclick": function() { contextHandle('blocktemp'); }});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("blockallallowed"), "parentId": parent, "onclick": tempPage});
 		chrome.contextMenus.create({"title": chrome.i18n.getMessage("distrust"), "parentId": parent, "onclick": function() { contextHandle('distrust'); }});
 	}
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
 	chrome.contextMenus.create({"title": chrome.i18n.getMessage("clear"), "parentId": parent, "onclick": function() { contextHandle('clear'); }});
-	chrome.contextMenus.create({"title": chrome.i18n.getMessage("hotkeysremoveall"), "parentId": parent, "onclick": removeTempAll});
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketemp"), "parentId": parent, "onclick": removeTempPage});
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketempall"), "parentId": parent, "onclick": removeTempAll});
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
 	chrome.contextMenus.create({"title": chrome.i18n.getMessage("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
 }
