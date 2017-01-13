@@ -1,6 +1,7 @@
 /* Global */
 html { width: 575px; }
 body { margin: 0px 5px; padding: 0px; width: 568px; }
+html, body { max-height: 600px; overflow-y: auto; }
 html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
 #container, table { width: 100%; }
 td, th { text-align: left; }
@@ -57,7 +58,7 @@ table { padding-top: 40px; }
 .choices { float: right; }
 
 /* Footer */
-#bottom { padding-top: 10px; }
+#bottom { padding-top: 10px; padding-bottom: 5px; }
 #credit { text-align: right; padding-right: 5px; }
 #credit { font-weight: bold; font-size: 11px; color: #555; }
 #credit a, #pop_options { text-decoration: underline; }
