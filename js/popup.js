@@ -328,8 +328,6 @@ function init() {
 						if (blockedCount != 0 && allowedCount != 0) {
 							$(".allowed").parent().css('padding-top', '12px');
 						}
-						$(".blocked").text($(".blocked").text()+' ('+blockedCount+')');
-						$(".allowed").text($(".allowed").text()+' ('+allowedCount+')');
 						$(".x_whitelist,.x_blacklist,.x_trust,.x_bypass").bind("click", x_savehandle);
 						var tempSel;
 						if (responseAllowedCount == 0) tempSel = '.thirds';
