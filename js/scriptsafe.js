@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.8.5';
+var version = '1.0.9.0';
 var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
 var fpLists = [];
 var fpListsSession = [];
@@ -170,6 +170,7 @@ function inlineblock(req) {
 }
 function ScriptSafe(req) {
 	if (req.tabId == -1 || req.url === 'undefined' || localStorage["enable"] == "false" || req.url.substring(0,4) != 'http') {
+		resetTabData(req.tabId, req.url);
 		return { cancel: false };
 	}
 	if (req.type == 'main_frame') {
@@ -265,7 +266,7 @@ function enabled(url) {
 	return 'false';
 }
 function enabledfp(domainname, fptype) {
-	if ((localStorage['canvas'] == 'false' && fptype == 'fpCanvas') || (localStorage['canvasfont'] == 'false' && fptype == 'fpCanvasFont') || (localStorage['audioblock'] == 'false' && fptype == 'fpAudio') || (localStorage['webgl'] == 'false' && fptype == 'fpWebGL') || (localStorage['battery'] == 'false' && fptype == 'fpBattery') || (localStorage['webrtcdevice'] == 'false' && fptype == 'fpDevice') || (localStorage['gamepad'] == 'false' && fptype == 'fpGamepad') || (localStorage['clientrects'] == 'false' && fptype == 'fpClientRectangles') || (localStorage['clipboard'] == 'false' && fptype == 'fpClipboard')) return '-1';
+	if ((localStorage['canvas'] == 'false' && fptype == 'fpCanvas') || (localStorage['canvasfont'] == 'false' && fptype == 'fpCanvasFont') || (localStorage['audioblock'] == 'false' && fptype == 'fpAudio') || (localStorage['webgl'] == 'false' && fptype == 'fpWebGL') || (localStorage['battery'] == 'false' && fptype == 'fpBattery') || (localStorage['webrtcdevice'] == 'false' && fptype == 'fpDevice') || (localStorage['gamepad'] == 'false' && fptype == 'fpGamepad') || (localStorage['webvr'] == 'false' && fptype == 'fpWebVR') || (localStorage['clientrects'] == 'false' && fptype == 'fpClientRectangles') || (localStorage['clipboard'] == 'false' && fptype == 'fpClipboard')) return '-1';
 	if (in_array(domainname, fpLists[fptype])) return '1';
 	if (in_array(domainname, fpListsSession[fptype])) return '2';
 	return '-1';
@@ -527,6 +528,7 @@ function setDefaultOptions() {
 	defaultOptionValue("battery", "false");
 	defaultOptionValue("webrtcdevice", "false");
 	defaultOptionValue("gamepad", "false");
+	defaultOptionValue("webvr", "false");
 	defaultOptionValue("timezone", "false");
 	defaultOptionValue("keyboard", "false");
 	defaultOptionValue("xml", "true");
@@ -561,6 +563,7 @@ function setDefaultOptions() {
 	if (!optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
 	if (!optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
 	if (!optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
+	if (!optionExists("fpWebVR")) localStorage['fpWebVR'] = JSON.stringify([]);
 	if (!optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
 	if (!optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
@@ -572,6 +575,7 @@ function setDefaultOptions() {
 	if (typeof sessionStorage['fpBattery'] === "undefined") sessionStorage['fpBattery'] = JSON.stringify([]);
 	if (typeof sessionStorage['fpDevice'] === "undefined") sessionStorage['fpDevice'] = JSON.stringify([]);
 	if (typeof sessionStorage['fpGamepad'] === "undefined") sessionStorage['fpGamepad'] = JSON.stringify([]);
+	if (typeof sessionStorage['fpWebVR'] === "undefined") sessionStorage['fpWebVR'] = JSON.stringify([]);
 	if (typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
 	if (typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
@@ -614,6 +618,7 @@ function revokeTemp() {
 	sessionStorage['fpBattery'] = JSON.stringify([]);
 	sessionStorage['fpDevice'] = JSON.stringify([]);
 	sessionStorage['fpGamepad'] = JSON.stringify([]);
+	sessionStorage['fpWebVR'] = JSON.stringify([]);
 	sessionStorage['fpClientRectangles'] = JSON.stringify([]);
 	sessionStorage['fpClipboard'] = JSON.stringify([]);
 }
@@ -713,12 +718,12 @@ chrome.extension.onConnect.addListener(function(port) {
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
 		var fpListStatus = [];
-		var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpClientRectangles', 'fpClipboard'];
+		var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpClientRectangles', 'fpClipboard'];
 		var extractedDomain = extractDomainFromURL(sender.tab.url);
 		for (var i in fpTypes) {
 			fpListStatus[fpTypes[i]] = enabledfp(extractedDomain, fpTypes[i]);
 		}
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_webvr: fpListStatus['fpWebVR'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], webvr: localStorage['webvr'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], keyboard: localStorage['keyboard'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -741,6 +746,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				else if (i == 'fpBattery') fptype = 'Battery Fingerprint';
 				else if (i == 'fpDevice') fptype = 'Device Enumeration';
 				else if (i == 'fpGamepad') fptype = 'Gamepad Enumeration';
+				else if (i == 'fpWebVR') fptype = 'WebVR Enumeration';
 				else if (i == 'fpClientRectangles') fptype = 'Client Rectangles';
 				else if (i == 'fpClipboard') fptype = 'Clipboard Interference';
 				ITEMS[sender.tab.id]['allowed'].push([cleanedUrl, fptype, extractedDomain, fpListStatus[i], false, true]);
@@ -771,13 +777,13 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		if (request.src) {
 			var cleanedUrl = removeParams(request.src);
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
-			if (!UrlInList(cleanedUrl, ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
+			if (!UrlInList(cleanedUrl, ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'WebVR Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
 				if (request.node == 'NOSCRIPT') {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, request.src, '-1', '-1', false, false]);
-				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
+				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'WebVR Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference') {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, extractedDomain, '-1', '-1', false, true]);
 				} else {
 					ITEMS[sender.tab.id]['blocked'].push([cleanedUrl, request.node, extractedDomain, domainCheck(request.src, 1), domainCheck(extractedTabDomain, 1), baddies(request.src, localStorage['annoyancesmode'], localStorage['antisocial'], 2), false]);
@@ -825,44 +831,106 @@ chrome.runtime.onUpdateAvailable.addListener(function (details) {
 });
 chrome.commands.onCommand.addListener(function (command) {
     if (command === "temppage") {
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-			var tempMode = localStorage['mode'];
-			if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
-			var tempDomainList = [];
-			if (domainCheck(tabs[0].url, 2) == '-1') {
-				if ((tempMode == 'block' && enabled(tabs[0].url) == 'true') || (tempMode == 'allow' && enabled(tabs[0].url) == 'false'))
-					tempDomainList.push(extractDomainFromURL(tabs[0].url));
-			}
-			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
-				if (items[3] == '-1') tempDomainList.push(items[2]);
-			});
-			tempHandler({reqtype: "temp", url: tempDomainList, mode: tempMode});
-			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
-		});
+		tempPage();
     } else if (command === "removetemppage") {
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-			var tempMode;
-			if (localStorage['mode'] == 'block') tempMode = 'allow';
-			else tempMode = 'block';
-			if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
-			var tempDomainList = [];
-			if (domainCheck(tabs[0].url, 2) == '-1') {
-				if ((tempMode == 'block' && enabled(tabs[0].url) == 'true') || (tempMode == 'allow' && enabled(tabs[0].url) == 'false'))
-					tempDomainList.push(extractDomainFromURL(tabs[0].url));
-			}
-			ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
-				tempDomainList.push(items[2]);
-			});
-			removeTempHandler({reqtype: "remove-temp", url: tempDomainList});
-			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
-		});
+		removeTempPage();
     } else if (command === "removetempall") {
-		chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
-			revokeTemp();
-			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
-		});
+		removeTempAll();
     }
 });
+function reinitContext() {
+	chrome.contextMenus.removeAll(function() {
+		genContextMenu();
+	});
+}
+function genContextMenu() {
+	var parent = chrome.contextMenus.create({"title": "ScriptSafe", "contexts": ["page"]});
+	if (localStorage['mode'] == 'block') {
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allow"), "parentId": parent, "onclick": function() { contextHandle('allow'); }});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allow")+' ('+chrome.i18n.getMessage("temp")+')', "parentId": parent, "onclick": function() { contextHandle('allowtemp'); }});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allowallblocked"), "parentId": parent, "onclick": tempPage});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("trust"), "parentId": parent, "onclick": function() { contextHandle('trust'); }});
+	} else {
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("deny"), "parentId": parent, "onclick": function() { contextHandle('block'); }});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("deny")+' ('+chrome.i18n.getMessage("temp")+')', "parentId": parent, "onclick": function() { contextHandle('blocktemp'); }});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("blockallallowed"), "parentId": parent, "onclick": tempPage});
+		chrome.contextMenus.create({"title": chrome.i18n.getMessage("distrust"), "parentId": parent, "onclick": function() { contextHandle('distrust'); }});
+	}
+	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("clear"), "parentId": parent, "onclick": function() { contextHandle('clear'); }});
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketemp"), "parentId": parent, "onclick": removeTempPage});
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketempall"), "parentId": parent, "onclick": removeTempAll});
+	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
+	chrome.contextMenus.create({"title": chrome.i18n.getMessage("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
+	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": chrome.i18n.getMessage("enabless"), "parentId": parent, "onclick": function() { localStorage["enable"] = "true"; contextHandle('toggle'); }});
+	else chrome.contextMenus.create({"title": chrome.i18n.getMessage("disable"), "parentId": parent, "onclick": function() { localStorage["enable"] = "false"; contextHandle('toggle'); }});
+}
+function contextHandle(mode) {
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		if (tabs[0].url.indexOf('http') == 0) {
+			var tabdomain = extractDomainFromURL(tabs[0].url);
+			var domainCheckStatus = domainCheck(tabs[0].url);
+			if (mode == 'allow') {
+				domainHandler(tabdomain, 2, 1);
+				domainHandler(tabdomain, 0);
+			} else if (mode == 'block') {
+				domainHandler(tabdomain, 2, 1);
+				domainHandler(tabdomain, 1);
+			} else if (mode == 'allowtemp' && domainCheckStatus == '-1') tempHandler({reqtype: "temp", url: tabdomain, mode: 'block'});
+			else if (mode == 'blocktemp' && domainCheckStatus == '-1') tempHandler({reqtype: "temp", url: tabdomain, mode: 'allow'});
+			else if (mode == 'trust') topHandler(tabdomain, 0);
+			else if (mode == 'distrust') topHandler(tabdomain, 1);
+			else if (mode == 'clear') {
+				if (trustCheck(tabdomain)) domainHandler('**.'+getDomain(tabdomain), 2);
+				else {
+					domainHandler(tabdomain, 2, 1);
+					domainHandler(tabdomain, 2);
+				}
+			} else if (mode == 'toggle') reinitContext();
+			if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+		}
+	}); 
+}
+function tempPage() {
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		var tempMode = localStorage['mode'];
+		if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
+		var tempDomainList = [];
+		if (domainCheck(tabs[0].url, 2) == '-1') {
+			if ((tempMode == 'block' && enabled(tabs[0].url) == 'true') || (tempMode == 'allow' && enabled(tabs[0].url) == 'false'))
+				tempDomainList.push(extractDomainFromURL(tabs[0].url));
+		}
+		ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
+			if (items[3] == '-1') tempDomainList.push(items[2]);
+		});
+		tempHandler({reqtype: "temp", url: tempDomainList, mode: tempMode});
+		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+	});
+}
+function removeTempPage() {
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		var tempMode;
+		if (localStorage['mode'] == 'block') tempMode = 'allow';
+		else tempMode = 'block';
+		if (typeof ITEMS[tabs[0].id][tempMode+'ed'] === 'undefined') return;
+		var tempDomainList = [];
+		if (domainCheck(tabs[0].url, 2) == '-1') {
+			if ((tempMode == 'block' && enabled(tabs[0].url) == 'true') || (tempMode == 'allow' && enabled(tabs[0].url) == 'false'))
+				tempDomainList.push(extractDomainFromURL(tabs[0].url));
+		}
+		ITEMS[tabs[0].id][tempMode+'ed'].map(function(items) {
+			tempDomainList.push(items[2]);
+		});
+		removeTempHandler({reqtype: "remove-temp", url: tempDomainList});
+		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+	});
+}
+function removeTempAll() {
+	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+		revokeTemp();
+		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
+	});
+}
 // Debug Synced Items
 /*
 chrome.storage.sync.get(null, function(changes) {
@@ -1022,6 +1090,7 @@ function init() {
 	setDefaultOptions();
 	cacheLists();
 	cacheFpLists();
+	genContextMenu();
 }
 function cacheLists() {
 	var tempList = JSON.parse(localStorage['whiteList']);
@@ -1097,6 +1166,13 @@ function cacheFpLists() {
 	});
 	tempDomain = tempDomain.sort();
 	fpLists["fpGamepad"] = tempDomain;
+	tempList = JSON.parse(localStorage['fpWebVR']);
+	tempDomain = [];
+	tempList.map(function(domain) {
+		tempDomain.push(domain);
+	});
+	tempDomain = tempDomain.sort();
+	fpLists["fpWebVR"] = tempDomain;
 	tempList = JSON.parse(localStorage['fpClientRectangles']);
 	tempDomain = [];
 	tempList.map(function(domain) {
@@ -1139,7 +1215,7 @@ if (!optionExists("version") || localStorage["version"] != version) {
 		syncQueue();
 	}
 	if (localStorage["updatenotify"] == "true") {
-		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html'), selected: true });
+		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html')});
 	}
 	localStorage["version"] = version;
 }

@@ -33,6 +33,7 @@ var SETTINGS = {
 	"KEYBOARD": "false",
 	"WEBRTCDEVICE": "false",
 	"GAMEPAD": "false",
+	"WEBVR": "false",
 	"TIMEZONE": "false",
 	"ANNOYANCES": "false",
 	"ANNOYANCESMODE": "relaxed",
@@ -83,6 +84,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['WEBGL'] = response.webgl;
 		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
 		SETTINGS['GAMEPAD'] = response.gamepad;
+		SETTINGS['WEBVR'] = response.webvr;
 		SETTINGS['TIMEZONE'] = response.timezone;
 		SETTINGS['CLIPBOARD'] = response.clipboard;
 		if (SETTINGS['CANVAS'] != 'false' && response.fp_canvas != '-1') SETTINGS['CANVAS'] = 'false';
@@ -92,9 +94,10 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		if (SETTINGS['BATTERY'] == 'true' && response.fp_battery != '-1') SETTINGS['BATTERY'] = 'false';
 		if (SETTINGS['WEBRTCDEVICE'] == 'true' && response.fp_device != '-1') SETTINGS['WEBRTCDEVICE'] = 'false';
 		if (SETTINGS['GAMEPAD'] == 'true' && response.fp_gamepad != '-1') SETTINGS['GAMEPAD'] = 'false';
+		if (SETTINGS['WEBVR'] == 'true' && response.fp_webvr != '-1') SETTINGS['WEBVR'] = 'false';
 		if (SETTINGS['CLIENTRECTS'] == 'true' && response.fp_clientrectangles != '-1') SETTINGS['CLIENTRECTS'] = 'false';
 		if (SETTINGS['CLIPBOARD'] == 'true' && response.fp_clipboard != '-1') SETTINGS['CLIPBOARD'] = 'false';
-		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
+		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['WEBVR'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
 			fingerprintProtection();
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
@@ -121,7 +124,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	delete savedBeforeloadEvents; // eventually remove
 });
 function fingerprintProtection() {
-	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, timezone, clientrects, clipboard){
+	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, webvr, timezone, clientrects, clipboard){
 		function processFunctions(scope) {
 			/* Canvas */
 			if (canvas != 'false') {
@@ -334,6 +337,17 @@ function fingerprintProtection() {
 					return false;
 				}
 			}
+			/* WebVR */
+			if (webvr == 'true') {
+				var webvr_triggerblock = scope.document.createElement('div');
+				webvr_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webvr';
+				var webvr_a = scope.navigator;
+				webvr_a.getVRDisplays = function() {
+					webvr_triggerblock.title = 'getVRDisplays';
+					document.documentElement.appendChild(webvr_triggerblock);
+					return false;
+				}
+			}
 			/* Client Rectangles */
 			if (clientrects == 'true') {
 				var clientrects_triggerblock = scope.document.createElement('div');
@@ -392,7 +406,7 @@ function fingerprintProtection() {
 				}
 			}
 		});
-	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
+	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
 }
 function clipboardProtect(el) {
     el.oncontextmenu = null;
@@ -444,6 +458,9 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['GAMEPAD'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_gamepad").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Gamepad Enumeration'}); $(this).remove(); });
+	}
+	if (SETTINGS['WEBVR'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webvr").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'WebVR Enumeration'}); $(this).remove(); });
 	}
 	if (SETTINGS['CLIENTRECTS'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_clientrects").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Client Rectangles'}); $(this).remove(); });

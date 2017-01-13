@@ -735,6 +735,14 @@
       "description": "prevent IP address leakage",
       "message": "išvengti IP adreso nutekejimo"
    },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Blokuoti WebVR Išvardinimo:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "išvengti aptikti per WebVR API turincius prietaisus"
+   },
    "blackbind": {
       "description": "+ Blacklist",
       "message": "+ Juodasis Sarašas"

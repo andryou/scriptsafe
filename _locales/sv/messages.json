@@ -149,11 +149,11 @@
    },
    "clear": {
       "description": "Clear",
-      "message": "Klar"
+      "message": "Rensa"
    },
    "clearlow": {
       "description": "clear",
-      "message": "klar"
+      "message": "rensa"
    },
    "clientrects": {
       "description": "Block Client Rectangles:",
@@ -734,6 +734,14 @@
    "webrtcdesc": {
       "description": "prevent IP address leakage",
       "message": "förhindra IP-adressläckage"
+   },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Blockera WebVRidentifikation:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "förhindra att ha anordningar som upptäckts via WebVR API"
    },
    "blackbind": {
       "description": "+ Blacklist",

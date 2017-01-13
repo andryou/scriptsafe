@@ -1,23 +1,32 @@
 /* Global */
 html { width: 575px; }
-body { margin: 5px 5px 0px; padding: 0px; width: 568px; }
+body { margin: 0px 5px; padding: 0px; width: 568px; }
+html, body { max-height: 600px; overflow-y: auto; }
 html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
 #container, table { width: 100%; }
 td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
+#header { width: 100%; padding: 5px 0; margin-bottom: 10px; position: fixed; background-color: #fff; padding-left: 5px; margin-left: -5px; box-shadow: 0px 2px 0px rgba(0, 0, 0, .3); }
+#header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
+#header a#pop_webstore:hover { text-decoration: underline; }
+#header div { float: right; margin-right: 7px; }
+#pop_close { margin-right: 5px; }
+#parent { padding-bottom: 5px; }
+table { padding-top: 40px; }
 
 /* Tab Options */
-#parent, #currentdomain { max-width: 210px; padding-left: 5px; border-left: 1px solid #ccc; word-wrap: break-word; }
-#parent div { margin: 2px auto; }
+#parent, #currentdomain { max-width: 568px; word-wrap: break-word; }
+#parent { text-align: right; padding-right: 3px; }
+#parent > div { border-bottom: none; display: inline-block; }
 
 /* Resource List */
-.thirds { vertical-align: top; }
+.thirds { vertical-align: top; max-width: 563px; }
 .thirditem span, .fpitem span { word-wrap: break-word; }
 .thirditem span a, fpitem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover, .fpitem span a:hover { text-decoration: underline; }
-.allowed, .blocked { padding: 0 5px; }
-.thirds { min-width: 316px; max-width: 401px; padding-top: 5px; padding-right: 5px; }
+.allowed, .blocked, .domainname { padding: 0 5px; }
+.thirds { padding-top: 5px; padding-right: 5px; }
 .thirditem, .fpitem, .fpcat, .fphead {
 	clear: both;
 	border-bottom: 1px solid #eee;
@@ -26,6 +35,7 @@ th { padding-bottom: 5px; }
 .fpcat {
 	padding: 0;
 }
+.thirditem, .fpitem, .fphead { padding-left: 7px; }
 .fphead {
 	border-bottom: none;
 	border-right: 3px solid #ccc;
@@ -42,23 +52,22 @@ th { padding-bottom: 5px; }
 	background-color: #ccc;
 }
 .wot { padding-right: 4px; }
-.wot a { color: #555; }
+.wot a { color: #555; text-decoration: none; }
+#currentdomain .wot a { color: #fff; }
+.wot a:hover { text-decoration: underline; }
 .choices { float: right; }
 
 /* Footer */
-#bottom { padding-top: 10px; }
-#credit { float: left; }
-#footer { text-align: right; margin-top: -2px; }
-#credit, #footer { font-weight: bold; font-size: 11px; color: #555; }
-#footer a, #credit a { text-decoration: underline; }
-#footer a:hover, #credit a:hover { text-decoration: none; }
+#bottom { padding-top: 10px; padding-bottom: 5px; }
+#credit { text-align: right; padding-right: 5px; }
+#credit { font-weight: bold; font-size: 11px; color: #555; }
+#credit a, #pop_options { text-decoration: underline; }
+#credit a:hover, #pop_options:hover { text-decoration: none; }
 #closebtn { width: 5px; text-align: right; }
 
 /* Misc */
 hr { border: 0; border-top: 1px solid #eeeeee; }
-.bolded { font-weight: bold; }
-#pop_webstore { color: #000; text-decoration: none; }
-#pop_webstore:hover { color: #000; text-decoration: underline; }
+.bolded, #pop_options { font-weight: bold; }
 
 /* Boxes */
 .box:hover, .fphead {
@@ -72,7 +81,7 @@ hr { border: 0; border-top: 1px solid #eeeeee; }
 	text-align: center;
 	min-width: 70px;
 	outline: 0;
-	padding: 8px;
+	padding: 8px 6px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -267,7 +276,7 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.box5 {
+.box5, .domainname {
 	clear: both;
 	width: auto;
 	margin-top: 5px;
