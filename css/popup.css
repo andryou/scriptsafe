@@ -1,21 +1,22 @@
 /* Global */
 html { width: 575px; }
-body { margin: 5px 5px 0px; padding: 0px; width: 568px; }
+body { margin: 0px 5px; padding: 0px; width: 568px; }
 html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
 #container, table { width: 100%; }
 td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
-div#header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
-div#header a#pop_webstore:hover { text-decoration: underline; }
-div#header div { float: right; }
+#header { width: 100%; padding: 5px 0; margin-bottom: 10px; position: fixed; background-color: #fff; padding-left: 5px; margin-left: -5px; box-shadow: 0px 2px 0px rgba(0, 0, 0, .3); }
+#header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
+#header a#pop_webstore:hover { text-decoration: underline; }
+#header div { float: right; margin-right: 7px; }
 #pop_close { margin-right: 5px; }
-div#header { padding-bottom: 10px; }
 #parent { padding-bottom: 5px; }
+table { padding-top: 40px; }
 
 /* Tab Options */
 #parent, #currentdomain { max-width: 568px; word-wrap: break-word; }
-#parent { text-align: right; }
+#parent { text-align: right; padding-right: 3px; }
 #parent > div { border-bottom: none; display: inline-block; }
 
 /* Resource List */
@@ -33,6 +34,7 @@ div#header { padding-bottom: 10px; }
 .fpcat {
 	padding: 0;
 }
+.thirditem, .fpitem, .fphead { padding-left: 7px; }
 .fphead {
 	border-bottom: none;
 	border-right: 3px solid #ccc;
@@ -49,9 +51,9 @@ div#header { padding-bottom: 10px; }
 	background-color: #ccc;
 }
 .wot { padding-right: 4px; }
-.wot a { color: #555; }
-#currentdomain .wot a { color: #fff; text-decoration: none; }
-#currentdomain .wot a:hover { text-decoration: underline; }
+.wot a { color: #555; text-decoration: none; }
+#currentdomain .wot a { color: #fff; }
+.wot a:hover { text-decoration: underline; }
 .choices { float: right; }
 
 /* Footer */
@@ -187,7 +189,7 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.box3, .domainname {
+.box3 {
 	background-color: #4D90FE;
 	border: 1px solid #3079ED;
 	color: white;
@@ -273,7 +275,7 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.box5 {
+.box5, .domainname {
 	clear: both;
 	width: auto;
 	margin-top: 5px;
