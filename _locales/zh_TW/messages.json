@@ -52,8 +52,8 @@
       "message": "永遠移除社交小工具或按鈕，即使已經列入允許名單"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out Ghostery, Disconnect, Blur, and/or uBlock Origin with all of the subscription lists on the Fanboy site",
-      "message": "如要更全面地封鎖，請尋找Ghostery, Disconnect, Blur, and/or uBlock Origin （所有在 Fanboy 網站的訂閱名單）"
+      "description": "For more comprehensive blocking, check out Privacy Badger, Disconnect, Blur, and/or uBlock Origin with all of the subscription lists on the Fanboy site",
+      "message": "如要更全面地封鎖，請尋找Privacy Badger, Disconnect, Blur, and/or uBlock Origin （所有在 Fanboy 網站的訂閱名單）"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
