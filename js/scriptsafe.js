@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.9.0';
+var version = '1.0.9.1';
 var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
@@ -1229,14 +1229,14 @@ function getLocale(str) {
 	if (locale) {
 		return locale[str].message;
 	} else {
-		return getLocale(str);
+		return chrome.i18n.getMessage(str);
 	}
 }
 function getLangs() {
 	return langs;
 }
+var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 if (!optionExists("locale")) {
-	var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 	localStorage['locale'] = 'en_US';
 	if (uiLang != 'en' && uiLang != 'en_GB' && uiLang != 'en_US') {
 		if (typeof langs[uiLang] !== 'undefined') {
@@ -1244,6 +1244,10 @@ if (!optionExists("locale")) {
 				localStorage['locale'] = uiLang;
 			}
 		}
+	}
+} else {
+	if (typeof langs[uiLang] === 'undefined') {
+		localStorage['locale'] = 'en_US';
 	}
 }
 initLang(localStorage['locale'], 1);

@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.9.0';
+var version = '1.0.9.1';
 var port = chrome.extension.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 });
 function init() {
-	$("#version").html(version);
+	$("#version").html(version+" DEVELOPMENT");
 	$("#pop_options").html(bkg.getLocale("options"));
 	chrome.windows.getCurrent(function(w) {
 		chrome.tabs.getSelected(w.id, function(tab) {
