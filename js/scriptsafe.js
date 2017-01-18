@@ -4,7 +4,26 @@
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
 var version = '1.0.9.0';
-var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList;
+var requestTypes, synctimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
+var langs = {
+	'en_US': 'English (US)',
+	'en_GB': 'English (UK)',
+	'zh_CN': 'Chinese (Simplified)',
+	'zh_TW': 'Chinese (Traditional)',
+	'cs': 'Czech',
+	'nl': 'Dutch',
+	'fr': 'French',
+	'de': 'German',
+	'hu': 'Hungarian',
+	'it': 'Italian',
+	'ja': 'Japanese',
+	'ko': 'Korean',
+	'lv': 'Latvian',
+	'ro': 'Romanian',
+	'ru': 'Russian',
+	'es': 'Spanish',
+	'sv': 'Swedish'
+}
 var fpLists = [];
 var fpListsSession = [];
 var popup = [];
@@ -877,24 +896,24 @@ function reinitContext() {
 function genContextMenu() {
 	var parent = chrome.contextMenus.create({"title": "ScriptSafe", "contexts": ["page"]});
 	if (localStorage['mode'] == 'block') {
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allow"), "parentId": parent, "onclick": function() { contextHandle('allow'); }});
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allow")+' ('+chrome.i18n.getMessage("temp")+')', "parentId": parent, "onclick": function() { contextHandle('allowtemp'); }});
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("allowallblocked"), "parentId": parent, "onclick": tempPage});
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("trust"), "parentId": parent, "onclick": function() { contextHandle('trust'); }});
+		chrome.contextMenus.create({"title": getLocale("allow"), "parentId": parent, "onclick": function() { contextHandle('allow'); }});
+		chrome.contextMenus.create({"title": getLocale("allow")+' ('+getLocale("temp")+')', "parentId": parent, "onclick": function() { contextHandle('allowtemp'); }});
+		chrome.contextMenus.create({"title": getLocale("allowallblocked"), "parentId": parent, "onclick": tempPage});
+		chrome.contextMenus.create({"title": getLocale("trust"), "parentId": parent, "onclick": function() { contextHandle('trust'); }});
 	} else {
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("deny"), "parentId": parent, "onclick": function() { contextHandle('block'); }});
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("deny")+' ('+chrome.i18n.getMessage("temp")+')', "parentId": parent, "onclick": function() { contextHandle('blocktemp'); }});
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("blockallallowed"), "parentId": parent, "onclick": tempPage});
-		chrome.contextMenus.create({"title": chrome.i18n.getMessage("distrust"), "parentId": parent, "onclick": function() { contextHandle('distrust'); }});
+		chrome.contextMenus.create({"title": getLocale("deny"), "parentId": parent, "onclick": function() { contextHandle('block'); }});
+		chrome.contextMenus.create({"title": getLocale("deny")+' ('+getLocale("temp")+')', "parentId": parent, "onclick": function() { contextHandle('blocktemp'); }});
+		chrome.contextMenus.create({"title": getLocale("blockallallowed"), "parentId": parent, "onclick": tempPage});
+		chrome.contextMenus.create({"title": getLocale("distrust"), "parentId": parent, "onclick": function() { contextHandle('distrust'); }});
 	}
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
-	chrome.contextMenus.create({"title": chrome.i18n.getMessage("clear"), "parentId": parent, "onclick": function() { contextHandle('clear'); }});
-	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketemp"), "parentId": parent, "onclick": removeTempPage});
-	chrome.contextMenus.create({"title": chrome.i18n.getMessage("revoketempall"), "parentId": parent, "onclick": removeTempAll});
+	chrome.contextMenus.create({"title": getLocale("clear"), "parentId": parent, "onclick": function() { contextHandle('clear'); }});
+	chrome.contextMenus.create({"title": getLocale("revoketemp"), "parentId": parent, "onclick": removeTempPage});
+	chrome.contextMenus.create({"title": getLocale("revoketempall"), "parentId": parent, "onclick": removeTempAll});
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
-	chrome.contextMenus.create({"title": chrome.i18n.getMessage("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
-	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": chrome.i18n.getMessage("enabless"), "parentId": parent, "onclick": function() { localStorage["enable"] = "true"; contextHandle('toggle'); }});
-	else chrome.contextMenus.create({"title": chrome.i18n.getMessage("disable"), "parentId": parent, "onclick": function() { localStorage["enable"] = "false"; contextHandle('toggle'); }});
+	chrome.contextMenus.create({"title": getLocale("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
+	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": getLocale("enabless"), "parentId": parent, "onclick": function() { localStorage["enable"] = "true"; contextHandle('toggle'); }});
+	else chrome.contextMenus.create({"title": getLocale("disable"), "parentId": parent, "onclick": function() { localStorage["enable"] = "false"; contextHandle('toggle'); }});
 }
 function contextHandle(mode) {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -1021,7 +1040,7 @@ function freshSync(mode, force) {
 				if (chrome.extension.lastError){
 					alert(chrome.extension.lastError.message);
 				} else {
-					if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+chrome.i18n.getMessage("exportsuccesstitle"), 'message': chrome.i18n.getMessage("exportsuccess")}, function(callback) { return true; } );
+					if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("exportsuccesstitle"), 'message': getLocale("exportsuccess")}, function(callback) { return true; } );
 				}
 			});
 		} else {
@@ -1041,28 +1060,28 @@ function importSyncHandle(mode) {
 			chrome.storage.sync.get(null, function(changes) {
 				if (typeof changes['lastSync'] !== 'undefined' && typeof changes['scriptsafe_settings'] !== 'undefined' && (typeof changes['zw0'] !== 'undefined' || typeof changes['zb0'] !== 'undefined')) {
 					if (changes['zw0'] != '' && changes['zw0'] != '*.googlevideo.com') { // ensure synced whitelist is not empty and not the default
-						if (confirm(chrome.i18n.getMessage("syncdetect"))) {
+						if (confirm(getLocale("syncdetect"))) {
 							localStorage['syncenable'] = 'true';
 							localStorage['sync'] = 'true';
 							importSync(changes, 2);
-							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+chrome.i18n.getMessage("importsuccesstitle"), 'message': chrome.i18n.getMessage("importsuccess")}, function(callback) { return true; });
+							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
 							return true;
 						} else {
 							localStorage['syncenable'] = 'false';
-							alert(chrome.i18n.getMessage("syncdisabled"));
+							alert(getLocale("syncdisabled"));
 							localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
 							return false;
 						}
 					}
 				} else {
-					if (confirm(chrome.i18n.getMessage("firstsync"))) {
+					if (confirm(getLocale("firstsync"))) {
 						localStorage['syncenable'] = 'true';
 						localStorage['sync'] = 'true';
 						freshSync(0, true);
 						return true;
 					} else {
 						localStorage['syncenable'] = 'false';
-						alert(chrome.i18n.getMessage("disabledsync"));
+						alert(getLocale("disabledsync"));
 						localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
 						return false;
 					}
@@ -1070,7 +1089,7 @@ function importSyncHandle(mode) {
 			});
 		}
 	} else {
-		alert(chrome.i18n.getMessage("syncnotsupported"));
+		alert(getLocale("syncnotsupported"));
 		return false;
 	}
 }
@@ -1221,48 +1240,90 @@ function cacheFpLists() {
 	tempDomain = tempDomain.sort();
 	fpLists["fpClipboard"] = tempDomain;
 }
-if (!optionExists("version") || localStorage["version"] != version) {
-	// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0
-	if (!optionExists("tempregexflag")) {
-		if (optionExists("version")) {
-			var tempList = JSON.parse(localStorage['blackList']);
-			var tempNewList = [];
-			if (tempList.length) {
-				tempList.map(function(domain) {
-					if (domain.substr(0,2) == '*.') tempNewList.push('*'+domain);
-					else tempNewList.push(domain);
-				});
-				localStorage['blackList'] = JSON.stringify(tempNewList);
-			}
-			tempList = JSON.parse(localStorage['whiteList']);
-			if (tempList.length) {
-				tempNewList = [];
-				tempList.map(function(domain) {
-					if (domain.substr(0,2) == '*.') tempNewList.push('*'+domain);
-					else tempNewList.push(domain);
-				});
-				localStorage['whiteList'] = JSON.stringify(tempNewList);
-			}
-		}
-		localStorage['tempregexflag'] = "true";
-		syncQueue();
-	}
-	if (localStorage["updatenotify"] == "true") {
-		chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html')});
-	}
-	localStorage["version"] = version;
-}
-if (storageapi) {
-	chrome.storage.onChanged.addListener(function(changes, namespace) {
-		if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
-			if (typeof changes['lastSync'] !== 'undefined') {
-				if (changes['lastSync'].newValue != localStorage['lastSync']) {
-					importSync(changes, 1);
-					if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+chrome.i18n.getMessage("importsuccesstitle"), 'message': chrome.i18n.getMessage("importsuccess")}, function(callback) { return true; });
-				}
-			}
+function initLang(lang, mode) {
+	var url = chrome.extension.getURL('_locales/' + lang + '/messages.json');
+	$.ajax({
+		url: url,
+		dataType: 'json',
+		async: true,
+		success: function(data) {
+			locale = data;
+			if (mode == '1') postLangLoad();
+		},
+		error: function(){
+			locale = false;
+			if (mode == '1') postLangLoad();
 		}
 	});
-	importSyncHandle(0);
 }
-init();
+function getLocale(str) {
+	if (locale) {
+		return locale[str].message;
+	} else {
+		return getLocale(str);
+	}
+}
+function getLangs() {
+	return langs;
+}
+if (!optionExists("locale")) {
+	var uiLang = chrome.i18n.getUILanguage();
+	var uiLangClean;
+	uiLangClean = uiLang.replace(/-/g, '_');
+	localStorage['locale'] = 'en_US';
+	if (uiLang != 'en' && uiLang != 'en-GB' && uiLang != 'en-US') {
+		if (typeof langs[uiLangClean] !== 'undefined') {
+			if (confirm('ScriptSafe detected that your browser is currently set to '+langs[uiLangClean]+'.\r\nWould you like to use ScriptSafe in '+langs[uiLangClean]+'?')) {
+				localStorage['locale'] = uiLangClean;
+			}
+		}
+	}
+}
+initLang(localStorage['locale'], 1);
+function postLangLoad() {
+	if (!optionExists("version") || localStorage["version"] != version) {
+		// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0
+		if (!optionExists("tempregexflag")) {
+			if (optionExists("version")) {
+				var tempList = JSON.parse(localStorage['blackList']);
+				var tempNewList = [];
+				if (tempList.length) {
+					tempList.map(function(domain) {
+						if (domain.substr(0,2) == '*.') tempNewList.push('*'+domain);
+						else tempNewList.push(domain);
+					});
+					localStorage['blackList'] = JSON.stringify(tempNewList);
+				}
+				tempList = JSON.parse(localStorage['whiteList']);
+				if (tempList.length) {
+					tempNewList = [];
+					tempList.map(function(domain) {
+						if (domain.substr(0,2) == '*.') tempNewList.push('*'+domain);
+						else tempNewList.push(domain);
+					});
+					localStorage['whiteList'] = JSON.stringify(tempNewList);
+				}
+			}
+			localStorage['tempregexflag'] = "true";
+			syncQueue();
+		}
+		if (localStorage["updatenotify"] == "true") {
+			chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html')});
+		}
+		localStorage["version"] = version;
+	}
+	if (storageapi) {
+		chrome.storage.onChanged.addListener(function(changes, namespace) {
+			if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
+				if (typeof changes['lastSync'] !== 'undefined') {
+					if (changes['lastSync'].newValue != localStorage['lastSync']) {
+						importSync(changes, 1);
+						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
+					}
+				}
+			}
+		});
+		importSyncHandle(0);
+	}
+	init();
+}
