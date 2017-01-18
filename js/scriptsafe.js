@@ -1259,14 +1259,14 @@ function getLocale(str) {
 	if (locale) {
 		return locale[str].message;
 	} else {
-		return getLocale(str);
+		return chrome.i18n.getMessage(str);
 	}
 }
 function getLangs() {
 	return langs;
 }
+var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 if (!optionExists("locale")) {
-	var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 	localStorage['locale'] = 'en_US';
 	if (uiLang != 'en' && uiLang != 'en_GB' && uiLang != 'en_US') {
 		if (typeof langs[uiLang] !== 'undefined') {
@@ -1274,6 +1274,10 @@ if (!optionExists("locale")) {
 				localStorage['locale'] = uiLang;
 			}
 		}
+	}
+} else {
+	if (typeof langs[uiLang] === 'undefined') {
+		localStorage['locale'] = 'en_US';
 	}
 }
 initLang(localStorage['locale'], 1);
