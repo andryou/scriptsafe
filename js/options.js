@@ -185,13 +185,13 @@ function i18load() {
 	$(".i18_whitelistmove").html(bkg.getLocale("whitelistmove"));
 	$(".i18_blacklistmove").html(bkg.getLocale("blacklistmove"));
 	$(".i18_domaintip").html(bkg.getLocale("domaintip"));
-	$("#sectionname").html(bkg.getLocale("generalsettings"));
 	$("#menu_generalsettings").attr('rel', bkg.getLocale("generalsettings")).html(bkg.getLocale("generalsettings"));
 	$("#menu_fingerprint").attr('rel', bkg.getLocale("fingerprintdesc")).html(bkg.getLocale("fingerprint"));
 	$("#menu_privacy").attr('rel', bkg.getLocale("privacy")).html(bkg.getLocale("privacy"));
 	$("#menu_behavior").attr('rel', bkg.getLocale("behavior")).html(bkg.getLocale("behavior"));
 	$("#menu_whitelistblacklist").attr('rel', bkg.getLocale("whitelistblacklist")).html(bkg.getLocale("whitelistblacklist"));
 	$("#menu_importexport").attr('rel', bkg.getLocale("importexport")).html(bkg.getLocale("importexport"));
+	$("#sectionname").html($('.list-group a.active').attr('rel'));
 }
 function initTabs() {
 	$('.list-group a').on('click', function(e)  {
