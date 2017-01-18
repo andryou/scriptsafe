@@ -739,7 +739,7 @@
       "description": "Block WebVR Enumeration:",
       "message": "不允许WebVR设备："
    },
-   "webvredesc": {
+   "webvrdesc": {
       "description": "prevent having hardware devices detected via the WebVR API",
       "message": "禁止调用WebVR API以检测硬件设备"
    },
