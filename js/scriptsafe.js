@@ -1227,6 +1227,7 @@ function initLang(lang, mode) {
 }
 function getLocale(str) {
 	if (locale) {
+		if (typeof locale[str] === 'undefined') return chrome.i18n.getMessage(str);
 		return locale[str].message;
 	} else {
 		return chrome.i18n.getMessage(str);
