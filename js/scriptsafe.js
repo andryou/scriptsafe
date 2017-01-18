@@ -1267,14 +1267,12 @@ function getLangs() {
 	return langs;
 }
 if (!optionExists("locale")) {
-	var uiLang = chrome.i18n.getUILanguage();
-	var uiLangClean;
-	uiLangClean = uiLang.replace(/-/g, '_');
+	var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 	localStorage['locale'] = 'en_US';
-	if (uiLang != 'en' && uiLang != 'en-GB' && uiLang != 'en-US') {
-		if (typeof langs[uiLangClean] !== 'undefined') {
-			if (confirm('ScriptSafe detected that your browser is currently set to '+langs[uiLangClean]+'.\r\nWould you like to use ScriptSafe in '+langs[uiLangClean]+'?')) {
-				localStorage['locale'] = uiLangClean;
+	if (uiLang != 'en' && uiLang != 'en_GB' && uiLang != 'en_US') {
+		if (typeof langs[uiLang] !== 'undefined') {
+			if (confirm('ScriptSafe detected that your browser is currently set to '+langs[uiLang]+'.\r\nWould you like to use ScriptSafe in '+langs[uiLang]+'?\r\nIf you click on "Cancel", English (US) will be set.')) {
+				localStorage['locale'] = uiLang;
 			}
 		}
 	}
