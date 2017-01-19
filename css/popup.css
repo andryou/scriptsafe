@@ -1,9 +1,10 @@
 /* Global */
 html { width: 575px; }
-body { margin: 0px 5px; padding: 0px; width: 568px; }
-html, body { max-height: 600px; overflow-y: auto; }
-html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
+html, body { max-height: 600px; overflow-y: auto; word-wrap: break-word; }
+html, body, td, th { font-family: arial, sans-serif; }
+body { margin: 0px 5px; padding: 0px; font-size: 100%; }
 #container, table { width: 100%; }
+#container { font-size: 0.75em; }
 td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
@@ -16,13 +17,11 @@ th { padding-bottom: 5px; }
 table { padding-top: 40px; }
 
 /* Tab Options */
-#parent, #currentdomain { max-width: 568px; word-wrap: break-word; }
 #parent { text-align: right; padding-right: 3px; }
 #parent > div { border-bottom: none; display: inline-block; }
 
 /* Resource List */
-.thirds { vertical-align: top; max-width: 563px; }
-.thirditem span, .fpitem span { word-wrap: break-word; }
+.thirds { vertical-align: top; }
 .thirditem span a, fpitem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover, .fpitem span a:hover { text-decoration: underline; }
 .allowed, .blocked, .domainname { padding: 0 5px; }
@@ -59,8 +58,7 @@ table { padding-top: 40px; }
 
 /* Footer */
 #bottom { padding-top: 10px; padding-bottom: 5px; }
-#credit { text-align: right; padding-right: 5px; }
-#credit { font-weight: bold; font-size: 11px; color: #555; }
+#credit { text-align: right; padding-right: 5px; font-weight: bold; font-size: 0.92em; color: #555; }
 #credit a, #pop_options { text-decoration: underline; }
 #credit a:hover, #pop_options:hover { text-decoration: none; }
 #closebtn { width: 5px; text-align: right; }
@@ -76,10 +74,10 @@ hr { border: 0; border-top: 1px solid #eeeeee; }
 }
 .box {
 	cursor: default;
-	font-size: 11px;
+	font-size: 0.92em;
 	font-weight: bold;
 	text-align: center;
-	min-width: 70px;
+	min-width: 12%;
 	outline: 0;
 	padding: 8px 6px;
 	-moz-border-radius: 2px;

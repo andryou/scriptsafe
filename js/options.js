@@ -451,7 +451,7 @@ function saveLang() {
 	saveElement("locale");
 	updateExport();
 	bkg.initLang(localStorage['locale'], 0);
-	setTimeout(i18load, 1500);
+	setTimeout(i18load, 1000);
 	syncstatus = bkg.freshSync(1);
 	if (syncstatus) {
 		notification(bkg.getLocale("settingssavesync"));
