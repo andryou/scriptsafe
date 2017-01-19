@@ -5,6 +5,7 @@ var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
 var timestamp = Math.round(new Date().getTime()/1000.0);
+var linktrgt;
 // initialize settings object with default settings (that are overwritten by the actual user-set values later on)
 var SETTINGS = {
 	"MODE": "block",
@@ -103,6 +104,8 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
+		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
+		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenywhitelisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
@@ -428,19 +431,21 @@ function loaded() {
 	new MutationObserver(ScriptSafe).observe(document.querySelector("body"), { childList: true, subtree : true, attributes: false, characterData : false });
 }
 function ScriptSafe() {
-	if (SETTINGS['LINKTARGET'] != 'off') {
-		var linktrgt;
-		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
-		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
-		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
-	}
-	if (SETTINGS['DATAURL'] == 'true' || SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
-		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); 
-			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1');
+	if (SETTINGS['LINKTARGET'] != 'off' || SETTINGS['DATAURL'] == 'true' || SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
+		$("a[data-ss"+timestamp+"!='1']").each(function() {
+			var elSrc = getElSrc(this);
+			var attr = {};		
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && thirdParty(elSrc)) attr['rel'] = 'noreferrer';
+			if (SETTINGS['LINKTARGET'] != 'off') {
+				if ($(this).attr('target') != linktrgt) attr['target'] = linktrgt;
+			}
 			if (SETTINGS['DATAURL'] == 'true' && elSrc.match(/^\s*data:text\//i)) {
 				chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).attr('href'), node: 'Data URL'});
-				$(this).attr({'target': '_blank', 'href': 'data:text/html,<h1>This data:text/html link has been sanitized by ScriptSafe.</h1>Original link:<br /><strong>'+$(this).attr('href').replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/^\s*data:text/i, "data-SCRIPTSAFE:text")+'</strong><br /><br />If you would like to still load it (not recommended), copy and paste the above string into your address bar and remove "-SCRIPTSAFE".'});
+				attr['target'] = '_blank';
+				attr['href'] = 'data:text/html,<h1>This data:text/html link has been sanitized by ScriptSafe.</h1><p>Original link:<br><strong>'+$(this).attr('href').replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/^\s*data:text/i, "data-SCRIPTSAFE:text")+'</strong></p><p>If you would like to still load it (not recommended), copy and paste the above string into your address bar and remove "-SCRIPTSAFE" which is inserted as a safeguard.</p>';
 			}
+			attr['data-ss'+timestamp] = '1';
+			$(this).attr(attr);
 		});
 	}
 	if (SETTINGS['CANVAS'] != 'false') {
