@@ -46,6 +46,7 @@ var SETTINGS = {
 	"REFERRERSPOOFDENYWHITELISTED": "true",
 	"PARANOIA": "true",
 	"CLIPBOARD": "false",
+	"DATAURL": "true",
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
 if (window.self != window.top) iframe = 1;
@@ -105,6 +106,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenywhitelisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
+		SETTINGS['DATAURL'] = response.dataurl;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		$(document).ready(function() {
 			loaded();
@@ -432,8 +434,14 @@ function ScriptSafe() {
 		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
 	}
-	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
-		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
+	if (SETTINGS['DATAURL'] == 'true' || SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
+		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); 
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1');
+			if (SETTINGS['DATAURL'] == 'true' && elSrc.match(/^\s*data:text\//i)) {
+				chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).attr('href'), node: 'Data URL'});
+				$(this).attr({'target': '_blank', 'href': 'data:text/html,<h1>This data:text/html link has been sanitized by ScriptSafe.</h1>Original link:<br /><strong>'+$(this).attr('href').replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/^\s*data:text/i, "data-SCRIPTSAFE:text")+'</strong><br /><br />If you would like to still load it (not recommended), copy and paste the above string into your address bar and remove "-SCRIPTSAFE".'});
+			}
+		});
 	}
 	if (SETTINGS['CANVAS'] != 'false') {
 		$("canvas.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Fingerprint'}); $(this).remove(); });

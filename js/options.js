@@ -320,6 +320,7 @@ function loadOptions() {
 	loadCheckbox("audio");
 	loadCheckbox("video");
 	loadCheckbox("image");
+	loadCheckbox("dataurl");
 	loadElement("xml");
 	loadCheckbox("annoyances");
 	if (!$("#annoyances").prop('checked')) $("#annoyancesmode").attr('disabled', 'true');
@@ -386,6 +387,7 @@ function saveOptions() {
 	saveCheckbox("audio");
 	saveCheckbox("video");
 	saveCheckbox("image");
+	saveCheckbox("dataurl");
 	saveElement("xml");
 	saveCheckbox("annoyances");
 	saveElement("annoyancesmode");
