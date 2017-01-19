@@ -354,6 +354,7 @@ function init() {
 						}
 					}
 					if (typeof response.temp !== 'undefined' && response.temp.length || (typeof response.tempfp !== 'undefined' && response.tempfp)) {
+						if ($(tempSel+' > br').length == 0) $(tempSel).append('<br />');
 						$(tempSel).append('<div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">'+bkg.getLocale("revoketempall")+'</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
 					}
