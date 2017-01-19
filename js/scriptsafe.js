@@ -748,21 +748,6 @@ chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
 		}
 	} else chrome.browserAction.setIcon({path: "../img/IconDisabled.png", tabId: tabid});
 });
-chrome.runtime.onConnect.addListener(function(port) {
-	port.onMessage.addListener(function(msg) {
-		if (port.name == 'popuplifeline') {
-			if (msg.url && msg.tid) {
-				popup=[msg.url, msg.tid];
-			}
-		}
-	});
-	port.onDisconnect.addListener(function() {
-		if (popup.length > 0) {
-			if (localStorage['refresh'] == 'true') chrome.tabs.update(popup[1], {url: popup[0]});
-			popup=[];
-		}
-	});
-});
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
 		var fpListStatus = [];
@@ -820,7 +805,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 				break;
 			}
 		}
-		sendResponse({status: localStorage['enable'], enable: enableval, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], annoyances: localStorage['annoyances'], closepage: localStorage['classicoptions'], rating: localStorage['rating'], temp: sessionlist, tempfp: sessionfplist, blockeditems: ITEMS[request.tid]['blocked'], alloweditems: ITEMS[request.tid]['allowed'], domainsort: localStorage['domainsort']});
+		sendResponse({status: localStorage['enable'], enable: enableval, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], annoyances: localStorage['annoyances'], closepage: localStorage['classicoptions'], rating: localStorage['rating'], temp: sessionlist, tempfp: sessionfplist, blockeditems: ITEMS[request.tid]['blocked'], alloweditems: ITEMS[request.tid]['allowed'], domainsort: localStorage['domainsort'], refresh: localStorage['refresh']});
 		changed = true;
 	} else if (request.reqtype == 'update-blocked') {
 		if (request.src) {
@@ -979,6 +964,9 @@ function removeTempAll() {
 		revokeTemp();
 		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
 	});
+}
+function tabReload(tabid, refresh) {
+	if (refresh) chrome.tabs.reload(tabid);
 }
 // Debug Synced Items
 /*

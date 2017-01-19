@@ -2,25 +2,25 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 var version = '1.0.9.1';
-var port = chrome.runtime.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
 var selected = false;
 var intemp = false;
+var changed = false;
 var blocked = [];
 var allowed = [];
 var statuschange = function() {
-	port.postMessage({url: taburl, tid: tabid});
+	changed = true;
 	bkg.statuschanger();
 	window.close();
 };
 var revokealltemp = function() {
-	port.postMessage({url: taburl, tid: tabid});
+	changed = true;
 	bkg.revokeTemp();
 	window.close();
 };
 var bulkhandle = function() {
-	port.postMessage({url: taburl, tid: tabid});
+	changed = true;
 	bulk($(this));
 };
 var removehandle = function() {
@@ -30,13 +30,16 @@ var x_removehandle = function() {
 	remove($(this).parent().attr("rel"), $(this), '1');
 };
 var savehandle = function() {
-	port.postMessage({url: taburl, tid: tabid});
+	changed = true;
 	save(tabdomain, $(this), '0');
 };
 var x_savehandle = function() {
-	port.postMessage({url: taburl, tid: tabid});
+	changed = true;
 	save($(this).parent().attr("rel"), $(this), '1');
 };
+function tabReload() {
+	bkg.tabReload(tabid, changed);
+}
 function openTab(url) {
 	chrome.tabs.create({url: url});
 	window.close();
@@ -78,6 +81,7 @@ function init() {
 						}
 						return;
 					}
+					if (response.refresh == 'true') addEventListener("unload", tabReload, true);
 					mode = response.mode;
 					var responseBlockedCount = response.blockeditems.length;
 					var responseAllowedCount = response.alloweditems.length;
@@ -430,7 +434,7 @@ function remove(url, el, type) {
 	var val = el.attr("rel");
 	var selected = el.hasClass("selected");
 	if (val != 2 && selected) return;
-	port.postMessage({url: taburl, tid: tabid});
+	changed = true;
 	if (el.parent().hasClass("fpchoices")) {
 		var fpType = el.parent().attr("sn_list");
 		var fpList;
