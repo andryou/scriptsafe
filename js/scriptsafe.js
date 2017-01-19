@@ -749,7 +749,7 @@ chrome.tabs.onUpdated.addListener(function(tabid, changeinfo, tab) {
 		}
 	} else chrome.browserAction.setIcon({path: "../img/IconDisabled.png", tabId: tabid});
 });
-chrome.extension.onConnect.addListener(function(port) {
+chrome.runtime.onConnect.addListener(function(port) {
 	port.onMessage.addListener(function(msg) {
 		if (port.name == 'popuplifeline') {
 			if (msg.url && msg.tid) {
@@ -757,7 +757,7 @@ chrome.extension.onConnect.addListener(function(port) {
 			}
 		}
 	});
-	port.onDisconnect.addListener(function(msg) {
+	port.onDisconnect.addListener(function() {
 		if (popup.length > 0) {
 			if (localStorage['refresh'] == 'true') chrome.tabs.update(popup[1], {url: popup[0]});
 			popup=[];
