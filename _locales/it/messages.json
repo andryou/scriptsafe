@@ -348,8 +348,8 @@
       "message": "Rimuovere tutte le autorizzazioni temporanee"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Configurare i tasti di scelta rapida ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Configurare i tasti di scelta rapida ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Impostazioni importate con successo"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Impostazioni importate con successo, ad eccezione dei seguenti (valore vuoto o il nome non riconosciuto):"
    },
    "importsuccesssync": {

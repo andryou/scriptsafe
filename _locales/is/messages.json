@@ -348,8 +348,8 @@
       "message": "Fjarlægja öll tímabundnar heimildir"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Stilla ScriptSafe flýtilykla:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Stilla ScriptSafe flýtilykla"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Stillingar flutt inn"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Stillingar flutt inn, nema eftirfarandi (fastandi gildi eða óþekkt nafn):"
    },
    "importsuccesssync": {

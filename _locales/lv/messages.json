@@ -348,8 +348,8 @@
       "message": "Dzēst visas pagaidu atļaujas"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe karsto taustiņu konfigurēšana:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe karsto taustiņu konfigurēšana"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Iestatījumi ir veiksmīgi importēti"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Iestatījumi ir veiksmīgi importēti, izņemot (tukša vērtība vai neatpazīts apzīmējums):"
    },
    "importsuccesssync": {

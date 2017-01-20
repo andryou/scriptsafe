@@ -348,8 +348,8 @@
       "message": "Fjern alle midlertidige tillatelser"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Konfigurer ScriptSafe hurtigtaster:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Konfigurer ScriptSafe hurtigtaster"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Settings importert"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Innstillinger importert, unntatt følgende (tom verdi eller ukjente navn):"
    },
    "importsuccesssync": {

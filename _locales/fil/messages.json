@@ -348,8 +348,8 @@
       "message": "Alisin ang lahat ng pansamantalang pahintulot"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "I-configure ang ScriptSafe hotkeys:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "I-configure ang ScriptSafe hotkeys"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Setting matagumpay na-import"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Setting-import matagumpay, maliban sa sumusunod na (walang laman na halaga o hindi nakikilalang pangalan):"
    },
    "importsuccesssync": {

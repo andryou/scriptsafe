@@ -348,8 +348,8 @@
       "message": "取消所有临时权限"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "设置ScriptSafe热键："
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "设置ScriptSafe热键"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "成功导入设置"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "成功导入设置，以下除外（空值或无法识别的名称）："
    },
    "importsuccesssync": {

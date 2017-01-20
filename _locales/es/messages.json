@@ -348,8 +348,8 @@
       "message": "Eliminar todos los permisos temporales"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Configurar atajos de teclado de ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Configurar atajos de teclado de ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Ajustes importados correctamente"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Ajustes importados correctamente, excepto los siguientes (valor vacío o nombre no reconocido):"
    },
    "importsuccesssync": {

@@ -508,7 +508,7 @@ function settingsImport() {
 		$("#settingsimport").val("");
 	} else {
 		bkg.freshSync(0);
-		notification(bkg.getLocale("importsuccesscond")+error.slice(0, -2));
+		notification(bkg.getLocale("importsuccesscond")+' '+error.slice(0, -2));
 	}
 }
 function downloadtxt() {
