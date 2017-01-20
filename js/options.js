@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$(".save").click(saveOptions);
 	$("#domainsort").click(domainsort);
 	$("#whitebind").click(whitelistlisten);
+	$(".fpAdd").click(addFPList);
 	$("#blackbind").click(blacklistlisten);
 	$("#whiteclear").click(whiteclear);
 	$("#blackclear").click(blackclear);
@@ -455,7 +456,7 @@ function saveLang() {
 	saveElement("locale");
 	updateExport();
 	bkg.initLang(localStorage['locale'], 0);
-	setTimeout(i18load, 1500);
+	setTimeout(i18load, 1000);
 	syncstatus = bkg.freshSync(1);
 	if (syncstatus) {
 		notification(bkg.getLocale("settingssavesync"));
@@ -564,6 +565,31 @@ function addList(type) {
 			}
 			$('#url').focus();
 		}
+	}
+	return false;
+}
+function addFPList() {
+	var elid = $(this).attr('id').substr(0, $(this).attr('id').indexOf('whitebind'));
+	var domain = $('#'+elid+'url').val().toLowerCase().replace("http://", "").replace("https://", "");
+	if (!domain.match(/^(?:[\-\w\*\?]+(\.[\-\w\*\?]+)*|((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})|\[[A-Fa-f0-9:.]+\])?$/g)) {
+		notification(bkg.getLocale("domaininvalid"));
+	} else if (!domain.match(/[a-z0-9]/g)) {
+		notification(bkg.getLocale("domaininvalid2"));
+	} else {
+		var responseflag = bkg.fpDomainHandler(domain, elid, 1);
+		if (responseflag) {
+			$('#'+elid+'url').val('');
+			syncstatus = bkg.freshSync(2);
+			if (syncstatus) {
+				notification(bkg.getLocale("whitelisted")+' '+domain+' and syncing in 30 seconds.');
+			} else {
+				notification(bkg.getLocale("whitelisted")+' '+domain+'.');
+			}
+			fpListUpdate();
+		} else {
+			notification(domain+' not added as it already exists in the list or the entire domain has been '+bkg.getLocale("whitelisted"));
+		}
+		$('#'+elid+'url').focus();
 	}
 	return false;
 }
