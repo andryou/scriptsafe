@@ -348,8 +348,8 @@
       "message": "Премахнете всички временни разрешения"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Конфигуриране ScriptSafe клавишни комбинации:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Конфигуриране ScriptSafe клавишни комбинации"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Настройки внесени успешно"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Настройки внесени успешно, с изключение на следното (празна стойност или непризната име):"
    },
    "importsuccesssync": {

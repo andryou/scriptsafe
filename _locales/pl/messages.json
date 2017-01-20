@@ -348,8 +348,8 @@
       "message": "Usun wszystkie uprawnienia tymczasowych"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Skonfigurowac skróty klawiszowe ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Skonfigurowac skróty klawiszowe ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Ustawienia zaimportowany"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Ustawienia zaimportowany, z wyjatkiem nastepujacych (pusta wartosc lub nierozpoznanego nazwa):"
    },
    "importsuccesssync": {

@@ -348,8 +348,8 @@
       "message": "Κατάργηση όλων των προσωρινών αδειών"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Διαμορφώστε ScriptSafe hotkeys:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Διαμορφώστε ScriptSafe hotkeys"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Ρυθμίσεις που εισάγονται με επιτυχία"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Ρυθμίσεις που εισάγονται με επιτυχία, εκτός από τα εξής (άδειο αξία ή μη αναγνωρισμένης όνομα):"
    },
    "importsuccesssync": {

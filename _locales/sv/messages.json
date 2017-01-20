@@ -348,8 +348,8 @@
       "message": "Ta bort alla tillfälliga tillstånd"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Konfigurera ScriptSafe snabbval:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Konfigurera ScriptSafe snabbval"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Inställningar har importerats"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Inställningar har importerats, utom följande (tomt värde eller okända namn):"
    },
    "importsuccesssync": {

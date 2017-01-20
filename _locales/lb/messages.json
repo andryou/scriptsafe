@@ -348,8 +348,8 @@
       "message": "Huelt all temporärer Permissiounen"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Configuréieren ScriptSafe hotkeys:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Configuréieren ScriptSafe hotkeys"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Parameteren importéiert erfollegräich"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Parameteren erfollegräich importéiert, ausser de folgenden (eidel Wäert oder dei Numm):"
    },
    "importsuccesssync": {

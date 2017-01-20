@@ -348,8 +348,8 @@
       "message": "அனைத்து தற்காலிக அனுமதிகளை நீக்க"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe குறுக்குவிசைகள் கட்டமைக்கவும்:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe குறுக்குவிசைகள் கட்டமைக்கவும்"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "அமைப்புகள் வெற்றிகரமாக இறக்குமதி"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "அமைப்புகள் பின்வரும் (வெற்று மதிப்பு அல்லது அங்கீகரிக்கப்படாத பெயர்) தவிர, வெற்றிகரமாக இறக்குமதி:"
    },
    "importsuccesssync": {
@@ -737,7 +737,7 @@
    },
    "webvr": {
       "description": "Block WebVR Enumeration:",
-      "message": "பிளாக் WebVR ஐ கணக்கெடுப்பு"
+      "message": "பிளாக் WebVR ஐ கணக்கெடுப்பு:"
    },
    "webvrdesc": {
       "description": "prevent having devices detected via the WebVR API",

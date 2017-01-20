@@ -348,8 +348,8 @@
       "message": "Verwijder alle tijdelijke toestemmingen"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Configureer ScriptSafe sneltoetsen:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Configureer ScriptSafe sneltoetsen"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Instellingen met succes geïmporteerd"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Instellingen geïmporteerd, met uitzondering van de volgende (lege waarde of niet-herkende naam):"
    },
    "importsuccesssync": {

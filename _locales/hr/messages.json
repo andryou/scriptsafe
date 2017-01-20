@@ -348,8 +348,8 @@
       "message": "Ukloni sve privremene dozvole"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Konfiguracija ScriptSafe hotkeys:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Konfiguracija ScriptSafe hotkeys"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Postavke uspješno uvezena"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Postavke uspješno uvezena, osim slijedeceg (praznu vrijednost ili nepriznate ime):"
    },
    "importsuccesssync": {
