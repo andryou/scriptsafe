@@ -348,8 +348,8 @@
       "message": "Hủy bỏ tất cả các quyền tạm thời"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Cấu hình các phím nóng ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Cấu hình các phím nóng ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Cài đặt nhập thành công"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Cài đặt nhập thành công, ngoại trừ sau (giá trị sản phẩm hoặc tên không được công nhận):"
    },
    "importsuccesssync": {

@@ -348,8 +348,8 @@
       "message": "Hapus semua izin sementara"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Konfigurasi ScriptSafe hotkeys:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Konfigurasi ScriptSafe hotkeys"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Pengaturan berhasil diimpor"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Pengaturan berhasil diimpor, kecuali berikut (nilai kosong atau nama yang belum diakui):"
    },
    "importsuccesssync": {

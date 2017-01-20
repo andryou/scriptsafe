@@ -348,8 +348,8 @@
       "message": "เอาสิทธิ์ชั่วคราว"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "กำหนดค่าอง ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "กำหนดค่าอง ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "การตั้งค่านำเข้าสำเร็จ"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "การตั้งค่านำเข้าสำเร็จยกเว้นดังต่อไปนี้ (ค่าว่างหรือชื่อที่ไม่รู้จัก):"
    },
    "importsuccesssync": {

@@ -348,8 +348,8 @@
       "message": "すべての一時的な権限を削除する"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafeのホットキーを設定します。"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafeのホットキーを設定します"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "正常にインポート設定"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "以下の（空の値または認識されない名前）を除いて、正常にインポートセッティング："
    },
    "importsuccesssync": {

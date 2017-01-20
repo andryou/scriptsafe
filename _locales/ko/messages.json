@@ -165,7 +165,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "클립 보드의 간섭을 방지합니다."
+      "message": "클립 보드의 간섭을 방지합니다:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -221,7 +221,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "사용 중지하고 삭제"
+      "message": "사용 중지하고 삭제:"
    },
    "distrust": {
       "description": "Distrust",
@@ -348,8 +348,8 @@
       "message": "모든 일시적 허용 제거"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe 단축키 설정 :"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe 단축키 설정"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,8 +400,8 @@
       "message": "성공적으로 설정을 가져왔습니다."
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
-      "message": "다음 값(비었거나 인식되지 않는 이름)을 제외하고 성공적으로 설정을 가져왔습니다 :"
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
+      "message": "다음 값(비었거나 인식되지 않는 이름)을 제외하고 성공적으로 설정을 가져왔습니다:"
    },
    "importsuccesssync": {
       "description": "Settings imported successfully and syncing in 30 seconds",
@@ -409,7 +409,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "키보드 Fingerprinting 방지 (<strong>고급 사용자 전용</strong>)："
+      "message": "키보드 Fingerprinting 방지 (<strong>고급 사용자 전용</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -513,7 +513,7 @@
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
-      "message": "가짜 Referrer："
+      "message": "가짜 Referrer:"
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",

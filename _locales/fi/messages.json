@@ -348,8 +348,8 @@
       "message": "Poista kaikki määräaikaisia ??lupia"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Määritä ScriptSafe pikanäppäimet:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Määritä ScriptSafe pikanäppäimet"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Asetukset tuominen onnistui"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Asetukset tuotu onnistuneesti, lukuun ottamatta seuraavia (tyhjä arvo tai tunnistamattomia nimi):"
    },
    "importsuccesssync": {

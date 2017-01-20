@@ -348,8 +348,8 @@
       "message": "إزالة كافة الأذونات مؤقتة"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "تكوين مفاتيح الاختصار ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "تكوين مفاتيح الاختصار ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "إعدادات المستوردة بنجاح"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "إعدادات المستوردة بنجاح، باستثناء ما يلي (قيمة فارغة أو اسم غير المعترف بها):"
    },
    "importsuccesssync": {

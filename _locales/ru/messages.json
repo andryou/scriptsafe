@@ -348,8 +348,8 @@
       "message": "Удалить все временные разрешения"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Настройка горячих клавиш ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Настройка горячих клавиш ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Настройки успешно импортированы"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Настройки успешно импортированы, за исключением следующих (пустое значение или нераспознанное имя):"
    },
    "importsuccesssync": {

@@ -65,7 +65,7 @@
    },
    "battery": {
       "description": "Block Battery Fingerprinting:",
-      "message": "Blokovat identifikaci prohlížeče podle baterie zařízení"
+      "message": "Blokovat identifikaci prohlížeče podle baterie zařízení:"
    },
    "batterydesc": {
       "description": "prevent fingerprinting via the Battery API",
@@ -348,8 +348,8 @@
       "message": "Zrušit veškerá dočasná oprávnění"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "Konfigurace klávesových zkratek ScriptSafe:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Konfigurace klávesových zkratek ScriptSafe"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Nastavení úspěšně importována"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Nastavení úspěšně importována, s výjimkou následujících (prázdné hodnoty nebo nerozpoznané jméno):"
    },
    "importsuccesssync": {

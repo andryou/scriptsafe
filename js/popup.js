@@ -357,7 +357,7 @@ function init() {
 						if ($(tempSel+' > br').length == 0) $(tempSel).append('<br />');
 						$(tempSel).append('<div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">'+bkg.getLocale("revoketempall")+'</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
-					}
+					} else if ($(tempSel+' > br').length == 1 && $(tempSel+' > div.allowsession').length == 0) $(tempSel+' > br').remove();
 					$("#parent").prepend('<div class="box box4 pclear" title="Clear Domain from List">'+bkg.getLocale("clear")+'</div><div class="box box1 pallow" rel="0" title="Allow Current Domain">'+bkg.getLocale("allow")+'</div><div class="box box1 ptrust" rel="3" title="Trust Entire Domain">'+bkg.getLocale("trust")+'</div><div class="box box2 pdeny" rel="1" title="Deny">'+bkg.getLocale("deny")+'</div><div class="box box2 ptrust" rel="4" title="Distrust Entire Domain">'+bkg.getLocale("distrust")+'</div><div class="box box3 pbypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</div>').attr("sn_list",response.enable);
 					$(".pallow,.pdeny,.pbypass,.ptrust").bind("click", savehandle);
 					$(".pclear").bind("click", removehandle).hide();

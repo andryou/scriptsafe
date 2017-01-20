@@ -348,8 +348,8 @@
       "message": "Бүх түр зөвшөөрлийг ав"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe hotkeys тохируулна:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe hotkeys тохируулна"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Тохиргоо амжилттай импортын"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Тохиргоо Дараах (хоосон үнэ цэнэ буюу хүлээн зөвшөөрөөгүй нэр) бусад тохиолдолд амжилттай оруулсан:"
    },
    "importsuccesssync": {
@@ -473,7 +473,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Хүндэтгэ Ижил домэйн"
+      "message": "Хүндэтгэ Ижил домэйн:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
