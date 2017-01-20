@@ -207,6 +207,10 @@ function init() {
 							$("#blocked").append($('.thirditem:has([title="Unwanted Content Provider"])'));
 							$("#blocked").append($('.thirditem:has([title="Antisocial"])'));
 							$("#blocked").append($('.thirditem:not(*>:has(.choices))'));
+							$("#blocked").append($("#blocked [rel='x_no_script']"));
+							$("#blocked").append($("#blocked [rel='x_web_bug']"));
+							$("#blocked").append($("#blocked [rel='x_data_url']"));
+							$("#blocked").append($("#blocked [rel='x_spoofed_timezone']"));
 							$("#blocked").append($("#blocked [rel='x_canvas_fingerprint']"));
 							$("#blocked").append($("#blocked [rel='x_canvas_font_access']"));
 							$("#blocked").append($("#blocked [rel='x_battery_fingerprint']"));
@@ -217,10 +221,6 @@ function init() {
 							$("#blocked").append($("#blocked [rel='x_webvr_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_client_rectangles']"));
 							$("#blocked").append($("#blocked [rel='x_clipboard_interference']"));
-							$("#blocked").append($("#blocked [rel='x_no_script']"));
-							$("#blocked").append($("#blocked [rel='x_web_bug']"));
-							$("#blocked").append($("#blocked [rel='x_data_url']"));
-							$("#blocked").append($("#blocked [rel='x_spoofed_timezone']"));
 							$("#blocked").prepend($("#blocked [data-domain='"+tabdomainroot+"'][data-baddie='false']"));
 							$("#blocked [rel='x_"+tabdomainfriendly+"']").children().first().css("font-weight", "bold");
 							$("#blocked [rel='fp_"+tabdomainfriendly+"']").children().css("font-weight", "bold");
@@ -354,6 +354,7 @@ function init() {
 						}
 					}
 					if (typeof response.temp !== 'undefined' && response.temp.length || (typeof response.tempfp !== 'undefined' && response.tempfp)) {
+						if ($(tempSel+' > br').length == 0) $(tempSel).append('<br />');
 						$(tempSel).append('<div class="box box5 clearglobaltemp" title="Revoke all temporary permissions given in this entire browsing session">'+bkg.getLocale("revoketempall")+'</div>');
 						$(".clearglobaltemp").bind("click", revokealltemp);
 					}

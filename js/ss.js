@@ -441,8 +441,8 @@ function ScriptSafe() {
 			}
 			if (SETTINGS['DATAURL'] == 'true' && elSrc.match(/^\s*data:text\//i)) {
 				chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).attr('href'), node: 'Data URL'});
-				attr['target'] = '_blank';
-				attr['href'] = 'data:text/html,<h1>This data:text/html link has been sanitized by ScriptSafe.</h1><p>Original link:<br><strong>'+$(this).attr('href').replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/^\s*data:text/i, "data-SCRIPTSAFE:text")+'</strong></p><p>If you would like to still load it (not recommended), copy and paste the above string into your address bar and remove "-SCRIPTSAFE" which is inserted as a safeguard.</p>';
+				attr['target'] = '';
+				attr['href'] = 'data:text/html,<h1>This data:text/html link has been sanitized by ScriptSafe.</h1><p>Original link:<br><strong>'+$(this).attr('href').replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/^\s*data:text/i, "data-SCRIPTSAFE:text")+'</strong></p><p>If you would like to still load it (not recommended), copy and paste the above string into your address bar and remove "-SCRIPTSAFE" which is inserted as a safeguard.</p><p><a href="javascript:history.go(-1);">Go Back</a></p>';
 			}
 			attr['data-ss'+timestamp] = '1';
 			$(this).attr(attr);
@@ -753,9 +753,10 @@ function block(event) {
 	var thirdPartyCheck;
 	var elementStatusCheck;
 	var domainCheckStatus;
-	var elWidth = $(el).attr('width');
-	var elHeight = $(el).attr('height');
-	var elStyle = $(el).attr('style');
+	var $el = $(el);
+	var elWidth = $el.attr('width');
+	var elHeight = $el.attr('height');
+	var elStyle = $el.attr('style');
 	var baddiesCheck = baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']);
 	if (SETTINGS['DOMAINSTATUS'] == '1' || (SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true' && SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
 		elementStatusCheck = true;
