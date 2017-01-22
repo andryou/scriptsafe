@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "सेटिङ बचत र 30 सेकेन्ड समक्रमण"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe असक्षम छ"

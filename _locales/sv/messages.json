@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Inställningar har sparats och synkroniseras om 30 sekunder"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Visa i Snabbmenyn:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe är inaktiverad"

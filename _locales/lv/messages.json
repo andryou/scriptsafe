@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Iestatījumi ir veiksmīgi saglabāti un sinhronizēti 30 sekunžu laikā"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe ir atspējots"

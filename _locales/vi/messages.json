@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Cài đặt lưu và đồng bộ trong 30 giây"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe bị vô hiệu hóa"
