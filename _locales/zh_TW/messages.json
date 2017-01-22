@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "設定已儲存並會在30秒內同步"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "顯示在快顯功能表:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe被停用"

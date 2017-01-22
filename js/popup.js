@@ -172,7 +172,7 @@ function init() {
 									}
 									if (response.rating == 'true') {
 										$("#blocked [rel='r_"+itemdomainfriendly+"']").html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+itemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+itemdomain+'">&#128269;</a></span>');
-										$('#blocked [rel="rfp_'+fpitemdomainfriendly+'"]').html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+fpitemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+fpitemdomain+'">&#128269;</a></span>');
+										if (response.blockeditems[i][6]) $('#blocked [rel="rfp_'+fpitemdomainfriendly+'"]').html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+fpitemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+fpitemdomain+'">&#128269;</a></span>');
 									}
 									if ((response.annoyances == 'true' && response.annoyancesmode == 'strict' && domainCheckStatus == '-1' && baddiesstatus == 1) || (response.antisocial == 'true' && baddiesstatus == '2')) {
 										$("#blocked").append($("#blocked [rel='x_"+itemdomainfriendly+"']"));
@@ -281,7 +281,7 @@ function init() {
 									}
 									if (response.rating == 'true') {
 										$("#allowed [rel='r_"+itemdomainfriendly+"']").html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+itemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+itemdomain+'">&#128269;</a></span>');
-										$('#allowed [rel="rfp_'+fpitemdomainfriendly+'"]').html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+fpitemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+fpitemdomain+'">&#128269;</a></span>');
+										if (response.alloweditems[i][5]) $('#allowed [rel="rfp_'+fpitemdomainfriendly+'"]').html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+fpitemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+fpitemdomain+'">&#128269;</a></span>');
 									}
 									if (response.annoyances == 'true' && baddiesstatus == '1') {
 										$("#allowed [rel='x_"+itemdomainfriendly+"'] .x_blacklist").attr("title","Unwanted Content Provider").html(bkg.getLocale("unwanted"));

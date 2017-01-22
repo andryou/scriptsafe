@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Nastavitve so shranjene in sinhronizirate v 30 sekundah"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Prikaži v Vsebinskem Meniju:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe je onemogocena"

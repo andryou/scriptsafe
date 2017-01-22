@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "அமைப்புகள் சேமிக்கப்படும் மற்றும் 30 நொடிகளில் ஒத்திசைவை"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe முடக்கப்பட்டுள்ளது"
