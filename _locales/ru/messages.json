@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Настройки сохранены и синхронизированы за 30 секунд"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Показать в контекстном меню:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe отключен"

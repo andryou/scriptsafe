@@ -82,6 +82,7 @@ function i18load() {
 	$(".i18_hotkeysremove").html(bkg.getLocale("hotkeysremove"));
 	$(".i18_hotkeysremoveall").html(bkg.getLocale("hotkeysremoveall"));
 	$("#hotkeyspage").html(bkg.getLocale("hotkeyspage"));
+	$(".i18_showcontext").html(bkg.getLocale("showcontext"));
 	$(".i18_hotkeysinst").html(bkg.getLocale("hotkeysinst"));
 	$(".i18_canvas").html(bkg.getLocale("canvas"));
 	$(".i18_canvasblank").html(bkg.getLocale("canvasblank"));
@@ -318,6 +319,7 @@ function loadOptions() {
 	loadCheckbox("video");
 	loadCheckbox("image");
 	loadCheckbox("dataurl");
+	loadCheckbox("showcontext");
 	loadElement("xml");
 	loadCheckbox("annoyances");
 	if (!$("#annoyances").prop('checked')) $("#annoyancesmode").attr('disabled', 'true');
@@ -383,6 +385,7 @@ function saveOptions() {
 	saveCheckbox("video");
 	saveCheckbox("image");
 	saveCheckbox("dataurl");
+	saveCheckbox("showcontext");
 	saveElement("xml");
 	saveCheckbox("annoyances");
 	saveElement("annoyancesmode");

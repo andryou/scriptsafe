@@ -539,6 +539,7 @@ function setDefaultOptions() {
 	defaultOptionValue("audio", "true");
 	defaultOptionValue("video", "true");
 	defaultOptionValue("image", "false");
+	defaultOptionValue("showcontext", "true");
 	defaultOptionValue("canvas", "false");
 	defaultOptionValue("canvasfont", "false");
 	defaultOptionValue("clientrects", "false");
@@ -862,7 +863,7 @@ chrome.commands.onCommand.addListener(function (command) {
 });
 function reinitContext() {
 	chrome.contextMenus.removeAll(function() {
-		genContextMenu();
+		if (localStorage['showcontext'] == 'true') genContextMenu();
 	});
 }
 function genContextMenu() {
@@ -1112,7 +1113,7 @@ function init() {
 	setDefaultOptions();
 	cacheLists();
 	cacheFpLists();
-	genContextMenu();
+	if (localStorage['showcontext'] == 'true') genContextMenu();
 }
 function cacheLists() {
 	var tempList = JSON.parse(localStorage['whiteList']);

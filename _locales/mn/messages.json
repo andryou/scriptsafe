@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Тохиргоо хадгалсан, 30 секундын дотор сүүлийн хэлбэрт аваачих,"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe хөгжлийн бэрхшээлтэй байна"

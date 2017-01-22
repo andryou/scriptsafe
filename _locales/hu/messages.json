@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Beállítások elmentve, szinkronizálás 30 másodpercen belül"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Megjelenítés a Jobbgombos Menüben:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe le van tiltva"
