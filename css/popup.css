@@ -8,7 +8,7 @@ body { margin: 0px 5px; padding: 0px; font-size: 100%; }
 td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
-#header { width: 100%; padding: 5px 0; margin-bottom: 10px; position: fixed; background-color: #fff; padding-left: 5px; margin-left: -5px; box-shadow: 0px 2px 0px rgba(0, 0, 0, .3); }
+#header { width: 100%; padding: 5px 0; margin-bottom: 10px; position: fixed; background-color: #fff; padding-left: 5px; margin-left: -5px; border-bottom: 2px solid #ccc; }
 #header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
 #header a#pop_webstore:hover { text-decoration: underline; }
 #header div { float: right; margin-right: 7px; }
@@ -55,6 +55,13 @@ table { padding-top: 40px; }
 #currentdomain .wot a { color: #fff; }
 .wot a:hover { text-decoration: underline; }
 .choices { float: right; }
+.domainoutput {
+	max-width: 536px;
+	display: inline-block;
+}
+.domainname.domainoutput {
+	max-width: 531px;
+}
 
 /* Footer */
 #bottom { padding-top: 10px; padding-bottom: 5px; }
