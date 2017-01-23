@@ -183,6 +183,8 @@ function i18load() {
 	$(".i18_whitelistmove").html(bkg.getLocale("whitelistmove"));
 	$(".i18_blacklistmove").html(bkg.getLocale("blacklistmove"));
 	$(".i18_domaintip").html(bkg.getLocale("domaintip"));
+	$(".topDomainAdd[data-mode='0']").html(bkg.getLocale("trust"));
+	$(".topDomainAdd[data-mode='1']").html(bkg.getLocale("distrust"));
 	$("#menu_generalsettings").attr('rel', bkg.getLocale("generalsettings")).html(bkg.getLocale("generalsettings"));
 	$("#menu_fingerprint").attr('rel', bkg.getLocale("fingerprintdesc")).html(bkg.getLocale("fingerprint"));
 	$("#menu_privacy").attr('rel', bkg.getLocale("privacy")).html(bkg.getLocale("privacy"));
