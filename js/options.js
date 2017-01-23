@@ -447,13 +447,15 @@ function saveLang() {
 	saveElement("locale");
 	updateExport();
 	bkg.initLang(localStorage['locale'], 0);
-	setTimeout(i18load, 1000);
-	syncstatus = bkg.freshSync(1);
-	if (syncstatus) {
-		notification(bkg.getLocale("settingssavesync"));
-	} else {
-		notification(bkg.getLocale("settingssave"));
-	}
+	setTimeout(function() {
+		i18load();
+		syncstatus = bkg.freshSync(1);
+		if (syncstatus) {
+			notification(bkg.getLocale("settingssavesync"));
+		} else {
+			notification(bkg.getLocale("settingssave"));
+		}
+	}, 1000);
 }
 function selectAll(id) {
 	$("#"+id).select();

@@ -1220,10 +1220,12 @@ function initLang(lang, mode) {
 		success: function(data) {
 			locale = data;
 			if (mode == '1') postLangLoad();
+			else reinitContext();
 		},
 		error: function(){
 			locale = false;
 			if (mode == '1') postLangLoad();
+			else reinitContext();
 		}
 	});
 }
