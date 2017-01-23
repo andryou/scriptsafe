@@ -577,7 +577,7 @@
    },
    "showcontext": {
       "description": "Show in Context Menu:",
-      "message": "Show in Context Menu:"
+      "message": "컨텍스트 메뉴에 표시:"
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
