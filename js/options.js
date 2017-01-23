@@ -303,7 +303,7 @@ function saveElement(id) {
 	localStorage[id] = $("#"+id).val();
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version+" DEVELOPMENT");
+	$("#title").html("ScriptSafe v"+version+" BETA");
 	loadCheckbox("enable");
 	/* note: opera does not support syncing.
 	loadCheckbox("syncenable");

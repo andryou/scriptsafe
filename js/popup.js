@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 });
 function init() {
-	$("#version").html(version+" DEVELOPMENT");
+	$("#version").html(version+" BETA");
 	$("#pop_options").html(bkg.getLocale("options"));
 	chrome.windows.getCurrent(function(w) {
 		chrome.tabs.getSelected(w.id, function(tab) {
