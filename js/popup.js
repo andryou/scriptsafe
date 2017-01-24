@@ -78,7 +78,7 @@ function init() {
 						}
 						return;
 					}
-					if (tab.url.substring(0, 4) != 'http') {
+					if (taburl.indexOf('data:text/html') == 0) {
 						$("table").html('<tr><td>'+bkg.getLocale("cannotprocess")+'</td></tr>');
 						return;
 					}
