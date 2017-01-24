@@ -78,6 +78,10 @@ function init() {
 						}
 						return;
 					}
+					if (taburl.indexOf('data:text/html') == 0) {
+						$("table").html('<tr><td>'+bkg.getLocale("cannotprocess")+'</td></tr>');
+						return;
+					}
 					mode = response.mode;
 					var responseBlockedCount = response.blockeditems.length;
 					var responseAllowedCount = response.alloweditems.length;
