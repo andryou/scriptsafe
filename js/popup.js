@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
 	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/opera'); });
 	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
-	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.opera.com/en/search/?query=scriptsafe'); });
+	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.opera.com/en/extensions/details/scriptsafe-2/'); });
 	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
 	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 });
