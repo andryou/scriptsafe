@@ -65,7 +65,7 @@ function init() {
 			tabdomain = bkg.extractDomainFromURL(taburl);
 			if (tabdomain.substr(0,4) == 'www.') tabdomain = tabdomain.substr(4);
 			tabid = tab.id;
-			if (tabdomain == 'chrome.google.com' || taburl.indexOf('chrome-extension://') == 0) {
+			if (tabdomain == 'addons.opera.com' || taburl.indexOf('chrome-extension://') == 0) {
 				$("#currentdomain").html(bkg.getLocale("notfiltered"));
 				$(".thirds").html('<i>'+bkg.getLocale("noexternal")+'</i>');
 			} else {

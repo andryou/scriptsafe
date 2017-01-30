@@ -308,7 +308,7 @@ function hashTrackingClean(url) {
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/'))
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://addons.opera.com') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/'))
 		return 'true';
 	return 'false';
 }
@@ -778,7 +778,7 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
-			if ((request.iframe != '1' && ((ITEMS[sender.tab.id]['url'] != sender.tab.url && (sender.tab.url.indexOf("#") != -1 || ITEMS[sender.tab.id]['url'].indexOf("#") != -1) && removeHash(sender.tab.url) != removeHash(ITEMS[sender.tab.id]['url'])) || (sender.tab.url.indexOf("#") == -1 && ITEMS[sender.tab.id]['url'].indexOf("#") == -1 && sender.tab.url != ITEMS[sender.tab.id]['url']) || changed) || sender.tab.url.indexOf('https://chrome.google.com/webstore') != -1)) {
+			if ((request.iframe != '1' && ((ITEMS[sender.tab.id]['url'] != sender.tab.url && (sender.tab.url.indexOf("#") != -1 || ITEMS[sender.tab.id]['url'].indexOf("#") != -1) && removeHash(sender.tab.url) != removeHash(ITEMS[sender.tab.id]['url'])) || (sender.tab.url.indexOf("#") == -1 && ITEMS[sender.tab.id]['url'].indexOf("#") == -1 && sender.tab.url != ITEMS[sender.tab.id]['url']) || changed) || sender.tab.url.indexOf('https://addons.opera.com') != -1)) {
 				if (changed && ITEMS[sender.tab.id]['url'] == sender.tab.url) {
 					initCount(sender.tab.id);
 				} else {
