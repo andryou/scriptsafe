@@ -124,8 +124,8 @@
       "message": "Zufällige Ausgabe"
    },
    "canvasblock": {
-      "description": "Ausgabe komplett blockieren",
-      "message": ""
+      "description": "Completely Block Readout",
+      "message": "Ausgabe komplett blockieren"
    },
    "canvasdesc": {
       "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",

@@ -537,7 +537,7 @@
    },
    "revoketempall": {
       "description": "Revoke All Temporary",
-      "message": "一時的な許可を取り消し"
+      "message": "一時的な許可をすべて取り消し"
    },
    "same": {
       "description": "Same Document",
@@ -577,7 +577,7 @@
    },
    "showcontext": {
       "description": "Show in Context Menu:",
-      "message": "Show in Context Menu:"
+      "message": "コンテキストメニューを表示:"
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
