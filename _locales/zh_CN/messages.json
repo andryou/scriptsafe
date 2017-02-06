@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "在此会话阻挡所有已允许的项目"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "不允许Bluetooth设备："
+   },
+   "bluetoothdesc": {
+      "description": "prevent having hardware devices detected via the Bluetooth API",
+      "message": "禁止调用Bluetooth API以检测硬件设备"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "批量导入"
@@ -744,7 +752,7 @@
       "message": "不允许WebVR设备："
    },
    "webvrdesc": {
-      "description": "prevent having hardware devices detected via the WebVR API",
+      "description": "prevent having devices detected via the WebVR API",
       "message": "禁止调用WebVR API以检测硬件设备"
    },
    "blackbind": {

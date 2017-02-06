@@ -120,6 +120,7 @@ function init() {
 								else if (response.blockeditems[i][1] == 'Device Enumeration') itemdomain = 'device.enumeration';
 								else if (response.blockeditems[i][1] == 'Gamepad Enumeration') itemdomain = 'gamepad.enumeration';
 								else if (response.blockeditems[i][1] == 'WebVR Enumeration') itemdomain = 'webvr.enumeration';
+								else if (response.blockeditems[i][1] == 'Bluetooth Enumeration') itemdomain = 'bluetooth.enumeration';
 								else if (response.blockeditems[i][1] == 'Spoofed Timezone') itemdomain = 'spoofed.timezone';
 								else if (response.blockeditems[i][1] == 'Client Rectangles') itemdomain = 'client.rectangles';
 								else if (response.blockeditems[i][1] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
@@ -222,6 +223,7 @@ function init() {
 							$("#blocked").append($("#blocked [rel='x_device_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_gamepad_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_webvr_enumeration']"));
+							$("#blocked").append($("#blocked [rel='x_bluetooth_enumeration']"));
 							$("#blocked").append($("#blocked [rel='x_client_rectangles']"));
 							$("#blocked").append($("#blocked [rel='x_clipboard_interference']"));
 							$("#blocked").prepend($("#blocked [data-domain='"+tabdomainroot+"'][data-baddie='false']"));
@@ -244,6 +246,7 @@ function init() {
 								else if (response.alloweditems[i][1] == 'Device Enumeration') itemdomain = 'device.enumeration';
 								else if (response.alloweditems[i][1] == 'Gamepad Enumeration') itemdomain = 'gamepad.enumeration';
 								else if (response.alloweditems[i][1] == 'WebVR Enumeration') itemdomain = 'webvr.enumeration';
+								else if (response.alloweditems[i][1] == 'Bluetooth Enumeration') itemdomain = 'bluetooth.enumeration';
 								else if (response.alloweditems[i][1] == 'Client Rectangles') itemdomain = 'client.rectangles';
 								else if (response.alloweditems[i][1] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
 								if (itemdomain) {
@@ -323,6 +326,7 @@ function init() {
 							$("#allowed").append($("#allowed [rel='x_device_enumeration']"));
 							$("#allowed").append($("#allowed [rel='x_gamepad_enumeration']"));
 							$("#allowed").append($("#allowed [rel='x_webvr_enumeration']"));
+							$("#allowed").append($("#allowed [rel='x_bluetooth_enumeration']"));
 							$("#allowed").append($("#allowed [rel='x_client_rectangles']"));
 							$("#allowed").append($("#allowed [rel='x_clipboard_interference']"));
 						}
@@ -338,7 +342,7 @@ function init() {
 						if (responseAllowedCount == 0) tempSel = '.thirds';
 						else tempSel = '#allowed';
 						if (mode == 'block') {
-							if ($('#blocked .thirditem').length == 1 && ($('#blocked .thirditem[rel="x_no_script"]').length == 1 || $('#blocked .thirditem[rel="x_web_bug"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1 || $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_gamepad_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_webvr_enumeration"]').length == 1) || $('#blocked .thirditem[rel="x_spoofed_timezone"]').length == 1 || $('#blocked .thirditem[rel="x_client_rectangles"]').length == 1 || $('#blocked .thirditem[rel="x_clipboard_interference"]').length == 1 || $('#blocked .thirditem[rel="x_data_url"]').length == 1) {
+							if ($('#blocked .thirditem').length == 1 && ($('#blocked .thirditem[rel="x_no_script"]').length == 1 || $('#blocked .thirditem[rel="x_web_bug"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_canvas_font_access"]').length == 1 || $('#blocked .thirditem[rel="x_audio_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_webgl_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_battery_fingerprint"]').length == 1 || $('#blocked .thirditem[rel="x_device_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_gamepad_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_webvr_enumeration"]').length == 1 || $('#blocked .thirditem[rel="x_bluetooth_enumeration"]').length == 1) || $('#blocked .thirditem[rel="x_spoofed_timezone"]').length == 1 || $('#blocked .thirditem[rel="x_client_rectangles"]').length == 1 || $('#blocked .thirditem[rel="x_clipboard_interference"]').length == 1 || $('#blocked .thirditem[rel="x_data_url"]').length == 1) {
 								// empty space
 							} else {
 								if ($("#blocked .x_whitelist:visible").length != 0) {
@@ -448,6 +452,7 @@ function remove(url, el, type) {
 		else if (fpType == 'device.enumeration') fpList = 'fpDevice';
 		else if (fpType == 'gamepad.enumeration') fpList = 'fpGamepad';
 		else if (fpType == 'webvr.enumeration') fpList = 'fpWebVR';
+		else if (fpType == 'bluetooth.enumeration') fpList = 'fpBluetooth';
 		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
 		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
 		bkg.fpDomainHandler('**.'+bkg.getDomain(url), fpList, -1);
@@ -506,6 +511,7 @@ function save(url, el, type) {
 		else if (fpType == 'device.enumeration') fpList = 'fpDevice';
 		else if (fpType == 'gamepad.enumeration') fpList = 'fpGamepad';
 		else if (fpType == 'webvr.enumeration') fpList = 'fpWebVR';
+		else if (fpType == 'bluetooth.enumeration') fpList = 'fpBluetooth';
 		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
 		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
 		if (val < 2) {

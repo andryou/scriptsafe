@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Loka Öllum Leyfð Þinginu"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Block Bluetooth Talning:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "koma í veg fyrir sem hafa tæki uppgötva í gegnum Bluetooth API"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "magn innflutnings"

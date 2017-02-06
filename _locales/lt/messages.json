@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Blokuoti Visus Leidžiama Sesijos"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Blokuoti Bluetooth Išvardinimo:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "išvengti aptikti per Bluetooth API turincius prietaisus"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "urmu importas"

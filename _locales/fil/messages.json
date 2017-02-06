@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Harangan Ang Lahat Ay Tinatanggap Para Session"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "I-block ang Bluetooth Baybay:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "maiwasan ang pagkakaroon device napansin sa pamamagitan ng Bluetooth API"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "bulk import"

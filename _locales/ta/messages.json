@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "அனைத்து சீசனுக்கு அனுமதிக்கப்படும் தொகுதி"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "பிளாக் Bluetooth ஐ கணக்கெடுப்பு:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "Bluetooth API வழியாக கண்டறியப்பட்டது கொண்ட சாதனங்கள் தடுக்க"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "மொத்தமாக இறக்குமதி"

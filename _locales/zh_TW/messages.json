@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "封鎖所有於此段允許的項目"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "封鎖Bluetooth手柄計算："
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "防止通過Bluetooth API檢測到裝置"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "大量匯入"
@@ -128,16 +136,16 @@
       "message": "完全阻擋讀出"
    },
    "canvasdesc": {
-      "description": "protect against fingerprinting attempts through <canvas> elements",
-      "message": "防止嘗試於<canvas>元素套取指紋"
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "防止嘗試於&lt;canvas&gt;元素套取指紋"
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
       "message": "阻擋存取Canvas 字體："
    },
    "canvasfontdesc": {
-      "description": "prevent system fonts from being enumerated through <canvas> elements. May interfere with Google Docs.",
-      "message": "防止系統字體從<canvas>元素被列舉。可能干擾Google Document。"
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "防止系統字體從&lt;canvas&gt;元素被列舉。可能干擾Google Document。"
    },
    "classicoptions": {
       "description": "Classic Options Mode:",

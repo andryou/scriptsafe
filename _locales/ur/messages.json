@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "تمام سیشن کے لئے اجازت BLOCK"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "بلاک Bluetooth کے شمار:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "تعلق آلات Bluetooth کے ذریعے API کے پتہ روکنے"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "بلک درآمد"

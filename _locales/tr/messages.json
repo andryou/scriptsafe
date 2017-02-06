@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Tüm Oturum Için Izin Blok"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Blok Bluetooth Numaralandirma:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "Bluetooth API araciligiyla tespit Haiz Cihazlara önlemek"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "toplu ithalat"

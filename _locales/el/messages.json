@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Να δεσμεύσουν το σύνολο κατοικίδια Για Session"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Αποκλεισμός Bluetooth Καταμέτρηση:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "αποτρέψει έχουν συσκευές ανιχνεύονται μέσω του Bluetooth API"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "μαζική εισαγωγή"
