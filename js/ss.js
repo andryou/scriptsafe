@@ -49,6 +49,7 @@ var SETTINGS = {
 	"PARANOIA": "true",
 	"CLIPBOARD": "false",
 	"DATAURL": "true",
+	"KEYDELTA": 0,
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
 if (window.self != window.top) iframe = 1;
@@ -114,6 +115,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['PARANOIA'] = response.paranoia;
 		SETTINGS['DATAURL'] = response.dataurl;
 		SETTINGS['KEYBOARD'] = response.keyboard;
+		SETTINGS['KEYDELTA'] = parseInt(response.keydelta);
 		$(document).ready(function() {
 			loaded();
 			if (SETTINGS['KEYBOARD'] == 'true') {
@@ -286,12 +288,14 @@ function fingerprintProtection() {
 				var webgl_triggerblock = scope.document.createElement('div');
 				webgl_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
 				var webgl_a = scope.HTMLCanvasElement;
+				var origGetContext = webgl_a.prototype.getContext;
 				webgl_a.prototype.getContext = function(arg) {
 					if (arg.match(/webgl/i)) {
 						webgl_triggerblock.title = 'getContext';
 						document.documentElement.appendChild(webgl_triggerblock);
 						return false;
 					}
+					return origGetContext.apply(this, arguments);
 				}
 			}
 			/* WebRTC */
@@ -662,7 +666,7 @@ function getElSrc(el) {
 	}
 }
 function randomDelay() {
-	var zzz = (Date.now() + (Math.floor(Math.random() * 100) + 10));
+	var zzz = (Date.now() + (Math.floor(Math.random() * 100) + SETTINGS['KEYDELTA']));
 	while (Date.now() < zzz) {};
 }
 function injectAnon(f, val) {
