@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "सत्र लागि अनुमति ब्लक सबै"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "ब्लक Bluetooth इनुमरेसन:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "को Bluetooth एपीआई मार्फत पत्ता भइरहेको उपकरणहरू रोक्न"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "थोक आयात"

@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Blokirati Vse Dovoljeno Za Sejo"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Block Bluetooth Štetja:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "preprecevanje, ki imajo naprave, odkritih preko Bluetooth API"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "vecji uvoz"

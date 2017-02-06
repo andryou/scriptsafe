@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Ideiglenes jogosultságok visszavonása"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Bluetooth enumeráció blokkolása:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "megakadályozza, hogy a Bluetooth API-n keresztül eszközöket érszékeljenek az oldalak."
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "tömeges import"

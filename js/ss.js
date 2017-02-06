@@ -35,6 +35,7 @@ var SETTINGS = {
 	"WEBRTCDEVICE": "false",
 	"GAMEPAD": "false",
 	"WEBVR": "false",
+	"BLUETOOTH": "false",
 	"TIMEZONE": "false",
 	"ANNOYANCES": "false",
 	"ANNOYANCESMODE": "relaxed",
@@ -87,6 +88,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['WEBRTCDEVICE'] = response.webrtcdevice;
 		SETTINGS['GAMEPAD'] = response.gamepad;
 		SETTINGS['WEBVR'] = response.webvr;
+		SETTINGS['BLUETOOTH'] = response.bluetooth;
 		SETTINGS['TIMEZONE'] = response.timezone;
 		SETTINGS['CLIPBOARD'] = response.clipboard;
 		if (SETTINGS['CANVAS'] != 'false' && response.fp_canvas != '-1') SETTINGS['CANVAS'] = 'false';
@@ -97,9 +99,10 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		if (SETTINGS['WEBRTCDEVICE'] == 'true' && response.fp_device != '-1') SETTINGS['WEBRTCDEVICE'] = 'false';
 		if (SETTINGS['GAMEPAD'] == 'true' && response.fp_gamepad != '-1') SETTINGS['GAMEPAD'] = 'false';
 		if (SETTINGS['WEBVR'] == 'true' && response.fp_webvr != '-1') SETTINGS['WEBVR'] = 'false';
+		if (SETTINGS['BLUETOOTH'] == 'true' && response.fp_bluetooth != '-1') SETTINGS['BLUETOOTH'] = 'false';
 		if (SETTINGS['CLIENTRECTS'] == 'true' && response.fp_clientrectangles != '-1') SETTINGS['CLIENTRECTS'] = 'false';
 		if (SETTINGS['CLIPBOARD'] == 'true' && response.fp_clipboard != '-1') SETTINGS['CLIPBOARD'] = 'false';
-		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['WEBVR'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
+		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['WEBVR'] == 'true' || SETTINGS['BLUETOOTH'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
 			fingerprintProtection();
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
@@ -129,7 +132,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 	delete savedBeforeloadEvents; // eventually remove
 });
 function fingerprintProtection() {
-	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, webvr, timezone, clientrects, clipboard){
+	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, webvr, bluetooth, timezone, clientrects, clipboard){
 		function processFunctions(scope) {
 			/* Canvas */
 			if (canvas != 'false') {
@@ -282,29 +285,9 @@ function fingerprintProtection() {
 			if (webgl == 'true') {
 				var webgl_triggerblock = scope.document.createElement('div');
 				webgl_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
-				var webgl_a = scope.WebGLRenderingContext;
-				webgl_a.getSupportedExtensions = function() {
-					webgl_triggerblock.title = 'getSupportedExtensions';
-					document.documentElement.appendChild(webgl_triggerblock);
-					return false;
-				}
-				webgl_a.getParameter = function() {
-					webgl_triggerblock.title = 'getParameter';
-					document.documentElement.appendChild(webgl_triggerblock);
-					return false;
-				}
-				webgl_a.getContextAttributes = function() {
-					webgl_triggerblock.title = 'getContextAttributes';
-					document.documentElement.appendChild(webgl_triggerblock);
-					return false;
-				}
-				webgl_a.getShaderPrecisionFormat = function() {
-					webgl_triggerblock.title = 'getShaderPrecisionFormat';
-					document.documentElement.appendChild(webgl_triggerblock);
-					return false;
-				}
-				webgl_a.getExtension = function() {
-					webgl_triggerblock.title = 'getExtension';
+				var webgl_a = scope.HTMLCanvasElement;
+				webgl_a.prototype.getContext = function() {
+					webgl_triggerblock.title = 'getContext';
 					document.documentElement.appendChild(webgl_triggerblock);
 					return false;
 				}
@@ -351,6 +334,19 @@ function fingerprintProtection() {
 					webvr_triggerblock.title = 'getVRDisplays';
 					document.documentElement.appendChild(webvr_triggerblock);
 					return false;
+				}
+			}
+			/* Bluetooth */
+			if (bluetooth == 'true') {
+				if (scope.navigator.bluetooth) {
+					var bluetooth_triggerblock = scope.document.createElement('div');
+					bluetooth_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_bluetooth';
+					var bluetooth_a = scope.navigator.bluetooth;
+					bluetooth_a.requestDevice = function() {
+						bluetooth_triggerblock.title = 'requestDevice';
+						document.documentElement.appendChild(bluetooth_triggerblock);
+						return false;
+					}
 				}
 			}
 			/* Client Rectangles */
@@ -411,7 +407,7 @@ function fingerprintProtection() {
 				}
 			}
 		});
-	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
+	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['BLUETOOTH']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
 }
 function clipboardProtect(el) {
     el.oncontextmenu = null;
@@ -474,6 +470,9 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['WEBVR'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webvr").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'WebVR Enumeration'}); $(this).remove(); });
+	}
+	if (SETTINGS['BLUETOOTH'] == 'true') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_bluetooth").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Bluetooth Enumeration'}); $(this).remove(); });
 	}
 	if (SETTINGS['CLIENTRECTS'] == 'true') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_clientrects").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Client Rectangles'}); $(this).remove(); });

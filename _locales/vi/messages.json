@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Chặn Tất Cả Các Phép Đối Với Phiên"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Khối Bluetooth Enumeration:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "ngăn chặn việc có thiết bị phát hiện thông qua các API Bluetooth"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "nhập khẩu số lượng lớn"

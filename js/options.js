@@ -101,6 +101,8 @@ function i18load() {
 	$(".i18_gamepaddesc").html(bkg.getLocale("gamepaddesc"));
 	$(".i18_webvr").html(bkg.getLocale("webvr"));
 	$(".i18_webvrdesc").html(bkg.getLocale("webvrdesc"));
+	$(".i18_bluetooth").html(bkg.getLocale("bluetooth"));
+	$(".i18_bluetoothdesc").html(bkg.getLocale("bluetoothdesc"));
 	$(".i18_canvasfont").html(bkg.getLocale("canvasfont"));
 	$(".i18_canvasfontdesc").html(bkg.getLocale("canvasfontdesc"));
 	$(".i18_clientrects").html(bkg.getLocale("clientrects"));
@@ -342,6 +344,7 @@ function loadOptions() {
 	loadCheckbox("webrtcdevice");
 	loadCheckbox("gamepad");
 	loadCheckbox("webvr");
+	loadCheckbox("bluetooth");
 	loadElement("timezone");
 	loadCheckbox("keyboard");
 	loadCheckbox("webbugs");
@@ -411,6 +414,7 @@ function saveOptions() {
 	saveCheckbox("webrtcdevice");
 	saveCheckbox("gamepad");
 	saveCheckbox("webvr");
+	saveCheckbox("bluetooth");
 	saveElement("timezone");
 	saveCheckbox("keyboard");
 	saveCheckbox("webbugs");
@@ -750,7 +754,7 @@ function listUpdate() {
 	updateExport();
 }
 function fpListUpdate() {
-	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpClientRectangles', 'fpClipboard'];
+	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard'];
 	for (var i in fpTypes) {
 		fpListProcess(fpTypes[i]);
 	}

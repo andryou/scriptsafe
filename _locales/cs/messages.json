@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Zablokovat všechny povolené pro relaci"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Blokovat enumeraci Bluetooth:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "předchází detekci zařízení skrz Bluetooth API"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "hromadný import"
