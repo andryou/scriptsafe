@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Bloķēt visu atļauto šajā sessijā"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Bloķēt Bluetooth sarakstu:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "novērš pieejamo ierīču saraksta iegūšanu, Bluetooth API izmantojot, atrastos"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "lielapjoma importēšana"

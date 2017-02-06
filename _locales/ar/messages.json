@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "منع جميع المسموح بها للجلسة"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "كتلة Bluetooth التعداد:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "منع وجود أجهزة الكشف عن طريق Bluetooth API"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "الاستيراد بكميات كبيرة"

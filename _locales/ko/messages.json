@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "허용 된 모든 세션을 차단"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Bluetooth Enumeration 차단 :"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "Bluetooth API를 통한 장치 감지를 방지합니다"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "대량 가져오기"

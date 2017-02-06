@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Bloquer tous les éléments autorisés pour la session"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Bloquer l'énumération Bluetooth:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "éviter d'avoir les périphériques détectés via l'API Bluetooth"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "Importation en bloc"

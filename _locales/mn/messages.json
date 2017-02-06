@@ -91,6 +91,14 @@
       "description": "Block All Allowed For Session",
       "message": "Чуулганаар хэлэлцэх нь мэдээлэл Зөвшөөрөгдсөн блок"
    },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Блок Bluetooth Тооллогын:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "Bluetooth API ашиглан илрүүлсэн бүхий төхөөрөмжүүдийг урьдчилан сэргийлэх"
+   },
    "bulkimport": {
       "description": "bulk import",
       "message": "их хэмжээний импорт"
