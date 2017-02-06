@@ -1,6 +1,6 @@
 /* Global */
 html { width: 575px; }
-html, body { max-height: 600px; overflow-y: auto; word-wrap: break-word; }
+html, body { word-wrap: break-word; }
 html, body, td, th { font-family: arial, sans-serif; }
 body { margin: 0px 5px; padding: 0px; font-size: 100%; }
 #container, table { width: 100%; }
