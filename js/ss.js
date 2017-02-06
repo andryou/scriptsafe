@@ -286,10 +286,12 @@ function fingerprintProtection() {
 				var webgl_triggerblock = scope.document.createElement('div');
 				webgl_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_webgl';
 				var webgl_a = scope.HTMLCanvasElement;
-				webgl_a.prototype.getContext = function() {
-					webgl_triggerblock.title = 'getContext';
-					document.documentElement.appendChild(webgl_triggerblock);
-					return false;
+				webgl_a.prototype.getContext = function(arg) {
+					if (arg.match(/webgl/i)) {
+						webgl_triggerblock.title = 'getContext';
+						document.documentElement.appendChild(webgl_triggerblock);
+						return false;
+					}
 				}
 			}
 			/* WebRTC */
