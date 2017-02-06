@@ -347,6 +347,8 @@ function loadOptions() {
 	loadCheckbox("bluetooth");
 	loadElement("timezone");
 	loadCheckbox("keyboard");
+	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
+	loadElement("keydelta");
 	loadCheckbox("webbugs");
 	loadCheckbox("utm");
 	loadCheckbox("hashchecking");
@@ -417,6 +419,9 @@ function saveOptions() {
 	saveCheckbox("bluetooth");
 	saveElement("timezone");
 	saveCheckbox("keyboard");
+	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
+	else $(".keydeltarow").show();
+	saveElement("keydelta");
 	saveCheckbox("webbugs");
 	saveCheckbox("utm");
 	saveCheckbox("hashchecking");
