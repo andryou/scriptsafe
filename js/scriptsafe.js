@@ -553,7 +553,7 @@ function setDefaultOptions() {
 	defaultOptionValue("bluetooth", "false");
 	defaultOptionValue("timezone", "false");
 	defaultOptionValue("keyboard", "false");
-	defaultOptionValue("keydelta", "100");
+	defaultOptionValue("keydelta", "40");
 	defaultOptionValue("xml", "true");
 	defaultOptionValue("annoyances", "true");
 	defaultOptionValue("annoyancesmode", "relaxed");
