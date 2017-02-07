@@ -4,6 +4,7 @@
 var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
+var clipboard = false;
 var timestamp = Math.round(new Date().getTime()/1000.0);
 var linktrgt;
 // initialize settings object with default settings (that are overwritten by the actual user-set values later on)
@@ -416,17 +417,11 @@ function fingerprintProtection() {
 	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['BLUETOOTH']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
 }
 function clipboardProtect(el) {
-    el.oncontextmenu = null;
-    el.onselectstart = null;
-    el.onmousedown = null;
-    el.oncopy = null;
-    el.oncut = null;
-    el.onpaste = null;
-	el.addEventListener('contextmenu', function(e) { e.returnValue = true; });
-	el.addEventListener('selectstart', function(e) { e.returnValue = true; });
-	el.addEventListener('mousedown', function(e) { e.returnValue = true; });
-	el.addEventListener('copy', function(e) { e.returnValue = true; });
-	el.addEventListener('cut', function(e) { e.returnValue = true; });
+    var arr = ['copy', 'cut', 'paste', 'selectstart', 'contextmenu', 'mousedown', 'mouseup'];
+    for (var i = 0; i < arr.length; i++) {
+        if (el['on' + arr[i]]) el['on' + arr[i]] = null;
+        el.addEventListener(arr[i], function(e){ if (!clipboard) { clipboard = true; chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+e.type+"())", node: 'Clipboard Interference'}); } e.stopPropagation(); }, true);
+    };
 }
 function loaded() {
 	ScriptSafe();
@@ -666,7 +661,7 @@ function getElSrc(el) {
 	}
 }
 function randomDelay() {
-	var zzz = (Date.now() + (Math.floor(Math.random() * 100) + SETTINGS['KEYDELTA']));
+	var zzz = (Date.now() + (Math.floor(Math.random() * SETTINGS['KEYDELTA'])));
 	while (Date.now() < zzz) {};
 }
 function injectAnon(f, val) {
