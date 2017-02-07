@@ -16,7 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	$("#locale").val(localStorage['locale']).change(saveLang);
 	$(".save").click(saveOptions);
-	$("#keydelta").blur(function() { if ($(this).val() < 0 || !isNaN($(this).val())) $(this).val(100); saveElement("keydelta"); });
+	$("#keydelta").blur(function() {
+		if ($(this).val() < 0 || isNaN(parseInt($(this).val()))) {
+			$(this).val(40); saveElement("keydelta");
+		} 
+	});
 	$("#domainsort").click(domainsort);
 	$("#whitebind").click(whitelistlisten);
 	$(".fpAdd").click(addFPList);
@@ -350,8 +354,8 @@ function loadOptions() {
 	loadCheckbox("keyboard");
 	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
 	loadElement("keydelta");
-	if ($("#keydelta").val() < 0 || !isNaN($("#keydelta").val())) {
-		$("#keydelta").val(100);
+	if ($("#keydelta").val() < 0 || isNaN(parseInt($("#keydelta").val()))) {
+		$("#keydelta").val(40);
 		saveElement("keydelta");
 	}
 	loadCheckbox("webbugs");
