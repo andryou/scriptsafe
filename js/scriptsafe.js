@@ -24,6 +24,7 @@ var langs = {
 	'es': 'Spanish',
 	'sv': 'Swedish'
 }
+var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard'];
 var fpLists = [];
 var fpListsSession = [];
 var popup = [];
@@ -579,7 +580,7 @@ function setDefaultOptions() {
 	defaultOptionValue("bluetooth", "false");
 	defaultOptionValue("timezone", "false");
 	defaultOptionValue("keyboard", "false");
-	defaultOptionValue("keydelta", "0");
+	defaultOptionValue("keydelta", "100");
 	defaultOptionValue("xml", "true");
 	defaultOptionValue("annoyances", "true");
 	defaultOptionValue("annoyancesmode", "relaxed");
@@ -773,7 +774,6 @@ chrome.runtime.onConnect.addListener(function(port) {
 chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
 		var fpListStatus = [];
-		var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard'];
 		var extractedDomain = extractDomainFromURL(sender.tab.url);
 		for (var i in fpTypes) {
 			fpListStatus[fpTypes[i]] = enabledfp(extractedDomain, fpTypes[i]);
@@ -1176,83 +1176,15 @@ function cacheLists() {
 	distrustList = tempWildDomain;
 }
 function cacheFpLists() {
-	var tempList = JSON.parse(localStorage['fpCanvas']);
-	var tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpCanvas"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpCanvasFont']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpCanvasFont"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpAudio']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpAudio"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpWebGL']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpWebGL"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpBattery']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpBattery"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpDevice']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpDevice"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpGamepad']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpGamepad"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpWebVR']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpWebVR"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpBluetooth']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpBluetooth"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpClientRectangles']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpClientRectangles"] = tempDomain;
-	tempList = JSON.parse(localStorage['fpClipboard']);
-	tempDomain = [];
-	tempList.map(function(domain) {
-		tempDomain.push(domain);
-	});
-	tempDomain = tempDomain.sort();
-	fpLists["fpClipboard"] = tempDomain;
+	for (var i in fpTypes) {
+		var tempList = JSON.parse(localStorage[fpTypes[i]]);
+		var tempDomain = [];
+		tempList.map(function(domain) {
+			tempDomain.push(domain);
+		});
+		tempDomain = tempDomain.sort();
+		fpLists[fpTypes[i]] = tempDomain;
+	}
 }
 function initLang(lang, mode) {
 	var url = chrome.extension.getURL('_locales/' + lang + '/messages.json');
