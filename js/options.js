@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	$("#locale").val(localStorage['locale']).change(saveLang);
 	$(".save").click(saveOptions);
+	$("#keydelta").blur(function() { if ($(this).val() < 0 || !isNaN($(this).val())) $(this).val(100); saveElement("keydelta"); });
 	$("#domainsort").click(domainsort);
 	$("#whitebind").click(whitelistlisten);
 	$(".fpAdd").click(addFPList);
@@ -349,6 +350,10 @@ function loadOptions() {
 	loadCheckbox("keyboard");
 	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
 	loadElement("keydelta");
+	if ($("#keydelta").val() < 0 || !isNaN($("#keydelta").val())) {
+		$("#keydelta").val(100);
+		saveElement("keydelta");
+	}
 	loadCheckbox("webbugs");
 	loadCheckbox("utm");
 	loadCheckbox("hashchecking");

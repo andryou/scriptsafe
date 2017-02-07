@@ -356,6 +356,7 @@ function init() {
 						}
 						$(".allowsession").bind("click", bulkhandle);
 						if (intemp || tabInTemp) {
+							if ($(tempSel+' > br').length == 0) $(tempSel).append('<br />');
 							$(tempSel).append('<div class="box box5 prevoke" title="Revoke temporary permissions given to the current page">'+bkg.getLocale("revoketemp")+'</div>');
 							$(".prevoke").bind("click", bulkhandle);
 						}
