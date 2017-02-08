@@ -412,8 +412,8 @@
       "message": "Nastavitve uspešno uvoženi, razen naslednjih (prazen vrednosti ali nepripoznane ime):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Nastavitve uspešno uvožene in sinhronizirate v 30 sekundah"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Nastavitve uspešno uvožene in sinhronizirate v 10 sekundah"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Nastavitve so shranjene"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Nastavitve so shranjene in sinhronizirate v 30 sekundah"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Nastavitve so shranjene in sinhronizirate v 10 sekundah"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

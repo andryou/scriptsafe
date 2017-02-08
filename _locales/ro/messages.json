@@ -412,8 +412,8 @@
       "message": "Setări importate cu succes, cu excepția următoarelor (valoare goală sau nume nerecunoscut):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Setările importate cu succes și sincronizare în 30 de secunde"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Setările importate cu succes și sincronizare în 10 de secunde"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Setari salvate"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Setările au fost salvate și sincronizare în 30 de secunde"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Setările au fost salvate și sincronizare în 10 de secunde"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

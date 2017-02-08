@@ -412,8 +412,8 @@
       "message": "Beállítások importálása sikeres, kivéve az alábbi (üres érték, vagy fel nem ismert név):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Beállítások sikeresen importálva és 30 másodperc múlva szinkronizálva lesznek."
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Beállítások sikeresen importálva és 10 másodperc múlva szinkronizálva lesznek."
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Beállítások elmentve"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Beállítások elmentve, szinkronizálás 30 másodpercen belül"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Beállítások elmentve, szinkronizálás 10 másodpercen belül"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

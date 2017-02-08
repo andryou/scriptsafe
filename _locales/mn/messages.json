@@ -412,8 +412,8 @@
       "message": "Тохиргоо Дараах (хоосон үнэ цэнэ буюу хүлээн зөвшөөрөөгүй нэр) бусад тохиолдолд амжилттай оруулсан:"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Тохиргоо амжилттай импортын болон 30 секундын дотор сүүлийн хэлбэрт аваачих,"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Тохиргоо амжилттай импортын болон 10 секундын дотор сүүлийн хэлбэрт аваачих,"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Тохиргоо аварсан"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Тохиргоо хадгалсан, 30 секундын дотор сүүлийн хэлбэрт аваачих,"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Тохиргоо хадгалсан, 10 секундын дотор сүүлийн хэлбэрт аваачих,"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

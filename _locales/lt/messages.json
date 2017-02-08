@@ -412,8 +412,8 @@
       "message": "Nustatymai sekmingai importuotas, išskyrus šiuos (tušcia vertes ar nepripažinto pavadinimas):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Nustatymai sekmingai importuotos ir sinchronizavima per 30 sekundžiu"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Nustatymai sekmingai importuotos ir sinchronizavima per 10 sekundžiu"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Nustatymai išsaugoti"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Nustatymai išsaugoti ir sinchronizavima per 30 sekundžiu"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Nustatymai išsaugoti ir sinchronizavima per 10 sekundžiu"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

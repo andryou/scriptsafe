@@ -412,8 +412,8 @@
       "message": "Ρυθμίσεις που εισάγονται με επιτυχία, εκτός από τα εξής (άδειο αξία ή μη αναγνωρισμένης όνομα):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Ρυθμίσεις εισαχθεί με επιτυχία και το συγχρονισμό σε 30 δευτερόλεπτα"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Ρυθμίσεις εισαχθεί με επιτυχία και το συγχρονισμό σε 10 δευτερόλεπτα"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Οι ρυθμίσεις αποθηκεύτηκαν"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Ρυθμίσεις αποθηκεύονται και το συγχρονισμό σε 30 δευτερόλεπτα"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Ρυθμίσεις αποθηκεύονται και το συγχρονισμό σε 10 δευτερόλεπτα"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

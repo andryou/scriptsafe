@@ -412,8 +412,8 @@
       "message": "إعدادات المستوردة بنجاح، باستثناء ما يلي (قيمة فارغة أو اسم غير المعترف بها):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "إعدادات المستوردة بنجاح والمزامنة في 30 ثانية"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "إعدادات المستوردة بنجاح والمزامنة في 10 ثانية"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "تم حفظ الاعدادات"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "الإعدادات المحفوظة والمزامنة في 30 ثانية"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "الإعدادات المحفوظة والمزامنة في 10 ثانية"
    },
    "showcontext": {
       "description": "Show in Context Menu:",
