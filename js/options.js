@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$(".row-offcanvas").show();
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
 	$('#sidebar').stickyScroll({ container: '#sectionname' });
+	setInterval(function() { if (bkg.getUpdated()) { bkg.setUpdated(); window.location.reload(1); } }, 5000);
 });
 function i18load() {
 	$(".i18_support").html(bkg.getLocale("support"));
