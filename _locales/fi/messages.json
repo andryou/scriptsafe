@@ -412,8 +412,8 @@
       "message": "Asetukset tuotu onnistuneesti, lukuun ottamatta seuraavia (tyhjä arvo tai tunnistamattomia nimi):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Asetukset tuotu onnistuneesti ja synkronointi 30 sekunnissa"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Asetukset tuotu onnistuneesti ja synkronointi 10 sekunnissa"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Asetukset tallennettu"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Asetukset tallennetaan ja synkronointi 30 sekunnissa"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Asetukset tallennetaan ja synkronointi 10 sekunnissa"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

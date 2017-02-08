@@ -412,8 +412,8 @@
       "message": "सेटिङहरू, सफलतापूर्वक आयात निम्न (खाली मूल्य वा अपरिचित नाम) बाहेक:"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "सेटिङ सफलतापूर्वक आयात र 30 सेकेन्ड समक्रमण"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "सेटिङ सफलतापूर्वक आयात र 10 सेकेन्ड समक्रमण"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "सेटिङ बचत"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "सेटिङ बचत र 30 सेकेन्ड समक्रमण"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "सेटिङ बचत र 10 सेकेन्ड समक्रमण"
    },
    "showcontext": {
       "description": "Show in Context Menu:",
