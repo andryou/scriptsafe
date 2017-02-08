@@ -33,6 +33,7 @@ var ITEMS = {};
 var experimental = 0;
 var storageapi = false;
 var webrtcsupport = false;
+var updated = false;
 function refreshRequestTypes() {
 	requestTypes = ['main_frame'];
 	if (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')
@@ -1195,6 +1196,12 @@ function listsSync(mode) {
 		cacheFpLists();
 	}
 }
+function getUpdated() {
+	return updated;
+}
+function setUpdated() {
+	updated = false;
+}
 //////////////////////////////////////////////////////
 function init() {
 	webrtcsupport = checkWebRTC();
@@ -1322,7 +1329,7 @@ function postLangLoad() {
 				if (typeof changes['lastSync'] !== 'undefined') {
 					if (changes['lastSync'].newValue > localStorage['lastSync']) {
 						importSync(changes, 1);
-						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
+						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
 					}
 				}
 			}
