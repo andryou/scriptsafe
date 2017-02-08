@@ -973,21 +973,28 @@ function freshSync(mode, force) {
 		window.clearTimeout(synctimer);
 		var settingssync = {};
 		var simplesettings = '';
+		var fpsettings = '';
+		var zarr = {};
+		zarr['zw'] = [];
+		zarr['zb'] = [];
+		zarr['zfp'] = [];
 		if (force) {
-		// mode == 0 = all; 1 = settings only; 2 = whitelist/blacklist
-		//if (mode == 0 || mode == 1) {
 			for (var k in localStorage) {
-				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw") {
+				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "fpCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "fp") {
 					simplesettings += k+"|"+localStorage[k]+"~";
+				} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
+					fpsettings += k+"|"+localStorage[k]+"~";
 				}
+				if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
+				if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
+				if (k.substr(0, 3) == "zfp") zarr['zfp'].push(k);
 			}
-			simplesettings = simplesettings.slice(0,-1);
-			settingssync['scriptsafe_settings'] = simplesettings;
-		//}
-		//if (mode == 0 || mode == 2) {
+			settingssync['scriptsafe_settings'] = simplesettings.slice(0,-1);
+			if (zarr['zw'].length) {
+				for (var x = 0; x < zarr['zw'].length; x++) delete localStorage[zarr['zw'][x]];
+			}
 			var jsonstr = JSON.parse(localStorage['whiteList']).toString();
-			var jsonstrlen = jsonstr.length;
-			var limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstrlen/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
+			var limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			var i = 0;
 			while (jsonstr.length > 0) {
 				var segment = jsonstr.substr(0, limit);
@@ -998,9 +1005,11 @@ function freshSync(mode, force) {
 			}
 			localStorage['whiteListCount'] = i;
 			settingssync['whiteListCount'] = i;
+			if (zarr['zb'].length) {
+				for (var x = 0; x < zarr['zb'].length; x++) delete localStorage[zarr['zb'][x]];
+			}
 			jsonstr = JSON.parse(localStorage['blackList']).toString();
-			jsonstrlen = jsonstr.length;
-			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstrlen/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
+			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			i = 0;
 			while (jsonstr.length > 0) {
 				var segment = jsonstr.substr(0, limit);
@@ -1011,7 +1020,21 @@ function freshSync(mode, force) {
 			}
 			localStorage['blackListCount'] = i;
 			settingssync['blackListCount'] = i;
-		//}
+			if (zarr['zfp'].length) {
+				for (var x = 0; x < zarr['zfp'].length; x++) delete localStorage[zarr['zfp'][x]];
+			}
+			jsonstr = fpsettings.slice(0,-1);
+			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
+			i = 0;
+			while (jsonstr.length > 0) {
+				var segment = jsonstr.substr(0, limit);
+				settingssync["zfp" + i] = segment;
+				localStorage["zfp" + i] = segment;
+				jsonstr = jsonstr.substr(limit);
+				i++;
+			}
+			localStorage['fpCount'] = i;
+			settingssync['fpCount'] = i;
 			var milliseconds = (new Date).getTime();
 			localStorage['lastSync'] = milliseconds;
 			settingssync['lastSync'] = milliseconds;
@@ -1036,9 +1059,10 @@ function syncQueue() {
 function importSyncHandle(mode) {
 	if (storageapi) {
 		if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
+			window.clearTimeout(synctimer);
 			chrome.storage.sync.get(null, function(changes) {
-				if (typeof changes['lastSync'] !== 'undefined' && typeof changes['scriptsafe_settings'] !== 'undefined' && (typeof changes['zw0'] !== 'undefined' || typeof changes['zb0'] !== 'undefined')) {
-					if (changes['zw0'] != '' && changes['zw0'] != '*.googlevideo.com') { // ensure synced whitelist is not empty and not the default
+				if (typeof changes['lastSync'] !== 'undefined' && typeof changes['scriptsafe_settings'] !== 'undefined' && (typeof changes['zw0'] !== 'undefined' || typeof changes['zb0'] !== 'undefined' || typeof changes['zfp0'] !== 'undefined')) {
+					if (!optionExists('lastSync') || (optionExists('lastSync') && changes['lastSync'] >= localStorage['lastSync'])) {
 						if (confirm(getLocale("syncdetect"))) {
 							localStorage['syncenable'] = 'true';
 							localStorage['sync'] = 'true';
@@ -1096,20 +1120,42 @@ function importSync(changes, mode) {
 }
 function listsSync(mode) {
 	if (mode == '1' || mode == '2') {
-		var concatlist = '';
-		for (var i = 0; i < localStorage['whiteListCount']; i++) {
-			concatlist += localStorage['zw'+i];
+		var concatlist;
+		if (optionExists('whiteListCount')) {
+			concatlist = '';
+			for (var i = 0; i < localStorage['whiteListCount']; i++) {
+				concatlist += localStorage['zw'+i];
+			}
+			var concatlistarr = concatlist.split(",");
+			if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
+			else localStorage['whiteList'] = JSON.stringify(concatlistarr);
 		}
-		var concatlistarr = concatlist.split(",");
-		if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
-		else localStorage['whiteList'] = JSON.stringify(concatlistarr);
-		concatlist = '';
-		for (var i = 0; i < localStorage['blackListCount']; i++) {
-			concatlist += localStorage['zb'+i];
+		if (optionExists('blackListCount')) {
+			concatlist = '';
+			for (var i = 0; i < localStorage['blackListCount']; i++) {
+				concatlist += localStorage['zb'+i];
+			}
+			concatlistarr = concatlist.split(",");
+			if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
+			else localStorage['blackList'] = JSON.stringify(concatlistarr);
 		}
-		concatlistarr = concatlist.split(",");
-		if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
-		else localStorage['blackList'] = JSON.stringify(concatlistarr);
+		if (optionExists('fpCount')) {
+			concatlist = '';
+			for (var i = 0; i < localStorage['fpCount']; i++) {
+				concatlist += localStorage['zfp'+i];
+			}
+			var settings = concatlist.split("~");
+			if (settings.length > 0) {
+				$.each(settings, function(i, v) {
+					if ($.trim(v) != "") {
+						var settingentry = $.trim(v).split("|");
+						if ($.trim(settingentry[1]) != '') {
+							localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+						}
+					}
+				});
+			}
+		}
 		cacheLists();
 		cacheFpLists();
 	}
