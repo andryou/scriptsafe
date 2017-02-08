@@ -1087,7 +1087,7 @@ function syncQueue() {
 }
 function importSyncHandle(mode) {
 	if (storageapi) {
-		if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
+		if (mode == '1' || mode == '2' || (localStorage['sync'] == 'false' && mode == '0')) {
 			window.clearTimeout(synctimer);
 			chrome.storage.sync.get(null, function(changes) {
 				if (typeof changes['lastSync'] !== 'undefined' && typeof changes['scriptsafe_settings'] !== 'undefined' && (typeof changes['zw0'] !== 'undefined' || typeof changes['zb0'] !== 'undefined' || typeof changes['zfp0'] !== 'undefined')) {
@@ -1099,9 +1099,11 @@ function importSyncHandle(mode) {
 							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
 							return true;
 						} else {
-							localStorage['syncenable'] = 'false';
-							alert(getLocale("syncdisabled"));
-							localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
+							if (mode != 2) {
+								localStorage['syncenable'] = 'false';
+								alert(getLocale("syncdisabled"));
+								localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
+							}
 							return false;
 						}
 					}
