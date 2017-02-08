@@ -412,8 +412,8 @@
       "message": "Pengaturan berhasil diimpor, kecuali berikut (nilai kosong atau nama yang belum diakui):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Pengaturan berhasil diimpor dan sinkronisasi dalam 30 detik"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Pengaturan berhasil diimpor dan sinkronisasi dalam 10 detik"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Pengaturan disimpan"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Pengaturan disimpan dan sinkronisasi dalam 30 detik"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Pengaturan disimpan dan sinkronisasi dalam 10 detik"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

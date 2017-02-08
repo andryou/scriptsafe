@@ -412,8 +412,8 @@
       "message": "以下の（空の値または認識されない名前）を除いて、正常にインポートセッティング："
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "設定が正常にインポートし、30秒で同期"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "設定が正常にインポートし、10秒で同期"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "設定が保存されました"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "30秒での設定保存と同期"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "10秒での設定保存と同期"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

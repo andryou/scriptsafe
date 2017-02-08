@@ -986,8 +986,8 @@ function freshSync(mode, force) {
 					fpsettings += k+"|"+localStorage[k]+"~";
 				}
 				if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
-				if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
-				if (k.substr(0, 3) == "zfp") zarr['zfp'].push(k);
+				else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
+				else if (k.substr(0, 3) == "zfp") zarr['zfp'].push(k);
 			}
 			settingssync['scriptsafe_settings'] = simplesettings.slice(0,-1);
 			if (zarr['zw'].length) {
@@ -1046,7 +1046,7 @@ function freshSync(mode, force) {
 				}
 			});
 		} else {
-			synctimer = window.setTimeout(function() { syncQueue() }, 30000);
+			synctimer = window.setTimeout(function() { syncQueue() }, 10000);
 		}
 		return true;
 	} else {
@@ -1070,7 +1070,7 @@ function importSyncHandle(mode) {
 							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
 							return true;
 						} else {
-							if (mode != 2) {
+							if (mode != '2') {
 								localStorage['syncenable'] = 'false';
 								alert(getLocale("syncdisabled"));
 								localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
@@ -1285,7 +1285,7 @@ function postLangLoad() {
 		chrome.storage.onChanged.addListener(function(changes, namespace) {
 			if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
 				if (typeof changes['lastSync'] !== 'undefined') {
-					if (changes['lastSync'].newValue > changes['lastSync'].oldValue) {
+					if (changes['lastSync'].newValue > localStorage['lastSync']) {
 						importSync(changes, 1);
 						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
 					}

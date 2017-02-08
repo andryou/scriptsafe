@@ -412,8 +412,8 @@
       "message": "تنظیمات با موفقیت وارد، به جز در بر داشت زیر (مقدار خالی یا نام ناشناخته):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "تنظیمات با موفقیت وارد شد و همگام سازی در 30 ثانیه"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "تنظیمات با موفقیت وارد شد و همگام سازی در 10 ثانیه"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "تنظیمات ذخیره شد"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "تنظیمات ذخیره شده و همگام سازی در 30 ثانیه"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "تنظیمات ذخیره شده و همگام سازی در 10 ثانیه"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

@@ -412,8 +412,8 @@
       "message": "Cài đặt nhập thành công, ngoại trừ sau (giá trị sản phẩm hoặc tên không được công nhận):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Cài đặt nhập thành công và đồng bộ trong 30 giây"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Cài đặt nhập thành công và đồng bộ trong 10 giây"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Cài đặt đã lưu"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Cài đặt lưu và đồng bộ trong 30 giây"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Cài đặt lưu và đồng bộ trong 10 giây"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

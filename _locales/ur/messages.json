@@ -412,8 +412,8 @@
       "message": "ترتیبات، کامیابی سے درآمد مندرجہ ذیل (خالی قدر یا غیر تسلیم شدہ نام) سوائے:"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "ترتیبات کو کامیابی سے درآمد اور 30 ​​سیکنڈ میں موافقت پذیری"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "ترتیبات کو کامیابی سے درآمد اور 10 ​​سیکنڈ میں موافقت پذیری"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "ترتیبات محفوظ"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "ترتیبات کو بچا لیا اور 30 ​​سیکنڈ میں موافقت پذیری"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "ترتیبات کو بچا لیا اور 10 ​​سیکنڈ میں موافقت پذیری"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

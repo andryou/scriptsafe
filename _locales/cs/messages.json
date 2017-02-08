@@ -412,8 +412,8 @@
       "message": "Nastavení úspěšně importována, s výjimkou následujících (prázdné hodnoty nebo nerozpoznané jméno):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Nastavení úspešně importována, synchronizace proběhne za 30 sekund"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Nastavení úspešně importována, synchronizace proběhne za 10 sekund"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Nastavení byla uložena"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Nastavení uložena, synchronizace proběhne za 30 sekund"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Nastavení uložena, synchronizace proběhne za 10 sekund"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

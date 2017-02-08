@@ -412,8 +412,8 @@
       "message": "Instellingen geïmporteerd, met uitzondering van de volgende (lege waarde of niet-herkende naam):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Instellingen met succes geïmporteerd en synchroniseren in 30 seconden"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Instellingen met succes geïmporteerd en synchroniseren in 10 seconden"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Instellingen opgeslagen"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Instellingen opgeslagen en synchroniseren in 30 seconden"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Instellingen opgeslagen en synchroniseren in 10 seconden"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

@@ -412,8 +412,8 @@
       "message": "다음 값(비었거나 인식되지 않는 이름)을 제외하고 성공적으로 설정을 가져왔습니다:"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "설정을 성공적으로 가져왔으며 30 초내로 동기화됩니다."
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "설정을 성공적으로 가져왔으며 10 초내로 동기화됩니다."
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "설정이 저장되었습니다."
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "설정이 저장되었으며 30 초내에 동기화 됩니다."
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "설정이 저장되었으며 10 초내에 동기화 됩니다."
    },
    "showcontext": {
       "description": "Show in Context Menu:",

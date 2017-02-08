@@ -412,8 +412,8 @@
       "message": "Iestatījumi ir veiksmīgi importēti, izņemot (tukša vērtība vai neatpazīts apzīmējums):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Iestatījumi ir veiksmīgi importēti un sinhronizēti 30 sekunžu laikā"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Iestatījumi ir veiksmīgi importēti un sinhronizēti 10 sekunžu laikā"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Iestatījumi saglabāti"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Iestatījumi ir veiksmīgi saglabāti un sinhronizēti 30 sekunžu laikā"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Iestatījumi ir veiksmīgi saglabāti un sinhronizēti 10 sekunžu laikā"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

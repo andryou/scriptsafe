@@ -412,8 +412,8 @@
       "message": "Innstillinger importert, unntatt følgende (tom verdi eller ukjente navn):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Innstillinger importerte hell og synkronisering i 30 sekunder"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Innstillinger importerte hell og synkronisering i 10 sekunder"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Innstillingene er lagret"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Innstillingene som er lagret og synkronisering i 30 sekunder"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Innstillingene som er lagret og synkronisering i 10 sekunder"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

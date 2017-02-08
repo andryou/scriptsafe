@@ -412,8 +412,8 @@
       "message": "Подешавања успешно увезени, осим следећег (празан вредности или непризнате назив):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Подешавања успешно увезени и синхронизацију у 30 секунди"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Подешавања успешно увезени и синхронизацију у 10 секунди"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Подешавања сачуване"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Подешавања сачуване и синхронизацију у 30 секунди"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Подешавања сачуване и синхронизацију у 10 секунди"
    },
    "showcontext": {
       "description": "Show in Context Menu:",
