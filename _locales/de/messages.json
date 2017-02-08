@@ -412,8 +412,8 @@
       "message": "Einstellungen erfolgreich importiert, mit Ausnahme der folgenden (leerer Wert oder nicht erkannter Name):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Einstellungen erfolgreich importiert. Synchronisation in 30 Sekunden"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Einstellungen erfolgreich importiert. Synchronisation in 10 Sekunden"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Einstellungen gespeichert"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Einstellungen gespeichert, Synchronisierung startet in 30 Sekunden"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Einstellungen gespeichert, Synchronisierung startet in 10 Sekunden"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

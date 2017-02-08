@@ -412,8 +412,8 @@
       "message": "Ayarlar asagidaki gibidir (bos deger ya da taninmayan isim) hariç, basariyla içe:"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Ayarlar basariyla ve 30 saniye içinde senkronize"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Ayarlar basariyla ve 10 saniye içinde senkronize"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Ayarlar kaydedildi"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Ayarlar kaydedildi ve 30 saniye içinde senkronize"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Ayarlar kaydedildi ve 10 saniye içinde senkronize"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

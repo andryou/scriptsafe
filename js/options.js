@@ -579,7 +579,7 @@ function addList(type) {
 				$('#url').val('');
 				syncstatus = bkg.freshSync(2);
 				if (syncstatus) {
-					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+' and syncing in 30 seconds.');
+					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+' and syncing in 10 seconds.');
 				} else {
 					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+'.');
 				}
@@ -605,7 +605,7 @@ function addFPList() {
 			$('#'+elid+'url').val('');
 			syncstatus = bkg.freshSync(2);
 			if (syncstatus) {
-				notification(bkg.getLocale("whitelisted")+' '+domain+' and syncing in 30 seconds.');
+				notification(bkg.getLocale("whitelisted")+' '+domain+' and syncing in 10 seconds.');
 			} else {
 				notification(bkg.getLocale("whitelisted")+' '+domain+'.');
 			}
@@ -629,7 +629,7 @@ function domainRemover(domain, type) {
 		}
 		syncstatus = bkg.freshSync(2);
 		if (syncstatus) {
-			notification('Successfully removed: '+domain+' and syncing in 30 seconds.');
+			notification('Successfully removed: '+domain+' and syncing in 10 seconds.');
 		} else {
 			notification('Successfully removed: '+domain);
 		}
@@ -645,7 +645,7 @@ function domainMove(domain, mode) {
 		listUpdate();
 		syncstatus = bkg.freshSync(2);
 		if (syncstatus) {
-			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain+' and syncing in 30 seconds.');
+			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain+' and syncing in 10 seconds.');
 		} else {
 			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain);
 		}
@@ -718,7 +718,7 @@ function importbulk(type) {
 	if (!error) {
 		syncstatus = bkg.freshSync(2);
 		if (syncstatus) {
-			notification('Domains imported successfully and syncing in 30 seconds');
+			notification('Domains imported successfully and syncing in 10 seconds');
 		} else {
 			notification('Domains imported successfully');
 		}

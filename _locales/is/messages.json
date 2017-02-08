@@ -412,8 +412,8 @@
       "message": "Stillingar flutt inn, nema eftirfarandi (fastandi gildi eða óþekkt nafn):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Stillingar flutt með góðum árangri og syncing í 30 sekúndur"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Stillingar flutt með góðum árangri og syncing í 10 sekúndur"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Stillingarnar vistaðar"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Stillingar vistuð og syncing í 30 sekúndur"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Stillingar vistuð og syncing í 10 sekúndur"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

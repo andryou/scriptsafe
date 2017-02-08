@@ -412,8 +412,8 @@
       "message": "成功导入设置，以下除外（空值或无法识别的名称）："
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "成功导入设置并将在30秒内同步"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "成功导入设置并将在10秒内同步"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "设置已保存"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "设置已保存并将在30秒内同步"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "设置已保存并将在10秒内同步"
    },
    "showcontext": {
       "description": "Show in Context Menu:",
