@@ -294,19 +294,18 @@ function loadElement(id) {
 	$("#"+id).val(localStorage[id]);
 }
 function saveCheckbox(id) {
-	localStorage[id] = document.getElementById(id).checked;
 	if (id == 'syncenable') {
 		if (!document.getElementById(id).checked) {
 			syncstatus = 'false';
-			return;
-		}
-		if (syncstatus == 'false') {
-			alert(bkg.getLocale("forcesyncimport"));
-			syncstatus = 'true';
 		} else {
+			if (syncstatus == 'false' && confirm(bkg.getLocale("forcesyncimport"))) {
+				bkg.importSyncHandle(1);
+				setTimeout(function(){ window.location.reload(1); }, 10000);
+			}
 			syncstatus = 'true';
 		}
 	}
+	localStorage[id] = document.getElementById(id).checked;
 }
 function saveElement(id) {
 	localStorage[id] = $("#"+id).val();
