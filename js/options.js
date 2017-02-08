@@ -246,7 +246,7 @@ function forceSyncExport() {
 }
 function forceSyncImport() {
 	if (confirm(bkg.getLocale("forcesyncimport"))) {
-		bkg.importSyncHandle(1);
+		bkg.importSyncHandle(2);
 		setTimeout(function(){ window.location.reload(1); }, 10000);
 	}
 }
@@ -295,7 +295,7 @@ function saveCheckbox(id) {
 			syncstatus = 'false';
 		} else {
 			if (syncstatus == 'false' && confirm(bkg.getLocale("forcesyncimport"))) {
-				bkg.importSyncHandle(1);
+				bkg.importSyncHandle(2);
 				setTimeout(function(){ window.location.reload(1); }, 10000);
 			}
 			syncstatus = 'true';
