@@ -412,8 +412,8 @@
       "message": "Setting-import matagumpay, maliban sa sumusunod na (walang laman na halaga o hindi nakikilalang pangalan):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Setting-import matagumpay at pag-sync sa 30 segundo"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Setting-import matagumpay at pag-sync sa 10 segundo"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Setting-save"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Setting-save at pag-sync sa 30 segundo"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Setting-save at pag-sync sa 10 segundo"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

@@ -412,8 +412,8 @@
       "message": "Parameteren erfollegräich importéiert, ausser de folgenden (eidel Wäert oder dei Numm):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Parameteren importéiert erfollegräich an ofschalten an 30 Sekonnen"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Parameteren importéiert erfollegräich an ofschalten an 10 Sekonnen"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "Parameteren gerett"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Parameteren gerett an ofschalten an 30 Sekonnen"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Parameteren gerett an ofschalten an 10 Sekonnen"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

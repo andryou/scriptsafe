@@ -412,8 +412,8 @@
       "message": "Налаштування успішно імпортовані, за винятком таких (пусте значення або невизнаного ім'я):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "Налаштування успішно імпортовані і синхронізації протягом 30 секунд"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Налаштування успішно імпортовані і синхронізації протягом 10 секунд"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "налаштування збережені"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "Налаштування зберігаються і синхронізуються через 30 секунд"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Налаштування зберігаються і синхронізуються через 10 секунд"
    },
    "showcontext": {
       "description": "Show in Context Menu:",

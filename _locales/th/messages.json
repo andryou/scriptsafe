@@ -412,8 +412,8 @@
       "message": "การตั้งค่านำเข้าสำเร็จยกเว้นดังต่อไปนี้ (ค่าว่างหรือชื่อที่ไม่รู้จัก):"
    },
    "importsuccesssync": {
-      "description": "Settings imported successfully and syncing in 30 seconds",
-      "message": "การตั้งค่านำเข้าสำเร็จและการซิงค์ใน 30 วินาที"
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "การตั้งค่านำเข้าสำเร็จและการซิงค์ใน 10 วินาที"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -580,8 +580,8 @@
       "message": "การตั้งค่าที่บันทึกไว้"
    },
    "settingssavesync": {
-      "description": "Settings saved and syncing in 30 seconds",
-      "message": "การตั้งค่าการบันทึกและการซิงค์ใน 30 วินาที"
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "การตั้งค่าการบันทึกและการซิงค์ใน 10 วินาที"
    },
    "showcontext": {
       "description": "Show in Context Menu:",
