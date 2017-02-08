@@ -1315,7 +1315,7 @@ function postLangLoad() {
 		chrome.storage.onChanged.addListener(function(changes, namespace) {
 			if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
 				if (typeof changes['lastSync'] !== 'undefined') {
-					if (changes['lastSync'].newValue != localStorage['lastSync']) {
+					if (changes['lastSync'].newValue > changes['lastSync'].oldValue) {
 						importSync(changes, 1);
 						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
 					}
