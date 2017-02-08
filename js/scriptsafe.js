@@ -370,6 +370,8 @@ function topHandler(domain, mode) {
 		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
 		if (mode != '0' && mode != '1') fpDomainHandler(domain, mode, 1);
 		else domainHandler(domain, mode);
+		freshSync(2);
+		changed = true;
 		return true;
 	}
 	return false;
@@ -1113,9 +1115,11 @@ function importSyncHandle(mode) {
 						freshSync(0, true);
 						return true;
 					} else {
-						localStorage['syncenable'] = 'false';
-						alert(getLocale("disabledsync"));
-						localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
+						if (mode != '2') {
+							localStorage['syncenable'] = 'false';
+							alert(getLocale("disabledsync"));
+							localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
+						}
 						return false;
 					}
 				}
@@ -1192,7 +1196,6 @@ function listsSync(mode) {
 }
 //////////////////////////////////////////////////////
 function init() {
-	setDefaultOptions();
 	webrtcsupport = checkWebRTC();
 	initWebRTC();
 	cacheLists();
@@ -1311,6 +1314,7 @@ function postLangLoad() {
 		}
 		localStorage["version"] = version;
 	}
+	setDefaultOptions();
 	if (storageapi) {
 		chrome.storage.onChanged.addListener(function(changes, namespace) {
 			if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
