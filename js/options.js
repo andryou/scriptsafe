@@ -538,7 +538,7 @@ function updateExport() {
 	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
-		if (i != "version" && i != "whiteListCount" && i != "blackListCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw") {
+		if (i != "version" && i != "lastSync" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "fpCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 3) != "zfp") {
 			settingnames.push(i);
 			$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
 		}
