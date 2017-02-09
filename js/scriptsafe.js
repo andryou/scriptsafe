@@ -556,6 +556,7 @@ function setDefaultOptions() {
 	defaultOptionValue("syncenable", "false");
 	defaultOptionValue("syncnotify", "true");
 	defaultOptionValue("syncfromnotify", "true");
+	defaultOptionValue("lastSync", "0");
 	defaultOptionValue("updatenotify", "true");
 	defaultOptionValue("enable", "true");
 	defaultOptionValue("mode", "block");
@@ -991,14 +992,6 @@ function removeTempAll() {
 		if (localStorage['refresh'] == 'true') chrome.tabs.reload(tabs[0].id);
 	});
 }
-// Debug Synced Items
-/*
-chrome.storage.sync.get(null, function(changes) {
-	for (key in changes) {
-		alert(changes['whiteList'].length);
-	}
-});
-*/
 function freshSync(mode, force) {
 	if (storageapi && localStorage['syncenable'] == 'true') {
 		window.clearTimeout(synctimer);
@@ -1089,43 +1082,41 @@ function syncQueue() {
 }
 function importSyncHandle(mode) {
 	if (storageapi) {
-		if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
-			window.clearTimeout(synctimer);
-			chrome.storage.sync.get(null, function(changes) {
-				if (typeof changes['lastSync'] !== 'undefined' && typeof changes['scriptsafe_settings'] !== 'undefined' && (typeof changes['zw0'] !== 'undefined' || typeof changes['zb0'] !== 'undefined' || typeof changes['zfp0'] !== 'undefined')) {
-					if (!optionExists('lastSync') || (optionExists('lastSync') && changes['lastSync'] >= localStorage['lastSync'])) {
-						if (confirm(getLocale("syncdetect"))) {
-							localStorage['syncenable'] = 'true';
-							localStorage['sync'] = 'true';
-							importSync(changes, 2);
-							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
-							return true;
-						} else {
-							if (mode != '1') {
-								localStorage['syncenable'] = 'false';
-								alert(getLocale("syncdisabled"));
-								localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
-							}
-							return false;
-						}
-					}
-				} else {
-					if (confirm(getLocale("firstsync"))) {
+		window.clearTimeout(synctimer);
+		chrome.storage.sync.get(null, function(changes) {
+			if (typeof changes['lastSync'] !== 'undefined') {
+				if (changes['lastSync'] >= localStorage['lastSync']) {
+					if (confirm(getLocale("syncdetect"))) {
 						localStorage['syncenable'] = 'true';
 						localStorage['sync'] = 'true';
-						freshSync(0, true);
+						importSync(changes, 2);
+						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
 						return true;
 					} else {
 						if (mode != '1') {
 							localStorage['syncenable'] = 'false';
-							alert(getLocale("disabledsync"));
-							localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
+							alert(getLocale("syncdisabled"));
+							localStorage['sync'] = 'true';
 						}
 						return false;
 					}
 				}
-			});
-		}
+			} else {
+				if (confirm(getLocale("firstsync"))) {
+					localStorage['syncenable'] = 'true';
+					localStorage['sync'] = 'true';
+					if (mode == '1') freshSync(0, true);
+					return true;
+				} else {
+					if (mode != '1') {
+						localStorage['syncenable'] = 'false';
+						alert(getLocale("disabledsync"));
+						localStorage['sync'] = 'true';
+					}
+					return false;
+				}
+			}
+		});
 	} else {
 		alert(getLocale("syncnotsupported"));
 		return false;
@@ -1151,6 +1142,7 @@ function importSync(changes, mode) {
 			}
 		}
 	}
+	initLang(localStorage['locale'], 0);
 	listsSync(mode);
 }
 function listsSync(mode) {
@@ -1202,7 +1194,6 @@ function getUpdated() {
 function setUpdated() {
 	updated = false;
 }
-//////////////////////////////////////////////////////
 function init() {
 	webrtcsupport = checkWebRTC();
 	initWebRTC();

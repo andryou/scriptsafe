@@ -193,8 +193,8 @@ function i18load() {
 	$(".i18_newtab").html(bkg.getLocale("newtab"));
 	$(".i18_strictsamedomain").html(bkg.getLocale("strictsamedomain"));
 	$(".i18_loosesamedomain").html(bkg.getLocale("loosesamedomain"));
-	$(".i18_whitelistmove").html(bkg.getLocale("whitelistmove"));
-	$(".i18_blacklistmove").html(bkg.getLocale("blacklistmove"));
+	$(".i18_whitelistmove").attr('title', bkg.getLocale("whitelistmove"));
+	$(".i18_blacklistmove").attr('title', bkg.getLocale("blacklistmove"));
 	$(".i18_domaintip").html(bkg.getLocale("domaintip"));
 	$(".topDomainAdd[data-mode='0']").html(bkg.getLocale("trust"));
 	$(".topDomainAdd[data-mode='1']").html(bkg.getLocale("distrust"));
@@ -315,6 +315,7 @@ function loadOptions() {
 	loadCheckbox("enable");
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
+	else $("#syncbuttons").show();
 	loadCheckbox("syncfromnotify");
 	loadCheckbox("updatenotify");
 	loadCheckbox("syncnotify");
@@ -335,6 +336,7 @@ function loadOptions() {
 	loadElement("xml");
 	loadCheckbox("annoyances");
 	if (!$("#annoyances").prop('checked')) $("#annoyancesmode").attr('disabled', 'true');
+	else $("#annoyancesmode").attr('disabled', 'false');
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadElement("canvas");
@@ -350,6 +352,7 @@ function loadOptions() {
 	loadElement("timezone");
 	loadCheckbox("keyboard");
 	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
+	else $(".keydeltarow").show();
 	loadElement("keydelta");
 	if ($("#keydelta").val() < 0 || isNaN(parseInt($("#keydelta").val()))) {
 		$("#keydelta").val(40);
@@ -379,7 +382,10 @@ function loadOptions() {
 		$("#referrerspoof").val('custom');
 		$("#customreferrer").show();
 		$("#userref").val(localStorage['referrerspoof']);
-	} else loadElement("referrerspoof");
+	} else {
+		loadElement("referrerspoof");
+		$("#customreferrer").hide();
+	}
 	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
 	else $("#applyreferrerspoofdenywhitelisted").show();
 	listUpdate();
@@ -514,22 +520,24 @@ function settingsImport() {
 	loadOptions();
 	listUpdate();
 	fpListUpdate();
+	bkg.refreshRequestTypes();
+	bkg.initWebRTC();
 	bkg.cacheLists();
-	bkg.reinitContext();
-	if (!error) {
+	bkg.cacheFpLists();
+	bkg.initLang(localStorage['locale'], 0);
+	setTimeout(function() {
+		i18load();
+		$("#locale").val(localStorage['locale'])
 		syncstatus = bkg.freshSync(0);
-		if (syncstatus) {
-			notification(bkg.getLocale("importsuccesssync"));
+		if (!error) {
+			if (syncstatus) notification(bkg.getLocale("importsuccesssync"));
+			else notification(bkg.getLocale("importsuccessoptions"));
 		} else {
-			notification(bkg.getLocale("importsuccessoptions"));
+			if (syncstatus) notification(bkg.getLocale("importsuccesscond")+' '+error.slice(0, -2)+'<br /><br />'+bkg.getLocale("settingssavesync"));
+			else notification(bkg.getLocale("importsuccesscond")+' '+error.slice(0, -2));
 		}
-		bkg.refreshRequestTypes();
-		bkg.initWebRTC();
 		$("#settingsimport").val("");
-	} else {
-		bkg.freshSync(0);
-		notification(bkg.getLocale("importsuccesscond")+' '+error.slice(0, -2));
-	}
+	}, 1000);
 }
 function downloadtxt() {
 	var textToWrite = $("#settingsexport").val();
@@ -546,7 +554,7 @@ function updateExport() {
 	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
-		if (i != "version" && i != "lastSync" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "fpCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 3) != "zfp") {
+		if (i != "version" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "fpCount" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 3) != "zfp") {
 			settingnames.push(i);
 			$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
 		}
