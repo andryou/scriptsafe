@@ -513,7 +513,6 @@ function settingsImport() {
 	listUpdate();
 	fpListUpdate();
 	bkg.refreshRequestTypes();
-	bkg.initWebRTC();
 	bkg.cacheLists();
 	bkg.cacheFpLists();
 	bkg.initLang(localStorage['locale'], 0);
