@@ -253,7 +253,6 @@ function forceSyncExport() {
 function forceSyncImport() {
 	if (confirm(bkg.getLocale("forcesyncimport"))) {
 		bkg.importSyncHandle(1);
-		setTimeout(function(){ window.location.reload(1); }, 10000);
 	}
 }
 function importbulkwhite() {
@@ -302,7 +301,6 @@ function saveCheckbox(id) {
 		} else {
 			if (syncstatus == 'false' && confirm(bkg.getLocale("forcesyncimport"))) {
 				bkg.importSyncHandle(1);
-				setTimeout(function(){ window.location.reload(1); }, 10000);
 			}
 			syncstatus = 'true';
 		}

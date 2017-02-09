@@ -1098,7 +1098,7 @@ function importSyncHandle(mode) {
 							localStorage['syncenable'] = 'true';
 							localStorage['sync'] = 'true';
 							importSync(changes, 2);
-							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
+							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
 							return true;
 						} else {
 							if (mode != '1') {
