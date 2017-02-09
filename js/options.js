@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$(".row-offcanvas").show();
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
 	$('#sidebar').stickyScroll({ container: '#sectionname' });
+	bkg.setUpdated();
 	setInterval(function() { if (bkg.getUpdated()) { bkg.setUpdated(); window.location.reload(1); } }, 5000);
 });
 function i18load() {
@@ -251,7 +252,7 @@ function forceSyncExport() {
 }
 function forceSyncImport() {
 	if (confirm(bkg.getLocale("forcesyncimport"))) {
-		bkg.importSyncHandle(2);
+		bkg.importSyncHandle(1);
 		setTimeout(function(){ window.location.reload(1); }, 10000);
 	}
 }
@@ -300,7 +301,7 @@ function saveCheckbox(id) {
 			syncstatus = 'false';
 		} else {
 			if (syncstatus == 'false' && confirm(bkg.getLocale("forcesyncimport"))) {
-				bkg.importSyncHandle(2);
+				bkg.importSyncHandle(1);
 				setTimeout(function(){ window.location.reload(1); }, 10000);
 			}
 			syncstatus = 'true';

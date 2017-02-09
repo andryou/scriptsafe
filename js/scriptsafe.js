@@ -1089,7 +1089,7 @@ function syncQueue() {
 }
 function importSyncHandle(mode) {
 	if (storageapi) {
-		if (mode == '1' || mode == '2' || (localStorage['sync'] == 'false' && mode == '0')) {
+		if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
 			window.clearTimeout(synctimer);
 			chrome.storage.sync.get(null, function(changes) {
 				if (typeof changes['lastSync'] !== 'undefined' && typeof changes['scriptsafe_settings'] !== 'undefined' && (typeof changes['zw0'] !== 'undefined' || typeof changes['zb0'] !== 'undefined' || typeof changes['zfp0'] !== 'undefined')) {
@@ -1101,7 +1101,7 @@ function importSyncHandle(mode) {
 							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { return true; });
 							return true;
 						} else {
-							if (mode != '2') {
+							if (mode != '1') {
 								localStorage['syncenable'] = 'false';
 								alert(getLocale("syncdisabled"));
 								localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
@@ -1116,7 +1116,7 @@ function importSyncHandle(mode) {
 						freshSync(0, true);
 						return true;
 					} else {
-						if (mode != '2') {
+						if (mode != '1') {
 							localStorage['syncenable'] = 'false';
 							alert(getLocale("disabledsync"));
 							localStorage['sync'] = 'true'; // set to true so user isn't prompted with this message every time they start Chrome; localStorage['sync'] == true does not mean syncing is enabled, it's more like an acknowledgement flag
@@ -1156,12 +1156,13 @@ function importSync(changes, mode) {
 function listsSync(mode) {
 	if (mode == '1' || mode == '2') {
 		var concatlist;
+		var concatlistarr;
 		if (optionExists('whiteListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['whiteListCount']; i++) {
 				concatlist += localStorage['zw'+i];
 			}
-			var concatlistarr = concatlist.split(",");
+			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
 			else localStorage['whiteList'] = JSON.stringify(concatlistarr);
 		}
