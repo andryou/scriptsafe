@@ -1003,6 +1003,7 @@ function freshSync(mode, force) {
 		zarr['zb'] = [];
 		zarr['zfp'] = [];
 		if (force) {
+			localStorage['sync'] = 'true';
 			for (var k in localStorage) {
 				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "fpCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "fp") {
 					simplesettings += k+"|"+localStorage[k]+"~";
@@ -1082,43 +1083,45 @@ function syncQueue() {
 }
 function importSyncHandle(mode) {
 	if (storageapi) {
-		window.clearTimeout(synctimer);
-		chrome.storage.sync.get(null, function(changes) {
-			if (typeof changes['lastSync'] !== 'undefined') {
-				if (changes['lastSync'] >= localStorage['lastSync']) {
-					if (confirm(getLocale("syncdetect"))) {
+		if (mode == '1' || localStorage['syncenable'] == 'true' || localStorage['sync'] == 'false') {
+			window.clearTimeout(synctimer);
+			chrome.storage.sync.get(null, function(changes) {
+				if (typeof changes['lastSync'] !== 'undefined') {
+					if ((mode == '0' && changes['lastSync'] > localStorage['lastSync']) || (mode == '1' && changes['lastSync'] >= localStorage['lastSync'])) {
+						if (confirm(getLocale("syncdetect"))) {
+							localStorage['syncenable'] = 'true';
+							localStorage['sync'] = 'true';
+							importSync(changes, 2);
+							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
+							return true;
+						} else {
+							if (mode != '1') {
+								localStorage['syncenable'] = 'false';
+								alert(getLocale("syncdisabled"));
+								localStorage['sync'] = 'true';
+							}
+							return false;
+						}
+					}
+				} else {
+					if (confirm(getLocale("firstsync"))) {
 						localStorage['syncenable'] = 'true';
 						localStorage['sync'] = 'true';
-						importSync(changes, 2);
-						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
+						if (mode == '1') freshSync(0);
 						return true;
 					} else {
-						if (mode != '1') {
-							localStorage['syncenable'] = 'false';
-							alert(getLocale("syncdisabled"));
-							localStorage['sync'] = 'true';
-						}
+						localStorage['syncenable'] = 'false';
+						localStorage['sync'] = 'true';
+						alert(getLocale("disabledsync"));
+						updated = true;
 						return false;
 					}
 				}
-			} else {
-				if (confirm(getLocale("firstsync"))) {
-					localStorage['syncenable'] = 'true';
-					localStorage['sync'] = 'true';
-					if (mode == '1') freshSync(0, true);
-					return true;
-				} else {
-					if (mode != '1') {
-						localStorage['syncenable'] = 'false';
-						alert(getLocale("disabledsync"));
-						localStorage['sync'] = 'true';
-					}
-					return false;
-				}
-			}
-		});
+			});
+		}
 	} else {
 		alert(getLocale("syncnotsupported"));
+		localStorage['sync'] = 'true';
 		return false;
 	}
 }
@@ -1193,6 +1196,7 @@ function getUpdated() {
 }
 function setUpdated() {
 	updated = false;
+	window.clearTimeout(synctimer);
 }
 function init() {
 	webrtcsupport = checkWebRTC();
