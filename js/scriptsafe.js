@@ -1008,7 +1008,7 @@ function freshSync(mode, force) {
 				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "fp") {
 					simplesettings += k+"|"+localStorage[k]+"~";
 				} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
-					fpsettings += k+"|"+localStorage[k]+"~";
+					fpsettings += k+"|"+ssCompress(localStorage[k])+"~";
 				}
 				if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
 				else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
@@ -1048,7 +1048,7 @@ function freshSync(mode, force) {
 			i = 0;
 			while (jsonstr.length > 0) {
 				segment = jsonstr.substr(0, limit);
-				settingssync["sf" + i] = milliseconds+ssCompress(segment);
+				settingssync["sf" + i] = milliseconds+segment;
 				jsonstr = jsonstr.substr(limit);
 				i++;
 			}
