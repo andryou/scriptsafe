@@ -1103,19 +1103,19 @@ function importSyncHandle(mode) {
 							return false;
 						}
 					}
+				}
+				if (confirm(getLocale("firstsync"))) {
+					localStorage['syncenable'] = 'true';
+					localStorage['sync'] = 'true';
+					if (mode == '1') freshSync(0);
+					else freshSync(0, true);
+					return true;
 				} else {
-					if (confirm(getLocale("firstsync"))) {
-						localStorage['syncenable'] = 'true';
-						localStorage['sync'] = 'true';
-						if (mode == '1') freshSync(0);
-						return true;
-					} else {
-						localStorage['syncenable'] = 'false';
-						localStorage['sync'] = 'true';
-						alert(getLocale("disabledsync"));
-						updated = true;
-						return false;
-					}
+					localStorage['syncenable'] = 'false';
+					localStorage['sync'] = 'true';
+					alert(getLocale("disabledsync"));
+					updated = true;
+					return false;
 				}
 			});
 		}
