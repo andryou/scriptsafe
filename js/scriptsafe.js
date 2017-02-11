@@ -1001,19 +1001,17 @@ function freshSync(mode, force) {
 		var zarr = {};
 		zarr['zw'] = [];
 		zarr['zb'] = [];
-		zarr['zf'] = [];
 		if (force) {
 			localStorage['sync'] = 'true';
 			var milliseconds = (new Date).getTime();
 			for (var k in localStorage) {
-				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "fpCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "zf" && k.substr(0, 2) != "fp") {
+				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "fp") {
 					simplesettings += k+"|"+localStorage[k]+"~";
 				} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
 					fpsettings += k+"|"+localStorage[k]+"~";
 				}
 				if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
 				else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
-				else if (k.substr(0, 2) == "zf") zarr['zf'].push(k);
 			}
 			settingssync['scriptsafe_settings'] = simplesettings.slice(0,-1);
 			if (zarr['zw'].length) {
@@ -1046,14 +1044,10 @@ function freshSync(mode, force) {
 			}
 			settingssync['blackListCount'] = i;
 			localStorage['blackListCount'] = i;
-			if (zarr['zf'].length) {
-				for (var x = 0; x < zarr['zf'].length; x++) delete localStorage[zarr['zf'][x]];
-			}
 			jsonstr = fpsettings.slice(0,-1);
 			i = 0;
 			while (jsonstr.length > 0) {
 				segment = jsonstr.substr(0, limit);
-				settingssync["zf" + i] = segment;
 				settingssync["sf" + i] = milliseconds+ssCompress(segment);
 				jsonstr = jsonstr.substr(limit);
 				i++;
@@ -1193,28 +1187,24 @@ function listsSync(mode) {
 		}
 		if (optionExists('fpCount')) {
 			concatlist = '';
-			var newparse = false;
 			for (var i = 0; i < localStorage['fpCount']; i++) {
 				if (localStorage['sf'+i]) {
 					concatlist += localStorage['sf'+i].substr(13);
 					delete localStorage['sf'+i];
-					if (!newparse) newparse = true;
-				} else {
-					if (localStorage['zf'+i]) concatlist += localStorage['zf'+i];
 				}
-				delete localStorage['zf'+i];
 			}
-			var settings = concatlist.split("~");
-			if (settings.length > 0) {
-				$.each(settings, function(i, v) {
-					if ($.trim(v) != "") {
-						var settingentry = $.trim(v).split("|");
-						if ($.trim(settingentry[1]) != '') {
-							if (newparse) localStorage[$.trim(settingentry[0])] = ssDecompress($.trim(settingentry[1]));
-							else localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+			if (concatlist != '') {
+				var settings = concatlist.split("~");
+				if (settings.length > 0) {
+					$.each(settings, function(i, v) {
+						if ($.trim(v) != "") {
+							var settingentry = $.trim(v).split("|");
+							if ($.trim(settingentry[1]) != '') {
+								localStorage[$.trim(settingentry[0])] = ssDecompress($.trim(settingentry[1]));
+							}
 						}
-					}
-				});
+					});
+				}
 			}
 		}
 		cacheLists();
