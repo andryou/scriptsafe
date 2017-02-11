@@ -1018,13 +1018,16 @@ function freshSync(mode, force) {
 				for (var x = 0; x < zarr['zw'].length; x++) delete localStorage[zarr['zw'][x]];
 			}
 			var jsonstr = JSON.parse(localStorage['whiteList']).toString();
-			var limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 6 - 13);
+			var limit;
+			var newlimit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 6 - 13);
+			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			var i = 0;
 			var segment;
 			while (jsonstr.length > 0) {
 				segment = jsonstr.substr(0, limit);
 				settingssync["zw" + i] = segment;
-				settingssync["sw" + i] = milliseconds+ssCompress(segment);
+				localStorage["zw" + i] = segment;
+				//settingssync["sw" + i] = milliseconds+ssCompress(segment);
 				jsonstr = jsonstr.substr(limit);
 				i++;
 			}
@@ -1034,11 +1037,13 @@ function freshSync(mode, force) {
 				for (var x = 0; x < zarr['zb'].length; x++) delete localStorage[zarr['zb'][x]];
 			}
 			jsonstr = JSON.parse(localStorage['blackList']).toString();
+			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			i = 0;
 			while (jsonstr.length > 0) {
 				segment = jsonstr.substr(0, limit);
 				settingssync["zb" + i] = segment;
-				settingssync["sb" + i] = milliseconds+ssCompress(segment);
+				localStorage["zb" + i] = segment;
+				//settingssync["sb" + i] = milliseconds+ssCompress(segment);
 				jsonstr = jsonstr.substr(limit);
 				i++;
 			}
@@ -1047,9 +1052,9 @@ function freshSync(mode, force) {
 			jsonstr = fpsettings.slice(0,-1);
 			i = 0;
 			while (jsonstr.length > 0) {
-				segment = jsonstr.substr(0, limit);
+				segment = jsonstr.substr(0, newlimit);
 				settingssync["sf" + i] = milliseconds+segment;
-				jsonstr = jsonstr.substr(limit);
+				jsonstr = jsonstr.substr(newlimit);
 				i++;
 			}
 			settingssync['fpCount'] = i;
@@ -1107,18 +1112,20 @@ function importSyncHandle(mode) {
 						}
 					}
 				}
-				if (confirm(getLocale("firstsync"))) {
-					localStorage['syncenable'] = 'true';
-					localStorage['sync'] = 'true';
-					if (mode == '1') freshSync(0);
-					else freshSync(0, true);
-					return true;
-				} else {
-					localStorage['syncenable'] = 'false';
-					localStorage['sync'] = 'true';
-					alert(getLocale("disabledsync"));
-					updated = true;
-					return false;
+				if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
+					if (confirm(getLocale("firstsync"))) {
+						localStorage['syncenable'] = 'true';
+						localStorage['sync'] = 'true';
+						if (mode == '1') freshSync(0);
+						else freshSync(0, true);
+						return true;
+					} else {
+						localStorage['syncenable'] = 'false';
+						localStorage['sync'] = 'true';
+						alert(getLocale("disabledsync"));
+						updated = true;
+						return false;
+					}
 				}
 			});
 		}
@@ -1158,13 +1165,13 @@ function listsSync(mode) {
 		if (optionExists('whiteListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['whiteListCount']; i++) {
-				if (localStorage['sw'+i]) {
-					concatlist += ssDecompress(localStorage['sw'+i].substr(13));
-					delete localStorage['sw'+i];
-				} else {
+				//if (localStorage['sw'+i]) {
+				//	concatlist += ssDecompress(localStorage['sw'+i].substr(13));
+				//	delete localStorage['sw'+i];
+				//} else {
 					if (localStorage['zw'+i]) concatlist += localStorage['zw'+i];
-				}
-				delete localStorage['zw'+i];
+				//}
+				//delete localStorage['zw'+i];
 			}
 			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
@@ -1173,13 +1180,13 @@ function listsSync(mode) {
 		if (optionExists('blackListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['blackListCount']; i++) {
-				if (localStorage['sb'+i]) {
-					concatlist += ssDecompress(localStorage['sb'+i].substr(13));
-					delete localStorage['sb'+i];
-				} else {
+				//if (localStorage['sb'+i]) {
+				//	concatlist += ssDecompress(localStorage['sb'+i].substr(13));
+				//	delete localStorage['sb'+i];
+				//} else {
 					if (localStorage['zb'+i]) concatlist += localStorage['zb'+i];
-				}
-				delete localStorage['zb'+i];
+				//}
+				//delete localStorage['zb'+i];
 			}
 			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
