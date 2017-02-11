@@ -1060,6 +1060,7 @@ function freshSync(mode, force) {
 				alert('ScriptSafe cannot sync your settings as it is greater than the total limit.\r\nHowever, you are able to manually export and import your settings.');
 			} else {
 				chrome.storage.sync.set(settingssync, function() {
+					console.log(settingssync);
 					if (chrome.extension.lastError){
 						alert(chrome.extension.lastError.message);
 					} else {
@@ -1076,10 +1077,10 @@ function freshSync(mode, force) {
 	}
 }
 function ssCompress(str) {
-	return str.replace(/\.com/g, 'U').replace(/\.net/g, 'N').replace(/\.org/g, 'O').replace(/\.ca/g, 'C').replace(/www/g, 'W');
+	return str.replace(/\.com/g, 'U').replace(/\.net/g, 'N').replace(/\.org/g, 'O').replace(/\.ca/g, 'C').replace(/www/g, 'W').replace(/goog/g, 'G').replace(/web/g, 'B').replace(/forum/g, 'F').replace(/mail/g, 'M').replace(/facebook/g, 'E').replace(/api/g, 'A').replace(/cdn/g, 'D').replace(/static/g, 'S').replace(/ssl/g, 'L').replace(/social/g, 'I').replace(/user/g, 'R').replace(/video/g, 'V').replace(/site/g, 'T').replace(/content/g, 'K');
 }
 function ssDecompress(str) {
-	return str.replace(/U/g, '.com').replace(/N/g, '.net').replace(/O/g, '.org').replace(/C/g, '.ca').replace(/W/g, 'www');
+	return str.replace(/U/g, '.com').replace(/N/g, '.net').replace(/O/g, '.org').replace(/C/g, '.ca').replace(/W/g, 'www').replace(/G/g, 'goog').replace(/B/g, 'web').replace(/F/g, 'forum').replace(/M/g, 'mail').replace(/E/g, 'facebook').replace(/A/g, 'api').replace(/D/g, 'cdn').replace(/L/g, 'ssl').replace(/I/g, 'social').replace(/R/g, 'user').replace(/V/g, 'video').replace(/T/g, 'site').replace(/K/g, 'content');
 }
 function syncQueue() {
 	freshSync(0, true);
