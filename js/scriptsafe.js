@@ -1060,7 +1060,6 @@ function freshSync(mode, force) {
 				alert('ScriptSafe cannot sync your settings as it is greater than the total limit.\r\nHowever, you are able to manually export and import your settings.');
 			} else {
 				chrome.storage.sync.set(settingssync, function() {
-					console.log(settingssync);
 					if (chrome.extension.lastError){
 						alert(chrome.extension.lastError.message);
 					} else {
