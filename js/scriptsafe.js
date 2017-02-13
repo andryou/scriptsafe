@@ -997,7 +997,7 @@ function freshSync(mode, force) {
 		window.clearTimeout(synctimer);
 		var settingssync = {};
 		var simplesettings = '';
-		var fpsettings = '';
+		//var fpsettings = '';
 		var zarr = {};
 		zarr['zw'] = [];
 		zarr['zb'] = [];
@@ -1005,11 +1005,11 @@ function freshSync(mode, force) {
 			localStorage['sync'] = 'true';
 			var milliseconds = (new Date).getTime();
 			for (var k in localStorage) {
-				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "fp") {
+				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw") {// && k.substr(0, 2) != "fp") {
 					simplesettings += k+"|"+localStorage[k]+"~";
-				} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
+				} /* else if (k.substr(0, 2) == "fp" && k != "fpCount") {
 					fpsettings += k+"|"+ssCompress(localStorage[k])+"~";
-				}
+				} */
 				if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
 				else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
 			}
@@ -1049,6 +1049,7 @@ function freshSync(mode, force) {
 			}
 			settingssync['blackListCount'] = i;
 			localStorage['blackListCount'] = i;
+			/*
 			jsonstr = fpsettings.slice(0,-1);
 			i = 0;
 			while (jsonstr.length > 0) {
@@ -1059,6 +1060,7 @@ function freshSync(mode, force) {
 			}
 			settingssync['fpCount'] = i;
 			localStorage['fpCount'] = i;
+			*/
 			settingssync['lastSync'] = milliseconds;
 			localStorage['lastSync'] = milliseconds;
 			if (chrome.storage.sync.QUOTA_BYTES < JSON.stringify(settingssync).length) {
@@ -1165,13 +1167,12 @@ function listsSync(mode) {
 		if (optionExists('whiteListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['whiteListCount']; i++) {
-				//if (localStorage['sw'+i]) {
-				//	concatlist += ssDecompress(localStorage['sw'+i].substr(13));
-				//	delete localStorage['sw'+i];
-				//} else {
+				if (localStorage['sw'+i]) {
+					concatlist += ssDecompress(localStorage['sw'+i].substr(13));
+					delete localStorage['sw'+i];
+				} else {
 					if (localStorage['zw'+i]) concatlist += localStorage['zw'+i];
-				//}
-				//delete localStorage['zw'+i];
+				}
 			}
 			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
@@ -1180,13 +1181,12 @@ function listsSync(mode) {
 		if (optionExists('blackListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['blackListCount']; i++) {
-				//if (localStorage['sb'+i]) {
-				//	concatlist += ssDecompress(localStorage['sb'+i].substr(13));
-				//	delete localStorage['sb'+i];
-				//} else {
+				if (localStorage['sb'+i]) {
+					concatlist += ssDecompress(localStorage['sb'+i].substr(13));
+					delete localStorage['sb'+i];
+				} else {
 					if (localStorage['zb'+i]) concatlist += localStorage['zb'+i];
-				//}
-				//delete localStorage['zb'+i];
+				}
 			}
 			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
