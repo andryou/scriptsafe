@@ -998,39 +998,42 @@ function freshSync(mode, force) {
 		window.clearTimeout(synctimer);
 		var settingssync = {};
 		var simplesettings = '';
-		var fpsettings = '';
+		//var fpsettings = '';
 		var zarr = {};
 		zarr['zw'] = [];
 		zarr['zb'] = [];
-		zarr['zfp'] = [];
 		if (force) {
 			localStorage['sync'] = 'true';
+			var milliseconds = (new Date).getTime();
 			for (var k in localStorage) {
-				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "fpCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "fp") {
+				if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw") {// && k.substr(0, 2) != "fp") {
 					simplesettings += k+"|"+localStorage[k]+"~";
-				} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
-					fpsettings += k+"|"+localStorage[k]+"~";
-				}
+				} /* else if (k.substr(0, 2) == "fp" && k != "fpCount") {
+					fpsettings += k+"|"+ssCompress(localStorage[k])+"~";
+				} */
 				if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
 				else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
-				else if (k.substr(0, 3) == "zfp") zarr['zfp'].push(k);
 			}
 			settingssync['scriptsafe_settings'] = simplesettings.slice(0,-1);
 			if (zarr['zw'].length) {
 				for (var x = 0; x < zarr['zw'].length; x++) delete localStorage[zarr['zw'][x]];
 			}
 			var jsonstr = JSON.parse(localStorage['whiteList']).toString();
-			var limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
+			var limit;
+			var newlimit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 6 - 13);
+			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			var i = 0;
+			var segment;
 			while (jsonstr.length > 0) {
-				var segment = jsonstr.substr(0, limit);
+				segment = jsonstr.substr(0, limit);
 				settingssync["zw" + i] = segment;
 				localStorage["zw" + i] = segment;
+				//settingssync["sw" + i] = milliseconds+ssCompress(segment);
 				jsonstr = jsonstr.substr(limit);
 				i++;
 			}
-			localStorage['whiteListCount'] = i;
 			settingssync['whiteListCount'] = i;
+			localStorage['whiteListCount'] = i;
 			if (zarr['zb'].length) {
 				for (var x = 0; x < zarr['zb'].length; x++) delete localStorage[zarr['zb'][x]];
 			}
@@ -1038,39 +1041,40 @@ function freshSync(mode, force) {
 			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			i = 0;
 			while (jsonstr.length > 0) {
-				var segment = jsonstr.substr(0, limit);
+				segment = jsonstr.substr(0, limit);
 				settingssync["zb" + i] = segment;
 				localStorage["zb" + i] = segment;
+				//settingssync["sb" + i] = milliseconds+ssCompress(segment);
 				jsonstr = jsonstr.substr(limit);
 				i++;
 			}
-			localStorage['blackListCount'] = i;
 			settingssync['blackListCount'] = i;
-			if (zarr['zfp'].length) {
-				for (var x = 0; x < zarr['zfp'].length; x++) delete localStorage[zarr['zfp'][x]];
-			}
+			localStorage['blackListCount'] = i;
+			/*
 			jsonstr = fpsettings.slice(0,-1);
-			limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
 			i = 0;
 			while (jsonstr.length > 0) {
-				var segment = jsonstr.substr(0, limit);
-				settingssync["zfp" + i] = segment;
-				localStorage["zfp" + i] = segment;
-				jsonstr = jsonstr.substr(limit);
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sf" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
 				i++;
 			}
-			localStorage['fpCount'] = i;
 			settingssync['fpCount'] = i;
-			var milliseconds = (new Date).getTime();
-			localStorage['lastSync'] = milliseconds;
+			localStorage['fpCount'] = i;
+			*/
 			settingssync['lastSync'] = milliseconds;
-			chrome.storage.sync.set(settingssync, function() {
-				if (chrome.extension.lastError){
-					alert(chrome.extension.lastError.message);
-				} else {
-					if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("exportsuccesstitle"), 'message': getLocale("exportsuccess")}, function(callback) { return true; } );
-				}
-			});
+			localStorage['lastSync'] = milliseconds;
+			if (chrome.storage.sync.QUOTA_BYTES < JSON.stringify(settingssync).length) {
+				alert('ScriptSafe cannot sync your settings as it is greater than the total limit.\r\nHowever, you are able to manually export and import your settings.');
+			} else {
+				chrome.storage.sync.set(settingssync, function() {
+					if (chrome.extension.lastError){
+						alert(chrome.extension.lastError.message);
+					} else {
+						if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("exportsuccesstitle"), 'message': getLocale("exportsuccess")}, function(callback) { return true; } );
+					}
+				});
+			}
 		} else {
 			synctimer = window.setTimeout(function() { syncQueue() }, 10000);
 		}
@@ -1078,6 +1082,12 @@ function freshSync(mode, force) {
 	} else {
 		return false;
 	}
+}
+function ssCompress(str) {
+	return str.replace(/\.com/g, 'U').replace(/\.net/g, 'N').replace(/\.org/g, 'O').replace(/\.ca/g, 'C').replace(/www/g, 'W').replace(/goog/g, 'G').replace(/web/g, 'B').replace(/forum/g, 'F').replace(/mail/g, 'M').replace(/facebook/g, 'E').replace(/api/g, 'A').replace(/cdn/g, 'D').replace(/static/g, 'S').replace(/ssl/g, 'L').replace(/social/g, 'I').replace(/user/g, 'R').replace(/video/g, 'V').replace(/site/g, 'T').replace(/content/g, 'K');
+}
+function ssDecompress(str) {
+	return str.replace(/U/g, '.com').replace(/N/g, '.net').replace(/O/g, '.org').replace(/C/g, '.ca').replace(/W/g, 'www').replace(/G/g, 'goog').replace(/B/g, 'web').replace(/F/g, 'forum').replace(/M/g, 'mail').replace(/E/g, 'facebook').replace(/A/g, 'api').replace(/D/g, 'cdn').replace(/L/g, 'ssl').replace(/I/g, 'social').replace(/R/g, 'user').replace(/V/g, 'video').replace(/T/g, 'site').replace(/K/g, 'content');
 }
 function syncQueue() {
 	freshSync(0, true);
@@ -1104,11 +1114,13 @@ function importSyncHandle(mode) {
 							return false;
 						}
 					}
-				} else {
+				}
+				if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
 					if (confirm(getLocale("firstsync"))) {
 						localStorage['syncenable'] = 'true';
 						localStorage['sync'] = 'true';
 						if (mode == '1') freshSync(0);
+						else freshSync(0, true);
 						return true;
 					} else {
 						localStorage['syncenable'] = 'false';
@@ -1156,7 +1168,12 @@ function listsSync(mode) {
 		if (optionExists('whiteListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['whiteListCount']; i++) {
-				concatlist += localStorage['zw'+i];
+				if (localStorage['sw'+i]) {
+					concatlist += ssDecompress(localStorage['sw'+i].substr(13));
+					delete localStorage['sw'+i];
+				} else {
+					if (localStorage['zw'+i]) concatlist += localStorage['zw'+i];
+				}
 			}
 			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
@@ -1165,7 +1182,12 @@ function listsSync(mode) {
 		if (optionExists('blackListCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['blackListCount']; i++) {
-				concatlist += localStorage['zb'+i];
+				if (localStorage['sb'+i]) {
+					concatlist += ssDecompress(localStorage['sb'+i].substr(13));
+					delete localStorage['sb'+i];
+				} else {
+					if (localStorage['zb'+i]) concatlist += localStorage['zb'+i];
+				}
 			}
 			concatlistarr = concatlist.split(",");
 			if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
@@ -1174,18 +1196,23 @@ function listsSync(mode) {
 		if (optionExists('fpCount')) {
 			concatlist = '';
 			for (var i = 0; i < localStorage['fpCount']; i++) {
-				concatlist += localStorage['zfp'+i];
+				if (localStorage['sf'+i]) {
+					concatlist += localStorage['sf'+i].substr(13);
+					delete localStorage['sf'+i];
+				}
 			}
-			var settings = concatlist.split("~");
-			if (settings.length > 0) {
-				$.each(settings, function(i, v) {
-					if ($.trim(v) != "") {
-						var settingentry = $.trim(v).split("|");
-						if ($.trim(settingentry[1]) != '') {
-							localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+			if (concatlist != '') {
+				var settings = concatlist.split("~");
+				if (settings.length > 0) {
+					$.each(settings, function(i, v) {
+						if ($.trim(v) != "") {
+							var settingentry = $.trim(v).split("|");
+							if ($.trim(settingentry[1]) != '') {
+								localStorage[$.trim(settingentry[0])] = ssDecompress($.trim(settingentry[1]));
+							}
 						}
-					}
-				});
+					});
+				}
 			}
 		}
 		cacheLists();

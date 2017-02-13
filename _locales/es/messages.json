@@ -585,7 +585,7 @@
    },
    "showcontext": {
       "description": "Show in Context Menu:",
-      "message": "Show in Context Menu:"
+      "message": "Mostrar en menú emergente:"
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",

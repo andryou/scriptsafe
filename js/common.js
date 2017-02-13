@@ -80,7 +80,7 @@ function in_array(needle, haystack) {
 	if (binarySearch(haystack, needle) != -1) return '1';
 	for (var i in haystack) {
 		if (haystack[i].indexOf("*") == -1 && haystack[i].indexOf("?") == -1) continue;
-		if (new RegExp('^(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/, '\\[').replace(/\]$/, '\\]').replace(/\?/g, '.').replace(/^\*\*\\./, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')').test(needle)) return '1';
+		if (new RegExp('^(?:'+haystack[i].replace(/\./g, '\\.').replace(/^\[/, '\\[').replace(/\]$/, '\\]').replace(/\?/g, '.').replace(/^\*\*\\./, '(?:.+\\.|^)').replace(/\*/g, '[^.]+')+')$').test(needle)) return '1';
 	}
 	return false;
 }
