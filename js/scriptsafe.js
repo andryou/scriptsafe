@@ -1176,7 +1176,7 @@ function importSync(changes, mode) {
 		console.log('Importing: '+key);
 		console.log(changes[key]);
 		if (key != 'scriptsafe_settings') {
-			if (mode == '1') localStorage[key] = changes[key].newValue;
+			if (mode == '1') if (changes[key].newValue) localStorage[key] = changes[key].newValue;
 			else if (mode == '2') localStorage[key] = changes[key];
 		} else if (key == 'scriptsafe_settings') {
 			var settings = [];
@@ -1195,73 +1195,71 @@ function importSync(changes, mode) {
 		}
 	}
 	initLang(localStorage['locale'], 0);
-	listsSync(mode);
+	listsSync();
 }
-function listsSync(mode) {
+function listsSync() {
 	console.log('Processing lists...');
-	if (mode == '1' || mode == '2') {
-		var concatlist;
-		var concatlistarr;
-		var counttype;
-		if (optionExists('whiteListCount') || optionExists('whiteListCount2')) {
-			if (optionExists('whiteListCount2')) counttype = 'whiteListCount2';
-			else counttype = 'whiteListCount';
-			console.log('Processing '+counttype+' whitelist...'+localStorage[counttype]);
-			concatlist = '';
-			if (localStorage[counttype] != '0') {
-				for (var i = 0; i < localStorage[counttype]; i++) {
-					if (localStorage['sw'+i]) concatlist += localStorage['sw'+i].substr(13);
-					else if (localStorage['zw'+i]) concatlist += localStorage['zw'+i];
-				}
-				if (counttype == 'whiteListCount2') concatlist = LZString.decompressFromBase64(concatlist);
-				concatlistarr = concatlist.split(",");
-				console.log(concatlistarr);
+	var concatlist;
+	var concatlistarr;
+	var counttype;
+	if (optionExists('whiteListCount') || optionExists('whiteListCount2')) {
+		if (optionExists('whiteListCount2')) counttype = 'whiteListCount2';
+		else counttype = 'whiteListCount';
+		console.log('Processing '+counttype+' whitelist...'+localStorage[counttype]);
+		concatlist = '';
+		if (localStorage[counttype] != '0') {
+			for (var i = 0; i < localStorage[counttype]; i++) {
+				if (counttype == 'whiteListCount2' && localStorage['sw'+i]) concatlist += localStorage['sw'+i].substr(13);
+				else if (counttype == 'whiteListCount' && localStorage['zw'+i]) concatlist += localStorage['zw'+i];
 			}
-			if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
-			else localStorage['whiteList'] = JSON.stringify(concatlistarr);
+			if (counttype == 'whiteListCount2') concatlist = LZString.decompressFromBase64(concatlist);
+			concatlistarr = concatlist.split(",");
+			console.log(concatlistarr);
 		}
-		if (optionExists('blackListCount') || optionExists('blackListCount2')) {
-			if (optionExists('blackListCount2')) counttype = 'blackListCount2';
-			else counttype = 'blackListCount';
-			console.log('Processing '+counttype+' blacklist...'+localStorage[counttype]);
-			concatlist = '';
-			if (localStorage[counttype] != '0') {
-				for (var i = 0; i < localStorage[counttype]; i++) {
-					if (localStorage['sb'+i]) concatlist += localStorage['sb'+i].substr(13);
-					else if (localStorage['zb'+i]) concatlist += localStorage['zb'+i];
-				}
-				if (counttype == 'blackListCount2') concatlist = LZString.decompressFromBase64(concatlist);
-				concatlistarr = concatlist.split(",");
-				console.log(concatlistarr);
-			}
-			if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
-			else localStorage['blackList'] = JSON.stringify(concatlistarr);
-		}
-		if (optionExists('fpCount')) {
-			console.log('Processing fingerprint list...'+localStorage['fpCount']);
-			concatlist = '';
-			for (var i = 0; i < localStorage['fpCount']; i++) {
-				if (localStorage['sf'+i]) concatlist += localStorage['sf'+i].substr(13);
-			}
-			if (concatlist != '') {
-				concatlist = LZString.decompressFromBase64(concatlist);
-				var settings = concatlist.split("~");
-				console.log(settings);
-				if (settings.length > 0) {
-					$.each(settings, function(i, v) {
-						if ($.trim(v) != "") {
-							var settingentry = $.trim(v).split("|");
-							if ($.trim(settingentry[1]) != '') {
-								localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
-							}
-						}
-					});
-				}
-			}
-		}
-		cacheLists();
-		cacheFpLists();
+		if (concatlist == '' || concatlistarr.length == 0) localStorage['whiteList'] = JSON.stringify([]);
+		else localStorage['whiteList'] = JSON.stringify(concatlistarr);
 	}
+	if (optionExists('blackListCount') || optionExists('blackListCount2')) {
+		if (optionExists('blackListCount2')) counttype = 'blackListCount2';
+		else counttype = 'blackListCount';
+		console.log('Processing '+counttype+' blacklist...'+localStorage[counttype]);
+		concatlist = '';
+		if (localStorage[counttype] != '0') {
+			for (var i = 0; i < localStorage[counttype]; i++) {
+				if (counttype == 'blackListCount2' && localStorage['sb'+i]) concatlist += localStorage['sb'+i].substr(13);
+				else if (counttype == 'blackListCount' && localStorage['zb'+i]) concatlist += localStorage['zb'+i];
+			}
+			if (counttype == 'blackListCount2') concatlist = LZString.decompressFromBase64(concatlist);
+			concatlistarr = concatlist.split(",");
+			console.log(concatlistarr);
+		}
+		if (concatlist == '' || concatlistarr.length == 0) localStorage['blackList'] = JSON.stringify([]);
+		else localStorage['blackList'] = JSON.stringify(concatlistarr);
+	}
+	if (optionExists('fpCount')) {
+		console.log('Processing fingerprint list...'+localStorage['fpCount']);
+		concatlist = '';
+		for (var i = 0; i < localStorage['fpCount']; i++) {
+			if (localStorage['sf'+i]) concatlist += localStorage['sf'+i].substr(13);
+		}
+		if (concatlist != '') {
+			concatlist = LZString.decompressFromBase64(concatlist);
+			var settings = concatlist.split("~");
+			console.log(settings);
+			if (settings.length > 0) {
+				$.each(settings, function(i, v) {
+					if ($.trim(v) != "") {
+						var settingentry = $.trim(v).split("|");
+						if ($.trim(settingentry[1]) != '') {
+							localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+						}
+					}
+				});
+			}
+		}
+	}
+	cacheLists();
+	cacheFpLists();
 }
 function getUpdated() {
 	return updated;
