@@ -1135,7 +1135,7 @@ function importSyncHandle(mode) {
 						if (confirm(getLocale("syncdetect"))) {
 							localStorage['syncenable'] = 'true';
 							localStorage['sync'] = 'true';
-							importSync(changes, 2);
+							importSync(changes);
 							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
 							return true;
 						} else {
@@ -1171,17 +1171,14 @@ function importSyncHandle(mode) {
 		return false;
 	}
 }
-function importSync(changes, mode) {
+function importSync(changes) {
 	for (var key in changes) {
 		console.log('Importing: '+key);
 		console.log(changes[key]);
 		if (key != 'scriptsafe_settings') {
-			if (mode == '1') if (changes[key].newValue) localStorage[key] = changes[key].newValue;
-			else if (mode == '2') localStorage[key] = changes[key];
+			localStorage[key] = changes[key];
 		} else if (key == 'scriptsafe_settings') {
-			var settings = [];
-			if (mode == '1') if (changes[key].newValue) settings = changes[key].newValue.split("~");
-			else if (mode == '2') settings = changes[key].split("~");
+			var settings = changes[key].split("~");
 			if (settings.length > 0) {
 				$.each(settings, function(i, v) {
 					if ($.trim(v) != "") {
@@ -1396,8 +1393,10 @@ function postLangLoad() {
 				if (typeof changes['lastSync'] !== 'undefined') {
 					if (changes['lastSync'].newValue > localStorage['lastSync']) {
 						console.log('Last sync is newer, so import new data');
-						importSync(changes, 1);
-						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
+						chrome.storage.sync.get(null, function(changes) {
+							importSync(changes);
+							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
+						});
 					}
 				}
 			}
