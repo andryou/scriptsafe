@@ -335,8 +335,6 @@ function loadOptions() {
 	loadCheckbox("showcontext");
 	loadElement("xml");
 	loadCheckbox("annoyances");
-	if (!$("#annoyances").prop('checked')) $("#annoyancesmode").attr('disabled', 'true');
-	else $("#annoyancesmode").attr('disabled', 'false');
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadElement("canvas");
@@ -375,6 +373,8 @@ function loadOptions() {
 	loadElement("useragentspoof");
 	loadElement("useragentspoof_os");
 	loadCheckbox("uaspoofallow");
+	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
+	else $("#annoyancesmode").attr('disabled', 'true');
 	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
 	else $("#useragentspoof_os, #applytoallow").show();
 	loadCheckbox("referrerspoofdenywhitelisted");
@@ -459,7 +459,7 @@ function saveOptions() {
 	}
 	saveElement("linktarget");
 	saveCheckbox("domainsort");
-	if (localStorage['annoyances'] == 'true') $("#annoyancesmode").removeAttr('disabled');
+	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
 	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
 	else $("#useragentspoof_os, #applytoallow").hide();
@@ -554,7 +554,7 @@ function updateExport() {
 	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
-		if (i != "version" && i != "tempregexflag" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw") {
+		if (i != "version" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "whiteListCount2" && i != "blackListCount2" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 2) != "sb" && i.substr(0, 2) != "sw" && i.substr(0, 2) != "sf") {
 			settingnames.push(i);
 			$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
 		}
