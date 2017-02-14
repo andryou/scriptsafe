@@ -1263,7 +1263,9 @@ function getUpdated() {
 }
 function setUpdated() {
 	updated = false;
-	window.clearTimeout(synctimer);
+}
+function triggerUpdated() {
+	updated = true;
 }
 function init() {
 	webrtcsupport = checkWebRTC();
