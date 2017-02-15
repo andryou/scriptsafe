@@ -468,6 +468,7 @@ function remove(url, el, type) {
 			bkg.domainHandler(url, 2, 1);
 		}
 	}
+	bkg.triggerUpdated();
 	chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: 1});
 	if (closepage == 'true') window.close();
 	else {
@@ -540,6 +541,7 @@ function save(url, el, type) {
 			val = 1;
 		}
 	}
+	bkg.triggerUpdated();
 	if (url == tabdomain) chrome.extension.sendRequest({reqtype: "refresh-page-icon", tid: tabid, type: val});
 	if (closepage == 'true') window.close();
 	else {

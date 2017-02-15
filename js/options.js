@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#hideimport").click(hidebulk);
 	$("#importsettings").click(settingsImport);
 	$("#settingsall").click(settingsall);
+	$("#syncenable").change(function() {
+		if ($(this).prop('checked') && confirm(bkg.getLocale("forcesyncimport"))) {
+			bkg.importSyncHandle(1);
+		}
+	});
 	$(".savechange").change(saveOptions);
 	$(".closepage").click(closeOptions);
 	$("#syncimport").click(forceSyncImport);
@@ -241,7 +246,7 @@ function viewToggle(commit) {
 }
 function forceSyncExport() {
 	if (confirm(bkg.getLocale("forcesyncexport"))) {
-		if (bkg.freshSync(0, true) == 'true') {
+		if (bkg.freshSync(true) == 'true') {
 			notification(bkg.getLocale("exportsuccess"));
 		}
 	}
@@ -291,16 +296,6 @@ function loadElement(id) {
 	$("#"+id).val(localStorage[id]);
 }
 function saveCheckbox(id) {
-	if (id == 'syncenable') {
-		if (!document.getElementById(id).checked) {
-			syncstatus = 'false';
-		} else {
-			if (syncstatus == 'false' && confirm(bkg.getLocale("forcesyncimport"))) {
-				bkg.importSyncHandle(1);
-			}
-			syncstatus = 'true';
-		}
-	}
 	localStorage[id] = document.getElementById(id).checked;
 }
 function saveElement(id) {
@@ -331,8 +326,6 @@ function loadOptions() {
 	loadCheckbox("showcontext");
 	loadElement("xml");
 	loadCheckbox("annoyances");
-	if (!$("#annoyances").prop('checked')) $("#annoyancesmode").attr('disabled', 'true');
-	else $("#annoyancesmode").attr('disabled', 'false');
 	loadElement("annoyancesmode");
 	loadCheckbox("antisocial");
 	loadElement("canvas");
@@ -369,6 +362,8 @@ function loadOptions() {
 	loadElement("useragentspoof");
 	loadElement("useragentspoof_os");
 	loadCheckbox("uaspoofallow");
+	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
+	else $("#annoyancesmode").attr('disabled', 'true');
 	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
 	else $("#useragentspoof_os, #applytoallow").show();
 	loadCheckbox("referrerspoofdenywhitelisted");
@@ -452,7 +447,7 @@ function saveOptions() {
 	}
 	saveElement("linktarget");
 	saveCheckbox("domainsort");
-	if (localStorage['annoyances'] == 'true') $("#annoyancesmode").removeAttr('disabled');
+	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
 	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
 	else $("#useragentspoof_os, #applytoallow").hide();
@@ -461,7 +456,7 @@ function saveOptions() {
 	updateExport();
 	bkg.refreshRequestTypes();
 	bkg.reinitContext();
-	syncstatus = bkg.freshSync(1);
+	syncstatus = bkg.freshSync();
 	if (syncstatus) {
 		notification(bkg.getLocale("settingssavesync"));
 	} else {
@@ -474,7 +469,7 @@ function saveLang() {
 	bkg.initLang(localStorage['locale'], 0);
 	setTimeout(function() {
 		i18load();
-		syncstatus = bkg.freshSync(1);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification(bkg.getLocale("settingssavesync"));
 		} else {
@@ -519,7 +514,7 @@ function settingsImport() {
 	setTimeout(function() {
 		i18load();
 		$("#locale").val(localStorage['locale'])
-		syncstatus = bkg.freshSync(0);
+		syncstatus = bkg.freshSync();
 		if (!error) {
 			if (syncstatus) notification(bkg.getLocale("importsuccesssync"));
 			else notification(bkg.getLocale("importsuccessoptions"));
@@ -545,7 +540,7 @@ function updateExport() {
 	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
-		if (i != "version" && i != "tempregexflag" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw") {
+		if (i != "version" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "whiteListCount2" && i != "blackListCount2" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 2) != "sb" && i.substr(0, 2) != "sw" && i.substr(0, 2) != "sf") {
 			settingnames.push(i);
 			$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
 		}
@@ -572,7 +567,7 @@ function addList(type) {
 			var responseflag = bkg.domainHandler(domain, type);
 			if (responseflag) {
 				$('#url').val('');
-				syncstatus = bkg.freshSync(2);
+				syncstatus = bkg.freshSync();
 				if (syncstatus) {
 					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+' and syncing in 10 seconds.');
 				} else {
@@ -598,7 +593,7 @@ function addFPList() {
 		var responseflag = bkg.fpDomainHandler(domain, elid, 1);
 		if (responseflag) {
 			$('#'+elid+'url').val('');
-			syncstatus = bkg.freshSync(2);
+			syncstatus = bkg.freshSync();
 			if (syncstatus) {
 				notification(bkg.getLocale("whitelisted")+' '+domain+' and syncing in 10 seconds.');
 			} else {
@@ -622,7 +617,7 @@ function domainRemover(domain, type) {
 			bkg.fpDomainHandler(domain,type,-1);
 			fpListUpdate();
 		}
-		syncstatus = bkg.freshSync(2);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification('Successfully removed: '+domain+' and syncing in 10 seconds.');
 		} else {
@@ -638,7 +633,7 @@ function domainMove(domain, mode) {
 	if (confirm("Are you sure you want to move "+domain+" to the "+lingo+"?")) {
 		bkg.domainHandler(domain, mode);
 		listUpdate();
-		syncstatus = bkg.freshSync(2);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain+' and syncing in 10 seconds.');
 		} else {
@@ -660,7 +655,7 @@ function topDomainAdd(domain, mode) {
 		bkg.topHandler(domain, mode);
 		if (!fpmode) listUpdate();
 		else fpListUpdate();
-		bkg.freshSync(2);
+		bkg.freshSync();
 		notification('Successfully '+lingo+'ed: '+domain);
 	}
 }
@@ -711,7 +706,7 @@ function importbulk(type) {
 	}
 	listUpdate();
 	if (!error) {
-		syncstatus = bkg.freshSync(2);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification('Domains imported successfully and syncing in 10 seconds');
 		} else {
@@ -721,7 +716,7 @@ function importbulk(type) {
 		$("#bulk textarea").val("");
 		$('#importerror').hide();
 	} else {
-		bkg.freshSync(2);
+		bkg.freshSync();
 		notification('Error importing some domains');
 		$('#importerror').html('<strong>Some Domains Not Imported</strong><br />The following domains were not imported as they are invalid (the others were successfully imported): <ul>'+error+'</ul>').stop().fadeIn("slow");
 	}
