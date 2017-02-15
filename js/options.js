@@ -35,6 +35,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#hideimport").click(hidebulk);
 	$("#importsettings").click(settingsImport);
 	$("#settingsall").click(settingsall);
+	$("#syncenable").change(function() {
+		if ($(this).prop('checked') && confirm(bkg.getLocale("forcesyncimport"))) {
+			bkg.importSyncHandle(1);
+		}
+	});
 	$(".savechange").change(saveOptions);
 	$(".closepage").click(closeOptions);
 	$("#syncimport").click(forceSyncImport);
@@ -245,7 +250,7 @@ function viewToggle(commit) {
 }
 function forceSyncExport() {
 	if (confirm(bkg.getLocale("forcesyncexport"))) {
-		if (bkg.freshSync(0, true) == 'true') {
+		if (bkg.freshSync(true) == 'true') {
 			notification(bkg.getLocale("exportsuccess"));
 		}
 	}
@@ -295,16 +300,6 @@ function loadElement(id) {
 	$("#"+id).val(localStorage[id]);
 }
 function saveCheckbox(id) {
-	if (id == 'syncenable') {
-		if (!document.getElementById(id).checked) {
-			syncstatus = 'false';
-		} else {
-			if (syncstatus == 'false' && confirm(bkg.getLocale("forcesyncimport"))) {
-				bkg.importSyncHandle(1);
-			}
-			syncstatus = 'true';
-		}
-	}
 	localStorage[id] = document.getElementById(id).checked;
 }
 function saveElement(id) {
@@ -469,7 +464,7 @@ function saveOptions() {
 	bkg.refreshRequestTypes();
 	bkg.initWebRTC();
 	bkg.reinitContext();
-	syncstatus = bkg.freshSync(1);
+	syncstatus = bkg.freshSync();
 	if (syncstatus) {
 		notification(bkg.getLocale("settingssavesync"));
 	} else {
@@ -482,7 +477,7 @@ function saveLang() {
 	bkg.initLang(localStorage['locale'], 0);
 	setTimeout(function() {
 		i18load();
-		syncstatus = bkg.freshSync(1);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification(bkg.getLocale("settingssavesync"));
 		} else {
@@ -528,7 +523,7 @@ function settingsImport() {
 	setTimeout(function() {
 		i18load();
 		$("#locale").val(localStorage['locale'])
-		syncstatus = bkg.freshSync(0);
+		syncstatus = bkg.freshSync();
 		if (!error) {
 			if (syncstatus) notification(bkg.getLocale("importsuccesssync"));
 			else notification(bkg.getLocale("importsuccessoptions"));
@@ -581,7 +576,7 @@ function addList(type) {
 			var responseflag = bkg.domainHandler(domain, type);
 			if (responseflag) {
 				$('#url').val('');
-				syncstatus = bkg.freshSync(2);
+				syncstatus = bkg.freshSync();
 				if (syncstatus) {
 					notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][type]+' '+domain+' and syncing in 10 seconds.');
 				} else {
@@ -607,7 +602,7 @@ function addFPList() {
 		var responseflag = bkg.fpDomainHandler(domain, elid, 1);
 		if (responseflag) {
 			$('#'+elid+'url').val('');
-			syncstatus = bkg.freshSync(2);
+			syncstatus = bkg.freshSync();
 			if (syncstatus) {
 				notification(bkg.getLocale("whitelisted")+' '+domain+' and syncing in 10 seconds.');
 			} else {
@@ -631,7 +626,7 @@ function domainRemover(domain, type) {
 			bkg.fpDomainHandler(domain,type,-1);
 			fpListUpdate();
 		}
-		syncstatus = bkg.freshSync(2);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification('Successfully removed: '+domain+' and syncing in 10 seconds.');
 		} else {
@@ -647,7 +642,7 @@ function domainMove(domain, mode) {
 	if (confirm("Are you sure you want to move "+domain+" to the "+lingo+"?")) {
 		bkg.domainHandler(domain, mode);
 		listUpdate();
-		syncstatus = bkg.freshSync(2);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification([bkg.getLocale("whitelisted"),bkg.getLocale("blacklisted")][mode]+' '+domain+' and syncing in 10 seconds.');
 		} else {
@@ -669,7 +664,7 @@ function topDomainAdd(domain, mode) {
 		bkg.topHandler(domain, mode);
 		if (!fpmode) listUpdate();
 		else fpListUpdate();
-		bkg.freshSync(2);
+		bkg.freshSync();
 		notification('Successfully '+lingo+'ed: '+domain);
 	}
 }
@@ -720,7 +715,7 @@ function importbulk(type) {
 	}
 	listUpdate();
 	if (!error) {
-		syncstatus = bkg.freshSync(2);
+		syncstatus = bkg.freshSync();
 		if (syncstatus) {
 			notification('Domains imported successfully and syncing in 10 seconds');
 		} else {
@@ -730,7 +725,7 @@ function importbulk(type) {
 		$("#bulk textarea").val("");
 		$('#importerror').hide();
 	} else {
-		bkg.freshSync(2);
+		bkg.freshSync();
 		notification('Error importing some domains');
 		$('#importerror').html('<strong>Some Domains Not Imported</strong><br />The following domains were not imported as they are invalid (the others were successfully imported): <ul>'+error+'</ul>').stop().fadeIn("slow");
 	}
