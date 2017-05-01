@@ -1,22 +1,23 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
+var bkg = chrome.extension.getBackgroundPage();
 document.addEventListener('DOMContentLoaded', function () {
-	var version = '1.0.8.6';
+	var version = '1.0.9.1';
 	$("#title").html("ScriptSafe v"+version);
 	$('#versionno').html(version);
 	$("#loadoptionspage").click(function() { location.href='options.html'; });
 	$("#closepage").click(function() { window.open('', '_self', '');window.close(); });
 	$("#disableNotification").click(disableNotification);
-	$("#loadoptionspage").val(chrome.i18n.getMessage("options"));
-	$(".i18_options").html(chrome.i18n.getMessage("options"));
-	$(".i18_support").html(chrome.i18n.getMessage("support"));
-	$("#closepage").val(chrome.i18n.getMessage("close"));
-	$("#disableNotification").val(chrome.i18n.getMessage("dontshowpage"));
+	$("#loadoptionspage").val(bkg.getLocale("options"));
+	$(".i18_options").html(bkg.getLocale("options"));
+	$(".i18_support").html(bkg.getLocale("support"));
+	$("#closepage").val(bkg.getLocale("close"));
+	$("#disableNotification").val(bkg.getLocale("dontshowpage"));
 });
 function disableNotification() {
-	if (confirm(chrome.i18n.getMessage("updatedisable"))) {
+	if (confirm(bkg.getLocale("updatedisable"))) {
 		localStorage['updatenotify'] = 'false';
-		$('#message').html(chrome.i18n.getMessage("updatedisablemessage")).stop().fadeIn("slow").delay(2000).fadeOut("slow");
+		$('#message').html(bkg.getLocale("updatedisablemessage")).stop().fadeIn("slow").delay(2000).fadeOut("slow");
 	}
 }

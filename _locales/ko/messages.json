@@ -52,8 +52,8 @@
       "message": "화이트리스트에 등록 된 경우라도 SNS 위젯 / 버튼은 항상 차단"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
-      "message": "보다 자세한 차단 내용은<a href=\"https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij\" target=\"_blank\">Ghostery</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a>의 구독목록과 <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>를 확인하세요."
+      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
+      "message": "보다 자세한 차단 내용은<a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a>의 구독목록과 <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>를 확인하세요."
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -165,7 +165,7 @@
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
-      "message": "클립 보드의 간섭을 방지합니다."
+      "message": "클립 보드의 간섭을 방지합니다:"
    },
    "clipboarddesc": {
       "description": "prevent pages from interfering with clipboard actions",
@@ -221,7 +221,7 @@
    },
    "disableremove": {
       "description": "Disable and Remove:",
-      "message": "사용 중지하고 삭제"
+      "message": "사용 중지하고 삭제:"
    },
    "distrust": {
       "description": "Distrust",
@@ -348,8 +348,8 @@
       "message": "모든 일시적 허용 제거"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe 단축키 설정 :"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe 단축키 설정"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,8 +400,8 @@
       "message": "성공적으로 설정을 가져왔습니다."
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
-      "message": "다음 값(비었거나 인식되지 않는 이름)을 제외하고 성공적으로 설정을 가져왔습니다 :"
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
+      "message": "다음 값(비었거나 인식되지 않는 이름)을 제외하고 성공적으로 설정을 가져왔습니다:"
    },
    "importsuccesssync": {
       "description": "Settings imported successfully and syncing in 30 seconds",
@@ -409,7 +409,7 @@
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
-      "message": "키보드 Fingerprinting 방지 (<strong>고급 사용자 전용</strong>)："
+      "message": "키보드 Fingerprinting 방지 (<strong>고급 사용자 전용</strong>):"
    },
    "keyboarddesc": {
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
@@ -513,7 +513,7 @@
    },
    "referrerspoof": {
       "description": "Referrer Spoof:",
-      "message": "가짜 Referrer："
+      "message": "가짜 Referrer:"
    },
    "referrerspoofdesc": {
       "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
@@ -574,6 +574,10 @@
    "settingssavesync": {
       "description": "Settings saved and syncing in 30 seconds",
       "message": "설정이 저장되었으며 30 초내에 동기화 됩니다."
+   },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "컨텍스트 메뉴에 표시:"
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",

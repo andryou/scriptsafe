@@ -52,8 +52,8 @@
       "message": "移除白名单里的社交网站小部件"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "想得到更好的效果，可使用以下插件<a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank> uBlock Origin </a>并订阅<a href=https://www.fanboy.co.nz/ target=_blank>Fanboy</a>的列表"
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "想得到更好的效果，可使用以下插件<a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank> uBlock Origin </a>并订阅<a href=https://www.fanboy.co.nz/ target=_blank>Fanboy</a>的列表"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -348,8 +348,8 @@
       "message": "取消所有临时权限"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "设置ScriptSafe热键："
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "设置ScriptSafe热键"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "成功导入设置"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "成功导入设置，以下除外（空值或无法识别的名称）："
    },
    "importsuccesssync": {
@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "设置已保存并将在30秒内同步"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "在右键菜单显示:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "已禁用ScriptSafe"
@@ -739,7 +743,7 @@
       "description": "Block WebVR Enumeration:",
       "message": "不允许WebVR设备："
    },
-   "webvredesc": {
+   "webvrdesc": {
       "description": "prevent having hardware devices detected via the WebVR API",
       "message": "禁止调用WebVR API以检测硬件设备"
    },

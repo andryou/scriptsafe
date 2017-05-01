@@ -1,26 +1,27 @@
 /* Global */
 html { width: 575px; }
-body { margin: 5px 5px 0px; padding: 0px; width: 568px; }
-html, body, td, th { font-family: arial, sans-serif; font-size: 12px; }
+html, body { max-height: 600px; overflow-y: auto; word-wrap: break-word; }
+html, body, td, th { font-family: arial, sans-serif; }
+body { margin: 0px 5px; padding: 0px; font-size: 100%; }
 #container, table { width: 100%; }
+#container { font-size: 0.75em; }
 td, th { text-align: left; }
 td { vertical-align: top; }
 th { padding-bottom: 5px; }
-div#header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
-div#header a#pop_webstore:hover { text-decoration: underline; }
-div#header div { float: right; }
+#header { width: 100%; padding: 5px 0; margin-bottom: 10px; position: fixed; background-color: #fff; padding-left: 5px; margin-left: -5px; border-bottom: 2px solid #ccc; }
+#header a#pop_webstore { font-weight: bold; color: #000; text-decoration: none; }
+#header a#pop_webstore:hover { text-decoration: underline; }
+#header div { float: right; margin-right: 7px; }
 #pop_close { margin-right: 5px; }
-div#header { padding-bottom: 10px; }
 #parent { padding-bottom: 5px; }
+table { padding-top: 35px; }
 
 /* Tab Options */
-#parent, #currentdomain { max-width: 568px; word-wrap: break-word; }
-#parent { text-align: right; }
+#parent { text-align: right; padding-right: 3px; }
 #parent > div { border-bottom: none; display: inline-block; }
 
 /* Resource List */
-.thirds { vertical-align: top; max-width: 563px; }
-.thirditem span, .fpitem span { word-wrap: break-word; }
+.thirds { vertical-align: top; }
 .thirditem span a, fpitem span a { text-decoration: none; font-weight: bold; }
 .thirditem span a:hover, .fpitem span a:hover { text-decoration: underline; }
 .allowed, .blocked, .domainname { padding: 0 5px; }
@@ -33,6 +34,7 @@ div#header { padding-bottom: 10px; }
 .fpcat {
 	padding: 0;
 }
+.thirditem, .fpitem, .fphead { padding-left: 7px; }
 .fphead {
 	border-bottom: none;
 	border-right: 3px solid #ccc;
@@ -49,15 +51,21 @@ div#header { padding-bottom: 10px; }
 	background-color: #ccc;
 }
 .wot { padding-right: 4px; }
-.wot a { color: #555; }
-#currentdomain .wot a { color: #fff; text-decoration: none; }
-#currentdomain .wot a:hover { text-decoration: underline; }
+.wot a { color: #555; text-decoration: none; }
+#currentdomain .wot a { color: #fff; }
+.wot a:hover { text-decoration: underline; }
 .choices { float: right; }
+.domainoutput {
+	max-width: 536px;
+	display: inline-block;
+}
+.domainname.domainoutput {
+	max-width: 531px;
+}
 
 /* Footer */
-#bottom { padding-top: 10px; }
-#credit { text-align: right; padding-right: 5px; }
-#credit { font-weight: bold; font-size: 11px; color: #555; }
+#bottom { padding-top: 10px; padding-bottom: 5px; }
+#credit { text-align: right; padding-right: 5px; font-weight: bold; font-size: 0.92em; color: #555; }
 #credit a, #pop_options { text-decoration: underline; }
 #credit a:hover, #pop_options:hover { text-decoration: none; }
 #closebtn { width: 5px; text-align: right; }
@@ -73,12 +81,12 @@ hr { border: 0; border-top: 1px solid #eeeeee; }
 }
 .box {
 	cursor: default;
-	font-size: 11px;
+	font-size: 0.92em;
 	font-weight: bold;
 	text-align: center;
-	min-width: 70px;
+	min-width: 12%;
 	outline: 0;
-	padding: 6px;
+	padding: 8px 6px;
 	-moz-border-radius: 2px;
 	-webkit-border-radius: 2px;
 	border-radius: 2px;
@@ -187,7 +195,7 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.box3, .domainname {
+.box3 {
 	background-color: #4D90FE;
 	border: 1px solid #3079ED;
 	color: white;
@@ -273,7 +281,7 @@ span.box {
 	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-.box5 {
+.box5, .domainname {
 	clear: both;
 	width: auto;
 	margin-top: 5px;

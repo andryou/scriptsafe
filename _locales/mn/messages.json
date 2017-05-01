@@ -52,8 +52,8 @@
       "message": "үргэлж жагсаасан бол нийгмийн виджетийг / товч, тэр ч байтугай устгах"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "дэлгэрэнгүй хаах нь гарч Fanboy газар дээр нь захиалгын жагсаалт бүх Ghostery, таслах, Blur ба / эсвэл uBlock гаралтай шалгах"
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "дэлгэрэнгүй хаах нь гарч Fanboy газар дээр нь захиалгын жагсаалт бүх Privacy Badger, таслах, Blur ба / эсвэл uBlock гаралтай шалгах"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -348,8 +348,8 @@
       "message": "Бүх түр зөвшөөрлийг ав"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe hotkeys тохируулна:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe hotkeys тохируулна"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "Тохиргоо амжилттай импортын"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "Тохиргоо Дараах (хоосон үнэ цэнэ буюу хүлээн зөвшөөрөөгүй нэр) бусад тохиолдолд амжилттай оруулсан:"
    },
    "importsuccesssync": {
@@ -473,7 +473,7 @@
    },
    "preservesamedomain": {
       "description": "Respect Same-Domain:",
-      "message": "Хүндэтгэ Ижил домэйн"
+      "message": "Хүндэтгэ Ижил домэйн:"
    },
    "preservesamedomaindesc": {
       "description": "preserve same-domain elements",
@@ -574,6 +574,10 @@
    "settingssavesync": {
       "description": "Settings saved and syncing in 30 seconds",
       "message": "Тохиргоо хадгалсан, 30 секундын дотор сүүлийн хэлбэрт аваачих,"
+   },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",

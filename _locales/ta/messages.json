@@ -52,8 +52,8 @@
       "message": "அனுமதி பட்டியலில்தான் என்றால் எப்போதும் சமூக விட்ஜெட்டுகளை / பொத்தான்கள், கூட நீக்க"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "மேலும் விரிவான தடுப்பதை, வெளியே Fanboy தளத்தில் சந்தா பட்டியல்கள் அனைத்து Ghostery, துண்டி, தெளிவின்மை, மற்றும் / அல்லது uBlock பிறப்பிடம் பார்க்கலாம்"
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "மேலும் விரிவான தடுப்பதை, வெளியே Fanboy தளத்தில் சந்தா பட்டியல்கள் அனைத்து Privacy Badger, துண்டி, தெளிவின்மை, மற்றும் / அல்லது uBlock பிறப்பிடம் பார்க்கலாம்"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -348,8 +348,8 @@
       "message": "அனைத்து தற்காலிக அனுமதிகளை நீக்க"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe குறுக்குவிசைகள் கட்டமைக்கவும்:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe குறுக்குவிசைகள் கட்டமைக்கவும்"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "அமைப்புகள் வெற்றிகரமாக இறக்குமதி"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "அமைப்புகள் பின்வரும் (வெற்று மதிப்பு அல்லது அங்கீகரிக்கப்படாத பெயர்) தவிர, வெற்றிகரமாக இறக்குமதி:"
    },
    "importsuccesssync": {
@@ -575,6 +575,10 @@
       "description": "Settings saved and syncing in 30 seconds",
       "message": "அமைப்புகள் சேமிக்கப்படும் மற்றும் 30 நொடிகளில் ஒத்திசைவை"
    },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
       "message": "ScriptSafe முடக்கப்பட்டுள்ளது"
@@ -737,7 +741,7 @@
    },
    "webvr": {
       "description": "Block WebVR Enumeration:",
-      "message": "பிளாக் WebVR ஐ கணக்கெடுப்பு"
+      "message": "பிளாக் WebVR ஐ கணக்கெடுப்பு:"
    },
    "webvrdesc": {
       "description": "prevent having devices detected via the WebVR API",

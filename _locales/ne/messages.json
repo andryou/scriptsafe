@@ -52,8 +52,8 @@
       "message": "सधैं ह्वाइटलिस्ट भने पनि, सामाजिक विजेट / बटन हटाउन"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/ghostery/mlomiejdfkolichcflejclcbmpeaniij target=_blank>Ghostery</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "थप व्यापक अवरुद्ध लागि, Fanboy साइट मा सदस्यता सूची सबै Ghostery, विच्छेद, धमिलो, र / वा uBlock मूल जाँच"
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "थप व्यापक अवरुद्ध लागि, Fanboy साइट मा सदस्यता सूची सबै Privacy Badger, विच्छेद, धमिलो, र / वा uBlock मूल जाँच"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -261,7 +261,7 @@
    },
    "domaintip": {
       "description": "Tip: press CTRL+F to search the lists",
-      "message": "सूचीहरू खोजी गर्न CTRL + फा सुझाव:"
+      "message": "सूचीहरू खोजी गर्न CTRL + फा सुझाव"
    },
    "dontshowpage": {
       "description": "Don't Show This Page Again",
@@ -348,8 +348,8 @@
       "message": "सबै अस्थायी अनुमति हटाउन"
    },
    "hotkeyspage": {
-      "description": "Configure ScriptSafe hotkeys:",
-      "message": "ScriptSafe हटकुञ्जीहरू कन्फिगर:"
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "ScriptSafe हटकुञ्जीहरू कन्फिगर"
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
@@ -400,7 +400,7 @@
       "message": "सेटिङ सफलतापूर्वक आयात"
    },
    "importsuccesscond": {
-      "description": "Settings imported successfully, except the following (empty value or unrecognized name): ",
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
       "message": "सेटिङहरू, सफलतापूर्वक आयात निम्न (खाली मूल्य वा अपरिचित नाम) बाहेक:"
    },
    "importsuccesssync": {
@@ -574,6 +574,10 @@
    "settingssavesync": {
       "description": "Settings saved and syncing in 30 seconds",
       "message": "सेटिङ बचत र 30 सेकेन्ड समक्रमण"
+   },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",

@@ -5,6 +5,7 @@ var savedBeforeloadEvents = new Array();
 var timer;
 var iframe = 0;
 var timestamp = Math.round(new Date().getTime()/1000.0);
+var linktrgt;
 // initialize settings object with default settings (that are overwritten by the actual user-set values later on)
 var SETTINGS = {
 	"MODE": "block",
@@ -46,6 +47,7 @@ var SETTINGS = {
 	"REFERRERSPOOFDENYWHITELISTED": "true",
 	"PARANOIA": "true",
 	"CLIPBOARD": "false",
+	"DATAURL": "true",
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
 if (window.self != window.top) iframe = 1;
@@ -102,9 +104,12 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
+		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
+		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenywhitelisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
+		SETTINGS['DATAURL'] = response.dataurl;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		$(document).ready(function() {
 			loaded();
@@ -426,14 +431,22 @@ function loaded() {
 	new MutationObserver(ScriptSafe).observe(document.querySelector("body"), { childList: true, subtree : true, attributes: false, characterData : false });
 }
 function ScriptSafe() {
-	if (SETTINGS['LINKTARGET'] != 'off') {
-		var linktrgt;
-		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
-		else if (SETTINGS['LINKTARGET'] == 'new') linktrgt = '_blank';
-		$("a[target!='"+linktrgt+"']").attr("target", linktrgt);
-	}
-	if (SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
-		$("a[data-ss"+timestamp+"!='1']").each(function() { var elSrc = getElSrc(this); if (thirdParty(elSrc)) { $(this).attr("rel","noreferrer"); } $(this).attr("data-ss"+timestamp,'1'); });
+	if (SETTINGS['LINKTARGET'] != 'off' || SETTINGS['DATAURL'] == 'true' || SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) {
+		$("a[data-ss"+timestamp+"!='1']").each(function() {
+			var elSrc = getElSrc(this);
+			var attr = {};		
+			if ((SETTINGS['REFERRER'] == 'alldomains' || (SETTINGS['REFERRER'] == 'true' && (SETTINGS['DOMAINSTATUS'] != '0' || SETTINGS['REFERRERSPOOFDENYWHITELISTED'] == 'true'))) && thirdParty(elSrc)) attr['rel'] = 'noreferrer';
+			if (SETTINGS['LINKTARGET'] != 'off') {
+				if ($(this).attr('target') != linktrgt) attr['target'] = linktrgt;
+			}
+			if (SETTINGS['DATAURL'] == 'true' && elSrc.match(/^\s*data:text\//i)) {
+				chrome.extension.sendRequest({reqtype: "update-blocked", src: $(this).attr('href'), node: 'Data URL'});
+				attr['target'] = '';
+				attr['href'] = 'data:text/html,<h1>This data:text/html link has been sanitized by ScriptSafe.</h1><p>Original link:<br><strong>'+$(this).attr('href').replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/^\s*data:text/i, "data-SCRIPTSAFE:text")+'</strong></p><p>If you would like to still load it (not recommended), copy and paste the above string into your address bar and remove "-SCRIPTSAFE" which is inserted as a safeguard.</p><p><a href="javascript:history.go(-1);">Go Back</a></p>';
+			}
+			attr['data-ss'+timestamp] = '1';
+			$(this).attr(attr);
+		});
 	}
 	if (SETTINGS['CANVAS'] != 'false') {
 		$("canvas.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_canvas").each(function() { chrome.extension.sendRequest({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Canvas Fingerprint'}); $(this).remove(); });
@@ -740,9 +753,10 @@ function block(event) {
 	var thirdPartyCheck;
 	var elementStatusCheck;
 	var domainCheckStatus;
-	var elWidth = $(el).attr('width');
-	var elHeight = $(el).attr('height');
-	var elStyle = $(el).attr('style');
+	var $el = $(el);
+	var elWidth = $el.attr('width');
+	var elHeight = $el.attr('height');
+	var elStyle = $el.attr('style');
 	var baddiesCheck = baddies(absoluteUrl, SETTINGS['ANNOYANCESMODE'], SETTINGS['ANTISOCIAL']);
 	if (SETTINGS['DOMAINSTATUS'] == '1' || (SETTINGS['DOMAINSTATUS'] == '-1' && SETTINGS['MODE'] == 'block' && SETTINGS['PARANOIA'] == 'true' && SETTINGS['PRESERVESAMEDOMAIN'] == 'false')) {
 		elementStatusCheck = true;
