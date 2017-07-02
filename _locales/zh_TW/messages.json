@@ -197,7 +197,7 @@
    },
    "default": {
       "description": "Default",
-      "message": "默認"
+      "message": "預設"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
@@ -437,7 +437,7 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "默認模式"
+      "message": "預設模式"
    },
    "newtab": {
       "description": "New Tab",
