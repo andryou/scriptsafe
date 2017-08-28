@@ -52,7 +52,7 @@
       "message": "அனுமதி பட்டியலில்தான் என்றால் எப்போதும் சமூக விட்ஜெட்டுகளை / பொத்தான்கள், கூட நீக்க"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=https://addons.opera.com/en/extensions/details/privacy-badger/ target=_blank>Privacy Badger</a>, <a href=https://addons.opera.com/en/extensions/details/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.opera.com/en/extensions/details/blur-protect-your-passwords-payments-privacy/ target=_blank>Blur</a>, and/or <a href=https://addons.opera.com/en/extensions/details/ublock/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
       "message": "மேலும் விரிவான தடுப்பதை, வெளியே Fanboy தளத்தில் சந்தா பட்டியல்கள் அனைத்து Privacy Badger, துண்டி, தெளிவின்மை, மற்றும் / அல்லது uBlock பிறப்பிடம் பார்க்கலாம்"
    },
    "audioblock": {

@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		viewToggle(1);
 	});
 	$("#hotkeyspage").click(function() {
-		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
+		chrome.tabs.create({url: 'opera://settings/configureCommands'});
 	});
 	syncstatus = localStorage['syncenable'];
 	$(".row-offcanvas").show();
@@ -308,12 +308,14 @@ function saveElement(id) {
 function loadOptions() {
 	$("#title").html("ScriptSafe v"+version+" DEVELOPMENT");
 	loadCheckbox("enable");
+	/* note: opera does not support syncing.
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	else $("#syncbuttons").show();
 	loadCheckbox("syncfromnotify");
-	loadCheckbox("updatenotify");
 	loadCheckbox("syncnotify");
+	*/
+	loadCheckbox("updatenotify");
 	loadElement("mode");
 	loadCheckbox("refresh");
 	loadCheckbox("script");
@@ -388,11 +390,13 @@ function loadOptions() {
 }
 function saveOptions() {
 	saveCheckbox("enable");
+	/* note: opera does not support syncing.
 	saveCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	else $("#syncbuttons").show();
 	saveCheckbox("syncnotify");
 	saveCheckbox("syncfromnotify");
+	*/
 	saveCheckbox("updatenotify");
 	saveElement("mode");
 	saveCheckbox("refresh");
