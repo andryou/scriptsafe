@@ -52,6 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
 	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe'); });
 	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
+	$("#pop_log").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/recents.html')); });
 	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
 	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
 	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
@@ -178,7 +179,7 @@ function init() {
 										$("#blocked [rel='r_"+itemdomainfriendly+"']").html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+itemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+itemdomain+'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></span>');
 										if (response.blockeditems[i][6]) $('#blocked [rel="rfp_'+fpitemdomainfriendly+'"]').html('<span class="wot"><a href="http://www.mywot.com/en/scorecard/'+fpitemdomain.replace(/[\[\]]/g,"")+'" target="_blank" title="'+bkg.getLocale("ratingbtn")+': '+fpitemdomain+'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></span>');
 									}
-									if ((response.annoyances == 'true' && response.annoyancesmode == 'strict' && domainCheckStatus == '-1' && baddiesstatus == 1) || (response.antisocial == 'true' && baddiesstatus == '2')) {
+									if ((response.annoyances == 'true' && response.annoyancesmode == 'strict' && domainCheckStatus == '-1' && baddiesstatus == '1') || (response.antisocial == 'true' && baddiesstatus == '2')) {
 										$("#blocked").append($("#blocked [rel='x_"+itemdomainfriendly+"']"));
 										$("#blocked [rel='x_"+itemdomainfriendly+"'] .box1, #blocked [rel='x_"+itemdomainfriendly+"'] .x_trust, #blocked [rel='x_"+itemdomainfriendly+"'] .box3, #blocked [rel='x_"+itemdomainfriendly+"'] .box4").hide();
 										if (response.antisocial == 'true' && baddiesstatus == '2') {
@@ -198,11 +199,11 @@ function init() {
 									if (mode == 'allow') {
 										if (bkg.in_array(itemdomain, response.temp)) {
 											if (!intemp) intemp = true;
-											$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_blacklist").removeClass("selected");
-											$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_bypass").addClass("selected");
-											$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
+											$("#blocked .thirditem[rel='x_"+itemdomainfriendly+"'] .x_blacklist").removeClass("selected");
+											$("#blocked .thirditem[rel='x_"+itemdomainfriendly+"'] .x_bypass").addClass("selected");
+											$("#blocked .thirditem[rel='x_"+itemdomainfriendly+"'] .x_"+itemdomainfriendly).hide();
 										} else {
-											$("#blocked [rel='x_"+itemdomainfriendly+"'] .x_bypass").hide();
+											$("#blocked .thirditem[rel='x_"+itemdomainfriendly+"'] .x_bypass").hide();
 										}
 									}
 								}

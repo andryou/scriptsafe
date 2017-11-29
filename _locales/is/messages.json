@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "gera innslátt tímasetning meira handahófi til að auka nafnleynd (<strong>Ath: bætir handahófi töf milli lyklaborðsaðgerðir; slekkur á þessari stillingu ef óásættanlegt</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "Page Link Opnun Hegðun:"

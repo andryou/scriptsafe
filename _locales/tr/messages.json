@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "anonimlik artirmak için tusa basma zamanlamalari daha rasgele hale (<strong>NOT: tusa basildiginda, arasinda rasgele bir gecikme ekler; Bu ayar kabul edilemez devre disi birakma</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "Sayfa Baglantisi Açilis Davranisi:"

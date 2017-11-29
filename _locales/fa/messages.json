@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "را زمان فشار کلید تصادفی برای افزایش نامش فاش نشود، (<strong>توجه: می افزاید: یک تاخیر تصادفی بین پرس کلیدی؛ غیر فعال کردن این تنظیم غیر قابل قبول است</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behavior:",
       "message": "صفحه رفتار ارتباطات افتتاح:"

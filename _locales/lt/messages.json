@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "padaryti paspaudus mygtuka laikus daugiau atsitiktiniu padidinti anonimiškumo (<strong>PASTABA: prideda atsitiktinių uždelsimą tarp mygtukų; išjungti šį nustatymą, yra nepriimtinas</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "Puslapio Nuoroda Atidarymas Elgsena:"

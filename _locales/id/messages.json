@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "membuat timing menekan tombol lebih acak untuk meningkatkan anonimitas (<strong>Catatan: menambahkan penundaan acak antara tombol yang ditekan; menonaktifkan pengaturan ini jika tidak dapat diterima</ strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "Halaman Perilaku link Pembukaan:"

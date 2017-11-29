@@ -51,6 +51,8 @@ var SETTINGS = {
 	"CLIPBOARD": "false",
 	"DATAURL": "true",
 	"KEYDELTA": 0,
+	"BROWSERPLUGINS": "",
+	"USERAGENT": "",
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
 if (window.self != window.top) iframe = 1;
@@ -93,6 +95,7 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['BLUETOOTH'] = response.bluetooth;
 		SETTINGS['TIMEZONE'] = response.timezone;
 		SETTINGS['CLIPBOARD'] = response.clipboard;
+		SETTINGS['BROWSERPLUGINS'] = response.browserplugins;
 		if (SETTINGS['CANVAS'] != 'false' && response.fp_canvas != '-1') SETTINGS['CANVAS'] = 'false';
 		if (SETTINGS['CANVASFONT'] == 'true' && response.fp_canvasfont != '-1') SETTINGS['CANVASFONT'] = 'false';
 		if (SETTINGS['AUDIOBLOCK'] == 'true' && response.fp_audio != '-1') SETTINGS['AUDIOBLOCK'] = 'false';
@@ -107,6 +110,9 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['WEBVR'] == 'true' || SETTINGS['BLUETOOTH'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
 			fingerprintProtection();
 		}
+		if (SETTINGS['BROWSERPLUGINS'] == 'true') {
+			browserProtection();
+		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
 		if (SETTINGS['LINKTARGET'] == 'same') linktrgt = '_self';
@@ -114,6 +120,12 @@ chrome.extension.sendRequest({reqtype: "get-settings", iframe: iframe}, function
 		SETTINGS['REFERRER'] = response.referrer;
 		SETTINGS['REFERRERSPOOFDENYWHITELISTED'] = response.referrerspoofdenywhitelisted;
 		SETTINGS['PARANOIA'] = response.paranoia;
+		SETTINGS['USERAGENT'] = response.useragent;
+		if (SETTINGS['USERAGENT'] != '' && (response.uaspoofallow == 'true' || SETTINGS['DOMAINSTATUS'] != '0')) {
+			injectAnon(function(useragent){
+				Object.defineProperty(navigator, "userAgent", {enumerable: true, configurable: false, value: useragent});
+			}, "'"+SETTINGS['USERAGENT']+"'");
+		}
 		SETTINGS['DATAURL'] = response.dataurl;
 		SETTINGS['KEYBOARD'] = response.keyboard;
 		SETTINGS['KEYDELTA'] = parseInt(response.keydelta);
@@ -415,6 +427,11 @@ function fingerprintProtection() {
 			}
 		});
 	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['BLUETOOTH']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
+}
+function browserProtection() {
+	injectAnon(function(browserplugins){
+		if (browserplugins == 'true') Object.defineProperty(navigator, "plugins", {enumerable: true, configurable: false, value: ""});
+	}, "'"+SETTINGS['BROWSERPLUGINS']+"'");
 }
 function clipboardProtect(el) {
     var arr = ['copy', 'cut', 'paste', 'selectstart', 'contextmenu', 'mousedown', 'mouseup'];

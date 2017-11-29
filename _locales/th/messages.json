@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "ทำให้การกำหนดเวลากดปุ่มสุ่มเพื่อเพิ่มตัวตน (<strong>หมายเหตุ: เพิ่มความล่าช้าสุ่มระหว่างการกดปุ่ม; ปิดการใช้งานการตั้งค่านี้เป็นที่ยอมรับ</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "หน้าพฤติกรรมการเชื่อมโยงเปิด:"

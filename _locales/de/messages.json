@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "macht Tastendruck-Timings zufälliger um die Anonymität zu erhöhen (<strong>Hinweis: fügt eine zufällige Verzögerung zwischen Tastendrücken, deaktivieren Sie diese Einstellung, wenn Sie sich inakzeptabel anfühlt</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "Seiten-Link Öffnungsverhalten:"

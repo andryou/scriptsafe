@@ -420,8 +420,16 @@
       "message": "減少鍵盤指紋（進階用戶）："
    },
    "keyboarddesc": {
-      "description": "make keypress timings more random to increase anonymity (NOTE: adds a random delay between keypresses; disable this setting if unacceptable)",
-      "message": "令按鍵時序更隨機增加隱匿性（注意：增加了按鍵之間的隨機延遲;如不可接受，請停用此設定）"
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "令按鍵時序更隨機增加隱匿性<strong>（注意：增加了按鍵之間的隨機延遲;如不可接受，請停用此設定</strong>）"
+   },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
