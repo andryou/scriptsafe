@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	if (!bkg) {
 		$("#version").html(version);
 		$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', 'Close');
-		$("table").html('<tr><td style="text-align: center;"><p>Firefox does not yet <a href="https://github.com/andryou/scriptsafe/issues/282" target="_blank">fully provide incognito support</a> for Web Extensions.</p><p>Until then, please browse in a non-Private Window for ScriptSafe to work properly.</td></tr>');
+		$("table").html('<tr><td style="text-align: center;"><p>Firefox does not yet <a href="https://github.com/andryou/scriptsafe/issues/282" target="_blank">fully provide incognito support</a> for Web Extensions.</p><p>Until then, please browse in a non-Private Window for ScriptSafe to use this panel.</td></tr>');
 		return;
 	} else {
 		setTimeout(init, 150);
