@@ -17,7 +17,7 @@ function padZeros(val) {
 	return val<10 ? '0'+val : val;
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version);
+	$("#title").html("ScriptSafe v"+version+" BETA");
 	var allowedarr = JSON.parse(bkg.getRecents('allowed'));
 	var blockedarr = JSON.parse(bkg.getRecents('blocked'));
 	var blockedarrcount = blockedarr.length;
@@ -179,16 +179,16 @@ function handleclick() {
 		} else {
 			if (val < 2) {
 				bkg.fpDomainHandler(url, fpList, -1, 1);
-				chrome.extension.sendRequest({reqtype: "save-fp", url: url, list: fpList});
+				chrome.runtime.sendMessage({reqtype: "save-fp", url: url, list: fpList});
 				$(this).addClass("selected");
 				$("#"+listType+" .fpchoices[rel='"+url+"'][data-domain='"+fpType+"'] .x_whitelist").addClass("selected");
 			} else if (val == 2) {
 				if (selected) {
-					chrome.extension.sendRequest({reqtype: "remove-temp-fp", url: url, list: fpList});
+					chrome.runtime.sendMessage({reqtype: "remove-temp-fp", url: url, list: fpList});
 					$(this).removeClass("selected");
 					$("#"+listType+" .fpchoices[rel='"+url+"'][data-domain='"+fpType+"'] .x_bypass").removeClass("selected");
 				} else {
-					chrome.extension.sendRequest({reqtype: "temp-fp", url: url, list: fpList});
+					chrome.runtime.sendMessage({reqtype: "temp-fp", url: url, list: fpList});
 					$(this).addClass("selected");
 					$("#"+listType+" .fpchoices[rel='"+url+"'][data-domain='"+fpType+"'] .x_bypass").addClass("selected");
 				}
@@ -209,19 +209,19 @@ function handleclick() {
 		} else {
 			if (val < 2) {
 				bkg.domainHandler(url, '2', '1');
-				chrome.extension.sendRequest({reqtype: "save", url: url, list: val});
+				chrome.runtime.sendMessage({reqtype: "save", url: url, list: val});
 				$(this).addClass("selected");
 				$("#"+listType+" .choices[rel='"+url+"'] .x_whitelist").addClass("selected");
 			} else if (val == 2) {
 				if (selected) {
-					chrome.extension.sendRequest({reqtype: "remove-temp", url: url});
+					chrome.runtime.sendMessage({reqtype: "remove-temp", url: url});
 					$(this).removeClass("selected");
 					$("#"+listType+" .choices[rel='"+url+"'] .x_bypass").removeClass("selected");
 				} else {
 					var mode;
 					if (listType == 'blocked') mode = 'block';
 					else mode = 'allow';
-					chrome.extension.sendRequest({reqtype: "temp", url: url, mode: mode});
+					chrome.runtime.sendMessage({reqtype: "temp", url: url, mode: mode});
 					$(this).addClass("selected");
 					$("#"+listType+" .choices[rel='"+url+"'] .x_bypass").addClass("selected");
 				}

@@ -855,7 +855,7 @@ chrome.runtime.onConnect.addListener(function(port) {
 		}
 	});
 });
-chrome.extension.onRequest.addListener(function(request, sender, sendResponse) {
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 	if (request.reqtype == 'get-settings') {
 		var fpListStatus = [];
 		var extractedDomain = extractDomainFromURL(sender.tab.url);

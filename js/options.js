@@ -308,7 +308,7 @@ function saveElement(id) {
 	localStorage[id] = $("#"+id).val();
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version+" DEVELOPMENT");
+	$("#title").html("ScriptSafe v"+version+" BETA");
 	loadCheckbox("enable");
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
