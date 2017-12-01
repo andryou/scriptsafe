@@ -52,8 +52,8 @@
       "message": "常にホワイトリストに登録しても、SNS ウィジェット/ボタンを削除"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
-      "message": "より包括的なブロッキングについては、<a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>、<a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>、<a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>、<a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> および <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>上のサブスクリプションリストをチェックしてください"
+      "description": "For more comprehensive blocking, check out <a href=\"https://addons.mozilla.org/firefox/addon/privacy-badger17/\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://addons.mozilla.org/firefox/addon/disconnect/\" target=\"_blank\">Disconnect</a>, <a href=\"https://addons.mozilla.org/firefox/addon/donottrackplus/\" target=\"_blank\">Blur</a>, and/or <a href=\"https://addons.mozilla.org/firefox/addon/ublock-origin/\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
+      "message": "より包括的なブロッキングについては、<a href=\"https://addons.mozilla.org/firefox/addon/privacy-badger17/\" target=\"_blank\">Privacy Badger</a>、<a href=\"https://addons.mozilla.org/firefox/addon/disconnect/\" target=\"_blank\">Disconnect</a>、<a href=\"https://addons.mozilla.org/firefox/addon/donottrackplus/\" target=\"_blank\">Blur</a>、<a href=\"https://addons.mozilla.org/firefox/addon/ublock-origin/\" target=\"_blank\">uBlock Origin</a> および <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>上のサブスクリプションリストをチェックしてください"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "フィンガープリント保護（サイトを壊す場合があります）"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "あなたがまだGoogleアカウントに設定を同期していない表示されます。\r\nScriptSafeは、Googleアカウントに現在の設定を同期しようとしています。\r\n続行する場合は「OK」をクリックします。\r\nない場合は、クリックして「キャンセル」、そしてお好みの設定で他のデバイス上で、ScriptSafeを更新しますが、このメッセージが表示されたら、[OK]をクリックします。"
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "あなたがまだFirefoxアカウントに設定を同期していない表示されます。\r\nScriptSafeは、Firefoxアカウントに現在の設定を同期しようとしています。\r\n続行する場合は「OK」をクリックします。\r\nない場合は、クリックして「キャンセル」、そしてお好みの設定で他のデバイス上で、ScriptSafeを更新しますが、このメッセージが表示されたら、[OK]をクリックします。"
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Googleアカウントに現在の設定を同期してもよろしいですか？\r\n注：これを頻繁に押さないでください。毎分10と毎時千の限界があります。"
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Firefoxアカウントに現在の設定を同期してもよろしいですか？\r\n注：これを頻繁に押さないでください。毎分10と毎時千の限界があります。"
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "あなたは、このデバイスにGoogleアカウントから同期設定をインポートしますか？"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "あなたは、このデバイスにFirefoxアカウントから同期設定をインポートしますか？"
    },
    "hotkeys": {
       "description": "Hotkeys:",
@@ -612,20 +612,20 @@
       "message": "開発をサポートするために、ハートアイコンをクリックして :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "あなたは、自動同期を有効にしています。 （もしあれば）あなたの以前に同期されたデータを消去しないようにするためには、Googleアカウントの同期設定]をクリックしてください。"
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "あなたは、自動同期を有効にしています。 （もしあれば）あなたの以前に同期されたデータを消去しないようにするためには、Firefoxアカウントの同期設定]をクリックしてください。"
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Googleアカウントから同期設定"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Firefoxアカウントから同期設定"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Googleアカウントに同期設定"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Firefoxアカウントに同期設定"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafeはGoogleアカウントに同期する設定を持っていることを検出しました！\r\nGoogleアカウントから設定をインポートしたい場合は、「OK」をクリックします。"
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafeはFirefoxアカウントに同期する設定を持っていることを検出しました！\r\nFirefoxアカウントから設定をインポートしたい場合は、「OK」をクリックします。"
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -636,20 +636,20 @@
       "message": "インポート同期の通知を表示します："
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "設定は、Googleアカウント<strong>から同期された</strong>ときにポップアップを表示"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "設定は、Firefoxアカウント<strong>から同期された</strong>ときにポップアップを表示"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "同期通知を表示："
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "設定はGoogleアカウント<strong>に同期する</strong>ときにポップアップを表示"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "設定はFirefoxアカウント<strong>に同期する</strong>ときにポップアップを表示"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Google Chromeののあなたの現在のバージョンでは、同期の設定をサポートしていません。お使いのChromeのバージョンを更新しようとしてから、もう一度お試しください。"
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Mozilla Firefoxののあなたの現在のバージョンでは、同期の設定をサポートしていません。お使いのFirefoxのバージョンを更新しようとしてから、もう一度お試しください。"
    },
    "temp": {
       "description": "Temporary",

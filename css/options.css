@@ -20,3 +20,5 @@ h3 { margin: 0px !important; }
 .fp-list .entryoptions { padding-top: 3px; }
 .sectionheading, .sectionheading h4 { margin-bottom: 0px; }
 .row-offcanvas { display: none; }
+
+#hotkeys { display: none; }

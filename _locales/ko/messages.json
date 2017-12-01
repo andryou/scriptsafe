@@ -52,8 +52,8 @@
       "message": "화이트리스트에 등록 된 경우라도 SNS 위젯 / 버튼은 항상 차단"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
-      "message": "보다 자세한 차단 내용은<a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a>의 구독목록과 <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>를 확인하세요."
+      "description": "For more comprehensive blocking, check out <a href=\"https://addons.mozilla.org/firefox/addon/privacy-badger17/\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://addons.mozilla.org/firefox/addon/disconnect/\" target=\"_blank\">Disconnect</a>, <a href=\"https://addons.mozilla.org/firefox/addon/donottrackplus/\" target=\"_blank\">Blur</a>, and/or <a href=\"https://addons.mozilla.org/firefox/addon/ublock-origin/\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>",
+      "message": "보다 자세한 차단 내용은<a href=\"https://addons.mozilla.org/firefox/addon/privacy-badger17/\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://addons.mozilla.org/firefox/addon/disconnect/\" target=\"_blank\">Disconnect</a>, <a href=\"https://addons.mozilla.org/firefox/addon/donottrackplus/\" target=\"_blank\">Blur</a>, <a href=\"https://addons.mozilla.org/firefox/addon/ublock-origin/\" target=\"_blank\">uBlock Origin</a>의 구독목록과 <a href=\"https://www.fanboy.co.nz/\" target=_blank>Fanboy site</a>를 확인하세요."
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Fingerprint 보호 (일부 사이트가 작동되지 않을 수 있습니다)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "아직 Google 계정에 설정을 동기화하지 않았습니다.\r\nScriptSafe는 Google 계정에 현재 설정을 동기화하려 합니다.\r\n계속하려면 'OK'를 취소하려면 'Cancel'을 클릭하세요.\r\n다른 장치에 ScriptSafe의 현재 설정을 적용하려면 이 메시지가 표시되었을때 OK를 클릭하세요."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "아직 Firefox 계정에 설정을 동기화하지 않았습니다.\r\nScriptSafe는 Firefox 계정에 현재 설정을 동기화하려 합니다.\r\n계속하려면 'OK'를 취소하려면 'Cancel'을 클릭하세요.\r\n다른 장치에 ScriptSafe의 현재 설정을 적용하려면 이 메시지가 표시되었을때 OK를 클릭하세요."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Google 계정에 현재 설정을 동기화하겠습니까?\r\n주의 : 이것을 자주 누르지 마세요; 분당 10번, 시간당 1,000번의 제한이 있습니다."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Firefox 계정에 현재 설정을 동기화하겠습니까?\r\n주의 : 이것을 자주 누르지 마세요; 분당 10번, 시간당 1,000번의 제한이 있습니다."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Google 계정에서 동기화 설정을 이 장치에 가져 오시겠습니까?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Firefox 계정에서 동기화 설정을 이 장치에 가져 오시겠습니까?"
    },
    "hotkeys": {
       "description": "Hotkeys:",
@@ -612,20 +612,20 @@
       "message": "개발을 지원해 주시려면, 하트 아이콘을 클릭해주세요 :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "현재 자동 동기화를 사용하고 있습니다. 당신의 이전 동기화 된 데이터를 삭제하지 않도록 하려면 Google 계정의 동기화 설정을 클릭하세요."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "현재 자동 동기화를 사용하고 있습니다. 당신의 이전 동기화 된 데이터를 삭제하지 않도록 하려면 Firefox 계정의 동기화 설정을 클릭하세요."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Google 계정에서 동기화 설정 가져오기"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Firefox 계정에서 동기화 설정 가져오기"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Google 계정으로 동기화 설정 내보내기"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Firefox 계정으로 동기화 설정 내보내기"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "Google 계정에서 ScriptSafe 동기화 설정을 발견했습니다!\r\nGoogle 계정에서 설정을 가져 오려면 'OK'를 클릭하세요."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "Firefox 계정에서 ScriptSafe 동기화 설정을 발견했습니다!\r\nFirefox 계정에서 설정을 가져 오려면 'OK'를 클릭하세요."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -636,20 +636,20 @@
       "message": "가져오기 된 동기화 알림 표시 :"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": " 설정이 Google 계정에서 <strong>가져오기</strong> 된 경우 팝업 알림"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": " 설정이 Firefox 계정에서 <strong>가져오기</strong> 된 경우 팝업 알림"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "동기화 알림 표시 :"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "설정이 Google 계정으로 <strong>내보내기</strong> 된 경우 팝업 알림"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "설정이 Firefox 계정으로 <strong>내보내기</strong> 된 경우 팝업 알림"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Google Chrome의 현재 버전이 동기화 설정을 지원하지 않습니다. Chrome 버전을 업데이트하고 다시 시도하십시오."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Mozilla Firefox의 현재 버전이 동기화 설정을 지원하지 않습니다. Firefox 버전을 업데이트하고 다시 시도하십시오."
    },
    "temp": {
       "description": "Temporary",

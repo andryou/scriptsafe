@@ -52,7 +52,7 @@
       "message": "دائما إزالة الحاجيات / أزرار الاجتماعية، حتى إذا اللائحة البيضاء"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
       "message": "لحجب أكثر شمولا، تحقق من Privacy Badger، افصل، والضبابية، و / أو uBlock المنشأ مع كل من قوائم الاشتراك على موقع بوي"
    },
    "audioblock": {
@@ -312,16 +312,16 @@
       "message": "حماية بصمة (قد كسر المواقع)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "يبدو أنك لم تتم مزامنة الإعدادات لحساب جوجل الخاص بك حتى الآن.\r\nScriptSafe على وشك مزامنة الإعدادات الحالية في حسابك في Google.\r\nانقر على \"موافق\" إذا كنت ترغب في الاستمرار.\r\nإن لم يكن، انقر فوق \"إلغاء الأمر\"، وعلى الجهاز الآخر مع إعدادات المفضل لديك، تحديث ScriptSafe وانقر على OK عندما يتم تقديمك مع هذه الرسالة."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "يبدو أنك لم تتم مزامنة الإعدادات لحساب جوجل الخاص بك حتى الآن.\r\nScriptSafe على وشك مزامنة الإعدادات الحالية في حسابك في Firefox.\r\nانقر على \"موافق\" إذا كنت ترغب في الاستمرار.\r\nإن لم يكن، انقر فوق \"إلغاء الأمر\"، وعلى الجهاز الآخر مع إعدادات المفضل لديك، تحديث ScriptSafe وانقر على OK عندما يتم تقديمك مع هذه الرسالة."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "هل تريد مزامنة الإعدادات الحالية إلى حساب Google؟\r\nملاحظة: الرجاء عدم الضغط على هذا في كثير من الأحيان. هناك حد من 10 في الدقيقة الواحدة و 1،000 في الساعة."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "هل تريد مزامنة الإعدادات الحالية إلى حساب Firefox؟\r\nملاحظة: الرجاء عدم الضغط على هذا في كثير من الأحيان. هناك حد من 10 في الدقيقة الواحدة و 1،000 في الساعة."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "هل تريد استيراد الإعدادات التي تمت مزامنتها من حساب Google لهذا الجهاز؟"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "هل تريد استيراد الإعدادات التي تمت مزامنتها من حساب Firefox لهذا الجهاز؟"
    },
    "hotkeys": {
       "description": "Hotkeys:",
@@ -612,20 +612,20 @@
       "message": "لدعم التنمية، انقر فوق القلب :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "لقد مكن لصناعة السيارات في المزامنة. من أجل منع محو البيانات المتزامنة سابقا (إن وجدت)، يرجى النقر على إعدادات المزامنة من حساب Google."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "لقد مكن لصناعة السيارات في المزامنة. من أجل منع محو البيانات المتزامنة سابقا (إن وجدت)، يرجى النقر على إعدادات المزامنة من حساب Firefox."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "إعدادات المزامنة من حساب Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "إعدادات المزامنة من حساب Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "إعدادات المزامنة لحساب Google"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "إعدادات المزامنة لحساب Firefox"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "كشف ScriptSafe أن لديك الإعدادات التي تمت مزامنتها على حساب جوجل الخاص بك!\r\nانقر على \"موافق\" إذا كنت ترغب في استيراد الإعدادات من حساب Google الخاص بك."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "كشف ScriptSafe أن لديك الإعدادات التي تمت مزامنتها على حساب جوجل الخاص بك!\r\nانقر على \"موافق\" إذا كنت ترغب في استيراد الإعدادات من حساب Firefox الخاص بك."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -636,20 +636,20 @@
       "message": "تظهر استيراد مزامنة إعلام:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "عرض المنبثقة عندما مزامن الإعدادات من حساب Google"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "عرض المنبثقة عندما مزامن الإعدادات من حساب Firefox"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "إظهار الإعلام سينك:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "عرض المنبثقة عندما إعدادات مزامنتها مع حسابك في Google"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "عرض المنبثقة عندما إعدادات مزامنتها مع حسابك في Firefox"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "لا يدعم الإصدار الحالي من جوجل كروم إعدادات المزامنة. من فضلك حاول تحديث إصدار Chrome وحاول مرة أخرى."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "لا يدعم الإصدار الحالي من جوجل كروم إعدادات المزامنة. من فضلك حاول تحديث إصدار Firefox وحاول مرة أخرى."
    },
    "temp": {
       "description": "Temporary",

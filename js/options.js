@@ -308,7 +308,7 @@ function saveElement(id) {
 	localStorage[id] = $("#"+id).val();
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version+" BETA");
+	$("#title").html("ScriptSafe v"+version);
 	loadCheckbox("enable");
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
@@ -565,9 +565,11 @@ function downloadtxt() {
 	var downloadLink = document.createElement("a");
 	downloadLink.download = fileNameToSaveAs;
 	downloadLink.innerHTML = "Download File";
-	downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-	downloadLink.click();
-	downloadLink.remove();
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+    downloadLink.onclick = function(e) { document.body.removeChild(e.target); };
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
 }
 function updateExport() {
 	settingnames = [];
