@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.9.4';
+var version = '1.0.9.5';
 var port = chrome.runtime.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -47,7 +47,14 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
-	setTimeout(init, 150);
+	if (!bkg) {
+		$("#version").html(version);
+		$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', 'Close');
+		$("table").html('<tr><td style="text-align: center;"><p>Firefox does not yet <a href="https://github.com/andryou/scriptsafe/issues/282" target="_blank">fully provide incognito support</a> for Web Extensions.</p><p>Until then, please browse in a non-Private Window for ScriptSafe to work properly.</td></tr>');
+		return;
+	} else {
+		setTimeout(init, 150);
+	}
 	$("#pop_ay").mouseup(function(e) { if (e.which != 3) openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
 	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/firefox'); });

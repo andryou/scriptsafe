@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.9.4';
+var version = '1.0.9.5';
 var requestTypes, synctimer, recentstimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
@@ -493,22 +493,14 @@ function domainHandler(domain,action,listtype) {
 				var whiteInstancesCount = whiteInstances.length;
 				var blackInstancesCount = blackInstances.length;
 				if (whiteInstancesCount || blackInstancesCount) {
-					var lingo = '';
-					if (action == 1) lingo = 'dis';
-					if (confirm('ScriptSafe detected '+(whiteInstancesCount+blackInstancesCount)+' existing rule(s) for '+tempDomain+' ('+whiteInstancesCount+' whitelist and '+blackInstancesCount+' blacklist).\r\nDo you want to delete them before '+lingo+'trusting the entire '+tempDomain+' domain in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
-						if (whiteInstancesCount) {
-							for (var x=0; x<whiteInstancesCount; x++) {
-								tempWhitelist.splice(tempWhitelist.indexOf(whiteInstances[x]),1);
-							}
+					if (whiteInstancesCount) {
+						for (var x=0; x<whiteInstancesCount; x++) {
+							tempWhitelist.splice(tempWhitelist.indexOf(whiteInstances[x]),1);
 						}
-						if (blackInstancesCount) {
-							for (var x=0; x<blackInstancesCount; x++) {
-								tempBlacklist.splice(tempBlacklist.indexOf(blackInstances[x]),1);
-							}
-						}
-					} else {
-						if (!confirm('Do you still want to proceed '+lingo+'trusting the entire '+tempDomain+' domain?')) {
-							return false;
+					}
+					if (blackInstancesCount) {
+						for (var x=0; x<blackInstancesCount; x++) {
+							tempBlacklist.splice(tempBlacklist.indexOf(blackInstances[x]),1);
 						}
 					}
 				}
@@ -575,15 +567,9 @@ function fpDomainHandler(domain,listtype,action,temp) {
 				var instances = haystackSearch(tempDomain, tempList);
 				var instancesCount = instances.length;
 				if (instancesCount) {
-					if (confirm('ScriptSafe detected '+instancesCount+' existing rule(s) for '+tempDomain+'.\r\nDo you want to delete them before trusting the entire '+tempDomain+' domain in order to avoid conflicts?\r\nNote: this might not necessarily remove all conflicting entries, particularly if they use regex (e.g. d?main.com).')) {
-						if (instancesCount) {
-							for (var x=0; x<instancesCount; x++) {
-								tempList.splice(tempList.indexOf(instances[x]),1);
-							}
-						}
-					} else {
-						if (!confirm('Do you still want to proceed trusting the entire '+tempDomain+' domain?')) {
-							return false;
+					if (instancesCount) {
+						for (var x=0; x<instancesCount; x++) {
+							tempList.splice(tempList.indexOf(instances[x]),1);
 						}
 					}
 				}
@@ -1097,7 +1083,7 @@ function freshSync(force) {
 			localStorage['sync'] = 'true';
 			var settingssync = {};
 			var simplesettings = '';
-			var newlimit = chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 6 - 13;
+			var newlimit = 8192 - 6 - 13; // 8192 = chrome.storage.sync.QUOTA_BYTES_PER_ITEM
 			var fpsettings = '';
 			var zarr = {};
 			zarr['zw'] = [];
@@ -1169,7 +1155,7 @@ function freshSync(force) {
 			settingssync['fpCount'] = i;
 			settingssync['lastSync'] = milliseconds;
 			localStorage['lastSync'] = milliseconds;
-			if (chrome.storage.sync.QUOTA_BYTES < JSON.stringify(settingssync).length) {
+			if (102400 < JSON.stringify(settingssync).length) { // 102400 = chrome.storage.sync.QUOTA_BYTES
 				alert('ScriptSafe cannot sync your settings as it is greater than the total limit.\r\nHowever, you can manually export and import your settings by going to the Options page.');
 			} else {
 				chrome.storage.sync.clear(function() {
@@ -1200,24 +1186,15 @@ function importSyncHandle(mode) {
 			chrome.storage.sync.get(null, function(changes) {
 				if (typeof changes['lastSync'] !== 'undefined') {
 					if ((mode == '0' && changes['lastSync'] > localStorage['lastSync']) || (mode == '1' && changes['lastSync'] >= localStorage['lastSync'])) {
-						if (confirm(getLocale("syncdetect"))) {
-							localStorage['syncenable'] = 'true';
-							localStorage['sync'] = 'true';
-							importSync(changes);
-							if (mode == '1') window.setTimeout(function() { window.clearTimeout(synctimer); }, 5000);
-							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
-							return true;
-						} else {
-							if (mode != '1') {
-								localStorage['syncenable'] = 'false';
-								alert(getLocale("syncdisabled"));
-								localStorage['sync'] = 'true';
-							}
-							return false;
-						}
+						localStorage['syncenable'] = 'true';
+						localStorage['sync'] = 'true';
+						importSync(changes);
+						if (mode == '1') window.setTimeout(function() { window.clearTimeout(synctimer); }, 5000);
+						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
+						return true;
 					}
 				}
-				if (mode == '1' || (localStorage['sync'] == 'false' && mode == '0')) {
+				if (localStorage['sync'] == 'false' && mode == '0') {
 					localStorage['syncenable'] = 'false';
 					localStorage['sync'] = 'true';
 					return false;
@@ -1418,13 +1395,6 @@ function getLangs() {
 var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 if (!optionExists("locale")) {
 	localStorage['locale'] = 'en_US';
-	if (uiLang != 'en' && uiLang != 'en_GB' && uiLang != 'en_US') {
-		if (typeof langs[uiLang] !== 'undefined') {
-			if (confirm('ScriptSafe detected that your browser is currently set to '+langs[uiLang]+'.\r\nWould you like to use ScriptSafe in '+langs[uiLang]+'?\r\nIf you click on "Cancel", English (US) will be set.')) {
-				localStorage['locale'] = uiLang;
-			}
-		}
-	}
 } else {
 	if (typeof langs[uiLang] === 'undefined') {
 		localStorage['locale'] = 'en_US';
