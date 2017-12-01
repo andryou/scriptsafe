@@ -3,7 +3,7 @@ A browser extension that gives users control of the web and more secure browsing
 
 **Install from the Chrome Web Store: https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf**
 
-**Install from Firefox Add-ons: https://addons.mozilla.org/firefox/addon/scriptsafe/**
+**Install from Firefox Add-ons: https://addons.mozilla.org/firefox/addon/script-safe/**
 
 **Install from Opera Add-ons: https://addons.opera.com/en/extensions/details/scriptsafe-2/**
 
