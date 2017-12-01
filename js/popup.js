@@ -47,6 +47,13 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
+	$("#pop_ay").mouseup(function(e) { if (e.which != 3) openTab('https://twitter.com/andryou'); });
+	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
+	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/firefox'); });
+	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
+	$("#pop_log").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/recents.html')); });
+	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.mozilla.org/firefox/addon/script-safe/'); });
+	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 	if (!bkg) {
 		$("#version").html(version);
 		$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', 'Close');
@@ -55,14 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	} else {
 		setTimeout(init, 150);
 	}
-	$("#pop_ay").mouseup(function(e) { if (e.which != 3) openTab('https://twitter.com/andryou'); });
-	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
-	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/firefox'); });
-	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
-	$("#pop_log").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/recents.html')); });
-	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.mozilla.org/firefox/addon/script-safe/'); });
 	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
-	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 });
 function init() {
 	$("#version").html(version);
