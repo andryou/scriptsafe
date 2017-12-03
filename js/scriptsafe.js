@@ -1438,7 +1438,7 @@ function postLangLoad() {
 	}
 	setDefaultOptions();
 	if (storageapi) {
-		chrome.storage.onChanged.addListener(function(changes, namespace) {
+		browser.storage.onChanged.addListener(function(changes, namespace) {
 			if (namespace == 'sync') {
 				if (!optionExists('version')) {
 					let getSettings = browser.storage.local.get();
