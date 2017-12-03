@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.9.5';
+var version = '1.0.9.6';
 var port = chrome.runtime.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -60,12 +60,13 @@ document.addEventListener('DOMContentLoaded', function () {
 		$("table").html('<tr><td style="text-align: center;"><p>Firefox does not yet <a href="https://github.com/andryou/scriptsafe/issues/282" target="_blank">fully provide incognito support</a> for Web Extensions.</p><p>Until then, please browse in a non-Private Window for ScriptSafe to use this panel.</td></tr>');
 		return;
 	} else {
+		var localStorageReady = bkg.checkLocalStorage();
 		setTimeout(init, 150);
 	}
-	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
 });
 function init() {
 	$("#version").html(version);
+	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
 	$("#pop_options").html(bkg.getLocale("options"));
 	chrome.tabs.query({active: true, currentWindow: true}, function(tab) {
 		tab = tab[0];

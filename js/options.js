@@ -2,11 +2,16 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.5';
+var version = '1.0.9.6';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
+	var localStorageReady = bkg.checkLocalStorage();
+	if (!localStorageReady) {
+		setTimeout(function() { window.location.reload(1); }, 100);
+		return;
+	}
 	initTabs();
 	i18load();
 	loadOptions();
@@ -227,7 +232,7 @@ function viewToggle(commit) {
 	$("#sidebar, #sectionname").toggle();
 	if ($(".tab-content").hasClass('col-sm-9')) {
 		$("#viewtoggle").text(bkg.getLocale("groupallsettings")).removeClass('btn-info').addClass('btn-success');
-		if (commit) localStorage['optionslist'] = 'true';
+		if (commit) bkg.saveSetting('optionslist', 'true');
 		$(".tab-content").removeClass('col-sm-9').addClass('col-sm-12');
 		$(".tab").each(function() {
 			$(this).prepend('<div class="sectionheading alert alert-success"><h4>'+$("a[href='#"+$(this).attr('id')+"']").attr('rel')+'</h4></div>').show();
@@ -240,7 +245,7 @@ function viewToggle(commit) {
 		$('#whitelistblacklist .sectionheading').stickyScroll({ topBoundary: $("#whitelistblacklist").offset().top, bottomBoundary: $("#whitelistblacklist").offset().top });
 	} else {
 		$("#viewtoggle").text(bkg.getLocale("listallsettings")).removeClass('btn-success').addClass('btn-info');
-		if (commit) localStorage['optionslist'] = 'false';
+		if (commit) bkg.saveSetting('optionslist', 'false');
 		$(".tab-content").removeClass('col-sm-12').addClass('col-sm-9');
 		$(".tab").hide();
 		$(".tab.active").show();
@@ -302,10 +307,10 @@ function loadElement(id) {
 	$("#"+id).val(localStorage[id]);
 }
 function saveCheckbox(id) {
-	localStorage[id] = document.getElementById(id).checked;
+	bkg.saveSetting(id, document.getElementById(id).checked);
 }
 function saveElement(id) {
-	localStorage[id] = $("#"+id).val();
+	bkg.saveSetting(id, $("#"+id).val());
 }
 function loadOptions() {
 	$("#title").html("ScriptSafe v"+version);
@@ -462,7 +467,7 @@ function saveOptions() {
 		saveElement("referrerspoof");
 		$("#customreferrer").hide();
 	} else {
-		if ($("#userref").val() != '') localStorage['referrerspoof'] = $("#userref").val();
+		if ($("#userref").val() != '') bkg.saveSetting('referrerspoof', $("#userref").val());
 		else {
 			$("#customreferrer").show();
 			$("#userref").focus;
@@ -526,10 +531,10 @@ function settingsImport() {
 				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && $.trim(settingentry[1]) != '') {
 					if ($.trim(settingentry[0]) == 'whiteList' || $.trim(settingentry[0]) == 'blackList') {
 						var listarray = $.trim(settingentry[1]).replace(/(\[|\]|")/g,"").split(",");
-						if ($.trim(settingentry[0]) == 'whiteList' && listarray.toString() != '') localStorage['whiteList'] = JSON.stringify(listarray);
-						else if ($.trim(settingentry[0]) == 'blackList' && listarray.toString() != '') localStorage['blackList'] = JSON.stringify(listarray);
+						if ($.trim(settingentry[0]) == 'whiteList' && listarray.toString() != '') bkg.saveSetting('whiteList', JSON.stringify(listarray));
+						else if ($.trim(settingentry[0]) == 'blackList' && listarray.toString() != '') bkg.saveSetting('blackList', JSON.stringify(listarray));
 					} else 
-						localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+						bkg.saveSetting($.trim(settingentry[0]), $.trim(settingentry[1]));
 				} else {
 					error += $.trim(settingentry[0])+", ";
 				}
@@ -821,7 +826,7 @@ function fpListProcess(fpType) {
 }
 function listclear(type) {
 	if (confirm(['Clear whitelist?','Clear blacklist?'][type])) {
-		localStorage[['whiteList','blackList'][type]] = JSON.stringify([]);
+		bkg.saveSetting(['whiteList','blackList'][type], JSON.stringify([]));
 		listUpdate();
 		bkg.cacheLists();
 		if (bkg.freshSync(2)) {

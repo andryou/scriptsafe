@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.9.5';
+var version = '1.0.9.6';
 var requestTypes, synctimer, recentstimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
@@ -248,6 +248,7 @@ function inlineblock(req) {
 	}
     var headers = req.responseHeaders;
 	if (req.type == 'main_frame') {
+		checkLocalStorage();
 		var domainCheckStatus = domainCheck(req.url, 1);
 		if (experimental == '1' && localStorage['preservesamedomain'] == 'false' && localStorage['script'] == 'true' && enabled(req.url) == 'true') {
 			headers.push({
@@ -439,7 +440,6 @@ function topHandler(domain, mode) {
 		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
 		if (mode != '0' && mode != '1') fpDomainHandler(domain, mode, 1);
 		else domainHandler(domain, mode);
-		freshSync();
 		changed = true;
 		return true;
 	}
@@ -462,8 +462,8 @@ function domainHandler(domain,action,listtype) {
 		action = parseInt(action);
 		// Initialize local storage
 		if (listtype == 0) {
-			if (typeof(localStorage['whiteList'])==='undefined') localStorage['whiteList'] = JSON.stringify([]);
-			if (typeof(localStorage['blackList'])==='undefined') localStorage['blackList'] = JSON.stringify([]);
+			if (typeof(localStorage['whiteList'])==='undefined') saveSetting('whiteList', JSON.stringify([]));
+			if (typeof(localStorage['blackList'])==='undefined') saveSetting('blackList', JSON.stringify([]));
 			var tempWhitelist = JSON.parse(localStorage['whiteList']);
 			var tempBlacklist = JSON.parse(localStorage['blackList']);
 		} else if (listtype == 1) {
@@ -523,8 +523,8 @@ function domainHandler(domain,action,listtype) {
 				break;
 		}
 		if (listtype == 0) {
-			localStorage['whiteList'] = JSON.stringify(tempWhitelist);
-			localStorage['blackList'] = JSON.stringify(tempBlacklist);
+			saveSetting('whiteList', JSON.stringify(tempWhitelist));
+			saveSetting('blackList', JSON.stringify(tempBlacklist));
 			cacheLists();
 		} else if (listtype == 1) {
 			sessionStorage['whiteList'] = JSON.stringify(tempWhitelist);
@@ -546,7 +546,7 @@ function fpDomainHandler(domain,listtype,action,temp) {
 		action = parseInt(action);
 		// Initialize local storage
 		if (temp == 0) {
-			if (typeof(localStorage[listtype])==='undefined') localStorage[listtype] = JSON.stringify([]);
+			if (typeof(localStorage[listtype])==='undefined') saveSetting(listtype, JSON.stringify([]));
 			var tempList = JSON.parse(localStorage[listtype]);
 		} else if (temp == 1) {
 			if (typeof(localStorage[listtype])==='undefined') sessionStorage[listtype] = JSON.stringify([]);
@@ -587,7 +587,7 @@ function fpDomainHandler(domain,listtype,action,temp) {
 				break;
 		}
 		if (temp == 0) {
-			localStorage[listtype] = JSON.stringify(tempList);
+			saveSetting(listtype, JSON.stringify(tempList));
 			tempList = tempList.sort();
 			fpLists[listtype] = tempList;
 		} else if (temp == 1) {
@@ -604,7 +604,30 @@ function optionExists(opt) {
 	return (typeof localStorage[opt] !== "undefined");
 }
 function defaultOptionValue(opt, val) {
-	if (!optionExists(opt)) localStorage[opt] = val;
+	if (!optionExists(opt)) saveSetting(opt, val);
+}
+function deleteSetting(opt) {
+	delete localStorage[opt];
+	browser.storage.local.remove([opt]);
+}
+function saveSetting(opt, val) {
+	localStorage[opt] = val;
+	browser.storage.local.set({[opt]: val});
+}
+function checkLocalStorage() {
+	if (!optionExists('version')) {
+		loadSettingsFromStorage();
+		return false;
+	}
+	return true;
+}
+function loadSettingsFromStorage() {
+	let getSettings = browser.storage.local.get();
+	getSettings.then(function(setting) {
+		for (var i in setting) {
+			localStorage[i] = setting[i];
+		}
+	}, null);
 }
 function setDefaultOptions() {
 	defaultOptionValue("version", version);
@@ -668,20 +691,19 @@ function setDefaultOptions() {
 	defaultOptionValue("clipboard", "false");
 	defaultOptionValue("optionslist", "false");
 	defaultOptionValue("browserplugins", "false");
-	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
-	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
-	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
-	if (!optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
-	if (!optionExists("fpCanvasFont")) localStorage['fpCanvasFont'] = JSON.stringify([]);
-	if (!optionExists("fpAudio")) localStorage['fpAudio'] = JSON.stringify([]);
-	if (!optionExists("fpWebGL")) localStorage['fpWebGL'] = JSON.stringify([]);
-	if (!optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
-	if (!optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
-	if (!optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
-	if (!optionExists("fpWebVR")) localStorage['fpWebVR'] = JSON.stringify([]);
-	if (!optionExists("fpBluetooth")) localStorage['fpBluetooth'] = JSON.stringify([]);
-	if (!optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
-	if (!optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
+	if (!optionExists("blackList")) saveSetting('blackList', JSON.stringify([]));
+	if (!optionExists("whiteList")) saveSetting('whiteList', JSON.stringify(["*.googlevideo.com"]));
+	if (!optionExists("fpCanvas")) saveSetting('fpCanvas', JSON.stringify([]));
+	if (!optionExists("fpCanvasFont")) saveSetting('fpCanvasFont', JSON.stringify([]));
+	if (!optionExists("fpAudio")) saveSetting('fpAudio', JSON.stringify([]));
+	if (!optionExists("fpWebGL")) saveSetting('fpWebGL', JSON.stringify([]));
+	if (!optionExists("fpBattery")) saveSetting('fpBattery', JSON.stringify([]));
+	if (!optionExists("fpDevice")) saveSetting('fpDevice', JSON.stringify([]));
+	if (!optionExists("fpGamepad")) saveSetting('fpGamepad', JSON.stringify([]));
+	if (!optionExists("fpWebVR")) saveSetting('fpWebVR', JSON.stringify([]));
+	if (!optionExists("fpBluetooth")) saveSetting('fpBluetooth', JSON.stringify([]));
+	if (!optionExists("fpClientRectangles")) saveSetting('fpClientRectangles', JSON.stringify([]));
+	if (!optionExists("fpClipboard")) saveSetting('fpClipboard', JSON.stringify([]));
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
 	if (typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
 	if (typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
@@ -742,10 +764,10 @@ function revokeTemp() {
 }
 function statuschanger() {
 	if (localStorage['enable'] == 'true') {
-		localStorage['enable'] = 'false';
+		saveSetting('enable', 'false');
 		chrome.browserAction.setIcon({path: "../img/IconDisabled.png"});
 	} else {
-		localStorage['enable'] = 'true';
+		saveSetting('enable', 'true');
 		chrome.browserAction.setIcon({path: "../img/IconForbidden.png"});
 	}
 	reinitContext();
@@ -942,7 +964,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		}
 	} else if (request.reqtype == 'save') {
 		domainHandler(request.url, request.list);
-		freshSync();
 		changed = true;
 	} else if (request.reqtype == 'temp') {
 		tempHandler(request);
@@ -950,7 +971,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		removeTempHandler(request);
 	} else if (request.reqtype == 'save-fp') {
 		fpDomainHandler(request.url, request.list, 1);
-		freshSync();
 		changed = true;
 	} else if (request.reqtype == 'temp-fp') {
 		fpDomainHandler(request.url, request.list, 1, 1);
@@ -1001,8 +1021,8 @@ function genContextMenu() {
 	chrome.contextMenus.create({"title": getLocale("revoketempall"), "parentId": parent, "onclick": removeTempAll});
 	chrome.contextMenus.create({"parentId": parent, "type": "separator"});
 	chrome.contextMenus.create({"title": getLocale("options"), "parentId": parent, "onclick": function() { chrome.tabs.create({ url: chrome.extension.getURL('html/options.html')}); }});
-	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": getLocale("enabless"), "parentId": parent, "onclick": function() { localStorage["enable"] = "true"; contextHandle('toggle'); }});
-	else chrome.contextMenus.create({"title": getLocale("disable"), "parentId": parent, "onclick": function() { localStorage["enable"] = "false"; contextHandle('toggle'); }});
+	if (localStorage["enable"] == "false") chrome.contextMenus.create({"title": getLocale("enabless"), "parentId": parent, "onclick": function() { saveSetting('enable', "true"); contextHandle('toggle'); }});
+	else chrome.contextMenus.create({"title": getLocale("disable"), "parentId": parent, "onclick": function() { saveSetting('enable', "false"); contextHandle('toggle'); }});
 }
 function contextHandle(mode) {
 	chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
@@ -1080,7 +1100,7 @@ function freshSync(force) {
 	if (storageapi && localStorage['syncenable'] == 'true') {
 		window.clearTimeout(synctimer);
 		if (force) {
-			localStorage['sync'] = 'true';
+			saveSetting('sync', 'true');
 			var settingssync = {};
 			var simplesettings = '';
 			var newlimit = 8192 - 6 - 13; // 8192 = chrome.storage.sync.QUOTA_BYTES_PER_ITEM
@@ -1112,10 +1132,10 @@ function freshSync(force) {
 			}
 			settingssync['scriptsafe_settings'] = simplesettings.slice(0,-1);
 			if (zarr['zw'].length) {
-				for (var x = 0, forcount=zarr['zw'].length; x < forcount; x++) delete localStorage[zarr['zw'][x]];
+				for (var x = 0, forcount=zarr['zw'].length; x < forcount; x++) deleteSetting(zarr['zw'][x]);
 			}
 			if (zarr['sw'].length) {
-				for (var x = 0, forcount=zarr['sw'].length; x < forcount; x++) delete localStorage[zarr['sw'][x]];
+				for (var x = 0, forcount=zarr['sw'].length; x < forcount; x++) deleteSetting(zarr['sw'][x]);
 			}
 			jsonstr = ssCompress(JSON.parse(localStorage['whiteList']).toString());
 			i = 0;
@@ -1127,10 +1147,10 @@ function freshSync(force) {
 			}
 			settingssync['whiteListCount2'] = i;
 			if (zarr['zb'].length) {
-				for (var x = 0, forcount=zarr['zb'].length; x < forcount; x++) delete localStorage[zarr['zb'][x]];
+				for (var x = 0, forcount=zarr['zb'].length; x < forcount; x++) deleteSetting(zarr['zb'][x]);
 			}
 			if (zarr['sb'].length) {
-				for (var x = 0, forcount=zarr['sb'].length; x < forcount; x++) delete localStorage[zarr['sb'][x]];
+				for (var x = 0, forcount=zarr['sb'].length; x < forcount; x++) deleteSetting(zarr['sb'][x]);
 			}
 			jsonstr = ssCompress(JSON.parse(localStorage['blackList']).toString());
 			i = 0;
@@ -1142,7 +1162,7 @@ function freshSync(force) {
 			}
 			settingssync['blackListCount2'] = i;
 			if (zarr['sf'].length) {
-				for (var x = 0, forcount=zarr['sf'].length; x < forcount; x++) delete localStorage[zarr['sf'][x]];
+				for (var x = 0, forcount=zarr['sf'].length; x < forcount; x++) deleteSetting(zarr['sf'][x]);
 			}
 			i = 0;
 			jsonstr = ssCompress(fpsettings.slice(0,-1));
@@ -1154,19 +1174,21 @@ function freshSync(force) {
 			}
 			settingssync['fpCount'] = i;
 			settingssync['lastSync'] = milliseconds;
-			localStorage['lastSync'] = milliseconds;
+			saveSetting('lastSync', milliseconds);
 			if (102400 < JSON.stringify(settingssync).length) { // 102400 = chrome.storage.sync.QUOTA_BYTES
 				alert('ScriptSafe cannot sync your settings as it is greater than the total limit.\r\nHowever, you can manually export and import your settings by going to the Options page.');
 			} else {
-				chrome.storage.sync.clear(function() {
-					chrome.storage.sync.set(settingssync, function() {
+				var clearStorage = browser.storage.sync.clear();
+				clearStorage.then(function() {
+					var syncStatus = browser.storage.sync.set(settingssync);
+					syncStatus.then(function() {
 						if (chrome.extension.lastError){
 							alert(chrome.extension.lastError.message);
 						} else {
 							if (localStorage['syncnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("exportsuccesstitle"), 'message': getLocale("exportsuccess")}, function(callback) { return true; } );
 						}
-					});
-				});
+					}, null);
+				}, null);
 			}
 		} else {
 			synctimer = window.setTimeout(function() { syncQueue() }, 10000);
@@ -1183,11 +1205,12 @@ function importSyncHandle(mode) {
 	if (storageapi) {
 		if (mode == '1' || localStorage['syncenable'] == 'true' || localStorage['sync'] == 'false') {
 			window.clearTimeout(synctimer);
-			chrome.storage.sync.get(null, function(changes) {
+			var syncData = browser.storage.sync.get();
+			syncData.then(function(changes) {
 				if (typeof changes['lastSync'] !== 'undefined') {
 					if ((mode == '0' && changes['lastSync'] > localStorage['lastSync']) || (mode == '1' && changes['lastSync'] >= localStorage['lastSync'])) {
-						localStorage['syncenable'] = 'true';
-						localStorage['sync'] = 'true';
+						saveSetting('syncenable', 'true');
+						saveSetting('sync', 'true');
 						importSync(changes);
 						if (mode == '1') window.setTimeout(function() { window.clearTimeout(synctimer); }, 5000);
 						if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
@@ -1195,22 +1218,22 @@ function importSyncHandle(mode) {
 					}
 				}
 				if (localStorage['sync'] == 'false' && mode == '0') {
-					localStorage['syncenable'] = 'false';
-					localStorage['sync'] = 'true';
+					saveSetting('syncenable', 'false');
+					saveSetting('sync', 'true');
 					return false;
 				}
-			});
+			}, null);
 		}
 	} else {
 		alert(getLocale("syncnotsupported"));
-		localStorage['sync'] = 'true';
+		saveSetting('sync', 'true');
 		return false;
 	}
 }
 function importSync(changes) {
 	for (var key in changes) {
 		if (key != 'scriptsafe_settings') {
-			localStorage[key] = changes[key];
+			saveSetting(key, changes[key]);
 		} else if (key == 'scriptsafe_settings') {
 			var settings = changes[key].split("~");
 			if (settings.length > 0) {
@@ -1218,7 +1241,7 @@ function importSync(changes) {
 					if ($.trim(v) != "") {
 						var settingentry = $.trim(v).split("|");
 						if ($.trim(settingentry[1]) != '') {
-							localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+							saveSetting($.trim(settingentry[0]), $.trim(settingentry[1]));
 						}
 					}
 				});
@@ -1238,7 +1261,7 @@ function listsSync() {
 			if (localStorage['sf'+i]) {
 				if (localStorage['sf'+i].substr(0, 13) == localStorage['lastSync']) concatlist += localStorage['sf'+i].substr(13);
 				else listerror = true;
-				delete localStorage['sf'+i];
+				deleteSetting('sf'+i);
 			}
 		}
 		if (!listerror) {
@@ -1250,7 +1273,7 @@ function listsSync() {
 						if ($.trim(v) != "") {
 							var settingentry = $.trim(v).split("|");
 							if ($.trim(settingentry[1]) != '') {
-								localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
+								saveSetting($.trim(settingentry[0]), $.trim(settingentry[1]));
 							}
 						}
 					});
@@ -1258,9 +1281,9 @@ function listsSync() {
 			}
 		} else {
 			alert('Incomplete fingerprint whitelist data was detected. Very large lists are known to cause issues with syncing.\r\nAs a safety precaution, your fingerprint whitelist has not been updated and syncing has been disabled on this device to prevent overwriting data on other devices.\r\nPlease consider manually exporting your latest settings and importing it into your other devices from the Options page.');
-			localStorage['syncenable'] = 'false';
+			saveSetting('syncenable', 'false');
 		}
-		delete localStorage['fpCount'];
+		deleteSetting('fpCount');
 	}
 	cacheLists();
 	cacheFpLists();
@@ -1283,14 +1306,14 @@ function listsSyncParse(type) {
 						else {
 							listerror = true;
 						}
-						delete localStorage['s'+lsName+i];
+						deleteSetting('s'+lsName+i);
 					} else {
 						listerror = true;
 					}
 				} else if (counttype == type+'Count') {
 					if (localStorage['z'+lsName+i]) {
 						concatlist += localStorage['z'+lsName+i];
-						delete localStorage['z'+lsName+i];
+						deleteSetting('z'+lsName+i);
 					} else {
 						listerror = true;
 					}
@@ -1302,14 +1325,14 @@ function listsSyncParse(type) {
 			}
 		}
 		if (!listerror) {
-			if (concatlist == '' || concatlistarr.length == 0) localStorage[type+''] = JSON.stringify([]);
-			else localStorage[type+''] = JSON.stringify(concatlistarr);
+			if (concatlist == '' || concatlistarr.length == 0) saveSetting(type+'', JSON.stringify([]));
+			else saveSetting(type+'', JSON.stringify(concatlistarr));
 		} else {
 			alert('Incomplete '+type.toLowerCase()+' data was detected. Very large lists are known to cause issues with syncing.\r\nAs a safety precaution, your '+type.toLowerCase()+' has not been updated and syncing has been disabled on this device to prevent overwriting data on other devices.\r\nPlease consider manually exporting your latest settings and importing it into your other devices from the Options page.');
-			localStorage['syncenable'] = 'false';
+			saveSetting('syncenable', 'false');
 		}
-		if (optionExists(type+'Count2')) delete localStorage[type+'Count2'];
-		if (optionExists(type+'Count')) delete localStorage[type+'Count'];
+		if (optionExists(type+'Count2')) deleteSetting(type+'Count2');
+		if (optionExists(type+'Count')) deleteSetting(type+'Count');
 	}
 }
 function getUpdated() {
@@ -1320,6 +1343,7 @@ function setUpdated() {
 }
 function triggerUpdated() {
 	updated = true;
+	freshSync();
 }
 function init() {
 	webrtcsupport = checkWebRTC();
@@ -1394,60 +1418,53 @@ function getLangs() {
 }
 var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
 if (!optionExists("locale")) {
-	localStorage['locale'] = 'en_US';
+	saveSetting('locale', 'en_US');
 } else {
 	if (typeof langs[uiLang] === 'undefined') {
-		localStorage['locale'] = 'en_US';
+		saveSetting('locale', 'en_US');
 	}
 }
-initLang(localStorage['locale'], 1);
+loadSettingsFromStorage();
+var storageData = browser.storage.local.get('locale');
+storageData.then(function(data) {
+	initLang(data.locale, 1);
+}, null);
 function postLangLoad() {
 	if (!optionExists("version") || localStorage["version"] != version) {
-		// One-time update existing whitelist/blacklist for new regex support introduced in v1.0.7.0
-		if (!optionExists("tempregexflag")) {
-			if (optionExists("version")) {
-				var tempList = JSON.parse(localStorage['blackList']);
-				var tempNewList = [];
-				if (tempList.length) {
-					tempList.map(function(domain) {
-						if (domain.substr(0,2) == '*.') tempNewList.push('*'+domain);
-						else tempNewList.push(domain);
-					});
-					localStorage['blackList'] = JSON.stringify(tempNewList);
-				}
-				tempList = JSON.parse(localStorage['whiteList']);
-				if (tempList.length) {
-					tempNewList = [];
-					tempList.map(function(domain) {
-						if (domain.substr(0,2) == '*.') tempNewList.push('*'+domain);
-						else tempNewList.push(domain);
-					});
-					localStorage['whiteList'] = JSON.stringify(tempNewList);
-				}
-			}
-			localStorage['tempregexflag'] = "true";
-			syncQueue();
-		}
 		if (localStorage["updatenotify"] == "true") {
 			chrome.tabs.create({ url: chrome.extension.getURL('html/updated.html')});
 		}
-		localStorage["version"] = version;
+		saveSetting('version', version);
 	}
 	setDefaultOptions();
 	if (storageapi) {
 		chrome.storage.onChanged.addListener(function(changes, namespace) {
-			if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
-				if (typeof changes['lastSync'] !== 'undefined') {
-					if (changes['lastSync'].newValue && changes['lastSync'].newValue > localStorage['lastSync']) {
-						chrome.storage.sync.get(null, function(changes) {
-							importSync(changes);
-							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
-						});
-					}
-				}
+			if (namespace == 'sync') {
+				if (!optionExists('version')) {
+					let getSettings = browser.storage.local.get();
+					getSettings.then(function(setting) {
+						for (var i in setting) {
+							localStorage[i] = setting[i];
+						}
+						handleSyncUpdate(changes, namespace);
+					}, null);
+				} else handleSyncUpdate(changes, namespace);
 			}
 		});
 		importSyncHandle(0);
 	}
 	init();
+}
+function handleSyncUpdate(changes, namespace) {
+	if (localStorage['syncenable'] == 'true') {
+		if (typeof changes['lastSync'] !== 'undefined') {
+			if (changes['lastSync'].newValue && changes['lastSync'].newValue > localStorage['lastSync']) {
+				var syncData = browser.storage.sync.get();
+				syncData.then(function(changes) {
+					importSync(changes);
+					if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
+				}, null);
+			}
+		}
+	}
 }
