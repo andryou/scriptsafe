@@ -439,7 +439,6 @@ function topHandler(domain, mode) {
 		if (!domain.match(/^((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) && !domain.match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) domain = '**.'+getDomain(domain);
 		if (mode != '0' && mode != '1') fpDomainHandler(domain, mode, 1);
 		else domainHandler(domain, mode);
-		freshSync();
 		changed = true;
 		return true;
 	}
@@ -956,7 +955,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		}
 	} else if (request.reqtype == 'save') {
 		domainHandler(request.url, request.list);
-		freshSync();
 		changed = true;
 	} else if (request.reqtype == 'temp') {
 		tempHandler(request);
@@ -964,7 +962,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		removeTempHandler(request);
 	} else if (request.reqtype == 'save-fp') {
 		fpDomainHandler(request.url, request.list, 1);
-		freshSync();
 		changed = true;
 	} else if (request.reqtype == 'temp-fp') {
 		fpDomainHandler(request.url, request.list, 1, 1);
@@ -1397,6 +1394,7 @@ function setUpdated() {
 }
 function triggerUpdated() {
 	updated = true;
+	freshSync();
 }
 function init() {
 	webrtcsupport = checkWebRTC();
