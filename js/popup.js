@@ -541,7 +541,7 @@ function save(url, el, type) {
 			val = 1;
 		}
 	}
-	bkg.triggerUpdated();
+	if (val != 2) bkg.triggerUpdated();
 	if (url == tabdomain) chrome.runtime.sendMessage({reqtype: "refresh-page-icon", tid: tabid, type: val});
 	if (closepage == 'true') window.close();
 	else {
