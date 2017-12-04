@@ -47,5 +47,5 @@
    "name": "ScriptSafe",
    "options_page": "html/options.html",
    "permissions": [ "http://*/*", "https://*/*", "tabs", "unlimitedStorage", "webRequest", "webRequestBlocking", "storage", "notifications", "privacy", "contextMenus" ],
-   "version": "1.0.9.2"
+   "version": "1.0.9.4"
 }
