@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.9.6';
+var version = '1.0.9.7';
 var port = chrome.runtime.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -102,8 +102,7 @@ function init() {
 				if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || (response.mode == 'block' && (response.enable == '1' || response.enable == '4'))) {
 					if (response.status == 'false') {
 						$("#currentdomain").hide();
-						$("html").css('width', '410px');
-						$("body").css('width', '400px');
+						$("body").css('min-width', '400px');
 						$(".thirds").css('text-align', 'center').html('<i>'+bkg.getLocale("ssdisabled")+'</i>');
 						$("#parent").css('text-align', 'center').append('<div class="box box1 snstatus" title="'+bkg.getLocale("enabless")+'">'+bkg.getLocale("enabless")+'</div>');
 						$(".snstatus").bind("click", statuschange);
