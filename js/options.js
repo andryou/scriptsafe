@@ -56,6 +56,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			bkg.setDefaultOptions(1);
 		}
 	});
+	$("#restoredefault2").click(function() {
+		if (confirm(bkg.getLocale("restoredefaultconfirm2"))) {
+			bkg.setDefaultOptions(2);
+		}
+	});
 	syncstatus = localStorage['syncenable'];
 	$(".row-offcanvas").show();
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
@@ -66,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function i18load() {
 	$(".i18_support").html(bkg.getLocale("support"));
 	$("#restoredefault").val(bkg.getLocale("restoredefault"));
+	$("#restoredefault2").val(bkg.getLocale("restoredefault2"));
 	$(".i18_listallsettings").html(bkg.getLocale("listallsettings"));
 	$(".i18_groupallsettings").html(bkg.getLocale("groupallsettings"));
 	$(".i18_sections").html(bkg.getLocale("sections"));

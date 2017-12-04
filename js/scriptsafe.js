@@ -695,32 +695,32 @@ function setDefaultOptions(force) {
 		}
 	}
 	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
-	if (force || !optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
-	if (force || !optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
-	if (force || !optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
-	if (force || !optionExists("fpCanvasFont")) localStorage['fpCanvasFont'] = JSON.stringify([]);
-	if (force || !optionExists("fpAudio")) localStorage['fpAudio'] = JSON.stringify([]);
-	if (force || !optionExists("fpWebGL")) localStorage['fpWebGL'] = JSON.stringify([]);
-	if (force || !optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
-	if (force || !optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
-	if (force || !optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
-	if (force || !optionExists("fpWebVR")) localStorage['fpWebVR'] = JSON.stringify([]);
-	if (force || !optionExists("fpBluetooth")) localStorage['fpBluetooth'] = JSON.stringify([]);
-	if (force || !optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
-	if (force || !optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpCanvasFont'] === "undefined") sessionStorage['fpCanvasFont'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpAudio'] === "undefined") sessionStorage['fpAudio'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpWebGL'] === "undefined") sessionStorage['fpWebGL'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpBattery'] === "undefined") sessionStorage['fpBattery'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpDevice'] === "undefined") sessionStorage['fpDevice'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpGamepad'] === "undefined") sessionStorage['fpGamepad'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpWebVR'] === "undefined") sessionStorage['fpWebVR'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpBluetooth'] === "undefined") sessionStorage['fpBluetooth'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
+	if ((force && force == '2') || !optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpCanvasFont")) localStorage['fpCanvasFont'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpAudio")) localStorage['fpAudio'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpWebGL")) localStorage['fpWebGL'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpWebVR")) localStorage['fpWebVR'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpBluetooth")) localStorage['fpBluetooth'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpCanvasFont'] === "undefined") sessionStorage['fpCanvasFont'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpAudio'] === "undefined") sessionStorage['fpAudio'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpWebGL'] === "undefined") sessionStorage['fpWebGL'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpBattery'] === "undefined") sessionStorage['fpBattery'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpDevice'] === "undefined") sessionStorage['fpDevice'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpGamepad'] === "undefined") sessionStorage['fpGamepad'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpWebVR'] === "undefined") sessionStorage['fpWebVR'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpBluetooth'] === "undefined") sessionStorage['fpBluetooth'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
 }
 function updateCount(tabId) {
