@@ -51,6 +51,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#hotkeyspage").click(function() {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
+	$("#restoredefault").click(function() {
+		if (confirm(bkg.getLocale("restoredefaultconfirm"))) {
+			bkg.setDefaultOptions(1);
+		}
+	});
 	syncstatus = localStorage['syncenable'];
 	$(".row-offcanvas").show();
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
@@ -60,6 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function i18load() {
 	$(".i18_support").html(bkg.getLocale("support"));
+	$("#restoredefault").val(bkg.getLocale("restoredefault"));
 	$(".i18_listallsettings").html(bkg.getLocale("listallsettings"));
 	$(".i18_groupallsettings").html(bkg.getLocale("groupallsettings"));
 	$(".i18_sections").html(bkg.getLocale("sections"));

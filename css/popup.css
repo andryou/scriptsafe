@@ -1,7 +1,8 @@
 /* Global */
+html { width: 575px; }
 html, body { word-wrap: break-word; }
 html, body, td, th { font-family: arial, sans-serif; }
-body { margin: 0px 5px; padding: 0px; font-size: 100%; min-width: 575px; max-width: 100%; background-color: #fff; }
+body { margin: 0px 5px; padding: 0px; font-size: 100%; background-color: #fff; }
 #container, table { width: 100%; }
 #container { font-size: 0.75em; }
 td, th { text-align: left; }

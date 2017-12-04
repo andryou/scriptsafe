@@ -619,82 +619,94 @@ function optionExists(opt) {
 function defaultOptionValue(opt, val) {
 	if (!optionExists(opt)) localStorage[opt] = val;
 }
-function setDefaultOptions() {
-	defaultOptionValue("version", version);
-	defaultOptionValue("sync", "false");
-	defaultOptionValue("syncenable", "false");
-	defaultOptionValue("syncnotify", "true");
-	defaultOptionValue("syncfromnotify", "true");
-	defaultOptionValue("lastSync", "0");
-	defaultOptionValue("updatenotify", "true");
-	defaultOptionValue("enable", "true");
-	defaultOptionValue("mode", "block");
-	defaultOptionValue("refresh", "true");
-	defaultOptionValue("script", "true");
-	defaultOptionValue("noscript", "false");
-	defaultOptionValue("object", "true");
-	defaultOptionValue("applet", "true");
-	defaultOptionValue("embed", "true");
-	defaultOptionValue("iframe", "true");
-	defaultOptionValue("frame", "true");
-	defaultOptionValue("audio", "true");
-	defaultOptionValue("video", "true");
-	defaultOptionValue("image", "false");
-	defaultOptionValue("showcontext", "true");
-	defaultOptionValue("canvas", "false");
-	defaultOptionValue("canvasfont", "false");
-	defaultOptionValue("clientrects", "false");
-	defaultOptionValue("audioblock", "false");
-	defaultOptionValue("webgl", "false");
-	defaultOptionValue("battery", "false");
-	defaultOptionValue("webrtcdevice", "false");
-	defaultOptionValue("gamepad", "false");
-	defaultOptionValue("webvr", "false");
-	defaultOptionValue("bluetooth", "false");
-	defaultOptionValue("timezone", "false");
-	defaultOptionValue("keyboard", "false");
-	defaultOptionValue("keydelta", "40");
-	defaultOptionValue("xml", "true");
-	defaultOptionValue("annoyances", "true");
-	defaultOptionValue("annoyancesmode", "relaxed");
-	defaultOptionValue("antisocial", "false");
-	defaultOptionValue("preservesamedomain", "false");
-	defaultOptionValue("webbugs", "true");
-	defaultOptionValue("utm", "false");
-	defaultOptionValue("hashchecking", "false");
-	defaultOptionValue("hashallow", "false");
-	defaultOptionValue("webrtc", "default_public_interface_only");
-	defaultOptionValue("classicoptions", "false");
-	defaultOptionValue("rating", "true");
-	defaultOptionValue("referrer", "true");
-	defaultOptionValue("linktarget", "off");
-	defaultOptionValue("domainsort", "true");
-	defaultOptionValue("useragentspoof", "off");
-	defaultOptionValue("useragentspoof_os", "off");
-	defaultOptionValue("useragentcustom", "");
-	defaultOptionValue("uaspoofallow", "false");
-	defaultOptionValue("referrerspoof", "off");
-	defaultOptionValue("referrerspoofdenywhitelisted", "false");
-	defaultOptionValue("cookies", "true");
-	defaultOptionValue("paranoia", "false");
-	defaultOptionValue("dataurl", "false");
-	defaultOptionValue("clipboard", "false");
-	defaultOptionValue("optionslist", "false");
-	defaultOptionValue("browserplugins", "false");
+function setDefaultOptions(force) {
+	var settingNames = {
+		"version": version,
+		"sync": "false",
+		"syncenable": "false",
+		"syncnotify": "true",
+		"syncfromnotify": "true",
+		"lastSync": "0",
+		"updatenotify": "true",
+		"enable": "true",
+		"mode": "block",
+		"refresh": "true",
+		"script": "true",
+		"noscript": "false",
+		"object": "true",
+		"applet": "true",
+		"embed": "true",
+		"iframe": "true",
+		"frame": "true",
+		"audio": "true",
+		"video": "true",
+		"image": "false",
+		"showcontext": "true",
+		"canvas": "false",
+		"canvasfont": "false",
+		"clientrects": "false",
+		"audioblock": "false",
+		"webgl": "false",
+		"battery": "false",
+		"webrtcdevice": "false",
+		"gamepad": "false",
+		"webvr": "false",
+		"bluetooth": "false",
+		"timezone": "false",
+		"keyboard": "false",
+		"keydelta": "40",
+		"xml": "true",
+		"annoyances": "true",
+		"annoyancesmode": "relaxed",
+		"antisocial": "false",
+		"preservesamedomain": "false",
+		"webbugs": "true",
+		"utm": "false",
+		"hashchecking": "false",
+		"hashallow": "false",
+		"webrtc": "default_public_interface_only",
+		"classicoptions": "false",
+		"rating": "true",
+		"referrer": "true",
+		"linktarget": "off",
+		"domainsort": "true",
+		"useragentspoof": "off",
+		"useragentspoof_os": "off",
+		"useragentcustom": "",
+		"uaspoofallow": "false",
+		"referrerspoof": "off",
+		"referrerspoofdenywhitelisted": "false",
+		"cookies": "true",
+		"paranoia": "false",
+		"dataurl": "false",
+		"clipboard": "false",
+		"optionslist": "false",
+		"browserplugins": "false"
+	}
+	if (force) {
+		for (var i in settingNames) {
+			localStorage[i] = settingNames[i];
+		}
+		updated = true;
+	} else {
+		for (var i in settingNames) {
+			defaultOptionValue(i, settingNames[i]);
+		}
+	}
 	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
-	if (!optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
-	if (!optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
-	if (!optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
-	if (!optionExists("fpCanvasFont")) localStorage['fpCanvasFont'] = JSON.stringify([]);
-	if (!optionExists("fpAudio")) localStorage['fpAudio'] = JSON.stringify([]);
-	if (!optionExists("fpWebGL")) localStorage['fpWebGL'] = JSON.stringify([]);
-	if (!optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
-	if (!optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
-	if (!optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
-	if (!optionExists("fpWebVR")) localStorage['fpWebVR'] = JSON.stringify([]);
-	if (!optionExists("fpBluetooth")) localStorage['fpBluetooth'] = JSON.stringify([]);
-	if (!optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
-	if (!optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
+	if (force || !optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
+	if (force || !optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
+	if (force || !optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
+	if (force || !optionExists("fpCanvasFont")) localStorage['fpCanvasFont'] = JSON.stringify([]);
+	if (force || !optionExists("fpAudio")) localStorage['fpAudio'] = JSON.stringify([]);
+	if (force || !optionExists("fpWebGL")) localStorage['fpWebGL'] = JSON.stringify([]);
+	if (force || !optionExists("fpBattery")) localStorage['fpBattery'] = JSON.stringify([]);
+	if (force || !optionExists("fpDevice")) localStorage['fpDevice'] = JSON.stringify([]);
+	if (force || !optionExists("fpGamepad")) localStorage['fpGamepad'] = JSON.stringify([]);
+	if (force || !optionExists("fpWebVR")) localStorage['fpWebVR'] = JSON.stringify([]);
+	if (force || !optionExists("fpBluetooth")) localStorage['fpBluetooth'] = JSON.stringify([]);
+	if (force || !optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
+	if (force || !optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
 	if (typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
 	if (typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
 	if (typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
