@@ -703,32 +703,32 @@ function setDefaultOptions(force) {
 			defaultOptionValue(i, settingNames[i]);
 		}
 	}
-	if (force || !optionExists("blackList")) saveSetting('blackList', JSON.stringify([]));
-	if (force || !optionExists("whiteList")) saveSetting('whiteList', JSON.stringify(["*.googlevideo.com"]));
-	if (force || !optionExists("fpCanvas")) saveSetting('fpCanvas', JSON.stringify([]));
-	if (force || !optionExists("fpCanvasFont")) saveSetting('fpCanvasFont', JSON.stringify([]));
-	if (force || !optionExists("fpAudio")) saveSetting('fpAudio', JSON.stringify([]));
-	if (force || !optionExists("fpWebGL")) saveSetting('fpWebGL', JSON.stringify([]));
-	if (force || !optionExists("fpBattery")) saveSetting('fpBattery', JSON.stringify([]));
-	if (force || !optionExists("fpDevice")) saveSetting('fpDevice', JSON.stringify([]));
-	if (force || !optionExists("fpGamepad")) saveSetting('fpGamepad', JSON.stringify([]));
-	if (force || !optionExists("fpWebVR")) saveSetting('fpWebVR', JSON.stringify([]));
-	if (force || !optionExists("fpBluetooth")) saveSetting('fpBluetooth', JSON.stringify([]));
-	if (force || !optionExists("fpClientRectangles")) saveSetting('fpClientRectangles', JSON.stringify([]));
-	if (force || !optionExists("fpClipboard")) saveSetting('fpClipboard', JSON.stringify([]));
-	if (force || typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpCanvasFont'] === "undefined") sessionStorage['fpCanvasFont'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpAudio'] === "undefined") sessionStorage['fpAudio'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpWebGL'] === "undefined") sessionStorage['fpWebGL'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpBattery'] === "undefined") sessionStorage['fpBattery'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpDevice'] === "undefined") sessionStorage['fpDevice'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpGamepad'] === "undefined") sessionStorage['fpGamepad'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpWebVR'] === "undefined") sessionStorage['fpWebVR'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpBluetooth'] === "undefined") sessionStorage['fpBluetooth'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
-	if (force || typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("blackList")) saveSetting('blackList', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("whiteList")) saveSetting('whiteList', JSON.stringify(["*.googlevideo.com"]));
+	if ((force && force == '2') || !optionExists("fpCanvas")) saveSetting('fpCanvas', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpCanvasFont")) saveSetting('fpCanvasFont', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpAudio")) saveSetting('fpAudio', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpWebGL")) saveSetting('fpWebGL', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpBattery")) saveSetting('fpBattery', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpDevice")) saveSetting('fpDevice', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpGamepad")) saveSetting('fpGamepad', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpWebVR")) saveSetting('fpWebVR', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpBluetooth")) saveSetting('fpBluetooth', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpClientRectangles")) saveSetting('fpClientRectangles', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("fpClipboard")) saveSetting('fpClipboard', JSON.stringify([]));
+	if ((force && force == '2') || typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpCanvasFont'] === "undefined") sessionStorage['fpCanvasFont'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpAudio'] === "undefined") sessionStorage['fpAudio'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpWebGL'] === "undefined") sessionStorage['fpWebGL'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpBattery'] === "undefined") sessionStorage['fpBattery'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpDevice'] === "undefined") sessionStorage['fpDevice'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpGamepad'] === "undefined") sessionStorage['fpGamepad'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpWebVR'] === "undefined") sessionStorage['fpWebVR'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpBluetooth'] === "undefined") sessionStorage['fpBluetooth'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
 }
 function updateCount(tabId) {

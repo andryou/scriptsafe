@@ -551,9 +551,17 @@
       "description": "Restore Default Settings",
       "message": "Restore Default Settings"
    },
+   "restoredefault2": {
+      "description": "Restore Default Settings + Clear All Lists",
+      "message": "Restore Default Settings + Clear All Lists"
+   },
    "restoredefaultconfirm": {
-      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
-      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
+      "description": "Are you sure you want to restore the default settings? This will NOT clear your lists.",
+      "message": "Are you sure you want to restore the default settings? This will NOT clear your lists."
+   },
+   "restoredefaultconfirm2": {
+      "description": "Are you sure you want to restore the default settings AND clear all of your lists?",
+      "message": "Are you sure you want to restore the default settings AND clear all of your lists?"
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
