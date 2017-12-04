@@ -547,6 +547,14 @@
       "description": "Relaxed",
       "message": "तनावमुक्त"
    },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
+      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
+   },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
       "message": "पृष्ठ अस्थायी अनुमति रद्द"
