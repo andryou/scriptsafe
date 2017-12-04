@@ -1224,8 +1224,6 @@ function freshSync(force) {
 			} else {
 				chrome.storage.sync.clear(function() {
 					chrome.storage.sync.set(settingssync, function() {
-						console.log('Syncing data to sync storage');
-						console.log(settingssync);
 						if (chrome.extension.lastError){
 							alert(chrome.extension.lastError.message);
 						} else {
@@ -1250,8 +1248,6 @@ function importSyncHandle(mode) {
 		if (mode == '1' || localStorage['syncenable'] == 'true' || localStorage['sync'] == 'false') {
 			window.clearTimeout(synctimer);
 			chrome.storage.sync.get(null, function(changes) {
-				console.log('Checking sync data...');
-				console.log(changes);
 				if (typeof changes['lastSync'] !== 'undefined') {
 					if ((mode == '0' && changes['lastSync'] > localStorage['lastSync']) || (mode == '1' && changes['lastSync'] >= localStorage['lastSync'])) {
 						if (confirm(getLocale("syncdetect"))) {
@@ -1286,7 +1282,6 @@ function importSyncHandle(mode) {
 }
 function importSync(changes) {
 	for (var key in changes) {
-		console.log('Saving from sync to local: '+key);
 		if (key != 'scriptsafe_settings') {
 			localStorage[key] = changes[key];
 		} else if (key == 'scriptsafe_settings') {
@@ -1307,11 +1302,9 @@ function importSync(changes) {
 	listsSync();
 }
 function listsSync() {
-	console.log('Processing lists...');
 	listsSyncParse('whiteList');
 	listsSyncParse('blackList');
 	if (optionExists('fpCount')) {
-		console.log('Processing fingerprint list...'+localStorage['fpCount']);
 		var concatlist = '';
 		var listerror = false;
 		for (var i = 0, forcount=localStorage['fpCount']; i < forcount; i++) {
@@ -1325,7 +1318,6 @@ function listsSync() {
 			if (concatlist != '') {
 				concatlist = ssDecompress(concatlist);
 				var settings = concatlist.split("~");
-				console.log(settings);
 				if (settings.length > 0) {
 					$.each(settings, function(i, v) {
 						if ($.trim(v) != "") {
@@ -1340,7 +1332,6 @@ function listsSync() {
 		} else {
 			alert('Incomplete fingerprint whitelist data was detected. Very large lists are known to cause issues with syncing.\r\nAs a safety precaution, your fingerprint whitelist has not been updated and syncing has been disabled on this device to prevent overwriting data on other devices.\r\nPlease consider manually exporting your latest settings and importing it into your other devices from the Options page.');
 			localStorage['syncenable'] = 'false';
-			console.log('Incomplete fingerprint whitelist data detected: import cancelled');
 		}
 		delete localStorage['fpCount'];
 	}
@@ -1356,7 +1347,6 @@ function listsSyncParse(type) {
 		var listerror = false;
 		if (optionExists(type+'Count2')) counttype = type+'Count2';
 		else counttype = type+'Count';
-		console.log('Processing '+counttype+'...'+localStorage[counttype]);
 		concatlist = '';
 		if (localStorage[counttype] != '0') {
 			for (var i = 0, forcount=localStorage[counttype]; i < forcount; i++) {
@@ -1382,17 +1372,14 @@ function listsSyncParse(type) {
 			if (!listerror) {
 				if (counttype == type+'Count2') concatlist = ssDecompress(concatlist);
 				concatlistarr = concatlist.split(",");
-				console.log(concatlistarr);
 			}
 		}
 		if (!listerror) {
 			if (concatlist == '' || concatlistarr.length == 0) localStorage[type+''] = JSON.stringify([]);
 			else localStorage[type+''] = JSON.stringify(concatlistarr);
-			console.log('Sync data verified and complete: '+type+' was imported.');
 		} else {
 			alert('Incomplete '+type.toLowerCase()+' data was detected. Very large lists are known to cause issues with syncing.\r\nAs a safety precaution, your '+type.toLowerCase()+' has not been updated and syncing has been disabled on this device to prevent overwriting data on other devices.\r\nPlease consider manually exporting your latest settings and importing it into your other devices from the Options page.');
 			localStorage['syncenable'] = 'false';
-			console.log('Incomplete '+type.toLowerCase()+' data detected: import cancelled');
 		}
 		if (optionExists(type+'Count2')) delete localStorage[type+'Count2'];
 		if (optionExists(type+'Count')) delete localStorage[type+'Count'];
@@ -1531,11 +1518,8 @@ function postLangLoad() {
 	if (storageapi) {
 		chrome.storage.onChanged.addListener(function(changes, namespace) {
 			if (namespace == 'sync' && localStorage['syncenable'] == 'true') {
-				console.log('Something changed!');
-				console.log(changes);
 				if (typeof changes['lastSync'] !== 'undefined') {
 					if (changes['lastSync'].newValue && changes['lastSync'].newValue > localStorage['lastSync']) {
-						console.log('Last sync is newer, so import new data');
 						chrome.storage.sync.get(null, function(changes) {
 							importSync(changes);
 							if (localStorage['syncfromnotify'] == 'true') chrome.notifications.create('syncnotify', {'type': 'basic', 'iconUrl': '../img/icon48.png', 'title': 'ScriptSafe - '+getLocale("importsuccesstitle"), 'message': getLocale("importsuccess")}, function(callback) { updated = true; return true; });
