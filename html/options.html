@@ -16,7 +16,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<span id="title">ScriptSafe</span><br />by <a href="https://twitter.com/andryou" target="_blank">Andrew Y.</a><br /><br />
-					ScriptSafe: <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> / <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a> / <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a> | <a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Documentation</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+					ScriptSafe: <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> / <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a> / <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a> | <a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Website</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 					<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>) | <a href="https://www.andryou.com/scriptsafe/translate" target="_blank"><strong>Help Translate!</strong></a>
 				</div>
 				<div class="col-sm-6 text-right">
@@ -80,7 +80,6 @@
 								<tr><td class="col-sm-4"><label for="showcontext" class="i18_showcontext">Show in Context Menu:</label></td><td><input type="checkbox" id="showcontext" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_enabled">enabled</span>)</i></td></tr>
 								<tr><td class="col-sm-4"><label class="i18_hotkeys">Hotkeys:</label></td><td><p><strong class="i18_availablehotkeys">Available hotkey actions</strong>:<ul><li class="i18_hotkeystoggle">Temporarily allow/block all resources for a current tab</li><li class="i18_hotkeysremove">Remove temporary permissions for a current tab</li><li class="i18_hotkeysremoveall">Remove all temporary permissions</li></ul><p><a href="javascript:;" id="hotkeyspage" class="btn btn-primary">Configure ScriptSafe hotkeys</a> (<span class="i18_hotkeysinst">click on "Keyboard Shortcuts"</span>)</p></td></tr>
 							</table>
-							<div class="text-center"><p><br><input type="button" class="btn btn-danger" id="restoredefault" value="Restore Default Settings" /></p></div>
 						</div>
 						<div id="fingerprintprotection" class="tab">
 							<table class="table table-striped table-hover table-condensed">
@@ -280,6 +279,7 @@
 								<tr><td><strong class="i18_import">Import</strong></td><td><strong class="i18_export">Export</strong> (<strong><a href="javascript:;" id="settingsall">select all</a></strong>)</td></tr>
 								<tr><td class="col-sm-6"><p><textarea id="settingsimport" placeholder="Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button." class="form-control"></textarea></p><p><input type="button" class="btn btn-info i18_import" value="Import" id="importsettings" /></p></td><td class="col-sm-6"><p><textarea id="settingsexport" class="form-control" readonly="readonly"></textarea></p><p><input type="button" class="btn btn-warning" value="Save as Text File" id="savetxt" /></p></td></tr>
 							</table>
+							<div class="text-center"><p><br><input type="button" class="btn btn-danger" id="restoredefault" value="Restore Default Settings" /></p></div>
 						</div>
 					</div>
 					<hr>
