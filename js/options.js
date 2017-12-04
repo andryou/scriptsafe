@@ -51,6 +51,16 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#hotkeyspage").click(function() {
 		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
 	});
+	$("#restoredefault").click(function() {
+		if (confirm(bkg.getLocale("restoredefaultconfirm"))) {
+			bkg.setDefaultOptions(1);
+		}
+	});
+	$("#restoredefault2").click(function() {
+		if (confirm(bkg.getLocale("restoredefaultconfirm2"))) {
+			bkg.setDefaultOptions(2);
+		}
+	});
 	syncstatus = localStorage['syncenable'];
 	$(".row-offcanvas").show();
 	if (localStorage['optionslist'] == 'true') viewToggle(0);
@@ -60,6 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function i18load() {
 	$(".i18_support").html(bkg.getLocale("support"));
+	$("#restoredefault").val(bkg.getLocale("restoredefault"));
+	$("#restoredefault2").val(bkg.getLocale("restoredefault2"));
 	$(".i18_listallsettings").html(bkg.getLocale("listallsettings"));
 	$(".i18_groupallsettings").html(bkg.getLocale("groupallsettings"));
 	$(".i18_sections").html(bkg.getLocale("sections"));
@@ -121,6 +133,8 @@ function i18load() {
 	$(".i18_clientrectsdesc").html(bkg.getLocale("clientrectsdesc"));
 	$(".i18_keyboard").html(bkg.getLocale("keyboard"));
 	$(".i18_keyboarddesc").html(bkg.getLocale("keyboarddesc"));
+	$(".i18_browserplugins").html(bkg.getLocale("browserplugins"));
+	$(".i18_browserpluginsdesc").html(bkg.getLocale("browserpluginsdesc"));
 	$(".i18_paranoia").html(bkg.getLocale("paranoia"));
 	$(".i18_paranoiadesc").html(bkg.getLocale("paranoiadesc"));
 	$(".i18_annoyances").html(bkg.getLocale("annoyances"));
@@ -302,7 +316,7 @@ function saveElement(id) {
 	localStorage[id] = $("#"+id).val();
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version+" DEVELOPMENT");
+	$("#title").html("ScriptSafe v"+version);
 	loadCheckbox("enable");
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
@@ -340,6 +354,7 @@ function loadOptions() {
 	loadCheckbox("bluetooth");
 	loadElement("timezone");
 	loadCheckbox("keyboard");
+	loadCheckbox("browserplugins");
 	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
 	else $(".keydeltarow").show();
 	loadElement("keydelta");
@@ -350,6 +365,7 @@ function loadOptions() {
 	loadCheckbox("webbugs");
 	loadCheckbox("utm");
 	loadCheckbox("hashchecking");
+	loadCheckbox("hashallow");
 	loadElement("preservesamedomain");
 	loadCheckbox("paranoia");
 	loadCheckbox("clipboard");
@@ -361,11 +377,20 @@ function loadOptions() {
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
 	loadElement("useragentspoof_os");
+	loadElement("useragentcustom");
 	loadCheckbox("uaspoofallow");
 	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
-	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #applytoallow").hide();
-	else $("#useragentspoof_os, #applytoallow").show();
+	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #useragentcustombox, #applytoallow").hide();
+	else if ($("#useragentspoof").val() == 'custom') {
+		$("#useragentspoof_os").hide();
+		$("#useragentcustombox, #applytoallow").show();
+	} else {
+		$("#useragentcustombox").hide();
+		$("#useragentspoof_os, #applytoallow").show();
+	}
+	if ($("#hashchecking").val() == 'off') $("#applytoallowhash").hide();
+	else $("#applytoallowhash").show();
 	loadCheckbox("referrerspoofdenywhitelisted");
 	if (localStorage['referrerspoof'] != 'same' && localStorage['referrerspoof'] != 'domain' && localStorage['referrerspoof'] != 'off') {
 		$("#referrerspoof").val('custom');
@@ -418,12 +443,14 @@ function saveOptions() {
 	saveCheckbox("bluetooth");
 	saveElement("timezone");
 	saveCheckbox("keyboard");
+	saveCheckbox("browserplugins");
 	if (!$("#keyboard").prop('checked')) $(".keydeltarow").hide();
 	else $(".keydeltarow").show();
 	saveElement("keydelta");
 	saveCheckbox("webbugs");
 	saveCheckbox("utm");
 	saveCheckbox("hashchecking");
+	saveCheckbox("hashallow");
 	saveElement("preservesamedomain");
 	saveCheckbox("paranoia");
 	saveCheckbox("clipboard");
@@ -433,6 +460,7 @@ function saveOptions() {
 	saveCheckbox("cookies");
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
+	saveElement("useragentcustom");
 	saveCheckbox("uaspoofallow");
 	saveCheckbox("referrerspoofdenywhitelisted");
 	if ($("#referrerspoof").val() != 'custom') {
@@ -449,8 +477,16 @@ function saveOptions() {
 	saveCheckbox("domainsort");
 	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
-	if (localStorage['useragentspoof'] != 'off') $("#useragentspoof_os, #applytoallow").show();
-	else $("#useragentspoof_os, #applytoallow").hide();
+	if (localStorage['useragentspoof'] == 'off') $("#useragentspoof_os, #useragentcustombox, #applytoallow").hide();
+	else if (localStorage['useragentspoof'] == 'custom') {
+		$("#useragentspoof_os").hide();
+		$("#useragentcustombox, #applytoallow").show();
+	} else {
+		$("#useragentcustombox").hide();
+		$("#useragentspoof_os, #applytoallow").show();
+	}
+	if (localStorage['hashchecking'] != 'off') $("#applytoallowhash").show();
+	else $("#applytoallowhash").hide();
 	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
 	else $("#applyreferrerspoofdenywhitelisted").hide();
 	updateExport();
@@ -532,17 +568,21 @@ function downloadtxt() {
 	var downloadLink = document.createElement("a");
 	downloadLink.download = fileNameToSaveAs;
 	downloadLink.innerHTML = "Download File";
-	downloadLink.href = window.webkitURL.createObjectURL(textFileAsBlob);
-	downloadLink.click();
-	downloadLink.remove();
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+    downloadLink.onclick = function(e) { document.body.removeChild(e.target); };
+    downloadLink.style.display = "none";
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
 }
 function updateExport() {
 	settingnames = [];
 	$("#settingsexport").val("");
 	for (var i in localStorage) {
-		if (i != "version" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "whiteListCount2" && i != "blackListCount2" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 2) != "sb" && i.substr(0, 2) != "sw" && i.substr(0, 2) != "sf") {
-			settingnames.push(i);
-			$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
+		if (localStorage.hasOwnProperty(i)) {
+			if (i != "version" && i != "tempregexflag" && i != "whiteListCount" && i != "blackListCount" && i != "whiteListCount2" && i != "blackListCount2" && i.substr(0, 2) != "zb" && i.substr(0, 2) != "zw" && i.substr(0, 2) != "sb" && i.substr(0, 2) != "sw" && i.substr(0, 2) != "sf") {
+				settingnames.push(i);
+				$("#settingsexport").val($("#settingsexport").val()+i+"|"+localStorage[i]+"\n");
+			}
 		}
 	}
 	$("#settingsexport").val($("#settingsexport").val().slice(0,-1));
@@ -731,7 +771,7 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') whiteList = bkg.domainSort(whiteList);
 		else whiteList.sort();
 		for (var i in whiteList) {
-			if (whiteList[i][0] == '*' || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+bkg.getLocale("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
+			if ((whiteList[i][0] == '*' && whiteList[i][1] == '*') || whiteList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || whiteList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+bkg.getLocale("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
 			else whitelistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("trust")+' '+whiteList[i]+'\' data-domain=\''+whiteList[i]+'\' data-mode="0">'+bkg.getLocale("trust")+'</a> | <a href="javascript:;" class="domainMove i18_blacklistmove" title=\''+bkg.getLocale("blacklistmove")+'\' data-domain=\''+whiteList[i]+'\' data-mode="1"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+whiteList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+whiteList[i]+'</div>';
 		}
 	}
@@ -742,7 +782,7 @@ function listUpdate() {
 		if (localStorage['domainsort'] == 'true') blackList = bkg.domainSort(blackList);
 		else blackList.sort();
 		for (var i in blackList) {
-			if (blackList[i][0] == '*' || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+bkg.getLocale("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
+			if ((blackList[i][0] == '*' &&  blackList[i][1] == '*') || blackList[i].match(/^(?:(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){3}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})$/g) || blackList[i].match(/^(?:\[[A-Fa-f0-9:.]+\])(:[0-9]+)?$/g)) blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+bkg.getLocale("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
 			else blacklistCompiled += '<div class="listentry"><div class="entryoptions"><a href="javascript:;" style="color:green;" class="topDomainAdd" title=\''+bkg.getLocale("distrust")+' '+blackList[i]+'\' data-domain=\''+blackList[i]+'\' data-mode="1">'+bkg.getLocale("distrust")+'</a> | <a href="javascript:;" class="domainMove i18_whitelistmove" title=\''+bkg.getLocale("whitelistmove")+'\' data-domain=\''+blackList[i]+'\' data-mode="0"><span class="glyphicon glyphicon-retweet" aria-hidden="true"></span></a> | <a href="javascript:;" style="color:#f00;" class="domainRemover" rel=\''+blackList[i]+'\'><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></a></div>'+blackList[i]+'</div>';
 		}
 	}

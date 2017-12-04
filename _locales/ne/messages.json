@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "गुमनाम वृद्धि गर्न कुञ्जी थिचाइ समय थप अनियमित बनाउन (<strong>नोट: कुञ्जी प्रेस बीच अनियमित ढिलाइ भन्छन्; असक्षम यो सेटिङ अस्वीकार्य छ</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "पृष्ठ लिंक खोल्दै व्यवहार:"
@@ -538,6 +546,22 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "तनावमुक्त"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefault2": {
+      "description": "Restore Default Settings + Clear All Lists",
+      "message": "Restore Default Settings + Clear All Lists"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will NOT clear your lists.",
+      "message": "Are you sure you want to restore the default settings? This will NOT clear your lists."
+   },
+   "restoredefaultconfirm2": {
+      "description": "Are you sure you want to restore the default settings AND clear all of your lists?",
+      "message": "Are you sure you want to restore the default settings AND clear all of your lists?"
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
