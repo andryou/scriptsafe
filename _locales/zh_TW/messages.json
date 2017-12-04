@@ -197,7 +197,7 @@
    },
    "default": {
       "description": "Default",
-      "message": "默認"
+      "message": "預設"
    },
    "default_public_interface_only": {
       "description": "Protect Local IP",
@@ -420,8 +420,16 @@
       "message": "減少鍵盤指紋（進階用戶）："
    },
    "keyboarddesc": {
-      "description": "make keypress timings more random to increase anonymity (NOTE: adds a random delay between keypresses; disable this setting if unacceptable)",
-      "message": "令按鍵時序更隨機增加隱匿性（注意：增加了按鍵之間的隨機延遲;如不可接受，請停用此設定）"
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "令按鍵時序更隨機增加隱匿性<strong>（注意：增加了按鍵之間的隨機延遲;如不可接受，請停用此設定</strong>）"
+   },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
@@ -437,7 +445,7 @@
    },
    "mode": {
       "description": "Default Mode",
-      "message": "默認模式"
+      "message": "預設模式"
    },
    "newtab": {
       "description": "New Tab",
@@ -538,6 +546,14 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "寬鬆"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
+      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",

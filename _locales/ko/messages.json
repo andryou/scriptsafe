@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "익명성을 높이기 위해 키 입력 타이밍을 랜덤으로 합니다.(<strong>주의 : 키를 눌렀을때 임의의 지연을 추가합니다. 받아 들여지지 않는 경우 사용 중지 하세요</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "페이지 링크를 열 때 동작 :"
@@ -538,6 +546,14 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Relaxed"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
+      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",

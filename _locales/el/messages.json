@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "κάνει πάτημα πλήκτρου χρονισμούς πιο τυχαία για την αύξηση της ανωνυμίας (<strong>ΣΗΜΕΙΩΣΗ: προσθέτει μια τυχαία καθυστέρηση μεταξύ πατήματα πλήκτρων? απενεργοποιήσετε αυτή η ρύθμιση είναι απαράδεκτη</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "Σελίδας Link Άνοιγμα Συμπεριφορά:"
@@ -538,6 +546,14 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "χαλαρή"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
+      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",

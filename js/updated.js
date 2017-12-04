@@ -4,7 +4,7 @@
 var bkg = chrome.extension.getBackgroundPage();
 document.addEventListener('DOMContentLoaded', function () {
 	var version = '1.0.9.2';
-	$("#title").html("ScriptSafe v"+version+" DEVELOPMENT");
+	$("#title").html("ScriptSafe v"+version);
 	$('#versionno').html(version);
 	$("#loadoptionspage").click(function() { location.href='options.html'; });
 	$("#closepage").click(function() { window.open('', '_self', '');window.close(); });

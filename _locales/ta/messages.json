@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "தெரியாத அதிகரிக்க விசையழுத்தத்தின்போது நேரம் இன்னும் சீரற்ற செய்ய (<strong>குறிப்பு: விசையை அழுத்த இடையே ஒரு சீரற்ற தாமதம் சேர்க்கிறது; இந்த அமைப்பை ஏற்க தக்கது அல்ல முடக்க</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "பக்கம் இணைப்பை திறந்து நடத்தை:"
@@ -538,6 +546,14 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "தளர்வான"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
+      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",

@@ -423,6 +423,14 @@
       "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
       "message": "نام ظاہر نہ کرنے کو بڑھانے کے لئے کلید دبانے کے اوقات زیادہ بے ترتیب بنانے (<strong>نوٹ: اہم پریس درمیان ایک بے ترتیب تاخیر اضافہ کر دیتی ہے؛ غیر فعال اس ترتیب ناقابل قبول ہے</strong>)"
    },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
       "message": "پیج لنک افتتاحی برتاؤ:"
@@ -538,6 +546,14 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "آرام دہ"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will also clear all of your lists.",
+      "message": "Are you sure you want to restore the default settings? This will also clear all of your lists."
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
