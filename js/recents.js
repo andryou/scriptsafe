@@ -17,7 +17,7 @@ function padZeros(val) {
 	return val<10 ? '0'+val : val;
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version+" BETA");
+	$("#title").html("ScriptSafe v"+version);
 	var allowedarr = JSON.parse(bkg.getRecents('allowed'));
 	var blockedarr = JSON.parse(bkg.getRecents('blocked'));
 	var blockedarrcount = blockedarr.length;
