@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "آپ کو اس آلہ پر اپنے Google اکاؤنٹ سے موافقت پذیر ترتیبات درآمد کرنا چاہتے ہیں؟"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "hotkeys کے:"

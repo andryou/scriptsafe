@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "آیا شما می خواهید برای وارد کردن تنظیمات همگامسازی شده از حساب گوگل خود را به این دستگاه؟"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "کلید میانبر:"
