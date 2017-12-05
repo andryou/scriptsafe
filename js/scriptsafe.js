@@ -4,7 +4,7 @@
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
 var version = '1.0.9.7';
-var requestTypes, synctimer, recentstimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
+var requestTypes, synctimer, recentstimer, reenabletimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
 	'en_GB': 'English (UK)',
@@ -775,12 +775,13 @@ function revokeTemp() {
 	sessionStorage['fpClipboard'] = JSON.stringify([]);
 }
 function statuschanger(duration) {
+	window.clearTimeout(reenabletimer);
 	if (localStorage['enable'] == 'true') {
 		saveSetting('enable', 'false');
 		chrome.browserAction.setIcon({path: "../img/IconDisabled.png"});
 		if (duration) {
 			duration = duration * 60 * 1000;
-			setTimeout(function() { saveSetting('enable', 'true'); }, duration);
+			reenabletimer = setTimeout(function() { saveSetting('enable', 'true'); }, duration);
 		}
 	} else {
 		saveSetting('enable', 'true');
