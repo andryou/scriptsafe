@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "Ar norite importuoti sinchronizuoti parametrus iš savo \"Google\" paskyros šiuo prietaisu?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Klavišai:"

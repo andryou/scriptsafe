@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "Ви хочете імпортувати синхронізовані налаштування з облікового запису Google на цей пристрій робити?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "клавіатурний:"

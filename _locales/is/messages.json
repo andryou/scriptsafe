@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "Viltu flytja samstillt stillingar frá Google reikningnum þínum til að þetta tæki?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Hotkeys:"

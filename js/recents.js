@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.4';
+var version = '1.0.9.5';
 var bkg = chrome.extension.getBackgroundPage();
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {

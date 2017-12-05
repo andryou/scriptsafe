@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.9.4';
+var version = '1.0.9.5';
 var requestTypes, synctimer, recentstimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
@@ -766,10 +766,14 @@ function revokeTemp() {
 	sessionStorage['fpClientRectangles'] = JSON.stringify([]);
 	sessionStorage['fpClipboard'] = JSON.stringify([]);
 }
-function statuschanger() {
+function statuschanger(duration) {
 	if (localStorage['enable'] == 'true') {
 		localStorage['enable'] = 'false';
 		chrome.browserAction.setIcon({path: "../img/IconDisabled.png"});
+		if (duration) {
+			duration = duration * 60 * 1000;
+			setTimeout(function() { localStorage['enable'] = 'true'; }, duration);
+		}
 	} else {
 		localStorage['enable'] = 'true';
 		chrome.browserAction.setIcon({path: "../img/IconForbidden.png"});

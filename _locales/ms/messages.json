@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "Adakah anda ingin mengimport tetapan yang disegerakkan daripada Akaun Google anda kepada peranti ini?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Hotkeys:"

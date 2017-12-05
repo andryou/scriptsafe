@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "Bạn có muốn nhập khẩu các thiết lập đồng bộ hóa từ Tài khoản Google của bạn để thiết bị này?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Hotkeys:"
