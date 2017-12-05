@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "需要从您的谷歌帐户导入设置到此设备吗？"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "热键："

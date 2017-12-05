@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "Chcete importovat synchronizovaná nastavení ze svého účtu Firefox do tohoto zařízení?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Klávesové zkratky:"

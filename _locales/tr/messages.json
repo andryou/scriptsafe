@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "Bu cihaza Firefox Hesabinizdan senkronize ayarlari almak istiyor musunuz?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Kisayollar:"

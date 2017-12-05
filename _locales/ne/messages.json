@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "तपाईं यो उपकरणमा तपाईंको गुगल खाता बाट समन्वयन सेटिङहरू आयात गर्न चाहनुहुन्छ?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "हटकुञ्जीहरू:"

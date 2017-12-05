@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "Θέλετε να εισαγάγετε τις ρυθμίσεις συγχρονίζονται από τον Λογαριασμό σας Firefox σε αυτή τη συσκευή;"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "hotkeys:"

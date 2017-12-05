@@ -10,8 +10,13 @@ var intemp = false;
 var blocked = [];
 var allowed = [];
 var statuschange = function() {
+	$(this).hide();
+	$(this).after(bkg.getLocale("disable")+': <span class="box box3" data-duration="5">5m</span> <span class="box box3" data-duration="15">15m</span> <span class="box box3" data-duration="30">30m</span> <span class="box box3" data-duration="60">1h</span> <span class="box box2" data-duration="">'+bkg.getLocale("forever")+'</span>');
+	$("span[data-duration]").bind("click", statuschanger);
+};
+var statuschanger = function() {
 	port.postMessage({url: taburl, tid: tabid});
-	bkg.statuschanger();
+	bkg.statuschanger($(this).attr('data-duration'));
 	window.close();
 };
 var revokealltemp = function() {
@@ -105,7 +110,7 @@ function init() {
 						$("body").css('min-width', '400px');
 						$(".thirds").css('text-align', 'center').html('<i>'+bkg.getLocale("ssdisabled")+'</i>');
 						$("#parent").css('text-align', 'center').append('<div class="box box1 snstatus" title="'+bkg.getLocale("enabless")+'">'+bkg.getLocale("enabless")+'</div>');
-						$(".snstatus").bind("click", statuschange);
+						$(".snstatus").bind("click", statuschanger);
 						return false;
 					}
 					$(".thirds").html('<i>'+bkg.getLocale("noexternal")+'</i>');

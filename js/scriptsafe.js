@@ -774,10 +774,14 @@ function revokeTemp() {
 	sessionStorage['fpClientRectangles'] = JSON.stringify([]);
 	sessionStorage['fpClipboard'] = JSON.stringify([]);
 }
-function statuschanger() {
+function statuschanger(duration) {
 	if (localStorage['enable'] == 'true') {
 		saveSetting('enable', 'false');
 		chrome.browserAction.setIcon({path: "../img/IconDisabled.png"});
+		if (duration) {
+			duration = duration * 60 * 1000;
+			setTimeout(function() { saveSetting('enable', 'true'); }, duration);
+		}
 	} else {
 		saveSetting('enable', 'true');
 		chrome.browserAction.setIcon({path: "../img/IconForbidden.png"});

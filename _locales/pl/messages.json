@@ -367,6 +367,10 @@
       "description": "Hide",
       "message": "Ukryj"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Skróty Klawiszowe:"

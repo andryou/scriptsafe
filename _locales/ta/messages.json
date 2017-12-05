@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "நீங்கள் இந்த சாதனத்தை, உங்கள் Firefox கணக்கில் இருந்து ஒத்திசைந்த அமைப்புகள் இறக்குமதி செய்ய வேண்டுமா?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "குறுக்குவிசைகள்:"
