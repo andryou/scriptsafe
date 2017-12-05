@@ -59,11 +59,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	$("#restoredefault").click(function() {
 		if (confirm(bkg.getLocale("restoredefaultconfirm"))) {
 			bkg.setDefaultOptions(1);
+			notification(bkg.getLocale("settingssave"));
 		}
 	});
 	$("#restoredefault2").click(function() {
 		if (confirm(bkg.getLocale("restoredefaultconfirm2"))) {
 			bkg.setDefaultOptions(2);
+			notification(bkg.getLocale("settingssave"));
 		}
 	});
 	syncstatus = localStorage['syncenable'];
