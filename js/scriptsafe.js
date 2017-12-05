@@ -1122,19 +1122,10 @@ function freshSync(force) {
 			var i = 0;
 			for (var k in localStorage) {
 				if (localStorage.hasOwnProperty(k)) {
-					// legacy syncing method - start
-						if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf") {
-					// legacy syncing method - end
-					// new syncing method - start
-						//if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "fp") {
-					// new syncing method - end
+					if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "fp") {
 						simplesettings += k+"|"+localStorage[k]+"~";
-					// new syncing method - start
-						/*
-						} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
-							fpsettings += k+"|"+localStorage[k]+"~";
-						*/
-					// new syncing method - end
+					} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
+						fpsettings += k+"|"+localStorage[k]+"~";
 					}
 					if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
 					else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
@@ -1150,74 +1141,42 @@ function freshSync(force) {
 			if (zarr['sw'].length) {
 				for (var x = 0, forcount=zarr['sw'].length; x < forcount; x++) delete localStorage[zarr['sw'][x]];
 			}
-			// legacy syncing method - start
-				jsonstr = JSON.parse(localStorage['whiteList']).toString();
-				i = 0;
-				limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, limit);
-					settingssync["zw" + i] = segment;
-					jsonstr = jsonstr.substr(limit);
-					i++;
-				}
-				settingssync['whiteListCount'] = i;
-			// legacy syncing method - end
-			// new syncing method - start
-				/*
-				jsonstr = ssCompress(JSON.parse(localStorage['whiteList']).toString());
-				i = 0;
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, newlimit);
-					settingssync["sw" + i] = milliseconds+segment;
-					jsonstr = jsonstr.substr(newlimit);
-					i++;
-				}
-				settingssync['whiteListCount2'] = i;
-				if (zarr['zb'].length) {
-					for (var x = 0, forcount=zarr['zb'].length; x < forcount; x++) delete localStorage[zarr['zb'][x]];
-				}
-				if (zarr['sb'].length) {
-					for (var x = 0, forcount=zarr['sb'].length; x < forcount; x++) delete localStorage[zarr['sb'][x]];
-				}
-				*/
-			// new syncing method - end
-			// legacy syncing method - start
-				i = 0;
-				jsonstr = JSON.parse(localStorage['blackList']).toString();
-				limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, limit);
-					settingssync["zb" + i] = segment;
-					jsonstr = jsonstr.substr(limit);
-					i++;
-				}
-				settingssync['blackListCount'] = i;
-			// legacy syncing method - end
-			// new syncing method - start
-			/*
-				jsonstr = ssCompress(JSON.parse(localStorage['blackList']).toString());
-				i = 0;
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, newlimit);
-					settingssync["sb" + i] = milliseconds+segment;
-					jsonstr = jsonstr.substr(newlimit);
-					i++;
-				}
-				settingssync['blackListCount2'] = i;
-				if (zarr['sf'].length) {
-					for (var x = 0, forcount=zarr['sf'].length; x < forcount; x++) delete localStorage[zarr['sf'][x]];
-				}
-				i = 0;
-				jsonstr = ssCompress(fpsettings.slice(0,-1));
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, newlimit);
-					settingssync["sf" + i] = milliseconds+segment;
-					jsonstr = jsonstr.substr(newlimit);
-					i++;
-				}
-				settingssync['fpCount'] = i;
-			*/
-			// new syncing method - end
+			jsonstr = ssCompress(JSON.parse(localStorage['whiteList']).toString());
+			i = 0;
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sw" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['whiteListCount2'] = i;
+			if (zarr['zb'].length) {
+				for (var x = 0, forcount=zarr['zb'].length; x < forcount; x++) delete localStorage[zarr['zb'][x]];
+			}
+			if (zarr['sb'].length) {
+				for (var x = 0, forcount=zarr['sb'].length; x < forcount; x++) delete localStorage[zarr['sb'][x]];
+			}
+			jsonstr = ssCompress(JSON.parse(localStorage['blackList']).toString());
+			i = 0;
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sb" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['blackListCount2'] = i;
+			if (zarr['sf'].length) {
+				for (var x = 0, forcount=zarr['sf'].length; x < forcount; x++) delete localStorage[zarr['sf'][x]];
+			}
+			i = 0;
+			jsonstr = ssCompress(fpsettings.slice(0,-1));
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sf" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['fpCount'] = i;
 			settingssync['lastSync'] = milliseconds;
 			localStorage['lastSync'] = milliseconds;
 			if (chrome.storage.sync.QUOTA_BYTES < JSON.stringify(settingssync).length) {
