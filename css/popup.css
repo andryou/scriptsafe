@@ -40,6 +40,25 @@ table { padding-top: 35px; }
 	border-right: 3px solid #ccc;
 	background-color: #eee;
 }
+.chevron::before {
+	border-style: solid;
+	border-width: 0.1em 0.1em 0 0;
+	content: '';
+	display: inline-block;
+	height: 0.45em;
+	left: 0.15em;
+	position: relative;
+	vertical-align: top;
+	width: 0.45em;
+	float: right;
+	margin-right: 10px;
+	transform: rotate(-45deg);
+	top: 0.45em;
+}
+.chevron.uparrow::before {
+	transform: rotate(135deg);
+	top: 0.1em;
+}
 .fpoptions { display: none; }
 .thirditem:hover {
 	background-color: #f0f0f0;

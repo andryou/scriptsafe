@@ -3,8 +3,8 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.9.5';
-var requestTypes, synctimer, recentstimer, reenabletimer, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
+var version = '1.0.9.6';
+var requestTypes, synctimer, recentstimer, reenabletimer, useragentinterval, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
 	'en_GB': 'English (UK)',
@@ -25,7 +25,7 @@ var langs = {
 	'es': 'Spanish',
 	'sv': 'Swedish'
 }
-var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard'];
+var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard', 'fpBrowserPlugins'];
 var fpLists = [];
 var fpListsSession = [];
 var popup = [];
@@ -41,7 +41,7 @@ var updated = false;
 var userAgent = '';
 function refreshRequestTypes() {
 	clearRecents();
-	genUserAgent();
+	genUserAgent(1);
 	requestTypes = ['main_frame'];
 	if (localStorage['iframe'] == 'true' || localStorage['frame'] == 'true')
 		requestTypes.push('sub_frame');
@@ -117,8 +117,8 @@ function mitigate(req) {
 					break;
 				case 'User-Agent':
 					if (localStorage['useragentspoof'] != 'off' && (localStorage['uaspoofallow'] == 'true' || enabled(req.url) == 'true')) {
-						if (!userAgent) genUserAgent();
-						req.requestHeaders[i].value = userAgent;
+						if (!userAgent || localStorage['useragentinterval'] == 'request') genUserAgent();
+						if (userAgent) req.requestHeaders[i].value = userAgent;
 					}
 					break;
 			}
@@ -126,10 +126,28 @@ function mitigate(req) {
 	}
 	return { requestHeaders: req.requestHeaders };
 }
-function genUserAgent() {
+function genUserAgent(force) {
 	var os;
-	if (localStorage['useragentspoof'] == 'custom') userAgent = localStorage['useragentcustom'];
-	else {
+	if (localStorage['useragentspoof'] == 'custom') {
+		var userAgents = localStorage['useragentcustom'];
+		if (userAgents) {
+			userAgents = userAgents.split("\n");
+			var uaCount = userAgents.length;
+			if (uaCount == 1) userAgent = userAgents[0];
+			else {
+				window.clearInterval(useragentinterval);
+				if (localStorage['useragentinterval'] == 'off') userAgent = userAgents[0]; // use only first user agent string if set to off
+				else {
+					if (localStorage['useragentinterval'] == 'interval') {
+						useragentinterval = window.setInterval(function() { genUserAgent(1) }, localStorage['useragentintervalmins']*60*1000);
+						if (force) userAgent = userAgents[Math.floor(Math.random() * uaCount)];
+					} else if (localStorage['useragentinterval'] == 'request') {
+						userAgent = userAgents[Math.floor(Math.random() * uaCount)];
+					}
+				}
+			}
+		}
+	} else {
 		if (localStorage['useragentspoof_os'] == 'w10') os = 'Windows NT 10.0';
 		else if (localStorage['useragentspoof_os'] == 'w81') os = 'Windows NT 6.3';
 		else if (localStorage['useragentspoof_os'] == 'w8') os = 'Windows NT 6.2';
@@ -156,7 +174,7 @@ function genUserAgent() {
 		else if (localStorage['useragentspoof_os'] == 'openbsd64') os = 'X11; U; OpenBSD i686';
 		else if (localStorage['useragentspoof_os'] == 'openbsd32') os = 'X11; U; OpenBSD i686';
 		else if (localStorage['useragentspoof_os'] == 'chromeos') os = 'X11; U; CrOS i686 0.13.507';
-		if (localStorage['useragentspoof'] == 'chrome55')
+		if (localStorage['useragentspoof'] == 'chrome62')
 			userAgent = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36';
 		else if (localStorage['useragentspoof'] == 'chrome55')
 			userAgent = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36';
@@ -383,7 +401,7 @@ function enabled(url) {
 	return 'false';
 }
 function enabledfp(domainname, fptype) {
-	if ((localStorage['canvas'] == 'false' && fptype == 'fpCanvas') || (localStorage['canvasfont'] == 'false' && fptype == 'fpCanvasFont') || (localStorage['audioblock'] == 'false' && fptype == 'fpAudio') || (localStorage['webgl'] == 'false' && fptype == 'fpWebGL') || (localStorage['battery'] == 'false' && fptype == 'fpBattery') || (localStorage['webrtcdevice'] == 'false' && fptype == 'fpDevice') || (localStorage['gamepad'] == 'false' && fptype == 'fpGamepad') || (localStorage['webvr'] == 'false' && fptype == 'fpWebVR') || (localStorage['bluetooth'] == 'false' && fptype == 'fpBluetooth') || (localStorage['clientrects'] == 'false' && fptype == 'fpClientRectangles') || (localStorage['clipboard'] == 'false' && fptype == 'fpClipboard')) return '-1';
+	if ((localStorage['canvas'] == 'false' && fptype == 'fpCanvas') || (localStorage['canvasfont'] == 'false' && fptype == 'fpCanvasFont') || (localStorage['audioblock'] == 'false' && fptype == 'fpAudio') || (localStorage['webgl'] == 'false' && fptype == 'fpWebGL') || (localStorage['battery'] == 'false' && fptype == 'fpBattery') || (localStorage['webrtcdevice'] == 'false' && fptype == 'fpDevice') || (localStorage['gamepad'] == 'false' && fptype == 'fpGamepad') || (localStorage['webvr'] == 'false' && fptype == 'fpWebVR') || (localStorage['bluetooth'] == 'false' && fptype == 'fpBluetooth') || (localStorage['clientrects'] == 'false' && fptype == 'fpClientRectangles') || (localStorage['clipboard'] == 'false' && fptype == 'fpClipboard') || (localStorage['browserplugins'] == 'false' && fptype == 'fpBrowserPlugins')) return '-1';
 	if (in_array(domainname, fpLists[fptype])) return '1';
 	if (in_array(domainname, fpListsSession[fptype])) return '2';
 	return '-1';
@@ -674,6 +692,8 @@ function setDefaultOptions(force) {
 		"useragentspoof": "off",
 		"useragentspoof_os": "off",
 		"useragentcustom": "",
+		"useragentinterval": "off",
+		"useragentintervalmins": "5",
 		"uaspoofallow": "false",
 		"referrerspoof": "off",
 		"referrerspoofdenywhitelisted": "false",
@@ -708,6 +728,7 @@ function setDefaultOptions(force) {
 	if ((force && force == '2') || !optionExists("fpBluetooth")) localStorage['fpBluetooth'] = JSON.stringify([]);
 	if ((force && force == '2') || !optionExists("fpClientRectangles")) localStorage['fpClientRectangles'] = JSON.stringify([]);
 	if ((force && force == '2') || !optionExists("fpClipboard")) localStorage['fpClipboard'] = JSON.stringify([]);
+	if ((force && force == '2') || !optionExists("fpBrowserPlugins")) localStorage['fpBrowserPlugins'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
@@ -721,6 +742,7 @@ function setDefaultOptions(force) {
 	if ((force && force == '2') || typeof sessionStorage['fpBluetooth'] === "undefined") sessionStorage['fpBluetooth'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['fpClientRectangles'] === "undefined") sessionStorage['fpClientRectangles'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['fpClipboard'] === "undefined") sessionStorage['fpClipboard'] = JSON.stringify([]);
+	if ((force && force == '2') || typeof sessionStorage['fpBrowserPlugins'] === "undefined") sessionStorage['fpBrowserPlugins'] = JSON.stringify([]);
 	chrome.browserAction.setBadgeBackgroundColor({color:[208, 0, 24, 255]});
 }
 function updateCount(tabId) {
@@ -765,6 +787,7 @@ function revokeTemp() {
 	sessionStorage['fpBluetooth'] = JSON.stringify([]);
 	sessionStorage['fpClientRectangles'] = JSON.stringify([]);
 	sessionStorage['fpClipboard'] = JSON.stringify([]);
+	sessionStorage['fpBrowserPlugins'] = JSON.stringify([]);
 }
 function statuschanger(duration) {
 	window.clearTimeout(reenabletimer);
@@ -879,7 +902,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		for (var i in fpTypes) {
 			fpListStatus[fpTypes[i]] = enabledfp(extractedDomain, fpTypes[i]);
 		}
-		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_webvr: fpListStatus['fpWebVR'], fp_bluetooth: fpListStatus['fpBluetooth'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], webvr: localStorage['webvr'], bluetooth: localStorage['bluetooth'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], browserplugins: localStorage['browserplugins'], keyboard: localStorage['keyboard'], keydelta: localStorage['keydelta'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard'], dataurl: localStorage['dataurl'], useragent: userAgent, uaspoofallow: localStorage['uaspoofallow']});
+		sendResponse({status: localStorage['enable'], enable: enabled(sender.tab.url), fp_canvas: fpListStatus['fpCanvas'], fp_canvasfont: fpListStatus['fpCanvasFont'], fp_audio: fpListStatus['fpAudio'], fp_webgl: fpListStatus['fpWebGL'], fp_battery: fpListStatus['fpBattery'], fp_device: fpListStatus['fpDevice'], fp_gamepad: fpListStatus['fpGamepad'], fp_webvr: fpListStatus['fpWebVR'], fp_bluetooth: fpListStatus['fpBluetooth'], fp_clientrectangles: fpListStatus['fpClientRectangles'], fp_clipboard: fpListStatus['fpClipboard'], fp_browserplugins: fpListStatus['fpBrowserPlugins'], experimental: experimental, mode: localStorage['mode'], annoyancesmode: localStorage['annoyancesmode'], antisocial: localStorage['antisocial'], whitelist: whiteList, blacklist: blackList, whitelistSession: sessionWhiteList, blackListSession: sessionBlackList, script: localStorage['script'], noscript: localStorage['noscript'], object: localStorage['object'], applet: localStorage['applet'], embed: localStorage['embed'], iframe: localStorage['iframe'], frame: localStorage['frame'], audio: localStorage['audio'], video: localStorage['video'], image: localStorage['image'], annoyances: localStorage['annoyances'], preservesamedomain: localStorage['preservesamedomain'], canvas: localStorage['canvas'], canvasfont: localStorage['canvasfont'], audioblock: localStorage['audioblock'], webgl: localStorage['webgl'], battery: localStorage['battery'], webrtcdevice: localStorage['webrtcdevice'], gamepad: localStorage['gamepad'], webvr: localStorage['webvr'], bluetooth: localStorage['bluetooth'], clientrects: localStorage['clientrects'], timezone: localStorage['timezone'], browserplugins: localStorage['browserplugins'], keyboard: localStorage['keyboard'], keydelta: localStorage['keydelta'], webbugs: localStorage['webbugs'], referrer: localStorage['referrer'], referrerspoofdenywhitelisted: localStorage['referrerspoofdenywhitelisted'], linktarget: localStorage['linktarget'], paranoia: localStorage['paranoia'], clipboard: localStorage['clipboard'], dataurl: localStorage['dataurl'], useragent: userAgent, uaspoofallow: localStorage['uaspoofallow']});
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
@@ -906,6 +929,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 				else if (i == 'fpBluetooth') fptype = 'Bluetooth Enumeration';
 				else if (i == 'fpClientRectangles') fptype = 'Client Rectangles';
 				else if (i == 'fpClipboard') fptype = 'Clipboard Interference';
+				else if (i == 'fpBrowserPlugins') fptype = 'Browser Plugins Enumeration';
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				ITEMS[sender.tab.id]['allowed'].push([cleanedUrl, fptype, extractedDomain, fpListStatus[i], false, true]);
 				recentlog['allowed'].push([new Date().getTime(), sender.tab.url, fptype, extractedDomain, sender.tab.url, fpListStatus[i], false, true]);
@@ -934,7 +958,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if (request.src) {
 			var cleanedUrl = removeParams(request.src);
 			if (typeof ITEMS[sender.tab.id]['blocked'] === 'undefined') ITEMS[sender.tab.id]['blocked'] = [];
-			if (!UrlInList(cleanedUrl, ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'WebVR Enumeration' || request.node == 'Bluetooth Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference' || request.node == 'Data URL') {
+			if (!UrlInList(cleanedUrl, ITEMS[sender.tab.id]['blocked']) || request.node == 'NOSCRIPT' || request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'WebVR Enumeration' || request.node == 'Bluetooth Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference' || request.node == 'Data URL' || request.node == 'Browser Plugins Enumeration') {
 				var extractedDomain = extractDomainFromURL(request.src);
 				if (extractedDomain.substr(0,4) == 'www.') extractedDomain = extractedDomain.substr(4);
 				var extractedTabDomain = extractDomainFromURL(ITEMS[sender.tab.id]['url']);
@@ -942,7 +966,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, request.src, '-1', '-1', false, false]);
 					recentlog['blocked'].push([new Date().getTime(), request.src, request.node, request.src, ITEMS[sender.tab.id]['url'], '-1', '-1', false, false]);
 					updateRecents('blocked');
-				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'WebVR Enumeration' || request.node == 'Bluetooth Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference' || request.node == 'Data URL') {
+				} else if (request.node == 'Canvas Fingerprint' || request.node == 'Canvas Font Access' || request.node == 'Audio Fingerprint' || request.node == 'WebGL Fingerprint' || request.node == 'Battery Fingerprint' || request.node == 'Device Enumeration' || request.node == 'Gamepad Enumeration' || request.node == 'WebVR Enumeration' || request.node == 'Bluetooth Enumeration' || request.node == 'Spoofed Timezone' || request.node == 'Client Rectangles' || request.node == 'Clipboard Interference' || request.node == 'Data URL' || request.node == 'Browser Plugins Enumeration') {
 					ITEMS[sender.tab.id]['blocked'].push([request.src, request.node, extractedDomain, '-1', '-1', false, true]);
 					recentlog['blocked'].push([new Date().getTime(), request.src, request.node, extractedDomain, ITEMS[sender.tab.id]['url'], '-1', '-1', false, true]);
 					updateRecents('blocked');

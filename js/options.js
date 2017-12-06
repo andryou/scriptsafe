@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.5';
+var version = '1.0.9.6';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
@@ -62,6 +62,10 @@ document.addEventListener('DOMContentLoaded', function () {
 			bkg.setDefaultOptions(2);
 			notification(bkg.getLocale("settingssave"));
 		}
+	});
+	$("#useragentcustom").keyup(function() {
+		if ($(this).val().indexOf("\n") != -1) $(".useragentrandom").show();
+		else $(".useragentrandom").hide();
 	});
 	syncstatus = localStorage['syncenable'];
 	$(".row-offcanvas").show();
@@ -163,6 +167,9 @@ function i18load() {
 	$(".i18_useragentspoof").html(bkg.getLocale("useragentspoof"));
 	$(".i18_useragentspoofdesc").html(bkg.getLocale("useragentspoofdesc"));
 	$(".i18_uaspoofallow").html(bkg.getLocale("uaspoofallow"));
+	$(".i18_request").html(bkg.getLocale("request"));
+	$(".i18_interval").html(bkg.getLocale("interval"));
+	$(".i18_minutes").html(bkg.getLocale("minutes"));
 	$(".i18_referrerspoof").html(bkg.getLocale("referrerspoof"));
 	$(".i18_referrerspoofdesc").html(bkg.getLocale("referrerspoofdesc"));
 	$("#userref").attr('placeholder', bkg.getLocale("userref"));
@@ -319,7 +326,7 @@ function saveCheckbox(id) {
 	localStorage[id] = document.getElementById(id).checked;
 }
 function saveElement(id) {
-	localStorage[id] = $("#"+id).val();
+	localStorage[id] = $("#"+id).val().replace(/\|/g, '');
 }
 function loadOptions() {
 	$("#title").html("ScriptSafe v"+version);
@@ -388,6 +395,8 @@ function loadOptions() {
 	loadElement("useragentspoof");
 	loadElement("useragentspoof_os");
 	loadElement("useragentcustom");
+	loadElement("useragentinterval");
+	loadElement("useragentintervalmins");
 	loadCheckbox("uaspoofallow");
 	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
@@ -410,6 +419,9 @@ function loadOptions() {
 		loadElement("referrerspoof");
 		$("#customreferrer").hide();
 	}
+	if (localStorage['useragentcustom'].indexOf("\n") == -1) $(".useragentrandom").hide();
+	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
+	else $("#useragentintervaloption").hide();
 	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
 	else $("#applyreferrerspoofdenywhitelisted").show();
 	listUpdate();
@@ -474,6 +486,8 @@ function saveOptions() {
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
 	saveElement("useragentcustom");
+	saveElement("useragentinterval");
+	saveElement("useragentintervalmins");
 	saveCheckbox("uaspoofallow");
 	saveCheckbox("referrerspoofdenywhitelisted");
 	if ($("#referrerspoof").val() != 'custom') {
@@ -500,6 +514,9 @@ function saveOptions() {
 	}
 	if (localStorage['hashchecking'] != 'off') $("#applytoallowhash").show();
 	else $("#applytoallowhash").hide();
+	if (localStorage['useragentcustom'].indexOf("\n") == -1) $(".useragentrandom").hide();
+	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
+	else $("#useragentintervaloption").hide();
 	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
 	else $("#applyreferrerspoofdenywhitelisted").hide();
 	updateExport();
@@ -541,7 +558,7 @@ function settingsImport() {
 		$.each(settings, function(i, v) {
 			if ($.trim(v) != "") {
 				var settingentry = $.trim(v).split("|");
-				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && $.trim(settingentry[1]) != '') {
+				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && ($.trim(settingentry[1]) != '' || $.trim(settingentry[0]) == 'useragentcustom')) {
 					if ($.trim(settingentry[0]) == 'whiteList' || $.trim(settingentry[0]) == 'blackList') {
 						var listarray = $.trim(settingentry[1]).replace(/(\[|\]|")/g,"").split(",");
 						if ($.trim(settingentry[0]) == 'whiteList' && listarray.toString() != '') localStorage['whiteList'] = JSON.stringify(listarray);
@@ -812,7 +829,7 @@ function listUpdate() {
 	updateExport();
 }
 function fpListUpdate() {
-	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard'];
+	var fpTypes = ['fpCanvas', 'fpCanvasFont', 'fpAudio', 'fpWebGL', 'fpBattery', 'fpDevice', 'fpGamepad', 'fpWebVR', 'fpBluetooth', 'fpClientRectangles', 'fpClipboard', 'fpBrowserPlugins'];
 	for (var i in fpTypes) {
 		fpListProcess(fpTypes[i]);
 	}

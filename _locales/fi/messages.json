@@ -419,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "Asetukset tuotu onnistuneesti ja synkronointi 10 sekunnissa"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "Vähennä Näppäimistö Sormenjälkien (<strong>kokeneille käyttäjille</strong>):"
@@ -446,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "Loose - mahdollistaa saman verkkotunnuksen ja aliverkkotunnukset"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -550,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Rento"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

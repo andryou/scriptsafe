@@ -419,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "설정을 성공적으로 가져왔으며 10 초내로 동기화됩니다."
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "키보드 Fingerprinting 방지 (<strong>고급 사용자 전용</strong>):"
@@ -446,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "Loose - 같은 도메인 및 하위 도메인을 허용"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -550,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Relaxed"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",
