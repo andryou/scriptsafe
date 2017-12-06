@@ -486,6 +486,16 @@ function saveOptions() {
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
 	saveElement("useragentcustom");
+	var userAgents = $("#useragentcustom").val();
+	if (userAgents) {
+		var validUserAgents = [];
+		userAgents = userAgents.split("\n");
+		for (var i=0, userAgentNum=userAgents.length; i<userAgentNum; i++) {
+			if ($.trim(userAgents[i])) validUserAgents.push(userAgents[i]);
+		}
+		$("#useragentcustom").val(validUserAgents.join("\n").replace(/\|/g, ''));
+	}
+	saveElement("useragentcustom");
 	saveElement("useragentinterval");
 	saveElement("useragentintervalmins");
 	saveCheckbox("uaspoofallow");
