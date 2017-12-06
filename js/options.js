@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			notification(bkg.getLocale("settingssave"));
 		}
 	});
-	$("#useragentcustom").keyup(function() {
+	$("#useragent").keyup(function() {
 		if ($(this).val().indexOf("\n") != -1) $(".useragentrandom").show();
 		else $(".useragentrandom").hide();
 	});
@@ -322,11 +322,17 @@ function loadCheckbox(id) {
 function loadElement(id) {
 	$("#"+id).val(localStorage[id]);
 }
+function loadList(id) {
+	$("#"+id).val(JSON.parse(localStorage[id]).join("\n"));
+}
 function saveCheckbox(id) {
 	localStorage[id] = document.getElementById(id).checked;
 }
 function saveElement(id) {
 	localStorage[id] = $("#"+id).val().replace(/\|/g, '');
+}
+function saveList(id) {
+	localStorage[id] = JSON.stringify($("#"+id).val().split("\n"));
 }
 function loadOptions() {
 	$("#title").html("ScriptSafe v"+version);
@@ -392,18 +398,18 @@ function loadOptions() {
 	loadCheckbox("cookies");
 	loadElement("useragentspoof");
 	loadElement("useragentspoof_os");
-	loadElement("useragentcustom");
+	loadList("useragent");
 	loadElement("useragentinterval");
 	loadElement("useragentintervalmins");
 	loadCheckbox("uaspoofallow");
 	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
-	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #useragentcustombox, #applytoallow").hide();
+	if ($("#useragentspoof").val() == 'off') $("#useragentspoof_os, #useragentbox, #applytoallow").hide();
 	else if ($("#useragentspoof").val() == 'custom') {
 		$("#useragentspoof_os").hide();
-		$("#useragentcustombox, #applytoallow").show();
+		$("#useragentbox, #applytoallow").show();
 	} else {
-		$("#useragentcustombox").hide();
+		$("#useragentbox").hide();
 		$("#useragentspoof_os, #applytoallow").show();
 	}
 	if ($("#hashchecking").val() == 'off') $("#applytoallowhash").hide();
@@ -417,7 +423,7 @@ function loadOptions() {
 		loadElement("referrerspoof");
 		$("#customreferrer").hide();
 	}
-	if (localStorage['useragentcustom'].indexOf("\n") == -1) $(".useragentrandom").hide();
+	if ($("#useragent").val().indexOf("\n") == -1) $(".useragentrandom").hide();
 	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
 	else $("#useragentintervaloption").hide();
 	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
@@ -481,17 +487,16 @@ function saveOptions() {
 	saveCheckbox("cookies");
 	saveElement("useragentspoof");
 	saveElement("useragentspoof_os");
-	saveElement("useragentcustom");
-	var userAgents = $("#useragentcustom").val();
+	var userAgents = $("#useragent").val();
 	if (userAgents) {
 		var validUserAgents = [];
 		userAgents = userAgents.split("\n");
 		for (var i=0, userAgentNum=userAgents.length; i<userAgentNum; i++) {
 			if ($.trim(userAgents[i])) validUserAgents.push(userAgents[i]);
 		}
-		$("#useragentcustom").val(validUserAgents.join("\n").replace(/\|/g, ''));
+		$("#useragent").val(validUserAgents.join("\n").replace(/\|/g, ''));
 	}
-	saveElement("useragentcustom");
+	saveList("useragent");
 	saveElement("useragentinterval");
 	saveElement("useragentintervalmins");
 	saveCheckbox("uaspoofallow");
@@ -510,17 +515,17 @@ function saveOptions() {
 	saveCheckbox("domainsort");
 	if (localStorage['annoyances'] == 'true' || localStorage['cookies'] == 'true') $("#annoyancesmode").removeAttr('disabled');
 	else $("#annoyancesmode").attr('disabled', 'true');
-	if (localStorage['useragentspoof'] == 'off') $("#useragentspoof_os, #useragentcustombox, #applytoallow").hide();
+	if (localStorage['useragentspoof'] == 'off') $("#useragentspoof_os, #useragentbox, #applytoallow").hide();
 	else if (localStorage['useragentspoof'] == 'custom') {
 		$("#useragentspoof_os").hide();
-		$("#useragentcustombox, #applytoallow").show();
+		$("#useragentbox, #applytoallow").show();
 	} else {
-		$("#useragentcustombox").hide();
+		$("#useragentbox").hide();
 		$("#useragentspoof_os, #applytoallow").show();
 	}
 	if (localStorage['hashchecking'] != 'off') $("#applytoallowhash").show();
 	else $("#applytoallowhash").hide();
-	if (localStorage['useragentcustom'].indexOf("\n") == -1) $(".useragentrandom").hide();
+	if ($("#useragent").val().indexOf("\n") == -1) $(".useragentrandom").hide();
 	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
 	else $("#useragentintervaloption").hide();
 	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
@@ -564,11 +569,12 @@ function settingsImport() {
 		$.each(settings, function(i, v) {
 			if ($.trim(v) != "") {
 				var settingentry = $.trim(v).split("|");
-				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && ($.trim(settingentry[1]) != '' || $.trim(settingentry[0]) == 'useragentcustom')) {
-					if ($.trim(settingentry[0]) == 'whiteList' || $.trim(settingentry[0]) == 'blackList') {
+				if (settingnames.indexOf($.trim(settingentry[0])) != -1 && ($.trim(settingentry[1]) != '' || $.trim(settingentry[0]) == 'useragent')) {
+					if ($.trim(settingentry[0]) == 'whiteList' || $.trim(settingentry[0]) == 'blackList' || $.trim(settingentry[0]) == 'useragent') {
 						var listarray = $.trim(settingentry[1]).replace(/(\[|\]|")/g,"").split(",");
 						if ($.trim(settingentry[0]) == 'whiteList' && listarray.toString() != '') localStorage['whiteList'] = JSON.stringify(listarray);
 						else if ($.trim(settingentry[0]) == 'blackList' && listarray.toString() != '') localStorage['blackList'] = JSON.stringify(listarray);
+						else if ($.trim(settingentry[0]) == 'useragent' && listarray.toString() != '') localStorage['useragent'] = JSON.stringify(listarray);
 					} else 
 						localStorage[$.trim(settingentry[0])] = $.trim(settingentry[1]);
 				} else {
