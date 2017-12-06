@@ -80,19 +80,6 @@ function checkWebRTC() {
 	doc.write('<script src="../js/webrtctest.js"></script>');
 	doc.close();
 }
-if (typeof chrome.storage !== 'undefined') {
-	storageapi = true;
-}
-if (typeof chrome.webRequest !== 'undefined') {
-	if (experimental == 0) experimental = 1;
-	var requestUrls = ["http://*/*", "https://*/*"];
-	refreshRequestTypes();
-	if (typeof chrome.webRequest !== 'undefined') {
-		chrome.webRequest.onBeforeRequest.addListener(ScriptSafe, {"types": requestTypes, "urls": requestUrls}, ['blocking']);
-		chrome.webRequest.onBeforeSendHeaders.addListener(mitigate, {"types": requestTypes, "urls": requestUrls}, ['requestHeaders', 'blocking']);
-		chrome.webRequest.onHeadersReceived.addListener(inlineblock, {"types": requestTypes, "urls": requestUrls}, ['responseHeaders', 'blocking']);
-	}
-}
 function mitigate(req) {
 	if (localStorage["enable"] == "false" || (localStorage['useragentspoof'] == 'off' && localStorage['cookies'] == 'false' && localStorage['referrerspoof'] == 'off')) {
 		return;
@@ -1478,6 +1465,19 @@ function postLangLoad() {
 		saveSetting('version', version);
 	}
 	setDefaultOptions();
+	if (typeof chrome.storage !== 'undefined') {
+		storageapi = true;
+	}
+	if (typeof chrome.webRequest !== 'undefined') {
+		if (experimental == 0) experimental = 1;
+		var requestUrls = ["http://*/*", "https://*/*"];
+		refreshRequestTypes();
+		if (typeof chrome.webRequest !== 'undefined') {
+			chrome.webRequest.onBeforeRequest.addListener(ScriptSafe, {"types": requestTypes, "urls": requestUrls}, ['blocking']);
+			chrome.webRequest.onBeforeSendHeaders.addListener(mitigate, {"types": requestTypes, "urls": requestUrls}, ['requestHeaders', 'blocking']);
+			chrome.webRequest.onHeadersReceived.addListener(inlineblock, {"types": requestTypes, "urls": requestUrls}, ['responseHeaders', 'blocking']);
+		}
+	}
 	if (storageapi) {
 		browser.storage.onChanged.addListener(function(changes, namespace) {
 			if (namespace == 'sync') {
