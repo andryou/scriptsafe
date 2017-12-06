@@ -419,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "அமைப்புகள் வெற்றிகரமாக இறக்குமதி மற்றும் 10 நொடிகளில் ஒத்திசைவை"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "விசைப்பலகை கைரேகை குறைக்க (<strong>மேம்பட்ட பயனர்கள்</strong>):"
@@ -446,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "லூஸ் - அதே களத்தில் மற்றும் உள்களங்களை அனுமதி"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -550,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "தளர்வான"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

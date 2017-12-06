@@ -419,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "Instellingen met succes geïmporteerd en synchroniseren in 10 seconden"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "Verminder keyboard fingerprinting (<strong>voor gevorderde gebruikers</strong>):"
@@ -446,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "Los - staat ​​hetzelfde domein en sub-domeinen toe"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -550,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Ontspannen"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

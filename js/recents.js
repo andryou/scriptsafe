@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.2';
+var version = '1.0.9.3';
 var bkg = chrome.extension.getBackgroundPage();
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
@@ -58,6 +58,7 @@ function loadOptions() {
 			else if (blockedarr[i][2] == 'Client Rectangles') itemdomain = 'client.rectangles';
 			else if (blockedarr[i][2] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
 			else if (blockedarr[i][2] == 'Data URL') itemdomain = 'data.url';
+			else if (blockedarr[i][2] == 'Browser Plugins Enumeration') itemdomain = 'browser.plugins.enumeration';
 			var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
 			var fpitemdomainfriendly = fpitemdomain.replace(/[.\[\]:]/g,"_");
 			var clearBtn = '';
@@ -114,6 +115,7 @@ function loadOptions() {
 			else if (allowedarr[i][2] == 'Bluetooth Enumeration') itemdomain = 'bluetooth.enumeration';
 			else if (allowedarr[i][2] == 'Client Rectangles') itemdomain = 'client.rectangles';
 			else if (allowedarr[i][2] == 'Clipboard Interference') itemdomain = 'clipboard.interference';
+			else if (allowedarr[i][2] == 'Browser Plugins Enumeration') itemdomain = 'browser.plugins.enumeration';
 			var itemdomainfriendly = itemdomain.replace(/[.\[\]:]/g,"_");
 			var fpitemdomainfriendly = fpitemdomain.replace(/[.\[\]:]/g,"_");
 			var clearBtn = '';
@@ -171,6 +173,7 @@ function handleclick() {
 		else if (fpType == 'bluetooth.enumeration') fpList = 'fpBluetooth';
 		else if (fpType == 'client.rectangles') fpList = 'fpClientRectangles';
 		else if (fpType == 'clipboard.interference') fpList = 'fpClipboard';
+		else if (fpType == 'browser.plugins.enumeration') fpList = 'fpBrowserPlugins';
 		if (clear) {
 			bkg.fpDomainHandler('**.'+bkg.getDomain(url), fpList, -1);
 			bkg.fpDomainHandler(url, fpList, -1);
