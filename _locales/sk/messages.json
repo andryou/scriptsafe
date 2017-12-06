@@ -419,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "Nastavenie úspešne dovezené a synchronizácia za 10 sekúnd"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "Znížit Klávesnica Odobratie Odtlackov Prstov (<strong>pre pokrocilých používatelov</strong>):"
@@ -446,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "Loose - umožnujú rovnakú doménu a subdomén"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -550,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Uvolnený"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

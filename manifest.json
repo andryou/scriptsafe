@@ -53,5 +53,5 @@
    "name": "ScriptSafe",
    "options_ui": { "page": "html/options.html", "open_in_tab": true },
    "permissions": [ "http://*/*", "https://*/*", "tabs", "unlimitedStorage", "webRequest", "webRequestBlocking", "storage", "notifications", "privacy", "contextMenus" ],
-   "version": "1.0.9.7"
+   "version": "1.0.9.8"
 }
