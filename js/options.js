@@ -335,7 +335,7 @@ function saveList(id) {
 	localStorage[id] = JSON.stringify($("#"+id).val().split("\n"));
 }
 function loadOptions() {
-	$("#title").html("ScriptSafe v"+version);
+	$("#title").html("ScriptSafe v"+version+" BETA");
 	loadCheckbox("enable");
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
