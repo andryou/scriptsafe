@@ -1462,17 +1462,17 @@ function getLocale(str) {
 function getLangs() {
 	return langs;
 }
-var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
-if (!optionExists("locale")) {
-	saveSetting('locale', 'en_US');
-} else {
-	if (typeof langs[uiLang] === 'undefined') {
-		saveSetting('locale', 'en_US');
-	}
-}
 loadSettingsFromStorage();
 var storageData = browser.storage.local.get('locale');
 storageData.then(function(data) {
+	if (data && data.locale) {
+		var uiLang = chrome.i18n.getUILanguage().replace(/-/g, '_');
+		if (typeof langs[uiLang] === 'undefined') {
+			saveSetting('locale', 'en_US');
+		}
+	} else {
+		saveSetting('locale', 'en_US');
+	}
 	initLang(data.locale, 1);
 }, null);
 function postLangLoad() {
