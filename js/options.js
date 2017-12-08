@@ -429,6 +429,7 @@ function loadOptions() {
 		$("#customreferrer").hide();
 	}
 	if ($("#useragent").val().indexOf("\n") == -1) $(".useragentrandom").hide();
+	else $(".useragentrandom").show();
 	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
 	else $("#useragentintervaloption").hide();
 	if ($("#referrerspoof").val() == 'off') $("#applyreferrerspoofdenywhitelisted").hide();
@@ -533,6 +534,7 @@ function saveOptions() {
 	if (localStorage['hashchecking'] != 'off') $("#applytoallowhash").show();
 	else $("#applytoallowhash").hide();
 	if ($("#useragent").val().indexOf("\n") == -1) $(".useragentrandom").hide();
+	else $(".useragentrandom").show();
 	if (localStorage['useragentinterval'] == 'interval') $("#useragentintervaloption").show();
 	else $("#useragentintervaloption").hide();
 	if (localStorage['referrerspoof'] != 'off') $("#applyreferrerspoofdenywhitelisted").show();
