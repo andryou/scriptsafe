@@ -149,7 +149,7 @@ function fingerprintProtection() {
 		function processFunctions(scope) {
 			/* Browser Plugins */
 			if (browserplugins == 'true') {
-				scope.Object.defineProperty(navigator, "plugins", {enumerable: true, configurable: false, get: function() {
+				scope.Object.defineProperty(navigator, "plugins", {enumerable: true, configurable: true, get: function() {
 					var browserplugins_triggerblock = scope.document.createElement('div');
 					browserplugins_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_browserplugins';
 					browserplugins_triggerblock.title = 'navigator.plugins';
