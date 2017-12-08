@@ -115,9 +115,8 @@ function mitigate(req) {
 function genUserAgent(force) {
 	var os;
 	if (localStorage['useragentspoof'] == 'custom') {
-		var userAgents = localStorage['useragentcustom'];
+		var userAgents = JSON.parse(localStorage['useragent']);
 		if (userAgents) {
-			userAgents = userAgents.split("\n");
 			var uaCount = userAgents.length;
 			if (uaCount == 1) userAgent = userAgents[0];
 			else {
@@ -687,7 +686,6 @@ function setDefaultOptions(force) {
 		"domainsort": "true",
 		"useragentspoof": "off",
 		"useragentspoof_os": "off",
-		"useragentcustom": "",
 		"useragentinterval": "off",
 		"useragentintervalmins": "5",
 		"uaspoofallow": "false",
@@ -710,6 +708,10 @@ function setDefaultOptions(force) {
 			defaultOptionValue(i, settingNames[i]);
 		}
 	}
+	if (optionExists("useragentcustom")) {
+		saveSetting('useragent', JSON.stringify([localStorage['useragentcustom']]));
+		deleteSetting('useragentcustom');
+	}
 	if ((force && force == '2') || !optionExists("blackList")) saveSetting('blackList', JSON.stringify([]));
 	if ((force && force == '2') || !optionExists("whiteList")) saveSetting('whiteList', JSON.stringify(["*.googlevideo.com"]));
 	if ((force && force == '2') || !optionExists("fpCanvas")) saveSetting('fpCanvas', JSON.stringify([]));
@@ -724,6 +726,7 @@ function setDefaultOptions(force) {
 	if ((force && force == '2') || !optionExists("fpClientRectangles")) saveSetting('fpClientRectangles', JSON.stringify([]));
 	if ((force && force == '2') || !optionExists("fpClipboard")) saveSetting('fpClipboard', JSON.stringify([]));
 	if ((force && force == '2') || !optionExists("fpBrowserPlugins")) saveSetting('fpBrowserPlugins', JSON.stringify([]));
+	if ((force && force == '2') || !optionExists("useragent")) saveSetting('useragent', JSON.stringify([]));
 	if ((force && force == '2') || typeof sessionStorage['blackList'] === "undefined") sessionStorage['blackList'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['whiteList'] === "undefined") sessionStorage['whiteList'] = JSON.stringify([]);
 	if ((force && force == '2') || typeof sessionStorage['fpCanvas'] === "undefined") sessionStorage['fpCanvas'] = JSON.stringify([]);
@@ -1139,6 +1142,7 @@ function freshSync(force) {
 			zarr['sw'] = [];
 			zarr['sb'] = [];
 			zarr['sf'] = [];
+			zarr['su'] = [];
 			var milliseconds = (new Date).getTime();
 			var limit;
 			var segment;
@@ -1146,7 +1150,7 @@ function freshSync(force) {
 			var i = 0;
 			for (var k in localStorage) {
 				if (localStorage.hasOwnProperty(k)) {
-					if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "fp") {
+					if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "su" && k.substr(0, 2) != "fp") {
 						simplesettings += k+"|"+localStorage[k]+"~";
 					} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
 						fpsettings += k+"|"+localStorage[k]+"~";
@@ -1156,6 +1160,7 @@ function freshSync(force) {
 					else if (k.substr(0, 2) == "sw") zarr['sw'].push(k);
 					else if (k.substr(0, 2) == "sb") zarr['sb'].push(k);
 					else if (k.substr(0, 2) == "sf") zarr['sf'].push(k);
+					else if (k.substr(0, 2) == "su") zarr['su'].push(k);
 				}
 			}
 			settingssync['scriptsafe_settings'] = simplesettings.slice(0,-1);
@@ -1201,6 +1206,18 @@ function freshSync(force) {
 				i++;
 			}
 			settingssync['fpCount'] = i;
+			jsonstr = ssCompress(JSON.parse(localStorage['useragent']).toString());
+			if (zarr['su'].length) {
+				for (var x = 0, forcount=zarr['su'].length; x < forcount; x++) delete localStorage[zarr['su'][x]];
+			}
+			i = 0;
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["su" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['useragentCount2'] = i;
 			settingssync['lastSync'] = milliseconds;
 			saveSetting('lastSync', milliseconds);
 			if (102400 < JSON.stringify(settingssync).length) { // 102400 = chrome.storage.sync.QUOTA_BYTES
@@ -1282,6 +1299,7 @@ function importSync(changes) {
 function listsSync() {
 	listsSyncParse('whiteList');
 	listsSyncParse('blackList');
+	listsSyncParse('useragent');
 	if (optionExists('fpCount')) {
 		var concatlist = '';
 		var listerror = false;
