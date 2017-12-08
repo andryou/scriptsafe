@@ -699,7 +699,10 @@ function setDefaultOptions(force) {
 		}
 	}
 	if (optionExists("updatemessagenotify")) delete localStorage['updatemessagenotify'];
-	if (optionExists("useragentcustom")) delete localStorage['useragentcustom'];
+	if (optionExists("useragentcustom")) {
+		localStorage['useragent'] = JSON.stringify([localStorage['useragentcustom']]);
+		delete localStorage['useragentcustom'];
+	}
 	if ((force && force == '2') || !optionExists("blackList")) localStorage['blackList'] = JSON.stringify([]);
 	if ((force && force == '2') || !optionExists("whiteList")) localStorage['whiteList'] = JSON.stringify(["*.googlevideo.com"]);
 	if ((force && force == '2') || !optionExists("fpCanvas")) localStorage['fpCanvas'] = JSON.stringify([]);
@@ -1130,6 +1133,7 @@ function freshSync(force) {
 			zarr['sw'] = [];
 			zarr['sb'] = [];
 			zarr['sf'] = [];
+			zarr['su'] = [];
 			var milliseconds = (new Date).getTime();
 			var limit;
 			var segment;
@@ -1141,7 +1145,7 @@ function freshSync(force) {
 						if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "su") {
 					// legacy syncing method - end
 					// new syncing method - start
-						//if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "su" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "fp") {
+						//if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "su" && k.substr(0, 2) != "fp") {
 					// new syncing method - end
 						simplesettings += k+"|"+localStorage[k]+"~";
 					// new syncing method - start

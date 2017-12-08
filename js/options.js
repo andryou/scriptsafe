@@ -491,10 +491,12 @@ function saveOptions() {
 	if (userAgents) {
 		var validUserAgents = [];
 		userAgents = userAgents.split("\n");
+		var sanitizedAgent;
 		for (var i=0, userAgentNum=userAgents.length; i<userAgentNum; i++) {
-			if ($.trim(userAgents[i])) validUserAgents.push(userAgents[i]);
+			sanitizedAgent = $.trim(userAgents[i].replace(/\|/g, ''));
+			if (sanitizedAgent) validUserAgents.push(sanitizedAgent);
 		}
-		$("#useragent").val(validUserAgents.join("\n").replace(/\|/g, ''));
+		$("#useragent").val(validUserAgents.join("\n"));
 	}
 	saveList("useragent");
 	saveElement("useragentinterval");
