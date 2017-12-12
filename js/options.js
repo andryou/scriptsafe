@@ -334,7 +334,7 @@ function saveCheckbox(id) {
 	bkg.saveSetting(id, document.getElementById(id).checked);
 }
 function saveElement(id) {
-	bkg.saveSetting(id, $("#"+id).val().replace(/\|/g, ''));
+	bkg.saveSetting(id, $("#"+id).val().replace(/[~|]/g, ''));
 }
 function saveList(id) {
 	localStorage[id] = JSON.stringify($("#"+id).val().split("\n"));
@@ -499,7 +499,7 @@ function saveOptions() {
 		userAgents = userAgents.split("\n");
 		var sanitizedAgent;
 		for (var i=0, userAgentNum=userAgents.length; i<userAgentNum; i++) {
-			sanitizedAgent = $.trim(userAgents[i].replace(/\|/g, ''));
+			sanitizedAgent = $.trim(userAgents[i].replace(/[~|]/g, ''));
 			if (sanitizedAgent) validUserAgents.push(sanitizedAgent);
 		}
 		$("#useragent").val(validUserAgents.join("\n"));

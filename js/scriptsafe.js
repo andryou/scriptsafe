@@ -159,7 +159,9 @@ function genUserAgent(force) {
 		else if (localStorage['useragentspoof_os'] == 'openbsd64') os = 'X11; U; OpenBSD i686';
 		else if (localStorage['useragentspoof_os'] == 'openbsd32') os = 'X11; U; OpenBSD i686';
 		else if (localStorage['useragentspoof_os'] == 'chromeos') os = 'X11; U; CrOS i686 0.13.507';
-		if (localStorage['useragentspoof'] == 'chrome62')
+		if (localStorage['useragentspoof'] == 'chrome63')
+			userAgent = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.84 Safari/537.36';
+		else if (localStorage['useragentspoof'] == 'chrome62')
 			userAgent = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.94 Safari/537.36';
 		else if (localStorage['useragentspoof'] == 'chrome55')
 			userAgent = 'Mozilla/5.0 ('+os+') AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36';
