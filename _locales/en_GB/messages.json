@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "Do you want to import the synced settings from your Google Account to this device?"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Hotkeys:"
@@ -415,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "Settings imported successfully and syncing in 10 seconds"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):"
@@ -442,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "Loose - allow same domain and subdomains"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -546,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Relaxed"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

@@ -1,0 +1,858 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Ανακτήσει τον έλεγχο του web και να σερφάρετε με μεγαλύτερη ασφάλεια."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Σε όλους τους τομείς"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "Επιτρέπω"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "επιτρέπονται Είδη"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Αποκλεισμένα Στοιχεία"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Να επιτρέπεται σε όλους Αποκλεισμένοι Για Session"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Αποκλεισμός ανεπιθύμητο περιεχόμενο:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "καταργήσετε ανεπιθύμητο περιεχόμενο από γνωστές / domains malware διαφήμιση? τομείς που συγκεντρώθηκαν από <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPs ΔΥΝΑΜΕΩΝ</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( διακομιστές διαφημίσεων / παρακολούθησης)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>ΔΥΝΑΜΕΩΝ έργου Πέτρου της Lowe</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Ανεπιθύμητα Λειτουργία Περιεχομένου:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Χαλαρή = στη λίστα επιτρεπόμενων τομέων δεν θα πρέπει να αποκλειστεί? Αυστηρή = πεδία στη λίστα τομέα ανεπιθύμητο θα πρέπει να αποκλειστεί ακόμη και αν στη λίστα επιτρεπόμενων"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Αντικοινωνικός"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Αντικοινωνική Λειτουργία:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "Πάντα αφαιρέστε την κοινωνική widgets / κουμπιά, ακόμη και αν στη λίστα επιτρεπόμενων"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Για πιο ολοκληρωμένη κλείδωμα, ελέγξτε <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Αποσύνδεση</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, και / ή <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock προέλευσης</a> με όλες τις λίστες συνδρομής για το <a href = https://www.fanboy.co.nz/ target =_blank>ιστοσελίδα Fanboy</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Αποκλεισμός ήχου δακτυλικών αποτυπωμάτων:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "εμποδίζουν τη λήψη δακτυλικών αποτυπωμάτων μέσω του API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Αποκλεισμός μπαταρίας δακτυλικών αποτυπωμάτων:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "εμποδίζουν τη λήψη δακτυλικών αποτυπωμάτων μέσω του API μπαταρίας"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Ρυθμίσεις Συμπεριφοράς"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Αποκλεισμός (συνιστάται)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "Φραγμός"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "Αποκλεισμένοι"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Να δεσμεύσουν το σύνολο κατοικίδια Για Session"
+   },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Αποκλεισμός Bluetooth Καταμέτρηση:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "αποτρέψει έχουν συσκευές ανιχνεύονται μέσω του Bluetooth API"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "μαζική εισαγωγή"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Εισαγωγή στη λίστα"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Μαζική Εισαγωγή"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Αντιγραφή και επικόλληση πεδία στο παρακάτω πλαίσιο. Κάθε τομέας θα πρέπει να είναι σε ξεχωριστή γραμμή."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Καμβά δακτυλικών αποτυπωμάτων Προστασία:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe δεν μπορεί να επεξεργαστεί αυτή τη σελίδα.</strong><br /><br />Παρακαλώ δοκιμάστε να επισκεφθείτε μια ιστοσελίδα."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Λευκά Ανάγνωση"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "τυχαία Ανάγνωση"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Εντελώς Block Ανάγνωση"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "προστατεύουν από τη λήψη δακτυλικών αποτυπωμάτων επιχειρεί μέσα από &lt;canvas&gt; στοιχεία"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Αποκλεισμός καμβά γραμματοσειράς Πρόσβασης:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "αποτρέψει γραμματοσειρές του συστήματος από το να απαριθμούνται με &lt;canvas&gt; στοιχεία. Μπορεί να αλληλεπιδράσει με το Google Docs."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Κλασικό Επιλογές Λειτουργία:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "εάν σημειώσατε, κλείνει τις επιλογές καρτέλα κάθε φορά μια επιλογή έχει πατηθεί"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Καθαρός"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "καθαρός"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Αποκλεισμός Πελάτης ορθογώνια:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "εμποδίζουν τη λήψη δακτυλικών αποτυπωμάτων μέσω της μεθόδου υπολογισμού ορθογώνια στοιχείου. Μπορεί να επηρεάσει ορισμένες αναπτυσσόμενα μενού."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Αποτρέψτε Πρόχειρο Παρέμβαση:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "αποτρέψει σελίδες από παρεμβαίνουν με δράσεις που πρόχειρο"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Κοντά"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Αποκλεισμός ανεπιθύμητων Cookies:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "μπλοκ cookies από γνωστή διαφήμιση / περιοχές malware? παρακάτω λειτουργία ισχύει σε αυτό, καθώς και"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Έθιμο"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Αθέτηση"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Προστατέψτε Τοπική IP"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Αρνούμαι"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Προστατέψτε τοπικές και δημόσιες διευθύνσεις IP"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "Καθιστώ ανίκανο"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "ανάπηρος"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Ανάπηρος"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Συγχρονισμός είναι απενεργοποιημένη.\r\nΜη διστάσετε να μεταβείτε στη σελίδα επιλογών ανά πάσα στιγμή να συγχρονίσετε τις ρυθμίσεις σας (να κάνει ένα αντίγραφο ασφαλείας των ρυθμίσεών σας, εάν είναι απαραίτητο)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Απενεργοποίηση και Αφαίρεση:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Δυσπιστία"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "δυσπιστία"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "ίδιο τομέα"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Ταξινόμηση κατά τομέα:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Βοήθεια"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Μη έγκυρη τομέας / διεύθυνση"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Η τομέα ή τη διεύθυνση πρέπει να περιέχει μερικά γράμματα / αριθμούς"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Τομέα δεν μπορεί να προστεθεί, όπως είναι ο πάροχος των ανεπιθύμητο περιεχόμενο (βλ Αποκλεισμός ανεπιθύμητο περιεχόμενο ή / και Αντικοινωνική Λειτουργία)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "ταξινομεί λίστες URL με πεδία σε αυτή τη σελίδα και στον πίνακα"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Συμβουλή: Πατήστε το συνδυασμό πλήκτρων CTRL + F για να αναζητήσετε τις λίστες"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Να μην εμφανιστεί ξανά τη σελίδα"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Καθιστώ ικανό:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "ενεργοποιημένη"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Ενεργοποίηση ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Ενεργοποίηση συγχρονισμού:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Εξαγωγή"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Οι ρυθμίσεις σας έχουν επιτυχώς συγχρονιστεί!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Ρυθμίσεις που έχουν συγχρονιστεί!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "δακτυλικών αποτυπωμάτων Προστασίας"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Δακτυλικών αποτυπωμάτων Προστασίας (μπορεί να σπάσει sites)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Φαίνεται ότι δεν έχετε συγχρονιστεί τις ρυθμίσεις σας στο λογαριασμό σας στο Google ακόμα.\r\nScriptSafe είναι έτοιμος να συγχρονίσετε τις τρέχουσες ρυθμίσεις σας στο λογαριασμό σας στο Google.\r\nΚάντε κλικ στο «ΟΚ», αν θέλετε να συνεχίσετε.\r\nΑν όχι, κάντε κλικ στο κουμπί «Ακύρωση», και από την άλλη συσκευή με τις προτιμώμενες ρυθμίσεις σας, ενημερώστε ScriptSafe και κάντε κλικ στο κουμπί OK, όταν παρουσιάζονται με αυτό το μήνυμα."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Θέλετε να συγχρονίσετε τις τρέχουσες ρυθμίσεις σας στο Λογαριασμό σας Google;\r\nΣημείωση: παρακαλώ μην πιέσετε αυτό συχνά? υπάρχει ένα όριο 10 ανά λεπτό και 1.000 ανά ώρα."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Θέλετε να εισαγάγετε τις ρυθμίσεις συγχρονίζονται από τον Λογαριασμό σας Google σε αυτή τη συσκευή;"
+   },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "hotkeys:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Γενικές Ρυθμίσεις"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Αποκλεισμός Gamepad Καταμέτρηση:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "αποτρέψει έχουν συσκευές ανιχνεύονται μέσω του Gamepad API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Διαθέσιμες ενέργειες hotkey"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Προσωρινά επιτρέπουν / μπλοκάρουν όλους τους πόρους για μια καρτέλα τρέχουσα"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Αφαιρέστε προσωρινές άδειες για τρέχουσας καρτέλας"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Κατάργηση όλων των προσωρινών αδειών"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Διαμορφώστε ScriptSafe hotkeys"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "κάντε κλικ στις συντομεύσεις πληκτρολογίου"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Λίστα όλων των ρυθμίσεων"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "αγνοείται Επιτρέψτε"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Οι τελευταίες ρυθμίσεις έχουν ληφθεί επιτυχώς!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Ρυθμίσεις λήψη!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Ομάδα Όλα Ρυθμίσεις"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Αφαιρέστε Πιθανή Παρακολούθηση Hash:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "αφαιρέστε το δυνατόν μάρκες παρακολούθησης πέρασε χρήση χασίς, όπου υπάρχει ένα χαρακτηριστικό και αξία (π.χ. #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "Κρύβω"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Εισαγωγή"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Εισαγωγή / Επαναφορά ρυθμίσεων"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "Ρυθμίσεις που εισάγονται με επιτυχία"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
+      "message": "Ρυθμίσεις που εισάγονται με επιτυχία, εκτός από τα εξής (άδειο αξία ή μη αναγνωρισμένης όνομα):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Ρυθμίσεις εισαχθεί με επιτυχία και το συγχρονισμό σε 10 δευτερόλεπτα"
+   },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Μειώστε λήψη δακτυλικών αποτυπωμάτων Πληκτρολόγιο (<strong>για προχωρημένους χρήστες</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "κάνει πάτημα πλήκτρου χρονισμούς πιο τυχαία για την αύξηση της ανωνυμίας (<strong>ΣΗΜΕΙΩΣΗ: προσθέτει μια τυχαία καθυστέρηση μεταξύ πατήματα πλήκτρων? απενεργοποιήσετε αυτή η ρύθμιση είναι απαράδεκτη</strong>)"
+   },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Σελίδας Link Άνοιγμα Συμπεριφορά:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "τροποποιεί τον τρόπο ανοίγονται όλοι οι σύνδεσμοι"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Χαλαρά - επιτρέπουν ίδιο τομέα και υποτομείς"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "προεπιλεγμένη λειτουργία"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Νέα καρτέλα"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Αυτή η καρτέλα έχει φορτωθεί κανένα εξωτερικούς πόρους"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "δεν φιλτραρισμένα"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Αυτό το πρόγραμμα περιήγησης δεν υποστηρίζει προστασία WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Εκτός-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Μόνο για Unwhitelisted Domains"
+   },
+   "options": {
+      "description": "Options",
+      "message": "επιλογές"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Παράνοια Mode:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "μπλοκ επιτρέπεται τομείς σε μη εισηγμένες τομείς"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Επικόλληση σε ρυθμίσεις και δοκιμάστε ξανά"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Σεβαστείτε ιδίου τομέα:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "διατήρηση στοιχείων του ίδιου τομέα"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Ρυθμίσεις απορρήτου"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Τυχαίος"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Εμφάνιση κουμπιού Αξιολόγηση:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Εκτίμηση"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "αν επιλεγεί, προσθέτει το κουμπί βαθμολογία κάτω τομείς στην καρτέλα αναδυόμενο"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe ενημερώθηκε πρόσφατα / επαναφόρτωση.</strong><br /><br />Θα πρέπει είτε να ανανεώσετε αυτή την καρτέλα, να δημιουργήσετε μια νέα καρτέλα, ή να κάνετε επανεκκίνηση του browser σας, ώστε ScriptSafe να εργαστούν."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Αποκλεισμός παραπομπής κλικ Μέσω:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "μπλοκ παραπομπής πληροφορίες όταν κάνετε κλικ σε συνδέσμους τρίτων (Σημείωση: Η ρύθμιση αυτή για να σε όλους τους τομείς μπορεί να προκαλέσει προβλήματα (π.χ. μικρογραφίες Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Συστήνοντας Κοροϊδία:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>προειδοποίηση</strong>: αν ενεργοποιηθεί, μπορεί να σπάσει μερικές περιοχές (π.χ. συνδεθείτε)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Auto-Refresh Σελίδα:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "σελίδα αυτόματης ανανέωσης μετά την αλλαγή λίστα"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "χαλαρή"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefault2": {
+      "description": "Restore Default Settings + Clear All Lists",
+      "message": "Restore Default Settings + Clear All Lists"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will NOT clear your lists.",
+      "message": "Are you sure you want to restore the default settings? This will NOT clear your lists."
+   },
+   "restoredefaultconfirm2": {
+      "description": "Are you sure you want to restore the default settings AND clear all of your lists?",
+      "message": "Are you sure you want to restore the default settings AND clear all of your lists?"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Ανακαλέσει Page προσωρινές άδειες"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "Να ανακαλέσει όλες τις προσωρινές"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "ίδιο έγγραφο"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "ίδιο Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Αποθηκεύσετε"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Αποθήκευση ως αρχείο κειμένου"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "ενότητες"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "επιλογή όλων"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Αντιγράψτε και επικολλήστε τις ρυθμίσεις που θέλετε να εισάγετε στο ScriptSafe σε αυτό το πλαίσιο, στη συνέχεια, κάντε κλικ στο κουμπί Εισαγωγή."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Οι ρυθμίσεις αποθηκεύτηκαν"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Ρυθμίσεις αποθηκεύονται και το συγχρονισμό σε 10 δευτερόλεπτα"
+   },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe είναι απενεργοποιημένη"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "Αυστηρός"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Αυστηρή - επιτρέπει μόνο ίδιο τομέα"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Για την υποστήριξη της ανάπτυξης, κάντε κλικ στην καρδιά :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Έχετε ενεργοποιήσει αυτόματο συγχρονισμό. Για να αποφευχθεί η διαγραφή προηγουμένως τα συγχρονισμένα δεδομένα σας (αν υπάρχουν), κάντε κλικ στο Ρυθμίσεις συγχρονισμού από το Λογαριασμό Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Ρυθμίσεις συγχρονισμού από το Λογαριασμό Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Ρυθμίσεις συγχρονισμού με το λογαριασμό Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "Συγχρονισμός έχει απενεργοποιηθεί για την πρόληψη αντικατάσταση ήδη συγχρονισμένα δεδομένα σας.\r\nΜη διστάσετε να μεταβείτε στη σελίδα επιλογών ανά πάσα στιγμή να συγχρονίσετε τις ρυθμίσεις σας (να κάνει ένα αντίγραφο ασφαλείας των ρυθμίσεών σας, εάν είναι απαραίτητο)."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Συγχρονισμός έχει απενεργοποιηθεί για την πρόληψη αντικατάσταση ήδη συγχρονισμένα δεδομένα σας.\r\nΜη διστάσετε να μεταβείτε στη σελίδα επιλογών ανά πάσα στιγμή να συγχρονίσετε τις ρυθμίσεις σας (να κάνει ένα αντίγραφο ασφαλείας των ρυθμίσεών σας, εάν είναι απαραίτητο)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Εμφάνιση ειδοποιήσεων Εισαγωγή Sync:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "δείχνουν popup όταν <strong>ρυθμίσεις που έχουν συγχρονιστεί από το</strong> Λογαριασμό σας Google"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Εμφάνιση Sync Κοινοποίηση:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "δείχνουν popup όταν <strong>οι ρυθμίσεις συγχρονίζονται με τον</strong> Λογαριασμό σας Google"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "τρέχουσα έκδοση του Google Chrome δεν υποστηρίζει τις ρυθμίσεις συγχρονισμό. Παρακαλώ δοκιμάστε να ενημερώσετε την έκδοση του Chrome και προσπαθήστε ξανά."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Προσωρινός"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Κοροϊδία πεδίου:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "κοροϊδία ή τυχαίο ζώνη ώρας σας. Σημείωση: Εάν είναι ενεργοποιημένη, μπορεί να παρεμβαίνει με την απάντηση σε μηνύματα ηλεκτρονικού ταχυδρομείου στο Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Εμπιστοσύνη"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "εμπιστοσύνη"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Εφαρμογή σε λίστα επιτρεπόμενων τομέων, καθώς και"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Είστε σίγουροι ότι θέλετε να απενεργοποιήσετε τυχόν μελλοντικές ειδοποιήσεις ενημέρωση όπως αυτή την εμφάνιση;\r\nΜπορείτε πάντα εκ νέου επιτρέπουν ειδοποιήσεις ενημέρωση πηγαίνοντας στη σελίδα Επιλογές ScriptSafe και επιλέγοντας το πλαίσιο δίπλα Εμφάνιση Ενημέρωση Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "ειδοποιήσεις Ενημέρωση απενεργοποιηθεί"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Εμφάνιση Αλλαγών για ενημέρωση:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Ανεπιθύμητος"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "δείχνουν σελίδα changelog όταν ενημερώνεται ScriptSafe"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Πεδίο ορισμού"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Πληκτρολογήστε έναν τομέα ή έκφραση (κάντε κλικ στο \"Βοήθεια\" για περισσότερες πληροφορίες)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Κοροϊδία:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "πλαστογραφήσει χρήστη-πράκτορα σας (browser και OS)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Εισάγετε μια διεύθυνση για να ορίσετε ως τιμή παραπομπής σας για όλες τις ιστοσελίδες"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Κατάργηση του Google Analytics (UTM) Tracking:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "αφαιρέστε το Google Analytics (UTM) μάρκες παρακολούθησης"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Αφαιρέστε Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "αφαιρέστε αόρατα στοιχεία τρίτων κατασκευαστών"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Αποκλεισμός WebGL λήψη δακτυλικών αποτυπωμάτων:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "εμποδίζουν τη λήψη δακτυλικών αποτυπωμάτων μέσω του WebGL API"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Αποκλεισμός Καταμέτρηση συσκευής:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "μην χρειάζεται συσκευές υλικού ανιχνεύεται μέσω του WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "WebRTC Προστασία:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "αποτρέπεται η διαρροή διεύθυνση IP"
+   },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Αποκλεισμός WebVR Καταμέτρηση:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "αποτρέψει έχουν συσκευές ανιχνεύονται μέσω του WebVR API"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Blacklist"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Whitelist"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Προγραφή"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Λευκή Λίστα"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "μαύρη λίστα"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "στη λίστα επιτρεπόμενων"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "προγραφή"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "λευκή λίστα"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Μετακίνηση σε Μαύρη λίστα"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Μετακίνηση στην Λευκή Λίστα"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Λευκή Λίστα / Μαύρη λίστα"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML Χειρισμός HTTP Αίτημα:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Ελέγχει όλες τις αιτήσεις"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Αιτήσεις ελέγχου Cross-(Domain επιτρέπουν ιδίου τομέα)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "ελέγχου αιτήματα XML HTTP"
+   }
+}

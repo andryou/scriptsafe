@@ -323,6 +323,10 @@
       "description": "Do you want to import the synced settings from your Google Account to this device?",
       "message": "あなたは、このデバイスにGoogleアカウントから同期設定をインポートしますか？"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "ホットキー："
@@ -415,6 +419,10 @@
       "description": "Settings imported successfully and syncing in 10 seconds",
       "message": "設定が正常にインポートし、10秒で同期"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
       "message": "キーボードフィンガープリントを削減 (<strong>上級ユーザー向け</strong>)："
@@ -442,6 +450,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "ルース - 同じドメインおよびサブドメインを許可します"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -546,6 +558,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "寛容"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

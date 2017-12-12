@@ -1,0 +1,858 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "Giành lại quyền kiểm soát của web và lướt web an toàn hơn."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "Mở Tất Cả Tên Miền"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "Cho Phép"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "Mục Cho Phép"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "Các Mục Bị Chặn"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "Cho Phép Tất Cả Bị Chặn Đối Với Phiên"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "Chặn Nội Dung Không Mong Muốn:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "loại bỏ nội dung không mong muốn từ quảng cáo / lĩnh vực phần mềm độc hại được biết đến; lĩnh vực thu thập từ <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS ( máy chủ quảng cáo / theo dõi)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Dự án HOSTS Peter Lowe</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "Không Mong Muốn Chế Độ Nội Dung:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "Relaxed = lĩnh vực trong danh sách trắng sẽ không bị chặn; Strict = tên miền trong danh sách miền không mong muốn sẽ bị chặn ngay cả khi trong danh sách trắng"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "Chống Xã Hội"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "Chế Độ Chống Xã Hội:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "luôn luôn xóa tiện ích xã hội / nút, ngay cả khi trong danh sách trắng"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Để chặn toàn diện hơn, hãy kiểm tra <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>ngắt kết nối</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, và / hoặc <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock xứ</a> với tất cả các danh sách đăng ký trên <a href=https: mục tiêu //www.fanboy.co.nz/ =_blank> trang web Fanboy</a>"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "Khối Âm Thanh Fingerprinting:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "ngăn chặn dấu vân tay thông qua các API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "Khối Pin Fingerprinting:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "ngăn chặn dấu vân tay thông qua các API Pin"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "Cài Đặt Behaviour"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "Block (đề nghị)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "Khối"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "Bị Chặn"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "Chặn Tất Cả Các Phép Đối Với Phiên"
+   },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "Khối Bluetooth Enumeration:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "ngăn chặn việc có thiết bị phát hiện thông qua các API Bluetooth"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "nhập khẩu số lượng lớn"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "Nhập vào Danh Mục"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "Nhập Khẩu Số Lượng Lớn"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "Sao chép và dán các miền vào ô bên dưới. Mỗi miền phải được trên một dòng riêng biệt."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "Canvas Vân Tay Bảo Vệ:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>ScriptSafe không thể xử lý trang này.</strong><br /><br />Xin hãy thử truy cập một trang web."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "Readout Trống"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "Random Readout"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "Hoàn Toàn Khối Readout"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "bảo vệ chống dấu vân tay cố gắng qua &lt;canvas&gt; các yếu tố"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "Khối Canvas Font Truy Cập:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "ngăn chặn các phông chữ hệ thống khỏi bị liệt kê qua &lt;canvas&gt; yếu tố. Có thể can thiệp với Google Docs."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "Cổ Điển Chọn Mode:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "nếu đánh dấu, đóng tùy chọn tab mọi tùy chọn được nhấp"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "Trong Sáng"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "trong sáng"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "Khối Khách Hàng Hình Chữ Nhật:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "ngăn chặn dấu vân tay thông qua tính hình chữ nhật phần tử. Có thể can thiệp với một số thả xuống."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "Ngăn Chặn Clipboard Nhiễu:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "ngăn chặn các trang từ can thiệp với các hành động vào clipboard"
+   },
+   "close": {
+      "description": "Close",
+      "message": "Gần"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "Chặn Cookie Không Mong Muốn:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "khối cookie từ quảng cáo được biết đến / lĩnh vực phần mềm độc hại; dưới chế độ áp dụng đối với điều này là tốt"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "Tập Quán"
+   },
+   "default": {
+      "description": "Default",
+      "message": "Mặc Định"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "Bảo vệ Local IP"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "Từ Chối"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "Bảo Vệ Khu Công Nghiệp Địa Phương Và Công Cộng"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "Vô Hiệu Hóa"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "tàn tật"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "Tàn Tật"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Đồng bộ là người tàn tật.\r\nFeel miễn phí để đi đến trang Tuỳ chọn bất cứ lúc nào để đồng bộ hóa các thiết lập của bạn (tạo bản sao lưu các thiết lập của bạn nếu cần thiết)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "Vô Hiệu Hóa Và Loại Bỏ:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "Nghi Ngờ"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "nghi ngờ"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "Cùng Miền"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "Sắp Xếp Theo Tên Miền:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "Cứu Giúp"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "Miền không hợp lệ / địa chỉ"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "Tên miền hoặc địa chỉ phải chứa một số chữ cái / số"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "Miền không thể được thêm vào như là một nhà cung cấp các nội dung không mong muốn (xem khối nội dung không mong muốn và / hoặc chống xã hội Mode)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "sắp xếp danh sách URL của tên miền trên trang này và trong bảng"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "Mẹo: Nhấn tổ hợp phím CTRL + F để tìm kiếm danh sách"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "Đừng Hiện Trang Này Một Lần Nữa"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "Kích Hoạt Tính Năng:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "kích hoạt"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "Kích hoạt tính năng ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "Kích hoạt tính năng Đồng bộ hoá:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "Xuất Khẩu"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "Các thiết lập của bạn đã được đồng bộ hóa thành công!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "Cài Đặt Đồng Bộ Hoá!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "Bảo Vệ Vân Tay"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "Vân Tay Bảo Vệ (có thể phá vỡ các trang web)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Có vẻ bạn đã không được đồng bộ hóa các thiết lập của bạn vào tài khoản Google của bạn.\r\nScriptSafe là về để đồng bộ hóa các thiết lập hiện tại của bạn vào tài khoản Google của bạn.\r\nNhấn vào 'OK' nếu bạn muốn tiếp tục.\r\nNếu không , nhấn \"Cancel\", và trên các thiết bị khác với các thiết lập của bạn ưa thích, cập nhật ScriptSafe và nhấp chuột vào OK khi bạn được thông báo này."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Bạn có muốn đồng bộ hóa các thiết lập hiện tại của bạn vào Tài khoản Google của bạn?\r\nLưu ý: xin vui lòng không nhấn này thường xuyên; có một giới hạn của 10 mỗi phút và 1.000 cho mỗi giờ."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "Bạn có muốn nhập khẩu các thiết lập đồng bộ hóa từ Tài khoản Google của bạn để thiết bị này?"
+   },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "Hotkeys:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "Cài Đặt Chung"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "Khối Gamepad Enumeration:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "ngăn chặn việc có thiết bị phát hiện thông qua các API Gamepad"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "Hành động phím nóng có sẵn"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "Tạm thời cho phép / chặn tất cả các nguồn lực cho một tab hiện tại"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "Di chuyển quyền tạm thời cho một tab hiện tại"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "Hủy bỏ tất cả các quyền tạm thời"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "Cấu hình các phím nóng ScriptSafe"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "bấm vào phím tắt"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "Liệt Kê Tất Cả Cài Đặt"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "Bỏ Qua Phép"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "Các thiết lập mới nhất đã được tải về thành công!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "Cài Đặt Tải!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "Nhóm All Settings"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "Di Có Thể Theo Dõi Hash:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "loại bỏ thẻ theo dõi có thể được thông qua sử dụng băm, nơi có một thuộc tính và giá trị (ví dụ: #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "Ẩn Giấu"
+   },
+   "import": {
+      "description": "Import",
+      "message": "Nhập"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "Nhập / Restore Cài Đặt"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "Cài đặt nhập thành công"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
+      "message": "Cài đặt nhập thành công, ngoại trừ sau (giá trị sản phẩm hoặc tên không được công nhận):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "Cài đặt nhập thành công và đồng bộ trong 10 giây"
+   },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "Giảm Keyboard Fingerprinting (<strong>cho người dùng cao cấp</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "làm timings bấm phím ngẫu nhiên nhiều hơn để tăng giấu tên (<strong>Chú ý: thêm một sự chậm trễ ngẫu nhiên giữa các ký; tắt cài đặt này nếu không thể chấp nhận</strong>)"
+   },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "Trang Liên Kết Mạc Hành Vi:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "đổi như thế nào tất cả các liên kết được mở"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "Loose - cho phép cùng một tên miền và tên miền phụ"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "Chế Độ Mặc Định"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "Tab Mới"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "Tab này đã không được nạp nguồn lực bên ngoài"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "Không lọc"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "Trình duyệt này không hỗ trợ bảo vệ WebRT"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-Tắt-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "Chỉ trên miền Unwhitelisted"
+   },
+   "options": {
+      "description": "Options",
+      "message": "Tùy Chọn"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "Paranoia Mode:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "lĩnh vực khối cho phép trên các lĩnh vực chưa niêm yết"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "Dán trong cài đặt và thử lại"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "Tôn Trọng Same-Domain:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "bảo tồn các yếu tố cùng một tên miền"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "Những Thiết Lập Riêng Tư"
+   },
+   "random": {
+      "description": "Random",
+      "message": "Ngẫu Nhiên"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "Hiện Rating Button:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "Xêp Hạng"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "nếu chọn, bổ sung thêm nút xếp hạng thuộc lĩnh vực trong tab cửa sổ bật lên"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>ScriptSafe được cập nhật gần đây / nạp lại.</strong><br /><br />Bạn sẽ cần phải hoặc làm mới tab này, tạo ra một tab mới, hoặc khởi động lại trình duyệt của bạn để cho ScriptSafe để làm việc."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "Chặn Click-Thông Qua Giới Thiệu:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "khối thông tin giới thiệu khi nhấp vào liên kết của bên thứ ba (lưu ý: thiết lập này để Bật Tất cả tên miền có thể gây ra các vấn đề (ví dụ hình thu nhỏ trong Tweetdeck))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "Spoof Giới Thiệu:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>cảnh báo</strong>: nếu được kích hoạt, có thể phá vỡ một số trang web (ví dụ đăng nhập)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "Tự động Refresh trang:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "trang tự động làm mới sau khi thay đổi danh sách"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "Thư Giãn"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefault2": {
+      "description": "Restore Default Settings + Clear All Lists",
+      "message": "Restore Default Settings + Clear All Lists"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will NOT clear your lists.",
+      "message": "Are you sure you want to restore the default settings? This will NOT clear your lists."
+   },
+   "restoredefaultconfirm2": {
+      "description": "Are you sure you want to restore the default settings AND clear all of your lists?",
+      "message": "Are you sure you want to restore the default settings AND clear all of your lists?"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "Thu Hồi Trang Temporary Quyền"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "Thu Hồi Tất Cả Tạm Thời"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "Tài Liệu Cùng"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "Cùng Tab"
+   },
+   "save": {
+      "description": "Save",
+      "message": "Tiết Kiệm"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "Save as Text File"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "Phần"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "chọn tất cả"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "Sao chép và dán các cài đặt bạn muốn nhập vào ScriptSafe vào ô sau đó bấm vào nút Import."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "Cài đặt đã lưu"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "Cài đặt lưu và đồng bộ trong 10 giây"
+   },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "ScriptSafe bị vô hiệu hóa"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "Nghiêm Khắc"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "Nghiêm Ngặt - chỉ cho phép cùng một miền"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "Để hỗ trợ phát triển, nhấp vào trái tim :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "Bạn đã kích hoạt tính năng tự động đồng bộ. Để ngăn chặn xóa dữ liệu đồng bộ hóa trước đây của bạn (nếu có), bạn hãy click vào Sync Cài đặt từ tài khoản Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "Sync Cài đặt từ tài khoản Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "Sync Cài đặt để tài khoản Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "ScriptSafe đã phát hiện ra rằng bạn đã cài đặt đồng bộ hóa trên tài khoản Google của bạn!\r\nNhấn vào 'OK' nếu bạn muốn nhập khẩu các thiết lập từ tài khoản Google của bạn."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "Đồng bộ hoá đã được tắt để tránh ghi đè lên dữ liệu đã đồng bộ hóa của bạn.\r\nFeel miễn phí để đi đến trang Tuỳ chọn bất cứ lúc nào để đồng bộ hóa các thiết lập của bạn (tạo bản sao lưu các thiết lập của bạn nếu cần thiết)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "Hiện Nhập Sync Thông Báo:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "hiện popup khi thiết lập đồng bộ <strong>hóa từ Tài</strong> khoản Google của bạn"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "Hiện Thông Báo Sync:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "hiện popup khi thiết lập đồng bộ <strong>hóa Tài</strong> khoản Google của bạn"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "Phiên bản hiện tại của Google Chrome không hỗ trợ cài đặt đồng bộ. Hãy cập nhật phiên bản Chrome của bạn và thử lại."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "Tạm Thời"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "Múi Giờ Spoof:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "spoof hoặc ngẫu nhiên múi giờ của bạn. LƯU Ý: nếu được kích hoạt, nó có thể can thiệp để trả lời email trong Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "Lòng Tin"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "lòng tin"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "Áp dụng với các lĩnh vực trong danh sách trắng cũng"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "Bạn có chắc chắn bạn muốn vô hiệu hóa bất kỳ thông báo cập nhật trong tương lai như thế này xuất hiện?\r\nBạn luôn có thể cho phép thông báo cập nhật bằng cách vào trang ScriptSafe Options và đánh dấu vào hộp bên cạnh Hiện Cập nhật Popup."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "Cập nhật thông báo vô hiệu hóa"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "Hiện Changelog Trên Cập Nhật:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "Không Muốn"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "hiển thị trang changelog khi ScriptSafe được cập nhật"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "Miền"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "Nhập tên miền hay biểu thức (click vào \"Help\" để biết thêm)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "User-Agent Spoof:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "spoofs user-agent của bạn (trình duyệt và hệ điều hành)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "Nhập một địa chỉ để thiết lập như là giá trị tham khảo của bạn cho tất cả các trang web"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "Hủy Bỏ Google Analytics (Utm) Theo Dõi:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "loại bỏ Google Analytics (UTM) thẻ theo dõi"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "Di Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "loại bỏ các yếu tố bên thứ ba vô hình"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "Khối WebGL Fingerprinting:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "ngăn chặn dấu vân tay thông qua các API WebGL"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "Khối Enumeration Thiết Bị:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "ngăn chặn có thiết bị phần cứng được phát hiện qua các WebRTC của API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "Bảo vệ WebRTC Được:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "ngăn chặn rò rỉ địa chỉ IP"
+   },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "Khối WebVR Enumeration:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "ngăn chặn việc có thiết bị phát hiện thông qua các API WebVR"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ Danh sách đen"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ Whitelist"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "Danh sách đen"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "Whitelist"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "Danh Sách Đen"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "Danh Sách Trắng"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "danh sách đen"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "danh sách trắng"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "Di chuyển đến Trong Danh Sách Đen"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "Di chuyển đến Whitelist"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "Whitelist / Blacklist"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP Request Xử Lý:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "Kiểm Soát Tất Cả Các Yêu Cầu"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "Kiểm Soát Tên Miền Chéo Yêu Cầu (cho phép Same-Domain)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "kiểm soát yêu cầu HTTP XML"
+   }
+}

@@ -1,0 +1,858 @@
+{
+   "appdescription": {
+      "description": "Regain control of the web and surf more securely.",
+      "message": "استعادة السيطرة على شبكة الإنترنت وتصفح أكثر أمانا."
+   },
+   "alldomains": {
+      "description": "On All Domains",
+      "message": "في جميع المجالات"
+   },
+   "allow": {
+      "description": "Allow",
+      "message": "السماح"
+   },
+   "alloweditems": {
+      "description": "Allowed Items",
+      "message": "الأصناف المسموح بها"
+   },
+   "blockeditems": {
+      "description": "Blocked Items",
+      "message": "العناصر المحظورة"
+   },
+   "allowallblocked": {
+      "description": "Allow All Blocked For Session",
+      "message": "السماح لجميع محظور لدورة"
+   },
+   "annoyances": {
+      "description": "Block Unwanted Content:",
+      "message": "منع المحتوى غير المرغوب فيها:"
+   },
+   "annoyancesdesc": {
+      "description": "remove unwanted content from known ad / malware domains; domains gathered from <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>MVPS HOSTS</a>, <a href=http://hosts-file.net target=_blank>hpHOSTS (ad / tracking servers)</a>, <a href=http://pgl.yoyo.org/as/policy.php target=_blank>Peter Lowe's HOSTS Project</a>, <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>",
+      "message": "إزالة المحتوى غير المرغوب فيها من / المجالات الإعلانية معروفة من البرامج الضارة. المجالات التي تم جمعها من <a href=http://winhelp2002.mvps.org/hosts.htm target=_blank>المتميزين معادل</a>، <a href=http://hosts-file.net target=_blank>hpHOSTS ( خدمة إعلانية / التعقب)</a>، <a href=http://pgl.yoyo.org/as/policy.php target=_blank>معادل مشروع بيتر لوي</a>، <a href=http://www.malwaredomainlist.com/ target=_blank>MalwareDomainList.com</a>"
+   },
+   "annoyancesmode": {
+      "description": "Unwanted Content Mode:",
+      "message": "وضع المحتوى غير المرغوب فيه:"
+   },
+   "annoyancesmodedesc": {
+      "description": "Relaxed = whitelisted domains will not be blocked; Strict = domains in the unwanted domain list will be blocked even if whitelisted",
+      "message": "لن يكون قد تم حظره استرخاء = المجالات اللائحة البيضاء. سيتم حظر = صارمة المجالات في قائمة المجال غير المرغوب فيها حتى لو اللائحة البيضاء"
+   },
+   "antisocialpopup": {
+      "description": "Antisocial",
+      "message": "لا إجتماعي"
+   },
+   "antisocial": {
+      "description": "Antisocial Mode:",
+      "message": "الوضع المعادي للمجتمع:"
+   },
+   "antisocialdesc": {
+      "description": "always remove social widgets/buttons, even if whitelisted",
+      "message": "دائما إزالة الحاجيات / أزرار الاجتماعية، حتى إذا اللائحة البيضاء"
+   },
+   "antisocialdesc2": {
+      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "لحجب أكثر شمولا، تحقق من Privacy Badger، افصل، والضبابية، و / أو uBlock المنشأ مع كل من قوائم الاشتراك على موقع بوي"
+   },
+   "audioblock": {
+      "description": "Block Audio Fingerprinting:",
+      "message": "كتلة الصوت البصمات:"
+   },
+   "audioblockdesc": {
+      "description": "prevent fingerprinting via the AudioContext API",
+      "message": "منع البصمات عن طريق API AudioContext"
+   },
+   "battery": {
+      "description": "Block Battery Fingerprinting:",
+      "message": "كتلة البطارية البصمات:"
+   },
+   "batterydesc": {
+      "description": "prevent fingerprinting via the Battery API",
+      "message": "منع البصمات عن طريق API البطارية"
+   },
+   "behavior": {
+      "description": "Behaviour Settings",
+      "message": "إعدادات السلوك"
+   },
+   "blockrec": {
+      "description": "Block (recommended)",
+      "message": "كتلة (موصى به)"
+   },
+   "block": {
+      "description": "Block",
+      "message": "منع"
+   },
+   "blocked": {
+      "description": "Blocked",
+      "message": "مسدود"
+   },
+   "blockallallowed": {
+      "description": "Block All Allowed For Session",
+      "message": "منع جميع المسموح بها للجلسة"
+   },
+   "bluetooth": {
+      "description": "Block Bluetooth Enumeration:",
+      "message": "كتلة Bluetooth التعداد:"
+   },
+   "bluetoothdesc": {
+      "description": "prevent having devices detected via the Bluetooth API",
+      "message": "منع وجود أجهزة الكشف عن طريق Bluetooth API"
+   },
+   "bulkimport": {
+      "description": "bulk import",
+      "message": "الاستيراد بكميات كبيرة"
+   },
+   "bulkbtn": {
+      "description": "Import to List",
+      "message": "استيراد إلى قائمة"
+   },
+   "bulkimportcap": {
+      "description": "Bulk Import",
+      "message": "استيراد السائبة"
+   },
+   "bulkimportcapdesc": {
+      "description": "Copy and paste domains into the box below. Each domain should be on a separate line.",
+      "message": "نسخ ولصق المجالات في المربع أدناه. يجب أن يكون كل مجال على سطر منفصل."
+   },
+   "canvas": {
+      "description": "Canvas Fingerprint Protection:",
+      "message": "قماش حماية بصمات الأصابع:"
+   },
+   "cannotprocess": {
+      "description": "<strong>ScriptSafe cannot process this page.</strong><br /><br />Please try visiting a website.",
+      "message": "<strong>لا يمكن ScriptSafe معالجة هذه الصفحة.</strong><br /><br />الرجاء حاول زيارة موقع على شبكة الانترنت."
+   },
+   "canvasblank": {
+      "description": "Blank Readout",
+      "message": "قراءات فارغة"
+   },
+   "canvasrandom": {
+      "description": "Random Readout",
+      "message": "قراءات عشوائية"
+   },
+   "canvasblock": {
+      "description": "Completely Block Readout",
+      "message": "تماما بلوك قراءات"
+   },
+   "canvasdesc": {
+      "description": "protect against fingerprinting attempts through &lt;canvas&gt; elements",
+      "message": "حماية ضد محاولات البصمات من خلال عناصر &lt;canvas&gt;"
+   },
+   "canvasfont": {
+      "description": "Block Canvas Font Access:",
+      "message": "كتلة قماش الخط الوصول:"
+   },
+   "canvasfontdesc": {
+      "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
+      "message": "منع الخطوط النظام من يتم تعداد من خلال العناصر &lt;canvas&gt;. قد تتداخل مع محرر مستندات Google."
+   },
+   "classicoptions": {
+      "description": "Classic Options Mode:",
+      "message": "خيارات وضع الكلاسيكية:"
+   },
+   "classicoptionsdesc": {
+      "description": "if ticked, closes tab options everytime an option is clicked",
+      "message": "إذا تكتك، ويغلق خيارات التبويب في كل مرة يتم النقر على الخيار"
+   },
+   "clear": {
+      "description": "Clear",
+      "message": "واضح"
+   },
+   "clearlow": {
+      "description": "clear",
+      "message": "واضح"
+   },
+   "clientrects": {
+      "description": "Block Client Rectangles:",
+      "message": "مستطيلات العميل كتلة:"
+   },
+   "clientrectsdesc": {
+      "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
+      "message": "منع البصمات من خلال حساب المستطيلات عنصر. قد تتداخل مع بعض القوائم المنسدلة."
+   },
+   "clipboard": {
+      "description": "Prevent Clipboard Interference:",
+      "message": "منع الحافظة التدخل:"
+   },
+   "clipboarddesc": {
+      "description": "prevent pages from interfering with clipboard actions",
+      "message": "منع صفحات من التدخل في الإجراءات الحافظة"
+   },
+   "close": {
+      "description": "Close",
+      "message": "قريب"
+   },
+   "cookies": {
+      "description": "Block Unwanted Cookies:",
+      "message": "منع الكوكيز غير المرغوب فيها:"
+   },
+   "cookiesdesc": {
+      "description": "blocks cookies from known ad / malware domains; below mode applies to this as well",
+      "message": "كتل الكوكيز من / مجالات البرمجيات الخبيثة الإعلان معروفا؛ أدناه الوضع ينطبق على ذلك أيضا"
+   },
+   "custom": {
+      "description": "Custom",
+      "message": "عرف"
+   },
+   "default": {
+      "description": "Default",
+      "message": "افتراضي"
+   },
+   "default_public_interface_only": {
+      "description": "Protect Local IP",
+      "message": "حماية الملكية الفكرية المحلية"
+   },
+   "deny": {
+      "description": "Deny",
+      "message": "رفض"
+   },
+   "disable_non_proxied_udp": {
+      "description": "Protect Local and Public IPs",
+      "message": "حماية المتكاملة المحلية والعامة"
+   },
+   "disable": {
+      "description": "Disable",
+      "message": "تعطيل"
+   },
+   "disabled": {
+      "description": "disabled",
+      "message": "معاق"
+   },
+   "disabledcap": {
+      "description": "Disabled",
+      "message": "معاق"
+   },
+   "disabledsync": {
+      "description": "Syncing is disabled.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "تم تعطيل المزامنة.\r\nلا تتردد في الذهاب إلى صفحة خيارات في أي وقت لمزامنة إعداداتك (إجراء نسخة احتياطية من الإعدادات الخاصة بك إذا لزم الأمر)."
+   },
+   "disableremove": {
+      "description": "Disable and Remove:",
+      "message": "تعطيل وإزالة:"
+   },
+   "distrust": {
+      "description": "Distrust",
+      "message": "عدم الثقة"
+   },
+   "distrustlow": {
+      "description": "distrust",
+      "message": "عدم الثقة"
+   },
+   "domain": {
+      "description": "Same Domain",
+      "message": "نفس المجال"
+   },
+   "domainsort": {
+      "description": "Sort by Domain:",
+      "message": "الترتيب حسب المجال:"
+   },
+   "domaininfo": {
+      "description": "Help",
+      "message": "مساعدة"
+   },
+   "domaininvalid": {
+      "description": "Invalid domain/address",
+      "message": "مجال غير صالح / عنوان"
+   },
+   "domaininvalid2": {
+      "description": "The domain or address must contain some letters/numbers",
+      "message": "يجب أن يحتوي على المجال أو عنوان بعض حروف / أرقام"
+   },
+   "domaininvalid3": {
+      "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
+      "message": "لا يمكن إضافة المجال كما هو مقدم من المحتوى غير المرغوب فيه (انظر بلوك المحتوى غير المرغوب فيها و / أو وضع انطوائي)"
+   },
+   "domainsortdesc": {
+      "description": "sorts URL lists by domains on this page and in the panel",
+      "message": "بفرز قوائم URL من المجالات على هذه الصفحة وفي لوحة"
+   },
+   "domaintip": {
+      "description": "Tip: press CTRL+F to search the lists",
+      "message": "نصيحة: اضغط CTRL + F للبحث في القوائم"
+   },
+   "dontshowpage": {
+      "description": "Don't Show This Page Again",
+      "message": "عدم إظهار هذه الصفحة مرة أخرى"
+   },
+   "enable": {
+      "description": "Enable:",
+      "message": "تمكين:"
+   },
+   "enabled": {
+      "description": "enabled",
+      "message": "تمكين"
+   },
+   "enabless": {
+      "description": "Enable ScriptSafe",
+      "message": "تمكين ScriptSafe"
+   },
+   "enablesyncing": {
+      "description": "Enable Syncing:",
+      "message": "تمكين المزامنة:"
+   },
+   "export": {
+      "description": "Export",
+      "message": "تصدير"
+   },
+   "exportsuccess": {
+      "description": "Your settings have been successfully synced!",
+      "message": "تم مزامنة الإعدادات بنجاح!"
+   },
+   "exportsuccesstitle": {
+      "description": "Settings Synced!",
+      "message": "الإعدادات المتزامنة!"
+   },
+   "fingerprint": {
+      "description": "Fingerprint Protection",
+      "message": "حماية بصمات الأصابع"
+   },
+   "fingerprintdesc": {
+      "description": "Fingerprint Protection (may break sites)",
+      "message": "حماية بصمة (قد كسر المواقع)"
+   },
+   "firstsync": {
+      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "يبدو أنك لم تتم مزامنة الإعدادات لحساب جوجل الخاص بك حتى الآن.\r\nScriptSafe على وشك مزامنة الإعدادات الحالية في حسابك في Google.\r\nانقر على \"موافق\" إذا كنت ترغب في الاستمرار.\r\nإن لم يكن، انقر فوق \"إلغاء الأمر\"، وعلى الجهاز الآخر مع إعدادات المفضل لديك، تحديث ScriptSafe وانقر على OK عندما يتم تقديمك مع هذه الرسالة."
+   },
+   "forcesyncexport": {
+      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "هل تريد مزامنة الإعدادات الحالية إلى حساب Google؟\r\nملاحظة: الرجاء عدم الضغط على هذا في كثير من الأحيان. هناك حد من 10 في الدقيقة الواحدة و 1،000 في الساعة."
+   },
+   "forcesyncimport": {
+      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "message": "هل تريد استيراد الإعدادات التي تمت مزامنتها من حساب Google لهذا الجهاز؟"
+   },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
+   "hotkeys": {
+      "description": "Hotkeys:",
+      "message": "مفاتيح الاختصار:"
+   },
+   "generalsettings": {
+      "description": "General Settings",
+      "message": "الاعدادات العامة"
+   },
+   "gamepad": {
+      "description": "Block Gamepad Enumeration:",
+      "message": "كتلة غمبد التعداد:"
+   },
+   "gamepaddesc": {
+      "description": "prevent having devices detected via the Gamepad API",
+      "message": "منع وجود أجهزة الكشف عن طريق لوحة الألعاب API"
+   },
+   "availablehotkeys": {
+      "description": "Available hotkey actions",
+      "message": "الإجراءات هوتكي المتاحة"
+   },
+   "hotkeystoggle": {
+      "description": "Temporarily allow/block all resources for a current tab",
+      "message": "السماح مؤقتا / منع كل الموارد لعلامة التبويب الحالية"
+   },
+   "hotkeysremove": {
+      "description": "Remove temporary permissions for a current tab",
+      "message": "إزالة أذونات مؤقتة لعلامة التبويب الحالية"
+   },
+   "hotkeysremoveall": {
+      "description": "Remove all temporary permissions",
+      "message": "إزالة كافة الأذونات مؤقتة"
+   },
+   "hotkeyspage": {
+      "description": "Configure ScriptSafe hotkeys",
+      "message": "تكوين مفاتيح الاختصار ScriptSafe"
+   },
+   "hotkeysinst": {
+      "description": "click on Keyboard Shortcuts",
+      "message": "انقر على اختصارات لوحة المفاتيح"
+   },
+   "listallsettings": {
+      "description": "List All Settings",
+      "message": "قائمة جميع الإعدادات"
+   },
+   "ignoredallow": {
+      "description": "Ignored Allow",
+      "message": "تجاهل السماح"
+   },
+   "importsuccess": {
+      "description": "The latest settings have been successfully downloaded!",
+      "message": "تم تحميل أحدث الإعدادات بنجاح!"
+   },
+   "importsuccesstitle": {
+      "description": "Settings Downloaded!",
+      "message": "الإعدادات التي تم تحميلها!"
+   },
+   "groupallsettings": {
+      "description": "Group All Settings",
+      "message": "جميع إعدادات المجموعة"
+   },
+   "hashchecking": {
+      "description": "Remove Possible Hash Tracking:",
+      "message": "إزالة تتبع تجزئة المحتمل:"
+   },
+   "hashcheckingdesc": {
+      "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
+      "message": "إزالة الرموز تتبع الممكنة مرت باستخدام التجزئة، حيث هناك سمة والقيمة (على سبيل المثال #xtor=RSS-1)"
+   },
+   "hide": {
+      "description": "Hide",
+      "message": "إخفاء"
+   },
+   "import": {
+      "description": "Import",
+      "message": "استيراد"
+   },
+   "importexport": {
+      "description": "Import / Restore Settings",
+      "message": "استيراد / استعادة الإعدادات"
+   },
+   "importsuccessoptions": {
+      "description": "Settings imported successfully",
+      "message": "إعدادات المستوردة بنجاح"
+   },
+   "importsuccesscond": {
+      "description": "Settings imported successfully, except the following (empty value or unrecognized name):",
+      "message": "إعدادات المستوردة بنجاح، باستثناء ما يلي (قيمة فارغة أو اسم غير المعترف بها):"
+   },
+   "importsuccesssync": {
+      "description": "Settings imported successfully and syncing in 10 seconds",
+      "message": "إعدادات المستوردة بنجاح والمزامنة في 10 ثانية"
+   },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
+   "keyboard": {
+      "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
+      "message": "تقليل البصمة لوحة المفاتيح (<strong>للمستخدمين المتقدمين</strong>):"
+   },
+   "keyboarddesc": {
+      "description": "make keypress timings more random to increase anonymity (<strong>NOTE: adds a random delay between keypresses; disable this setting if unacceptable</strong>)",
+      "message": "جعل توقيت بضغطة أكثر عشوائية إلى زيادة عدم الكشف عن هويته (<strong>ملاحظة: يضيف تأخير عشوائي بين الضغط على مفتاح. تعطيل هذا الإعداد هو أمر غير مقبول</strong>)"
+   },
+   "browserplugins": {
+      "description": "Block Browser Plugin Enumeration:",
+      "message": "Block Browser Plugin Enumeration:"
+   },
+   "browserpluginsdesc": {
+      "description": "prevent sites from reading your browser plugin details",
+      "message": "prevent sites from reading your browser plugin details"
+   },
+   "linktarget": {
+      "description": "Page Link Opening Behaviour:",
+      "message": "رابط الصفحة افتتاح السلوك:"
+   },
+   "linktargetdesc": {
+      "description": "modifies how all links are opened",
+      "message": "يعدل كيف يتم فتح جميع الروابط"
+   },
+   "loosesamedomain": {
+      "description": "Loose - allow same domain and subdomains",
+      "message": "فضفاض - السماح للنفس المجال والمجالات الفرعية"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
+   },
+   "mode": {
+      "description": "Default Mode",
+      "message": "الوضع الافتراضي"
+   },
+   "newtab": {
+      "description": "New Tab",
+      "message": "علامة تبويب جديدة"
+   },
+   "noexternal": {
+      "description": "This tab has loaded no external resources",
+      "message": "وقد حملت هذه التبويب أي موارد خارجية"
+   },
+   "notfiltered": {
+      "description": "Not filtered",
+      "message": "لا تصفيتها"
+   },
+   "nowebrtc": {
+      "description": "This browser does not support WebRTC protection",
+      "message": "هذا المتصفح لا يدعم حماية بتقنية WebRTC"
+   },
+   "off": {
+      "description": "-Off-",
+      "message": "-إيقاف-"
+   },
+   "onlyunwhitelisted": {
+      "description": "Only on Unwhitelisted Domains",
+      "message": "فقط على مجالات Unwhitelisted"
+   },
+   "options": {
+      "description": "Options",
+      "message": "خيارات"
+   },
+   "paranoia": {
+      "description": "Paranoia Mode:",
+      "message": "جنون العظمة الوضع:"
+   },
+   "paranoiadesc": {
+      "description": "block allowed domains on unlisted domains",
+      "message": "كتلة سمح المجالات على المجالات غير المدرجة في البورصة"
+   },
+   "pastesettings": {
+      "description": "Paste in settings and try again",
+      "message": "لصق في الإعدادات وحاول مرة أخرى"
+   },
+   "preservesamedomain": {
+      "description": "Respect Same-Domain:",
+      "message": "احترام من نفس المجال:"
+   },
+   "preservesamedomaindesc": {
+      "description": "preserve same-domain elements",
+      "message": "الحفاظ على العناصر نفس المجال"
+   },
+   "privacy": {
+      "description": "Privacy Settings",
+      "message": "إعدادات الخصوصية"
+   },
+   "random": {
+      "description": "Random",
+      "message": "عشوائية"
+   },
+   "rating": {
+      "description": "Show Rating Button:",
+      "message": "تظهر التصويت زر:"
+   },
+   "ratingbtn": {
+      "description": "Rating",
+      "message": "تصنيف"
+   },
+   "ratingdesc": {
+      "description": "if ticked, adds rating button under domains in tab popup",
+      "message": "إذا تكتك، ويضيف زر تصنيف تحت المجالات في منبثقة التبويب"
+   },
+   "recentlyupdated": {
+      "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
+      "message": "<strong>تم تحديث ScriptSafe مؤخرا / إعادة تحميل.</strong><br /><br />سوف تحتاج إما إلى تجديد علامة التبويب هذه، إنشاء علامة تبويب جديدة، أو إعادة تشغيل المتصفح الخاص بك من أجل ScriptSafe للعمل."
+   },
+   "referrer": {
+      "description": "Block Click-Through Referrer:",
+      "message": "منع من خلال النقر المرجع:"
+   },
+   "referrerdesc": {
+      "description": "blocks referrer information when clicking on third-party links (note: setting this to On All Domains may cause issues (e.g. thumbnails in Tweetdeck))",
+      "message": "كتل المعلومات المرجعية عند النقر على وصلات خارجية (ملاحظة: وضع هذا في جميع المجالات قد يسبب مشاكل (مثل الصور المصغرة في تويتدك))"
+   },
+   "referrerspoof": {
+      "description": "Referrer Spoof:",
+      "message": "محاكاة ساخرة المرجع:"
+   },
+   "referrerspoofdesc": {
+      "description": "<strong>warning</strong>: if enabled, may break some sites (e.g. logging in)",
+      "message": "<strong>تحذير</strong>: إذا تمكين، قد كسر بعض المواقع (على سبيل المثال تسجيل في)"
+   },
+   "refresh": {
+      "description": "Auto-Refresh Page:",
+      "message": "لصناعة السيارات في تجديد الصفحة:"
+   },
+   "refreshdesc": {
+      "description": "auto-refresh page after list change",
+      "message": "الصفحة التحديث التلقائي بعد تغيير قائمة"
+   },
+   "relaxed": {
+      "description": "Relaxed",
+      "message": "استرخاء"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
+   },
+   "restoredefault": {
+      "description": "Restore Default Settings",
+      "message": "Restore Default Settings"
+   },
+   "restoredefault2": {
+      "description": "Restore Default Settings + Clear All Lists",
+      "message": "Restore Default Settings + Clear All Lists"
+   },
+   "restoredefaultconfirm": {
+      "description": "Are you sure you want to restore the default settings? This will NOT clear your lists.",
+      "message": "Are you sure you want to restore the default settings? This will NOT clear your lists."
+   },
+   "restoredefaultconfirm2": {
+      "description": "Are you sure you want to restore the default settings AND clear all of your lists?",
+      "message": "Are you sure you want to restore the default settings AND clear all of your lists?"
+   },
+   "revoketemp": {
+      "description": "Revoke Page Temporary Permissions",
+      "message": "إلغاء ضوابط صفحة المؤقتة"
+   },
+   "revoketempall": {
+      "description": "Revoke All Temporary",
+      "message": "إلغاء جميع المؤقتة"
+   },
+   "same": {
+      "description": "Same Document",
+      "message": "نفس الوثيقة"
+   },
+   "sametab": {
+      "description": "Same Tab",
+      "message": "علامة التبويب نفسه"
+   },
+   "save": {
+      "description": "Save",
+      "message": "حفظ"
+   },
+   "savetxt": {
+      "description": "Save as Text File",
+      "message": "حفظ كملف نص"
+   },
+   "sections": {
+      "description": "Sections",
+      "message": "الأقسام"
+   },
+   "settingsall": {
+      "description": "select all",
+      "message": "اختر الكل"
+   },
+   "settingsimport": {
+      "description": "Copy and paste the settings you want to import into ScriptSafe into this box then click on the Import button.",
+      "message": "نسخ ولصق الإعدادات التي تريد استيراده إلى ScriptSafe في هذا المربع ثم انقر على زر استيراد."
+   },
+   "settingssave": {
+      "description": "Settings saved",
+      "message": "تم حفظ الاعدادات"
+   },
+   "settingssavesync": {
+      "description": "Settings saved and syncing in 10 seconds",
+      "message": "الإعدادات المحفوظة والمزامنة في 10 ثانية"
+   },
+   "showcontext": {
+      "description": "Show in Context Menu:",
+      "message": "Show in Context Menu:"
+   },
+   "ssdisabled": {
+      "description": "ScriptSafe is disabled",
+      "message": "هو تعطيل ScriptSafe"
+   },
+   "strict": {
+      "description": "Strict",
+      "message": "صارم"
+   },
+   "strictsamedomain": {
+      "description": "Strict - allow same domain only",
+      "message": "صارمة - السماح للنفس المجال فقط"
+   },
+   "support": {
+      "description": "To support development, click the heart :)",
+      "message": "لدعم التنمية، انقر فوق القلب :)"
+   },
+   "syncdisable": {
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "message": "لقد مكن لصناعة السيارات في المزامنة. من أجل منع محو البيانات المتزامنة سابقا (إن وجدت)، يرجى النقر على إعدادات المزامنة من حساب Google."
+   },
+   "syncimport": {
+      "description": "Sync Settings FROM Google Account",
+      "message": "إعدادات المزامنة من حساب Google"
+   },
+   "syncexport": {
+      "description": "Sync Settings TO Google Account",
+      "message": "إعدادات المزامنة لحساب Google"
+   },
+   "syncdetect": {
+      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "message": "كشف ScriptSafe أن لديك الإعدادات التي تمت مزامنتها على حساب جوجل الخاص بك!\r\nانقر على \"موافق\" إذا كنت ترغب في استيراد الإعدادات من حساب Google الخاص بك."
+   },
+   "syncdisabled": {
+      "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
+      "message": "تم تعطيل المزامنة لمنع الكتابة البيانات المتزامنة بالفعل.\r\nلا تتردد في الذهاب إلى صفحة خيارات في أي وقت لمزامنة إعداداتك (إجراء نسخة احتياطية من الإعدادات الخاصة بك إذا لزم الأمر)."
+   },
+   "syncfromnotify": {
+      "description": "Show Import Sync Notification:",
+      "message": "تظهر استيراد مزامنة إعلام:"
+   },
+   "syncfromnotifydesc": {
+      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "message": "عرض المنبثقة عندما مزامن الإعدادات من حساب Google"
+   },
+   "syncnotify": {
+      "description": "Show Sync Notification:",
+      "message": "إظهار الإعلام سينك:"
+   },
+   "syncnotifydesc": {
+      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "message": "عرض المنبثقة عندما إعدادات مزامنتها مع حسابك في Google"
+   },
+   "syncnotsupported": {
+      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
+      "message": "لا يدعم الإصدار الحالي من جوجل كروم إعدادات المزامنة. من فضلك حاول تحديث إصدار Chrome وحاول مرة أخرى."
+   },
+   "temp": {
+      "description": "Temporary",
+      "message": "مؤقت"
+   },
+   "timezone": {
+      "description": "Spoof Timezone:",
+      "message": "المنطقة الزمنية محاكاة ساخرة:"
+   },
+   "timezonedesc": {
+      "description": "spoof or randomize your timezone. NOTE: if enabled, it may interfere with replying to emails in Gmail.",
+      "message": "محاكاة ساخرة أو عشوائية التوقيت الخاص بك. ملاحظة: إذا تمكين، فإنه قد تتداخل مع الرد على رسائل البريد الإلكتروني في Gmail."
+   },
+   "trust": {
+      "description": "Trust",
+      "message": "ثقة"
+   },
+   "trustlow": {
+      "description": "trust",
+      "message": "ثقة"
+   },
+   "uaspoofallow": {
+      "description": "Apply to whitelisted domains as well",
+      "message": "تنطبق على المجالات اللائحة البيضاء فضلا"
+   },
+   "updatedisable": {
+      "description": "Are you sure you want to disable any future update notifications like this one from appearing?\r\nYou can always re-allow update notifications by going to the ScriptSafe Options page and ticking the box beside Show Update Popup.",
+      "message": "هل أنت متأكد أنك تريد تعطيل أي إخطارات التحديث في المستقبل مثل هذا واحد من الظهور؟\r\nيمكنك دائما إعادة السماح إخطارات التحديث عن طريق الذهاب إلى صفحة خيارات ScriptSafe وعلامة في المربع بجانب مشاهدة تحديث قافزة."
+   },
+   "updatedisablemessage": {
+      "description": "Update notifications disabled",
+      "message": "تحديث الإخطارات تعطيل"
+   },
+   "updatenotify": {
+      "description": "Show Changelog on Update:",
+      "message": "إظهار التغيير على تحديث:"
+   },
+   "unwanted": {
+      "description": "Unwanted",
+      "message": "غير مرغوب فيه"
+   },
+   "updatenotifydesc": {
+      "description": "show changelog page when ScriptSafe is updated",
+      "message": "تظهر الصفحة التغيير عند تحديث ScriptSafe"
+   },
+   "url": {
+      "description": "Domain",
+      "message": "نطاق"
+   },
+   "urldesc": {
+      "description": "Enter a domain or expression (click 'Help' for more info)",
+      "message": "أدخل المجال أو التعبير (انقر على \"مساعدة\" لمزيد من المعلومات)"
+   },
+   "useragentspoof": {
+      "description": "User-Agent Spoof:",
+      "message": "وكيل المستخدم محاكاة ساخرة:"
+   },
+   "useragentspoofdesc": {
+      "description": "spoofs your user-agent (browser and OS)",
+      "message": "سخريات المستخدم الخاص بك وكيل (المتصفح ونظام التشغيل)"
+   },
+   "userref": {
+      "description": "Enter an address to set as your referrer value for all sites",
+      "message": "أدخل عنوان تعيينه على القيمة المرجعية لجميع المواقع"
+   },
+   "utm": {
+      "description": "Remove Google Analytics (UTM) Tracking:",
+      "message": "إزالة جوجل تحليلات (UTM) تتبع:"
+   },
+   "utmdesc": {
+      "description": "remove Google Analytics (UTM) tracking tokens",
+      "message": "إزالة جوجل تحليلات (UTM) تتبع الرموز"
+   },
+   "webbugs": {
+      "description": "Remove Webbugs:",
+      "message": "إزالة Webbugs:"
+   },
+   "webbugsdesc": {
+      "description": "remove invisible third-party elements",
+      "message": "إزالة العناصر طرف ثالث غير مرئية"
+   },
+   "webgl": {
+      "description": "Block WebGL Fingerprinting:",
+      "message": "كتلة تقنية WebGL البصمات:"
+   },
+   "webgldesc": {
+      "description": "prevent fingerprinting via the WebGL API",
+      "message": "منع البصمات عن طريق اجهة برمجة تطبيقات WebGL"
+   },
+   "webrtcdevice": {
+      "description": "Block Device Enumeration:",
+      "message": "كتلة تعداد الأجهزة:"
+   },
+   "webrtcdevicedesc": {
+      "description": "prevent having hardware devices detected via the WebRTC API",
+      "message": "حيلولة دون الحاجة الأجهزة الكشف عن طريق بتقنية WebRTC API"
+   },
+   "webrtc": {
+      "description": "WebRTC Protection:",
+      "message": "حماية بتقنية WebRTC:"
+   },
+   "webrtcdesc": {
+      "description": "prevent IP address leakage",
+      "message": "منع تسرب عنوان IP"
+   },
+   "webvr": {
+      "description": "Block WebVR Enumeration:",
+      "message": "كتلة WebVR التعداد:"
+   },
+   "webvrdesc": {
+      "description": "prevent having devices detected via the WebVR API",
+      "message": "منع وجود أجهزة الكشف عن طريق WebVR API"
+   },
+   "blackbind": {
+      "description": "+ Blacklist",
+      "message": "+ القائمة السوداء"
+   },
+   "whitebind": {
+      "description": "+ Whitelist",
+      "message": "+ البيضاء"
+   },
+   "blacklist": {
+      "description": "Blacklist",
+      "message": "القائمة السوداء"
+   },
+   "whitelist": {
+      "description": "Whitelist",
+      "message": "القائمة البيضاء"
+   },
+   "blacklisted": {
+      "description": "Blacklisted",
+      "message": "القائمة السوداء"
+   },
+   "whitelisted": {
+      "description": "Whitelisted",
+      "message": "اللائحة البيضاء"
+   },
+   "blacklistlow": {
+      "description": "blacklist",
+      "message": "القائمة السوداء"
+   },
+   "whitelistlow": {
+      "description": "whitelist",
+      "message": "القائمة البيضاء"
+   },
+   "blacklistmove": {
+      "description": "Move to Blacklist",
+      "message": "الانتقال إلى القائمة السوداء"
+   },
+   "whitelistmove": {
+      "description": "Move to Whitelist",
+      "message": "الانتقال إلى القائمة البيضاء"
+   },
+   "whitelistblacklist": {
+      "description": "Whitelist / Blacklist",
+      "message": "القائمة البيضاء / السوداء"
+   },
+   "xml": {
+      "description": "XML HTTP Request Handling:",
+      "message": "XML HTTP طلب المناولة:"
+   },
+   "xmlall": {
+      "description": "Control All Requests",
+      "message": "السيطرة على جميع الطلبات"
+   },
+   "xmlcross": {
+      "description": "Control Cross-Domain Requests (allow Same-Domain)",
+      "message": "تطلب السيطرة عبر المجال (السماح من نفس المجال)"
+   },
+   "xmldesc": {
+      "description": "control XML HTTP Requests",
+      "message": "السيطرة طلبات HTTP XML"
+   }
+}

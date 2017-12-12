@@ -367,6 +367,10 @@
       "description": "Hide",
       "message": "Ukryj"
    },
+   "forever": {
+      "description": "Forever",
+      "message": "Forever"
+   },
    "hotkeys": {
       "description": "Hotkeys:",
       "message": "Skróty Klawiszowe:"
@@ -423,6 +427,10 @@
       "description": "Settings Downloaded!",
       "message": "Ustawienia Zostały Pobrane!"
    },
+   "interval": {
+      "description": "Every x Minutes",
+      "message": "Every x Minutes"
+   },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (\u003Cstrong>for advanced users\u003C/strong>):",
       "message": "Ogranicz Odcisk Palca Klawiatury (\u003Cstrong>dla zaawansowanych użytkowników\u003C/strong>):"
@@ -454,6 +462,10 @@
    "loosesamedomain": {
       "description": "Loose - allow same domain and subdomains",
       "message": "Luźny - pozwala na tą samą domenę i poddomeny"
+   },
+   "minutes": {
+      "description": "Minutes",
+      "message": "Minutes"
    },
    "mode": {
       "description": "Default Mode",
@@ -558,6 +570,10 @@
    "relaxed": {
       "description": "Relaxed",
       "message": "Rozluźniony"
+   },
+   "request": {
+      "description": "Every Request",
+      "message": "Every Request"
    },
    "restoredefault": {
       "description": "Restore Default Settings",

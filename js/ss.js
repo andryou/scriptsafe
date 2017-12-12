@@ -51,7 +51,7 @@ var SETTINGS = {
 	"CLIPBOARD": "false",
 	"DATAURL": "true",
 	"KEYDELTA": 0,
-	"BROWSERPLUGINS": "",
+	"BROWSERPLUGINS": "false",
 	"USERAGENT": "",
 };
 document.addEventListener("beforeload", saveBeforeloadEvent, true); // eventually remove
@@ -107,11 +107,9 @@ chrome.runtime.sendMessage({reqtype: "get-settings", iframe: iframe}, function(r
 		if (SETTINGS['BLUETOOTH'] == 'true' && response.fp_bluetooth != '-1') SETTINGS['BLUETOOTH'] = 'false';
 		if (SETTINGS['CLIENTRECTS'] == 'true' && response.fp_clientrectangles != '-1') SETTINGS['CLIENTRECTS'] = 'false';
 		if (SETTINGS['CLIPBOARD'] == 'true' && response.fp_clipboard != '-1') SETTINGS['CLIPBOARD'] = 'false';
-		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['WEBVR'] == 'true' || SETTINGS['BLUETOOTH'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true') {
+		if (SETTINGS['BROWSERPLUGINS'] == 'true' && response.fp_browserplugins != '-1') SETTINGS['BROWSERPLUGINS'] = 'false';
+		if (SETTINGS['CANVAS'] != 'false' || SETTINGS['CANVASFONT'] == 'true' || SETTINGS['CLIENTRECTS'] == 'true' || SETTINGS['AUDIOBLOCK'] == 'true' || SETTINGS['BATTERY'] == 'true' || SETTINGS['WEBGL'] == 'true' || SETTINGS['WEBRTCDEVICE'] == 'true' || SETTINGS['GAMEPAD'] == 'true' || SETTINGS['WEBVR'] == 'true' || SETTINGS['BLUETOOTH'] == 'true' || SETTINGS['TIMEZONE'] != 'false' || SETTINGS['CLIPBOARD'] == 'true' || SETTINGS['BROWSERPLUGINS'] == 'true') {
 			fingerprintProtection();
-		}
-		if (SETTINGS['BROWSERPLUGINS'] == 'true') {
-			browserProtection();
 		}
 		SETTINGS['WEBBUGS'] = response.webbugs;
 		SETTINGS['LINKTARGET'] = response.linktarget;
@@ -147,8 +145,18 @@ chrome.runtime.sendMessage({reqtype: "get-settings", iframe: iframe}, function(r
 	delete savedBeforeloadEvents; // eventually remove
 });
 function fingerprintProtection() {
-	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, webvr, bluetooth, timezone, clientrects, clipboard){
+	injectAnon(function(canvas, canvasfont, audioblock, battery, webgl, webrtcdevice, gamepad, webvr, bluetooth, timezone, clientrects, clipboard, browserplugins){
 		function processFunctions(scope) {
+			/* Browser Plugins */
+			if (browserplugins == 'true') {
+				scope.Object.defineProperty(navigator, "plugins", {enumerable: true, configurable: true, get: function() {
+					var browserplugins_triggerblock = scope.document.createElement('div');
+					browserplugins_triggerblock.className = 'scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_browserplugins';
+					browserplugins_triggerblock.title = 'navigator.plugins';
+					document.documentElement.appendChild(browserplugins_triggerblock);
+					return "";
+				}});
+			}
 			/* Canvas */
 			if (canvas != 'false') {
 				var fakecanvas = scope.document.createElement('canvas');
@@ -426,12 +434,7 @@ function fingerprintProtection() {
 				}
 			}
 		});
-	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['BLUETOOTH']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"'");
-}
-function browserProtection() {
-	injectAnon(function(browserplugins){
-		if (browserplugins == 'true') Object.defineProperty(navigator, "plugins", {enumerable: true, configurable: false, value: ""});
-	}, "'"+SETTINGS['BROWSERPLUGINS']+"'");
+	}, "'"+SETTINGS['CANVAS']+"','"+SETTINGS['CANVASFONT']+"','"+SETTINGS['AUDIOBLOCK']+"','"+SETTINGS['BATTERY']+"','"+SETTINGS['WEBGL']+"','"+SETTINGS['WEBRTCDEVICE']+"','"+SETTINGS['GAMEPAD']+"','"+SETTINGS['WEBVR']+"','"+SETTINGS['BLUETOOTH']+"','"+SETTINGS['TIMEZONE']+"','"+SETTINGS['CLIENTRECTS']+"','"+SETTINGS['CLIPBOARD']+"', '"+SETTINGS['BROWSERPLUGINS']+"'");
 }
 function clipboardProtect(el) {
     var arr = ['copy', 'cut', 'paste', 'selectstart', 'contextmenu', 'mousedown', 'mouseup'];
@@ -497,6 +500,9 @@ function ScriptSafe() {
 	}
 	if (SETTINGS['TIMEZONE'] != 'false') {
 		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_timezone").each(function() { chrome.runtime.sendMessage({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Spoofed Timezone'}); $(this).remove(); });
+	}
+	if (SETTINGS['BROWSERPLUGINS'] != 'false') {
+		$("div.scriptsafe_oiigbmnaadbkfbmpbfijlflahbdbdgdf_browserplugins").each(function() { chrome.runtime.sendMessage({reqtype: "update-blocked", src: window.location.href+" ("+$(this).attr('title')+"())", node: 'Browser Plugins Enumeration'}); $(this).remove(); });
 	}
 	if (SETTINGS['NOSCRIPT'] == 'true' && SETTINGS['LISTSTATUS'] == 'true') {
 		$("noscript").each(function() { chrome.runtime.sendMessage({reqtype: "update-blocked", src: $(this).html(), node: 'NOSCRIPT'}); $(this).remove(); });

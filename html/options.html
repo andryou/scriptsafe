@@ -83,7 +83,7 @@
 						</div>
 						<div id="fingerprintprotection" class="tab">
 							<table class="table table-striped table-hover table-condensed">
-								<tr><td class="col-sm-4"><label for="browserplugins" class="i18_browserplugins">Block Browser Plugin Enumeration:</label></td><td><input type="checkbox" id="browserplugins" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_browserpluginsdesc">prevent sites from reading your browser plugin details</span>)</i></td></tr>
+								<tr><td class="col-sm-4"><label for="browserplugins" class="i18_browserplugins">Block Browser Plugin Enumeration:</label></td><td><p><input type="checkbox" id="browserplugins" class="save" /> <i>(<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>; <span class="i18_browserpluginsdesc">prevent sites from reading your browser plugin details</span>)</i></p><p><strong><span class="i18_whitelist">Whitelist</span> (<span id="fpBrowserPluginscount"></span>):</strong></p><p><div class="form-inline"><div class="form-group"><div class="input-group"><div class="input-group-addon i18_url">Domain:</div><input type="text" class="form-control" id="fpBrowserPluginsurl"></div></div>&nbsp;<input type="button" id="fpBrowserPluginswhitebind" value="+ Whitelist" class="btn btn-success fpAdd" /></div></p><div class="list fp-list form-control" id="fpBrowserPlugins"></div></td></tr>
 								<tr><td class="col-sm-4"><label for="canvas" class="i18_canvas">Canvas Fingerprint Protection:</label></td><td><p><select id="canvas" class="savechange form-control">
 									<option value="false" class="i18_disabledcap">Disabled</option>
 									<option value="blank" class="i18_canvasblank">Blank Readout</option>
@@ -167,6 +167,7 @@
 								<tr><td class="col-sm-4"><label for="useragentspoof" class="i18_useragentspoof">User-Agent Spoof:</label></td><td><select id="useragentspoof" class="savechange form-control">
 									<option value="off" class="i18_off">-Off-</option>
 									<option value="custom" class="i18_custom">Custom</option>
+									<option value="chrome63">Chrome 63.0.3239.84</option>
 									<option value="chrome62">Chrome 62.0.3202.94</option>
 									<option value="chrome55">Chrome 55.0.2883.87</option>
 									<option value="chrome50">Chrome 50.0.2661.102</option>
@@ -232,8 +233,9 @@
 									<option value="chromeos">Chrome OS</option>
 									<option value="off" class="i18_off">-Off-</option>
 								</select><i>(<span class="i18_default">Default</span>: <span class="i18_off">-Off-</span>; <span class="i18_useragentspoofdesc">spoofs your user-agent (browser and OS)</span>)</i>
-								<div id="useragentcustombox"><br /><p><textarea class="form-control" id="useragentcustom" placeholder="(e.g. Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36)" rows="3" style="min-height: auto !important;"></textarea></p><p><input type="button" class="save btn btn-success i18_save" value="Save" /></p></div>
-								<div id="applytoallow"><input type="checkbox" id="uaspoofallow" class="save" /><label for="uaspoofallow">&nbsp;<span class="i18_uaspoofallow">Apply to whitelisted domains as well</span> (<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>)</label></div></td></tr>
+								<div id="useragentbox"><br /><p class="text-right"><textarea class="form-control" id="useragent" placeholder="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" rows="5" style="min-height: auto !important;"></textarea><a href="http://www.useragentstring.com/pages/useragentstring.php" target="_blank">useragentstring.com</a> | <a href="https://developers.whatismybrowser.com/useragents/explore/software_type_specific/web-browser/" target="_blank">whatismybrowser.com</a></p><p class="text-right"><input type="button" class="save btn btn-success i18_save" value="Save" /></p>
+								<div class="row useragentrandom"><div class="col-sm-8"><p><div class="input-group"><span class="input-group-addon"><label for="useragentinterval"><span class="i18_random">Random</span>:</label></span><select id="useragentinterval" class="savechange form-control"><option value="off" class="i18_off">-Off-</option><option value="interval" class="i18_interval">Every x Minutes</option><option value="request" class="i18_request">Every Request</option></select></div></p></div><div class="col-sm-4"><div id="useragentintervaloption" style="display: none;"><p><div class="input-group"><span class="input-group-addon"><label for="useragentintervalmins"><span class="i18_minutes">Minutes</span>:</label></span><input id="useragentintervalmins" type="number" min="1" class="savechange form-control"></div></p></div></div></div>
+								<div id="applytoallow"><br /><input type="checkbox" id="uaspoofallow" class="save" /><label for="uaspoofallow">&nbsp;<span class="i18_uaspoofallow">Apply to whitelisted domains as well</span> (<span class="i18_default">Default</span>: <span class="i18_disabled">disabled</span>)</label></div></td></tr>
 								<tr><td class="col-sm-4"><label for="referrerspoof" class="i18_referrerspoof">Referrer Spoof:</label></td><td><select id="referrerspoof" class="savechange form-control">
 									<option value="off" class="i18_off">-Off-</option>
 									<option value="same" class="i18_same">Same Document</option>
