@@ -105,7 +105,7 @@
    },
    "bulkbtn": {
       "description": "Import to List",
-      "message": "Import to List"
+      "message": "Importálás listába"
    },
    "bulkimportcap": {
       "description": "Bulk Import",
@@ -141,11 +141,11 @@
    },
    "canvasfont": {
       "description": "Block Canvas Font Access:",
-      "message": "Canvas font elérésének a blokkolása:"
+      "message": "Canvas betütipus elérésének a blokkolása:"
    },
    "canvasfontdesc": {
       "description": "prevent system fonts from being enumerated through &lt;canvas&gt; elements. May interfere with Google Docs.",
-      "message": "rendszerfontok listázásának megakadályozása a &lt;canvas&gt; elemeken keresztül. (Google Docs lehet, hogy nem fog működni emiatt) "
+      "message": "rendszer betütipusok listázásának megakadályozása a &lt;canvas&gt; elemeken keresztül. (Google Docs lehet, hogy nem fog működni emiatt) "
    },
    "classicoptions": {
       "description": "Classic Options Mode:",
@@ -153,7 +153,7 @@
    },
    "classicoptionsdesc": {
       "description": "if ticked, closes tab options everytime an option is clicked",
-      "message": "ha be van jelölve, bezárja lap beállításait minden alkalommal, amikor lehetőséget kattintanak"
+      "message": "ha be van jelölve, bezárja lap beállításait minden alkalommal, amikor lehetőségre kattintanak"
    },
    "clear": {
       "description": "Clear",
@@ -169,7 +169,7 @@
    },
    "clientrectsdesc": {
       "description": "prevent fingerprinting through calculating element rectangles. May interfere with some dropdowns.",
-      "message": "Azonosítás megakadályozása elem téglalap meghatározásán keresztül. Némelyik legördölő menünél problémát okozhat."
+      "message": "Azonosítás megakadályozása elem területek meghatározásán keresztül. Némelyik legördülő menünél problémát okozhat."
    },
    "clipboard": {
       "description": "Prevent Clipboard Interference:",
@@ -257,7 +257,7 @@
    },
    "domaininvalid2": {
       "description": "The domain or address must contain some letters/numbers",
-      "message": "A domainnek vagy címnek tartalmaznia kell néhány karaktert"
+      "message": "A domainnek vagy címnek tartalmaznia kell néhány karaktert/számot"
    },
    "domaininvalid3": {
       "description": "Domain cannot be added as it is a provider of unwanted content (see Block Unwanted Content and/or Antisocial Mode)",
@@ -265,7 +265,7 @@
    },
    "domainsortdesc": {
       "description": "sorts URL lists by domains on this page and in the panel",
-      "message": "rendezi a URL listát domain szerint ezen az oldalon és ebben a panelben."
+      "message": "rendezi a URL listát domain szerint ezen az oldalon és a panelben."
    },
    "domaintip": {
       "description": "Tip: press CTRL+F to search the lists",
@@ -325,7 +325,7 @@
    },
    "forever": {
       "description": "Forever",
-      "message": "Forever"
+      "message": "Örökké"
    },
    "hotkeys": {
       "description": "Hotkeys:",
@@ -365,7 +365,7 @@
    },
    "hotkeysinst": {
       "description": "click on Keyboard Shortcuts",
-      "message": "kattintson gyorsbillentyűkre"
+      "message": "kattintson a gyorsbillentyűkre"
    },
    "listallsettings": {
       "description": "List All Settings",
@@ -373,23 +373,23 @@
    },
    "ignoredallow": {
       "description": "Ignored Allow",
-      "message": "Ignored Allow"
+      "message": "Mellőzött Engedélyezés"
    },
    "importsuccess": {
       "description": "The latest settings have been successfully downloaded!",
-      "message": "Sikerült letölteni a legutobbi beállításokat!"
+      "message": "Sikerült letölteni a legutóbbi beállításokat!"
    },
    "importsuccesstitle": {
       "description": "Settings Downloaded!",
-      "message": "Beállítások letöltve!"
+      "message": "Beállítások Letöltve!"
    },
    "groupallsettings": {
       "description": "Group All Settings",
-      "message": "Csoport nézet"
+      "message": "Csoportosított nézet"
    },
    "hashchecking": {
       "description": "Remove Possible Hash Tracking:",
-      "message": "Hash tracking eltávolítása:"
+      "message": "Lehetséges Hash Tracking eltávolítása:"
    },
    "hashcheckingdesc": {
       "description": "remove possible tracking tokens passed using hash, where there is an attribute and value (e.g. #xtor=RSS-1)",
@@ -421,7 +421,7 @@
    },
    "interval": {
       "description": "Every x Minutes",
-      "message": "Every x Minutes"
+      "message": "Minden x Percben"
    },
    "keyboard": {
       "description": "Reduce Keyboard Fingerprinting (<strong>for advanced users</strong>):",
@@ -433,15 +433,15 @@
    },
    "browserplugins": {
       "description": "Block Browser Plugin Enumeration:",
-      "message": "Block Browser Plugin Enumeration:"
+      "message": "Blokkold A Böngésző Plugin Enumeration-t:"
    },
    "browserpluginsdesc": {
       "description": "prevent sites from reading your browser plugin details",
-      "message": "prevent sites from reading your browser plugin details"
+      "message": "tiltsd a weboldalak engedélyét hogy beolvassák a plugin adatait"
    },
    "linktarget": {
       "description": "Page Link Opening Behaviour:",
-      "message": "Link nyitási viselkedés:"
+      "message": "Link megnyitási viselkedés:"
    },
    "linktargetdesc": {
       "description": "modifies how all links are opened",
@@ -453,7 +453,7 @@
    },
    "minutes": {
       "description": "Minutes",
-      "message": "Minutes"
+      "message": "Percek"
    },
    "mode": {
       "description": "Default Mode",
@@ -529,7 +529,7 @@
    },
    "recentlyupdated": {
       "description": "<strong>ScriptSafe was recently updated/reloaded.</strong><br /><br />You will need to either refresh this tab, create a new tab, or restart your browser in order for ScriptSafe to work.",
-      "message": "<strong>ScriptSafe nemrég frissül / újratöltődött.</strong><br /><br />Frissítsd a lapot, vagy indítsd újra a böngészőt, hogy működjön a ScriptSafe."
+      "message": "<strong>ScriptSafe nemrég frissült / újratöltődött.</strong><br /><br />Frissítsd a lapot, vagy indítsd újra a böngészőt, hogy működjön a ScriptSafe."
    },
    "referrer": {
       "description": "Block Click-Through Referrer:",
@@ -561,23 +561,23 @@
    },
    "request": {
       "description": "Every Request",
-      "message": "Every Request"
+      "message": "Minden Kérés"
    },
    "restoredefault": {
       "description": "Restore Default Settings",
-      "message": "Restore Default Settings"
+      "message": "Eredeti Beállítások Visszaállítása"
    },
    "restoredefault2": {
       "description": "Restore Default Settings + Clear All Lists",
-      "message": "Restore Default Settings + Clear All Lists"
+      "message": "Eredeti Beállítások Visszaállítása + Listák Törlése"
    },
    "restoredefaultconfirm": {
       "description": "Are you sure you want to restore the default settings? This will NOT clear your lists.",
-      "message": "Are you sure you want to restore the default settings? This will NOT clear your lists."
+      "message": "Biztos hogy vissza akarod állitani az eredeti beállításokat? Ez NEM fogja törölni a listákat."
    },
    "restoredefaultconfirm2": {
       "description": "Are you sure you want to restore the default settings AND clear all of your lists?",
-      "message": "Are you sure you want to restore the default settings AND clear all of your lists?"
+      "message": "Biztos hogy vissza akarod állitani az eredeti beállításokat ES törölni az összes listát?"
    },
    "revoketemp": {
       "description": "Revoke Page Temporary Permissions",
@@ -629,7 +629,7 @@
    },
    "ssdisabled": {
       "description": "ScriptSafe is disabled",
-      "message": "ScriptSafe le van tiltva"
+      "message": "ScriptSafe le van kapcsolva"
    },
    "strict": {
       "description": "Strict",
@@ -697,11 +697,11 @@
    },
    "trust": {
       "description": "Trust",
-      "message": "Megbízuk benne"
+      "message": "Megbízzunk benne"
    },
    "trustlow": {
       "description": "trust",
-      "message": "megbízuk benne"
+      "message": "megbízzunk benne"
    },
    "uaspoofallow": {
       "description": "Apply to whitelisted domains as well",
@@ -733,7 +733,7 @@
    },
    "urldesc": {
       "description": "Enter a domain or expression (click 'Help' for more info)",
-      "message": "Írd be a domaint vagy kifejezés (kattints a 'Súgó'-ra több információért)"
+      "message": "Írj be egy domaint vagy kifejezést (kattints a 'Súgó'-ra több információért)"
    },
    "useragentspoof": {
       "description": "User-Agent Spoof:",
