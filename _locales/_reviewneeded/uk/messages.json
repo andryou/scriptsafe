@@ -52,8 +52,8 @@
       "message": "завжди видалити соціальні віджети / кнопки, навіть якщо білий список"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Для отримання більш повної блокування, ознайомтеся з <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Відключити</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Розумієте</a>, і / або <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock походження</a> з усіма підписних листів на <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy сайт</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Для отримання більш повної блокування, ознайомтеся з <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Відключити</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Розумієте</a>, і / або <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock походження</a> з усіма підписних листів на <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy сайт</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Захист відбитків пальців (може зламати сайти)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Схоже, ви не синхронізуються параметри до свого облікового запису Google поки.\r\nScriptSafe про синхронізацію поточних налаштувань в свій обліковий запис Google.\r\nНатисніть на \"OK\", якщо ви хочете, щоб продовжити.\r\nЯкщо немає, то натисніть кнопку \"Скасувати\", а на іншому пристрої з кращими настройками, оновити ScriptSafe і натисніть на кнопку OK, коли ви з цим повідомленням."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Схоже, ви не синхронізуються параметри до свого облікового запису Firefox поки.\r\nScriptSafe про синхронізацію поточних налаштувань в свій обліковий запис Firefox.\r\nНатисніть на \"OK\", якщо ви хочете, щоб продовжити.\r\nЯкщо немає, то натисніть кнопку \"Скасувати\", а на іншому пристрої з кращими настройками, оновити ScriptSafe і натисніть на кнопку OK, коли ви з цим повідомленням."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "ви хочете синхронізувати ваші поточні настройки в акаунті Google?\r\nПримітка: будь ласка, не натискайте це часто; є межа 10 в хвилину і 1000 за годину."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "ви хочете синхронізувати ваші поточні настройки в акаунті Firefox?\r\nПримітка: будь ласка, не натискайте це часто; є межа 10 в хвилину і 1000 за годину."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Ви хочете імпортувати синхронізовані налаштування з облікового запису Google на цей пристрій робити?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Ви хочете імпортувати синхронізовані налаштування з облікового запису Firefox на цей пристрій робити?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "Для підтримки розвитку, натисніть серце :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Ви включили автоматичну синхронізацію. Для запобігання стирання ваші раніше синхронізовані дані (якщо такі є), будь ласка, натисніть на Установки синхронізації, зі свого облікового запису Google."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "Ви включили автоматичну синхронізацію. Для запобігання стирання ваші раніше синхронізовані дані (якщо такі є), будь ласка, натисніть на Установки синхронізації, зі свого облікового запису Firefox."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Налаштування синхронізації з рахунку Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Налаштування синхронізації з рахунку Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Налаштування синхронізації на рахунок Google"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Налаштування синхронізації на рахунок Firefox"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe виявив, що у вас є налаштування синхронізації на ваш обліковий запис Google!\r\nНатисніть на \"OK\", якщо ви хочете імпортувати настройки з вашого облікового запису Google."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe виявив, що у вас є налаштування синхронізації на ваш обліковий запис Firefox!\r\nНатисніть на \"OK\", якщо ви хочете імпортувати настройки з вашого облікового запису Firefox."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Показати Імпорт синхронізації Повідомлення:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "показати спливаюче вікно, коли <strong>настройки будуть синхронізуватися з вашого облікового запису</strong> Google"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "показати спливаюче вікно, коли <strong>настройки будуть синхронізуватися з вашого облікового запису</strong> Firefox"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Показати синхронізації Повідомлення:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "показати спливаюче вікно, коли <strong>налаштування синхронізуються з обліковим записом</strong> Google"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "показати спливаюче вікно, коли <strong>налаштування синхронізуються з обліковим записом</strong> Firefox"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Ваша поточна версія Google Chrome не підтримує налаштування синхронізації. Будь ласка, спробуйте оновити версію Chrome і спробуйте ще раз."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Ваша поточна версія Mozilla Firefox не підтримує налаштування синхронізації. Будь ласка, спробуйте оновити версію Firefox і спробуйте ще раз."
    },
    "temp": {
       "description": "Temporary",

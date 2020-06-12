@@ -52,8 +52,8 @@
       "message": "selalu menghapus sosial widget / tombol, bahkan jika daftar putih"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Untuk memblokir lebih komprehensif, periksa <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Putus</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, dan / atau <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Asal</a> dengan semua daftar langganan di <a href=https://www.fanboy.co.nz/ target=_blank>situs fanboy</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Untuk memblokir lebih komprehensif, periksa <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Putus</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, dan / atau <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Asal</a> dengan semua daftar langganan di <a href=https://www.fanboy.co.nz/ target=_blank>situs fanboy</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Perlindungan Sidik Jari (bisa pecah situs)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Tampaknya Anda belum disinkronkan pengaturan Anda ke akun Google Anda belum.\r\nScriptSafe adalah untuk menyinkronkan setelan Anda saat ini ke akun Google Anda.\r\nKlik 'OK' jika Anda ingin melanjutkan.\r\nJika tidak, klik 'Batal', dan perangkat lain dengan pengaturan pilihan Anda, memperbarui ScriptSafe dan klik OK ketika Anda akan disajikan dengan pesan ini."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Tampaknya Anda belum disinkronkan pengaturan Anda ke akun Firefox Anda belum.\r\nScriptSafe adalah untuk menyinkronkan setelan Anda saat ini ke akun Firefox Anda.\r\nKlik 'OK' jika Anda ingin melanjutkan.\r\nJika tidak, klik 'Batal', dan perangkat lain dengan pengaturan pilihan Anda, memperbarui ScriptSafe dan klik OK ketika Anda akan disajikan dengan pesan ini."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Apakah Anda ingin menyinkronkan setelan Anda saat ini ke Akun Google Anda?\r\nCatatan: jangan tekan ini sering; ada batas dari 10 per menit dan 1.000 per jam."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Apakah Anda ingin menyinkronkan setelan Anda saat ini ke Akun Firefox Anda?\r\nCatatan: jangan tekan ini sering; ada batas dari 10 per menit dan 1.000 per jam."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Apakah Anda ingin mengimpor pengaturan disinkronkan dari Akun Google ke perangkat ini?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Apakah Anda ingin mengimpor pengaturan disinkronkan dari Akun Firefox ke perangkat ini?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "Untuk mendukung pengembangan, klik hati :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Anda telah mengaktifkan auto-sinkronisasi. Untuk mencegah menghapus data Anda sebelumnya disinkronkan (jika ada), silakan klik Pengaturan Sync DARI Akun Google."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "Anda telah mengaktifkan auto-sinkronisasi. Untuk mencegah menghapus data Anda sebelumnya disinkronkan (jika ada), silakan klik Pengaturan Sync DARI Akun Firefox."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Pengaturan sinkronisasi DARI Akun Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Pengaturan sinkronisasi DARI Akun Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Sinkronisasi KE Akun Google"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Sinkronisasi KE Akun Firefox"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe telah mendeteksi bahwa Anda memiliki setelan yang disinkronkan pada akun Google Anda!\r\nKlik 'OK' jika Anda ingin mengimpor pengaturan dari Akun Google Anda."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe telah mendeteksi bahwa Anda memiliki setelan yang disinkronkan pada akun Firefox Anda!\r\nKlik 'OK' jika Anda ingin mengimpor pengaturan dari Akun Firefox Anda."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Tampilkan Impor Sync Pemberitahuan:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "menunjukkan popup ketika pengaturan disinkronkan <strong>dari</strong> Akun Google Anda"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "menunjukkan popup ketika pengaturan disinkronkan <strong>dari</strong> Akun Firefox Anda"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Tampilkan Pemberitahuan Sync:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "menunjukkan popup ketika pengaturan disinkronkan <strong>ke</strong> Akun Google Anda"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "menunjukkan popup ketika pengaturan disinkronkan <strong>ke</strong> Akun Firefox Anda"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Versi saat ini dari Google Chrome tidak mendukung pengaturan sinkronisasi. Silakan coba memperbarui versi Chrome Anda dan coba lagi."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Versi saat ini dari Mozilla Firefox tidak mendukung pengaturan sinkronisasi. Silakan coba memperbarui versi Firefox Anda dan coba lagi."
    },
    "temp": {
       "description": "Temporary",

@@ -52,7 +52,7 @@
       "message": "همیشه حذف ویدجت های اجتماعی / دکمه، حتی اگر در لیست سفید"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=\"https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo\" target=\"_blank\">Disconnect</a>, <a href=\"https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd\" target=\"_blank\">Blur</a>, and/or <a href=\"https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=\"_blank\">Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=\"https://addons.mozilla.org/firefox/addon/privacy-badger17/\" target=\"_blank\">Privacy Badger</a>, <a href=\"https://addons.mozilla.org/firefox/addon/disconnect/\" target=\"_blank\">Disconnect</a>, <a href=\"https://addons.mozilla.org/firefox/addon/donottrackplus/\" target=\"_blank\">Blur</a>, and/or <a href=\"https://addons.mozilla.org/firefox/addon/ublock-origin/\" target=\"_blank\">uBlock Origin</a> with all of the subscription lists on the <a href=\"https://www.fanboy.co.nz/\" target=\"_blank\">Fanboy site</a>",
       "message": "برای مسدود کردن جامع تر، چک کردن Privacy Badger، قطع ارتباط، تاری، و / یا uBlock منبع با تمام لیست اشتراک در سایت fanboy در"
    },
    "audioblock": {
@@ -312,15 +312,15 @@
       "message": "اثر انگشت حفاظتی (ممکن است سایت های شکستن)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "به نظر می رسد شما تنظیمات خود را به حساب Google خود را همگام سازی نکرده است.\r\nScriptSafe مورد برای همگام سازی تنظیمات فعلی خود را به حساب گوگل شما است.\r\nدر 'OK' را کلیک کنید اگر شما می خواهید به ادامه.\r\nاگر نه، روی لغو کلیک کنید، و در دستگاه دیگر که دارای تنظیمات مورد نظر خود را، به روز رسانی ScriptSafe و کلیک بر روی OK زمانی که شما با این پیام معرفی شده اند."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "به نظر می رسد شما تنظیمات خود را به حساب Firefox خود را همگام سازی نکرده است.\r\nScriptSafe مورد برای همگام سازی تنظیمات فعلی خود را به حساب گوگل شما است.\r\nدر 'OK' را کلیک کنید اگر شما می خواهید به ادامه.\r\nاگر نه، روی لغو کلیک کنید، و در دستگاه دیگر که دارای تنظیمات مورد نظر خود را، به روز رسانی ScriptSafe و کلیک بر روی OK زمانی که شما با این پیام معرفی شده اند."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "آیا شما می خواهید برای همگام سازی تنظیمات فعلی خود را به حساب Google خود را؟\r\nتوجه: لطفا از این فشار دهید اغلب؛ محدود است از 10 در دقیقه و 1000 در ساعت وجود دارد."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "آیا شما می خواهید برای همگام سازی تنظیمات فعلی خود را به حساب Firefox خود را؟\r\nتوجه: لطفا از این فشار دهید اغلب؛ محدود است از 10 در دقیقه و 1000 در ساعت وجود دارد."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "آیا شما می خواهید برای وارد کردن تنظیمات همگامسازی شده از حساب گوگل خود را به این دستگاه؟"
    },
    "forever": {
@@ -644,20 +644,20 @@
       "message": "برای حمایت از توسعه، با کلیک بر قلب :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on \"Sync Settings FROM Google Account\".",
-      "message": "شما همگام سازی خودکار را فعال کنید. به منظور جلوگیری از پاک کردن داده ها که قبلا همگام سازی خود را (در صورت وجود)، لطفا بر روی \"تنظیمات همگام سازی از حساب Google\" کلیک کنید."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on \"Sync Settings FROM Firefox Account\".",
+      "message": "شما همگام سازی خودکار را فعال کنید. به منظور جلوگیری از پاک کردن داده ها که قبلا همگام سازی خود را (در صورت وجود)، لطفا بر روی \"تنظیمات همگام سازی از حساب Firefox\" کلیک کنید."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "تنظیمات همگام سازی از حساب Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "تنظیمات همگام سازی از حساب Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
+      "description": "Sync Settings TO Firefox Account",
       "message": "تنظیمات همگام سازی به حساب گوگل"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe تشخیص داده است که شما تنظیمات همگام سازی شده در حساب Google خود!\r\nدر 'OK' را کلیک کنید اگر شما می خواهید برای وارد کردن تنظیمات از حساب Google خود را."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe تشخیص داده است که شما تنظیمات همگام سازی شده در حساب Firefox خود!\r\nدر 'OK' را کلیک کنید اگر شما می خواهید برای وارد کردن تنظیمات از حساب Firefox خود را."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "نشان دادن اطلاع رسانی واردات همگام سازی:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "نمایش پنجره تنظیمات که از حساب Google خود را همگام سازی"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "نمایش پنجره تنظیمات که از حساب Firefox خود را همگام سازی"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "نشان دادن اطلاع رسانی همگام سازی:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "نمایش پنجره تنظیمات که به حساب Google شما همگام"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "نمایش پنجره تنظیمات که به حساب Firefox شما همگام"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "نسخه فعلی خود را از گوگل کروم تنظیمات همگام سازی پشتیبانی نمی کند. لطفا سعی کنید به روز رسانی نسخه Chrome و دوباره امتحان کنید."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "نسخه فعلی خود را از گوگل کروم تنظیمات همگام سازی پشتیبانی نمی کند. لطفا سعی کنید به روز رسانی نسخه Firefox و دوباره امتحان کنید."
    },
    "temp": {
       "description": "Temporary",

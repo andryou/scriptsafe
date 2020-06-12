@@ -52,7 +52,7 @@
       "message": "ہمیشہ وائٹ لسٹ تو سماجی ویجٹ / بٹن، بھی ہٹا دیں"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
       "message": "زیادہ جامع مسدود کرنے کے لئے، میں Fanboy سائٹ پر Privacy Badger منقطع، کلنک، اور / یا uBlock نکالنے چیک سکریپشن فہرستوں کی سب کے ساتھ"
    },
    "audioblock": {
@@ -312,16 +312,16 @@
       "message": "فنگرپرنٹ تحفظ (سائٹس توڑ سکتے ہیں)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "یہ آپ نے ابھی تک اپنے Google اکاؤنٹ میں آپ کی ترتیبات موافقت پذیر نہیں ہوا ہے ظاہر ہوتا ہے.\r\nScriptSafe اپنے Google اکاؤنٹ میں آپ کی موجودہ ترتیبات مطابقت پذیر کرنے کے بارے میں ہے.\r\nآپ جاری رکھنا چاہتے ہیں تو پر 'OK' کو کلک کریں.\r\nاگر نہیں تو، 'منسوخ کریں' پر کلک کریں، اور آپ کو ترجیح ترتیبات کے ساتھ دوسرے آلے پر، ScriptSafe اپ ڈیٹ کریں اور آپ کو اس پیغام کے ساتھ پیش کر رہے ہیں جب OK پر کلک کریں."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "یہ آپ نے ابھی تک اپنے Firefox اکاؤنٹ میں آپ کی ترتیبات موافقت پذیر نہیں ہوا ہے ظاہر ہوتا ہے.\r\nScriptSafe اپنے Firefox اکاؤنٹ میں آپ کی موجودہ ترتیبات مطابقت پذیر کرنے کے بارے میں ہے.\r\nآپ جاری رکھنا چاہتے ہیں تو پر 'OK' کو کلک کریں.\r\nاگر نہیں تو، 'منسوخ کریں' پر کلک کریں، اور آپ کو ترجیح ترتیبات کے ساتھ دوسرے آلے پر، ScriptSafe اپ ڈیٹ کریں اور آپ کو اس پیغام کے ساتھ پیش کر رہے ہیں جب OK پر کلک کریں."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "آپ کو آپ کے Google اکاؤنٹ میں آپ کی موجودہ ترتیبات مطابقت پذیر کرنے کے لئے چاہتے ہیں؟\r\nنوٹ: اکثر اس پریس نہ کریں؛ 10 فی منٹ اور 1،000 فی گھنٹہ کی ایک حد ہوتی ہے."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "آپ کو آپ کے Firefox اکاؤنٹ میں آپ کی موجودہ ترتیبات مطابقت پذیر کرنے کے لئے چاہتے ہیں؟\r\nنوٹ: اکثر اس پریس نہ کریں؛ 10 فی منٹ اور 1،000 فی گھنٹہ کی ایک حد ہوتی ہے."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "آپ کو اس آلہ پر اپنے Google اکاؤنٹ سے موافقت پذیر ترتیبات درآمد کرنا چاہتے ہیں؟"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "آپ کو اس آلہ پر اپنے Firefox اکاؤنٹ سے موافقت پذیر ترتیبات درآمد کرنا چاہتے ہیں؟"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "ترقی کی حمایت کرنے، دل کلک :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
       "message": "آپ آٹو موافقت پذیری فعال کیا ہے. (اگر کوئی ہے تو) آپ نے پہلے مطابقت پذیر ڈیٹا مٹانے کو روکنے کے لئے، گوگل اکاؤنٹ سے مطابقت پذیری کی ترتیبات پر کلک کریں براہ مہربانی."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "مطابقت پذیری کی ترتیبات Google اکاؤنٹ سے"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "مطابقت پذیری کی ترتیبات Firefox اکاؤنٹ سے"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Google اکاؤنٹ سے مطابقت پذیری کی ترتیبات"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Firefox اکاؤنٹ سے مطابقت پذیری کی ترتیبات"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe کا پتہ چلا ہے کہ آپ کو آپ کے Google اکاؤنٹ پر موافقت پذیر ترتیبات ہے کہ!\r\nآپ اپنے Google اکاؤنٹ سے ترتیبات کو درآمد کرنا چاہتے ہیں تو 'ٹھیک ہے' پر کلک کریں."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe کا پتہ چلا ہے کہ آپ کو آپ کے Firefox اکاؤنٹ پر موافقت پذیر ترتیبات ہے کہ!\r\nآپ اپنے Firefox اکاؤنٹ سے ترتیبات کو درآمد کرنا چاہتے ہیں تو 'ٹھیک ہے' پر کلک کریں."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "دکھائیں درآمد مطابقت پذیری میں اہم اطلاع:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "ترتیبات کو آپ کے Google اکاؤنٹ سے موافقت پذیر جب پاپ اپ ظاہر"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "ترتیبات کو آپ کے Firefox اکاؤنٹ سے موافقت پذیر جب پاپ اپ ظاہر"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "مطابقت پذیری اطلاع دکھائیں:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "ترتیبات کو آپ کے Google اکاؤنٹ سے مطابقت پذیری جب پاپ اپ ظاہر"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "ترتیبات کو آپ کے Firefox اکاؤنٹ سے مطابقت پذیری جب پاپ اپ ظاہر"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "گوگل کروم کے آپ کے موجودہ ورژن کی مطابقت پذیری کی ترتیبات کی حمایت نہیں کرتا. اپنے Chrome ورژن کو اپ ڈیٹ کرنے کی کوشش کریں اور دوبارہ کوشش کریں."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "گوگل کروم کے آپ کے موجودہ ورژن کی مطابقت پذیری کی ترتیبات کی حمایت نہیں کرتا. اپنے Firefox ورژن کو اپ ڈیٹ کرنے کی کوشش کریں اور دوبارہ کوشش کریں."
    },
    "temp": {
       "description": "Temporary",

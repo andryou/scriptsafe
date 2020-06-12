@@ -52,7 +52,7 @@
       "message": "үргэлж жагсаасан бол нийгмийн виджетийг / товч, тэр ч байтугай устгах"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
       "message": "дэлгэрэнгүй хаах нь гарч Fanboy газар дээр нь захиалгын жагсаалт бүх Privacy Badger, таслах, Blur ба / эсвэл uBlock гаралтай шалгах"
    },
    "audioblock": {
@@ -312,16 +312,16 @@
       "message": "Хурууны хээ хамгаалах (сайтыг эвдэх болно)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Энэ нь та хараахан таны Google бүртгэлээр таны тохиргоог синхрончилсон чадаагүй байна байна.\r\nScriptSafe таны Google дансанд таны одоогийн тохиргоогоо хэлбэрт авчирсан гэж байна.\r\n'OK' дээр дарна уу үргэлжлүүлэхийг хүсэж байгаа бол.\r\nХэрэв тийм биш бол товшино \"Cancel\", таны илүүд тохиргоо бусад төхөөрөмж дээр, ScriptSafe шинэчлэх, та энэ мэдээг танилцуулж байгаа үед OK дээр дарна уу."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Энэ нь та хараахан таны Firefox бүртгэлээр таны тохиргоог синхрончилсон чадаагүй байна байна.\r\nScriptSafe таны Firefox дансанд таны одоогийн тохиргоогоо хэлбэрт авчирсан гэж байна.\r\n'OK' дээр дарна уу үргэлжлүүлэхийг хүсэж байгаа бол.\r\nХэрэв тийм биш бол товшино \"Cancel\", таны илүүд тохиргоо бусад төхөөрөмж дээр, ScriptSafe шинэчлэх, та энэ мэдээг танилцуулж байгаа үед OK дээр дарна уу."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Хэрэв та Google Account нь таны одоогийн тохиргоо хуулагдахыг хүсэж байна уу?\r\nТэмдэглэл: Энэ удаа дарж чадахгүй байна уу, Минутанд 10, цагт 1000 хязгаар байдаг."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Хэрэв та Firefox Account нь таны одоогийн тохиргоо хуулагдахыг хүсэж байна уу?\r\nТэмдэглэл: Энэ удаа дарж чадахгүй байна уу, Минутанд 10, цагт 1000 хязгаар байдаг."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Хэрэв та энэ төхөөрөмж нь таны Google Account-аас синхрончлогдсон тохиргоог импортлох хүсэж байна уу?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Хэрэв та энэ төхөөрөмж нь таны Firefox Account-аас синхрончлогдсон тохиргоог импортлох хүсэж байна уу?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "хөгжлийг дэмжих, зүрх товшино уу :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Та автоматаар Синкийг идэвхжүүлсэн байна. Таны урьд нь синхрончилсон мэдээллийг устгана (хэрэв байгаа бол) урьдчилан сэргийлэхийн тулд, Google данснаас Sync Тохиргоо дээр дарна уу."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "Та автоматаар Синкийг идэвхжүүлсэн байна. Таны урьд нь синхрончилсон мэдээллийг устгана (хэрэв байгаа бол) урьдчилан сэргийлэхийн тулд, Firefox данснаас Sync Тохиргоо дээр дарна уу."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Sync Тохиргоо Google-ийн данснаас"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Sync Тохиргоо Firefox-ийн данснаас"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Google Account-TO Sync Тохиргоо"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Firefox Account-TO Sync Тохиргоо"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe та Google-ийн дансанд синхрончлогдсон тохиргоог байна гэж илэрсэн байна!\r\n\"OK\" дээр дарж та Google Account-аас тохиргоог импортлох гэж байгаа бол."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe та Firefox-ийн дансанд синхрончлогдсон тохиргоог байна гэж илэрсэн байна!\r\n\"OK\" дээр дарж та Firefox Account-аас тохиргоог импортлох гэж байгаа бол."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Импортын Sync мэдэгдэх харуулах:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "тохиргоонууд нь таны Google Account <strong>аас</strong> синхрончлогдсон үед цонх харуулж байна"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "тохиргоонууд нь таны Firefox Account <strong>аас</strong> синхрончлогдсон үед цонх харуулж байна"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Sync мэдэгдэх харуулах:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "тохиргоонууд нь таны Google Account <strong>руу</strong> синхрончлогдсон үед цонх харуулж байна"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "тохиргоонууд нь таны Firefox Account <strong>руу</strong> синхрончлогдсон үед цонх харуулж байна"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Google Chrome Таны одоогийн хувилбар нь сүүлийн хэлбэрт аваачих, тохиргоог дэмждэггүй. Таны Chrome хувилбарыг шинэчлэх оролдлого, дахин оролдоно уу."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Mozilla Firefox Таны одоогийн хувилбар нь сүүлийн хэлбэрт аваачих, тохиргоог дэмждэггүй. Таны Firefox хувилбарыг шинэчлэх оролдлого, дахин оролдоно уу."
    },
    "temp": {
       "description": "Temporary",

@@ -52,8 +52,8 @@
       "message": "eliminați întotdeauna widget-uri / butoane sociale, chiar dacă sunt pe lista albă"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Pentru blocare mai cuprinzătoare, consultați <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Deconectare</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, și / sau <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock de origine</a> cu toate listele de abonare pe <a href=https://www.fanboy.co.nz/ target=_blank>site-ul Fanboy</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Pentru blocare mai cuprinzătoare, consultați <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Deconectare</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, și / sau <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock de origine</a> cu toate listele de abonare pe <a href=https://www.fanboy.co.nz/ target=_blank>site-ul Fanboy</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Protecție contra amprentelor (poate strica site-uri)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Se pare că nu ați sincronizat setările în contul dvs. Google.\r\nScriptSafe este pe cale de a sincroniza setările curente în contul dvs. Google.\r\nFaceți clic pe \"OK\" dacă doriți să continuați.\r\nDacă nu, faceți clic pe \"Cancel\", iar pe celălalt dispozitiv cu setările preferate, actualizați ScriptSafe și faceți clic pe OK atunci când sunteți prezentat cu acest mesaj."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Se pare că nu ați sincronizat setările în contul dvs. Firefox.\r\nScriptSafe este pe cale de a sincroniza setările curente în contul dvs. Firefox.\r\nFaceți clic pe \"OK\" dacă doriți să continuați.\r\nDacă nu, faceți clic pe \"Cancel\", iar pe celălalt dispozitiv cu setările preferate, actualizați ScriptSafe și faceți clic pe OK atunci când sunteți prezentat cu acest mesaj."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Doriți să sincronizați setările curente cu contul dvs. Google?\r\nNotă: vă rugăm să nu apăsați în mod frecvent; există o limită de 10 pe minut și 1000 pe oră."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Doriți să sincronizați setările curente cu contul dvs. Firefox?\r\nNotă: vă rugăm să nu apăsați în mod frecvent; există o limită de 10 pe minut și 1000 pe oră."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Doriți să importați setările sincronizate din contul dvs. Google la acest dispozitiv?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Doriți să importați setările sincronizate din contul dvs. Firefox la acest dispozitiv?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "Pentru a sprijini dezvoltarea, faceți clic pe inimă :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Ați activat sincronizarea automată. Pentru a preveni ștergerea datelor sincronizate anterior (dacă este cazul), vă rugăm să faceți clic pe Setări sincronizare din contul Google."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "Ați activat sincronizarea automată. Pentru a preveni ștergerea datelor sincronizate anterior (dacă este cazul), vă rugăm să faceți clic pe Setări sincronizare din contul Firefox."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Sincronizați setări din contul Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Sincronizați setări din contul Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Sincronizați setări către contului Google"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Sincronizați setări către contului Firefox"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe a detectat că aveți setările sincronizate pe contul dvs. Google!\r\nFaceți clic pe \"OK\" dacă doriți să importați setările din Contul dvs. Google."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe a detectat că aveți setările sincronizate pe contul dvs. Firefox!\r\nFaceți clic pe \"OK\" dacă doriți să importați setările din Contul dvs. Firefox."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Afișați notificările de import a sincronizării:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "afisați pop-up atunci când setările sunt sincronizate <strong>de la</strong> Contul Google"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "afisați pop-up atunci când setările sunt sincronizate <strong>de la</strong> Contul Firefox"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Afișați notificare de sincronizare:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "afisați pop-up atunci când setările sunt sincronizate <strong>la</strong> contul dvs. Google"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "afisați pop-up atunci când setările sunt sincronizate <strong>la</strong> contul dvs. Firefox"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Versiunea curentă de Google Chrome nu acceptă sincronizarea de setări. Vă rugăm să actualizați versiunea Chrome și încercați din nou."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Versiunea curentă de Mozilla Firefox nu acceptă sincronizarea de setări. Vă rugăm să actualizați versiunea Firefox și încercați din nou."
    },
    "temp": {
       "description": "Temporary",

@@ -52,8 +52,8 @@
       "message": "rimuovere sempre widgets / pulsanti social, anche se in whitelist"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Per un blocco più completo, dai un'occhiata a <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnetti</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, e / o <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> con tutte le liste di sottoscrizione sul <a href=https://www.fanboy.co.nz/ target=_blank>sito Fanboy</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Per un blocco più completo, dai un'occhiata a <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnetti</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, e / o <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> con tutte le liste di sottoscrizione sul <a href=https://www.fanboy.co.nz/ target=_blank>sito Fanboy</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Protezione Impronte Digitali (potrebbe interromprere i siti)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Sembra che non hai ancora sincronizzato le impostazioni con il tuo account Google.\r\nScriptSafe sta per sincronizzare le impostazioni correnti sul tuo account Google.\r\nCliccare su 'OK' se desidera continuare.\r\nSe no , fare clic su 'Annulla', e sull'altro dispositivo con le vostre impostazioni preferite, aggiornare ScriptSafe e cliccare su OK quando compare questo messaggio."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Sembra che non hai ancora sincronizzato le impostazioni con il tuo account Firefox.\r\nScriptSafe sta per sincronizzare le impostazioni correnti sul tuo account Firefox.\r\nCliccare su 'OK' se desidera continuare.\r\nSe no , fare clic su 'Annulla', e sull'altro dispositivo con le vostre impostazioni preferite, aggiornare ScriptSafe e cliccare su OK quando compare questo messaggio."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Volete sincronizzare le impostazioni correnti con il vostro account Google?\r\nNota: per favore non premere troppo frequentemente; c'è un limite di 10 al minuto e 1.000 all'ora."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Volete sincronizzare le impostazioni correnti con il vostro account Firefox?\r\nNota: per favore non premere troppo frequentemente; c'è un limite di 10 al minuto e 1.000 all'ora."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Vuoi importare le impostazioni sincronizzate dal tuo account Google a questo dispositivo?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Vuoi importare le impostazioni sincronizzate dal tuo account Firefox a questo dispositivo?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "Per sostenere lo sviluppo, fare clic sul cuore :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "È stata attivata la sincronizzazione automatica. Al fine di evitare la cancellazione dei dati precedentemente sincronizzati (se presente), si prega di fare clic su impostazioni di sincronizzazione dal tuo account Google."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "È stata attivata la sincronizzazione automatica. Al fine di evitare la cancellazione dei dati precedentemente sincronizzati (se presente), si prega di fare clic su impostazioni di sincronizzazione dal tuo account Firefox."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Impostazioni di sincronizzazione DALL'account Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Impostazioni di sincronizzazione DALL'account Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Impostazioni di sincronizzazione ALL'account Google"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Impostazioni di sincronizzazione ALL'account Firefox"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe ha rilevato impostazioni sincronizzate sul tuo account Google!\r\nClicca su 'OK' se si desidera importare le impostazioni dal tuo account Google."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe ha rilevato impostazioni sincronizzate sul tuo account Firefox!\r\nClicca su 'OK' se si desidera importare le impostazioni dal tuo account Firefox."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Mostra Notifiche di Importazione-Sincronizzazione:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "mostra un popup quando le impostazioni vengono sincronizzate <strong>dal</strong> vostro account Google"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "mostra un popup quando le impostazioni vengono sincronizzate <strong>dal</strong> vostro account Firefox"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Mostra Notifica della Sincronizzazione:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "mostrare un popup quando le impostazioni vengono sincronizzate <strong>nel</strong> vostro account Google"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "mostrare un popup quando le impostazioni vengono sincronizzate <strong>nel</strong> vostro account Firefox"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "La vostra attuale versione di Google Chrome non supporta la sincronizzazione delle impostazioni. Si prega di provare ad aggiornare la versione di Chrome e riprovare."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "La vostra attuale versione di Mozilla Firefox non supporta la sincronizzazione delle impostazioni. Si prega di provare ad aggiornare la versione di Firefox e riprovare."
    },
    "temp": {
       "description": "Temporary",

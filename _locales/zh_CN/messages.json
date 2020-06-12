@@ -52,8 +52,8 @@
       "message": "移除白名单里的社交网站小部件"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "想得到更好的效果，可使用以下插件<a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank> uBlock Origin </a>并订阅<a href=https://www.fanboy.co.nz/ target=_blank>Fanboy</a>的列表"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "想得到更好的效果，可使用以下插件<a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank> uBlock Origin </a>并订阅<a href=https://www.fanboy.co.nz/ target=_blank>Fanboy</a>的列表"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,15 +312,15 @@
       "message": "防止用户信息被收集和识别（可能会影响您浏览的网站的部分功能）"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "您的设置还没有同步到Google帐户。\r\nScriptSafe正准备把当前设置同步到您的谷歌帐户。\r\n如果同意，请点击“确认”。\r\n如果不同意，请单击“取消”。您也可以在其它设备上通过此对话框同步您的设置。"
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "您的设置还没有同步到Firefox帐户。\r\nScriptSafe正准备把当前设置同步到您的谷歌帐户。\r\n如果同意，请点击“确认”。\r\n如果不同意，请单击“取消”。您也可以在其它设备上通过此对话框同步您的设置。"
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
       "message": "需要同步当前设置到您的谷歌帐户吗？\r\n注意：请不要频繁地同步（每分钟限10次和每小时限1000次）。"
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
       "message": "需要从您的谷歌帐户导入设置到此设备吗？"
    },
    "forever": {
@@ -644,19 +644,19 @@
       "message": "点击心形图案进行捐助 :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
       "message": "已启用自动同步。为了防止之前同步的数据被删除，请点击从谷歌帐户导入。"
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
+      "description": "Sync Settings FROM Firefox Account",
       "message": "从谷歌帐户导入"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
+      "description": "Sync Settings TO Firefox Account",
       "message": "导出到谷歌帐户"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
       "message": "如需从您的谷歌帐户导入之前同步的设置，请点击“OK”。"
    },
    "syncdisabled": {
@@ -668,7 +668,7 @@
       "message": "显示“网络同步导入”的消息通知："
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
       "message": "<strong>从</strong>您的谷歌帐户同步设置时弹出消息通知"
    },
    "syncnotify": {
@@ -676,12 +676,12 @@
       "message": "显示“网络同步导出”的消息通知："
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
       "message": "把设置同步<strong>到</strong>您的谷歌帐户时弹出消息通知"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "您当前的Chrome浏览器版本不支持设置同步。请尝试更新您的Chrome浏览器版本，然后再试一次。"
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "您当前的Firefox浏览器版本不支持设置同步。请尝试更新您的Firefox浏览器版本，然后再试一次。"
    },
    "temp": {
       "description": "Temporary",

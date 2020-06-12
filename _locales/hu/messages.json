@@ -52,8 +52,8 @@
       "message": "mindig távolítsa el a közzösségi oldalak beépülő moduljait, még akkor is, ha fehérlistázva lettek."
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Átfogóbb blokkolóért, nézd meg a <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a> <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>a blur</a>, és / vagy a <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> és az összes listákat <a href=https://www.fanboy.co.nz/ target=_blank>fanboy site</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Átfogóbb blokkolóért, nézd meg a <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a> <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>a blur</a>, és / vagy a <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> és az összes listákat <a href=https://www.fanboy.co.nz/ target=_blank>fanboy site</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Ujjlenyomat védelem (néhány weboldalt elronthat)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Úgy tunik, még nem szinkronizáltad a beállításaid a Google accountra.\r\nScriptSafe hamarosan szinkronizálja az aktuális beállításokat a Google-fiókjába.\r\nAz \"OK\", ha azt akarjuk, hogy továbbra is.\r\nHa nem kattintson a \"Mégse\" gombra, és azon az eszközön, amelyen a preferált beállítások vannak és kattints az OK-ra, amikor ez az üzenet megjelenik."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Úgy tunik, még nem szinkronizáltad a beállításaid a Firefox accountra.\r\nScriptSafe hamarosan szinkronizálja az aktuális beállításokat a Firefox-fiókjába.\r\nAz \"OK\", ha azt akarjuk, hogy továbbra is.\r\nHa nem kattintson a \"Mégse\" gombra, és azon az eszközön, amelyen a preferált beállítások vannak és kattints az OK-ra, amikor ez az üzenet megjelenik."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Szeretné szinkronizálni az aktuális beállításokat a Google-fiókjába?\r\nMegjegyzés: kérjük, ne nyomja meg ezt gyakran; mert pecenként 10-szer óránként 1000-szer lehet szinronizálni."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Szeretné szinkronizálni az aktuális beállításokat a Firefox-fiókjába?\r\nMegjegyzés: kérjük, ne nyomja meg ezt gyakran; mert pecenként 10-szer óránként 1000-szer lehet szinronizálni."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Szeretné importálni a szinkronizált beállításokat a Google-fiókból erre az eszközre?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Szeretné importálni a szinkronizált beállításokat a Firefox-fiókból erre az eszközre?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "A fejlesztés támogatásának az érdekében kattints a szívre :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Engedélyezted az automatikus szinkronizálást, ha el akarod kerülni, hogy a korábban szinkronziált beállítások felülíródjanak, először kattits a beéállítások letöltésére a Google-fiókból"
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "Engedélyezted az automatikus szinkronizálást, ha el akarod kerülni, hogy a korábban szinkronziált beállítások felülíródjanak, először kattits a beéállítások letöltésére a Firefox-fiókból"
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Beállítások letöltése a Google-fiókból"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Beállítások letöltése a Firefox-fiókból"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Beállítások feltöltése a Google-fiókba"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Beállítások feltöltése a Firefox-fiókba"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe észlelte, hogy vannak már beállításaid feltöltve a Google-fiókodba!\r\nKattints az 'OK' gombra, ha importiálni szeretnéd a beállításokat a Google-fiókodból"
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe észlelte, hogy vannak már beállításaid feltöltve a Firefox-fiókodba!\r\nKattints az 'OK' gombra, ha importiálni szeretnéd a beállításokat a Firefox-fiókodból"
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Letöltési értesítés megjelenítése:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "felugró ablak mutatása, amikor <strong>letöltjük</strong> a beállításokat Google-fiókból"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "felugró ablak mutatása, amikor <strong>letöltjük</strong> a beállításokat Firefox-fiókból"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Feltöltési értesítés megjelenítése:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "felugró ablak mutatása, amikor <strong>feltöltjük</strong> a beállításokat Google-fiókból"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "felugró ablak mutatása, amikor <strong>feltöltjük</strong> a beállításokat Firefox-fiókból"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "A jelenlegi Chrome verzió nem támogatja a beállítások szinkronizálását. Próbáld meg frissíteni a Chrome-osat, majd próbálkozz újra."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "A jelenlegi Firefox verzió nem támogatja a beállítások szinkronizálását. Próbáld meg frissíteni a Firefox-osat, majd próbálkozz újra."
    },
    "temp": {
       "description": "Temporary",

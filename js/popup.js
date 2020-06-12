@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.9.3';
+var version = '1.0.9.8';
 var port = chrome.runtime.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -52,18 +52,26 @@ function truncate(str, len) {
 	return str;
 }
 document.addEventListener('DOMContentLoaded', function () {
-	setTimeout(init, 150);
 	$("#pop_ay").mouseup(function(e) { if (e.which != 3) openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
-	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe'); });
+	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/firefox'); });
 	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
 	$("#pop_log").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/recents.html')); });
-	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
-	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
+	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.mozilla.org/firefox/addon/script-safe/'); });
 	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
+	if (!bkg) {
+		$("#version").html(version);
+		$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', 'Close');
+		$("table").html('<tr><td style="text-align: center;"><p>Firefox does not yet <a href="https://github.com/andryou/scriptsafe/issues/282" target="_blank">fully provide incognito support</a> for Web Extensions.</p><p>Until then, please browse in a non-Private Window for ScriptSafe to use this panel.</td></tr>');
+		return;
+	} else {
+		var localStorageReady = bkg.checkLocalStorage();
+		setTimeout(init, 150);
+	}
 });
 function init() {
 	$("#version").html(version);
+	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
 	$("#pop_options").html(bkg.getLocale("options"));
 	chrome.tabs.query({active: true, currentWindow: true}, function(tab) {
 		tab = tab[0];
@@ -71,7 +79,7 @@ function init() {
 		tabdomain = bkg.extractDomainFromURL(taburl);
 		if (tabdomain.substr(0,4) == 'www.') tabdomain = tabdomain.substr(4);
 		tabid = tab.id;
-		if (tabdomain == 'chrome.google.com' || taburl.indexOf('chrome-extension://') == 0) {
+		if (tabdomain == 'addons.mozilla.org' || taburl.indexOf('moz-extension://') == 0) {
 			$("#currentdomain").html(bkg.getLocale("notfiltered"));
 			$(".thirds").html('<i>'+bkg.getLocale("noexternal")+'</i>');
 		} else {
@@ -99,8 +107,7 @@ function init() {
 				if ((responseBlockedCount == 0 && responseAllowedCount == 0) || response.status == 'false' || (response.mode == 'block' && (response.enable == '1' || response.enable == '4'))) {
 					if (response.status == 'false') {
 						$("#currentdomain").hide();
-						$("html").css('width', '410px');
-						$("body").css('width', '400px');
+						$("body").css('min-width', '400px');
 						$(".thirds").css('text-align', 'center').html('<i>'+bkg.getLocale("ssdisabled")+'</i>');
 						$("#parent").css('text-align', 'center').append('<div class="box box1 snstatus" title="'+bkg.getLocale("enabless")+'">'+bkg.getLocale("enabless")+'</div>');
 						$(".snstatus").bind("click", statuschanger);

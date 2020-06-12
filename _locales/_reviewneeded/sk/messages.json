@@ -52,8 +52,8 @@
       "message": "vždy odstránit widgety tlacidiel / sociálne, aj ked na zozname povolených"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Pre viac comprehensive blokovanie, pozrite sa na <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Odpojit</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a> a / alebo <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Pôvod</a> so všetkými zoznamy predplatného na <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy web</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Pre viac comprehensive blokovanie, pozrite sa na <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Odpojit</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a> a / alebo <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Pôvod</a> so všetkými zoznamy predplatného na <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy web</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Protection Fingerprint (môže prasknút stránky)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Zdá sa, že doteraz synchronizovat svoje nastavenia k svojmu úctu Google doteraz.\r\nScriptSafe sa chystá synchronizovat aktuálne nastavenie k svojmu úctu Google.\r\nKliknite na \"OK\", ak chcete pokracovat.\r\nAk nie kliknite na tlacidlo \"Zrušit\", a na druhej zariadenie s požadovaným nastavením aktualizovat ScriptSafe a kliknite na OK, ked sú prezentované s touto správou."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Zdá sa, že doteraz synchronizovat svoje nastavenia k svojmu úctu Firefox doteraz.\r\nScriptSafe sa chystá synchronizovat aktuálne nastavenie k svojmu úctu Firefox.\r\nKliknite na \"OK\", ak chcete pokracovat.\r\nAk nie kliknite na tlacidlo \"Zrušit\", a na druhej zariadenie s požadovaným nastavením aktualizovat ScriptSafe a kliknite na OK, ked sú prezentované s touto správou."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Chcete synchronizovat aktuálne nastavenie k svojmu úctu Google?\r\nPoznámka: Neposielajte stlacení tohto castejšie; tam je limit 10 za minútu a 1000 za hodinu."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Chcete synchronizovat aktuálne nastavenie k svojmu úctu Firefox?\r\nPoznámka: Neposielajte stlacení tohto castejšie; tam je limit 10 za minútu a 1000 za hodinu."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Chcete importovat synchronizovaná nastavenia z vášho úctu Google do tohto zariadenia?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Chcete importovat synchronizovaná nastavenia z vášho úctu Firefox do tohto zariadenia?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "Na podporu rozvoja, kliknite na srdce :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "Povolili ste automatickej synchronizácie. Aby sa zabránilo vymazaniu svoje skôr synchronizovaných dát (ak existuje), kliknite na nastavenie synchronizácie z úctu Google."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "Povolili ste automatickej synchronizácie. Aby sa zabránilo vymazaniu svoje skôr synchronizovaných dát (ak existuje), kliknite na nastavenie synchronizácie z úctu Firefox."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Nastavenie Sync z úctu Google"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Nastavenie Sync z úctu Firefox"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Nastavenia synchronizácie s úctom Google"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Nastavenia synchronizácie s úctom Firefox"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe zistil, že máte nastavenie synchronizovat vo vašom úcte Google!\r\nKliknite na \"OK\", ak chcete importovat nastavenia zo svojho úctu Google."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe zistil, že máte nastavenie synchronizovat vo vašom úcte Firefox!\r\nKliknite na \"OK\", ak chcete importovat nastavenia zo svojho úctu Firefox."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Zobrazit import synchronizácie oznámenia:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "zobraziť vyskakovacie okno pri nastavení synchronizovaná <strong>z účtu</strong> Google"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "zobraziť vyskakovacie okno pri nastavení synchronizovaná <strong>z účtu</strong> Firefox"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Zobrazit Synchronizácie Oznámenia:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "zobraziť vyskakovacie okno pri nastavení synchronizujú <strong>s vaším účtom</strong> Google"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "zobraziť vyskakovacie okno pri nastavení synchronizujú <strong>s vaším účtom</strong> Firefox"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Vaša súcasná verzia prehliadaca Google Chrome nie je nastavenie synchronizácie podporovat. Skúste aktualizovat svoju verziu Chrome a skúste to znova."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Vaša súcasná verzia prehliadaca Mozilla Firefox nie je nastavenie synchronizácie podporovat. Skúste aktualizovat svoju verziu Firefox a skúste to znova."
    },
    "temp": {
       "description": "Temporary",

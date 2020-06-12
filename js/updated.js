@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 var bkg = chrome.extension.getBackgroundPage();
 document.addEventListener('DOMContentLoaded', function () {
-	var version = '1.0.9.3';
+	var version = '1.0.9.8';
 	$("#title").html("ScriptSafe v"+version);
 	$('#versionno').html(version);
 	$("#loadoptionspage").click(function() { location.href='options.html'; });
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 function disableNotification() {
 	if (confirm(bkg.getLocale("updatedisable"))) {
-		localStorage['updatenotify'] = 'false';
+		bkg.saveSetting('updatenotify', 'false');
 		$('#message').html(bkg.getLocale("updatedisablemessage")).stop().fadeIn("slow").delay(2000).fadeOut("slow");
 	}
 }

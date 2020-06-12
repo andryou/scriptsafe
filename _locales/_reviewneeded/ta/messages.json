@@ -52,7 +52,7 @@
       "message": "அனுமதி பட்டியலில்தான் என்றால் எப்போதும் சமூக விட்ஜெட்டுகளை / பொத்தான்கள், கூட நீக்க"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
       "message": "மேலும் விரிவான தடுப்பதை, வெளியே Fanboy தளத்தில் சந்தா பட்டியல்கள் அனைத்து Privacy Badger, துண்டி, தெளிவின்மை, மற்றும் / அல்லது uBlock பிறப்பிடம் பார்க்கலாம்"
    },
    "audioblock": {
@@ -312,16 +312,16 @@
       "message": "கைரேகை பாதுகாப்பு (தளங்கள் உடைத்து இருக்கலாம்)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "அதை நீங்கள் இன்னும் உங்கள் Google கணக்கில் உங்கள் அமைப்புகளை ஒத்திசைக்கவில்லை தோன்றுகிறது.\r\nScriptSafe உங்கள் Google கணக்கில் உங்கள் தற்போதைய அமைப்புகளை ஒத்திசைக்க பற்றி.\r\n'சரி' கிளிக் செய்யவும் நீங்கள் தொடர விரும்பினால்.\r\nஇல்லை என்றால், கிளிக் 'ரத்து செய்', மற்றும் உங்கள் விருப்பமான அமைப்புகளை மற்ற சாதனத்தில், ScriptSafe மேம்படுத்த நீங்கள் இந்த செய்தியை வழங்கப்படுகிறது போது சரி செய்யவும்."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "அதை நீங்கள் இன்னும் உங்கள் Firefox கணக்கில் உங்கள் அமைப்புகளை ஒத்திசைக்கவில்லை தோன்றுகிறது.\r\nScriptSafe உங்கள் Firefox கணக்கில் உங்கள் தற்போதைய அமைப்புகளை ஒத்திசைக்க பற்றி.\r\n'சரி' கிளிக் செய்யவும் நீங்கள் தொடர விரும்பினால்.\r\nஇல்லை என்றால், கிளிக் 'ரத்து செய்', மற்றும் உங்கள் விருப்பமான அமைப்புகளை மற்ற சாதனத்தில், ScriptSafe மேம்படுத்த நீங்கள் இந்த செய்தியை வழங்கப்படுகிறது போது சரி செய்யவும்."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "நீங்கள் உங்கள் Google கணக்கில் உங்கள் தற்போதைய அமைப்புகளை ஒத்திசைக்க வேண்டும் என்று நீங்கள் விரும்புகிறீர்களா?\r\nகுறிப்பு: தயவு செய்து இந்த அடிக்கடி அழுத்தவும் வேண்டாம்; நிமிடத்திற்கு 10 மற்றும் ஒரு மணி நேரத்திற்கு 1,000 ஒரு எல்லை இருக்கிறது."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "நீங்கள் உங்கள் Firefox கணக்கில் உங்கள் தற்போதைய அமைப்புகளை ஒத்திசைக்க வேண்டும் என்று நீங்கள் விரும்புகிறீர்களா?\r\nகுறிப்பு: தயவு செய்து இந்த அடிக்கடி அழுத்தவும் வேண்டாம்; நிமிடத்திற்கு 10 மற்றும் ஒரு மணி நேரத்திற்கு 1,000 ஒரு எல்லை இருக்கிறது."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "நீங்கள் இந்த சாதனத்தை, உங்கள் Google கணக்கில் இருந்து ஒத்திசைந்த அமைப்புகள் இறக்குமதி செய்ய வேண்டுமா?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "நீங்கள் இந்த சாதனத்தை, உங்கள் Firefox கணக்கில் இருந்து ஒத்திசைந்த அமைப்புகள் இறக்குமதி செய்ய வேண்டுமா?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "வளர்ச்சி ஆதரவு, இதய கிளிக் :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
-      "message": "நீங்கள் கார் ஒத்தசைவுக்கு இயலுமைப்படுத்த வேண்டும். (ஏதாவது இருந்தால்) உங்கள் முன்பு ஒத்திசைத்த தரவு அழித்தலை தடுக்கும் பொருட்டு, Google கணக்கில் இருந்து ஒத்திசைவு அமைப்புகளைத் கிளிக் செய்யவும்."
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
+      "message": "நீங்கள் கார் ஒத்தசைவுக்கு இயலுமைப்படுத்த வேண்டும். (ஏதாவது இருந்தால்) உங்கள் முன்பு ஒத்திசைத்த தரவு அழித்தலை தடுக்கும் பொருட்டு, Firefox கணக்கில் இருந்து ஒத்திசைவு அமைப்புகளைத் கிளிக் செய்யவும்."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "ஒத்திசைவு அமைப்புகளை Google கணக்கில் இருந்து"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "ஒத்திசைவு அமைப்புகளை Firefox கணக்கில் இருந்து"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "ஒத்திசைவு அமைப்புகளை Google கணக்கில்"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "ஒத்திசைவு அமைப்புகளை Firefox கணக்கில்"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe நீங்கள் அமைப்புகளை உங்கள் Google கணக்கில் ஒத்திசைத்தக் கண்டறிந்துள்ளது!\r\nநீங்கள் உங்கள் Google கணக்கில் இருந்து அமைப்புகளை இறக்குமதி செய்ய வேண்டும் என்றால், 'சரி' கிளிக் செய்யவும்."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe நீங்கள் அமைப்புகளை உங்கள் Firefox கணக்கில் ஒத்திசைத்தக் கண்டறிந்துள்ளது!\r\nநீங்கள் உங்கள் Firefox கணக்கில் இருந்து அமைப்புகளை இறக்குமதி செய்ய வேண்டும் என்றால், 'சரி' கிளிக் செய்யவும்."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "இறக்குமதி ஒத்திசைவு அறிவித்தல் காட்டு:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "அமைப்புகள் உங்கள் Google கணக்கில் ஒத்திசைக்கப்பட்ட போது பாப் அப்"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "அமைப்புகள் உங்கள் Firefox கணக்கில் ஒத்திசைக்கப்பட்ட போது பாப் அப்"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "ஒத்திசைவு அறிவித்தல் காட்டு:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "அமைப்புகள் உங்கள் Google கணக்கில் ஒத்திசைக்கப்படும் போது பாப் அப்"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "அமைப்புகள் உங்கள் Firefox கணக்கில் ஒத்திசைக்கப்படும் போது பாப் அப்"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Google Chrome இன் உங்கள் தற்போதைய பதிப்பு ஒத்திசைவை அமைப்புகளை ஆதரிக்கவில்லை. உங்கள் Chrome பதிப்பு மேம்படுத்தும் முயற்சி, மீண்டும் முயற்சிக்கவும்."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Mozilla Firefox இன் உங்கள் தற்போதைய பதிப்பு ஒத்திசைவை அமைப்புகளை ஆதரிக்கவில்லை. உங்கள் Firefox பதிப்பு மேம்படுத்தும் முயற்சி, மீண்டும் முயற்சிக்கவும்."
    },
    "temp": {
       "description": "Temporary",

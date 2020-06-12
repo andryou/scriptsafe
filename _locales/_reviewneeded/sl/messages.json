@@ -52,8 +52,8 @@
       "message": "vedno odstranite socialnih gradnike / gumbe, tudi ce je na seznamu dovoljenih"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
-      "message": "Za bolj celovito blokado, si oglejte <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Prekini</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, in / ali <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Izvor</a> z vsemi seznamih na <a href=https://www.fanboy.co.nz/ target=_blank>fanboy stran</a>"
+      "description": "For more comprehensive blocking, check out <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, and/or <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "message": "Za bolj celovito blokado, si oglejte <a href=https://addons.mozilla.org/firefox/addon/privacy-badger17/ target=_blank>Privacy Badger</a>, <a href=https://addons.mozilla.org/firefox/addon/disconnect/ target=_blank>Prekini</a>, <a href=https://addons.mozilla.org/firefox/addon/donottrackplus/ target=_blank>Blur</a>, in / ali <a href=https://addons.mozilla.org/firefox/addon/ublock-origin/ target=_blank>uBlock Izvor</a> z vsemi seznamih na <a href=https://www.fanboy.co.nz/ target=_blank>fanboy stran</a>"
    },
    "audioblock": {
       "description": "Block Audio Fingerprinting:",
@@ -312,16 +312,16 @@
       "message": "Zašcita Prstnih Odtisov (lahko prekinil mesta)"
    },
    "firstsync": {
-      "description": "It appears you haven't synced your settings to your Google account yet.\r\nScriptSafe is about to sync your current settings to your Google account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
-      "message": "Zdi se, da niste sinhronizirane nastavitve Google racuna še ni.\r\nScriptSafe gre za sinhronizacijo trenutne nastavitve za svoj racun pri Googlu.\r\nKliknite OK, ce želite nadaljevati.\r\nCe ne kliknite »Preklici«, na drugi napravi z želenimi nastavitvami, posodobiti ScriptSafe in kliknite na gumb v redu, ko se vam prikažejo s tem sporocilom."
+      "description": "It appears you haven't synced your settings to your Firefox account yet.\r\nScriptSafe is about to sync your current settings to your Firefox account.\r\nClick on 'OK' if you want to continue.\r\nIf not, click 'Cancel', and on the other device with your preferred settings, update ScriptSafe and click on OK when you are presented with this message.",
+      "message": "Zdi se, da niste sinhronizirane nastavitve Firefox racuna še ni.\r\nScriptSafe gre za sinhronizacijo trenutne nastavitve za svoj racun pri Googlu.\r\nKliknite OK, ce želite nadaljevati.\r\nCe ne kliknite »Preklici«, na drugi napravi z želenimi nastavitvami, posodobiti ScriptSafe in kliknite na gumb v redu, ko se vam prikažejo s tem sporocilom."
    },
    "forcesyncexport": {
-      "description": "Do you want to sync your current settings to your Google Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
-      "message": "Ali želite sinhronizirati trenutne nastavitve v Google Racun\r\nOpomba: prosim, ne pogosto pritisku na to; je omejitev 10 na minuto in 1.000 na uro."
+      "description": "Do you want to sync your current settings to your Firefox Account?\r\nNote: please do not press this frequently; there is a limit of 10 per minute and 1,000 per hour.",
+      "message": "Ali želite sinhronizirati trenutne nastavitve v Firefox Racun\r\nOpomba: prosim, ne pogosto pritisku na to; je omejitev 10 na minuto in 1.000 na uro."
    },
    "forcesyncimport": {
-      "description": "Do you want to import the synced settings from your Google Account to this device?",
-      "message": "Ali želite uvoziti sinhronizirane nastavitve iz svojega Google Racuna na to napravo?"
+      "description": "Do you want to import the synced settings from your Firefox Account to this device?",
+      "message": "Ali želite uvoziti sinhronizirane nastavitve iz svojega Firefox Racuna na to napravo?"
    },
    "forever": {
       "description": "Forever",
@@ -644,20 +644,20 @@
       "message": "Za podporo razvoju, kliknite srce :)"
    },
    "syncdisable": {
-      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Google Account.",
+      "description": "You have enabled auto-syncing. In order to prevent erasing your previously synced data (if any), please click on Sync Settings FROM Firefox Account.",
       "message": "Omogocili ste samodejno sinhronizacijo. Da bi preprecili brisanje svojih že sinhronizirane podatke (ce sploh), kliknite na nastavitve sinhronizacije IZ racun pri Googlu."
    },
    "syncimport": {
-      "description": "Sync Settings FROM Google Account",
-      "message": "Nastavitve sinhronizacije IZ Google Racun"
+      "description": "Sync Settings FROM Firefox Account",
+      "message": "Nastavitve sinhronizacije IZ Firefox Racun"
    },
    "syncexport": {
-      "description": "Sync Settings TO Google Account",
-      "message": "Sinhronizacija Nastavitve DO Google Racun"
+      "description": "Sync Settings TO Firefox Account",
+      "message": "Sinhronizacija Nastavitve DO Firefox Racun"
    },
    "syncdetect": {
-      "description": "ScriptSafe has detected that you have settings synced on your Google account!\r\nClick on 'OK' if you want to import the settings from your Google Account.",
-      "message": "ScriptSafe je zaznal, da ste nastavitev, sinhroniziranih v Google racun!\r\nKliknite OK, ce želite uvoziti nastavitve iz Google Racuna."
+      "description": "ScriptSafe has detected that you have settings synced on your Firefox account!\r\nClick on 'OK' if you want to import the settings from your Firefox Account.",
+      "message": "ScriptSafe je zaznal, da ste nastavitev, sinhroniziranih v Firefox racun!\r\nKliknite OK, ce želite uvoziti nastavitve iz Firefox Racuna."
    },
    "syncdisabled": {
       "description": "Syncing has been disabled to prevent overwriting your already synced data.\r\nFeel free to go to the Options page at any time to sync your settings (make a backup of your settings if necessary).",
@@ -668,20 +668,20 @@
       "message": "Show Import Sync obvestila:"
    },
    "syncfromnotifydesc": {
-      "description": "show popup when settings synced <strong>from</strong> your Google Account",
-      "message": "kažejo popup ko nastavitve sinhronizirani <strong>iz</strong> Google Računa"
+      "description": "show popup when settings synced <strong>from</strong> your Firefox Account",
+      "message": "kažejo popup ko nastavitve sinhronizirani <strong>iz</strong> Firefox Računa"
    },
    "syncnotify": {
       "description": "Show Sync Notification:",
       "message": "Prikaži Sync Obvestilo:"
    },
    "syncnotifydesc": {
-      "description": "show popup when settings synced <strong>to</strong> your Google Account",
-      "message": "kažejo popup ko nastavitve sinhronizirani <strong>z</strong> Google Računom"
+      "description": "show popup when settings synced <strong>to</strong> your Firefox Account",
+      "message": "kažejo popup ko nastavitve sinhronizirani <strong>z</strong> Firefox Računom"
    },
    "syncnotsupported": {
-      "description": "Your current version of Google Chrome does not support settings syncing. Please try updating your Chrome version and try again.",
-      "message": "Vaša trenutna razlicica Google Chrome ne podpira nastavitve sinhronizacijo. Prosimo, posodobite razlicico Chrome in poskusite znova."
+      "description": "Your current version of Mozilla Firefox does not support settings syncing. Please try updating your Firefox version and try again.",
+      "message": "Vaša trenutna razlicica Mozilla Firefox ne podpira nastavitve sinhronizacijo. Prosimo, posodobite razlicico Firefox in poskusite znova."
    },
    "temp": {
       "description": "Temporary",
