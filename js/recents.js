@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.3';
+var version = '1.0.9.4';
 var bkg = chrome.extension.getBackgroundPage();
 var syncstatus;
 document.addEventListener('DOMContentLoaded', function () {
@@ -64,19 +64,19 @@ function loadOptions() {
 			var clearBtn = '';
 			if (blockedarr[i][5] == '1') clearBtn = '<span class="box box4" title="Clear Domain from List">'+bkg.getLocale("clear")+'</span>';
 			if (blockedarr[i][2] == 'NOSCRIPT' || blockedarr[i][2] == 'WEBBUG') {
-				$("#blocked > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'">'+truncate(blockedarr[i][4])+'</td><td class="text-right" data-domain="'+itemdomain+'">&nbsp;</td>');
+				$("#blocked > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</a></td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][4])+'</a></td><td class="text-right" data-domain="'+itemdomain+'">&nbsp;</td>');
 			} else if (blockedarr[i][7] && ((annoyances == 'true' && annoyancesmode == 'strict' && blockedarr[i][5] == '-1' && blockedarr[i][7] == '1') || (antisocial == 'true' && blockedarr[i][7] == '2'))) {
 				var unwantedType = '';
 				if (blockedarr[i][7] == '1') unwantedType = bkg.getLocale("unwanted");
 				else if (blockedarr[i][7] == '2') unwantedType = bkg.getLocale("antisocialpopup");
-				$("#blocked > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'">'+truncate(blockedarr[i][4])+'</td><td class="text-right choices" data-domain="'+itemdomain+'" rel="'+blockedarr[i][3]+'"><span class="box box2 x_blacklist selected" rel="1" title="'+unwantedType+'">'+unwantedType+'</span></td>');
+				$("#blocked > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</a></td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][4])+'</a></td><td class="text-right choices" data-domain="'+itemdomain+'" rel="'+blockedarr[i][3]+'"><span class="box box2 x_blacklist selected" rel="1" title="'+unwantedType+'">'+unwantedType+'</span></td>');
 			} else if (blockedarr[i][8]) {
-				$("#blocked > table > tbody").append('<tr rel="'+fpitemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'">'+truncate(blockedarr[i][4])+'</td><td class="text-right fpchoices" data-domain="'+itemdomain+'" rel="'+blockedarr[i][3]+'">'+clearBtn+'<span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+bkg.getLocale("allow")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
+				$("#blocked > table > tbody").append('<tr rel="'+fpitemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</a></td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][4])+'</a></td><td class="text-right fpchoices" data-domain="'+itemdomain+'" rel="'+blockedarr[i][3]+'">'+clearBtn+'<span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+bkg.getLocale("allow")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
 			} else {
 				var unwantedType = '';
 				if (blockedarr[i][7] == '1') unwantedType = '<span class="box box2 x_blacklist selected" rel="1" title="'+bkg.getLocale("unwanted")+'">'+bkg.getLocale("unwanted")+'</span>';
 				else if (blockedarr[i][7] == '2') unwantedType = '<span class="box box2 x_blacklist selected" rel="1" title="'+bkg.getLocale("antisocialpopup")+'">'+bkg.getLocale("antisocialpopup")+'</span>';
-				$("#blocked > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'">'+truncate(blockedarr[i][4])+'</td><td class="text-right choices" data-domain="'+itemdomain+'" rel="'+blockedarr[i][3]+'">'+clearBtn+'<span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+bkg.getLocale("allow")+'</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">'+bkg.getLocale("trust")+'</span>'+unwantedType+'<span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
+				$("#blocked > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+blockedarr[i][1].replace(/"/g, "'")+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][1])+'</a></td><td>'+blockedarr[i][2]+'</td><td title="'+blockedarr[i][4]+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(blockedarr[i][4])+'</a></td><td class="text-right choices" data-domain="'+itemdomain+'" rel="'+blockedarr[i][3]+'">'+clearBtn+'<span class="box box1 x_whitelist" rel="0" title="Allow Domain">'+bkg.getLocale("allow")+'</span><span class="box box1 x_trust" rel="3" title="Trust Entire Domain">'+bkg.getLocale("trust")+'</span>'+unwantedType+'<span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
 			}
 			if (mode == 'allow') {
 				if (bkg.checkTemp(itemdomain)) {
@@ -121,9 +121,9 @@ function loadOptions() {
 			var clearBtn = '';
 			if (allowedarr[i][5] == '0' || (allowedarr[i][7] && allowedarr[i][5] == '1')) clearBtn = '<span class="box box4" title="Clear Domain from List">'+bkg.getLocale("clear")+'</span>';
 			if (allowedarr[i][7]) {
-				$("#allowed > table > tbody").append('<tr rel="'+fpitemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+allowedarr[i][1].replace(/"/g, "'")+'">'+truncate(allowedarr[i][1])+'</td><td>'+allowedarr[i][2]+'</td><td title="'+allowedarr[i][4]+'">'+truncate(allowedarr[i][4])+'</td><td class="text-right fpchoices" data-domain="'+itemdomain+'" rel="'+allowedarr[i][3]+'">'+clearBtn+'<span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
+				$("#allowed > table > tbody").append('<tr rel="'+fpitemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+allowedarr[i][1].replace(/"/g, "'")+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(allowedarr[i][1])+'</a></td><td>'+allowedarr[i][2]+'</td><td title="'+allowedarr[i][4]+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(allowedarr[i][4])+'</a></td><td class="text-right fpchoices" data-domain="'+itemdomain+'" rel="'+allowedarr[i][3]+'">'+clearBtn+'<span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
 			} else {
-				$("#allowed > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+allowedarr[i][1].replace(/"/g, "'")+'">'+truncate(allowedarr[i][1])+'</td><td>'+allowedarr[i][2]+'</td><td title="'+allowedarr[i][4]+'">'+truncate(allowedarr[i][4])+'</td><td class="text-right choices" data-domain="'+itemdomain+'" rel="'+allowedarr[i][3]+'">'+clearBtn+'<span class="box box2 x_blacklist" rel="1" title="Deny">'+bkg.getLocale("deny")+'</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">'+bkg.getLocale("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
+				$("#allowed > table > tbody").append('<tr rel="'+itemdomainfriendly+'"><td>'+padZeros(entryTime.getHours())+':'+padZeros(entryTime.getMinutes())+':'+padZeros(entryTime.getSeconds())+'</td><td title="'+allowedarr[i][1].replace(/"/g, "'")+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(allowedarr[i][1])+'</a></td><td>'+allowedarr[i][2]+'</td><td title="'+allowedarr[i][4]+'"><a target="_blank" rel="noopener noreferrer" href="'+blockedarr[i][1].replace(/"/g, "'")+'">'+truncate(allowedarr[i][4])+'</a></td><td class="text-right choices" data-domain="'+itemdomain+'" rel="'+allowedarr[i][3]+'">'+clearBtn+'<span class="box box2 x_blacklist" rel="1" title="Deny">'+bkg.getLocale("deny")+'</span><span class="box box2 x_trust" rel="4" title="Distrust Entire Domain">'+bkg.getLocale("distrust")+'</span><span class="box box3 x_bypass" rel="2" title="Temporary">'+bkg.getLocale("temp")+'</span></td>');
 			}
 			if (mode == 'block') {
 				if (bkg.checkTemp(itemdomain)) {
@@ -137,8 +137,8 @@ function loadOptions() {
 	$(".box").bind("click", handleclick);
 }
 function truncate(str) {
-	if (str.length > 54)
-		return str.substring(0, 54)+'...';
+	if (str.length > 64)
+		return str.substring(0, 64)+'...';
 	return str;
 }
 function notification(msg) {
