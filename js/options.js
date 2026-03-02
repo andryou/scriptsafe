@@ -2,7 +2,7 @@
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 'use strict';
-var version = '1.0.9.3';
+var version = '1.0.9.6';
 var bkg = chrome.extension.getBackgroundPage();
 var settingnames = [];
 var syncstatus;
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		viewToggle(1);
 	});
 	$("#hotkeyspage").click(function() {
-		chrome.tabs.create({url: 'chrome://extensions/?id=footer-section'});
+		chrome.tabs.create({url: 'opera://settings/configureCommands'});
 	});
 	$("#restoredefault").click(function() {
 		if (confirm(bkg.getLocale("restoredefaultconfirm"))) {
@@ -337,12 +337,14 @@ function saveList(id) {
 function loadOptions() {
 	$("#title").html("ScriptSafe v"+version);
 	loadCheckbox("enable");
+	/* note: opera does not support syncing.
 	loadCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	else $("#syncbuttons").show();
 	loadCheckbox("syncfromnotify");
-	loadCheckbox("updatenotify");
 	loadCheckbox("syncnotify");
+	*/
+	loadCheckbox("updatenotify");
 	loadElement("mode");
 	loadCheckbox("refresh");
 	loadCheckbox("script");
@@ -434,11 +436,13 @@ function loadOptions() {
 }
 function saveOptions() {
 	saveCheckbox("enable");
+	/* note: opera does not support syncing.
 	saveCheckbox("syncenable");
 	if (!$("#syncenable").prop('checked')) $("#syncbuttons").hide();
 	else $("#syncbuttons").show();
 	saveCheckbox("syncnotify");
 	saveCheckbox("syncfromnotify");
+	*/
 	saveCheckbox("updatenotify");
 	saveElement("mode");
 	saveCheckbox("refresh");

@@ -15,7 +15,7 @@
 			<div class="row">
 				<div class="col-sm-6">
 					<span id="title">ScriptSafe</span><br />by <a href="https://twitter.com/andryou" target="_blank">Andrew Y.</a><br /><br />
-					ScriptSafe: <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> / <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a> / <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a> | <a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Website</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+					ScriptSafe: <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> / <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a> / <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a> | <a href="https://github.com/andryou/scriptsafe/tree/opera" target="_blank">Github</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Website</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 					<strong>Changelog</strong> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>) | <a href="https://www.andryou.com/scriptsafe/translate" target="_blank"><strong>Help Translate!</strong></a>
 				</div>
 				<div class="col-sm-6 text-right">
@@ -36,13 +36,28 @@
 					<div class="alert alert-warning"><p><strong>ScriptSafe is on <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a>, <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a>, and now: <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a>!</strong></p><p>My sincere thanks to all testers, translators, and users for your support over the past 6 years.</p></div>
 					<p>In this release you will find the following updates:</p>
 					<ul>
-						<li><strong>v1.0.9.3:</strong><ul>
-							<li>Added ability to temporarily disable ScriptSafe for a set time via the panel (useful if buying something online)</li>
-							<li>Added ability to selectively allow Browser Plugins Enumeration</li>
+						<li><strong>v1.0.9.6:</strong><ul>
+							<li>Added ability to temporarily disable ScriptSafe via the panel</li>
+							<li>Added the ability to revert to default settings (found under "Import / Restore Settings")</li>
+							<li>Added new "Recent Log" page where you can view all recently blocked or allowed items (the "Log" link can be found in the top-right corner of the ScriptSafe panel)</li>
+							<li>Added the ability to block Browser Plugin Enumeration (under Fingerprint Protection, option is disabled by default so feel free to enable it)</li>
+							<li>Added the ability to block Bluetooth Enumeration (under Fingerprint Protection, option is disabled by default so feel free to enable it)</li>
+							<li>Added ability to control whether or not Remove Possible Hash Tracking applies to whitelisted sites or not (default: disabled)</li>
+							<li>Added ability to control the Keyboard Fingerprinting Protection keypress delay</li>
+							<li>Added more browser and operating systems for User Agent Spoofing (thanks nyancat18)</li>
 							<li>Added ability to randomize user agents: on every request or every x minutes</li>
-							<li>Minor panel tweaks</li>
-							<li>Minor user agent fix</li>
+							<li>Improved Browser User Agent Spoofing and added ability to enter a custom user agent string</li>
+							<li>Improved WebGL Fingerprint Protection</li>
+							<li>Improved Clipboard Interference Protection</li>
+							<li>Improved domain matching logic</li>
+							<li>Improved syncing reliability and added data compression (for when/if Opera introduces extension data syncing like Chrome)</li>
+							<li>Fixed "Trust" option not being available for domains starting with a wildcard match</li>
+							<li>Added Polish locale (thanks Galileusz)</li>
+							<li>Minor updates to German, Japanese, Chinese (Traditional), and Spanish locales</li>
 							<li>Updated unwanted content providers list</li>
+							<li>Minor panel updates</li>
+							<li>Minor panel tweaks</li></li>
+							<li>Minor user agent fix</li>
 						</ul></li>
 					</ul>
 					<p>I have put together <a href="https://www.andryou.com/scriptsafe/" target="_blank">some documentation for ScriptSafe</a>, including <a href="https://www.andryou.com/scriptsafe/quick-start/" target="_blank">"Getting Started" instructions</a>.</p>
@@ -62,7 +77,7 @@
 				</p>
 			</div>
 			<hr>
-			<p><strong>Just as a note: ScriptSafe does not have any backdoors, nor does it contact any third-party server at any point in time. ScriptSafe was created by one ordinary guy (me), lovingly coded in my bedroom, without any intention other than to give you back control of the Internet. ScriptSafe is released under the GNU GPLv3 license for true open-source freedom.</strong><br /><br /><i>You can go through the code on Github (<a href="https://github.com/andryou/scriptsafe" target="_blank">https://github.com/andryou/scriptsafe</a>) AND the actual instance installed on your computer by going to C:\Users\<strong>**your username**</strong>\AppData\Local\Google\Chrome\User Data\Default\Extensions\oiigbmnaadbkfbmpbfijlflahbdbdgdf (for non-Windows users, search for a folder named <strong>oiigbmnaadbkfbmpbfijlflahbdbdgdf</strong>)</i></p>
+			<p><strong>Just as a note: ScriptSafe does not have any backdoors, nor does it contact any third-party server at any point in time. ScriptSafe was created by one ordinary guy (me), lovingly coded in my bedroom, without any intention other than to give you back control of the Internet. ScriptSafe is released under the GNU GPLv3 license for true open-source freedom.</strong><br /><br /><i>You can go through the code on Github (<a href="https://github.com/andryou/scriptsafe/tree/opera" target="_blank">https://github.com/andryou/scriptsafe</a>) AND the actual instance installed on your computer by going to C:\Users\<strong>**your username**</strong>\AppData\Roaming\Opera Software\Opera Stable\Extensions\pkjfcdehidpcgnpimgaodplceggaepja (for non-Windows users, search for a folder named <strong>pkjfcdehidpcgnpimgaodplceggaepja</strong>)</i></p>
 			<br />
 			<div class="text-center">
 				<form action="https://www.paypal.com/cgi-bin/webscr" method="post" style="display: inline;">
@@ -71,7 +86,7 @@
 				<input type="image" src="../img/heartbig.png" name="submit" alt="Support Andrew via PayPal!" title="Support Andrew via PayPal!">
 				</form><br />Bitcoin: <a href="bitcoin:39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92"><strong>39VJ5L9Yd6WocG6r88uE7ZZnM5J2M5bW92</strong></a><br /><br />
 				<i>
-				ScriptSafe: <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> / <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a> / <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a> | <a href="https://github.com/andryou/scriptsafe" target="_blank">Github</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Website</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
+				ScriptSafe: <a href="https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf" target="_blank">Chrome</a> / <a href="https://addons.mozilla.org/firefox/addon/script-safe/" target="_blank">Firefox</a> / <a href="https://addons.opera.com/en/extensions/details/scriptsafe-2/" target="_blank">Opera</a> | <a href="https://github.com/andryou/scriptsafe/tree/opera" target="_blank">Github</a> | <a href="https://www.andryou.com/scriptsafe/" target="_blank">Website</a> | <a href="https://docs.google.com/forms/d/1MXUSlQHP_XbXbbKYrxaW_8eIY4Y3SyiyUg1yhoBUoQM/viewform" target="_blank">Beta Testing</a> | <a href="https://github.com/andryou/scriptsafe/issues" target="_blank">Submit Issues</a><br />
 				<a href="updated.html" target="_blank">Changelog</a> (<a href="https://www.andryou.com/scriptsafe/changelog" target="_blank">Version History</a>)
 				</i>
 			</div>

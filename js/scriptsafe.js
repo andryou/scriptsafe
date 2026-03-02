@@ -3,7 +3,7 @@
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
 // Credits and ideas: NotScripts, AdBlock Plus for Chrome, Ghostery, KB SSL Enforcer
 'use strict';
-var version = '1.0.9.3';
+var version = '1.0.9.6';
 var requestTypes, synctimer, recentstimer, reenabletimer, useragentinterval, blackList, whiteList, distrustList, trustList, sessionBlackList, sessionWhiteList, locale;
 var langs = {
 	'en_US': 'English (US)',
@@ -383,7 +383,7 @@ function hashTrackingClean(url) {
 }
 function enabled(url) {
 	var domainCheckStatus = domainCheck(url);
-	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://chrome.google.com/webstore') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/'))
+	if (localStorage["enable"] == "true" && domainCheckStatus != '0' && (domainCheckStatus == '1' || (localStorage["mode"] == "block" && domainCheckStatus == '-1')) && url.indexOf('https://addons.opera.com') == -1 && (url.substring(0,4) == 'http' || url == 'chrome://newtab/'))
 		return 'true';
 	return 'false';
 }
@@ -897,7 +897,7 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
 		if (typeof ITEMS[sender.tab.id] === 'undefined') {
 			resetTabData(sender.tab.id, sender.tab.url);
 		} else {
-			if ((request.iframe != '1' && ((ITEMS[sender.tab.id]['url'] != sender.tab.url && (sender.tab.url.indexOf("#") != -1 || ITEMS[sender.tab.id]['url'].indexOf("#") != -1) && removeHash(sender.tab.url) != removeHash(ITEMS[sender.tab.id]['url'])) || (sender.tab.url.indexOf("#") == -1 && ITEMS[sender.tab.id]['url'].indexOf("#") == -1 && sender.tab.url != ITEMS[sender.tab.id]['url']) || changed) || sender.tab.url.indexOf('https://chrome.google.com/webstore') != -1)) {
+			if ((request.iframe != '1' && ((ITEMS[sender.tab.id]['url'] != sender.tab.url && (sender.tab.url.indexOf("#") != -1 || ITEMS[sender.tab.id]['url'].indexOf("#") != -1) && removeHash(sender.tab.url) != removeHash(ITEMS[sender.tab.id]['url'])) || (sender.tab.url.indexOf("#") == -1 && ITEMS[sender.tab.id]['url'].indexOf("#") == -1 && sender.tab.url != ITEMS[sender.tab.id]['url']) || changed) || sender.tab.url.indexOf('https://addons.opera.com') != -1)) {
 				if (changed && ITEMS[sender.tab.id]['url'] == sender.tab.url) {
 					initCount(sender.tab.id);
 				} else {
@@ -1143,19 +1143,10 @@ function freshSync(force) {
 			var i = 0;
 			for (var k in localStorage) {
 				if (localStorage.hasOwnProperty(k)) {
-					// legacy syncing method - start
-						if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "su") {
-					// legacy syncing method - end
-					// new syncing method - start
-						//if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "su" && k.substr(0, 2) != "fp") {
-					// new syncing method - end
+					if (k != "version" && k != "sync" && k != "scriptsafe_settings" && k != "lastSync" && k != "whiteList" && k != "blackList" && k != "useragent" && k != "whiteListCount" && k != "blackListCount" && k != "whiteListCount2" && k != "blackListCount2" && k != "useragentCount2" && k.substr(0, 10) != "whiteList_" && k.substr(0, 10) != "blackList_" && k.substr(0, 2) != "zb" && k.substr(0, 2) != "zw" && k.substr(0, 2) != "sw" && k.substr(0, 2) != "sb" && k.substr(0, 2) != "sf" && k.substr(0, 2) != "su" && k.substr(0, 2) != "fp") {
 						simplesettings += k+"|"+localStorage[k]+"~";
-					// new syncing method - start
-						/*
-						} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
-							fpsettings += k+"|"+localStorage[k]+"~";
-						*/
-					// new syncing method - end
+					} else if (k.substr(0, 2) == "fp" && k != "fpCount") {
+						fpsettings += k+"|"+localStorage[k]+"~";
 					}
 					if (k.substr(0, 2) == "zw") zarr['zw'].push(k);
 					else if (k.substr(0, 2) == "zb") zarr['zb'].push(k);
@@ -1172,74 +1163,42 @@ function freshSync(force) {
 			if (zarr['sw'].length) {
 				for (var x = 0, forcount=zarr['sw'].length; x < forcount; x++) delete localStorage[zarr['sw'][x]];
 			}
-			// legacy syncing method - start
-				jsonstr = JSON.parse(localStorage['whiteList']).toString();
-				i = 0;
-				limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, limit);
-					settingssync["zw" + i] = segment;
-					jsonstr = jsonstr.substr(limit);
-					i++;
-				}
-				settingssync['whiteListCount'] = i;
-			// legacy syncing method - end
-			// new syncing method - start
-				/*
-				jsonstr = ssCompress(JSON.parse(localStorage['whiteList']).toString());
-				i = 0;
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, newlimit);
-					settingssync["sw" + i] = milliseconds+segment;
-					jsonstr = jsonstr.substr(newlimit);
-					i++;
-				}
-				settingssync['whiteListCount2'] = i;
-				if (zarr['zb'].length) {
-					for (var x = 0, forcount=zarr['zb'].length; x < forcount; x++) delete localStorage[zarr['zb'][x]];
-				}
-				if (zarr['sb'].length) {
-					for (var x = 0, forcount=zarr['sb'].length; x < forcount; x++) delete localStorage[zarr['sb'][x]];
-				}
-				*/
-			// new syncing method - end
-			// legacy syncing method - start
-				i = 0;
-				jsonstr = JSON.parse(localStorage['blackList']).toString();
-				limit = (chrome.storage.sync.QUOTA_BYTES_PER_ITEM - Math.ceil(jsonstr.length/(chrome.storage.sync.QUOTA_BYTES_PER_ITEM - 4)) - 4);
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, limit);
-					settingssync["zb" + i] = segment;
-					jsonstr = jsonstr.substr(limit);
-					i++;
-				}
-				settingssync['blackListCount'] = i;
-			// legacy syncing method - end
-			// new syncing method - start
-			/*
-				jsonstr = ssCompress(JSON.parse(localStorage['blackList']).toString());
-				i = 0;
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, newlimit);
-					settingssync["sb" + i] = milliseconds+segment;
-					jsonstr = jsonstr.substr(newlimit);
-					i++;
-				}
-				settingssync['blackListCount2'] = i;
-				if (zarr['sf'].length) {
-					for (var x = 0, forcount=zarr['sf'].length; x < forcount; x++) delete localStorage[zarr['sf'][x]];
-				}
-				i = 0;
-				jsonstr = ssCompress(fpsettings.slice(0,-1));
-				while (jsonstr.length > 0) {
-					segment = jsonstr.substr(0, newlimit);
-					settingssync["sf" + i] = milliseconds+segment;
-					jsonstr = jsonstr.substr(newlimit);
-					i++;
-				}
-				settingssync['fpCount'] = i;
-			*/
-			// new syncing method - end
+			jsonstr = ssCompress(JSON.parse(localStorage['whiteList']).toString());
+			i = 0;
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sw" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['whiteListCount2'] = i;
+			if (zarr['zb'].length) {
+				for (var x = 0, forcount=zarr['zb'].length; x < forcount; x++) delete localStorage[zarr['zb'][x]];
+			}
+			if (zarr['sb'].length) {
+				for (var x = 0, forcount=zarr['sb'].length; x < forcount; x++) delete localStorage[zarr['sb'][x]];
+			}
+			jsonstr = ssCompress(JSON.parse(localStorage['blackList']).toString());
+			i = 0;
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sb" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['blackListCount2'] = i;
+			if (zarr['sf'].length) {
+				for (var x = 0, forcount=zarr['sf'].length; x < forcount; x++) delete localStorage[zarr['sf'][x]];
+			}
+			i = 0;
+			jsonstr = ssCompress(fpsettings.slice(0,-1));
+			while (jsonstr.length > 0) {
+				segment = jsonstr.substr(0, newlimit);
+				settingssync["sf" + i] = milliseconds+segment;
+				jsonstr = jsonstr.substr(newlimit);
+				i++;
+			}
+			settingssync['fpCount'] = i;
 			jsonstr = ssCompress(JSON.parse(localStorage['useragent']).toString());
 			if (zarr['su'].length) {
 				for (var x = 0, forcount=zarr['su'].length; x < forcount; x++) delete localStorage[zarr['su'][x]];
@@ -1554,6 +1513,7 @@ function postLangLoad() {
 	if (typeof chrome.storage !== 'undefined') {
 		storageapi = true;
 	}
+	storageapi = false; // note: opera does not support syncing.
 	if (typeof chrome.webRequest !== 'undefined') {
 		if (experimental == 0) experimental = 1;
 		var requestUrls = ["http://*/*", "https://*/*"];

@@ -1,7 +1,7 @@
 // ScriptSafe - Copyright (C) andryou
 // Distributed under the terms of the GNU General Public License
 // The GNU General Public License can be found in the gpl.txt file. Alternatively, see <http://www.gnu.org/licenses/>.
-var version = '1.0.9.3';
+var version = '1.0.9.6';
 var port = chrome.runtime.connect({name: "popuplifeline"});
 var bkg = chrome.extension.getBackgroundPage();
 var closepage, mode, taburl, tabid, tabdomain;
@@ -55,10 +55,10 @@ document.addEventListener('DOMContentLoaded', function () {
 	setTimeout(init, 150);
 	$("#pop_ay").mouseup(function(e) { if (e.which != 3) openTab('https://twitter.com/andryou'); });
 	$("#pop_docs").mouseup(function(e) { if (e.which != 3) openTab('https://www.andryou.com/scriptsafe/'); });
-	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe'); });
+	$("#pop_project").mouseup(function(e) { if (e.which != 3) openTab('https://github.com/andryou/scriptsafe/tree/opera'); });
 	$("#pop_options").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/options.html')); });
 	$("#pop_log").mouseup(function(e) { if (e.which != 3) openTab(chrome.extension.getURL('html/recents.html')); });
-	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://chrome.google.com/webstore/detail/scriptsafe/oiigbmnaadbkfbmpbfijlflahbdbdgdf'); });
+	$("#pop_webstore").mouseup(function(e) { if (e.which != 3) openTab('https://addons.opera.com/en/extensions/details/scriptsafe-2/'); });
 	$("#pop_close").mouseup(function(e) { if (e.which != 3) window.close(); }).attr('title', bkg.getLocale("close"));
 	$("#pop_refresh").mouseup(function(e) { if (e.which != 3) chrome.tabs.reload(); window.close(); });
 });

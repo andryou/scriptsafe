@@ -52,7 +52,7 @@
       "message": "үргэлж жагсаасан бол нийгмийн виджетийг / товч, тэр ч байтугай устгах"
    },
    "antisocialdesc2": {
-      "description": "For more comprehensive blocking, check out <a href=https://chrome.google.com/webstore/detail/privacy-badger/pkehgijcmpdhfbdbbnkijodmdjhbjlgp target=_blank>Privacy Badger</a>, <a href=https://chrome.google.com/webstore/detail/disconnect/jeoacafpbcihiomhlakheieifhpjdfeo target=_blank>Disconnect</a>, <a href=https://chrome.google.com/webstore/detail/blur/epanfjkfahimkgomnigadpkobaefekcd target=_blank>Blur</a>, and/or <a href=https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
+      "description": "For more comprehensive blocking, check out <a href=https://addons.opera.com/en/extensions/details/privacy-badger/ target=_blank>Privacy Badger</a>, <a href=https://addons.opera.com/en/extensions/details/disconnect/ target=_blank>Disconnect</a>, <a href=https://addons.opera.com/en/extensions/details/blur-protect-your-passwords-payments-privacy/ target=_blank>Blur</a>, and/or <a href=https://addons.opera.com/en/extensions/details/ublock/ target=_blank>uBlock Origin</a> with all of the subscription lists on the <a href=https://www.fanboy.co.nz/ target=_blank>Fanboy site</a>",
       "message": "дэлгэрэнгүй хаах нь гарч Fanboy газар дээр нь захиалгын жагсаалт бүх Privacy Badger, таслах, Blur ба / эсвэл uBlock гаралтай шалгах"
    },
    "audioblock": {
